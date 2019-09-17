@@ -1,0 +1,54 @@
+This tutorial is only here to show how the launch of the dynamic\+\_\+graph\+\_\+manager executable is done.
+
+For further instruction on how to implement and load controller please read the next documentation pages.
+
+Spawn 4 terminal with the catkin workspace are sourced.
+\begin{DoxyEnumerate}
+\item Launch roscore (if not running yet)\+: 
+\begin{DoxyCode}
+roscore
+\end{DoxyCode}
+
+\item Launch the entry/main() executable\+:
+\begin{DoxyEnumerate}
+\item Run the executable\+: 
+\begin{DoxyCode}
+rosrun <package of your robot> <name of executable file>
+\end{DoxyCode}
+ For instance\+: 
+\begin{DoxyCode}
+rosrun dynamic\_graph\_manager demo\_dynamic\_graph\_manager
+\end{DoxyCode}
+
+\end{DoxyEnumerate}
+\item In another terminal, connect to the python interpreter via R\+OS\+:
+\begin{DoxyEnumerate}
+\item Startup Dynamic Graph Python client 
+\begin{DoxyCode}
+rosrun dynamic\_graph\_manager run\_command <python-file>
+\end{DoxyCode}
+ or 
+\begin{DoxyCode}
+rosrun dynamic\_graph\_manager run\_command
+\end{DoxyCode}
+ The first call will execute the python file given and fall back to an interactive python terminal. The second call will just fallback to the interactive python terinal. In this terminal you can have access to a global object called \char`\"{}robot\char`\"{}. And in particular \char`\"{}robot.\+device\char`\"{}. This device is the link between the (extremely simple) hardware implemented in the demo\+\_\+dynamic\+\_\+graph\+\_\+manager and the dynamic-\/graph. You can already explore what has been implemented by executing\+: 
+\begin{DoxyCode}
+>>> \hyperlink{namespacerobot}{robot}.device.displaySignals()
+\end{DoxyCode}
+
+\item Setup your control graph by executing python commands or use {\ttfamily execfile(...)} to execute a python script
+\end{DoxyEnumerate}
+\item In a last terminal you can start or stop the dynamic graph by executing the following R\+OS services\+:
+\begin{DoxyEnumerate}
+\item Start dynamic graph 
+\begin{DoxyCode}
+rosservice call /\hyperlink{namespacedynamic__graph}{dynamic\_graph}/start\_dynamic\_graph
+\end{DoxyCode}
+
+\item Stop dynamic graph 
+\begin{DoxyCode}
+rosservice call /\hyperlink{namespacedynamic__graph}{dynamic\_graph}/stop\_dynamic\_graph
+\end{DoxyCode}
+ 
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}

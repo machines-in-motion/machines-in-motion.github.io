@@ -1,0 +1,379 @@
+In order to create the robot one must follow the procedure described in the pages below\+:
+
+\hyperlink{subsubpage_robot_package}{4.\+1/ Create a robot/object/environment package}
+
+\hyperlink{subsubpage_stl}{4.\+2/ How to generate S\+TL files for visualisation}
+
+\hyperlink{subsubpage_stl_to_obj}{4.\+3/ Convert the stl files in obj files}
+
+\hyperlink{subsubpage_urdf}{4.\+4/ How\+To create U\+R\+DF files}
+
+\hyperlink{subsubpage_implement_dgm}{4.\+5/ Implement the dynamic\+\_\+graph\+\_\+manager specific to your robot} \hypertarget{subsubpage_robot_package}{}\section{4.1/ Create a robot/object/environment package}\label{subsubpage_robot_package}
+\hypertarget{subsubpage_robot_package_robot_properties_context}{}\subsection{4.\+1.\+1/ Context}\label{subsubpage_robot_package_robot_properties_context}
+There is no real convention about the naming of these package, certain groups will call them robot\+\_\+properties\+\_\+\mbox{[}robot name\mbox{]} others \mbox{[}robot name\mbox{]}\+\_\+description.
+
+Lab convention\+:
+\begin{DoxyItemize}
+\item For robots the package name will be called\+: robot\+\_\+properties\+\_\+\mbox{[}robot name\mbox{]}
+\item For other things like objects, environment, ...\+: \mbox{[}object/environment name\mbox{]}\+\_\+description
+\end{DoxyItemize}
+
+In the following we will talk about creating of these packages which are typically called robot\+\_\+properties\+\_\+\mbox{[}robot name\mbox{]} in our case. The following description is valid for both name conventions.\hypertarget{subsubpage_robot_package_robot_properties_ci}{}\subsection{4.\+1.\+2/ Continuous integration\+:}\label{subsubpage_robot_package_robot_properties_ci}
+First of all these packages are catkin packages, so they follow the classic packaging from the Continuous Integration. Typically follow the packaging of the python package located in \href{https://git-amd.tuebingen.mpg.de/amd-clmc/ci_example}{\tt https\+://git-\/amd.\+tuebingen.\+mpg.\+de/amd-\/clmc/ci\+\_\+example}. The folder structure is the following\+:
+
+
+\begin{DoxyItemize}
+\item robot\+\_\+properties\+\_\+\mbox{[}robot name\mbox{]}
+\begin{DoxyItemize}
+\item config/
+\begin{DoxyItemize}
+\item \mbox{[}robot\+\_\+name\mbox{]}.yaml \{Contains some parameters of the robot for specific application like the dynamic\+\_\+graph\+\_\+manager \}
+\item other.\+yaml \{More yaml parameters\}
+\item other.\+ext \{More exotics parameter files\}
+\end{DoxyItemize}
+\item launch/ \{This contains the typical roslaunch one might use to load the robot description in ros/rviz/...\}
+\item meshes/ \{Contains all the necessary meshes one may need\}
+\begin{DoxyItemize}
+\item stl/
+\begin{DoxyItemize}
+\item body\+\_\+link.\+stl
+\end{DoxyItemize}
+\item obj/ \{gepetto-\/viewer, rviz and pybullet obj files works\}
+\begin{DoxyItemize}
+\item body\+\_\+link.\+obj
+\end{DoxyItemize}
+\item dae/
+\begin{DoxyItemize}
+\item body\+\_\+link.\+dae
+\end{DoxyItemize}
+\item ...
+\end{DoxyItemize}
+\item nodes/
+\begin{DoxyItemize}
+\item executables \{There are executables that one can launch using rosrun\}
+\end{DoxyItemize}
+\item rqt/ \{This folder contain the potential robot specific rqt perspectives\}
+\item rviz/ \{This folder contain the robot specific rviz environment\}
+\item python/
+\begin{DoxyItemize}
+\item robot\+\_\+properties\+\_\+\mbox{[}robot\+\_\+name\mbox{]}/ \{Please follow this naming convention!!!\}
+\begin{DoxyItemize}
+\item \+\_\+\+\_\+init\+\_\+\+\_\+.\+py
+\item other.\+py
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item xacro/ \{This contains the xacro files that correspond to the urdfs. These are the only files one need to modify, An automatic generation urdf files from these is present in the C\+Make\+Lists.\+txt so that all have the last generated urdf file from the urdf.\}
+\item C\+Makelists.\+txt \{\href{https://git-amd.tuebingen.mpg.de/amd-clmc/robot_properties_quadruped/blob/master/CMakeLists.txt}{\tt https\+://git-\/amd.\+tuebingen.\+mpg.\+de/amd-\/clmc/robot\+\_\+properties\+\_\+quadruped/blob/master/\+C\+Make\+Lists.\+txt}\}
+\item package.\+xml \{\href{https://git-amd.tuebingen.mpg.de/amd-clmc/robot_properties_quadruped/blob/master/package.xml}{\tt https\+://git-\/amd.\+tuebingen.\+mpg.\+de/amd-\/clmc/robot\+\_\+properties\+\_\+quadruped/blob/master/package.\+xml}\}
+\item setup.\+py \{\href{https://git-amd.tuebingen.mpg.de/amd-clmc/robot_properties_quadruped/blob/master/setup.py}{\tt https\+://git-\/amd.\+tuebingen.\+mpg.\+de/amd-\/clmc/robot\+\_\+properties\+\_\+quadruped/blob/master/setup.\+py}\} 
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{subsubpage_stl}{}\section{4.2/ How to generate S\+TL files for visualisation}\label{subsubpage_stl}
+\hypertarget{subsubpage_stl_simplify_cad}{}
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*2{|X[-1]}|}
+\caption{}\label{subsubpage_stl_simplify_cad}\\
+\hline
+\rowcolor{\tableheadbgcolor}\multicolumn{2}{|p{(\linewidth-\tabcolsep*2-\arrayrulewidth*1)*2/2}|}{\cellcolor{\tableheadbgcolor}{\bf Simplify your C\+AD files }}\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\multicolumn{2}{|p{(\linewidth-\tabcolsep*2-\arrayrulewidth*1)*2/2}|}{\cellcolor{\tableheadbgcolor}{\bf Simplify your C\+AD files }}\\\cline{1-2}
+\endhead
+Original C\+AD assembly. & \\\cline{1-2}
+Remove all unecessary component. & \\\cline{1-2}
+Remove all unnecessary features. & \\\cline{1-2}
+Simplify and remodel sub-\/assemblies. & \\\cline{1-2}
+\end{longtabu}
+
+
+\hypertarget{subsubpage_stl_coordinate_system}{}
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*2{|X[-1]}|}
+\caption{}\label{subsubpage_stl_coordinate_system}\\
+\hline
+\rowcolor{\tableheadbgcolor}\multicolumn{2}{|p{(\linewidth-\tabcolsep*2-\arrayrulewidth*1)*2/2}|}{\cellcolor{\tableheadbgcolor}{\bf Set your coordinate system to match the conventions }}\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\multicolumn{2}{|p{(\linewidth-\tabcolsep*2-\arrayrulewidth*1)*2/2}|}{\cellcolor{\tableheadbgcolor}{\bf Set your coordinate system to match the conventions }}\\\cline{1-2}
+\endhead
+Quadruped Coordinate System Convention
+
+X→ Forward
+
+Y → Left
+
+Z → Upwards &
+
+\\\cline{1-2}
+Quadruped Subcomponent Convention
+
+In the zero position of the robot all the coordinate systems need to have the same orientation! (see picture on the right)
+
+For the quadruped this means that two versions (right side and left side) of the upper leg and the lower leg have to be created.
+
+The subcomponent coordinate systems have to be placed on the joint rotation axes and the connecting face. & \\\cline{1-2}
+If the Solidworks part origin is in the right location you will need to generate 3 axes that intersect at the origin. Got to next step.
+
+If the Solidworks part origin is not in the right location you will have to do another intermediate step.
+
+Generate an assembly and insert the part.
+
+Use the mates funtion to align the part such that the origin of the assembly is in the desired location.
+
+Generate three axes that intersect at the origin.
+
+Go to next step.
+
+
+\begin{DoxyCode}
+Why is \textcolor{keyword}{this} necessary?
+
+It seems that Solidworks always places the coordinate systems at the origin. So \textcolor{keywordflow}{if} the origin is not in the
+       desired location of the coordinate system that has to be corrected first.
+If there is a better solution to \textcolor{keyword}{this} please update \textcolor{keyword}{this} page.
+\end{DoxyCode}
+ & \\\cline{1-2}
+Choose \char`\"{}\+Reference Geometry\char`\"{}.
+
+Choose Coordinate System.
+
+Select the correct axes and confirm. & 
+
+ \\\cline{1-2}
+\end{longtabu}
+
+
+\hypertarget{subsubpage_stl_save_stl_files}{}
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*2{|X[-1]}|}
+\caption{}\label{subsubpage_stl_save_stl_files}\\
+\hline
+\rowcolor{\tableheadbgcolor}\multicolumn{2}{|p{(\linewidth-\tabcolsep*2-\arrayrulewidth*1)*2/2}|}{\cellcolor{\tableheadbgcolor}{\bf Save as S\+TL file }}\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\multicolumn{2}{|p{(\linewidth-\tabcolsep*2-\arrayrulewidth*1)*2/2}|}{\cellcolor{\tableheadbgcolor}{\bf Save as S\+TL file }}\\\cline{1-2}
+\endhead
+\multicolumn{2}{|p{(\linewidth-\tabcolsep*2-\arrayrulewidth*1)*2/2}|}{S\+TL File naming conventions\+:
+
+
+\begin{DoxyItemize}
+\item file name in small letters → no capital letters
+\item no space or characters like \# \textbackslash{} / in name
+\item no dashes in name
+\item preferably underscore between words
+\end{DoxyItemize}
+
+Example\+: quadruped\+\_\+robot\+\_\+body.\+stl
+
+}\\\cline{1-2}
+
+\begin{DoxyItemize}
+\item Choose File→ Save as → S\+TL
+\item Select unit → Meters
+\item Select resolution → Coarse
+\item Make sure to check the box \char`\"{}\+S\+T\+L Ausgabedaten nicht auf positiven Raum übertragen\char`\"{}. (otherwise the coordinate system will be placed randomly)
+\item Select the coordinate system that you created.
+\item Confirm and save the file as S\+TL 
+\end{DoxyItemize}& \\\cline{1-2}
+
+\begin{DoxyItemize}
+\item Solidworks uses capital letters for the file extension for some reason → . S\+TL
+\item Use the file browser to change the file extension from .S\+TL to .stl 
+\end{DoxyItemize}&\\\cline{1-2}
+
+\begin{DoxyItemize}
+\item Upload the S\+TL files to your Wiki page.
+\item Document the distances between the coordinate systems of the parts on the Wiki. 
+\end{DoxyItemize}&  \\\cline{1-2}
+\end{longtabu}
+\hypertarget{subsubpage_stl_to_obj}{}\section{4.3/ Convert the stl files in obj files}\label{subsubpage_stl_to_obj}
+\hypertarget{subsubpage_stl_to_obj_stl_obj_sec_download}{}\subsection{4.\+3.\+1/ Download the scripts}\label{subsubpage_stl_to_obj_stl_obj_sec_download}
+Download the following package using the package manager\+: 
+\begin{DoxyCode}
+mkdir devel # \textcolor{keywordflow}{if} not done already
+cd devel
+git clone git@git-amd.tuebingen.mpg.de:amd-clmc/treep\_amd\_clmc.git
+treep --clone model\_tools
+\end{DoxyCode}
+ This should clone the repository in \char`\"{}workspace/src/catkin/utilities/model\+\_\+tools\char`\"{} from \href{https://git-amd.tuebingen.mpg.de/amd-clmc/model_tools}{\tt https\+://git-\/amd.\+tuebingen.\+mpg.\+de/amd-\/clmc/model\+\_\+tools} with the following output\+: \hypertarget{subsubpage_stl_to_obj_stl_obj_sec_compilation}{}\subsection{4.\+3.\+2/ Compile the package with catkin}\label{subsubpage_stl_to_obj_stl_obj_sec_compilation}
+This compilation will tell catkin where to find the python scripts the binaries depends on. In order to do so change directory to your catkin workspace and run\+: 
+\begin{DoxyCode}
+catkin\_make
+\end{DoxyCode}
+\hypertarget{subsubpage_stl_to_obj_stl_obj_sec_run}{}\subsection{4.\+3.\+3/ Run the conversion script}\label{subsubpage_stl_to_obj_stl_obj_sec_run}
+The conversion tools is located in model\+\_\+tools/nodes/stl\+\_\+to\+\_\+obj. Though in order to run this tools you need to be in the active directory because the input path will local in order to makes things easy for the user. This is the reason why this binary is available through ros\+: 
+\begin{DoxyCode}
+rosrun model\_tools stl\_to\_obj --input\_stl\_dir [path to a stl folder] --output\_obj\_dir [path to a obj folder
+      ]
+\end{DoxyCode}
+ I strongly suggest you check the \char`\"{}–help\char`\"{} or \char`\"{}-\/h\char`\"{} output\+: 
+\begin{DoxyCode}
+rosrun model\_tools stl\_to\_obj -h
+\end{DoxyCode}
+ Last output known (28/02/2019) for the above instruction\+: \hypertarget{subsubpage_stl_to_obj_stl_obj_sec_usage}{}\subsection{4.\+3.\+3/ Typical use.}\label{subsubpage_stl_to_obj_stl_obj_sec_usage}
+Change directory to your \mbox{[}robot\+\_\+name\mbox{]}\+\_\+description/meshes or your robot\+\_\+properties\+\_\+\mbox{[}robot\+\_\+name\mbox{]}/meshes where you saved the stl files in stl\+: 
+\begin{DoxyCode}
+- robot\_properties\_[robot\_name]:
+  - meshes:
+  - stl:
+    - body.stl
+    - arm.stl
+    ...
+\end{DoxyCode}
+ in the meshes folder you can typically run\+: 
+\begin{DoxyCode}
+rosrun model\_tools stl\_to\_obj -i stl/ -o obj/
+\end{DoxyCode}
+ \hypertarget{subsubpage_urdf}{}\section{4.4/ How\+To create U\+R\+DF files}\label{subsubpage_urdf}
+The U\+R\+DF file encodes all the information regarding dimensions, weight, inertias and meshes that are required for realistic simulation.
+
+\hypertarget{subsubpage_urdf_urdf}{}
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*2{|X[-1]}|}
+\caption{}\label{subsubpage_urdf_urdf}\\
+\hline
+\rowcolor{\tableheadbgcolor}{\bf Steps }&{\bf Screenshots }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}{\bf Steps }&{\bf Screenshots }\\\cline{1-2}
+\endhead
+For calculating the inertias in Solidworks the mass properties have to be set correctly for all of the subcomponents.
+
+For parts with constant density set the material properties to the right material.
+
+For the 3d printed parts I use the following materials\+:
+\begin{DoxyItemize}
+\item Fortus PC or Duraform H\+ST → Solidworks Material A\+BS PC with density of 1070 kg/m3
+\item Projet M\+X3 Material → P\+M\+MA with density of 1190 kg/m3
+\item Stainless Steel Screws → 1.\+4000 X6\+C\+R13 with density of 7700 kg/m3 
+\end{DoxyItemize}&  \\\cline{1-2}
+For parts made from different material or unknown density you can override the mass calculation and set the total weight manually.
+
+Determine the weight of all the parts with a weight scale.
+
+In Solidworks choose → Evaluate → Mass Properties → Override Mass Properties and input the correct mass.
+
+Example\+: The motor rotor consists of an aluminum frame with steel magnets.
+
+Therefore the weight has to be measured and set correctly in Solidworks. &  \\\cline{1-2}
+Once the weight of all of the subcomponents is set open the assembly and verify that the combined weight is correct.
+
+In the case of the upper leg the total weight is 149g. &  \\\cline{1-2}
+Create a coordinate system according to your conventions.
+
+The coordinate systems has to match the one from the S\+TL files. Quadruped S\+TL files for Visualisation
+
+Choose Evaluate → Mass Properties and set the output coordinate system to the one you created!
+
+For the quadruped robot we need a right and left version of the coordinate system. & \\\cline{1-2}
+Set the units to Meters and Kilogramms.
+
+Set the precision to 8 decimal spaces. & \\\cline{1-2}
+Copy and record the weight, the center of mass position and the inertia matrix.
+
+Use the second inertia matrix that Solidworks calculates. (Lxx / Lxy / Lxz / ...)
+
+That is the inertia of all the parts with respect to the center of mass and aligned to the coordinate system that you have defined.
+
+The U\+R\+DF data required for the upper leg would be the following\+:
+
+Mass\+: 0.\+14853845 Kilogramm
+
+Center of Mass Position \mbox{[}m\mbox{]}\+: X = -\/0.\+00001377 Y = -\/0.\+01936299 Z = -\/0.\+07871217
+
+Inertia Matrix\+:
+
+Trägheitsmomente\+: ( Kilogramm $\ast$ Quadratmeter ) Bezogen auf den Massenmittelpunkt und ausgerichtet auf das Ausgabekoordinatensystem. Lxx = 0.\+00041100 Lxy = 0.\+00000000 Lxz = -\/0.\+00000009 Lyx = 0.\+00000000 Lyy = 0.\+00041184 Lyz = 0.\+00004668 Lzx = -\/0.\+00000009 Lzy = 0.\+00004668 Lzz = 0.\+00003022
+
+Document all of the data on the Wiki. & \\\cline{1-2}
+\end{longtabu}
+\hypertarget{subsubpage_implement_dgm}{}\section{4.5/ Implement the dynamic\+\_\+graph\+\_\+manager specific to your robot}\label{subsubpage_implement_dgm}
+\hypertarget{subsubpage_implement_dgm_dgm_impl_sec_reminder}{}\subsection{4.\+4.\+1/ Reminder}\label{subsubpage_implement_dgm_dgm_impl_sec_reminder}
+This page content is heavily based on the concepts described before so please read at least the Section 1. In the following we will describe the practical aspects of the implementation.\hypertarget{subsubpage_implement_dgm_dgm_impl_sec_impl_details}{}\subsection{4.\+4.\+2/ Implementation details}\label{subsubpage_implement_dgm_dgm_impl_sec_impl_details}
+Files discussed here are in the dynamic\+\_\+graph\+\_\+manager repository. To control a robot using the dynamic graph manager, you need to provide\+:
+\begin{DoxyItemize}
+\item A Y\+A\+ML file
+\item A class inheriting from the dynamic graph manager
+\item A main executable that will fetch the Y\+A\+ML file, instantiate you dynamic\+\_\+graph\+\_\+manager daughter class and launch everything.
+\end{DoxyItemize}
+
+We will discuss in more details the creation of such files in the paragraphs. The sensor and control definitions on the Y\+A\+ML file specify the input and outputs of the robot. Based on this specification, a python Device object is constructed.\hypertarget{subsubpage_implement_dgm_dgm_impl_sec_yaml_file}{}\subsubsection{4.\+4.\+2.\+1/ The Y\+A\+M\+L file and the Device.}\label{subsubpage_implement_dgm_dgm_impl_sec_yaml_file}
+This Y\+A\+ML file contains the definition of the Device sensors and control signals. In practice this file is supposed to be in the robot\+\_\+properties\+\_\+\mbox{[}robot name\mbox{]}/config folder. Please refer to the \char`\"{}create a robot
+package\char`\"{} section in this wiki for a better understanding. This paragraph assume you read it all.
+
+For the purpose of this demo we decided to not create a specific robot\+\_\+properties package as this demo is not robot specific. Hence the Y\+A\+ML file is define here\+: simple\+\_\+robot.\+yaml\+: 
+
+Notice the following nodes\+:
+\begin{DoxyItemize}
+\item \char`\"{}is\+\_\+real\+\_\+robot\char`\"{} defines if we are running a simulation or not. If yes the D\+GM will run a single process.
+\item \char`\"{}device\char`\"{} is the node that will define the input/output dynamic graph signal and the memory stored in the shared memory.
+\begin{DoxyItemize}
+\item this device has a \char`\"{}name\char`\"{} which is used in the infrastructure. Please use something meaningful and the S\+A\+ME as the one in your U\+R\+DF file.
+\item \char`\"{}sensors\char`\"{} contains the list of the sensor name. These names are joined with a \char`\"{}size\char`\"{} node which define the size of the data vector.
+\item \char`\"{}controls\char`\"{} is the same as the \char`\"{}sensors\char`\"{} but containing the controls name signal.
+\end{DoxyItemize}
+\item \char`\"{}hardware\+\_\+communication\char`\"{} is the node containing\+:
+\begin{DoxyItemize}
+\item \char`\"{}control\+\_\+period\char`\"{} in Nano Seconds.
+\item \char`\"{}max\+\_\+missed\+\_\+control\char`\"{} which is the control loop done without update from the dynamic graph. If this \char`\"{}missed control iteration\char`\"{} $>$ \char`\"{}max\+\_\+missed\+\_\+control\char`\"{} then the D\+GM enter in safe control mode (sending 0 torques) which can be overwritten (see below).
+\item \char`\"{}maximum\+\_\+time\+\_\+for\+\_\+user\+\_\+cmd\char`\"{} This is the maximum time a hardware asynchronous command M\+U\+ST take. The hardware communication check if he has the time to execute the command and if possible he does it.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{subsubpage_implement_dgm_dgm_impl_sec_hineritance}{}\subsubsection{4.\+4.\+2.\+2/ The class inheriting from the Dynamic\+Graph\+Manager}\label{subsubpage_implement_dgm_dgm_impl_sec_hineritance}
+A subclass of the dynamic graph manager, where you initialize the robot hardware, read the sensor values from the hardware into an output map and send the commands to the robot. These maps are strict copies of the Y\+A\+ML files. So in order to add field or remove fields, just modify the Y\+A\+ML file. Example\+: \char`\"{}simple\+\_\+dgm.\+hpp\char`\"{}
+
+In this files there are key method to analyze\+:
+
+The first is \char`\"{}initialize\+\_\+hardware\+\_\+communication\+\_\+process\char`\"{}.  This method is here for you to\+:
+\begin{DoxyItemize}
+\item setup the hardware if needed. Of course this particular class does not have any hardware linked so it does not initialize anything.
+\item setup the hardware asynchronous command. Typically user defined command on the hardware. Like \char`\"{}what is you I\+P?\char`\"{} or \char`\"{}\+Here are gains you must apply!\char`\"{}. This mechanism rely on R\+OS services. Hence one can see here the initialization of the R\+OS service\+: \char`\"{}set\+\_\+a\+\_\+boolean\char`\"{}. Again this class does not have hardware so here is just a simple toy example. Notice the acquisition of the ros\+::\+Node\+Handle using \char`\"{}ros\+\_\+init\char`\"{} and the \char`\"{}hw\+\_\+com\+\_\+ros\+\_\+node\+\_\+name\char`\"{}, this will allow your user command to be part of the same namespace as the hardware\+\_\+communication node.
+\end{DoxyItemize}
+
+Next method is \char`\"{}get\+\_\+sensors\+\_\+to\+\_\+map\char`\"{}.  In this method we can notice that\+:
+\begin{DoxyItemize}
+\item the map has already keys assigned to it. These keys are automatically generated using the Y\+A\+ML described above. Notice in the Y\+A\+ML file, the nodes \char`\"{}sensors\char`\"{} which contains the nodes \char`\"{}encoders\char`\"{}, \char`\"{}imu\+\_\+accelerometer\char`\"{}, \char`\"{}imu\+\_\+gyroscope\char`\"{} and \char`\"{}imu\char`\"{}. Recognize this names in std\+::map keys.
+\item The map is filled using the sensor data. In our case sensor data are pure noise.
+\item The data from this map are going to be written in the shared memory for the controller to read them.
+\end{DoxyItemize}
+
+The third Method is \char`\"{}set\+\_\+motor\+\_\+controls\+\_\+from\+\_\+map\char`\"{}.  In this method we can notice\+:
+\begin{DoxyItemize}
+\item Again we have the map that comes in which has been defined by default from the Y\+A\+ML file. Notice now the nodes under \char`\"{}device\char`\"{} and under \char`\"{}controls\char`\"{}. Notice the \char`\"{}torques\char`\"{} and the \char`\"{}positions\char`\"{} nodes in the method and in the Y\+A\+ML file.
+\item The data read from this map are acquired from the shared memory which in turn is filled by the dynamic graph controller. So one just need to map these controls to the hardware A\+PI. In this case, again, we have nothing to do because we have no hardware.
+\end{DoxyItemize}\hypertarget{subsubpage_implement_dgm_dgm_impl_sec_main}{}\subsubsection{4.\+4.\+2.\+3/ The main file}\label{subsubpage_implement_dgm_dgm_impl_sec_main}
+a main c++ file, which is the entry point for your program\+: Example\+: main.\+cpp  In this one can notice\+:
+\begin{DoxyItemize}
+\item The instantiation of the Simple\+D\+GM class and its trivial use.
+\item The T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+P\+A\+TH is the path to the config folder in \href{https://git-amd.tuebingen.mpg.de/amd-clmc/dynamic_graph_manager/tree/master/tests/config}{\tt https\+://git-\/amd.\+tuebingen.\+mpg.\+de/amd-\/clmc/dynamic\+\_\+graph\+\_\+manager/tree/master/tests/config}. The Y\+A\+ML we use for this demo is the one used also used for the unit tests. The Simple\+D\+GM is also the class used for the unit tests. So this demo should run without glitches.
+\end{DoxyItemize}\hypertarget{subsubpage_implement_dgm_dgm_impl_sec_hwc_commands}{}\subsection{4.\+4.\+3/ The hardware asynchronous commands\+:}\label{subsubpage_implement_dgm_dgm_impl_sec_hwc_commands}
+In this paragraph we are going to explain in details the mechanism behind the user command. First one need to create a R\+OS service that will perform the asynchronous call. This service is initialized by the user either in the Simple\+D\+GM constructor either in the \char`\"{}initialize\+\_\+hardware\+\_\+communication\+\_\+process\char`\"{} (see paragraph 3.\+4.\+2.\+2/ The class inheriting from the Dynamic\+Graph\+Manager). In order to define a R\+OS service please refer to \href{http://wiki.ros.org/Services}{\tt http\+://wiki.\+ros.\+org/\+Services}.
+
+This R\+OS service will use a specific callback method\+: user\+\_\+command\+\_\+callback  In this code one recognize\+:
+\begin{DoxyItemize}
+\item the R\+OS declaration of a callback method.
+\item the results of the service saved in \char`\"{}res.\+X\+X\+X\+X\char`\"{}. Here \char`\"{}res.\+sanity\+\_\+check\char`\"{}.
+\item the fact that if everything went fine the method returns \char`\"{}true\char`\"{}, which is again a R\+OS related requirement.
+\item finally the call to \char`\"{}add\+\_\+user\+\_\+command()\char`\"{}. It works in the following way\+:
+\begin{DoxyItemize}
+\item This method takes a pointer to a method with the following prototype\+: \char`\"{}void method(void);\char`\"{}.
+\item In this example we generate this pointer using std\+::bind. This manages the arguments of the function. In our case this std\+::bind says that the function to be called \char`\"{}\+Simple\+D\+G\+M\+::user\+\_\+command\char`\"{} is gonna be called using \char`\"{}req.\+input\+\_\+boolean\char`\"{} as argument.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+This convoluted behavior is here to ensure safety between real time and non real time behavior. The methods used by R\+OS are part of the non real time system. Though the hardware user command needs to be executed in the real time thread. This mechanism basically save the user command call into a buffer until the hardware communication process has enough time to execute it.
+
+Please refer to the Y\+A\+ML file once more to notice the node \char`\"{}maximum\+\_\+time\+\_\+for\+\_\+user\+\_\+cmd\char`\"{} expressed in nano seconds as an integer. In this example we set this time to be 0.\+1ms. Which means that if the hardware communication thread is sleeping more than 0.\+1ms then the user command can be executed safely.
+
+Because this system rely on R\+OS service calls I suggest that the developer of the robot hardware propose a nicer python interface in order to use these commands. See \href{https://git-amd.tuebingen.mpg.de/amd-clmc/dynamic_graph_manager/blob/master/demos/simple_dgm_hwd_client.py}{\tt https\+://git-\/amd.\+tuebingen.\+mpg.\+de/amd-\/clmc/dynamic\+\_\+graph\+\_\+manager/blob/master/demos/simple\+\_\+dgm\+\_\+hwd\+\_\+client.\+py}\hypertarget{subsubpage_implement_dgm_dgm_impl_sec_safety_mode}{}\subsection{4.\+4.\+3/ The safety mode\+:}\label{subsubpage_implement_dgm_dgm_impl_sec_safety_mode}
+As explain in the Y\+A\+ML file description paragraph one can modify when the D\+GM enter into safe mode and what behavior it should have.
+
+These behavior are also define this demo\+: is\+\_\+in\+\_\+safety\+\_\+mode and compute\+\_\+safety\+\_\+controls\+: 
+
+One can identify the inheritance of the detection method as well as the method that computes the safety control. 
