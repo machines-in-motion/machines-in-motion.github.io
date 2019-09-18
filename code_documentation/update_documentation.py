@@ -1,16 +1,29 @@
 #! /usr/bin/python
-from os import path, mkdir
+from os import path, mkdir, walk
 import re
 import shutil
 import treep.treep_git
 import treep.files
 import rospkg
 
-def copy_doc_package(package_name):
-    ros_pack = rospkg.RosPack()
-    share_path = path.dirname(ros_pack.get_path(package_name))
-    print(share_path)
 
+def get_ros_install_share_path():
+    """
+    Use rospack to get the path to the installation folder (supposed sourced)
+    """
+    ros_pack = rospkg.RosPack()
+    if "shared_memory" in ros_pack.list():
+        return path.dirname(ros_pack.get_path("shared_memory"))
+    else:
+        raise Exception('The shared_memory is not part of the cloned packages')
+    return 
+
+
+def copy_doc_package(package_name):
+    """
+    Copy/Replace the documentation of the ros package in this repository.
+    """
+    share_path = get_ros_install_share_path()
     local_doc = path.join("code_documentation", package_name)
     if path.isdir(local_doc):
         shutil.rmtree(local_doc)
@@ -19,19 +32,31 @@ def copy_doc_package(package_name):
     if path.isdir(local_doc_html):
         shutil.copytree(local_doc_html, local_doc)
 
-if __name__ == "__main__":
-    ros_pack = rospkg.RosPack()
-    share_path = path.dirname(ros_pack.get_path("dynamic_graph_manager"))
-    print(share_path)
-    treep_projects = treep.files.read_configuration_files(share_path)
 
+def find_ros_packages():
+    """
+    Find the ros packages cloned from the machines-in-motion github organisation
+    """
+    share_path = get_ros_install_share_path()
+    treep_projects = treep.files.read_configuration_files(share_path)
     repos_names = treep_projects.get_repos("CORE_ROBOTICS")
-    print(repos_names)
+
+    packages_list = []
     for repos_name in repos_names:
         repos_path = treep_projects.get_repo_path(repos_name)
         repos_url = treep.treep_git.get_url(repos_path)
-        if re.search(repos_url, "*machines-in-motion*"):
-            print(repos_path)
-            print(repos_url)
+        if "machines-in-motion" in repos_url:
+            for root, _, files in walk(repos_path):
+                for file in files:
+                    if file == "package.xml":
+                        packages_list.append(path.basename(root))
+    
+    return packages_list
 
-        
+if __name__ == "__main__":
+    
+    share_path = get_ros_install_share_path()
+    print(share_path)
+    packages_list = find_ros_packages()
+    for package in packages_list:
+        copy_doc_package(package)
