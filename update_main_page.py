@@ -127,7 +127,7 @@ if __name__ == "__main__":
     # We get all the code coverage computed from the bamboo agents
     exported_code_cov_list = []
     (_, exported_code_cov_list, _) = walk("code_coverage").next()
-    print("The list of all the code coverage available yet")
+    print("The list of all the available documentation yet")
     print (exported_code_cov_list)
 
     # We update the list in the website
