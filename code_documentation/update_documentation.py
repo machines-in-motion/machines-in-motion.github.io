@@ -25,12 +25,19 @@ def copy_doc_package(package_name):
     """
     share_path = get_ros_install_share_path()
     local_doc = path.join("code_documentation", package_name)
+    local_doc_html = path.join(share_path, package_name, "doc", "html")
+    
+    if not path.isdir(local_doc_html):
+        print ("WARNING: cannot find the documentation for the package [",
+               package_name,
+               "]. Nothing to be done")
+        return
+
     if path.isdir(local_doc):
         shutil.rmtree(local_doc)
-
-    local_doc_html = path.join(share_path, package_name, "doc", "html")
-    if path.isdir(local_doc_html):
-        shutil.copytree(local_doc_html, local_doc)
+    
+    shutil.copytree(local_doc_html, local_doc)
+    return
 
 
 def find_ros_packages():
@@ -60,3 +67,4 @@ if __name__ == "__main__":
     packages_list = find_ros_packages()
     for package in packages_list:
         copy_doc_package(package)
+
