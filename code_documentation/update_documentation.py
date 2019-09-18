@@ -5,6 +5,8 @@ import shutil
 import treep.treep_git
 import treep.files
 import rospkg
+from bs4 import BeautifulSoup
+import re
 
 
 def get_ros_install_share_path():
@@ -46,13 +48,13 @@ def find_ros_packages():
     """
     share_path = get_ros_install_share_path()
     treep_projects = treep.files.read_configuration_files(share_path)
-    repos_names = treep_projects.get_repos("CORE_ROBOTICS")
+    repos_names = treep_projects.get_repos_names()
 
     packages_list = []
     for repos_name in repos_names:
         repos_path = treep_projects.get_repo_path(repos_name)
         repos_url = treep.treep_git.get_url(repos_path)
-        if "machines-in-motion" in repos_url:
+        if repos_url and "machines-in-motion" in repos_url:
             for root, _, files in walk(repos_path):
                 for file in files:
                     if file == "package.xml":
@@ -60,11 +62,40 @@ def find_ros_packages():
     
     return packages_list
 
+
+def update_index_html():
+    with open("index_template.html") as fp:
+        soup = BeautifulSoup(fp, features="lxml")
+    
+    # print(soup.prettify())
+    pkg_tag_ul = soup.find(id="list_pkg")
+
+    for package in packages_list:
+        string_href = (
+          "https://machines-in-motion.github.io/code_documentation/" +
+          package + "/"
+        )
+        string_displayed = package
+
+        pkg_tag_li = soup.new_tag("li")
+        pkg_tag_ul.append(pkg_tag_li)
+
+        pkg_tag_a = soup.new_tag("a", href=string_href)
+        pkg_tag_a.string = string_displayed
+        pkg_tag_li.append(pkg_tag_a)
+    
+    with open("index.html", 'w') as fp:
+        fp.write(soup.prettify())
+
+
 if __name__ == "__main__":
     
     share_path = get_ros_install_share_path()
     print(share_path)
     packages_list = find_ros_packages()
+
+    print (packages_list)
     for package in packages_list:
         copy_doc_package(package)
 
+    update_index_html()
