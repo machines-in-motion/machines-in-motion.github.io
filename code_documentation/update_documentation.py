@@ -21,7 +21,7 @@ def get_ros_install_share_path():
     return 
 
 
-def copy_doc_package(package_name):
+def copy_doc_package(package_name, share_path):
     """
     Copy/Replace the documentation of the ros package in this repository.
     """
@@ -42,11 +42,10 @@ def copy_doc_package(package_name):
     return
 
 
-def find_ros_packages():
+def find_ros_packages(share_path):
     """
     Find the ros packages cloned from the machines-in-motion github organisation
     """
-    share_path = get_ros_install_share_path()
     treep_projects = treep.files.read_configuration_files(share_path)
     repos_names = treep_projects.get_repos_names()
 
@@ -63,14 +62,16 @@ def find_ros_packages():
     return packages_list
 
 
-def update_index_html():
+def update_index_html(exported_doc_list):
+    """
+    Parse the index_template.html and 
+    """
     with open("index_template.html") as fp:
         soup = BeautifulSoup(fp, features="lxml")
-    
-    # print(soup.prettify())
-    pkg_tag_ul = soup.find(id="list_pkg")
 
-    for package in packages_list:
+    pkg_tag_ul = soup.find(id="list_pkg")
+  
+    for package in exported_doc_list:
         string_href = (
           "https://machines-in-motion.github.io/code_documentation/" +
           package + "/"
@@ -89,13 +90,25 @@ def update_index_html():
 
 
 if __name__ == "__main__":
-    
+    # First we get the path to the catkin install share folder
     share_path = get_ros_install_share_path()
+    print("The path to the installation folder")
     print(share_path)
-    packages_list = find_ros_packages()
 
+    # Then we find all the catkin package wich are in the machines-in-motion url
+    packages_list = find_ros_packages(share_path)
+    print("The list of the cloned catkin package from the machines-in-motion github")
     print (packages_list)
-    for package in packages_list:
-        copy_doc_package(package)
 
-    update_index_html()
+    # We copy the built documentation inside this repository
+    for package in packages_list:
+        copy_doc_package(package, share_path)
+
+    # We get all the package names form which the documentation is available
+    exported_doc_list = []
+    (_, exported_doc_list, _) = walk("code_documentation").next()
+    print("The list of all the available documentation yet")
+    print (exported_doc_list)
+
+    # We update the list in the website
+    update_index_html(exported_doc_list)
