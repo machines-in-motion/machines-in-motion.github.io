@@ -1,0 +1,5 @@
+var namespacepython_1_1leg__impedance__control_1_1quad__leg__impedance__controller =
+[
+    [ "quad_com_control", "classpython_1_1leg__impedance__control_1_1quad__leg__impedance__controller_1_1quad__com__control.html", "classpython_1_1leg__impedance__control_1_1quad__leg__impedance__controller_1_1quad__com__control" ],
+    [ "quad_leg_impedance_controller", "classpython_1_1leg__impedance__control_1_1quad__leg__impedance__controller_1_1quad__leg__impedance__controller.html", "classpython_1_1leg__impedance__control_1_1quad__leg__impedance__controller_1_1quad__leg__impedance__controller" ]
+];
