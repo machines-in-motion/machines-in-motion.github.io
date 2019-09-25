@@ -132,3 +132,5 @@ if __name__ == "__main__":
 
     # We update the list in the website
     update_index_html(exported_doc_list, exported_code_cov_list)
+
+    print("Done updating the website")
