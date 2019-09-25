@@ -1,4 +1,0 @@
-var namespacepython_1_1leg__impedance__control_1_1leg__impedance__controller =
-[
-    [ "leg_impedance_controller", "classpython_1_1leg__impedance__control_1_1leg__impedance__controller_1_1leg__impedance__controller.html", "classpython_1_1leg__impedance__control_1_1leg__impedance__controller_1_1leg__impedance__controller" ]
-];
