@@ -67,7 +67,7 @@ def update_index_html(exported_doc_list, exported_code_cov_list):
     Parse the index_template.html and 
     """
     with open("index_template.html") as fp:
-        soup = BeautifulSoup(fp, features="lxml")
+        soup = BeautifulSoup(fp)
 
     pkg_tag_ul = soup.find(id="list_documentation")
     for doc_folder in exported_doc_list:
