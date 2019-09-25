@@ -70,6 +70,7 @@ def update_index_html(exported_doc_list, exported_code_cov_list):
         soup = BeautifulSoup(fp)
 
     pkg_tag_ul = soup.find(id="list_documentation")
+    exported_doc_list.sort()
     for doc_folder in exported_doc_list:
         string_href = (
           "https://machines-in-motion.github.io/code_documentation/" +
@@ -116,6 +117,7 @@ if __name__ == "__main__":
 
     # We copy the built documentation inside this repository
     for package in packages_list:
+        print ("copying the doc from ", package) 
         copy_doc_package(package, share_path)
 
     # We get all the package names form which the documentation is available
