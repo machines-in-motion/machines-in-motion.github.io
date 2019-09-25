@@ -120,9 +120,7 @@ Collaboration diagram for shared_memory::Exchange_manager_memory&lt; Serializabl
 <div class="dyncontent">
 <div class="center"><img src="classshared__memory_1_1Exchange__manager__memory__coll__graph.png" border="0" usemap="#shared__memory_1_1Exchange__manager__memory_3_01Serializable_00_01QUEUE__SIZE_01_4_coll__map" alt="Collaboration graph"/></div>
 <map name="shared__memory_1_1Exchange__manager__memory_3_01Serializable_00_01QUEUE__SIZE_01_4_coll__map" id="shared__memory_1_1Exchange__manager__memory_3_01Serializable_00_01QUEUE__SIZE_01_4_coll__map">
-<area shape="rect" id="node2" href="structshared__memory_1_1Mutex.html" title="shared_memory::Mutex" alt="" coords="49,5,208,32"/>
-<area shape="rect" id="node3" href="classshared__memory_1_1Serialized__write.html" title="shared_memory::Serialized\l_write\&lt; shared_memory::\lSerializable \&gt;" alt="" coords="39,56,219,112"/>
-<area shape="rect" id="node4" href="classshared__memory_1_1Serialized__read.html" title="shared_memory::Serialized\l_read\&lt; shared_memory::Serializable \&gt;" alt="" coords="5,135,252,177"/>
+<area shape="rect" id="node2" href="structshared__memory_1_1Mutex.html" title="shared_memory::Mutex" alt="" coords="34,5,193,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -140,10 +138,10 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Exchange_manager_memory</b> (std::string segment_id, std::string object_id)</td></tr>
 <tr class="separator:a4bb976aa1b16314bf4181035bb746869"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0efbb57f5fafc8faa52f112b4db705e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa0efbb57f5fafc8faa52f112b4db705e"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>read_serialized</b> (<a class="el" href="classshared__memory_1_1Serializable.html">Serializable</a> &amp;serializable)</td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>read_serialized</b> (Serializable &amp;serializable)</td></tr>
 <tr class="separator:aa0efbb57f5fafc8faa52f112b4db705e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a489329165bd1362ee8648560f4a4c526"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a489329165bd1362ee8648560f4a4c526"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>write_serialized</b> (const <a class="el" href="classshared__memory_1_1Serializable.html">Serializable</a> &amp;serializable)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>write_serialized</b> (const Serializable &amp;serializable)</td></tr>
 <tr class="separator:a489329165bd1362ee8648560f4a4c526"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89d6cea01eca5ba87bff929e6bc7049f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a89d6cea01eca5ba87bff929e6bc7049f"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>write_serialized_id</b> (int id)</td></tr>
@@ -202,22 +200,25 @@ std::deque&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>co
 <tr class="memitem:a1564230ceaab75345c588eec4b4102d8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1564230ceaab75345c588eec4b4102d8"></a>
 consumer_queue *&#160;</td><td class="memItemRight" valign="bottom"><b>consumed_</b></td></tr>
 <tr class="separator:a1564230ceaab75345c588eec4b4102d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf48cf76730534813965fe8e3db84e66"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abf48cf76730534813965fe8e3db84e66"></a>
-double *&#160;</td><td class="memItemRight" valign="bottom"><b>values_</b></td></tr>
-<tr class="separator:abf48cf76730534813965fe8e3db84e66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd83b52f30a91453e2cad5feff15b628"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abd83b52f30a91453e2cad5feff15b628"></a>
+char *&#160;</td><td class="memItemRight" valign="bottom"><b>values_</b></td></tr>
+<tr class="separator:abd83b52f30a91453e2cad5feff15b628"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef0e64fe32b05ee8799a7889d15abad3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aef0e64fe32b05ee8799a7889d15abad3"></a>
 <a class="el" href="structshared__memory_1_1Mutex.html">shared_memory::Mutex</a>&#160;</td><td class="memItemRight" valign="bottom"><b>locker_</b></td></tr>
 <tr class="separator:aef0e64fe32b05ee8799a7889d15abad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8792112f65a78cb9b9dd6b9a8283eb8f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8792112f65a78cb9b9dd6b9a8283eb8f"></a>
-<a class="el" href="classshared__memory_1_1Serialized__read.html">Serialized_read</a>&lt; <a class="el" href="classshared__memory_1_1Serializable.html">Serializable</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>serialized_read_</b></td></tr>
+<a class="el" href="classshared__memory_1_1Serialized__read.html">Serialized_read</a>&lt; Serializable &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>serialized_read_</b></td></tr>
 <tr class="separator:a8792112f65a78cb9b9dd6b9a8283eb8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5643dc9470bd701ac3f16fc6f54eef4e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5643dc9470bd701ac3f16fc6f54eef4e"></a>
-<a class="el" href="classshared__memory_1_1Serialized__write.html">Serialized_write</a>&lt; <a class="el" href="classshared__memory_1_1Serializable.html">Serializable</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>serialized_write_</b></td></tr>
+<a class="el" href="classshared__memory_1_1Serialized__write.html">Serialized_write</a>&lt; Serializable &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>serialized_write_</b></td></tr>
 <tr class="separator:a5643dc9470bd701ac3f16fc6f54eef4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c611c4c08b1bc75a53ab4c04d05f0b8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9c611c4c08b1bc75a53ab4c04d05f0b8"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>serializable_size_</b></td></tr>
+<tr class="separator:a9c611c4c08b1bc75a53ab4c04d05f0b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/<a class="el" href="exchange__manager__memory_8hpp_source.html">exchange_manager_memory.hpp</a></li>
-<li>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/<a class="el" href="exchange__manager__memory_8hxx_source.html">exchange_manager_memory.hxx</a></li>
+<li>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/<a class="el" href="exchange__manager__memory_8hpp_source.html">exchange_manager_memory.hpp</a></li>
+<li>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/<a class="el" href="exchange__manager__memory_8hxx_source.html">exchange_manager_memory.hxx</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

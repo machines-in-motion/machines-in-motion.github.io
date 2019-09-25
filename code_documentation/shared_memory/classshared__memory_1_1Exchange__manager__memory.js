@@ -27,7 +27,8 @@ var classshared__memory_1_1Exchange__manager__memory =
     [ "produced_", "classshared__memory_1_1Exchange__manager__memory.html#ac661484709ea9bb535f63e38240bcbb0", null ],
     [ "segment_", "classshared__memory_1_1Exchange__manager__memory.html#a4902b4195a9f47c6e997a131736b32de", null ],
     [ "segment_id_", "classshared__memory_1_1Exchange__manager__memory.html#a4a9170555ff4ad57f7721cde5b69c534", null ],
+    [ "serializable_size_", "classshared__memory_1_1Exchange__manager__memory.html#a9c611c4c08b1bc75a53ab4c04d05f0b8", null ],
     [ "serialized_read_", "classshared__memory_1_1Exchange__manager__memory.html#a8792112f65a78cb9b9dd6b9a8283eb8f", null ],
     [ "serialized_write_", "classshared__memory_1_1Exchange__manager__memory.html#a5643dc9470bd701ac3f16fc6f54eef4e", null ],
-    [ "values_", "classshared__memory_1_1Exchange__manager__memory.html#abf48cf76730534813965fe8e3db84e66", null ]
+    [ "values_", "classshared__memory_1_1Exchange__manager__memory.html#abd83b52f30a91453e2cad5feff15b628", null ]
 ];

@@ -5,7 +5,7 @@ var classreal__time__tools_1_1UsbStream =
     [ "activate_stream_mode", "classreal__time__tools_1_1UsbStream.html#a6e13bacd3b24a8e60b27cbcefefdb3f4", null ],
     [ "close_device", "classreal__time__tools_1_1UsbStream.html#acea75055bb37f2a7f351300dbaf28d9e", null ],
     [ "flush", "classreal__time__tools_1_1UsbStream.html#a0bc5fb5783f1833341d55b9b013be6c6", null ],
-    [ "msg_debug_string", "classreal__time__tools_1_1UsbStream.html#a9cdf845cf2a621fdb70228e6b46814f8", null ],
+    [ "msg_debug_string", "classreal__time__tools_1_1UsbStream.html#ac98f3cad23dbc85f47405c3809a22198", null ],
     [ "open_device", "classreal__time__tools_1_1UsbStream.html#a1f6915c42d9742ced10e99d2edf7d8b1", null ],
     [ "read_device", "classreal__time__tools_1_1UsbStream.html#a028f39fcd8c97c49aacf48fdaa8302c8", null ],
     [ "set_poll_mode_timeout", "classreal__time__tools_1_1UsbStream.html#a1c61741541acfca7ecf6deaf0b8ad1fc", null ],

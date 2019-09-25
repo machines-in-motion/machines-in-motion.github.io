@@ -2,17 +2,14 @@ var searchData=
 [
   ['segment_5fexists',['segment_exists',['../namespaceshared__memory.html#a82297c2b7b85c57c53578749c9bd6429',1,'shared_memory']]],
   ['segmentmap',['SegmentMap',['../namespaceshared__memory.html#a9aeebdfb6185497cac7c093cf3d765c5',1,'shared_memory']]],
-  ['serializable',['Serializable',['../classshared__memory_1_1Serializable.html',1,'shared_memory']]],
-  ['serializable_2ehpp',['serializable.hpp',['../serializable_8hpp.html',1,'']]],
-  ['serializable_3c_201_2c_200_20_3e',['Serializable&lt; 1, 0 &gt;',['../classshared__memory_1_1Serializable.html',1,'shared_memory']]],
-  ['serializable_3c_205_2c_200_20_3e',['Serializable&lt; 5, 0 &gt;',['../classshared__memory_1_1Serializable.html',1,'shared_memory']]],
   ['serializable_5fexchange',['Serializable_exchange',['../classshared__memory_1_1Serializable__exchange.html',1,'shared_memory']]],
   ['serializable_5fexchange_2ehpp',['serializable_exchange.hpp',['../serializable__exchange_8hpp.html',1,'']]],
   ['serializable_5fexchange_2ehxx',['serializable_exchange.hxx',['../serializable__exchange_8hxx.html',1,'']]],
+  ['serializable_5fsize',['serializable_size',['../classshared__memory_1_1Serializer.html#af5edd0af254d6061e8e18c0bbec10aa9',1,'shared_memory::Serializer']]],
+  ['serialize',['serialize',['../classshared__memory_1_1Serializer.html#a61ea01a0e5e28fc24c9274455050b1c1',1,'shared_memory::Serializer::serialize()'],['../namespaceshared__memory.html#a003005dc269ebf79f08523dc0f8d1ed0',1,'shared_memory::serialize()']]],
   ['serialized_5fread',['Serialized_read',['../classshared__memory_1_1Serialized__read.html',1,'shared_memory']]],
-  ['serialized_5fread_3c_20shared_5fmemory_3a_3aserializable_20_3e',['Serialized_read&lt; shared_memory::Serializable &gt;',['../classshared__memory_1_1Serialized__read.html',1,'shared_memory']]],
   ['serialized_5fwrite',['Serialized_write',['../classshared__memory_1_1Serialized__write.html',1,'shared_memory']]],
-  ['serialized_5fwrite_3c_20shared_5fmemory_3a_3aserializable_20_3e',['Serialized_write&lt; shared_memory::Serializable &gt;',['../classshared__memory_1_1Serialized__write.html',1,'shared_memory']]],
+  ['serializer',['Serializer',['../classshared__memory_1_1Serializer.html',1,'shared_memory']]],
   ['set',['set',['../classshared__memory_1_1Exchange__manager__producer.html#ac2d65994ca92ede88fcf52f38ef02643',1,'shared_memory::Exchange_manager_producer::set()'],['../namespaceshared__memory.html#a61a2945c994bcbe84cc8dce96a189edb',1,'shared_memory::set(const std::string &amp;segment_id, const std::string &amp;object_id, const std::string &amp;set_)'],['../namespaceshared__memory.html#ace68bf582cfe50ba83a9cfc9b7aed3b2',1,'shared_memory::set(const std::string &amp;segment_id, const std::string &amp;object_id, const ElemType &amp;set_)'],['../namespaceshared__memory.html#a7e37a0a2146d2cfeeccb63390a3d9132',1,'shared_memory::set(const std::string &amp;segment_id, const std::string &amp;object_id, const ElemType *set_, const std::size_t size)'],['../namespaceshared__memory.html#ac6521a6731fa97be21779b1d6c7589ee',1,'shared_memory::set(const std::string &amp;segment_id, const std::string &amp;object_id, const std::vector&lt; ElemType &gt; &amp;set_)'],['../namespaceshared__memory.html#ac8364e5cde6c8a2f1abc2a59035f26a6',1,'shared_memory::set(const std::string &amp;segment_id, const std::string &amp;object_id, const Eigen::Matrix&lt; ElemType, Eigen::Dynamic, 1 &gt; &amp;set_)'],['../namespaceshared__memory.html#a657bb799483a19a96f61706b50aca1e7',1,'shared_memory::set(const std::string &amp;segment_id, const std::string &amp;object_id, const std::pair&lt; FirstType, SecondType &gt; &amp;set_)'],['../namespaceshared__memory.html#a562e79433e54463f39c9c276b8440f4b',1,'shared_memory::set(const std::string &amp;segment_id, const std::string &amp;object_id, const std::map&lt; KeyType, ValueType &gt; &amp;set_)']]],
   ['set_5fclear_5fupon_5fdestruction',['set_clear_upon_destruction',['../classshared__memory_1_1SharedMemorySegment.html#ae2eb51704f44076db6ce79054e9d2572',1,'shared_memory::SharedMemorySegment']]],
   ['set_5fobject',['set_object',['../classshared__memory_1_1SharedMemorySegment.html#a16e6213d7dd1984799bbd8fbe14225dc',1,'shared_memory::SharedMemorySegment']]],
@@ -26,7 +23,5 @@ var searchData=
   ['shmobjects',['ShmObjects',['../namespaceshared__memory.html#ae50b2192256821112a69e47d5314b467',1,'shared_memory']]],
   ['shmstring',['ShmString',['../namespaceshared__memory.html#a07ee51d077030d33ba8408f5938569cc',1,'shared_memory']]],
   ['shmtypehelper',['ShmTypeHelper',['../structshared__memory_1_1ShmTypeHelper.html',1,'shared_memory']]],
-  ['simpleid',['SimpleId',['../classshared__memory_1_1SimpleId.html',1,'shared_memory']]],
-  ['simpleid_2ecpp',['simpleId.cpp',['../simpleId_8cpp.html',1,'']]],
-  ['simpleid_2ehpp',['simpleId.hpp',['../simpleId_8hpp.html',1,'']]]
+  ['simpleid_2ecpp',['simpleId.cpp',['../simpleId_8cpp.html',1,'']]]
 ];
