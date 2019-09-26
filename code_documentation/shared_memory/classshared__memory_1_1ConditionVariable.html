@@ -108,27 +108,18 @@ $(document).ready(function(){initNavTree('classshared__memory_1_1ConditionVariab
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classshared__memory_1_1ConditionVariable-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">shared_memory::ConditionVariable Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>The <a class="el" href="classshared__memory_1_1ConditionVariable.html" title="The ConditionVariable class is here as a anonymous layer on top of the boost intersprocess condition ...">ConditionVariable</a> class is here as a anonymous layer on top of the boost intersprocess condition variable labrary.  
- <a href="classshared__memory_1_1ConditionVariable.html#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="thread__synchronisation_8hpp_source.html">thread_synchronisation.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa420ae733b326fdea278a2c5ecfec871"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa420ae733b326fdea278a2c5ecfec871"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ConditionVariable</b> (const std::string segment_id, const std::string object_id, bool clean_memory_on_destruction=true)</td></tr>
-<tr class="separator:aa420ae733b326fdea278a2c5ecfec871"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84ccb3bcc9255cd145d30b3a91db4e2b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a84ccb3bcc9255cd145d30b3a91db4e2b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1ConditionVariable.html#a84ccb3bcc9255cd145d30b3a91db4e2b">~ConditionVariable</a> ()</td></tr>
-<tr class="memdesc:a84ccb3bcc9255cd145d30b3a91db4e2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">~ConditionVariable is the destructor of the class, his job is to remove the condition variable from the shared memory <br /></td></tr>
-<tr class="separator:a84ccb3bcc9255cd145d30b3a91db4e2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4b6accfbe98b2e23f9e20789cea46f7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae4b6accfbe98b2e23f9e20789cea46f7"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1ConditionVariable.html#ae4b6accfbe98b2e23f9e20789cea46f7">ConditionVariable</a> (const std::string object_id, bool clean_memory_on_destruction)</td></tr>
+<tr class="memdesc:ae4b6accfbe98b2e23f9e20789cea46f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">A condition variable shared over the memory The condition variable is cleaned from the memory on destruction if clean_memory_on_destruction is set to true. <br /></td></tr>
+<tr class="separator:ae4b6accfbe98b2e23f9e20789cea46f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc70cd1401f40e23ca4a6afb33f28bb5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abc70cd1401f40e23ca4a6afb33f28bb5"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1ConditionVariable.html#abc70cd1401f40e23ca4a6afb33f28bb5">notify_all</a> ()</td></tr>
 <tr class="memdesc:abc70cd1401f40e23ca4a6afb33f28bb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">notify_all is notifying all condition variables with the same mutex <br /></td></tr>
@@ -137,124 +128,41 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1ConditionVariable.html#a8953b054a1074ab5ef0a9f9b35f58a42">notify_one</a> ()</td></tr>
 <tr class="memdesc:a8953b054a1074ab5ef0a9f9b35f58a42"><td class="mdescLeft">&#160;</td><td class="mdescRight">notify_one notifies one condition variable with the same mutex <br /></td></tr>
 <tr class="separator:a8953b054a1074ab5ef0a9f9b35f58a42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00152f5249125f910ebbe008f3e77967"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a00152f5249125f910ebbe008f3e77967"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1ConditionVariable.html#a00152f5249125f910ebbe008f3e77967">wait</a> ()</td></tr>
-<tr class="memdesc:a00152f5249125f910ebbe008f3e77967"><td class="mdescLeft">&#160;</td><td class="mdescRight">wait waits until another thread notifies this object <br /></td></tr>
-<tr class="separator:a00152f5249125f910ebbe008f3e77967"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35fccd22efde2209c8a9008a5d31df96"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1ConditionVariable.html#a35fccd22efde2209c8a9008a5d31df96">timed_wait</a> (long wait_nano_seconds)</td></tr>
-<tr class="memdesc:a35fccd22efde2209c8a9008a5d31df96"><td class="mdescLeft">&#160;</td><td class="mdescRight">timed_wait wait a notify during a certain certain time and then wake up  <a href="#a35fccd22efde2209c8a9008a5d31df96">More...</a><br /></td></tr>
-<tr class="separator:a35fccd22efde2209c8a9008a5d31df96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a920a911a79617be2337f5b4bc80dd2d9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1ConditionVariable.html#a920a911a79617be2337f5b4bc80dd2d9">try_lock</a> ()</td></tr>
-<tr class="memdesc:a920a911a79617be2337f5b4bc80dd2d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">try_lock Tries to acquire the lock without waiting.  <a href="#a920a911a79617be2337f5b4bc80dd2d9">More...</a><br /></td></tr>
-<tr class="separator:a920a911a79617be2337f5b4bc80dd2d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a6c20e5ec00fda5f7857dc162e12a10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1ConditionVariable.html#a5a6c20e5ec00fda5f7857dc162e12a10">unlock</a> ()</td></tr>
-<tr class="memdesc:a5a6c20e5ec00fda5f7857dc162e12a10"><td class="mdescLeft">&#160;</td><td class="mdescRight">unlock Unlocks the lock.  <a href="#a5a6c20e5ec00fda5f7857dc162e12a10">More...</a><br /></td></tr>
-<tr class="separator:a5a6c20e5ec00fda5f7857dc162e12a10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7454c9a69afb48e60aa650dc6b545a0c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7454c9a69afb48e60aa650dc6b545a0c"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>owns</b> ()</td></tr>
-<tr class="separator:a7454c9a69afb48e60aa650dc6b545a0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2635afecdbe36e4c43b71255f8dd31b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1ConditionVariable.html#ae2635afecdbe36e4c43b71255f8dd31b">lock_scope</a> ()</td></tr>
-<tr class="memdesc:ae2635afecdbe36e4c43b71255f8dd31b"><td class="mdescLeft">&#160;</td><td class="mdescRight">lock_scope this function is used to lock the part of the code that needs protection.  <a href="#ae2635afecdbe36e4c43b71255f8dd31b">More...</a><br /></td></tr>
-<tr class="separator:ae2635afecdbe36e4c43b71255f8dd31b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9adf360e73a426f51210c80248203e58"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9adf360e73a426f51210c80248203e58"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1ConditionVariable.html#a9adf360e73a426f51210c80248203e58">unlock_scope</a> ()</td></tr>
-<tr class="memdesc:a9adf360e73a426f51210c80248203e58"><td class="mdescLeft">&#160;</td><td class="mdescRight">unlock_scope this function unlock the mutex so remove the protection of the code <br /></td></tr>
-<tr class="separator:a9adf360e73a426f51210c80248203e58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7b1ce584ff9ef9a0925f57cae8e6263"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1ConditionVariable.html#af7b1ce584ff9ef9a0925f57cae8e6263">timed_wait</a> (<a class="el" href="classshared__memory_1_1Lock.html">Lock</a> &amp;lock, long wait_nano_seconds)</td></tr>
+<tr class="memdesc:af7b1ce584ff9ef9a0925f57cae8e6263"><td class="mdescLeft">&#160;</td><td class="mdescRight">timed_wait wait a notify during a certain certain time and then wake up  <a href="#af7b1ce584ff9ef9a0925f57cae8e6263">More...</a><br /></td></tr>
+<tr class="separator:af7b1ce584ff9ef9a0925f57cae8e6263"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8746faccdf81b03dd36c5b405c9ab48d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8746faccdf81b03dd36c5b405c9ab48d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1ConditionVariable.html#a8746faccdf81b03dd36c5b405c9ab48d">wait</a> (<a class="el" href="classshared__memory_1_1Lock.html">Lock</a> &amp;lock)</td></tr>
+<tr class="memdesc:a8746faccdf81b03dd36c5b405c9ab48d"><td class="mdescLeft">&#160;</td><td class="mdescRight">wait waits until another thread notifies this object <br /></td></tr>
+<tr class="separator:a8746faccdf81b03dd36c5b405c9ab48d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a9326fe2f7260bc75d706bcfd97bff147"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1ConditionVariable.html#a9326fe2f7260bc75d706bcfd97bff147">clean</a> (const std::string segment_id, const std::string object_id)</td></tr>
-<tr class="memdesc:a9326fe2f7260bc75d706bcfd97bff147"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classshared__memory_1_1ConditionVariable.html" title="The ConditionVariable class is here as a anonymous layer on top of the boost intersprocess condition ...">ConditionVariable</a> clean their shared memory on destruction.  <a href="#a9326fe2f7260bc75d706bcfd97bff147">More...</a><br /></td></tr>
-<tr class="separator:a9326fe2f7260bc75d706bcfd97bff147"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a1b59046c88c2a2e6122b5e6eac25feb5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1b59046c88c2a2e6122b5e6eac25feb5"></a>
-SHMMutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1ConditionVariable.html#a1b59046c88c2a2e6122b5e6eac25feb5">mutex_</a></td></tr>
-<tr class="memdesc:a1b59046c88c2a2e6122b5e6eac25feb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">mutex_ is the mutex associated to the condition variable <br /></td></tr>
-<tr class="separator:a1b59046c88c2a2e6122b5e6eac25feb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62c285e0d6e9d4130523179551eaa892"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a62c285e0d6e9d4130523179551eaa892"></a>
-SHMCondition&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1ConditionVariable.html#a62c285e0d6e9d4130523179551eaa892">condition_variable_</a></td></tr>
-<tr class="memdesc:a62c285e0d6e9d4130523179551eaa892"><td class="mdescLeft">&#160;</td><td class="mdescRight">condition_variable_ is the boost condition variable that is used <br /></td></tr>
-<tr class="separator:a62c285e0d6e9d4130523179551eaa892"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a717822ec6056a24a725b61a35ba417ba"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a717822ec6056a24a725b61a35ba417ba"></a>
-std::unique_ptr&lt; SHMScopeLock &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1ConditionVariable.html#a717822ec6056a24a725b61a35ba417ba">lock_</a></td></tr>
-<tr class="memdesc:a717822ec6056a24a725b61a35ba417ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">lock_ is a object that protects the codes with a mutex, see the boost documentation about "boost::interprocess::scoped_lock" <br /></td></tr>
-<tr class="separator:a717822ec6056a24a725b61a35ba417ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a872a5c9305c0dff22ec085b8c8306a0d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a872a5c9305c0dff22ec085b8c8306a0d"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1ConditionVariable.html#a872a5c9305c0dff22ec085b8c8306a0d">clean_memory_on_destruction_</a></td></tr>
-<tr class="memdesc:a872a5c9305c0dff22ec085b8c8306a0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">if true (the default), clean the shared memory of the hosted mutex and condition. <br /></td></tr>
-<tr class="separator:a872a5c9305c0dff22ec085b8c8306a0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf6a90466c2bf96cbc08f3ba0246274e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adf6a90466c2bf96cbc08f3ba0246274e"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>clean</b> (const std::string object_id)</td></tr>
+<tr class="separator:adf6a90466c2bf96cbc08f3ba0246274e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The <a class="el" href="classshared__memory_1_1ConditionVariable.html" title="The ConditionVariable class is here as a anonymous layer on top of the boost intersprocess condition ...">ConditionVariable</a> class is here as a anonymous layer on top of the boost intersprocess condition variable labrary. </p>
-<p>It creates a condition variable in a shared memory automatically. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a9326fe2f7260bc75d706bcfd97bff147"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void shared_memory::ConditionVariable::clean </td>
-          <td>(</td>
-          <td class="paramtype">const std::string&#160;</td>
-          <td class="paramname"><em>segment_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string&#160;</td>
-          <td class="paramname"><em>object_id</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><a class="el" href="classshared__memory_1_1ConditionVariable.html" title="The ConditionVariable class is here as a anonymous layer on top of the boost intersprocess condition ...">ConditionVariable</a> clean their shared memory on destruction. </p>
-<p>But the destructor may have failed to be called if for some reason the program crashed. </p>
-
-</div>
-</div>
-<a class="anchor" id="ae2635afecdbe36e4c43b71255f8dd31b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void shared_memory::ConditionVariable::lock_scope </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>lock_scope this function is used to lock the part of the code that needs protection. </p>
-<p>It locks the mutex until unlock_scope is used </p>
-
-</div>
-</div>
-<a class="anchor" id="a35fccd22efde2209c8a9008a5d31df96"></a>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="af7b1ce584ff9ef9a0925f57cae8e6263"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">bool shared_memory::ConditionVariable::timed_wait </td>
           <td>(</td>
-          <td class="paramtype">long&#160;</td>
-          <td class="paramname"><em>wait_nano_seconds</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classshared__memory_1_1Lock.html">Lock</a> &amp;&#160;</td>
+          <td class="paramname"><em>lock</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>wait_nano_seconds</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -270,56 +178,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
-<a class="anchor" id="a920a911a79617be2337f5b4bc80dd2d9"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool shared_memory::ConditionVariable::try_lock </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>try_lock Tries to acquire the lock without waiting. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if manages to acquire the lock, false otherwise. </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"></td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="a5a6c20e5ec00fda5f7857dc162e12a10"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void shared_memory::ConditionVariable::unlock </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>unlock Unlocks the lock. </p>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"></td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/<a class="el" href="thread__synchronisation_8hpp_source.html">thread_synchronisation.hpp</a></li>
-<li>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/src/thread_synchronisation.cpp</li>
+<li>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/<a class="el" href="condition__variable_8hpp_source.html">condition_variable.hpp</a></li>
+<li>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/src/condition_variable.cpp</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

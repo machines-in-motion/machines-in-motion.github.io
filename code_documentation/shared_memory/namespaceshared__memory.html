@@ -121,7 +121,6 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1Allocation__exception.html">Allocation_exception</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1ConditionVariable.html">ConditionVariable</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classshared__memory_1_1ConditionVariable.html" title="The ConditionVariable class is here as a anonymous layer on top of the boost intersprocess condition ...">ConditionVariable</a> class is here as a anonymous layer on top of the boost intersprocess condition variable labrary.  <a href="classshared__memory_1_1ConditionVariable.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1Exchange__manager__consumer.html">Exchange_manager_consumer</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,9 +131,15 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1Four__int__values.html">Four_int_values</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Example of an instance that can be serialized.  <a href="classshared__memory_1_1Four__int__values.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1Lock.html">Lock</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A scope lock object for locking a shared memory mutex, to use for example with a shared memory condition variable.  <a href="classshared__memory_1_1Lock.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1LockedConditionVariable.html">LockedConditionVariable</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classshared__memory_1_1LockedConditionVariable.html" title="The LockedConditionVariable class is here as a anonymous layer on top of the boost intersprocess cond...">LockedConditionVariable</a> class is here as a anonymous layer on top of the boost intersprocess condition variable labrary.  <a href="classshared__memory_1_1LockedConditionVariable.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1Memory__overflow__exception.html">Memory_overflow_exception</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__memory_1_1Mutex.html">Mutex</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1Mutex.html">Mutex</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1Not__consumed__exception.html">Not_consumed_exception</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -159,6 +164,24 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:a98598a317e2364e30dec871c52491d3c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a98598a317e2364e30dec871c52491d3c"></a>
+typedef boost::interprocess::named_condition&#160;</td><td class="memItemRight" valign="bottom"><b>SHMCondition</b></td></tr>
+<tr class="separator:a98598a317e2364e30dec871c52491d3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1e27e85804c1f1c0b7c1bf077add7bf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa1e27e85804c1f1c0b7c1bf077add7bf"></a>
+typedef boost::interprocess::scoped_lock&lt; SHMMutex &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SHMScopeLock</b></td></tr>
+<tr class="separator:aa1e27e85804c1f1c0b7c1bf077add7bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a3aa667d92610e695d7948a834172f1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2a3aa667d92610e695d7948a834172f1"></a>
+typedef boost::interprocess::interprocess_mutex&#160;</td><td class="memItemRight" valign="bottom"><b>UnamedSHMMutex</b></td></tr>
+<tr class="separator:a2a3aa667d92610e695d7948a834172f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83b64c7cfca3d52b46e5e9833968a7b9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a83b64c7cfca3d52b46e5e9833968a7b9"></a>
+typedef boost::interprocess::interprocess_condition&#160;</td><td class="memItemRight" valign="bottom"><b>UnamedSHMCondition</b></td></tr>
+<tr class="separator:a83b64c7cfca3d52b46e5e9833968a7b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b94121a6c0d65beda535a70704a1aa5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0b94121a6c0d65beda535a70704a1aa5"></a>
+typedef boost::interprocess::scoped_lock&lt; UnamedSHMMutex &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>UnamedSHMLock</b></td></tr>
+<tr class="separator:a0b94121a6c0d65beda535a70704a1aa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e455ab41b63e529ceca7424dbf13ba1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9e455ab41b63e529ceca7424dbf13ba1"></a>
+typedef boost::interprocess::named_mutex&#160;</td><td class="memItemRight" valign="bottom"><b>SHMMutex</b></td></tr>
+<tr class="separator:a9e455ab41b63e529ceca7424dbf13ba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada3eeebd8f77a3757ad50c9401bcd249"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ada3eeebd8f77a3757ad50c9401bcd249"></a>
 typedef cereal::access&#160;</td><td class="memItemRight" valign="bottom"><b>private_serialization</b></td></tr>
 <tr class="separator:ada3eeebd8f77a3757ad50c9401bcd249"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -178,24 +201,6 @@ typedef std::basic_string&lt; char, std::char_traits&lt; char &gt;, <a class="el
 typedef std::map&lt; std::string, std::unique_ptr&lt; <a class="el" href="classshared__memory_1_1SharedMemorySegment.html">SharedMemorySegment</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a9aeebdfb6185497cac7c093cf3d765c5">SegmentMap</a></td></tr>
 <tr class="memdesc:a9aeebdfb6185497cac7c093cf3d765c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">SegmentMap typedef is a simple short cut to the GLOBAL_SHM_SEGMENTS type. <br /></td></tr>
 <tr class="separator:a9aeebdfb6185497cac7c093cf3d765c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e455ab41b63e529ceca7424dbf13ba1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9e455ab41b63e529ceca7424dbf13ba1"></a>
-typedef boost::interprocess::named_mutex&#160;</td><td class="memItemRight" valign="bottom"><b>SHMMutex</b></td></tr>
-<tr class="separator:a9e455ab41b63e529ceca7424dbf13ba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98598a317e2364e30dec871c52491d3c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a98598a317e2364e30dec871c52491d3c"></a>
-typedef boost::interprocess::named_condition&#160;</td><td class="memItemRight" valign="bottom"><b>SHMCondition</b></td></tr>
-<tr class="separator:a98598a317e2364e30dec871c52491d3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a085607496f77365d028a876810c65265"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a085607496f77365d028a876810c65265"></a>
-typedef boost::interprocess::scoped_lock&lt; SHMMutex &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SHMScopeLock</b></td></tr>
-<tr class="separator:a085607496f77365d028a876810c65265"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a3aa667d92610e695d7948a834172f1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2a3aa667d92610e695d7948a834172f1"></a>
-typedef boost::interprocess::interprocess_mutex&#160;</td><td class="memItemRight" valign="bottom"><b>UnamedSHMMutex</b></td></tr>
-<tr class="separator:a2a3aa667d92610e695d7948a834172f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83b64c7cfca3d52b46e5e9833968a7b9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a83b64c7cfca3d52b46e5e9833968a7b9"></a>
-typedef boost::interprocess::interprocess_condition&#160;</td><td class="memItemRight" valign="bottom"><b>UnamedSHMCondition</b></td></tr>
-<tr class="separator:a83b64c7cfca3d52b46e5e9833968a7b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b94121a6c0d65beda535a70704a1aa5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0b94121a6c0d65beda535a70704a1aa5"></a>
-typedef boost::interprocess::scoped_lock&lt; UnamedSHMMutex &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>UnamedSHMLock</b></td></tr>
-<tr class="separator:a0b94121a6c0d65beda535a70704a1aa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>

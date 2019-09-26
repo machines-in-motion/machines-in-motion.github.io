@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['_7econditionvariable',['~ConditionVariable',['../classshared__memory_1_1ConditionVariable.html#a84ccb3bcc9255cd145d30b3a91db4e2b',1,'shared_memory::ConditionVariable']]],
-  ['_7esharedmemorysegment',['~SharedMemorySegment',['../classshared__memory_1_1SharedMemorySegment.html#a9f02fd9f35950df5f6ce7ceaba5fbb53',1,'shared_memory::SharedMemorySegment']]]
+  ['wait',['wait',['../classshared__memory_1_1ConditionVariable.html#a8746faccdf81b03dd36c5b405c9ab48d',1,'shared_memory::ConditionVariable::wait()'],['../classshared__memory_1_1LockedConditionVariable.html#a9eb84ab5d570a0c5a81f6eaeb4c4dd50',1,'shared_memory::LockedConditionVariable::wait()']]]
 ];
