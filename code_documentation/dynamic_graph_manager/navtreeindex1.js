@@ -218,9 +218,11 @@ var NAVTREEINDEX1 =
 "dir_d384ac40e31630f4f44f7446d0ea9112.html":[5,0,0,0,0,0,0,0,0],
 "dir_ec90eeab59a3701322b05e767ecbbb48.html":[5,0,0,0,0,0,1,0],
 "dynamic__graph__manager_8cpp.html":[5,0,0,0,0,0,1,4],
+"dynamic__graph__manager_8cpp.html#a1e34d5c68ba74d2b3d9e4925d4710cb8":[5,0,0,0,0,0,1,4,0],
 "dynamic__graph__manager_8hh.html":[5,0,0,0,0,0,0,0,3],
 "dynamic__graph__manager_8hh.html#aca70acb5331a18e090e49b3d85290a7e":[5,0,0,0,0,0,0,0,3,1],
 "dynamic__graph__manager_8hh_source.html":[5,0,0,0,0,0,0,0,3],
+"examples.html":[6],
 "exception-abstract_8cpp.html":[5,0,0,0,0,0,1,0,0],
 "exception-abstract_8cpp.html#a44046716acbcd14008a1672f9bb71594":[5,0,0,0,0,0,1,0,0,0],
 "exception-abstract_8hh.html":[5,0,0,0,0,0,0,0,0,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX1 =
 "exception-tools_8hh_source.html":[5,0,0,0,0,0,0,0,0,6],
 "exception-yaml-cpp_8cpp.html":[5,0,0,0,0,0,1,0,7],
 "exception-yaml-cpp_8hpp.html":[5,0,0,0,0,0,0,0,0,7],
-"exception-yaml-cpp_8hpp_source.html":[5,0,0,0,0,0,0,0,0,7],
-"files.html":[5,0],
-"functions.html":[4,3,0]
+"exception-yaml-cpp_8hpp_source.html":[5,0,0,0,0,0,0,0,0,7]
 };

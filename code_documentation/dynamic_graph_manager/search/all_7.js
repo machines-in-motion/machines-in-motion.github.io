@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['9_2f_20continuous_20integration',['9/ Continuous integration',['../subpage_ci.html',1,'index']]]
+  ['8_2f_20robot_20dashboard',['8/ Robot dashboard',['../subpage_robot_dashboard.html',1,'index']]]
 ];
