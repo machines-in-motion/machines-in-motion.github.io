@@ -1,5 +1,10 @@
 var namespaceshared__memory =
 [
+    [ "internal", null, [
+      [ "Exchange_manager_memory", "classshared__memory_1_1internal_1_1Exchange__manager__memory.html", "classshared__memory_1_1internal_1_1Exchange__manager__memory" ],
+      [ "Serialized_read", "classshared__memory_1_1internal_1_1Serialized__read.html", "classshared__memory_1_1internal_1_1Serialized__read" ],
+      [ "Serialized_write", "classshared__memory_1_1internal_1_1Serialized__write.html", "classshared__memory_1_1internal_1_1Serialized__write" ]
+    ] ],
     [ "Allocation_exception", "classshared__memory_1_1Allocation__exception.html", "classshared__memory_1_1Allocation__exception" ],
     [ "ConditionVariable", "classshared__memory_1_1ConditionVariable.html", "classshared__memory_1_1ConditionVariable" ],
     [ "Exchange_manager_consumer", "classshared__memory_1_1Exchange__manager__consumer.html", "classshared__memory_1_1Exchange__manager__consumer" ],

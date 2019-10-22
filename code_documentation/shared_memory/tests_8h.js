@@ -20,6 +20,8 @@ var tests_8h =
       [ "exchange_manager", "tests_8h.html#a96b4c8239b2f822eed5fd4a758135d2fa6a476e963918b2065830f04d2395ea44", null ]
     ] ],
     [ "cond_var_id", "tests_8h.html#a838702ee57e38ab4f5f10d676c1d2749", null ],
+    [ "exchange_manager_object_id", "tests_8h.html#aceb84c946ed86edfb467d69888f406f5", null ],
+    [ "exchange_manager_segment_id", "tests_8h.html#a2a4ca978e0e4a50136e5fbb5394b361b", null ],
     [ "map_string_keys1", "tests_8h.html#a115762ee83fa8ebdd04e2f6556a9aedd", null ],
     [ "map_string_keys2", "tests_8h.html#ae6b98515912e91d92c1f07502ab8ef63", null ],
     [ "object_id", "tests_8h.html#af00d1abef3532d01dd29eda4c47d6e6d", null ],

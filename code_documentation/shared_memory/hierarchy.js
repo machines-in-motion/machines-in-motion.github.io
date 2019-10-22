@@ -9,6 +9,7 @@ var hierarchy =
       [ "shared_memory::Unexpected_size_exception", "classshared__memory_1_1Unexpected__size__exception.html", null ]
     ] ],
     [ "shared_memory::Exchange_manager_consumer< Serializable, QUEUE_SIZE >", "classshared__memory_1_1Exchange__manager__consumer.html", null ],
+    [ "shared_memory::internal::Exchange_manager_memory< Serializable, QUEUE_SIZE >", "classshared__memory_1_1internal_1_1Exchange__manager__memory.html", null ],
     [ "shared_memory::Exchange_manager_memory< Serializable, QUEUE_SIZE >", "classshared__memory_1_1Exchange__manager__memory.html", null ],
     [ "shared_memory::Exchange_manager_producer< Serializable, QUEUE_SIZE >", "classshared__memory_1_1Exchange__manager__producer.html", null ],
     [ "shared_memory::Four_int_values", "classshared__memory_1_1Four__int__values.html", null ],
@@ -17,7 +18,9 @@ var hierarchy =
     [ "MeasureTime", "structMeasureTime.html", null ],
     [ "shared_memory::Mutex", "classshared__memory_1_1Mutex.html", null ],
     [ "shared_memory::Serializable_exchange< Serializable >", "classshared__memory_1_1Serializable__exchange.html", null ],
+    [ "shared_memory::internal::Serialized_read< Serializable >", "classshared__memory_1_1internal_1_1Serialized__read.html", null ],
     [ "shared_memory::Serialized_read< Serializable >", "classshared__memory_1_1Serialized__read.html", null ],
+    [ "shared_memory::internal::Serialized_write< Serializable >", "classshared__memory_1_1internal_1_1Serialized__write.html", null ],
     [ "shared_memory::Serialized_write< Serializable >", "classshared__memory_1_1Serialized__write.html", null ],
     [ "shared_memory::Serializer< Serializable >", "classshared__memory_1_1Serializer.html", null ],
     [ "shared_memory::SharedMemorySegment", "classshared__memory_1_1SharedMemorySegment.html", null ],

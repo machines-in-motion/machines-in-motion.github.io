@@ -131,6 +131,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af1a894d796387d297f848d18d8d55df5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1Exchange__manager__consumer.html#af1a894d796387d297f848d18d8d55df5">ready_to_consume</a> ()</td></tr>
 <tr class="memdesc:af1a894d796387d297f848d18d8d55df5"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns true if a producer is also running.  <a href="#af1a894d796387d297f848d18d8d55df5">More...</a><br /></td></tr>
 <tr class="separator:af1a894d796387d297f848d18d8d55df5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e62220c9b50327130cb95683d22b0dc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1Exchange__manager__consumer.html#a5e62220c9b50327130cb95683d22b0dc">purge_feedbacks</a> ()</td></tr>
+<tr class="memdesc:a5e62220c9b50327130cb95683d22b0dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">When this instance consumes an item, the item id is written in a shared queue for the producer to read (and acquire the feedback the item has been consumed).  <a href="#a5e62220c9b50327130cb95683d22b0dc">More...</a><br /></td></tr>
+<tr class="separator:a5e62220c9b50327130cb95683d22b0dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8651cff750b5cb2ceae97a97b2c7f2d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1Exchange__manager__consumer.html#ab8651cff750b5cb2ceae97a97b2c7f2d">nb_char_read</a> ()</td></tr>
+<tr class="memdesc:ab8651cff750b5cb2ceae97a97b2c7f2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the number of char that have been read from the exchange queue.  <a href="#ab8651cff750b5cb2ceae97a97b2c7f2d">More...</a><br /></td></tr>
+<tr class="separator:ab8651cff750b5cb2ceae97a97b2c7f2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -232,6 +238,46 @@ template&lt;class Serializable , int QUEUE_SIZE&gt; </div>
 
 <p>lock the mutex required for writting in the shared memory without any collision with any producer. </p>
 <p>Should be called before calls to "consume". Not required if the constructor was called with autolock set to true </p>
+
+</div>
+</div>
+<a class="anchor" id="ab8651cff750b5cb2ceae97a97b2c7f2d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Serializable , int QUEUE_SIZE&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">int Exchange_manager_consumer::nb_char_read </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>returns the number of char that have been read from the exchange queue. </p>
+<p>For debugging purposes </p>
+
+</div>
+</div>
+<a class="anchor" id="a5e62220c9b50327130cb95683d22b0dc"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Serializable , int QUEUE_SIZE&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Exchange_manager_consumer::purge_feedbacks </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>When this instance consumes an item, the item id is written in a shared queue for the producer to read (and acquire the feedback the item has been consumed). </p>
+<p>This shared queue may get full (e.g the producer does not read it fast enough), in which case the item id is buffered in this instance. If this instance stops to consume, the buffered item ids will never be written in the shared queue, and the producer will not receive the corresponding feedback. This attempts to write the buffered ids into the queue, and returns true if the buffer is not empty after the call (i.e. some feedbacks have not been sent yet), false otherwise. Usage: to call before exit until true is returned </p>
 
 </div>
 </div>
