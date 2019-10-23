@@ -17,6 +17,7 @@ var dir_b3f6500df37d9763cab3d49e06c50be6 =
     ] ],
     [ "exchange_manager_consumer.hxx", "exchange__manager__consumer_8hxx_source.html", null ],
     [ "exchange_manager_memory.hpp", "exchange__manager__memory_8hpp_source.html", null ],
+    [ "exchange_manager_memory.hxx", "exchange__manager__memory_8hxx_source.html", null ],
     [ "exchange_manager_producer.hpp", "exchange__manager__producer_8hpp.html", [
       [ "Exchange_manager_producer", "classshared__memory_1_1Exchange__manager__producer.html", "classshared__memory_1_1Exchange__manager__producer" ]
     ] ],

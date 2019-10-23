@@ -5,5 +5,5 @@ var classshared__memory_1_1Serialized__write =
     [ "empty", "classshared__memory_1_1Serialized__write.html#a142ea08c24e26e3ad03d531641cbb4d2", null ],
     [ "front", "classshared__memory_1_1Serialized__write.html#a05244a458bda3b41952287b9e01cf40a", null ],
     [ "pop", "classshared__memory_1_1Serialized__write.html#a21f0e2b5e2a50b657c90fd12880f6b4f", null ],
-    [ "write", "classshared__memory_1_1Serialized__write.html#a15ffffb20c7c9e72f87f996ee6ca9513", null ]
+    [ "write", "classshared__memory_1_1Serialized__write.html#af22c304618232209e968e0c5f6cd12db", null ]
 ];
