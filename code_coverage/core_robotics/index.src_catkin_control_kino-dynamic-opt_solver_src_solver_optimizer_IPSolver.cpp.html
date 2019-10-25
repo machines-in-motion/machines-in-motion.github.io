@@ -1,0 +1,3205 @@
+
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>Head</title>
+  <style media="screen" type="text/css">
+
+    body
+    {
+      color: #000000;
+      background-color: #FFFFFF;
+    }
+
+    /* Link formats: use maroon w/underlines */
+    a:link
+    {
+      color: navy;
+      text-decoration: underline;
+    }
+    a:visited
+    {
+      color: maroon;
+      text-decoration: underline;
+    }
+    a:active
+    {
+      color: navy;
+      text-decoration: underline;
+    }
+
+    /*** TD formats ***/
+    td
+    {
+      font-family: sans-serif;
+    }
+    td.title
+    {
+      text-align: center;
+      padding-bottom: 10px;
+      font-size: 20pt;
+      font-weight: bold;
+    }
+
+    /* TD Header Information */
+    td.headerName
+    {
+      text-align: right;
+      color: black;
+      padding-right: 6px;
+      font-weight: bold;
+      vertical-align: top;
+      white-space: nowrap;
+    }
+    td.headerValue
+    {
+      text-align: left;
+      color: blue;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+    td.headerTableEntry
+    {
+      text-align: right;
+      color: black;
+      font-weight: bold;
+      white-space: nowrap;
+      padding-left: 12px;
+      padding-right: 4px;
+      background-color: LightBlue;
+    }
+    td.headerValueLeg
+    {
+      text-align: left;
+      color: black;
+      font-size: 80%;
+      white-space: nowrap;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 2px;
+    }
+
+    /* Color of horizontal ruler */
+    td.hr
+    {
+      background-color: navy;
+      height:3px;
+    }
+    /* Footer format */
+    td.footer
+    {
+      text-align: center;
+      padding-top: 3px;
+      font-family: sans-serif;
+    }
+
+    /* Coverage Table */
+
+    td.coverTableHead
+    {
+      text-align: center;
+      color: white;
+      background-color: SteelBlue;
+      font-family: sans-serif;
+      font-size: 120%;
+      white-space: nowrap;
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+    td.coverFile
+    {
+      text-align: left;
+      padding-left: 10px;
+      padding-right: 20px;
+      color: black;
+      background-color: LightBlue;
+      font-family: monospace;
+      font-weight: bold;
+      font-size: 110%;
+    }
+    td.coverBar
+    {
+      padding-left: 10px;
+      padding-right: 10px;
+      background-color: LightBlue;
+    }
+    td.coverBarOutline
+    {
+      background-color: white;
+    }
+    td.coverValue
+    {
+      padding-top: 2px;
+      text-align: right;
+      padding-left: 10px;
+      padding-right: 10px;
+      font-family: sans-serif;
+      white-space: nowrap;
+      font-weight: bold;
+    }
+
+    /* Link Details */
+    a.detail:link
+    {
+      color: #B8D0FF;
+      font-size:80%;
+    }
+    a.detail:visited
+    {
+      color: #B8D0FF;
+      font-size:80%;
+    }
+    a.detail:active
+    {
+      color: #FFFFFF;
+      font-size:80%;
+    }
+
+    .graphcont{
+        color:#000;
+        font-weight:700;
+        float:left
+    }
+
+    .graph{
+        float:left;
+        background-color: white;
+        position:relative;
+        width:280px;
+        padding:0
+    }
+
+    .graph .bar{
+        display:block;
+        position:relative;
+        border:black 1px solid;
+        text-align:center;
+        color:#fff;
+        height:10px;
+        font-family:Arial,Helvetica,sans-serif;
+        font-size:12px;
+        line-height:1.9em
+    }
+
+    .graph .bar span{
+        position:absolute;
+        left:1em
+    }
+
+    td.coveredLine,
+    span.coveredLine
+    {
+        background-color: LightGreen!important;
+    }
+
+    td.uncoveredLine,
+    span.uncoveredLine
+    {
+        background-color: LightPink!important;
+    }
+
+    .linebranch, .linecount
+    {
+        border-right: 1px gray solid;
+        background-color: lightgray;
+    }
+
+    span.takenBranch
+    {
+        color: Green!important;
+        cursor: help;
+    }
+
+    span.notTakenBranch
+    {
+        color: Red!important;
+        cursor: help;
+    }
+
+    .src
+    {
+        padding-left: 12px;
+    }
+
+    .srcHeader,
+    span.takenBranch,
+    span.notTakenBranch
+    {
+        font-family: monospace;
+        font-weight: bold;
+    }
+
+    pre
+    {
+        height : 15px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .lineno
+    {
+        background-color: #EFE383;
+        border-right: 1px solid #BBB15F;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr><td class="title">GCC Code Coverage Report</td></tr>
+    <tr><td class="hr"></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding="1" border="0" width="100%">
+          <tr>
+            <td width="10%" class="headerName">Directory:</td>
+            <td width="35%" class="headerValue">src/catkin/</td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerValue" style="text-align:right;">Exec</td>
+            <td width="10%" class="headerValue" style="text-align:right;">Total</td>
+            <td width="15%" class="headerValue" style="text-align:right;">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerName">File:</td>
+            <td class="headerValue">src/catkin/control/kino-dynamic-opt/solver/src/solver/optimizer/IPSolver.cpp</td>
+            <td></td>
+            <td class="headerName">Lines:</td>
+            <td class="headerTableEntry">223</td>
+            <td class="headerTableEntry">246</td>
+            <td class="headerTableEntry" style="background-color:LightGreen">90.7 %</td>
+          </tr>
+          <tr>
+            <td class="headerName">Date:</td>
+            <td class="headerValue">2019-10-25 17:11:53</td>
+            <td></td>
+            <td class="headerName">Branches:</td>
+            <td class="headerTableEntry">225</td>
+            <td class="headerTableEntry">302</td>
+            <td class="headerTableEntry" style="background-color:LightPink">74.5 %</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="hr"></td></tr>
+  </table>
+
+  <br>
+  <table cellspacing="0" cellpadding="1">
+    <tr>
+      <td width="5%" align="right" class="srcHeader">Line</td>
+      <td width="5%" align="right" class="srcHeader">Branch</td>
+      <td width="5%" align="right" class="srcHeader">Exec</td>
+      <td width="75%" align="left" class="srcHeader src">Source</td>
+    </tr>
+
+
+    <tr>
+    <td align="right" class="lineno"><pre>1</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>/**</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>2</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre> * @file IPSolver.cpp</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>3</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre> * @author A. Domahidi [domahidi@embotech.com]</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>4</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre> * @license (new license) License BSD-3-Clause</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>5</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre> * @copyright Copyright (c) [2012-2015] Automatic Control Lab, ETH Zurich &amp; embotech GmbH, Zurich, Switzerland.</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>6</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre> * @date 2012-2015</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>7</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre> * @brief ECOS - Embedded Conic Solver</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>8</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre> *</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>9</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre> * Modified to c++ code by New York University and Max Planck Gesellschaft, 2017</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>10</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre> */</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>11</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>12</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include &lt;solver/optimizer/IPSolver.hpp></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>13</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>14</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>namespace solver {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>15</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>16</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  inline double dotProduct(int n, double* x, double* y)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>17</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>18</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    double z = 0; int i;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>19</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 12501289 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1750 times">&check;</span><span class="takenBranch" title="Branch 2 taken 2083769 times">&check;</span><span class="takenBranch" title="Branch 3 taken 1750 times">&check;</span><br/><span class="takenBranch" title="Branch 4 taken 26753020 times">&check;</span><span class="takenBranch" title="Branch 5 taken 1750 times">&check;</span><span class="takenBranch" title="Branch 6 taken 12501289 times">&check;</span><span class="takenBranch" title="Branch 7 taken 1750 times">&check;</span><br/><span class="takenBranch" title="Branch 8 taken 2083769 times">&check;</span><span class="takenBranch" title="Branch 9 taken 1750 times">&check;</span><span class="takenBranch" title="Branch 10 taken 26753020 times">&check;</span><span class="takenBranch" title="Branch 11 taken 1750 times">&check;</span><br/><span class="takenBranch" title="Branch 12 taken 12501289 times">&check;</span><span class="takenBranch" title="Branch 13 taken 1750 times">&check;</span><span class="takenBranch" title="Branch 14 taken 2083769 times">&check;</span><span class="takenBranch" title="Branch 15 taken 1750 times">&check;</span><br/><span class="takenBranch" title="Branch 16 taken 26753020 times">&check;</span><span class="takenBranch" title="Branch 17 taken 1750 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>124029984</pre></td>
+    <td align="left" class="src coveredLine"><pre>    for( i=0; i&lt;n; i++ ){ z += x[i]*y[i]; }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>20</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    return z;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>21</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>22</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>23</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>304</pre></td>
+    <td align="left" class="src coveredLine"><pre>  void InteriorPointSolver::updateEquilH(int id, double value)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>24</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>25</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>912</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->getStorage().h()[id] = value / equilibration_routine_.equilVec().z()[id];</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>26</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>304</pre></td>
+    <td align="left" class="src coveredLine"><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>27</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>28</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>77</pre></td>
+    <td align="left" class="src coveredLine"><pre>  void InteriorPointSolver::initialize(SolverStorage&amp; storage, Cone&amp; cone, SolverSetting&amp; setting)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>29</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>30</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    // setup problem</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>31</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>77</pre></td>
+    <td align="left" class="src coveredLine"><pre>    cone_ = &amp;cone;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>32</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>77</pre></td>
+    <td align="left" class="src coveredLine"><pre>    storage_ = &amp;storage;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>33</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>77</pre></td>
+    <td align="left" class="src coveredLine"><pre>    setting_ = &amp;setting;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>34</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>77</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->internalInitialization();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>35</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>77</pre></td>
+    <td align="left" class="src coveredLine"><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>36</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>37</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>77</pre></td>
+    <td align="left" class="src coveredLine"><pre>  void InteriorPointSolver::internalInitialization()</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>38</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>39</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    // setup message printer</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>40</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>154</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->getPrinter().initialize(this->getSetting());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>41</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>42</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    // equilibration of problem data</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>43</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>154</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->getEqRoutine().setEquilibration(this->getCone(), this->getSetting(), this->getStorage());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>44</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>231</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->getStorage().Atmatrix() = this->getStorage().Amatrix().transpose();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>45</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>231</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->getStorage().Gtmatrix() = this->getStorage().Gmatrix().transpose();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>46</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>154</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->getLinSolver().initialize(this->getCone(), this->getSetting(), this->getStorage());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>47</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>48</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    // initialize problem variables</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>49</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>77</pre></td>
+    <td align="left" class="src coveredLine"><pre>    rho_.initialize(this->getCone());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>50</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>77</pre></td>
+    <td align="left" class="src coveredLine"><pre>    opt_.initialize(this->getCone());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>51</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>77</pre></td>
+    <td align="left" class="src coveredLine"><pre>    res_.initialize(this->getCone());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>52</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>77</pre></td>
+    <td align="left" class="src coveredLine"><pre>    rhs1_.initialize(this->getCone());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>53</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>77</pre></td>
+    <td align="left" class="src coveredLine"><pre>    rhs2_.initialize(this->getCone());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>54</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>77</pre></td>
+    <td align="left" class="src coveredLine"><pre>    lbar_.initialize(this->getCone());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>55</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>77</pre></td>
+    <td align="left" class="src coveredLine"><pre>    dopt1_.initialize(this->getCone());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>56</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>77</pre></td>
+    <td align="left" class="src coveredLine"><pre>    dopt2_.initialize(this->getCone());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>57</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>77</pre></td>
+    <td align="left" class="src coveredLine"><pre>    sigma_.initialize(this->getCone());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>58</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>77</pre></td>
+    <td align="left" class="src coveredLine"><pre>    lambda_.initialize(this->getCone());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>59</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>77</pre></td>
+    <td align="left" class="src coveredLine"><pre>    best_opt_.initialize(this->getCone());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>60</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>77</pre></td>
+    <td align="left" class="src coveredLine"><pre>    ds_combined_.initialize(this->getCone());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>61</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>77</pre></td>
+    <td align="left" class="src coveredLine"><pre>    dz_combined_.initialize(this->getCone());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>62</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>77</pre></td>
+    <td align="left" class="src coveredLine"><pre>    ds_affine_by_W_.initialize(this->getCone());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>63</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>77</pre></td>
+    <td align="left" class="src coveredLine"><pre>    W_times_dz_affine_.initialize(this->getCone());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>64</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>77</pre></td>
+    <td align="left" class="src coveredLine"><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>65</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>66</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>101</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ExitCode InteriorPointSolver::initializeVariables()</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>67</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>68</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    // get scalings of problem data</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>69</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>303</pre></td>
+    <td align="left" class="src coveredLine"><pre>    inires_x_ = std::max(1.0, this->getStorage().c().norm());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>70</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>303</pre></td>
+    <td align="left" class="src coveredLine"><pre>    inires_y_ = std::max(1.0, this->getStorage().b().norm());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>71</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>303</pre></td>
+    <td align="left" class="src coveredLine"><pre>    inires_z_ = std::max(1.0, this->getStorage().h().norm());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>72</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>73</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    // initialize KKT matrix and perform numeric factorization</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>74</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>101</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->getLinSolver().initializeMatrix();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>75</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 101 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>101</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if ( this->getLinSolver().numericFactorization() != FactStatus::Optimal ){</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>76</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>      this->getPrinter().display(Msg::MatrixFactorization, this->getInfo());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>77</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>      return ExitCode::Indeterminate;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>78</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>79</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>80</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    // initialize primal variables</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>81</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>202</pre></td>
+    <td align="left" class="src coveredLine"><pre>    int* invPerm = this->getLinSolver().invPerm().indices().data();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>82</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 101 times">&check;</span><span class="takenBranch" title="Branch 1 taken 531568 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>101</pre></td>
+    <td align="left" class="src coveredLine"><pre>    for (int i=0; i&lt;this->getCone().numVars(); i++) { rhs1_[invPerm[i]] = 0; }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>83</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 101 times">&check;</span><span class="takenBranch" title="Branch 1 taken 86964 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>174029</pre></td>
+    <td align="left" class="src coveredLine"><pre>    for (int i=0; i&lt;this->getCone().numLeq(); i++ ) { rhs1_[invPerm[this->getCone().numVars()+i]] = this->getStorage().b()[i]; }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>84</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 101 times">&check;</span><span class="takenBranch" title="Branch 1 taken 200609 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>401319</pre></td>
+    <td align="left" class="src coveredLine"><pre>    for (int i=0; i&lt;this->getCone().sizeLpc(); i++) { rhs1_[invPerm[this->getCone().lpConeStart()+i]] = this->getStorage().h()[i]; }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>85</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 313113 times">&check;</span><span class="takenBranch" title="Branch 1 taken 101 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>626327</pre></td>
+    <td align="left" class="src coveredLine"><pre>    for (int l=0; l&lt;this->getCone().numSoc(); l++ ){</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>86</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 939339 times">&check;</span><span class="takenBranch" title="Branch 1 taken 313113 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>3444243</pre></td>
+    <td align="left" class="src coveredLine"><pre>      for (int i=0; i&lt;this->getCone().sizeSoc(l); i++)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>87</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>3757356</pre></td>
+    <td align="left" class="src coveredLine"><pre>        rhs1_[invPerm[this->getCone().extStartSoc(l)+i]] = this->getStorage().cbh()[this->getCone().optStartSoc(l)+i];</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>88</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>89</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>90</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 101 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>404</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->getInfo().get(SolverIntParam_NumRefsLinSolve) = this->getLinSolver().solve(rhs1_, dopt2_, true);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>91</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>202</pre></td>
+    <td align="left" class="src coveredLine"><pre>    opt_.x() = dopt2_.x();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>92</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>303</pre></td>
+    <td align="left" class="src coveredLine"><pre>    opt_.s() = -dopt2_.z();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>93</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>101</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->getCone().conicProjection(opt_.s());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>94</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>95</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    // initialize dual variables</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>96</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 531568 times">&check;</span><span class="takenBranch" title="Branch 1 taken 101 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>531669</pre></td>
+    <td align="left" class="src coveredLine"><pre>    for (int i=0; i&lt;this->getCone().numVars(); i++){ rhs2_[invPerm[i]] = -this->getStorage().c()[i]; }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>97</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>98</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 101 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>303</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->getInfo().get(SolverIntParam_NumRefsLinSolveAffine) = this->getLinSolver().solve(rhs2_, dopt1_, true);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>99</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>202</pre></td>
+    <td align="left" class="src coveredLine"><pre>    opt_.y() = dopt1_.y();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>100</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>202</pre></td>
+    <td align="left" class="src coveredLine"><pre>    opt_.z() = dopt1_.z();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>101</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>101</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->getCone().conicProjection(opt_.z());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>102</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>103</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    // initialize variables for optimization</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>104</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 531568 times">&check;</span><span class="takenBranch" title="Branch 1 taken 101 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>531669</pre></td>
+    <td align="left" class="src coveredLine"><pre>    for (int i=0; i&lt;this->getCone().numVars(); i++) { rhs1_[invPerm[i]] = -this->getStorage().c()[i]; }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>105</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>202</pre></td>
+    <td align="left" class="src coveredLine"><pre>    opt_.kappa() = opt_.tau() = 1.0;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>106</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>101</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->getInfo().get(SolverDoubleParam_StepLength) = this->getInfo().get(SolverDoubleParam_AffineStepLength) = 0.0;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>107</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>108</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>101</pre></td>
+    <td align="left" class="src coveredLine"><pre>    return ExitCode::Optimal;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>109</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>110</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>111</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1851</pre></td>
+    <td align="left" class="src coveredLine"><pre>  void InteriorPointSolver::computeResiduals()</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>112</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>113</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 3 taken 1851 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>9255</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->getLinSolver().matrixTransposeTimesVector(this->getStorage().Amatrix(), opt_.y(), res_.x(), false, true);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>114</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 3 taken 1851 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>7404</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->getLinSolver().matrixTransposeTimesVector(this->getStorage().Gmatrix(), opt_.z(), res_.x(), false, false);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>115</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1851</pre></td>
+    <td align="left" class="src coveredLine"><pre>    residual_x_ = res_.x().norm();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>116</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>117</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 3 taken 1851 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>7404</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->getLinSolver().matrixTransposeTimesVector(this->getStorage().Atmatrix(), opt_.x(), res_.y(), true, true);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>118</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1851</pre></td>
+    <td align="left" class="src coveredLine"><pre>    residual_y_ = res_.y().norm();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>119</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>120</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 3 taken 1851 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>7404</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->getLinSolver().matrixTransposeTimesVector(this->getStorage().Gtmatrix(), opt_.x(), res_.z(), true, true);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>121</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>3702</pre></td>
+    <td align="left" class="src coveredLine"><pre>    res_.z() += opt_.s();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>122</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1851</pre></td>
+    <td align="left" class="src coveredLine"><pre>    residual_z_ = res_.z().norm();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>123</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>124</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>3702</pre></td>
+    <td align="left" class="src coveredLine"><pre>    cx_ = this->getStorage().c().dot(opt_.x());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>125</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>3702</pre></td>
+    <td align="left" class="src coveredLine"><pre>    by_ = this->getStorage().b().dot(opt_.y());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>126</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>3702</pre></td>
+    <td align="left" class="src coveredLine"><pre>    hz_ = this->getStorage().h().dot(opt_.z());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>127</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>9255</pre></td>
+    <td align="left" class="src coveredLine"><pre>    res_ -= opt_.tau()*this->getStorage().cbh();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>128</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1851</pre></td>
+    <td align="left" class="src coveredLine"><pre>    residual_t_ = opt_.kappa() + cx_ + by_ + hz_;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>129</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1851</pre></td>
+    <td align="left" class="src coveredLine"><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>130</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>131</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>3500</pre></td>
+    <td align="left" class="src coveredLine"><pre>  double InteriorPointSolver::lineSearch(const Eigen::Ref&lt;const Eigen::VectorXd>&amp; dsvec, const Eigen::Ref&lt;const Eigen::VectorXd>&amp; dzvec,</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>132</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>                                         double tau, double dtau, double kappa, double dkappa)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>133</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>134</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    int conestart, conesize;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>135</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    const double *lk, *dsk, *dzk;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>136</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    double *lkbar, *rhok, *sigmak;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>137</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>3500</pre></td>
+    <td align="left" class="src coveredLine"><pre>    const double* ds = dsvec.data();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>138</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>3500</pre></td>
+    <td align="left" class="src coveredLine"><pre>    const double* dz = dzvec.data();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>139</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>7000</pre></td>
+    <td align="left" class="src coveredLine"><pre>    const double* lambda = lambda_.data();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>140</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    double conicres_lk, conicres_ds, conicres_dz, inv_conicres, factor1, factor2;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>141</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>142</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    // Linear cone</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>143</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>3500</pre></td>
+    <td align="left" class="src coveredLine"><pre>    double rhomin = ds[0]/lambda[0];</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>144</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>3500</pre></td>
+    <td align="left" class="src coveredLine"><pre>    double sigmamin = dz[0]/lambda[0];</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>145</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 9478836 times">&check;</span><span class="takenBranch" title="Branch 1 taken 3500 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>9482336</pre></td>
+    <td align="left" class="src coveredLine"><pre>    for (int i=1; i&lt;this->getCone().sizeLpc(); i++){</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>146</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 98239 times">&check;</span><span class="takenBranch" title="Branch 1 taken 9380597 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>9478836</pre></td>
+    <td align="left" class="src coveredLine"><pre>      if (ds[i]/lambda[i]&lt;rhomin) { rhomin = ds[i]/lambda[i]; }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>147</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 101250 times">&check;</span><span class="takenBranch" title="Branch 1 taken 9377586 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>9478836</pre></td>
+    <td align="left" class="src coveredLine"><pre>      if (dz[i]/lambda[i]&lt;sigmamin) { sigmamin = dz[i]/lambda[i]; }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>148</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>149</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 3500 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>7000</pre></td>
+    <td align="left" class="src coveredLine"><pre>    double alpha = std::min(sigmamin,rhomin)&lt;0.0 ? -1.0/std::min(sigmamin,rhomin) : 1.0/this->getSetting().get(SolverDoubleParam_DynamicRegularizationThresh);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>150</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>151</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    // Tau and kappa</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>152</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1890 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1610 times">&check;</span><span class="takenBranch" title="Branch 2 taken 14 times">&check;</span><span class="takenBranch" title="Branch 3 taken 1876 times">&check;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>3500</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if (-tau/dtau>0 &amp;&amp; -tau/dtau&lt;alpha) { alpha = -tau/dtau; }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>153</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 3153 times">&check;</span><span class="takenBranch" title="Branch 1 taken 347 times">&check;</span><span class="takenBranch" title="Branch 2 taken 91 times">&check;</span><span class="takenBranch" title="Branch 3 taken 3062 times">&check;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>3500</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if (-kappa/dkappa>0 &amp;&amp; -kappa/dkappa&lt;alpha) { alpha = -kappa/dkappa; }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>154</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>155</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    // Second order cone</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>156</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 14674568 times">&check;</span><span class="takenBranch" title="Branch 1 taken 3500 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>29352636</pre></td>
+    <td align="left" class="src coveredLine"><pre>    for (int i=0; i&lt;this->getCone().numSoc(); i++) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>157</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>      // indices</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>158</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>29349136</pre></td>
+    <td align="left" class="src coveredLine"><pre>      conesize = this->getCone().sizeSoc(i);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>159</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>29349136</pre></td>
+    <td align="left" class="src coveredLine"><pre>      conestart = this->getCone().startSoc(i);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>160</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>14674568</pre></td>
+    <td align="left" class="src coveredLine"><pre>      dsk = ds + conestart;  dzk = dz + conestart;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>161</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>29349136</pre></td>
+    <td align="left" class="src coveredLine"><pre>      lk = lambda + conestart;  lkbar = lbar_.data() + conestart;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>162</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>44023704</pre></td>
+    <td align="left" class="src coveredLine"><pre>      rhok = rho_.data() + conestart;  sigmak = sigma_.data() + conestart;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>163</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>164</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>29349136</pre></td>
+    <td align="left" class="src coveredLine"><pre>      Eigen::Map&lt;const Eigen::VectorXd> eig_lk(lk,conesize);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>165</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>29349136</pre></td>
+    <td align="left" class="src coveredLine"><pre>      Eigen::Map&lt;const Eigen::VectorXd> eig_rhok(rhok, conesize);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>166</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>29349136</pre></td>
+    <td align="left" class="src coveredLine"><pre>      Eigen::Map&lt;const Eigen::VectorXd> eig_sigmak(sigmak, conesize);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>167</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>168</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>      // find residuals</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>169</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 14674568 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>29349136</pre></td>
+    <td align="left" class="src coveredLine"><pre>      conicres_lk = this->getCone().conicResidual(eig_lk);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>170</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 14674568 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>14674568</pre></td>
+    <td align="left" class="src coveredLine"><pre>      if (conicres_lk &lt;= 0.0) { continue; }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>171</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>172</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 44023704 times">&check;</span><span class="takenBranch" title="Branch 1 taken 14674568 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>58698272</pre></td>
+    <td align="left" class="src coveredLine"><pre>      for (int j=0; j&lt;conesize; j++) { lkbar[j] = lk[j]/std::sqrt(conicres_lk); }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>173</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 29349136 times">&check;</span><span class="takenBranch" title="Branch 1 taken 14674568 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>14674568</pre></td>
+    <td align="left" class="src coveredLine"><pre>      conicres_ds = lkbar[0]*dsk[0]; for (int j=1; j&lt;conesize; j++) { conicres_ds -= lkbar[j]*dsk[j]; }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>174</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 29349136 times">&check;</span><span class="takenBranch" title="Branch 1 taken 14674568 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>14674568</pre></td>
+    <td align="left" class="src coveredLine"><pre>      conicres_dz = lkbar[0]*dzk[0]; for (int j=1; j&lt;conesize; j++) { conicres_dz -= lkbar[j]*dzk[j]; }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>175</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>176</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>      // construct rhok and sigmak</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>177</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>14674568</pre></td>
+    <td align="left" class="src coveredLine"><pre>      inv_conicres = 1.0/std::sqrt(conicres_lk);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>178</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>14674568</pre></td>
+    <td align="left" class="src coveredLine"><pre>      factor1 = (conicres_ds+dsk[0])/(lkbar[0]+1);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>179</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>14674568</pre></td>
+    <td align="left" class="src coveredLine"><pre>      factor2 = (conicres_dz+dzk[0])/(lkbar[0]+1);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>180</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>181</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>14674568</pre></td>
+    <td align="left" class="src coveredLine"><pre>      rhok[0] = inv_conicres * conicres_ds;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>182</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>14674568</pre></td>
+    <td align="left" class="src coveredLine"><pre>      sigmak[0] = inv_conicres * conicres_dz;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>183</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 14674568 times">&check;</span><span class="takenBranch" title="Branch 1 taken 29349136 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>14674568</pre></td>
+    <td align="left" class="src coveredLine"><pre>      for (int j=1; j&lt;conesize; j++) { rhok[j] = inv_conicres*(dsk[j]-factor1*lkbar[j]); }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>184</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 29349136 times">&check;</span><span class="takenBranch" title="Branch 1 taken 14674568 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>44023704</pre></td>
+    <td align="left" class="src coveredLine"><pre>      for (int j=1; j&lt;conesize; j++) { sigmak[j] = inv_conicres*(dzk[j]-factor2*lkbar[j]); }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>185</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>186</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>      // update alpha</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>187</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>117396544</pre></td>
+    <td align="left" class="src coveredLine"><pre>      alpha = std::min(alpha,1.0/std::max(std::max(eig_rhok.tail(conesize-1).norm()-rhok[0],eig_sigmak.tail(conesize-1).norm()-sigmak[0]),0.0));</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>188</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>189</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>10500</pre></td>
+    <td align="left" class="src coveredLine"><pre>    return std::max(std::min(alpha,this->getSetting().get(SolverDoubleParam_MaximumStepLength)),this->getSetting().get(SolverDoubleParam_MinimumStepLength));</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>190</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>191</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>192</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1851</pre></td>
+    <td align="left" class="src coveredLine"><pre>  void InteriorPointSolver::updateStatistics()</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>193</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>194</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>5553</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->getInfo().get(SolverDoubleParam_PrimalCost) = cx_ / opt_.tau();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>195</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1851</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->getInfo().get(SolverDoubleParam_DualityGap) = opt_.s().dot(opt_.z());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>196</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>3702</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->getInfo().get(SolverDoubleParam_DualCost) = -(hz_ + by_) / opt_.tau();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>197</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>3702</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->getInfo().get(SolverDoubleParam_KappaOverTau) = opt_.kappa() / opt_.tau();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>198</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>3702</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->getInfo().get(SolverDoubleParam_MeritFunction) = (this->getInfo().get(SolverDoubleParam_DualityGap) + opt_.kappa()*opt_.tau()) / (this->getCone().sizeCone()+1);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>199</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>200</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    // relative duality gap</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>201</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 940 times">&check;</span><span class="takenBranch" title="Branch 2 taken 911 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1851</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if      (this->getInfo().get(SolverDoubleParam_PrimalCost) &lt; 0.0) { this->getInfo().get(SolverDoubleParam_RelativeDualityGap) = this->getInfo().get(SolverDoubleParam_DualityGap) / (-this->getInfo().get(SolverDoubleParam_PrimalCost)); }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>202</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 851 times">&check;</span><span class="takenBranch" title="Branch 2 taken 60 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>911</pre></td>
+    <td align="left" class="src coveredLine"><pre>    else if (this->getInfo().get(SolverDoubleParam_DualCost)   > 0.0) { this->getInfo().get(SolverDoubleParam_RelativeDualityGap) = this->getInfo().get(SolverDoubleParam_DualityGap) /   this->getInfo().get(SolverDoubleParam_DualCost); }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>203</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>60</pre></td>
+    <td align="left" class="src coveredLine"><pre>    else                                                        { this->getInfo().get(SolverDoubleParam_RelativeDualityGap) = SolverSetting::nan; }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>204</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>205</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    // residuals</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>206</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 8 not taken">&cross;</span><span class="takenBranch" title="Branch 3 taken 1851 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><span class="takenBranch" title="Branch 7 taken 1851 times">&check;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>9255</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->getInfo().get(SolverDoubleParam_PrimalResidual) = std::max(res_.y().norm()/std::max(inires_y_+opt_.x().norm(),1.0),</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>207</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>11106</pre></td>
+    <td align="left" class="src coveredLine"><pre>                                                               res_.z().norm()/std::max(inires_z_+opt_.x().norm()+opt_.s().norm(),1.0)) / opt_.tau();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>208</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>5553</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->getInfo().get(SolverDoubleParam_DualResidual) = res_.x().norm()/std::max(inires_x_+opt_.y().norm()+opt_.z().norm(),1.0) / opt_.tau();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>209</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>210</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    // infeasibility measures</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>211</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 6 taken 884 times">&check;</span><span class="takenBranch" title="Branch 7 taken 967 times">&check;</span><span class="takenBranch" title="Branch 10 taken 884 times">&check;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 14 taken 884 times">&check;</span><span class="notTakenBranch" title="Branch 15 not taken">&cross;</span><span class="takenBranch" title="Branch 16 taken 884 times">&check;</span><span class="takenBranch" title="Branch 17 taken 967 times">&check;</span><br/><span class="takenBranch" title="Branch 18 taken 884 times">&check;</span><span class="takenBranch" title="Branch 19 taken 967 times">&check;</span><span class="takenBranch" title="Branch 20 taken 884 times">&check;</span><span class="takenBranch" title="Branch 21 taken 967 times">&check;</span><br/><span class="takenBranch" title="Branch 22 taken 884 times">&check;</span><span class="takenBranch" title="Branch 23 taken 967 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>4586</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->getInfo().get(SolverDoubleParam_PrimalInfeasibility) = (hz_ + by_)/std::max(opt_.y().norm()+opt_.z().norm(),1.0) &lt; -this->getSetting().get(SolverDoubleParam_DualityGapRelTol) ? residual_x_ / std::max(opt_.y().norm()+opt_.z().norm(),1.0) : SolverSetting::nan;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>212</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 4 taken 903 times">&check;</span><span class="takenBranch" title="Branch 5 taken 948 times">&check;</span><span class="takenBranch" title="Branch 8 taken 903 times">&check;</span><span class="notTakenBranch" title="Branch 9 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 12 taken 903 times">&check;</span><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span><span class="takenBranch" title="Branch 16 taken 903 times">&check;</span><span class="notTakenBranch" title="Branch 17 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>6411</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->getInfo().get(SolverDoubleParam_DualInfeasibility) = cx_/std::max(opt_.x().norm(),1.0) &lt; -this->getSetting().get(SolverDoubleParam_DualityGapRelTol) ? std::max(residual_y_/std::max(opt_.x().norm(),1.0), residual_z_/std::max(opt_.x().norm()+opt_.s().norm(),1.0)) : SolverSetting::nan;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>213</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1851</pre></td>
+    <td align="left" class="src coveredLine"><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>214</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>215</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1851</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ExitCode InteriorPointSolver::convergenceCheck(const PrecisionConvergence&amp; mode)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>216</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>217</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1851</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->getInfo().mode() = mode;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>218</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    double feastol, abstol, reltol;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>219</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1851</pre></td>
+    <td align="left" class="src coveredLine"><pre>    ExitCode exitcode = ExitCode::NotConverged;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>220</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>221</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    // set accuracy</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>222</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1850 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1851</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if ( mode == PrecisionConvergence::Full) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>223</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1850</pre></td>
+    <td align="left" class="src coveredLine"><pre>      feastol = this->getSetting().get(SolverDoubleParam_FeasibilityTol);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>224</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1850</pre></td>
+    <td align="left" class="src coveredLine"><pre>      abstol  = this->getSetting().get(SolverDoubleParam_DualityGapAbsTol);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>225</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1850</pre></td>
+    <td align="left" class="src coveredLine"><pre>      reltol  = this->getSetting().get(SolverDoubleParam_DualityGapRelTol);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>226</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    } else {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>227</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>      feastol = this->getSetting().get(SolverDoubleParam_FeasibilityTolInacc);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>228</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>      abstol  = this->getSetting().get(SolverDoubleParam_DualityGapAbsTolInacc);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>229</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>      reltol  = this->getSetting().get(SolverDoubleParam_DualityGapRelTolInacc);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>230</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>231</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>232</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    // Optimality</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>233</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 911 times">&check;</span><span class="takenBranch" title="Branch 1 taken 940 times">&check;</span><span class="takenBranch" title="Branch 2 taken 853 times">&check;</span><span class="takenBranch" title="Branch 3 taken 58 times">&check;</span><br/><span class="takenBranch" title="Branch 5 taken 1793 times">&check;</span><span class="notTakenBranch" title="Branch 6 not taken">&cross;</span><span class="takenBranch" title="Branch 7 taken 612 times">&check;</span><span class="takenBranch" title="Branch 8 taken 1181 times">&check;</span><br/><span class="takenBranch" title="Branch 10 taken 612 times">&check;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><span class="takenBranch" title="Branch 12 taken 556 times">&check;</span><span class="takenBranch" title="Branch 13 taken 56 times">&check;</span><br/><span class="takenBranch" title="Branch 15 taken 556 times">&check;</span><span class="notTakenBranch" title="Branch 16 not taken">&cross;</span><span class="takenBranch" title="Branch 17 taken 532 times">&check;</span><span class="takenBranch" title="Branch 18 taken 24 times">&check;</span><br/><span class="takenBranch" title="Branch 20 taken 532 times">&check;</span><span class="notTakenBranch" title="Branch 21 not taken">&cross;</span><span class="takenBranch" title="Branch 22 taken 69 times">&check;</span><span class="takenBranch" title="Branch 23 taken 463 times">&check;</span><br/><span class="takenBranch" title="Branch 24 taken 532 times">&check;</span><span class="takenBranch" title="Branch 25 taken 1319 times">&check;</span><span class="takenBranch" title="Branch 26 taken 556 times">&check;</span><span class="takenBranch" title="Branch 27 taken 1295 times">&check;</span><br/><span class="takenBranch" title="Branch 28 taken 612 times">&check;</span><span class="takenBranch" title="Branch 29 taken 1239 times">&check;</span><span class="takenBranch" title="Branch 30 taken 1793 times">&check;</span><span class="takenBranch" title="Branch 31 taken 58 times">&check;</span><br/><span class="takenBranch" title="Branch 32 taken 93 times">&check;</span><span class="takenBranch" title="Branch 33 taken 1758 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>3644</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if ( (cx_&lt;0.0 || by_+hz_&lt;=abstol) &amp;&amp; (this->getInfo().get(SolverDoubleParam_PrimalResidual)&lt;feastol &amp;&amp; this->getInfo().get(SolverDoubleParam_DualResidual)&lt;feastol) &amp;&amp; (this->getInfo().get(SolverDoubleParam_DualityGap)&lt;abstol || this->getInfo().get(SolverDoubleParam_RelativeDualityGap)&lt;reltol)) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>234</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>186</pre></td>
+    <td align="left" class="src coveredLine"><pre>      this->getPrinter().display(Msg::OptimalityReached, this->getInfo());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>235</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="takenBranch" title="Branch 1 taken 92 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>93</pre></td>
+    <td align="left" class="src coveredLine"><pre>      (mode==PrecisionConvergence::Full ? exitcode=ExitCode::Optimal : exitcode=ExitCode::OptimalInacc);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>236</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>237</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>238</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    // Dual infeasible</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>239</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1758 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 3 taken 876 times">&check;</span><span class="takenBranch" title="Branch 4 taken 882 times">&check;</span><br/><span class="takenBranch" title="Branch 6 taken 876 times">&check;</span><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><span class="takenBranch" title="Branch 8 taken 1 times">&check;</span><span class="takenBranch" title="Branch 9 taken 875 times">&check;</span><br/><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><span class="takenBranch" title="Branch 12 taken 1 times">&check;</span><span class="takenBranch" title="Branch 13 taken 876 times">&check;</span><span class="takenBranch" title="Branch 14 taken 882 times">&check;</span><br/><span class="takenBranch" title="Branch 15 taken 1 times">&check;</span><span class="takenBranch" title="Branch 16 taken 1757 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>3517</pre></td>
+    <td align="left" class="src coveredLine"><pre>    else if( (this->getInfo().get(SolverDoubleParam_DualInfeasibility)!=SolverSetting::nan) &amp;&amp; (this->getInfo().get(SolverDoubleParam_DualInfeasibility)&lt;feastol) &amp;&amp; (opt_.tau()&lt;opt_.kappa()) ){</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>240</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>      this->getPrinter().display(Msg::DualInfeasibility, this->getInfo());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>241</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>      (mode==PrecisionConvergence::Full ? exitcode=ExitCode::DualInf : exitcode=ExitCode::DualInfInacc);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>242</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>243</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>244</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    // Primal infeasible</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>245</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1757 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 3 taken 821 times">&check;</span><span class="takenBranch" title="Branch 4 taken 936 times">&check;</span><br/><span class="takenBranch" title="Branch 6 taken 821 times">&check;</span><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><span class="takenBranch" title="Branch 8 taken 7 times">&check;</span><span class="takenBranch" title="Branch 9 taken 814 times">&check;</span><br/><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><span class="takenBranch" title="Branch 12 taken 7 times">&check;</span><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span><span class="takenBranch" title="Branch 14 taken 1750 times">&check;</span><br/><span class="notTakenBranch" title="Branch 16 not taken">&cross;</span><span class="notTakenBranch" title="Branch 17 not taken">&cross;</span><span class="notTakenBranch" title="Branch 19 not taken">&cross;</span><span class="notTakenBranch" title="Branch 20 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 21 not taken">&cross;</span><span class="notTakenBranch" title="Branch 22 not taken">&cross;</span><span class="notTakenBranch" title="Branch 23 not taken">&cross;</span><span class="takenBranch" title="Branch 24 taken 1757 times">&check;</span><br/><span class="takenBranch" title="Branch 25 taken 821 times">&check;</span><span class="takenBranch" title="Branch 26 taken 936 times">&check;</span><span class="takenBranch" title="Branch 27 taken 7 times">&check;</span><span class="takenBranch" title="Branch 28 taken 1750 times">&check;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>3514</pre></td>
+    <td align="left" class="src coveredLine"><pre>    else if( ((this->getInfo().get(SolverDoubleParam_PrimalInfeasibility)!=SolverSetting::nan &amp;&amp; this->getInfo().get(SolverDoubleParam_PrimalInfeasibility)&lt;feastol) &amp;&amp; (opt_.tau()&lt;opt_.kappa())) || (opt_.tau()&lt;feastol &amp;&amp; opt_.kappa()&lt;feastol &amp;&amp; this->getInfo().get(SolverDoubleParam_PrimalInfeasibility)&lt;feastol)) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>246</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>14</pre></td>
+    <td align="left" class="src coveredLine"><pre>      this->getPrinter().display(Msg::PrimalInfeasibility, this->getInfo());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>247</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 7 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>7</pre></td>
+    <td align="left" class="src coveredLine"><pre>      (mode==PrecisionConvergence::Full ? exitcode=ExitCode::PrimalInf : exitcode=ExitCode::PrimalInfInacc);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>248</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>249</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1851</pre></td>
+    <td align="left" class="src coveredLine"><pre>    return exitcode;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>250</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>251</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>252</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1149</pre></td>
+    <td align="left" class="src coveredLine"><pre>  void InteriorPointSolver::saveIterateAsBest()</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>253</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>254</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>2298</pre></td>
+    <td align="left" class="src coveredLine"><pre>    best_opt_ = opt_;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>255</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>2298</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->getBestInfo() = this->getInfo();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>256</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1149</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->getBestInfo().get(SolverIntParam_NumIter) = this->getInfo().get(SolverIntParam_NumIter);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>257</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1149</pre></td>
+    <td align="left" class="src coveredLine"><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>258</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>259</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  void InteriorPointSolver::restoreBestIterate()</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>260</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>261</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>    opt_ = best_opt_;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>262</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->getInfo() = this->getBestInfo();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>263</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>264</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>265</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1750</pre></td>
+    <td align="left" class="src coveredLine"><pre>  void InteriorPointSolver::rhsAffineStep()</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>266</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>267</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>3500</pre></td>
+    <td align="left" class="src coveredLine"><pre>    const int* invPerm = this->getLinSolver().invPerm().indices().data();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>268</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1750 times">&check;</span><span class="takenBranch" title="Branch 1 taken 12501289 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1750</pre></td>
+    <td align="left" class="src coveredLine"><pre>    for (int i=0; i&lt;this->getCone().numVars(); i++ ) { rhs2_[invPerm[i]] = res_.x()[i]; }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>269</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1750 times">&check;</span><span class="takenBranch" title="Branch 1 taken 2083769 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>2085519</pre></td>
+    <td align="left" class="src coveredLine"><pre>    for (int i=0; i&lt;this->getCone().numLeq(); i++ )  { rhs2_[invPerm[this->getCone().numVars()+i]] = -res_.y()[i]; }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>270</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1750 times">&check;</span><span class="takenBranch" title="Branch 1 taken 4741168 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>4742918</pre></td>
+    <td align="left" class="src coveredLine"><pre>    for (int i=0; i&lt;this->getCone().sizeLpc(); i++ ) { rhs2_[invPerm[this->getCone().lpConeStart()+i]] = opt_.s()[i] - res_.z()[i]; }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>271</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>272</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 7337284 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1750 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>14676318</pre></td>
+    <td align="left" class="src coveredLine"><pre>    for (int l=0; l&lt;this->getCone().numSoc(); l++) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>273</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 22011852 times">&check;</span><span class="takenBranch" title="Branch 1 taken 7337284 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>80710124</pre></td>
+    <td align="left" class="src coveredLine"><pre>      for (int i=0; i &lt; this->getCone().sizeSoc(l); i++ )</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>274</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>88047408</pre></td>
+    <td align="left" class="src coveredLine"><pre>        rhs2_[invPerm[this->getCone().extStartSoc(l)+i]] = opt_.s()[this->getCone().startSoc(l)+i] - res_.z()[this->getCone().startSoc(l)+i];</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>275</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>276</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1750</pre></td>
+    <td align="left" class="src coveredLine"><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>277</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>278</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1750</pre></td>
+    <td align="left" class="src coveredLine"><pre>  void InteriorPointSolver::rhsCenteringPredictorStep()</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>279</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>280</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>3500</pre></td>
+    <td align="left" class="src coveredLine"><pre>    double* dz_combined_ptr = dz_combined_.data();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>281</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>3500</pre></td>
+    <td align="left" class="src coveredLine"><pre>    const int* invPerm = this->getLinSolver().invPerm().indices().data();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>282</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>3500</pre></td>
+    <td align="left" class="src coveredLine"><pre>    double factor = 1.0 - this->getInfo().get(SolverDoubleParam_CorrectionStepLength);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>283</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>284</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1750 times">&check;</span><span class="takenBranch" title="Branch 1 taken 12501289 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1750</pre></td>
+    <td align="left" class="src coveredLine"><pre>    for (int i=0; i&lt;this->getCone().numVars(); i++) { rhs2_[invPerm[i]] *= factor; }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>285</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1750 times">&check;</span><span class="takenBranch" title="Branch 1 taken 2083769 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>2085519</pre></td>
+    <td align="left" class="src coveredLine"><pre>    for (int i=0; i&lt;this->getCone().numLeq(); i++ ) { rhs2_[invPerm[this->getCone().numVars()+i]] *= factor; }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>286</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1750 times">&check;</span><span class="takenBranch" title="Branch 1 taken 4741168 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>4742918</pre></td>
+    <td align="left" class="src coveredLine"><pre>    for (int i=0; i&lt;this->getCone().sizeLpc(); i++) { rhs2_[invPerm[this->getCone().lpConeStart()+i]] = dz_combined_ptr[i]; }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>287</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 7337284 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1750 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>14676318</pre></td>
+    <td align="left" class="src coveredLine"><pre>    for (int l=0; l &lt; this->getCone().numSoc(); l++ ){</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>288</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 22011852 times">&check;</span><span class="takenBranch" title="Branch 1 taken 7337284 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>80710124</pre></td>
+    <td align="left" class="src coveredLine"><pre>      for (int i=0; i&lt;this->getCone().sizeSoc(l); i++)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>289</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>66035556</pre></td>
+    <td align="left" class="src coveredLine"><pre>        rhs2_[invPerm[this->getCone().extStartSoc(l)+i]] = dz_combined_ptr[this->getCone().startSoc(l)+i];</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>290</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>291</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1750</pre></td>
+    <td align="left" class="src coveredLine"><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>292</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>293</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>101</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ExitCode InteriorPointSolver::optimize()</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>294</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>295</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>101</pre></td>
+    <td align="left" class="src coveredLine"><pre>    prev_pres_ = SolverSetting::nan;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>296</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>101</pre></td>
+    <td align="left" class="src coveredLine"><pre>    exitcode_ = ExitCode::Indeterminate;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>297</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>298</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 101 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>101</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if (initializeVariables() == ExitCode::Indeterminate)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>299</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>      return ExitCode::Indeterminate;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>300</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>301</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 3 taken 1851 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1952</pre></td>
+    <td align="left" class="src coveredLine"><pre>    for (this->getInfo().get(SolverIntParam_NumIter)=0; this->getInfo().get(SolverIntParam_NumIter)&lt;=this->getSetting().get(SolverIntParam_SolverMaxIters); this->getInfo().get(SolverIntParam_NumIter)++)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>302</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>303</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1851</pre></td>
+    <td align="left" class="src coveredLine"><pre>      computeResiduals();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>304</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1851</pre></td>
+    <td align="left" class="src coveredLine"><pre>      updateStatistics();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>305</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>3702</pre></td>
+    <td align="left" class="src coveredLine"><pre>      this->getPrinter().display(Msg::OptimizationProgress, this->getInfo());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>306</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>307</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>      // SAFEGUARD: Bad update or DualityGap became negative</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>308</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1851 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 3 taken 1750 times">&check;</span><span class="takenBranch" title="Branch 4 taken 101 times">&check;</span><br/><span class="takenBranch" title="Branch 6 taken 1750 times">&check;</span><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><span class="takenBranch" title="Branch 9 taken 1750 times">&check;</span><span class="notTakenBranch" title="Branch 10 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 11 taken 1749 times">&check;</span><span class="takenBranch" title="Branch 12 taken 1 times">&check;</span><span class="takenBranch" title="Branch 14 taken 1749 times">&check;</span><span class="notTakenBranch" title="Branch 15 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 16 not taken">&cross;</span><span class="takenBranch" title="Branch 17 taken 1749 times">&check;</span><span class="takenBranch" title="Branch 18 taken 1749 times">&check;</span><span class="takenBranch" title="Branch 19 taken 102 times">&check;</span><br/><span class="takenBranch" title="Branch 20 taken 1750 times">&check;</span><span class="takenBranch" title="Branch 21 taken 101 times">&check;</span><span class="takenBranch" title="Branch 22 taken 1 times">&check;</span><span class="takenBranch" title="Branch 23 taken 1850 times">&check;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>1851</pre></td>
+    <td align="left" class="src coveredLine"><pre>      if (this->getInfo().get(SolverIntParam_NumIter)>0 &amp;&amp; (this->getInfo().get(SolverDoubleParam_PrimalResidual)>this->getSetting().get(SolverDoubleParam_SafeGuard)*prev_pres_ || this->getInfo().get(SolverDoubleParam_DualityGap)&lt;0))</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>309</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>      {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>310</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>        this->getPrinter().display(Msg::SearchDirection, this->getBestInfo());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>311</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>        restoreBestIterate();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>312</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>        exitcode_ = convergenceCheck(PrecisionConvergence::Reduced);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>313</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>        if (exitcode_ == ExitCode::NotConverged) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>314</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>          this->getPrinter().display(Msg::NumericalProblem, this->getInfo());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>315</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>          exitcode_ = ExitCode::PrSearchDirection;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>316</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>        }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>317</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>        break;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>318</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>      }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>319</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1850</pre></td>
+    <td align="left" class="src coveredLine"><pre>      prev_pres_ = this->getInfo().get(SolverDoubleParam_PrimalResidual);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>320</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>321</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>      // Check termination to full precision, mininum stepLength and maxNumIters reached</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>322</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1850</pre></td>
+    <td align="left" class="src coveredLine"><pre>      exitcode_ = convergenceCheck(PrecisionConvergence::Full);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>323</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1750 times">&check;</span><span class="takenBranch" title="Branch 1 taken 100 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1850</pre></td>
+    <td align="left" class="src coveredLine"><pre>      if (exitcode_ == ExitCode::NotConverged)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>324</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>      {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>325</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>        // Mininum stepLength</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>326</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1750 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 3 taken 1650 times">&check;</span><span class="takenBranch" title="Branch 4 taken 100 times">&check;</span><br/><span class="takenBranch" title="Branch 6 taken 1650 times">&check;</span><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><span class="takenBranch" title="Branch 9 taken 1650 times">&check;</span><span class="notTakenBranch" title="Branch 10 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 12 taken 1650 times">&check;</span><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span><span class="takenBranch" title="Branch 14 taken 1650 times">&check;</span><span class="notTakenBranch" title="Branch 15 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 16 taken 1650 times">&check;</span><span class="takenBranch" title="Branch 17 taken 100 times">&check;</span><span class="notTakenBranch" title="Branch 18 not taken">&cross;</span><span class="takenBranch" title="Branch 19 taken 1750 times">&check;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>1750</pre></td>
+    <td align="left" class="src coveredLine"><pre>        if (this->getInfo().get(SolverIntParam_NumIter)>0 &amp;&amp; this->getInfo().get(SolverDoubleParam_StepLength)==this->getSetting().get(SolverDoubleParam_MinimumStepLength)*this->getSetting().get(SolverDoubleParam_StepLengthScaling))</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>327</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>        {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>328</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>          this->getPrinter().display(Msg::LineSearchStagnation, this->getBestInfo());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>329</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>          restoreBestIterate();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>330</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>          exitcode_ = convergenceCheck(PrecisionConvergence::Reduced);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>331</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>          if (exitcode_ == ExitCode::NotConverged) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>332</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>            exitcode_ = ExitCode::PrSearchDirection;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>333</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>            this->getPrinter().display(Msg::NumericalProblem, this->getInfo());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>334</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>          }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>335</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>          break;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>336</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>        }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>337</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>        // Reached maxNumIters</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>338</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 3 taken 1750 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1750</pre></td>
+    <td align="left" class="src coveredLine"><pre>        else if (this->getInfo().get(SolverIntParam_NumIter)==this->getSetting().get(SolverIntParam_SolverMaxIters))</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>339</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>        {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>340</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>          if (!this->getInfo().isBetterThan(this->getBestInfo())) { restoreBestIterate(); }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>341</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>          exitcode_ = convergenceCheck(PrecisionConvergence::Reduced);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>342</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>          if (exitcode_ == ExitCode::NotConverged) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>343</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>            exitcode_ = ExitCode::ReachMaxIters;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>344</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>            this->getPrinter().display(Msg::MaxItersReached, this->getInfo());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>345</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>          }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>346</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>          break;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>347</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>        }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>348</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>      } else {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>349</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>        break;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>350</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>      }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>351</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>352</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>      // SAFEGUARD: Compare statistics</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>353</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 100 times">&check;</span><span class="takenBranch" title="Branch 2 taken 1650 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1750</pre></td>
+    <td align="left" class="src coveredLine"><pre>      if (this->getInfo().get(SolverIntParam_NumIter)==0) { saveIterateAsBest(); }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>354</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1049 times">&check;</span><span class="takenBranch" title="Branch 2 taken 601 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1650</pre></td>
+    <td align="left" class="src coveredLine"><pre>      else if (this->getInfo().isBetterThan(this->getBestInfo())) { saveIterateAsBest(); }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>355</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>356</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>      // update NTscalings, numeric factorization and solve linear system</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>357</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 3 taken 1750 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><span class="takenBranch" title="Branch 6 taken 1750 times">&check;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>8750</pre></td>
+    <td align="left" class="src coveredLine"><pre>      if (this->getCone().updateNTScalings(this->opt_.s(), this->opt_.z(), this->lambda_)==ConeStatus::Outside) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>358</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        this->getPrinter().display(Msg::VariablesLeavingCone, this->getBestInfo());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>359</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        restoreBestIterate();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>360</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        exitcode_ = convergenceCheck(PrecisionConvergence::Reduced);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>361</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        if (exitcode_ == ExitCode::NotConverged) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>362</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>          this->getPrinter().display(Msg::NumericalProblem, this->getInfo());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>363</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>          return ExitCode::PrSlacksLeaveCone;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>364</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>        } else { break; }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>365</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>      }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>366</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>367</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1750</pre></td>
+    <td align="left" class="src coveredLine"><pre>      this->getLinSolver().updateMatrix();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>368</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 1750 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1750</pre></td>
+    <td align="left" class="src coveredLine"><pre>      if (this->getLinSolver().numericFactorization()!=FactStatus::Optimal) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>369</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        this->getPrinter().display(Msg::MatrixFactorization, this->getInfo());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>370</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        return ExitCode::Indeterminate;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>371</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>      }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>372</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 1750 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>5250</pre></td>
+    <td align="left" class="src coveredLine"><pre>      this->getInfo().get(SolverIntParam_NumRefsLinSolve) = this->getLinSolver().solve(rhs1_, dopt2_);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>373</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>374</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>      // Affine Step</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>375</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1750</pre></td>
+    <td align="left" class="src coveredLine"><pre>      rhsAffineStep();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>376</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 1750 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>5250</pre></td>
+    <td align="left" class="src coveredLine"><pre>      this->getInfo().get(SolverIntParam_NumRefsLinSolveAffine) = this->getLinSolver().solve(rhs2_, dopt1_);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>377</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>378</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>14000</pre></td>
+    <td align="left" class="src coveredLine"><pre>      dt_denom_ = opt_.kappa()/opt_.tau() - dotProduct(this->getCone().numVars(), this->getStorage().c().data(), dopt2_.x().data()) - dotProduct(this->getCone().numLeq(), this->getStorage().b().data(), dopt2_.y().data()) - dotProduct(this->getCone().sizeCone(), this->getStorage().h().data(), dopt2_.z().data());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>379</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>12250</pre></td>
+    <td align="left" class="src coveredLine"><pre>      dt_affine_ = (residual_t_ - opt_.kappa() + dotProduct(this->getCone().numVars(), this->getStorage().c().data(), dopt1_.x().data()) + dotProduct(this->getCone().numLeq(), this->getStorage().b().data(), dopt1_.y().data()) + dotProduct(this->getCone().sizeCone(), this->getStorage().h().data(), dopt1_.z().data())) / dt_denom_;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>380</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>3500</pre></td>
+    <td align="left" class="src coveredLine"><pre>      dk_affine_ = -this->opt_.kappa() - this->opt_.kappa()/this->opt_.tau()*dt_affine_;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>381</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 26753020 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1750 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1750</pre></td>
+    <td align="left" class="src coveredLine"><pre>      for (int i=0; i&lt;this->getCone().sizeCone(); i++) { dopt1_.z()[i] += dt_affine_*dopt2_.z()[i]; }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>382</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>383</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 1750 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>10500</pre></td>
+    <td align="left" class="src coveredLine"><pre>      W_times_dz_affine_ = this->getCone().W()*dopt1_.z();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>384</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 26753020 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1750 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1750</pre></td>
+    <td align="left" class="src coveredLine"><pre>      for (int i=0; i&lt;this->getCone().sizeCone(); i++) { ds_affine_by_W_[i] = -W_times_dz_affine_[i] - lambda_[i]; }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>385</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 3 taken 1750 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>10500</pre></td>
+    <td align="left" class="src coveredLine"><pre>      this->getInfo().get(SolverDoubleParam_AffineStepLength) = lineSearch(ds_affine_by_W_, W_times_dz_affine_, this->opt_.tau(), dt_affine_, this->opt_.kappa(), dk_affine_);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>386</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>5250</pre></td>
+    <td align="left" class="src coveredLine"><pre>      this->getInfo().get(SolverDoubleParam_CorrectionStepLength) = std::max(std::min(std::pow(1.0-this->getInfo().get(SolverDoubleParam_AffineStepLength),3.0),this->getSetting().get(SolverDoubleParam_MaximumCenteringStep)),this->getSetting().get(SolverDoubleParam_MinimumCenteringStep));</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>387</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>388</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>      // Centering and Corrector Step</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>389</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 4 taken 1750 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><span class="takenBranch" title="Branch 7 taken 1750 times">&check;</span><span class="notTakenBranch" title="Branch 8 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 10 taken 1750 times">&check;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>10500</pre></td>
+    <td align="left" class="src coveredLine"><pre>      ds_combined_ = lambda_*lambda_ + ds_affine_by_W_*W_times_dz_affine_- (this->getInfo().get(SolverDoubleParam_CorrectionStepLength)*this->getInfo().get(SolverDoubleParam_MeritFunction));</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>390</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>5250</pre></td>
+    <td align="left" class="src coveredLine"><pre>      ds_affine_by_W_ = lambda_/ds_combined_;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>391</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1750 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 5 taken 1750 times">&check;</span><span class="notTakenBranch" title="Branch 6 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>14000</pre></td>
+    <td align="left" class="src coveredLine"><pre>      dz_combined_ = (this->getInfo().get(SolverDoubleParam_CorrectionStepLength)-1.0)*res_.z() + this->getCone().W()*ds_affine_by_W_;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>392</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>3500</pre></td>
+    <td align="left" class="src coveredLine"><pre>      dk_combined_ = this->opt_.kappa()*this->opt_.tau() + dk_affine_*dt_affine_ - this->getInfo().get(SolverDoubleParam_CorrectionStepLength)*this->getInfo().get(SolverDoubleParam_MeritFunction);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>393</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>394</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1750</pre></td>
+    <td align="left" class="src coveredLine"><pre>      rhsCenteringPredictorStep();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>395</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 1750 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>5250</pre></td>
+    <td align="left" class="src coveredLine"><pre>      this->getInfo().get(SolverIntParam_NumRefsLinSolveCorrector) = this->getLinSolver().solve(rhs2_, dopt1_);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>396</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>397</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>15750</pre></td>
+    <td align="left" class="src coveredLine"><pre>      dopt1_.tau() = ((1-this->getInfo().get(SolverDoubleParam_CorrectionStepLength))*this->residual_t_ - dk_combined_/this->opt_.tau() + dotProduct(this->getCone().numVars(), this->getStorage().c().data(), dopt1_.x().data()) + dotProduct(this->getCone().numLeq(), this->getStorage().b().data(), dopt1_.y().data()) + dotProduct(this->getCone().sizeCone(), this->getStorage().h().data(), dopt1_.z().data())) / dt_denom_;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>398</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>7000</pre></td>
+    <td align="left" class="src coveredLine"><pre>      dopt1_.xyz() += dopt1_.tau()*dopt2_.xyz();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>399</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 1750 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>10500</pre></td>
+    <td align="left" class="src coveredLine"><pre>      W_times_dz_affine_ = this->getCone().W()*dopt1_.z();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>400</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 26753020 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1750 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1750</pre></td>
+    <td align="left" class="src coveredLine"><pre>      for (int i=0; i&lt;this->getCone().sizeCone(); i++) { ds_affine_by_W_[i] = -(ds_affine_by_W_[i] + W_times_dz_affine_[i]); }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>401</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>5250</pre></td>
+    <td align="left" class="src coveredLine"><pre>      dopt1_.kappa() = -(dk_combined_ + this->opt_.kappa()*dopt1_.tau())/this->opt_.tau();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>402</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 8 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 1750 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><span class="takenBranch" title="Branch 7 taken 1750 times">&check;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>12250</pre></td>
+    <td align="left" class="src coveredLine"><pre>      this->getInfo().get(SolverDoubleParam_StepLength) = lineSearch(ds_affine_by_W_, W_times_dz_affine_, this->opt_.tau(), dopt1_.tau(), this->opt_.kappa(), dopt1_.kappa()) * this->getSetting().get(SolverDoubleParam_StepLengthScaling);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>403</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1750 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>10500</pre></td>
+    <td align="left" class="src coveredLine"><pre>      dopt1_.s() = this->getCone().W()*ds_affine_by_W_;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>404</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>405</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>      // Update variables</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>406</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>5250</pre></td>
+    <td align="left" class="src coveredLine"><pre>      opt_ += this->getInfo().get(SolverDoubleParam_StepLength) * dopt1_;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>407</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>408</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>409</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>202</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->getEqRoutine().scaleVariables(opt_);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>410</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>101</pre></td>
+    <td align="left" class="src coveredLine"><pre>    return exitcode_;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>411</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>412</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>413</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
+    </tr>
+
+  </table>
+  <br>
+
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr><td class="hr"><td></tr>
+    <tr><td class="footer">Generated by: <a href="http://gcovr.com">GCOVR (Version 4.1)</a></td></tr>
+  </table>
+  <br>
+
+</body>
+
+</html>
+
