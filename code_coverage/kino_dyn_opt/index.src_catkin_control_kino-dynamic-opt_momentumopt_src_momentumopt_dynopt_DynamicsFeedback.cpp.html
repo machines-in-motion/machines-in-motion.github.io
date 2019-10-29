@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2019-10-29 11:08:16</td>
+            <td class="headerValue">2019-10-29 17:40:25</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">52</td>
@@ -414,7 +414,7 @@
     <tr>
     <td align="right" class="lineno"><pre>17</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>9</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>  void DynamicsFeedback::setStatesAndControls(const DynamicsState&amp; ini_state, const DynamicsSequence&amp; dyn_sequence)</pre></td>
     </tr>
 
@@ -428,7 +428,7 @@
     <tr>
     <td align="right" class="lineno"><pre>19</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>9</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>    ref_dyn_sequence_ = &amp;dyn_sequence;</pre></td>
     </tr>
 
@@ -442,21 +442,21 @@
     <tr>
     <td align="right" class="lineno"><pre>21</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>45</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>10</pre></td>
     <td align="left" class="src coveredLine"><pre>    this->stateSeq().state(0).stateVector().segment&lt;3>(0) = ini_state.centerOfMass();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>22</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>45</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>10</pre></td>
     <td align="left" class="src coveredLine"><pre>    this->stateSeq().state(0).stateVector().segment&lt;3>(3) = ini_state.linearMomentum();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>23</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>45</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>10</pre></td>
     <td align="left" class="src coveredLine"><pre>    this->stateSeq().state(0).stateVector().segment&lt;3>(6) = ini_state.angularMomentum();</pre></td>
     </tr>
 
@@ -469,8 +469,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>25</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 9 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>27</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
     <td align="left" class="src coveredLine"><pre>    if (this->tdim() != this->dynamicsSequence().size()) {</pre></td>
     </tr>
 
@@ -504,36 +504,36 @@
 
     <tr>
     <td align="right" class="lineno"><pre>30</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 2691 times">&check;</span><span class="takenBranch" title="Branch 1 taken 9 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>8091</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 598 times">&check;</span><span class="takenBranch" title="Branch 1 taken 2 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1798</pre></td>
     <td align="left" class="src coveredLine"><pre>    for (int time_id=0; time_id&lt;this->dynamicsSequence().size(); time_id++) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>31</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>8073</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1794</pre></td>
     <td align="left" class="src coveredLine"><pre>      this->controlSeq().control(time_id).feedforward().setZero();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>32</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 10764 times">&check;</span><span class="takenBranch" title="Branch 3 taken 2691 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>13455</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 2392 times">&check;</span><span class="takenBranch" title="Branch 3 taken 598 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>2990</pre></td>
     <td align="left" class="src coveredLine"><pre>      for (int eff_id=0; eff_id&lt;this->getSetting().get(PlannerIntParam_NumActiveEndeffectors); eff_id++)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>33</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 8244 times">&check;</span><span class="takenBranch" title="Branch 1 taken 2520 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>32292</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1832 times">&check;</span><span class="takenBranch" title="Branch 1 taken 560 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>7176</pre></td>
     <td align="left" class="src coveredLine"><pre>        if (this->dynamicsSequence().dynamicsState(time_id).endeffectorActivation(eff_id))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>34</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>65952</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>14656</pre></td>
     <td align="left" class="src coveredLine"><pre>          this->controlSeq().control(time_id).feedforward().segment&lt;3>(3*eff_id) =  this->getSetting().get(PlannerDoubleParam_MassTimesGravity)*this->dynamicsSequence().dynamicsState(time_id).endeffectorForce(eff_id);</pre></td>
     </tr>
 
@@ -547,7 +547,7 @@
     <tr>
     <td align="right" class="lineno"><pre>36</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>9</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>  }</pre></td>
     </tr>
 
@@ -561,7 +561,7 @@
     <tr>
     <td align="right" class="lineno"><pre>38</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>9</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>  void DynamicsFeedback::configure(const YAML::Node&amp; user_parameters)</pre></td>
     </tr>
 
@@ -588,50 +588,50 @@
 
     <tr>
     <td align="right" class="lineno"><pre>42</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 9 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 9 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>45</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>10</pre></td>
     <td align="left" class="src coveredLine"><pre>      control_cost_ = user_parameters["control_cost"].as&lt;Eigen::VectorXd>().asDiagonal();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>43</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 9 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 9 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>45</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>10</pre></td>
     <td align="left" class="src coveredLine"><pre>      com_tracking_ = user_parameters["com_tracking"].as&lt;Eigen::VectorXd>().asDiagonal();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>44</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 9 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 9 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>45</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>10</pre></td>
     <td align="left" class="src coveredLine"><pre>      lmom_tracking_ = user_parameters["lmom_tracking"].as&lt;Eigen::VectorXd>().asDiagonal();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>45</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 9 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 9 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>45</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>10</pre></td>
     <td align="left" class="src coveredLine"><pre>      amom_tracking_ = user_parameters["amom_tracking"].as&lt;Eigen::VectorXd>().asDiagonal();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>46</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 9 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 9 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>45</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>10</pre></td>
     <td align="left" class="src coveredLine"><pre>      com_final_tracking_ = user_parameters["com_final_tracking"].as&lt;Eigen::VectorXd>().asDiagonal();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>47</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 9 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 9 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>45</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>10</pre></td>
     <td align="left" class="src coveredLine"><pre>      lmom_final_tracking_ = user_parameters["lmom_final_tracking"].as&lt;Eigen::VectorXd>().asDiagonal();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>48</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 9 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 9 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 6 not taken">&cross;</span><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>45</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 6 not taken">&cross;</span><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>10</pre></td>
     <td align="left" class="src coveredLine"><pre>      amom_final_tracking_ = user_parameters["amom_final_tracking"].as&lt;Eigen::VectorXd>().asDiagonal();</pre></td>
     </tr>
 
@@ -673,7 +673,7 @@
     <tr>
     <td align="right" class="lineno"><pre>54</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>9</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>  }</pre></td>
     </tr>
 
@@ -687,7 +687,7 @@
     <tr>
     <td align="right" class="lineno"><pre>56</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3715200</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>825600</pre></td>
     <td align="left" class="src coveredLine"><pre>  double DynamicsFeedback::objective(const solverlqr::StateBase&amp; state, const solverlqr::ControlBase&amp; control, int time_id, bool is_final_timestep)</pre></td>
     </tr>
 
@@ -701,49 +701,49 @@
     <tr>
     <td align="right" class="lineno"><pre>58</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>11145600</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2476800</pre></td>
     <td align="left" class="src coveredLine"><pre>	Eigen::MatrixXd com_tracking  = com_tracking_,</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>59</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>11145600</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2476800</pre></td>
     <td align="left" class="src coveredLine"><pre>                    lmom_tracking = lmom_tracking_,</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>60</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>11145600</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2476800</pre></td>
     <td align="left" class="src coveredLine"><pre>                    amom_tracking = amom_tracking_;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>61</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 12384 times">&check;</span><span class="takenBranch" title="Branch 1 taken 3702816 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>3715200</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 2752 times">&check;</span><span class="takenBranch" title="Branch 1 taken 822848 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>825600</pre></td>
     <td align="left" class="src coveredLine"><pre>	if (is_final_timestep) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>62</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>24768</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>5504</pre></td>
     <td align="left" class="src coveredLine"><pre>      com_tracking  = com_final_tracking_;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>63</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>24768</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>5504</pre></td>
     <td align="left" class="src coveredLine"><pre>      lmom_tracking = lmom_final_tracking_;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>64</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>12384</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2752</pre></td>
     <td align="left" class="src coveredLine"><pre>      amom_tracking = amom_final_tracking_;</pre></td>
     </tr>
 
@@ -770,22 +770,22 @@
 
     <tr>
     <td align="right" class="lineno"><pre>68</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 18576000 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 3 taken 14860800 times">&check;</span><span class="takenBranch" title="Branch 4 taken 3715200 times">&check;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>33436800</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 4128000 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 3 taken 3302400 times">&check;</span><span class="takenBranch" title="Branch 4 taken 825600 times">&check;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>7430400</pre></td>
     <td align="left" class="src coveredLine"><pre>    for (int eff_id=0; eff_id&lt;this->getSetting().get(PlannerIntParam_NumActiveEndeffectors); eff_id++)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>69</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 11382272 times">&check;</span><span class="takenBranch" title="Branch 1 taken 3478528 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>44582400</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 2531839 times">&check;</span><span class="takenBranch" title="Branch 1 taken 770561 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>9907200</pre></td>
     <td align="left" class="src coveredLine"><pre>      if (this->dynamicsSequence().dynamicsState(time_id).endeffectorActivation(eff_id))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>70</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 11382272 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>56911360</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 2531839 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>12659195</pre></td>
     <td align="left" class="src coveredLine"><pre>        objective += control.feedforward().segment&lt;3>(3*eff_id).dot( control_cost_*(control.feedforward().segment&lt;3>(3*eff_id)) );</pre></td>
     </tr>
 
@@ -798,29 +798,29 @@
 
     <tr>
     <td align="right" class="lineno"><pre>72</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 3702816 times">&check;</span><span class="takenBranch" title="Branch 1 taken 12384 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>3715200</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 822848 times">&check;</span><span class="takenBranch" title="Branch 1 taken 2752 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>825600</pre></td>
     <td align="left" class="src coveredLine"><pre>    if (time_id>0) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>73</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 3702816 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>40730976</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 822848 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>9051328</pre></td>
     <td align="left" class="src coveredLine"><pre>      objective += (state.stateVector().segment&lt;3>(0)-this->dynamicsSequence().dynamicsState(time_id-1).centerOfMass()).dot( com_tracking*(state.stateVector().segment&lt;3>(0)-this->dynamicsSequence().dynamicsState(time_id-1).centerOfMass()) );</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>74</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 3702816 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>37028160</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 822848 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>8228480</pre></td>
     <td align="left" class="src coveredLine"><pre>      objective += (state.stateVector().segment&lt;3>(3)-this->dynamicsSequence().dynamicsState(time_id-1).linearMomentum()).dot( lmom_tracking*(state.stateVector().segment&lt;3>(3)-this->dynamicsSequence().dynamicsState(time_id-1).linearMomentum()) );</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>75</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 3702816 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>37028160</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 822848 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>8228480</pre></td>
     <td align="left" class="src coveredLine"><pre>      objective += (state.stateVector().segment&lt;3>(6)-this->dynamicsSequence().dynamicsState(time_id-1).angularMomentum()).dot( amom_tracking*(state.stateVector().segment&lt;3>(6)-this->dynamicsSequence().dynamicsState(time_id-1).angularMomentum()) );</pre></td>
     </tr>
 
@@ -833,22 +833,22 @@
 
     <tr>
     <td align="right" class="lineno"><pre>77</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 12384 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>136224</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 2752 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>30272</pre></td>
     <td align="left" class="src coveredLine"><pre>      objective += (state.stateVector().segment&lt;3>(0)-this->dynamicsSequence().dynamicsState(0).centerOfMass()).dot( com_tracking*(state.stateVector().segment&lt;3>(0)-this->dynamicsSequence().dynamicsState(0).centerOfMass()) );</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>78</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 12384 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>123840</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 2752 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>27520</pre></td>
     <td align="left" class="src coveredLine"><pre>      objective += (state.stateVector().segment&lt;3>(3)-this->dynamicsSequence().dynamicsState(0).linearMomentum()).dot( lmom_tracking*(state.stateVector().segment&lt;3>(3)-this->dynamicsSequence().dynamicsState(0).linearMomentum()) );</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>79</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 12384 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>123840</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 2752 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>27520</pre></td>
     <td align="left" class="src coveredLine"><pre>      objective += (state.stateVector().segment&lt;3>(6)-this->dynamicsSequence().dynamicsState(0).angularMomentum()).dot( amom_tracking*(state.stateVector().segment&lt;3>(6)-this->dynamicsSequence().dynamicsState(0).angularMomentum()) );</pre></td>
     </tr>
 
@@ -869,7 +869,7 @@
     <tr>
     <td align="right" class="lineno"><pre>82</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>7430400</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1651200</pre></td>
     <td align="left" class="src coveredLine"><pre>    return objective;</pre></td>
     </tr>
 
@@ -890,7 +890,7 @@
     <tr>
     <td align="right" class="lineno"><pre>85</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>118404</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>26312</pre></td>
     <td align="left" class="src coveredLine"><pre>  solverlqr::StateBase DynamicsFeedback::dynamics(const solverlqr::StateBase&amp; state, const solverlqr::ControlBase&amp; control, int time_id)</pre></td>
     </tr>
 
@@ -904,14 +904,14 @@
     <tr>
     <td align="right" class="lineno"><pre>87</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>236808</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>52624</pre></td>
     <td align="left" class="src coveredLine"><pre>    solverlqr::StateBase dstate(this->xdim());</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>88</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>236808</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>52624</pre></td>
     <td align="left" class="src coveredLine"><pre>    double dt = this->dynamicsSequence().dynamicsState(time_id).time();</pre></td>
     </tr>
 
@@ -931,29 +931,29 @@
 
     <tr>
     <td align="right" class="lineno"><pre>91</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 118404 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 118404 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>710424</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 26312 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 26312 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>157872</pre></td>
     <td align="left" class="src coveredLine"><pre>    dstate.stateVector().segment&lt;3>(3) = dt * this->getSetting().get(PlannerDoubleParam_RobotMass) * this->getSetting().get(PlannerVectorParam_GravityVector);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>92</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 592020 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 3 taken 473616 times">&check;</span><span class="takenBranch" title="Branch 4 taken 118404 times">&check;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>592020</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 131560 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 3 taken 105248 times">&check;</span><span class="takenBranch" title="Branch 4 taken 26312 times">&check;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>131560</pre></td>
     <td align="left" class="src coveredLine"><pre>    for (int eff_id=0; eff_id&lt;this->getSetting().get(PlannerIntParam_NumActiveEndeffectors); eff_id++)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>93</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 362736 times">&check;</span><span class="takenBranch" title="Branch 1 taken 110880 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1420848</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 80608 times">&check;</span><span class="takenBranch" title="Branch 1 taken 24640 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>315744</pre></td>
     <td align="left" class="src coveredLine"><pre>      if (this->dynamicsSequence().dynamicsState(time_id).endeffectorActivation(eff_id))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>94</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2176416</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>483648</pre></td>
     <td align="left" class="src coveredLine"><pre>        dstate.stateVector().segment&lt;3>(3) += dt * control.feedforward().segment&lt;3>(3*eff_id);</pre></td>
     </tr>
 
@@ -973,8 +973,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>97</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 118404 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>947232</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 26312 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>210496</pre></td>
     <td align="left" class="src coveredLine"><pre>    dstate.stateVector().segment&lt;3>(0) = dt / this->getSetting().get(PlannerDoubleParam_RobotMass) * (state.stateVector().segment&lt;3>(3) + dstate.stateVector().segment&lt;3>(3));</pre></td>
     </tr>
 
@@ -995,35 +995,35 @@
     <tr>
     <td align="right" class="lineno"><pre>100</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>236808</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>52624</pre></td>
     <td align="left" class="src coveredLine"><pre>    dstate.stateVector().segment&lt;3>(6).setZero();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>101</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 592020 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 3 taken 473616 times">&check;</span><span class="takenBranch" title="Branch 4 taken 118404 times">&check;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>592020</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 131560 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 3 taken 105248 times">&check;</span><span class="takenBranch" title="Branch 4 taken 26312 times">&check;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>131560</pre></td>
     <td align="left" class="src coveredLine"><pre>    for (int eff_id=0; eff_id&lt;this->getSetting().get(PlannerIntParam_NumActiveEndeffectors); eff_id++)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>102</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 362736 times">&check;</span><span class="takenBranch" title="Branch 1 taken 110880 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1420848</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 80608 times">&check;</span><span class="takenBranch" title="Branch 1 taken 24640 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>315744</pre></td>
     <td align="left" class="src coveredLine"><pre>      if (this->dynamicsSequence().dynamicsState(time_id).endeffectorActivation(eff_id)){</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>103</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3264624</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>725472</pre></td>
     <td align="left" class="src coveredLine"><pre>        dstate.stateVector().segment&lt;3>(6) += dt * (this->dynamicsSequence().dynamicsState(time_id).endeffectorPosition(eff_id) -</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>104</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3627360</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>806080</pre></td>
     <td align="left" class="src coveredLine"><pre>                                              (state.stateVector().segment&lt;3>(0)+dstate.stateVector().segment&lt;3>(0))).cross( control.feedforward().segment&lt;3>(3*eff_id+0) );</pre></td>
     </tr>
 
@@ -1037,7 +1037,7 @@
     <tr>
     <td align="right" class="lineno"><pre>106</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>118404</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>26312</pre></td>
     <td align="left" class="src coveredLine"><pre>    return dstate;</pre></td>
     </tr>
 
@@ -1065,7 +1065,7 @@
     <tr>
     <td align="right" class="lineno"><pre>110</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>9</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>  void DynamicsFeedbackWrapper::initialize(SolverLqrSetting&amp; lqr_stg, const PlannerSetting&amp; plan_stg)</pre></td>
     </tr>
 
@@ -1079,14 +1079,14 @@
     <tr>
     <td align="right" class="lineno"><pre>112</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>9</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>    lqr_stg_ = &amp;lqr_stg;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>113</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>9</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>    plan_stg_ = &amp;plan_stg;</pre></td>
     </tr>
 
@@ -1100,28 +1100,28 @@
     <tr>
     <td align="right" class="lineno"><pre>115</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>9</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>    dynamics_description_.initialize(lqr_stg);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>116</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
     <td align="left" class="src coveredLine"><pre>    dynamics_description_.setPlannerSetting(plan_stg);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>117</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>9</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>    dynamics_lqrsolver_.initialize(&amp;dynamics_description_, lqr_stg);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>118</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>9</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>  }</pre></td>
     </tr>
 
@@ -1135,7 +1135,7 @@
     <tr>
     <td align="right" class="lineno"><pre>120</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>9</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>  void DynamicsFeedbackWrapper::optimize(const DynamicsState&amp; ini_state, const DynamicsSequence&amp; dynamics_sequence)</pre></td>
     </tr>
 
@@ -1149,21 +1149,21 @@
     <tr>
     <td align="right" class="lineno"><pre>122</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>9</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>    dynamics_description_.setStatesAndControls(ini_state, dynamics_sequence);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>123</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>9</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>    dynamics_lqrsolver_.optimize();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>124</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>9</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>  }</pre></td>
     </tr>
 
