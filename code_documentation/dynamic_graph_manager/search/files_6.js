@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['tools_2ecpp',['tools.cpp',['../tools_8cpp.html',1,'']]],
-  ['tools_2ehh',['tools.hh',['../tools_8hh.html',1,'']]]
+  ['simple_5fdgm_2ehpp',['simple_dgm.hpp',['../simple__dgm_8hpp.html',1,'']]]
 ];

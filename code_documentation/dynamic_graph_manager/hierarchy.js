@@ -17,7 +17,9 @@ var hierarchy =
     [ "dynamic_graph::DgToRos< std::pair< specific::Vector3, Vector > >", "structdynamic__graph_1_1DgToRos_3_01std_1_1pair_3_01specific_1_1Vector3_00_01Vector_01_4_01_4.html", null ],
     [ "dynamic_graph::DgToRos< unsigned int >", "structdynamic__graph_1_1DgToRos_3_01unsigned_01int_01_4.html", null ],
     [ "dynamic_graph::DgToRos< Vector >", "structdynamic__graph_1_1DgToRos_3_01Vector_01_4.html", null ],
-    [ "dynamic_graph::DynamicGraphManager", "classdynamic__graph_1_1DynamicGraphManager.html", null ],
+    [ "dynamic_graph::DynamicGraphManager", "classdynamic__graph_1_1DynamicGraphManager.html", [
+      [ "dynamic_graph_manager::SimpleDGM", "classdynamic__graph__manager_1_1SimpleDGM.html", null ]
+    ] ],
     [ "Entity", null, [
       [ "dynamic_graph::Device", "classdynamic__graph_1_1Device.html", [
         [ "dynamic_graph::DeviceSimulator", "classdynamic__graph_1_1DeviceSimulator.html", null ]
