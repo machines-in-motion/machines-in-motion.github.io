@@ -1,6 +1,7 @@
 var hierarchy =
 [
     [ "shared_memory::ConditionVariable", "classshared__memory_1_1ConditionVariable.html", null ],
+    [ "Config", "classConfig.html", null ],
     [ "exception", null, [
       [ "shared_memory::Allocation_exception", "classshared__memory_1_1Allocation__exception.html", null ],
       [ "shared_memory::Memory_overflow_exception", "classshared__memory_1_1Memory__overflow__exception.html", null ],
@@ -18,6 +19,7 @@ var hierarchy =
     [ "MeasureTime", "structMeasureTime.html", null ],
     [ "shared_memory::Mutex", "classshared__memory_1_1Mutex.html", null ],
     [ "shared_memory::Serializable_exchange< Serializable >", "classshared__memory_1_1Serializable__exchange.html", null ],
+    [ "SerializableExample", "classSerializableExample.html", null ],
     [ "shared_memory::internal::Serialized_read< Serializable >", "classshared__memory_1_1internal_1_1Serialized__read.html", null ],
     [ "shared_memory::Serialized_read< Serializable >", "classshared__memory_1_1Serialized__read.html", null ],
     [ "shared_memory::internal::Serialized_write< Serializable >", "classshared__memory_1_1internal_1_1Serialized__write.html", null ],
