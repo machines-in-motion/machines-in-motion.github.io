@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2019-10-29 17:40:25</td>
+            <td class="headerValue">2019-10-30 09:07:40</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">6</td>
@@ -393,7 +393,7 @@
     <tr>
     <td align="right" class="lineno"><pre>14</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>235</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>143</pre></td>
     <td align="left" class="src coveredLine"><pre>  void OptimizationVariable::initialize(const char&amp; type, int rows, int cols, double lBnd, double uBnd, int&amp; startIndexInOptVec )</pre></td>
     </tr>
 
@@ -407,42 +407,42 @@
     <tr>
     <td align="right" class="lineno"><pre>16</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>235</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>143</pre></td>
     <td align="left" class="src coveredLine"><pre>    type_ = type;  rows_ = rows;  cols_ = cols;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>17</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>235</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>143</pre></td>
     <td align="left" class="src coveredLine"><pre>    lBndMat_.resize(rows, cols);  lBndMat_.setConstant(lBnd);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>18</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>235</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>143</pre></td>
     <td align="left" class="src coveredLine"><pre>    uBndMat_.resize(rows, cols);  uBndMat_.setConstant(uBnd);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>19</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>470</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>286</pre></td>
     <td align="left" class="src coveredLine"><pre>    guessMat_.resize(rows, cols); guessMat_.setZero();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>20</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>235</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>143</pre></td>
     <td align="left" class="src coveredLine"><pre>    indexPosition_ = startIndexInOptVec;  startIndexInOptVec += rows*cols;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>21</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>235</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>143</pre></td>
     <td align="left" class="src coveredLine"><pre>  }</pre></td>
     </tr>
 
@@ -939,7 +939,7 @@
     <tr>
     <td align="right" class="lineno"><pre>92</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1860924</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1396388</pre></td>
     <td align="left" class="src coveredLine"><pre>  int OptimizationVariable::getRowBndInd(int row) const</pre></td>
     </tr>
 
@@ -952,22 +952,22 @@
 
     <tr>
     <td align="right" class="lineno"><pre>94</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 1860924 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1860924</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 1396388 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1396388</pre></td>
     <td align="left" class="src coveredLine"><pre>    if (row >= rows_)  { return rows_-1; }</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>95</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1085546 times">&check;</span><span class="takenBranch" title="Branch 1 taken 775378 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1860924</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 813318 times">&check;</span><span class="takenBranch" title="Branch 1 taken 583070 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1396388</pre></td>
     <td align="left" class="src coveredLine"><pre>    else if (row &lt;= 0) { return 0; }</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>96</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1085546</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>813318</pre></td>
     <td align="left" class="src coveredLine"><pre>    else               { return row; }</pre></td>
     </tr>
 
@@ -988,7 +988,7 @@
     <tr>
     <td align="right" class="lineno"><pre>99</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1860924</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1396388</pre></td>
     <td align="left" class="src coveredLine"><pre>  int OptimizationVariable::getColBndInd(int col) const</pre></td>
     </tr>
 
@@ -1001,22 +1001,22 @@
 
     <tr>
     <td align="right" class="lineno"><pre>101</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 1860924 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1860924</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 1396388 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1396388</pre></td>
     <td align="left" class="src coveredLine"><pre>    if (col >= cols_)  { return cols_-1; }</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>102</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1843919 times">&check;</span><span class="takenBranch" title="Branch 1 taken 17005 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1860924</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1381279 times">&check;</span><span class="takenBranch" title="Branch 1 taken 15109 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1396388</pre></td>
     <td align="left" class="src coveredLine"><pre>    else if (col &lt;= 0) { return 0; }</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>103</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1843919</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1381279</pre></td>
     <td align="left" class="src coveredLine"><pre>    else               { return col; }</pre></td>
     </tr>
 

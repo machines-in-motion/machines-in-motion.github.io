@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2019-10-29 17:40:25</td>
+            <td class="headerValue">2019-10-30 09:07:40</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">7</td>
@@ -400,7 +400,7 @@
     <tr>
     <td align="right" class="lineno"><pre>15</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>  void ForwardPass::initialize(OcpBase* ocp, const SolverLqrSetting&amp; stgs)</pre></td>
     </tr>
 
@@ -414,21 +414,21 @@
     <tr>
     <td align="right" class="lineno"><pre>17</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>    ocp_ = ocp;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>18</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>    stgs_ = &amp;stgs;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>19</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>  }</pre></td>
     </tr>
 
@@ -442,7 +442,7 @@
     <tr>
     <td align="right" class="lineno"><pre>21</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>23</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>19</pre></td>
     <td align="left" class="src coveredLine"><pre>  void ForwardPass::applyController(const StateSequence&amp; nom_state_seq, const ControlSequence&amp; nom_control_seq)</pre></td>
     </tr>
 
@@ -463,35 +463,35 @@
     <tr>
     <td align="right" class="lineno"><pre>24</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>23</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>19</pre></td>
     <td align="left" class="src coveredLine"><pre>    new_cost_ = 0.0;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>25</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>23</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>19</pre></td>
     <td align="left" class="src coveredLine"><pre>    has_diverged_ = false;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>26</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>46</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>38</pre></td>
     <td align="left" class="src coveredLine"><pre>    new_state_seq_ = nom_state_seq;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>27</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>23</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>19</pre></td>
     <td align="left" class="src coveredLine"><pre>    new_control_seq_ = nom_control_seq;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>28</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>46</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>38</pre></td>
     <td align="left" class="src coveredLine"><pre>    timestep_cost_.resize(this->getOcp().tdim()+1);</pre></td>
     </tr>
 
@@ -511,29 +511,29 @@
 
     <tr>
     <td align="right" class="lineno"><pre>31</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1956 times">&check;</span><span class="takenBranch" title="Branch 2 taken 23 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>2002</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 760 times">&check;</span><span class="takenBranch" title="Branch 2 taken 19 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>798</pre></td>
     <td align="left" class="src coveredLine"><pre>    for (int time_id=0; time_id&lt;this->getOcp().tdim(); time_id++) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>32</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>11736</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>4560</pre></td>
     <td align="left" class="src coveredLine"><pre>      dx_.stateVector() = new_state_seq_.state(time_id).stateVector() - nom_state_seq.state(time_id).stateVector();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>33</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>9780</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>3800</pre></td>
     <td align="left" class="src coveredLine"><pre>      new_control_seq_.control(time_id).feedforward() = nom_control_seq.control(time_id).feedforward() +</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>34</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>11736</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>4560</pre></td>
     <td align="left" class="src coveredLine"><pre>                                                        nom_control_seq.control(time_id).feedback()*dx_.stateVector();</pre></td>
     </tr>
 
@@ -546,8 +546,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>36</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 1956 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1956</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 760 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>760</pre></td>
     <td align="left" class="src coveredLine"><pre>      if (this->getLqrSetting().get(SolverLqrBoolParam_HasControlLimits)) {</pre></td>
     </tr>
 
@@ -610,14 +610,14 @@
     <tr>
     <td align="right" class="lineno"><pre>45</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>7824</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>3040</pre></td>
     <td align="left" class="src coveredLine"><pre>      this->getOcp().internal_dynamics(new_state_seq_.state(time_id), new_control_seq_.control(time_id), new_state_seq_.state(time_id+1), time_id);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>46</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>5868</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2280</pre></td>
     <td align="left" class="src coveredLine"><pre>      timestep_cost_[time_id] = this->getOcp().objective(new_state_seq_.state(time_id), new_control_seq_.control(time_id), time_id, false);</pre></td>
     </tr>
 
@@ -637,15 +637,15 @@
 
     <tr>
     <td align="right" class="lineno"><pre>49</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1956 times">&check;</span><span class="takenBranch" title="Branch 1 taken 13804 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>47280</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 760 times">&check;</span><span class="takenBranch" title="Branch 1 taken 3040 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>11400</pre></td>
     <td align="left" class="src coveredLine"><pre>      for (int id=0; id&lt;new_state_seq_.state(time_id+1).stateVector().size(); id++)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>50</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 3 taken 13804 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>55216</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 3 taken 3040 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>12160</pre></td>
     <td align="left" class="src coveredLine"><pre>        if (std::abs(new_state_seq_.state(time_id+1).stateVector()[id]) > this->getLqrSetting().get(SolverLqrDoubleParam_DivergenceLimitCheck)) {</pre></td>
     </tr>
 
@@ -679,36 +679,36 @@
 
     <tr>
     <td align="right" class="lineno"><pre>55</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 3 taken 23 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>184</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 3 taken 19 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>152</pre></td>
     <td align="left" class="src coveredLine"><pre>    timestep_cost_[this->getOcp().tdim()] = this->getOcp().objective(new_state_seq_.state(this->getOcp().tdim()),</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>56</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>92</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>76</pre></td>
     <td align="left" class="src coveredLine"><pre>                                                                              ControlBase(this->getOcp().xdim(), this->getOcp().udim()),</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>57</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>69</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>57</pre></td>
     <td align="left" class="src coveredLine"><pre>                                                                              this->getOcp().tdim(), true);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>58</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>46</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>38</pre></td>
     <td align="left" class="src coveredLine"><pre>    new_cost_ = timestep_cost_.sum();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>59</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>23</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>19</pre></td>
     <td align="left" class="src coveredLine"><pre>  }</pre></td>
     </tr>
 

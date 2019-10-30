@@ -269,18 +269,18 @@
             <td class="headerValue">src/not_catkin/third_party/pybind11/include/pybind11/detail/class.h</td>
             <td></td>
             <td class="headerName">Lines:</td>
-            <td class="headerTableEntry">169</td>
-            <td class="headerTableEntry">275</td>
-            <td class="headerTableEntry" style="background-color:LightPink">61.5 %</td>
+            <td class="headerTableEntry">116</td>
+            <td class="headerTableEntry">271</td>
+            <td class="headerTableEntry" style="background-color:LightPink">42.8 %</td>
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2019-10-29 17:40:25</td>
+            <td class="headerValue">2019-10-30 09:07:40</td>
             <td></td>
             <td class="headerName">Branches:</td>
-            <td class="headerTableEntry">90</td>
+            <td class="headerTableEntry">63</td>
             <td class="headerTableEntry">276</td>
-            <td class="headerTableEntry" style="background-color:LightPink">32.6 %</td>
+            <td class="headerTableEntry" style="background-color:LightPink">22.8 %</td>
           </tr>
         </table>
       </td>
@@ -1821,21 +1821,21 @@
     <tr>
     <td align="right" class="lineno"><pre>218</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244662</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>132</pre></td>
     <td align="left" class="src coveredLine"><pre>inline bool register_instance_impl(void *ptr, instance *self) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>219</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>489324</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>264</pre></td>
     <td align="left" class="src coveredLine"><pre>    get_internals().registered_instances.emplace(ptr, self);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>220</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244662</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>132</pre></td>
     <td align="left" class="src coveredLine"><pre>    return true; // unused, but gives the same signature as the deregister func</pre></td>
     </tr>
 
@@ -1849,50 +1849,50 @@
     <tr>
     <td align="right" class="lineno"><pre>222</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244530</pre></td>
-    <td align="left" class="src coveredLine"><pre>inline bool deregister_instance_impl(void *ptr, instance *self) {</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>inline bool deregister_instance_impl(void *ptr, instance *self) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>223</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244530</pre></td>
-    <td align="left" class="src coveredLine"><pre>    auto &amp;registered_instances = get_internals().registered_instances;</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    auto &amp;registered_instances = get_internals().registered_instances;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>224</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>489060</pre></td>
-    <td align="left" class="src coveredLine"><pre>    auto range = registered_instances.equal_range(ptr);</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    auto range = registered_instances.equal_range(ptr);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>225</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 244530 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>244530</pre></td>
-    <td align="left" class="src coveredLine"><pre>    for (auto it = range.first; it != range.second; ++it) {</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    for (auto it = range.first; it != range.second; ++it) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>226</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 244530 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>489060</pre></td>
-    <td align="left" class="src coveredLine"><pre>        if (Py_TYPE(self) == Py_TYPE(it->second)) {</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        if (Py_TYPE(self) == Py_TYPE(it->second)) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>227</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244530</pre></td>
-    <td align="left" class="src coveredLine"><pre>            registered_instances.erase(it);</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>            registered_instances.erase(it);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>228</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244530</pre></td>
-    <td align="left" class="src coveredLine"><pre>            return true;</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>            return true;</pre></td>
     </tr>
 
     <tr>
@@ -1933,21 +1933,21 @@
     <tr>
     <td align="right" class="lineno"><pre>234</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244662</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>132</pre></td>
     <td align="left" class="src coveredLine"><pre>inline void register_instance(instance *self, void *valptr, const type_info *tinfo) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>235</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244662</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>132</pre></td>
     <td align="left" class="src coveredLine"><pre>    register_instance_impl(valptr, self);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>236</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 244662 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>244662</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 132 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>132</pre></td>
     <td align="left" class="src coveredLine"><pre>    if (!tinfo->simple_ancestors)</pre></td>
     </tr>
 
@@ -1961,7 +1961,7 @@
     <tr>
     <td align="right" class="lineno"><pre>238</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244662</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>132</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -1975,22 +1975,22 @@
     <tr>
     <td align="right" class="lineno"><pre>240</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244530</pre></td>
-    <td align="left" class="src coveredLine"><pre>inline bool deregister_instance(instance *self, void *valptr, const type_info *tinfo) {</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>inline bool deregister_instance(instance *self, void *valptr, const type_info *tinfo) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>241</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244530</pre></td>
-    <td align="left" class="src coveredLine"><pre>    bool ret = deregister_instance_impl(valptr, self);</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    bool ret = deregister_instance_impl(valptr, self);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>242</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 244530 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>244530</pre></td>
-    <td align="left" class="src coveredLine"><pre>    if (!tinfo->simple_ancestors)</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    if (!tinfo->simple_ancestors)</pre></td>
     </tr>
 
     <tr>
@@ -2003,8 +2003,8 @@
     <tr>
     <td align="right" class="lineno"><pre>244</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244530</pre></td>
-    <td align="left" class="src coveredLine"><pre>    return ret;</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    return ret;</pre></td>
     </tr>
 
     <tr>
@@ -2108,14 +2108,14 @@
     <tr>
     <td align="right" class="lineno"><pre>259</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244662</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>132</pre></td>
     <td align="left" class="src coveredLine"><pre>    PyObject *self = type->tp_alloc(type, 0);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>260</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244662</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>132</pre></td>
     <td align="left" class="src coveredLine"><pre>    auto inst = reinterpret_cast&lt;instance *>(self);</pre></td>
     </tr>
 
@@ -2129,7 +2129,7 @@
     <tr>
     <td align="right" class="lineno"><pre>262</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244662</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>132</pre></td>
     <td align="left" class="src coveredLine"><pre>    inst->allocate_layout();</pre></td>
     </tr>
 
@@ -2143,7 +2143,7 @@
     <tr>
     <td align="right" class="lineno"><pre>264</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244662</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>132</pre></td>
     <td align="left" class="src coveredLine"><pre>    inst->owned = true;</pre></td>
     </tr>
 
@@ -2192,15 +2192,15 @@
     <tr>
     <td align="right" class="lineno"><pre>271</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>16</pre></td>
-    <td align="left" class="src coveredLine"><pre>extern "C" inline PyObject *pybind11_object_new(PyTypeObject *type, PyObject *, PyObject *) {</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>extern "C" inline PyObject *pybind11_object_new(PyTypeObject *type, PyObject *, PyObject *) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>272</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>16</pre></td>
-    <td align="left" class="src coveredLine"><pre>    return make_new_instance(type);</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    return make_new_instance(type);</pre></td>
     </tr>
 
     <tr>
@@ -2325,50 +2325,50 @@
     <tr>
     <td align="right" class="lineno"><pre>290</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244470</pre></td>
-    <td align="left" class="src coveredLine"><pre>inline void add_patient(PyObject *nurse, PyObject *patient) {</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>inline void add_patient(PyObject *nurse, PyObject *patient) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>291</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244470</pre></td>
-    <td align="left" class="src coveredLine"><pre>    auto &amp;internals = get_internals();</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    auto &amp;internals = get_internals();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>292</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244470</pre></td>
-    <td align="left" class="src coveredLine"><pre>    auto instance = reinterpret_cast&lt;detail::instance *>(nurse);</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    auto instance = reinterpret_cast&lt;detail::instance *>(nurse);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>293</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244470</pre></td>
-    <td align="left" class="src coveredLine"><pre>    instance->has_patients = true;</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    instance->has_patients = true;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>294</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244470</pre></td>
-    <td align="left" class="src coveredLine"><pre>    Py_INCREF(patient);</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    Py_INCREF(patient);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>295</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>488940</pre></td>
-    <td align="left" class="src coveredLine"><pre>    internals.patients[nurse].push_back(patient);</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    internals.patients[nurse].push_back(patient);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>296</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244470</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
@@ -2381,36 +2381,36 @@
     <tr>
     <td align="right" class="lineno"><pre>298</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244470</pre></td>
-    <td align="left" class="src coveredLine"><pre>inline void clear_patients(PyObject *self) {</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>inline void clear_patients(PyObject *self) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>299</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244470</pre></td>
-    <td align="left" class="src coveredLine"><pre>    auto instance = reinterpret_cast&lt;detail::instance *>(self);</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    auto instance = reinterpret_cast&lt;detail::instance *>(self);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>300</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244470</pre></td>
-    <td align="left" class="src coveredLine"><pre>    auto &amp;internals = get_internals();</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    auto &amp;internals = get_internals();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>301</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>488940</pre></td>
-    <td align="left" class="src coveredLine"><pre>    auto pos = internals.patients.find(self);</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    auto pos = internals.patients.find(self);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>302</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 244470 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>488940</pre></td>
-    <td align="left" class="src coveredLine"><pre>    assert(pos != internals.patients.end());</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    assert(pos != internals.patients.end());</pre></td>
     </tr>
 
     <tr>
@@ -2437,43 +2437,43 @@
     <tr>
     <td align="right" class="lineno"><pre>306</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>733410</pre></td>
-    <td align="left" class="src coveredLine"><pre>    auto patients = std::move(pos->second);</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    auto patients = std::move(pos->second);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>307</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>488940</pre></td>
-    <td align="left" class="src coveredLine"><pre>    internals.patients.erase(pos);</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    internals.patients.erase(pos);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>308</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244470</pre></td>
-    <td align="left" class="src coveredLine"><pre>    instance->has_patients = false;</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    instance->has_patients = false;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>309</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 244470 times">&check;</span><span class="takenBranch" title="Branch 1 taken 244470 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1222350</pre></td>
-    <td align="left" class="src coveredLine"><pre>    for (PyObject *&amp;patient : patients)</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    for (PyObject *&amp;patient : patients)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>310</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 244470 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 129488 times">&check;</span><span class="takenBranch" title="Branch 3 taken 114982 times">&check;</span><br/><span class="takenBranch" title="Branch 5 taken 129488 times">&check;</span><span class="notTakenBranch" title="Branch 6 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>244470</pre></td>
-    <td align="left" class="src coveredLine"><pre>        Py_CLEAR(patient);</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        Py_CLEAR(patient);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>311</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244470</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
@@ -2500,15 +2500,15 @@
     <tr>
     <td align="right" class="lineno"><pre>315</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244530</pre></td>
-    <td align="left" class="src coveredLine"><pre>inline void clear_instance(PyObject *self) {</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>inline void clear_instance(PyObject *self) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>316</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244530</pre></td>
-    <td align="left" class="src coveredLine"><pre>    auto instance = reinterpret_cast&lt;detail::instance *>(self);</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    auto instance = reinterpret_cast&lt;detail::instance *>(self);</pre></td>
     </tr>
 
     <tr>
@@ -2527,16 +2527,16 @@
 
     <tr>
     <td align="right" class="lineno"><pre>319</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 244530 times">&check;</span><span class="takenBranch" title="Branch 1 taken 244530 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1222650</pre></td>
-    <td align="left" class="src coveredLine"><pre>    for (auto &amp;v_h : values_and_holders(instance)) {</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    for (auto &amp;v_h : values_and_holders(instance)) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>320</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 244530 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>244530</pre></td>
-    <td align="left" class="src coveredLine"><pre>        if (v_h) {</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        if (v_h) {</pre></td>
     </tr>
 
     <tr>
@@ -2562,9 +2562,9 @@
 
     <tr>
     <td align="right" class="lineno"><pre>324</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 244530 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 3 taken 244530 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><span class="takenBranch" title="Branch 6 taken 244530 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>244530</pre></td>
-    <td align="left" class="src coveredLine"><pre>            if (v_h.instance_registered() &amp;&amp; !deregister_instance(instance, v_h.value_ptr(), v_h.type))</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>            if (v_h.instance_registered() &amp;&amp; !deregister_instance(instance, v_h.value_ptr(), v_h.type))</pre></td>
     </tr>
 
     <tr>
@@ -2583,16 +2583,16 @@
 
     <tr>
     <td align="right" class="lineno"><pre>327</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 244470 times">&check;</span><span class="takenBranch" title="Branch 1 taken 60 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 3 taken 244470 times">&check;</span><br/><span class="takenBranch" title="Branch 4 taken 60 times">&check;</span><span class="takenBranch" title="Branch 5 taken 244470 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>489000</pre></td>
-    <td align="left" class="src coveredLine"><pre>            if (instance->owned || v_h.holder_constructed())</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>            if (instance->owned || v_h.holder_constructed())</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>328</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>60</pre></td>
-    <td align="left" class="src coveredLine"><pre>                v_h.type->dealloc(v_h);</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>                v_h.type->dealloc(v_h);</pre></td>
     </tr>
 
     <tr>
@@ -2619,8 +2619,8 @@
     <tr>
     <td align="right" class="lineno"><pre>332</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244530</pre></td>
-    <td align="left" class="src coveredLine"><pre>    instance->deallocate_layout();</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    instance->deallocate_layout();</pre></td>
     </tr>
 
     <tr>
@@ -2632,9 +2632,9 @@
 
     <tr>
     <td align="right" class="lineno"><pre>334</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 244530 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>244530</pre></td>
-    <td align="left" class="src coveredLine"><pre>    if (instance->weakrefs)</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    if (instance->weakrefs)</pre></td>
     </tr>
 
     <tr>
@@ -2654,15 +2654,15 @@
     <tr>
     <td align="right" class="lineno"><pre>337</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244530</pre></td>
-    <td align="left" class="src coveredLine"><pre>    PyObject **dict_ptr = _PyObject_GetDictPtr(self);</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    PyObject **dict_ptr = _PyObject_GetDictPtr(self);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>338</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 244530 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>244530</pre></td>
-    <td align="left" class="src coveredLine"><pre>    if (dict_ptr)</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    if (dict_ptr)</pre></td>
     </tr>
 
     <tr>
@@ -2681,23 +2681,23 @@
 
     <tr>
     <td align="right" class="lineno"><pre>341</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 244470 times">&check;</span><span class="takenBranch" title="Branch 1 taken 60 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>244530</pre></td>
-    <td align="left" class="src coveredLine"><pre>    if (instance->has_patients)</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    if (instance->has_patients)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>342</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244470</pre></td>
-    <td align="left" class="src coveredLine"><pre>        clear_patients(self);</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        clear_patients(self);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>343</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244530</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
@@ -2724,15 +2724,15 @@
     <tr>
     <td align="right" class="lineno"><pre>347</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244530</pre></td>
-    <td align="left" class="src coveredLine"><pre>extern "C" inline void pybind11_object_dealloc(PyObject *self) {</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>extern "C" inline void pybind11_object_dealloc(PyObject *self) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>348</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244530</pre></td>
-    <td align="left" class="src coveredLine"><pre>    clear_instance(self);</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    clear_instance(self);</pre></td>
     </tr>
 
     <tr>
@@ -2745,15 +2745,15 @@
     <tr>
     <td align="right" class="lineno"><pre>350</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244530</pre></td>
-    <td align="left" class="src coveredLine"><pre>    auto type = Py_TYPE(self);</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    auto type = Py_TYPE(self);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>351</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244530</pre></td>
-    <td align="left" class="src coveredLine"><pre>    type->tp_free(self);</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    type->tp_free(self);</pre></td>
     </tr>
 
     <tr>
@@ -2801,22 +2801,22 @@
     <tr>
     <td align="right" class="lineno"><pre>358</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244530</pre></td>
-    <td align="left" class="src coveredLine"><pre>    auto pybind11_object_type = (PyTypeObject *) get_internals().instance_base;</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    auto pybind11_object_type = (PyTypeObject *) get_internals().instance_base;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>359</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 244530 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>244530</pre></td>
-    <td align="left" class="src coveredLine"><pre>    if (type->tp_dealloc == pybind11_object_type->tp_dealloc)</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    if (type->tp_dealloc == pybind11_object_type->tp_dealloc)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>360</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 244530 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>244530</pre></td>
-    <td align="left" class="src coveredLine"><pre>        Py_DECREF(type);</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        Py_DECREF(type);</pre></td>
     </tr>
 
     <tr>
@@ -2857,8 +2857,8 @@
     <tr>
     <td align="right" class="lineno"><pre>366</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>244530</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
