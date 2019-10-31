@@ -32,16 +32,17 @@ var NAVTREE =
         [ "Functions", "globals_func.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
-    ] ]
+    ] ],
+    [ "Examples", "examples.html", "examples" ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
 ".html",
-"classdynamic__graph_1_1PeriodicCall.html#ad72e58ae9793d086627796954d1e6595",
-"functions_func.html",
-"structdynamic__graph_1_1GlobalRos.html#a307c7c3e5e008bd9f6d779d44403afe1"
+"classdynamic__graph_1_1PeriodicCall.html#acf4cd14a78523d6612d4679cb5a67d8b",
+"exception-signal_8cpp.html",
+"structdynamic__graph_1_1DgToRos_3_01std_1_1pair_3_01specific_1_1Twist_00_01Vector_01_4_01_4.html#aefdf5d251866f024280932204c82b9b6"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

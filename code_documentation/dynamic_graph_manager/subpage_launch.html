@@ -50,6 +50,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -107,15 +108,13 @@ $(document).ready(function(){initNavTree('subpage_launch.html','');});
 <p>Spawn 4 terminal with the catkin workspace are sourced.</p><ol type="1">
 <li>Launch roscore (if not running yet): <div class="fragment"><div class="line">roscore</div></div><!-- fragment --></li>
 <li>Launch the entry/main() executable:<ol type="a">
-<li>Run the executable: <div class="fragment"><div class="line">rosrun &lt;package of your robot&gt; &lt;name of executable file&gt;</div></div><!-- fragment --> For instance: <div class="fragment"><div class="line">rosrun dynamic_graph_manager demo_dynamic_graph_manager</div></div><!-- fragment --></li>
+<li>Run the executable: <div class="fragment"><div class="line">rosrun &lt;package of your robot&gt; &lt;name of executable file&gt;</div></div><!-- fragment --> For instance: <div class="fragment"><div class="line">rosrun <a class="code" href="namespacedynamic__graph__manager.html">dynamic_graph_manager</a> demo_dynamic_graph_manager</div></div><!-- fragment --></li>
 </ol>
 </li>
 <li>In another terminal, connect to the python interpreter via ROS:<ol type="a">
-<li>Startup Dynamic Graph Python client <div class="fragment"><div class="line">rosrun dynamic_graph_manager run_command &lt;python-file&gt;</div></div><!-- fragment --> or <div class="fragment"><div class="line">rosrun dynamic_graph_manager run_command</div></div><!-- fragment --> The first call will execute the python file given and fall back to an interactive python terminal. The second call will just fallback to the interactive python terinal. In this terminal you can have access to a global object called "robot". And in particular "robot.device". This device is the link between the (extremely simple) hardware implemented in the demo_dynamic_graph_manager and the dynamic-graph. You can already explore what has been implemented by executing: <div class="fragment"><div class="line">&gt;&gt;&gt; <a class="code" href="namespacerobot.html">robot</a>.device.displaySignals()</div></div><!-- fragment --></li>
+<li>Startup Dynamic Graph Python client <div class="fragment"><div class="line">rosrun <a class="code" href="namespacedynamic__graph__manager.html">dynamic_graph_manager</a> run_command &lt;python-file&gt;</div></div><!-- fragment --> or <div class="fragment"><div class="line">rosrun <a class="code" href="namespacedynamic__graph__manager.html">dynamic_graph_manager</a> run_command</div></div><!-- fragment --> The first call will execute the python file given and fall back to an interactive python terminal. The second call will just fallback to the interactive python terinal. In this terminal you can have access to a global object called "robot". And in particular "robot.device". This device is the link between the (extremely simple) hardware implemented in the demo_dynamic_graph_manager and the dynamic-graph. You can already explore what has been implemented by executing: <div class="fragment"><div class="line">&gt;&gt;&gt; <a class="code" href="namespacerobot.html">robot</a>.device.displaySignals()</div></div><!-- fragment --></li>
 <li>Setup your control graph by executing python commands or use <code>execfile(...)</code> to execute a python script</li>
-</ol>
-</li>
-<li>In a last terminal you can start or stop the dynamic graph by executing the following ROS services:<ol type="a">
+<li>In a last terminal you can start or stop the dynamic graph by executing the following ROS services:</li>
 <li>Start dynamic graph <div class="fragment"><div class="line">rosservice call /<a class="code" href="namespacedynamic__graph.html">dynamic_graph</a>/start_dynamic_graph</div></div><!-- fragment --></li>
 <li>Stop dynamic graph <div class="fragment"><div class="line">rosservice call /<a class="code" href="namespacedynamic__graph.html">dynamic_graph</a>/stop_dynamic_graph</div></div><!-- fragment --> </li>
 </ol>

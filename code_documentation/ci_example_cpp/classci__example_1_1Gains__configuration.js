@@ -1,5 +1,6 @@
 var classci__example_1_1Gains__configuration =
 [
+    [ "~Gains_configuration", "classci__example_1_1Gains__configuration.html#a09886ed68a3cbb51339096288e63634a", null ],
     [ "get_error", "classci__example_1_1Gains__configuration.html#a3c41f436a33c4e881bd1907e5422954b", null ],
     [ "get_kd", "classci__example_1_1Gains__configuration.html#a48597856c79ad533c9ed7e551550a8c7", null ],
     [ "get_ki", "classci__example_1_1Gains__configuration.html#a94d63da945f84b08b0635836b11baf61", null ],

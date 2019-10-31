@@ -16,5 +16,8 @@ var annotated_dup =
     ] ],
     [ "Computation", "classComputation.html", "classComputation" ],
     [ "Configuration", "classConfiguration.html", "classConfiguration" ],
-    [ "Matrix_computation_no_eigen", "classMatrix__computation__no__eigen.html", "classMatrix__computation__no__eigen" ]
+    [ "DummyClass", "classDummyClass.html", "classDummyClass" ],
+    [ "Matrix_computation_no_eigen", "classMatrix__computation__no__eigen.html", "classMatrix__computation__no__eigen" ],
+    [ "myUnion", "unionmyUnion.html", "unionmyUnion" ],
+    [ "SomeClass", "classSomeClass.html", "classSomeClass" ]
 ];

@@ -107,6 +107,7 @@ $(document).ready(function(){initNavTree('classshared__memory_1_1Exchange__manag
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classshared__memory_1_1Exchange__manager__producer-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">shared_memory::Exchange_manager_producer&lt; Serializable, QUEUE_SIZE &gt; Class Template Reference</div>  </div>
@@ -134,6 +135,22 @@ Public Member Functions</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1Exchange__manager__producer.html#afd8afb25d70407b785484e68d1182c0b">get</a> (std::deque&lt; int &gt; &amp;get_consumed_ids)</td></tr>
 <tr class="memdesc:afd8afb25d70407b785484e68d1182c0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">write into get_consumed_ids the ids of serialized items that have been successfully consumed by a consumer <br /></td></tr>
 <tr class="separator:afd8afb25d70407b785484e68d1182c0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab31e6b87ad4c856736dec15486ed4489"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1Exchange__manager__producer.html#ab31e6b87ad4c856736dec15486ed4489">nb_char_written</a> ()</td></tr>
+<tr class="memdesc:ab31e6b87ad4c856736dec15486ed4489"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the number of characters that have been serialized and written to the exchange queue.  <a href="#ab31e6b87ad4c856736dec15486ed4489">More...</a><br /></td></tr>
+<tr class="separator:ab31e6b87ad4c856736dec15486ed4489"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a742e8859608d49901d3dafbbe08e4674"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a742e8859608d49901d3dafbbe08e4674"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1Exchange__manager__producer.html#a742e8859608d49901d3dafbbe08e4674">reset_char_count</a> ()</td></tr>
+<tr class="memdesc:a742e8859608d49901d3dafbbe08e4674"><td class="mdescLeft">&#160;</td><td class="mdescRight">reset the count of characters written to the exchange queue to zero <br /></td></tr>
+<tr class="separator:a742e8859608d49901d3dafbbe08e4674"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:af98fe4321e1fd280b509f5dfd2cf4a5b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1Exchange__manager__producer.html#af98fe4321e1fd280b509f5dfd2cf4a5b">clean_mutex</a> (std::string segment_id)</td></tr>
+<tr class="memdesc:af98fe4321e1fd280b509f5dfd2cf4a5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">(unlock) and erase the mutex from the shared memory.  <a href="#af98fe4321e1fd280b509f5dfd2cf4a5b">More...</a><br /></td></tr>
+<tr class="separator:af98fe4321e1fd280b509f5dfd2cf4a5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8574f4e075d6f755e567d21d04f24aab"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1Exchange__manager__producer.html#a8574f4e075d6f755e567d21d04f24aab">clean_memory</a> (std::string segment_id)</td></tr>
+<tr class="memdesc:a8574f4e075d6f755e567d21d04f24aab"><td class="mdescLeft">&#160;</td><td class="mdescRight">wipe out the corresponding shared memory.  <a href="#a8574f4e075d6f755e567d21d04f24aab">More...</a><br /></td></tr>
+<tr class="separator:a8574f4e075d6f755e567d21d04f24aab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a3fb01ae44f85b9d8b4a22137f2da90f1"></a>
@@ -188,6 +205,64 @@ template&lt;class Serializable , int QUEUE_SIZE&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a8574f4e075d6f755e567d21d04f24aab"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Serializable , int QUEUE_SIZE&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Exchange_manager_producer::clean_memory </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>segment_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>wipe out the corresponding shared memory. </p>
+<p>To be used if some executable using the exchange manager crashed without calls to destructors. </p>
+
+</div>
+</div>
+<a class="anchor" id="af98fe4321e1fd280b509f5dfd2cf4a5b"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Serializable , int QUEUE_SIZE&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Exchange_manager_producer::clean_mutex </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>segment_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>(unlock) and erase the mutex from the shared memory. </p>
+<p>To be used if some executable using the exchange manager crashed without calls to destructors. </p>
+
+</div>
+</div>
 <a class="anchor" id="aa39c8b921eeff081111c756bd6d2ca3d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -205,6 +280,26 @@ template&lt;class Serializable , int QUEUE_SIZE&gt; </div>
 
 <p>lock the mutex required for writting in the shared memory without any collision with any consumer. </p>
 <p>Should be called before calls to "set". Not required if the constructor was called with autolock set to true </p>
+
+</div>
+</div>
+<a class="anchor" id="ab31e6b87ad4c856736dec15486ed4489"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Serializable , int QUEUE_SIZE&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">int Exchange_manager_producer::nb_char_written </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>returns the number of characters that have been serialized and written to the exchange queue. </p>
+<p>For debug purposes. </p>
 
 </div>
 </div>

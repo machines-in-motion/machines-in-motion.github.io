@@ -57,5 +57,6 @@ var index =
       [ "8.1/ Creating a dashboard", "subpage_robot_dashboard.html#dashbaord_sec_create", null ],
       [ "8.2/ Launching the dashboard", "subpage_robot_dashboard.html#dashbaord_sec_launch", null ]
     ] ],
-    [ "9/ Continuous integration", "subpage_ci.html", null ]
+    [ "9/ Continuous integration", "subpage_ci.html", null ],
+    [ "10/ Demos", "subpage_demos.html", null ]
 ];

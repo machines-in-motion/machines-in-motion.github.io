@@ -4,6 +4,10 @@ var hierarchy =
       [ "Matrix_computation_no_eigen", "classMatrix__computation__no__eigen.html", null ]
     ] ],
     [ "Configuration", "classConfiguration.html", null ],
+    [ "DummyClass", "classDummyClass.html", [
+      [ "SomeClass", "classSomeClass.html", null ]
+    ] ],
+    [ "myUnion", "unionmyUnion.html", null ],
     [ "real_time_tools::PortConfig", "classreal__time__tools_1_1PortConfig.html", null ],
     [ "real_time_tools::Realtime_check", "classreal__time__tools_1_1Realtime__check.html", null ],
     [ "real_time_tools::RealTimeMutex", "classreal__time__tools_1_1RealTimeMutex.html", null ],

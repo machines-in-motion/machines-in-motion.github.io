@@ -136,6 +136,10 @@ def&#160;</td><td class="memItemRight" valign="bottom"><b>__init__</b> (self, ro
 <tr class="memitem:a35ba3a21b8b36df34d1ad8389f4c4caa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a35ba3a21b8b36df34d1ad8389f4c4caa"></a>
 def&#160;</td><td class="memItemRight" valign="bottom"><b>get_state</b> (self)</td></tr>
 <tr class="separator:a35ba3a21b8b36df34d1ad8389f4c4caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c79661f50580185498007e5755c774d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpython_1_1py__pinocchio__bullet_1_1wrapper_1_1PinBulletWrapper.html#a2c79661f50580185498007e5755c774d">update_pinocchio</a> (self, q, dq)</td></tr>
+<tr class="separator:a2c79661f50580185498007e5755c774d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4ea626824c8043f48aa3c57b7504426"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpython_1_1py__pinocchio__bullet_1_1wrapper_1_1PinBulletWrapper.html#ab4ea626824c8043f48aa3c57b7504426">get_state_update_pinocchio</a> (self)</td></tr>
+<tr class="separator:ab4ea626824c8043f48aa3c57b7504426"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99f63187e0e22633340040f4451fe137"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a99f63187e0e22633340040f4451fe137"></a>
 def&#160;</td><td class="memItemRight" valign="bottom"><b>reset_state</b> (self, q, dq)</td></tr>
 <tr class="separator:a99f63187e0e22633340040f4451fe137"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -203,6 +207,68 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Returns the force readings as well as the set of active contacts </pre> 
+</div>
+</div>
+<a class="anchor" id="ab4ea626824c8043f48aa3c57b7504426"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def python.py_pinocchio_bullet.wrapper.PinBulletWrapper.get_state_update_pinocchio </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Get state from pybullet and update pinocchio robot internals.
+
+This gets the state from the pybullet simulator and forwards
+the kinematics, jacobians, centroidal moments on the pinocchio robot
+(see forward_pinocchio for details on computed quantities). </pre> 
+</div>
+</div>
+<a class="anchor" id="a2c79661f50580185498007e5755c774d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def python.py_pinocchio_bullet.wrapper.PinBulletWrapper.update_pinocchio </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>q</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>dq</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Updates the pinocchio robot.
+
+This includes updating:
+- kinematics
+- joint and frame jacobian
+- centroidal momentum
+
+Args:
+  q: Pinocchio generalized position vect.
+  dq: Pinocchio generalize velocity vector.
+</pre> 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

@@ -50,6 +50,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -121,6 +122,14 @@ $(document).ready(function(){initNavTree('classdynamic__graph_1_1DynamicGraphMan
  <a href="classdynamic__graph_1_1DynamicGraphManager.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="dynamic__graph__manager_8hh_source.html">dynamic_graph_manager.hh</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for dynamic_graph::DynamicGraphManager:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdynamic__graph_1_1DynamicGraphManager__inherit__graph.png" border="0" usemap="#dynamic__graph_1_1DynamicGraphManager_inherit__map" alt="Inheritance graph"/></div>
+<map name="dynamic__graph_1_1DynamicGraphManager_inherit__map" id="dynamic__graph_1_1DynamicGraphManager_inherit__map">
+<area shape="rect" id="node2" href="classdynamic__graph__manager_1_1SimpleDGM.html" title="This class is a simple dynamic graph manager with a fake hardware interface used for unittesting..." alt="" coords="25,95,191,136"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -290,10 +299,10 @@ std::unique_ptr&lt; <a class="el" href="classdynamic__graph_1_1Device.html">Devi
 <tr class="memitem:a03eabd2f08990a1dcc1caa652b701020"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacedynamic__graph.html#a51212ed7fa4ae81e7b362a27f09b7ab8">VectorDGMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdynamic__graph_1_1DynamicGraphManager.html#a03eabd2f08990a1dcc1caa652b701020">motor_controls_map_</a></td></tr>
 <tr class="memdesc:a03eabd2f08990a1dcc1caa652b701020"><td class="mdescLeft">&#160;</td><td class="mdescRight">motor_controls_map_ is a map of dynamicgraph::Vector.  <a href="#a03eabd2f08990a1dcc1caa652b701020">More...</a><br /></td></tr>
 <tr class="separator:a03eabd2f08990a1dcc1caa652b701020"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02a7f9c293d982347f36b2a74f702c37"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a02a7f9c293d982347f36b2a74f702c37"></a>
-std::unique_ptr&lt; shared_memory::ConditionVariable &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdynamic__graph_1_1DynamicGraphManager.html#a02a7f9c293d982347f36b2a74f702c37">cond_var_</a></td></tr>
-<tr class="memdesc:a02a7f9c293d982347f36b2a74f702c37"><td class="mdescLeft">&#160;</td><td class="mdescRight">cond_var_sensors_ this condition variable allow the computation of the dynamic graph just after the acquisition of the sensors <br /></td></tr>
-<tr class="separator:a02a7f9c293d982347f36b2a74f702c37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a003d8598839c07a7d81c1afed0ea0b01"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a003d8598839c07a7d81c1afed0ea0b01"></a>
+std::unique_ptr&lt; shared_memory::LockedConditionVariable &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdynamic__graph_1_1DynamicGraphManager.html#a003d8598839c07a7d81c1afed0ea0b01">cond_var_</a></td></tr>
+<tr class="memdesc:a003d8598839c07a7d81c1afed0ea0b01"><td class="mdescLeft">&#160;</td><td class="mdescRight">cond_var_sensors_ this condition variable allow the computation of the dynamic graph just after the acquisition of the sensors <br /></td></tr>
+<tr class="separator:a003d8598839c07a7d81c1afed0ea0b01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e6cc5e58f1accce947f929d233a67fd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7e6cc5e58f1accce947f929d233a67fd"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdynamic__graph_1_1DynamicGraphManager.html#a7e6cc5e58f1accce947f929d233a67fd">has_been_waken_by_dg_</a></td></tr>
 <tr class="memdesc:a7e6cc5e58f1accce947f929d233a67fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">has_been_waken_by_dg_ is a flag that indicates if the hardware communication process has been awaken by the <a class="el" href="namespacedynamic__graph.html" title="this is this package namespace in order to avoid naming conflict ">dynamic_graph</a> process or not. <br /></td></tr>
@@ -526,6 +535,8 @@ std::mutex&#160;</td><td class="memItemRight" valign="bottom"><b>hwc_mutex_</b><
 <p>get_sensors_to_map is the fonction that get the motor command from a map and that uses the drivers to send these command to the robot. </p>
 <p>Each robot must have a different implementation of this function. WARNING, this function needs to be overloaded using the actual drivers of the robot. </p>
 
+<p>Reimplemented in <a class="el" href="classdynamic__graph__manager_1_1SimpleDGM.html#aa92cd33a31c934835252f834bab7b9f4">dynamic_graph_manager::SimpleDGM</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ab980a2384c817ab5f59e712a54b2261a"></a>
@@ -569,6 +580,8 @@ std::mutex&#160;</td><td class="memItemRight" valign="bottom"><b>hwc_mutex_</b><
 
 <p>initialize_hardware_communication_process instanciate all variables related to the hardware communication. </p>
 <p>In addition it spawns the real time thread. WARNING, this function needs to be overloaded using the actual drivers of the robot. </p>
+
+<p>Reimplemented in <a class="el" href="classdynamic__graph__manager_1_1SimpleDGM.html#a5d771fc5a9ae6dd524a658d50fbee5d3">dynamic_graph_manager::SimpleDGM</a>.</p>
 
 </div>
 </div>
@@ -647,6 +660,8 @@ std::mutex&#160;</td><td class="memItemRight" valign="bottom"><b>hwc_mutex_</b><
 
 <p>is_in_safety_mode check if the dynamic graph is still alive and sending commands at a descent frequency. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if there is a problem </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classdynamic__graph__manager_1_1SimpleDGM.html#a5fe81f9feb5d982761d7a427aa31e7b4">dynamic_graph_manager::SimpleDGM</a>.</p>
 
 </div>
 </div>
@@ -857,6 +872,8 @@ std::mutex&#160;</td><td class="memItemRight" valign="bottom"><b>hwc_mutex_</b><
 
 <p>set_motor_controls_from_map is the fonction that get the motor command from a map and that uses the drivers to send these command to the robot. </p>
 <p>Each robot must have a different implementation of this function. WARNING, this function needs to be overloaded using the actual drivers of the robot. </p>
+
+<p>Reimplemented in <a class="el" href="classdynamic__graph__manager_1_1SimpleDGM.html#ad38ccd35cc0c409a0aaefa8565634109">dynamic_graph_manager::SimpleDGM</a>.</p>
 
 </div>
 </div>
