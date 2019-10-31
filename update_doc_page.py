@@ -14,10 +14,14 @@ def get_ros_install_share_path():
     Use rospack to get the path to the installation folder (supposed sourced)
     """
     ros_pack = rospkg.RosPack()
-    if "shared_memory" in ros_pack.list():
-        return path.dirname(ros_pack.get_path("shared_memory"))
-    else:
-        raise Exception('The shared_memory is not part of the cloned packages')
+    potentially_cloned_package = ["shared_memory", "momentumopt"]
+    for package in potentially_cloned_package:
+        if package in ros_pack.list():
+            return path.dirname(ros_pack.get_path(package))
+
+    raise Exception('The ROS install/share folder has not been found.\n'
+                    'Used ' + str(potentially_cloned_package) + ' packages to '
+                    'find it but neither has been cloned')
     return 
 
 
