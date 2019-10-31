@@ -1,0 +1,26 @@
+var classsolver_1_1NesterovToddScaling =
+[
+    [ "NesterovToddScaling", "classsolver_1_1NesterovToddScaling.html#a4bdd4b8e0d4cde6aa948150a2c7965f1", null ],
+    [ "~NesterovToddScaling", "classsolver_1_1NesterovToddScaling.html#a94efe8523a9feb715d43b6da0f3a2f81", null ],
+    [ "d1", "classsolver_1_1NesterovToddScaling.html#a1f9f78e4db7b3a128d6b01cc744e3892", null ],
+    [ "d1", "classsolver_1_1NesterovToddScaling.html#a06fe4a2f4c66f5429dfe41f10155fdc9", null ],
+    [ "eta", "classsolver_1_1NesterovToddScaling.html#a917c58357e638c717e8f70029243392b", null ],
+    [ "eta", "classsolver_1_1NesterovToddScaling.html#aa6c1a1729205c16592f38c5643eff0d1", null ],
+    [ "etaSquare", "classsolver_1_1NesterovToddScaling.html#a6c4411e2128c7cbab8b160231292d05e", null ],
+    [ "etaSquare", "classsolver_1_1NesterovToddScaling.html#a8ad97000b8d613bd250fbbf429996355", null ],
+    [ "indexSoc", "classsolver_1_1NesterovToddScaling.html#a886ff86183038885bef58c77d96ae1b8", null ],
+    [ "indexSoc", "classsolver_1_1NesterovToddScaling.html#a061e12bba58a524ec700a4447f9ac792", null ],
+    [ "scalingSoc", "classsolver_1_1NesterovToddScaling.html#a7f07ade91ff78f1ceb068fb25507eed1", null ],
+    [ "scalingSoc", "classsolver_1_1NesterovToddScaling.html#a65396ff9483db3e01c7297645f2b77d4", null ],
+    [ "scalingSoc", "classsolver_1_1NesterovToddScaling.html#abe9ee58a9372302e3d0b45c6e21f6b7a", null ],
+    [ "scalingSoc", "classsolver_1_1NesterovToddScaling.html#a30a9950d1b4082dd0847c1aadd6ccb7f", null ],
+    [ "u0", "classsolver_1_1NesterovToddScaling.html#a668b4c675450912f78ea0ac5d736b1af", null ],
+    [ "u0", "classsolver_1_1NesterovToddScaling.html#a23d78b5aa19d49ad535d67e131598388", null ],
+    [ "u1", "classsolver_1_1NesterovToddScaling.html#a3d2359964350a4d5a59dd0c5bc288f1d", null ],
+    [ "u1", "classsolver_1_1NesterovToddScaling.html#a71746ed80b3c91eaafecb99c0ddd53c8", null ],
+    [ "v1", "classsolver_1_1NesterovToddScaling.html#ad49f1cbf37bc8c602a84bb36a88fb10c", null ],
+    [ "v1", "classsolver_1_1NesterovToddScaling.html#aa3184b293af423aa9c00064411004664", null ],
+    [ "w", "classsolver_1_1NesterovToddScaling.html#a54067905ee438f534b21bf4ed34b3f2e", null ],
+    [ "w", "classsolver_1_1NesterovToddScaling.html#a009c44c2f73cd5233413f7e450f38f8f", null ],
+    [ "Cone", "classsolver_1_1NesterovToddScaling.html#a03209e24ad2bf104e4a8d1daa63d38e3", null ]
+];

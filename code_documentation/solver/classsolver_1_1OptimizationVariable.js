@@ -1,0 +1,26 @@
+var classsolver_1_1OptimizationVariable =
+[
+    [ "OptMatrix", "classsolver_1_1OptimizationVariable.html#a0d07794c65ad51230fb7cefcd064c3f8", null ],
+    [ "OptVector", "classsolver_1_1OptimizationVariable.html#a41eee72e2ed2e2b1af9694537d24fdaa", null ],
+    [ "OptimizationVariable", "classsolver_1_1OptimizationVariable.html#a67ab2819d95bd5511317db1a6985fa46", null ],
+    [ "~OptimizationVariable", "classsolver_1_1OptimizationVariable.html#a7edda81bc69adf4eaef9fe8dc109bec3", null ],
+    [ "constraintIndexToCurrentValue", "classsolver_1_1OptimizationVariable.html#a681bef35668b98ee6311437c5dc4653e", null ],
+    [ "getGuessValue", "classsolver_1_1OptimizationVariable.html#a0a3c647067f643f830d32db3c44bbad2", null ],
+    [ "getGuessValueByCol", "classsolver_1_1OptimizationVariable.html#ab9f88f04d288ddeb177fbbe65da10946", null ],
+    [ "getNumCols", "classsolver_1_1OptimizationVariable.html#ac370c193cb5cc9e26f0c3b76030e091f", null ],
+    [ "getNumElements", "classsolver_1_1OptimizationVariable.html#addf2e514d8a314b7f580bccd0b8b60d6", null ],
+    [ "getNumRows", "classsolver_1_1OptimizationVariable.html#af922946578f440cd86ad8f6e37d93d73", null ],
+    [ "getStartIndex", "classsolver_1_1OptimizationVariable.html#a64fbf61a8daeecaad86429345dbdf21d", null ],
+    [ "getValues", "classsolver_1_1OptimizationVariable.html#adb334d089b935085f807c1700aaa2a38", null ],
+    [ "id", "classsolver_1_1OptimizationVariable.html#a04923f5cca8b7c1ed8f5821662cc7780", null ],
+    [ "initialize", "classsolver_1_1OptimizationVariable.html#a78b6408e9c4be7a8d72b07d47680a4d3", null ],
+    [ "initialize", "classsolver_1_1OptimizationVariable.html#a503e0317ecfc4ec7f84803bfbc1fbcc3", null ],
+    [ "initialize", "classsolver_1_1OptimizationVariable.html#ab837f98fca20f3f85eee4c46df1131e0", null ],
+    [ "initialize", "classsolver_1_1OptimizationVariable.html#a643fb79d878867dbcc4a8a5bdf470ff7", null ],
+    [ "initialize", "classsolver_1_1OptimizationVariable.html#acb97ef00584b3c09c5f47b326704d903", null ],
+    [ "initialize", "classsolver_1_1OptimizationVariable.html#a97cffc425225e0974a8f279110574cac", null ],
+    [ "initialize", "classsolver_1_1OptimizationVariable.html#aade5dd6ae466546d7d03fd51c482b572", null ],
+    [ "setAndConstraintIndexToCurrentValue", "classsolver_1_1OptimizationVariable.html#a2e33d363c24426854564adf8137ef20a", null ],
+    [ "setAndConstraintIndexToCurrentValue", "classsolver_1_1OptimizationVariable.html#a53a2ffc8e66e74b7c66e31e345662829", null ],
+    [ "setGuessValue", "classsolver_1_1OptimizationVariable.html#a9222964263d8a0db444450b463c8332f", null ]
+];
