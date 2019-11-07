@@ -11,6 +11,7 @@ var classdg__blmc__robots_1_1solo_1_1solo__bullet_1_1QuadrupedBulletRobot =
     [ "set_gravity", "classdg__blmc__robots_1_1solo_1_1solo__bullet_1_1QuadrupedBulletRobot.html#a67ca6534a6d5d0c769e72e805c523acb", null ],
     [ "sim2signal_", "classdg__blmc__robots_1_1solo_1_1solo__bullet_1_1QuadrupedBulletRobot.html#af200dbae1d441565e8d083aedfe8558d", null ],
     [ "base_link_name", "classdg__blmc__robots_1_1solo_1_1solo__bullet_1_1QuadrupedBulletRobot.html#a1a7b46f7697021b689fefb3021495962", null ],
+    [ "config", "classdg__blmc__robots_1_1solo_1_1solo__bullet_1_1QuadrupedBulletRobot.html#a09a9c858f6ea8b9cfc77c406c537353d", null ],
     [ "device", "classdg__blmc__robots_1_1solo_1_1solo__bullet_1_1QuadrupedBulletRobot.html#a4e09ceb4ce81447d9df0b96898a2c46d", null ],
     [ "dq0", "classdg__blmc__robots_1_1solo_1_1solo__bullet_1_1QuadrupedBulletRobot.html#a15e780aa22b91d41f3166a7524eec26a", null ],
     [ "end_effector_names", "classdg__blmc__robots_1_1solo_1_1solo__bullet_1_1QuadrupedBulletRobot.html#a966bcf1ad475b813e2894cff4e16e003", null ],

@@ -1,0 +1,4 @@
+var namespacepython_1_1dg__tools_1_1leg__impedance__control_1_1leg__impedance__controller =
+[
+    [ "LegImpedanceController", "classpython_1_1dg__tools_1_1leg__impedance__control_1_1leg__impedance__controller_1_1LegImpedanceController.html", "classpython_1_1dg__tools_1_1leg__impedance__control_1_1leg__impedance__controller_1_1LegImpedanceController" ]
+];

@@ -1,13 +1,15 @@
 var searchData=
 [
-  ['reactive_5flqr_5fcontroller_2ehpp',['reactive_lqr_controller.hpp',['../reactive__lqr__controller_8hpp.html',1,'']]],
-  ['reactivelqrcontroller',['ReactiveLQRController',['../classdynamicgraph_1_1sot_1_1ReactiveLQRController.html',1,'dynamicgraph::sot']]],
-  ['rel_5fpos_5ffoot',['rel_pos_foot',['../classpython_1_1leg__impedance__control_1_1leg__impedance__controller_1_1leg__impedance__controller.html#a474764e8bde50a4e740e8e67e9ed77b0',1,'python::leg_impedance_control::leg_impedance_controller::leg_impedance_controller']]],
-  ['return_5fcontrol_5ftorques',['return_control_torques',['../classpython_1_1leg__impedance__control_1_1leg__impedance__controller_1_1leg__impedance__controller.html#a385940c6564d9e38a8030adb25aa4a3d',1,'python.leg_impedance_control.leg_impedance_controller.leg_impedance_controller.return_control_torques()'],['../classpython_1_1leg__impedance__control_1_1quad__leg__impedance__controller_1_1quad__leg__impedance__controller.html#a2ce9c717e3092e91a9a24bfc79c05636',1,'python.leg_impedance_control.quad_leg_impedance_controller.quad_leg_impedance_controller.return_control_torques()']]],
-  ['return_5fdes_5fforce',['return_des_force',['../classdynamicgraph_1_1sot_1_1PowerJumpControl.html#a0172cfef3c8c11b441fee7380c69c227',1,'dynamicgraph::sot::PowerJumpControl']]],
-  ['return_5fdes_5fkp',['return_des_kp',['../classdynamicgraph_1_1sot_1_1PowerJumpControl.html#aa00816d8369775112bcb93b915790926',1,'dynamicgraph::sot::PowerJumpControl']]],
-  ['return_5fdes_5fpos',['return_des_pos',['../classdynamicgraph_1_1sot_1_1PowerJumpControl.html#ad132ac991b6fb6cddd9aa019a33425e9',1,'dynamicgraph::sot::PowerJumpControl']]],
-  ['return_5fend_5feff_5flqr_5ftau',['return_end_eff_lqr_tau',['../classdynamicgraph_1_1sot_1_1ComImpedanceControl.html#a3df6780c7565af64536541c04c7e55f4',1,'dynamicgraph::sot::ComImpedanceControl::return_end_eff_lqr_tau()'],['../classpython_1_1leg__impedance__control_1_1quad__leg__impedance__controller_1_1quad__com__control.html#a0c8624dccd4818b9f407b85a2839adf1',1,'python.leg_impedance_control.quad_leg_impedance_controller.quad_com_control.return_end_eff_lqr_tau()']]],
-  ['return_5fleg_5flength',['return_leg_length',['../classpython_1_1leg__impedance__control_1_1leg__impedance__controller_1_1leg__impedance__controller.html#affecc9d2067b07947785ad49539bfa67',1,'python::leg_impedance_control::leg_impedance_controller::leg_impedance_controller']]],
-  ['return_5flqr_5ftau',['return_lqr_tau',['../classdynamicgraph_1_1sot_1_1ComImpedanceControl.html#a6c33c88c2a5ae61dbde00dbd001355ca',1,'dynamicgraph::sot::ComImpedanceControl::return_lqr_tau()'],['../classpython_1_1leg__impedance__control_1_1quad__leg__impedance__controller_1_1quad__com__control.html#a4eebd42b131185f8121326868c2707fe',1,'python.leg_impedance_control.quad_leg_impedance_controller.quad_com_control.return_lqr_tau()']]]
+  ['dg_5ftools',['dg_tools',['../namespacepython_1_1dg__tools.html',1,'python']]],
+  ['generate_5ftraj',['generate_traj',['../namespacepython_1_1dg__tools_1_1generate__traj.html',1,'python::dg_tools']]],
+  ['leg_5fimpedance_5fcontroller',['leg_impedance_controller',['../namespacepython_1_1dg__tools_1_1leg__impedance__control_1_1leg__impedance__controller.html',1,'python::dg_tools::leg_impedance_control']]],
+  ['math_5fsmall_5fentities',['math_small_entities',['../namespacepython_1_1dg__tools_1_1math__small__entities.html',1,'python::dg_tools']]],
+  ['pdcontroller',['PDController',['../classdynamicgraph_1_1sot_1_1PDController.html',1,'dynamicgraph::sot']]],
+  ['power_5fjump_2ehpp',['power_jump.hpp',['../power__jump_8hpp.html',1,'']]],
+  ['powerjumpcontrol',['PowerJumpControl',['../classdynamicgraph_1_1sot_1_1PowerJumpControl.html',1,'dynamicgraph::sot']]],
+  ['previousvalue',['PreviousValue',['../classdg__tools_1_1PreviousValue.html',1,'dg_tools']]],
+  ['quad_5fleg_5fimpedance_5fcontroller',['quad_leg_impedance_controller',['../namespacepython_1_1dg__tools_1_1leg__impedance__control_1_1quad__leg__impedance__controller.html',1,'python::dg_tools::leg_impedance_control']]],
+  ['sliders',['sliders',['../namespacepython_1_1dg__tools_1_1sliders.html',1,'python::dg_tools']]],
+  ['traj_5fgenerators',['traj_generators',['../namespacepython_1_1dg__tools_1_1traj__generators.html',1,'python::dg_tools']]],
+  ['utils',['utils',['../namespacepython_1_1dg__tools_1_1utils.html',1,'python::dg_tools']]]
 ];

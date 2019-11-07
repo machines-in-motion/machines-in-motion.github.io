@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['value',['value',['../namespacepython_1_1leg__impedance__control_1_1traj__generators.html#a4cdad25f31e6506a41b424f05b1e7bd8',1,'python::leg_impedance_control::traj_generators']]]
+  ['x_5finit',['x_init',['../namespacepython_1_1dg__tools_1_1generate__traj.html#a8e4a5846a1ba971f93868bfdd64ee805',1,'python::dg_tools::generate_traj']]]
 ];

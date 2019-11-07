@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['leg_5fimpedance_5fcontroller',['leg_impedance_controller',['../classpython_1_1leg__impedance__control_1_1leg__impedance__controller_1_1leg__impedance__controller.html',1,'python::leg_impedance_control::leg_impedance_controller']]]
+  ['doubleconstant',['DoubleConstant',['../classpython_1_1dg__tools_1_1math__small__entities_1_1DoubleConstant.html',1,'python::dg_tools::math_small_entities']]]
 ];

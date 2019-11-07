@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['compute_5fang_5fcontrol_5ftorques',['compute_ang_control_torques',['../classdg__blmc__robots_1_1teststand_1_1leg__impedance__control_1_1quad__leg__impedance__controller_1_1quad__com__control.html#afe035f95b70775d769a1e8f038bef45f',1,'dg_blmc_robots::teststand::leg_impedance_control::quad_leg_impedance_controller::quad_com_control']]],
-  ['compute_5fcontrol_5ftorques',['compute_control_torques',['../classdg__blmc__robots_1_1teststand_1_1leg__impedance__control_1_1leg__impedance__controller_1_1leg__impedance__controller.html#acb873316f868a3d708bf478d8058ed00',1,'dg_blmc_robots::teststand::leg_impedance_control::leg_impedance_controller::leg_impedance_controller']]]
+  ['dgmquadruped',['DGMQuadruped',['../classdg__blmc__robots_1_1DGMQuadruped.html#a253de6029ce81b4d757385e7759a72f8',1,'dg_blmc_robots::DGMQuadruped']]],
+  ['dgmquadrupedsimu',['DGMQuadrupedSimu',['../classdg__blmc__robots_1_1DGMQuadrupedSimu.html#a6dd0768f9887c92a9fe26839b73771a3',1,'dg_blmc_robots::DGMQuadrupedSimu']]],
+  ['dgmsinglemotor',['DGMSingleMotor',['../classdg__blmc__robots_1_1DGMSingleMotor.html#a3b2a7165e988dd54315ae47fede7f621',1,'dg_blmc_robots::DGMSingleMotor']]],
+  ['dgmstuggihop',['DGMStuggihop',['../classdg__blmc__robots_1_1DGMStuggihop.html#a00d09c7496216833d0bbf9528dc91bf1',1,'dg_blmc_robots::DGMStuggihop']]],
+  ['dgmteststand',['DGMTeststand',['../classdg__blmc__robots_1_1DGMTeststand.html#ae6b6e00fbd3460f7083977ae9befb6fd',1,'dg_blmc_robots::DGMTeststand']]]
 ];

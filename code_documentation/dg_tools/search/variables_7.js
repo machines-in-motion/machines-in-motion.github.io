@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['time_5fphase',['time_phase',['../namespacepython_1_1py__dg__tools_1_1generate__traj.html#a00ede6ef9ea1815e44504da30a9892d2',1,'python::py_dg_tools::generate_traj']]]
+  ['wb_5fctrl',['wb_ctrl',['../classpython_1_1dg__tools_1_1leg__impedance__control_1_1quad__leg__impedance__controller_1_1QuadrupedComControl.html#a91ffd9fe58d946e2326b05b5f808c8f4',1,'python::dg_tools::leg_impedance_control::quad_leg_impedance_controller::QuadrupedComControl']]]
 ];

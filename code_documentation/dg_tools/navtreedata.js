@@ -28,7 +28,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 ".html",
-"classdynamicgraph_1_1sot_1_1ReactiveLQRController.html#a78ba946b4085b77143dbbbdb0b1edafb"
+"classdynamicgraph_1_1sot_1_1ReactiveLQRController.html#a6b443e106a886a084b0b1b39d601ec25"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

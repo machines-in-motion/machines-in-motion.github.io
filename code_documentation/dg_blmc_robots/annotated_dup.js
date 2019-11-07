@@ -12,15 +12,6 @@ var annotated_dup =
         ] ]
       ] ],
       [ "teststand", null, [
-        [ "leg_impedance_control", null, [
-          [ "leg_impedance_controller", null, [
-            [ "leg_impedance_controller", "classdg__blmc__robots_1_1teststand_1_1leg__impedance__control_1_1leg__impedance__controller_1_1leg__impedance__controller.html", "classdg__blmc__robots_1_1teststand_1_1leg__impedance__control_1_1leg__impedance__controller_1_1leg__impedance__controller" ]
-          ] ],
-          [ "quad_leg_impedance_controller", null, [
-            [ "quad_com_control", "classdg__blmc__robots_1_1teststand_1_1leg__impedance__control_1_1quad__leg__impedance__controller_1_1quad__com__control.html", "classdg__blmc__robots_1_1teststand_1_1leg__impedance__control_1_1quad__leg__impedance__controller_1_1quad__com__control" ],
-            [ "quad_leg_impedance_controller", "classdg__blmc__robots_1_1teststand_1_1leg__impedance__control_1_1quad__leg__impedance__controlle5a5121e64ef42a4d8a37ebf3b1f199ed.html", "classdg__blmc__robots_1_1teststand_1_1leg__impedance__control_1_1quad__leg__impedance__controlle5a5121e64ef42a4d8a37ebf3b1f199ed" ]
-          ] ]
-        ] ],
         [ "teststand_bullet", null, [
           [ "TeststandBulletRobot", "classdg__blmc__robots_1_1teststand_1_1teststand__bullet_1_1TeststandBulletRobot.html", "classdg__blmc__robots_1_1teststand_1_1teststand__bullet_1_1TeststandBulletRobot" ]
         ] ]

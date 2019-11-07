@@ -3,6 +3,8 @@ var NAVTREEINDEX0 =
 ".html":[0,0,0],
 ".html":[1,0,0],
 ".html":[1,0,2],
+".html":[1,0,2,0,0],
+".html":[0,0,0,0,1],
 ".html":[1,0,1],
 ".html":[1,0,1,0],
 "ComImpedanceController_8hpp.html":[2,0,0,0,0,0,0,0,0,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX0 =
 "classdynamicgraph_1_1sot_1_1ReactiveLQRController.html#a5f585da3766410a84052d2f9cd944a00":[1,0,1,0,4,46],
 "classdynamicgraph_1_1sot_1_1ReactiveLQRController.html#a647da9f56f0891d286837b011bdc2bf2":[1,0,1,0,4,4],
 "classdynamicgraph_1_1sot_1_1ReactiveLQRController.html#a67aae768a9f98cb7540db11bbff81f2d":[1,0,1,0,4,37],
-"classdynamicgraph_1_1sot_1_1ReactiveLQRController.html#a69da0343d71b0f3a6b2695b9233158cb":[1,0,1,0,4,8],
-"classdynamicgraph_1_1sot_1_1ReactiveLQRController.html#a6b443e106a886a084b0b1b39d601ec25":[1,0,1,0,4,67],
-"classdynamicgraph_1_1sot_1_1ReactiveLQRController.html#a72cd1cf49c4390ea10c6d6abae401cdc":[1,0,1,0,4,44]
+"classdynamicgraph_1_1sot_1_1ReactiveLQRController.html#a69da0343d71b0f3a6b2695b9233158cb":[1,0,1,0,4,8]
 };
