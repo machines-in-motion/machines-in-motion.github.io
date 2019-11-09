@@ -1,6 +1,6 @@
 var classdg__blmc__robots_1_1solo_1_1solo12__bullet_1_1QuadrupedBulletRobot =
 [
-    [ "__init__", "classdg__blmc__robots_1_1solo_1_1solo12__bullet_1_1QuadrupedBulletRobot.html#a55ec5398a493298a926e8e84c1e54e8d", null ],
+    [ "__init__", "classdg__blmc__robots_1_1solo_1_1solo12__bullet_1_1QuadrupedBulletRobot.html#a245d8c6654b1a8f02f5ca14f69d19050", null ],
     [ "add_ros_and_trace", "classdg__blmc__robots_1_1solo_1_1solo12__bullet_1_1QuadrupedBulletRobot.html#a715590b3d674b97cedf25832f1781e7b", null ],
     [ "base_signals", "classdg__blmc__robots_1_1solo_1_1solo12__bullet_1_1QuadrupedBulletRobot.html#ab9bc032961713ced563a50a51c2af1c6", null ],
     [ "pinocchio_robot_wrapper", "classdg__blmc__robots_1_1solo_1_1solo12__bullet_1_1QuadrupedBulletRobot.html#a645b3bdef3fcdaae6873a12f2983dfa7", null ],
