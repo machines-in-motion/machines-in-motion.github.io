@@ -1,11 +1,11 @@
 var classdg__blmc__robots_1_1teststand_1_1teststand__bullet_1_1TeststandBulletRobot =
 [
-    [ "__init__", "classdg__blmc__robots_1_1teststand_1_1teststand__bullet_1_1TeststandBulletRobot.html#a82a1fe8a7d5825650934070ed6a94896", null ],
+    [ "__init__", "classdg__blmc__robots_1_1teststand_1_1teststand__bullet_1_1TeststandBulletRobot.html#a669de5965f24a720d64e91467d25230d", null ],
     [ "pinocchio_robot_wrapper", "classdg__blmc__robots_1_1teststand_1_1teststand__bullet_1_1TeststandBulletRobot.html#a4062815d510c246c8a9b7b38b11f8fbc", null ],
     [ "reset_state", "classdg__blmc__robots_1_1teststand_1_1teststand__bullet_1_1TeststandBulletRobot.html#acbb1f3051c8d20cd8fec0126f3b93246", null ],
     [ "run", "classdg__blmc__robots_1_1teststand_1_1teststand__bullet_1_1TeststandBulletRobot.html#a64326376acc832babc838f6d0f2499e8", null ],
     [ "set_gravity", "classdg__blmc__robots_1_1teststand_1_1teststand__bullet_1_1TeststandBulletRobot.html#a961e8a9d4f6cc368503cf0923eb80940", null ],
-    [ "sim2signal_", "classdg__blmc__robots_1_1teststand_1_1teststand__bullet_1_1TeststandBulletRobot.html#ac40d60e18a3bda81f2a1eb5a958b6863", null ],
+    [ "config", "classdg__blmc__robots_1_1teststand_1_1teststand__bullet_1_1TeststandBulletRobot.html#a9a6c49f19531ebcb9772611e47c0ac25", null ],
     [ "device", "classdg__blmc__robots_1_1teststand_1_1teststand__bullet_1_1TeststandBulletRobot.html#aa13bccdb2104a27dee593452c555a167", null ],
     [ "joint_names", "classdg__blmc__robots_1_1teststand_1_1teststand__bullet_1_1TeststandBulletRobot.html#a06a423742febadfa202356523de626d1", null ],
     [ "physicsClient", "classdg__blmc__robots_1_1teststand_1_1teststand__bullet_1_1TeststandBulletRobot.html#ae1f8bcfbc31914de23c001a8385db55c", null ],
