@@ -16,9 +16,9 @@ var annotated_dup =
           [ "TeststandBulletRobot", "classdg__blmc__robots_1_1teststand_1_1teststand__bullet_1_1TeststandBulletRobot.html", "classdg__blmc__robots_1_1teststand_1_1teststand__bullet_1_1TeststandBulletRobot" ]
         ] ]
       ] ],
-      [ "DGMQuadruped", "classdg__blmc__robots_1_1DGMQuadruped.html", "classdg__blmc__robots_1_1DGMQuadruped" ],
       [ "DGMQuadrupedSimu", "classdg__blmc__robots_1_1DGMQuadrupedSimu.html", "classdg__blmc__robots_1_1DGMQuadrupedSimu" ],
       [ "DGMSingleMotor", "classdg__blmc__robots_1_1DGMSingleMotor.html", "classdg__blmc__robots_1_1DGMSingleMotor" ],
+      [ "DGMSolo", "classdg__blmc__robots_1_1DGMSolo.html", "classdg__blmc__robots_1_1DGMSolo" ],
       [ "DGMStuggihop", "classdg__blmc__robots_1_1DGMStuggihop.html", "classdg__blmc__robots_1_1DGMStuggihop" ],
       [ "DGMTeststand", "classdg__blmc__robots_1_1DGMTeststand.html", "classdg__blmc__robots_1_1DGMTeststand" ]
     ] ],

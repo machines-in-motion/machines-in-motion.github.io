@@ -4,7 +4,7 @@ var indexSectionsWithContent =
   1: "dqstv",
   2: "c",
   3: "cds",
-  4: "dgirs~",
+  4: "cdgirs~",
   5: "s"
 };
 
