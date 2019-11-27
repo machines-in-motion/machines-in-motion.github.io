@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['zero_5fvec',['zero_vec',['../namespacepython_1_1dg__tools_1_1utils.html#a1a1149ad766f665f81d97583b76766df',1,'python::dg_tools::utils']]]
+  ['x_5finit',['x_init',['../namespacepython_1_1dg__tools_1_1generate__traj.html#a8e4a5846a1ba971f93868bfdd64ee805',1,'python::dg_tools::generate_traj']]]
 ];

@@ -10,10 +10,11 @@ var searchData=
   ['dgmquadrupedsimu',['DGMQuadrupedSimu',['../classdg__blmc__robots_1_1DGMQuadrupedSimu.html',1,'dg_blmc_robots']]],
   ['dgmsinglemotor',['DGMSingleMotor',['../classdg__blmc__robots_1_1DGMSingleMotor.html',1,'dg_blmc_robots']]],
   ['dgmsinglemotor',['DGMSingleMotor',['../classdg__blmc__robots_1_1DGMSingleMotor.html#a3b2a7165e988dd54315ae47fede7f621',1,'dg_blmc_robots::DGMSingleMotor']]],
-  ['dgmsolo',['DGMSolo',['../classdg__blmc__robots_1_1DGMSolo.html',1,'dg_blmc_robots']]],
   ['dgmsolo',['DGMSolo',['../classdg__blmc__robots_1_1DGMSolo.html#acd11ede91d9767392baf4cf7324e714e',1,'dg_blmc_robots::DGMSolo']]],
-  ['dgmstuggihop',['DGMStuggihop',['../classdg__blmc__robots_1_1DGMStuggihop.html#a00d09c7496216833d0bbf9528dc91bf1',1,'dg_blmc_robots::DGMStuggihop']]],
+  ['dgmsolo',['DGMSolo',['../classdg__blmc__robots_1_1DGMSolo.html',1,'dg_blmc_robots']]],
   ['dgmstuggihop',['DGMStuggihop',['../classdg__blmc__robots_1_1DGMStuggihop.html',1,'dg_blmc_robots']]],
+  ['dgmstuggihop',['DGMStuggihop',['../classdg__blmc__robots_1_1DGMStuggihop.html#a00d09c7496216833d0bbf9528dc91bf1',1,'dg_blmc_robots::DGMStuggihop']]],
   ['dgmteststand',['DGMTeststand',['../classdg__blmc__robots_1_1DGMTeststand.html',1,'dg_blmc_robots']]],
-  ['dgmteststand',['DGMTeststand',['../classdg__blmc__robots_1_1DGMTeststand.html#ae6b6e00fbd3460f7083977ae9befb6fd',1,'dg_blmc_robots::DGMTeststand']]]
+  ['dgmteststand',['DGMTeststand',['../classdg__blmc__robots_1_1DGMTeststand.html#ae6b6e00fbd3460f7083977ae9befb6fd',1,'dg_blmc_robots::DGMTeststand']]],
+  ['dg_20blmc_20robots',['DG BLMC ROBOTS',['../md__workspace_software_workspace_src_catkin_robots_dg_blmc_robots_readme.html',1,'']]]
 ];

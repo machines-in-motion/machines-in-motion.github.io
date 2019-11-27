@@ -15,6 +15,7 @@ var searchData=
   ['constvector',['constVector',['../namespacepython_1_1dg__tools_1_1math__small__entities.html#a6fd7a288ef7685084a1f62e25ec37497',1,'python.dg_tools.math_small_entities.constVector()'],['../namespacepython_1_1dg__tools_1_1utils.html#aa6d14497b9b1dd89f819236d9e2d4f5d',1,'python.dg_tools.utils.constVector()']]],
   ['control_5fpd_2ehpp',['control_pd.hpp',['../control__pd_8hpp.html',1,'']]],
   ['control_5fswitch_5fpos',['control_switch_pos',['../classpython_1_1dg__tools_1_1leg__impedance__control_1_1quad__leg__impedance__controller_1_1QuadrupedComControl.html#a8e10de9b174c7e0d0a4e02c90697ca32',1,'python::dg_tools::leg_impedance_control::quad_leg_impedance_controller::QuadrupedComControl']]],
+  ['convert_5fdg_5fto_5frai',['convert_dg_to_rai',['../namespaceconvert__dg__to__rai.html',1,'']]],
   ['convert_5fquat_5fse3',['convert_quat_se3',['../namespacepython_1_1dg__tools_1_1utils.html#a287f58a2ea7cdb6a5b4bbb327fb9088a',1,'python::dg_tools::utils']]],
   ['cubic_5finterpolator',['cubic_interpolator',['../namespacepython_1_1dg__tools_1_1traj__generators.html#a95bc5b726c7b5a2d1497496888142722',1,'python::dg_tools::traj_generators']]]
 ];

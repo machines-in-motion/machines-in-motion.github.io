@@ -1,6 +1,7 @@
 var NAVTREE =
 [
   [ "dg_tools", "index.html", [
+    [ "dg_tools", "md__workspace_software_workspace_src_catkin_dg_control_dg_tools_readme.html", null ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ],
       [ "Namespace Members", "namespacemembers.html", [

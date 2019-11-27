@@ -2,7 +2,7 @@ var annotated_dup =
 [
     [ "real_time_tools", null, [
       [ "PortConfig", "classreal__time__tools_1_1PortConfig.html", "classreal__time__tools_1_1PortConfig" ],
-      [ "Realtime_check", "classreal__time__tools_1_1Realtime__check.html", "classreal__time__tools_1_1Realtime__check" ],
+      [ "RealTimeCheck", "classreal__time__tools_1_1RealTimeCheck.html", "classreal__time__tools_1_1RealTimeCheck" ],
       [ "RealTimeMutex", "classreal__time__tools_1_1RealTimeMutex.html", "classreal__time__tools_1_1RealTimeMutex" ],
       [ "RealTimeThread", "classreal__time__tools_1_1RealTimeThread.html", "classreal__time__tools_1_1RealTimeThread" ],
       [ "RealTimeThreadParameters", "classreal__time__tools_1_1RealTimeThreadParameters.html", "classreal__time__tools_1_1RealTimeThreadParameters" ],
@@ -16,8 +16,5 @@ var annotated_dup =
     ] ],
     [ "Computation", "classComputation.html", "classComputation" ],
     [ "Configuration", "classConfiguration.html", "classConfiguration" ],
-    [ "DummyClass", "classDummyClass.html", "classDummyClass" ],
-    [ "Matrix_computation_no_eigen", "classMatrix__computation__no__eigen.html", "classMatrix__computation__no__eigen" ],
-    [ "myUnion", "unionmyUnion.html", "unionmyUnion" ],
-    [ "SomeClass", "classSomeClass.html", "classSomeClass" ]
+    [ "Matrix_computation_no_eigen", "classMatrix__computation__no__eigen.html", "classMatrix__computation__no__eigen" ]
 ];

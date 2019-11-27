@@ -1,13 +1,6 @@
 var NAVTREE =
 [
   [ "real_time_tools", "index.html", [
-    [ "General introduction", "rt_preempt.html", [
-      [ "Introduction", "rt_preempt.html#intro_rtpreempt", null ],
-      [ "Block Memory", "rt_preempt.html#block_memory_rtpreempt", null ]
-    ] ],
-    [ "General introduction", "xenomai.html", null ],
-    [ "General introduction", "non_real_time.html", null ],
-    [ "real_time_tools", "md__workspace_software_workspace_src_catkin_core_robotics_real_time_tools_readme.html", null ],
     [ "Todo List", "todo.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
@@ -22,15 +15,22 @@ var NAVTREE =
       ] ]
     ] ],
     [ "Files", null, [
-      [ "File List", "files.html", "files" ]
-    ] ]
+      [ "File List", "files.html", "files" ],
+      [ "File Members", "globals.html", [
+        [ "All", "globals.html", null ],
+        [ "Functions", "globals_func.html", null ],
+        [ "Variables", "globals_vars.html", null ],
+        [ "Typedefs", "globals_type.html", null ]
+      ] ]
+    ] ],
+    [ "Examples", "examples.html", "examples" ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
 ".html",
-"threadsafe__object_8hxx_source.html"
+"threadsafe__object_8hxx.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
