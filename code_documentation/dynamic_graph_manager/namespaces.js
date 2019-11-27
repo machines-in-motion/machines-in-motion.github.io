@@ -6,5 +6,6 @@ var namespaces =
     [ "robot", "namespacerobot.html", null ],
     [ "ros", "namespaceros.html", "namespaceros" ],
     [ "ros_nodes", "namespaceros__nodes.html", "namespaceros__nodes" ],
+    [ "setup", "namespacesetup.html", null ],
     [ "simple_dgm_hwd_client", "namespacesimple__dgm__hwd__client.html", null ]
 ];

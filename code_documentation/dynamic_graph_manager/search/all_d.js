@@ -40,9 +40,10 @@ var searchData=
   ['dynamic_5fgraph_5fmanager_2ehh',['dynamic_graph_manager.hh',['../dynamic__graph__manager_8hh.html',1,'']]],
   ['dynamicgraph',['dynamicgraph',['../namespacedynamicgraph.html',1,'']]],
   ['dynamicgraph_5ffactory_5fentity_5fplugin',['DYNAMICGRAPH_FACTORY_ENTITY_PLUGIN',['../device_8cpp.html#a94009a14081eac806149155d1f289f6d',1,'DYNAMICGRAPH_FACTORY_ENTITY_PLUGIN():&#160;device.cpp'],['../namespacedynamic__graph.html#a04797aa55f04bd1e07b64c0caa685c6b',1,'dynamic_graph::DYNAMICGRAPH_FACTORY_ENTITY_PLUGIN()']]],
-  ['dynamicgraphmanager',['DynamicGraphManager',['../classdynamic__graph_1_1DynamicGraphManager.html#afd98424082e5a1f878e6c7cb08a62c4a',1,'dynamic_graph::DynamicGraphManager']]],
   ['dynamicgraphmanager',['DynamicGraphManager',['../classdynamic__graph_1_1DynamicGraphManager.html',1,'dynamic_graph']]],
+  ['dynamicgraphmanager',['DynamicGraphManager',['../classdynamic__graph_1_1DynamicGraphManager.html#afd98424082e5a1f878e6c7cb08a62c4a',1,'dynamic_graph::DynamicGraphManager']]],
   ['dynamic_20graph_20manager',['Dynamic Graph Manager',['../index.html',1,'']]],
+  ['dynamic_5fgraph_5fmanager',['dynamic_graph_manager',['../md__workspace_software_workspace_src_catkin_dg_control_dynamic_graph_manager_readme.html',1,'']]],
   ['ros_5fstate_5fpublish',['ros_state_publish',['../namespacedynamicgraph_1_1command_1_1ros__state__publish.html',1,'dynamicgraph::command']]],
   ['specific',['specific',['../namespacedynamic__graph_1_1specific.html',1,'dynamic_graph']]]
 ];

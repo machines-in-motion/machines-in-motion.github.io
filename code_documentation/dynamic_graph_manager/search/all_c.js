@@ -6,7 +6,7 @@ var searchData=
   ['clock',['clock',['../namespacedynamic__graph.html#aca70acb5331a18e090e49b3d85290a7e',1,'dynamic_graph']]],
   ['code',['code',['../classdynamic__graph_1_1ExceptionAbstract.html#a160cf3cd35aad75738f8b26c5cec6fdc',1,'dynamic_graph::ExceptionAbstract']]],
   ['complete',['complete',['../classros_1_1dgcompleter_1_1DGCompleter.html#a0662ed6ab4e56fb2a828c5577e03b41e',1,'ros::dgcompleter::DGCompleter']]],
-  ['compute_5fsafety_5fcontrols',['compute_safety_controls',['../classdynamic__graph_1_1DynamicGraphManager.html#a60bb31040121d6041b4dd6556f5c7eac',1,'dynamic_graph::DynamicGraphManager::compute_safety_controls()'],['../classdynamic__graph__manager_1_1SimpleDGM.html#a37b28e687ce4e724770f5c9f23da4d4f',1,'dynamic_graph_manager::SimpleDGM::compute_safety_controls()']]],
+  ['compute_5fsafety_5fcontrols',['compute_safety_controls',['../classdynamic__graph__manager_1_1SimpleDGM.html#a37b28e687ce4e724770f5c9f23da4d4f',1,'dynamic_graph_manager::SimpleDGM::compute_safety_controls()'],['../classdynamic__graph_1_1DynamicGraphManager.html#a60bb31040121d6041b4dd6556f5c7eac',1,'dynamic_graph::DynamicGraphManager::compute_safety_controls()']]],
   ['cond_5fvar_5f',['cond_var_',['../classdynamic__graph_1_1DynamicGraphManager.html#a003d8598839c07a7d81c1afed0ea0b01',1,'dynamic_graph::DynamicGraphManager']]],
   ['cond_5fvar_5fname_5f',['cond_var_name_',['../classdynamic__graph_1_1DynamicGraphManager.html#a909b8d2d024a2a11473fa2d94a18002e',1,'dynamic_graph::DynamicGraphManager']]],
   ['control_5fperiod_5f',['control_period_',['../classdynamic__graph_1_1DynamicGraphManager.html#a1006cdb2d7e30e291d3d568923ebbc03',1,'dynamic_graph::DynamicGraphManager']]],

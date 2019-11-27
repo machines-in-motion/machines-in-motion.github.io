@@ -3,6 +3,7 @@ var NAVTREE =
   [ "dynamic_graph_manager", "index.html", [
     [ "Dynamic Graph Manager", "index.html", "index" ],
     [ "Motivation and history behind the implemention of this framework", "subpage_motivation_history.html", null ],
+    [ "dynamic_graph_manager", "md__workspace_software_workspace_src_catkin_dg_control_dynamic_graph_manager_readme.html", null ],
     [ "Todo List", "todo.html", null ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ],
@@ -42,7 +43,7 @@ var NAVTREEINDEX =
 ".html",
 "classdynamic__graph_1_1PeriodicCall.html#acf4cd14a78523d6612d4679cb5a67d8b",
 "exception-signal_8cpp.html",
-"structdynamic__graph_1_1DgToRos_3_01std_1_1pair_3_01specific_1_1Twist_00_01Vector_01_4_01_4.html#aefdf5d251866f024280932204c82b9b6"
+"structdynamic__graph_1_1DgToRos_3_01std_1_1pair_3_01specific_1_1Twist_00_01Vector_01_4_01_4.html#aaa82322e928e53346078a615a0562f3e"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
