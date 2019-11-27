@@ -7,6 +7,7 @@ var NAVTREE =
     ] ],
     [ "General introduction", "xenomai.html", null ],
     [ "General introduction", "non_real_time.html", null ],
+    [ "real_time_tools", "md__workspace_software_workspace_src_catkin_core_robotics_real_time_tools_readme.html", null ],
     [ "Todo List", "todo.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
@@ -29,7 +30,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 ".html",
-"threadsafe__timeseries_8hpp.html"
+"threadsafe__object_8hxx_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

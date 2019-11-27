@@ -46,6 +46,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -210,9 +211,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a82297c2b7b85c57c53578749c9bd6429"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a82297c2b7b85c57c53578749c9bd6429">segment_exists</a> (const std::string &amp;segment_id)</td></tr>
 <tr class="memdesc:a82297c2b7b85c57c53578749c9bd6429"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns true if a segment exists under this id  <a href="#a82297c2b7b85c57c53578749c9bd6429">More...</a><br /></td></tr>
 <tr class="separator:a82297c2b7b85c57c53578749c9bd6429"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed33c9701140a1c43e40f182a380199b"><td class="memItemLeft" align="right" valign="top">boost::interprocess::interprocess_mutex &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#aed33c9701140a1c43e40f182a380199b">get_segment_mutex</a> (const std::string segment_id)</td></tr>
-<tr class="memdesc:aed33c9701140a1c43e40f182a380199b"><td class="mdescLeft">&#160;</td><td class="mdescRight">get_sgement_mutex aquiere a reference to the semgent global mutex.  <a href="#aed33c9701140a1c43e40f182a380199b">More...</a><br /></td></tr>
-<tr class="separator:aed33c9701140a1c43e40f182a380199b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60cbce63ae7fb64a2758b773f9006471"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a60cbce63ae7fb64a2758b773f9006471">delete_segment</a> (const std::string &amp;segment_id)</td></tr>
 <tr class="memdesc:a60cbce63ae7fb64a2758b773f9006471"><td class="mdescLeft">&#160;</td><td class="mdescRight">delete_segment deletes the segment of existing shared memory.  <a href="#a60cbce63ae7fb64a2758b773f9006471">More...</a><br /></td></tr>
 <tr class="separator:a60cbce63ae7fb64a2758b773f9006471"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -220,19 +218,16 @@ Functions</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a1f88dd41dca9a23387090866213dbd85">delete_all_segment</a> ()</td></tr>
 <tr class="memdesc:a1f88dd41dca9a23387090866213dbd85"><td class="mdescLeft">&#160;</td><td class="mdescRight">delete_all_segment delete all mapping to the shared memory used during the current process <br /></td></tr>
 <tr class="separator:a1f88dd41dca9a23387090866213dbd85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8583540879db53fc80b31410b5eec68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#aa8583540879db53fc80b31410b5eec68">clear_shared_memory</a> (const std::string &amp;segment_id)</td></tr>
-<tr class="memdesc:aa8583540879db53fc80b31410b5eec68"><td class="mdescLeft">&#160;</td><td class="mdescRight">clear_shared_memory_segment destroys the shared memory  <a href="#aa8583540879db53fc80b31410b5eec68">More...</a><br /></td></tr>
-<tr class="separator:aa8583540879db53fc80b31410b5eec68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61a2945c994bcbe84cc8dce96a189edb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a61a2945c994bcbe84cc8dce96a189edb">set</a> (const std::string &amp;segment_id, const std::string &amp;object_id, const std::string &amp;set_)</td></tr>
-<tr class="memdesc:a61a2945c994bcbe84cc8dce96a189edb"><td class="mdescLeft">&#160;</td><td class="mdescRight">set instanciates or get pointer to a string in the shared memory.  <a href="#a61a2945c994bcbe84cc8dce96a189edb">More...</a><br /></td></tr>
-<tr class="separator:a61a2945c994bcbe84cc8dce96a189edb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a952cc446e3dce8fea8cd1ea02613f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a8a952cc446e3dce8fea8cd1ea02613f9">get</a> (const std::string &amp;segment_id, const std::string &amp;object_id, std::string &amp;get_)</td></tr>
-<tr class="memdesc:a8a952cc446e3dce8fea8cd1ea02613f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">get gets a pointer to a string in the shared memory.  <a href="#a8a952cc446e3dce8fea8cd1ea02613f9">More...</a><br /></td></tr>
-<tr class="separator:a8a952cc446e3dce8fea8cd1ea02613f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b43b29fa0aa6a5cad0ca47afdd03e83"><td class="memTemplParams" colspan="2">template&lt;typename ElemType &gt; </td></tr>
 <tr class="memitem:a7b43b29fa0aa6a5cad0ca47afdd03e83"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a7b43b29fa0aa6a5cad0ca47afdd03e83">delete_object</a> (const std::string &amp;segment_id, const std::string &amp;object_id)</td></tr>
 <tr class="memdesc:a7b43b29fa0aa6a5cad0ca47afdd03e83"><td class="mdescLeft">&#160;</td><td class="mdescRight">delete_object deletes a particular object in the shared memory segment  <a href="#a7b43b29fa0aa6a5cad0ca47afdd03e83">More...</a><br /></td></tr>
 <tr class="separator:a7b43b29fa0aa6a5cad0ca47afdd03e83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed33c9701140a1c43e40f182a380199b"><td class="memItemLeft" align="right" valign="top">boost::interprocess::interprocess_mutex &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#aed33c9701140a1c43e40f182a380199b">get_segment_mutex</a> (const std::string segment_id)</td></tr>
+<tr class="memdesc:aed33c9701140a1c43e40f182a380199b"><td class="mdescLeft">&#160;</td><td class="mdescRight">get_sgement_mutex aquiere a reference to the semgent global mutex.  <a href="#aed33c9701140a1c43e40f182a380199b">More...</a><br /></td></tr>
+<tr class="separator:aed33c9701140a1c43e40f182a380199b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8583540879db53fc80b31410b5eec68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#aa8583540879db53fc80b31410b5eec68">clear_shared_memory</a> (const std::string &amp;segment_id)</td></tr>
+<tr class="memdesc:aa8583540879db53fc80b31410b5eec68"><td class="mdescLeft">&#160;</td><td class="mdescRight">clear_shared_memory_segment destroys the shared memory  <a href="#aa8583540879db53fc80b31410b5eec68">More...</a><br /></td></tr>
+<tr class="separator:aa8583540879db53fc80b31410b5eec68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace68bf582cfe50ba83a9cfc9b7aed3b2"><td class="memTemplParams" colspan="2">template&lt;typename ElemType &gt; </td></tr>
 <tr class="memitem:ace68bf582cfe50ba83a9cfc9b7aed3b2"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#ace68bf582cfe50ba83a9cfc9b7aed3b2">set</a> (const std::string &amp;segment_id, const std::string &amp;object_id, const ElemType &amp;set_)</td></tr>
 <tr class="memdesc:ace68bf582cfe50ba83a9cfc9b7aed3b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">set instanciates or get pointer to any elementary types in the shared memory.  <a href="#ace68bf582cfe50ba83a9cfc9b7aed3b2">More...</a><br /></td></tr>
@@ -241,6 +236,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="name
 <tr class="memitem:a7e37a0a2146d2cfeeccb63390a3d9132"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a7e37a0a2146d2cfeeccb63390a3d9132">set</a> (const std::string &amp;segment_id, const std::string &amp;object_id, const ElemType *set_, const std::size_t size)</td></tr>
 <tr class="memdesc:a7e37a0a2146d2cfeeccb63390a3d9132"><td class="mdescLeft">&#160;</td><td class="mdescRight">set instanciates or get pointer to a fixed sized array of the templated type "T" in the shared memory.  <a href="#a7e37a0a2146d2cfeeccb63390a3d9132">More...</a><br /></td></tr>
 <tr class="separator:a7e37a0a2146d2cfeeccb63390a3d9132"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61a2945c994bcbe84cc8dce96a189edb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a61a2945c994bcbe84cc8dce96a189edb">set</a> (const std::string &amp;segment_id, const std::string &amp;object_id, const std::string &amp;set_)</td></tr>
+<tr class="memdesc:a61a2945c994bcbe84cc8dce96a189edb"><td class="mdescLeft">&#160;</td><td class="mdescRight">set instanciates or get pointer to a string in the shared memory.  <a href="#a61a2945c994bcbe84cc8dce96a189edb">More...</a><br /></td></tr>
+<tr class="separator:a61a2945c994bcbe84cc8dce96a189edb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6521a6731fa97be21779b1d6c7589ee"><td class="memTemplParams" colspan="2">template&lt;typename ElemType &gt; </td></tr>
 <tr class="memitem:ac6521a6731fa97be21779b1d6c7589ee"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#ac6521a6731fa97be21779b1d6c7589ee">set</a> (const std::string &amp;segment_id, const std::string &amp;object_id, const std::vector&lt; ElemType &gt; &amp;set_)</td></tr>
 <tr class="memdesc:ac6521a6731fa97be21779b1d6c7589ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">set instanciates or get pointer to a std::vector&lt;ElemType&gt; in the shared memory.  <a href="#ac6521a6731fa97be21779b1d6c7589ee">More...</a><br /></td></tr>
@@ -265,6 +263,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="name
 <tr class="memitem:a6241b9143a2152b0c0beb784869373c7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a6241b9143a2152b0c0beb784869373c7">get</a> (const std::string &amp;segment_id, const std::string &amp;object_id, ElemType *get_, const std::size_t expected_size)</td></tr>
 <tr class="memdesc:a6241b9143a2152b0c0beb784869373c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">get gets a pointer to a fixed sized array of the templated type "T" in the shared memory.  <a href="#a6241b9143a2152b0c0beb784869373c7">More...</a><br /></td></tr>
 <tr class="separator:a6241b9143a2152b0c0beb784869373c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a952cc446e3dce8fea8cd1ea02613f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a8a952cc446e3dce8fea8cd1ea02613f9">get</a> (const std::string &amp;segment_id, const std::string &amp;object_id, std::string &amp;get_)</td></tr>
+<tr class="memdesc:a8a952cc446e3dce8fea8cd1ea02613f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">get gets a pointer to a string in the shared memory.  <a href="#a8a952cc446e3dce8fea8cd1ea02613f9">More...</a><br /></td></tr>
+<tr class="separator:a8a952cc446e3dce8fea8cd1ea02613f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd0ab66344562f5d927dea0d319a6a08"><td class="memTemplParams" colspan="2">template&lt;typename ElemType &gt; </td></tr>
 <tr class="memitem:afd0ab66344562f5d927dea0d319a6a08"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#afd0ab66344562f5d927dea0d319a6a08">get</a> (const std::string &amp;segment_id, const std::string &amp;object_id, std::vector&lt; ElemType &gt; &amp;get_)</td></tr>
 <tr class="memdesc:afd0ab66344562f5d927dea0d319a6a08"><td class="mdescLeft">&#160;</td><td class="mdescRight">get gets a pointer to a std::vector&lt;ElemType&gt; in the shared memory.  <a href="#afd0ab66344562f5d927dea0d319a6a08">More...</a><br /></td></tr>
@@ -432,49 +433,6 @@ template&lt;class Serializable &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a8a952cc446e3dce8fea8cd1ea02613f9"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void shared_memory::get </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>segment_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>object_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::string &amp;&#160;</td>
-          <td class="paramname"><em>get_</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>get gets a pointer to a string in the shared memory. </p>
-<p>All set functions make sure that the pointer is uniquely created to avoid useless computation time consumption.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">segment_id</td><td>is the name of the shared memory segment. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">object_id</td><td>is the name of the shared memory object to set. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">get_</td><td>is the string to be created in the shared memory </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a class="anchor" id="ad017562102dbe044db2de6c79c0669d3"></a>
 <div class="memitem">
 <div class="memproto">
@@ -566,6 +524,49 @@ template&lt;typename ElemType &gt; </div>
     <tr><td class="paramdir">[in]</td><td class="paramname">object_id</td><td>is the name of the shared memory object to set. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">get_</td><td>is the pointer to the array of objects to set in the memory. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>is the array size. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a8a952cc446e3dce8fea8cd1ea02613f9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void shared_memory::get </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>segment_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>object_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>get_</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>get gets a pointer to a string in the shared memory. </p>
+<p>All set functions make sure that the pointer is uniquely created to avoid useless computation time consumption.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">segment_id</td><td>is the name of the shared memory segment. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">object_id</td><td>is the name of the shared memory object to set. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">get_</td><td>is the string to be created in the shared memory </td></tr>
   </table>
   </dd>
 </dl>
@@ -883,49 +884,6 @@ template&lt;class Serializable &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a61a2945c994bcbe84cc8dce96a189edb"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void shared_memory::set </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>segment_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>object_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>set_</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>set instanciates or get pointer to a string in the shared memory. </p>
-<p>All set functions make sure that the pointer is uniquely created to avoid useless computation time consumption.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">segment_id</td><td>is the name of the shared memory segment. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">object_id</td><td>is the name of the shared memory object to set. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">set_</td><td>is the string to be created in the shared memory </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a class="anchor" id="ace68bf582cfe50ba83a9cfc9b7aed3b2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1017,6 +975,49 @@ template&lt;typename ElemType &gt; </div>
     <tr><td class="paramdir">[in]</td><td class="paramname">object_id</td><td>is the name of the shared memory object to set. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">set_</td><td>is the pointer to the array of objects to set in the memory. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>is the array size. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a61a2945c994bcbe84cc8dce96a189edb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void shared_memory::set </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>segment_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>object_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>set_</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>set instanciates or get pointer to a string in the shared memory. </p>
+<p>All set functions make sure that the pointer is uniquely created to avoid useless computation time consumption.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">segment_id</td><td>is the name of the shared memory segment. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">object_id</td><td>is the name of the shared memory object to set. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">set_</td><td>is the string to be created in the shared memory </td></tr>
   </table>
   </dd>
 </dl>

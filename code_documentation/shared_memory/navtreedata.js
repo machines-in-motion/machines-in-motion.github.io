@@ -1,6 +1,7 @@
 var NAVTREE =
 [
   [ "shared_memory", "index.html", [
+    [ "Shared Memory", "md__workspace_software_workspace_src_catkin_core_robotics_shared_memory_README.html", null ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -30,7 +31,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 ".html",
-"exceptions_8h_source.html"
+"exceptions_8cpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

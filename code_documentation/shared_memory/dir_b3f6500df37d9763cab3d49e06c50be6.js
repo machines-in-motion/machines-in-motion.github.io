@@ -3,7 +3,6 @@ var dir_b3f6500df37d9763cab3d49e06c50be6 =
     [ "benchmarks", "dir_1461622cc5c94970902b9a13b2c406c9.html", "dir_1461622cc5c94970902b9a13b2c406c9" ],
     [ "demos", "dir_303f98c5d045a4bf71f63cb84eca4fe8.html", "dir_303f98c5d045a4bf71f63cb84eca4fe8" ],
     [ "internal", "dir_5f4f1ef954105908d333c85011f35325.html", "dir_5f4f1ef954105908d333c85011f35325" ],
-    [ "tests", "dir_3e865533219a29f16958b94325ddac95.html", "dir_3e865533219a29f16958b94325ddac95" ],
     [ "condition_variable.hpp", "condition__variable_8hpp_source.html", null ],
     [ "exceptions.h", "exceptions_8h.html", [
       [ "Allocation_exception", "classshared__memory_1_1Allocation__exception.html", "classshared__memory_1_1Allocation__exception" ],
