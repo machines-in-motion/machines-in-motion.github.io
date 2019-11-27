@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ocpbase',['OcpBase',['../classsolverlqr_1_1OcpBase.html',1,'solverlqr']]]
+  ['graphics',['Graphics',['../classhelpers_1_1Graphics.html',1,'helpers']]]
 ];

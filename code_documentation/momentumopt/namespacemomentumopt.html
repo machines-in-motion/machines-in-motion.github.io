@@ -360,6 +360,17 @@ Functions</h2></td></tr>
 <tr class="memitem:aceb7fe2439e6bfca2e837e360e43325c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aceb7fe2439e6bfca2e837e360e43325c"></a>
 <a class="el" href="namespacemomentumopt.html#aff6d76c8e2d97a91b98d32b8f4f2ca50">ContactType</a>&#160;</td><td class="memItemRight" valign="bottom"><b>idToContactType</b> (int cnt_type_id)</td></tr>
 <tr class="separator:aceb7fe2439e6bfca2e837e360e43325c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd0f234cfdfe834545c4846377997696"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abd0f234cfdfe834545c4846377997696"></a>
+Eigen::Vector3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemomentumopt.html#abd0f234cfdfe834545c4846377997696">orientationError</a> (const Eigen::Quaternion&lt; double &gt; &amp;desired_orientation, const Eigen::Quaternion&lt; double &gt; &amp;current_orientation)</td></tr>
+<tr class="memdesc:abd0f234cfdfe834545c4846377997696"><td class="mdescLeft">&#160;</td><td class="mdescRight">computes the error between two quaternions by rotating the desired orientation back by the current orientation, and taking the logarithm of the result. <br /></td></tr>
+<tr class="separator:abd0f234cfdfe834545c4846377997696"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3115339f252c9729fdf7ec50940673bb"><td class="memItemLeft" align="right" valign="top">Eigen::Vector3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemomentumopt.html#a3115339f252c9729fdf7ec50940673bb">requiredAngularVelocity</a> (const Eigen::Quaternion&lt; double &gt; &amp;desired_orientation, const Eigen::Quaternion&lt; double &gt; &amp;current_orientation, const double &amp;time_step, bool in_body_coordinates=false)</td></tr>
+<tr class="memdesc:a3115339f252c9729fdf7ec50940673bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">computation of the required angular velocity to move from a current orientation to a desired orientation in a given time interval.  <a href="#a3115339f252c9729fdf7ec50940673bb">More...</a><br /></td></tr>
+<tr class="separator:a3115339f252c9729fdf7ec50940673bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42b13322f043e8eacb6875be91dd3a68"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a42b13322f043e8eacb6875be91dd3a68"></a>
+Eigen::Quaternion&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemomentumopt.html#a42b13322f043e8eacb6875be91dd3a68">integrateAngularVelocity</a> (const Eigen::Quaternion&lt; double &gt; &amp;current_orientation, const Eigen::Vector3d &amp;angular_velocity, const double &amp;time_step, bool in_body_coordinates=false)</td></tr>
+<tr class="memdesc:a42b13322f043e8eacb6875be91dd3a68"><td class="mdescLeft">&#160;</td><td class="mdescRight">integration of a quaternion given an angular velocity given either in body or world coordinates and a time interval for integration <br /></td></tr>
+<tr class="separator:a42b13322f043e8eacb6875be91dd3a68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a823f83c4d731d97edabdab8e5bbc1f4b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a823f83c4d731d97edabdab8e5bbc1f4b"></a>
 Eigen::Matrix3d&#160;</td><td class="memItemRight" valign="bottom"><b>skewMatrix</b> (const Eigen::Vector3d &amp;vec)</td></tr>
 <tr class="separator:a823f83c4d731d97edabdab8e5bbc1f4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -384,17 +395,6 @@ Eigen::Vector3d&#160;</td><td class="memItemRight" valign="bottom"><b>toAngularV
 <tr class="memitem:a8afd582b252d9b3b71c73b9fd37389fc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8afd582b252d9b3b71c73b9fd37389fc"></a>
 Eigen::Vector3d&#160;</td><td class="memItemRight" valign="bottom"><b>fromAngularVelocity</b> (const Eigen::Vector3d &amp;rotation_vector, const Eigen::Vector3d &amp;angular_velocity, bool in_body_coordinates)</td></tr>
 <tr class="separator:a8afd582b252d9b3b71c73b9fd37389fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3115339f252c9729fdf7ec50940673bb"><td class="memItemLeft" align="right" valign="top">Eigen::Vector3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemomentumopt.html#a3115339f252c9729fdf7ec50940673bb">requiredAngularVelocity</a> (const Eigen::Quaternion&lt; double &gt; &amp;desired_orientation, const Eigen::Quaternion&lt; double &gt; &amp;current_orientation, const double &amp;time_step, bool in_body_coordinates=false)</td></tr>
-<tr class="memdesc:a3115339f252c9729fdf7ec50940673bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">computation of the required angular velocity to move from a current orientation to a desired orientation in a given time interval.  <a href="#a3115339f252c9729fdf7ec50940673bb">More...</a><br /></td></tr>
-<tr class="separator:a3115339f252c9729fdf7ec50940673bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42b13322f043e8eacb6875be91dd3a68"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a42b13322f043e8eacb6875be91dd3a68"></a>
-Eigen::Quaternion&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemomentumopt.html#a42b13322f043e8eacb6875be91dd3a68">integrateAngularVelocity</a> (const Eigen::Quaternion&lt; double &gt; &amp;current_orientation, const Eigen::Vector3d &amp;angular_velocity, const double &amp;time_step, bool in_body_coordinates=false)</td></tr>
-<tr class="memdesc:a42b13322f043e8eacb6875be91dd3a68"><td class="mdescLeft">&#160;</td><td class="mdescRight">integration of a quaternion given an angular velocity given either in body or world coordinates and a time interval for integration <br /></td></tr>
-<tr class="separator:a42b13322f043e8eacb6875be91dd3a68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd0f234cfdfe834545c4846377997696"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abd0f234cfdfe834545c4846377997696"></a>
-Eigen::Vector3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemomentumopt.html#abd0f234cfdfe834545c4846377997696">orientationError</a> (const Eigen::Quaternion&lt; double &gt; &amp;desired_orientation, const Eigen::Quaternion&lt; double &gt; &amp;current_orientation)</td></tr>
-<tr class="memdesc:abd0f234cfdfe834545c4846377997696"><td class="mdescLeft">&#160;</td><td class="mdescRight">computes the error between two quaternions by rotating the desired orientation back by the current orientation, and taking the logarithm of the result. <br /></td></tr>
-<tr class="separator:abd0f234cfdfe834545c4846377997696"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><pre class="fragment">@file __init__.py
