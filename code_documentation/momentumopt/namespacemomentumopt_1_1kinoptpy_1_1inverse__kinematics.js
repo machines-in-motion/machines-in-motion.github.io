@@ -1,4 +1,0 @@
-var namespacemomentumopt_1_1kinoptpy_1_1inverse__kinematics =
-[
-    [ "PointContactInverseKinematics", "classmomentumopt_1_1kinoptpy_1_1inverse__kinematics_1_1PointContactInverseKinematics.html", "classmomentumopt_1_1kinoptpy_1_1inverse__kinematics_1_1PointContactInverseKinematics" ]
-];

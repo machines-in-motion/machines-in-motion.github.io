@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['effid',['EffId',['../structmomentumopt_1_1Problem.html#a7fc83a3778df86dc1b8c5326b98f72cf',1,'momentumopt::Problem']]],
-  ['end_5feffector_5flqr',['end_effector_lqr',['../classmomentumopt_1_1kinoptpy_1_1end__eff__lqr__gain__computation_1_1end__effector__lqr.html',1,'momentumopt::kinoptpy::end_eff_lqr_gain_computation']]],
-  ['endeffectortrajectorygenerator',['EndeffectorTrajectoryGenerator',['../classmomentumopt_1_1kinoptpy_1_1momentum__kinematics__optimizer_1_1EndeffectorTrajectoryGenerator.html',1,'momentumopt::kinoptpy::momentum_kinematics_optimizer']]],
-  ['exp_5fquaternion',['exp_quaternion',['../classmomentumopt_1_1kinoptpy_1_1lqr__gain__manifold_1_1CentroidalLqr.html#a5c037d6a9b1f27cf69781300b3bb9067',1,'momentumopt::kinoptpy::lqr_gain_manifold::CentroidalLqr']]]
+  ['idtoendeffectorstring',['idToEndeffectorString',['../structmomentumopt_1_1Problem.html#acac0826d39c0c00240540d9099a2d534',1,'momentumopt::Problem']]],
+  ['initialize',['initialize',['../classmomentumopt_1_1DynamicsOptimizer.html#a60dc92e7d2b8c5c9023882bdf8990870',1,'momentumopt::DynamicsOptimizer::initialize()'],['../classmomentumopt_1_1KinematicsOptimizer.html#a22d944f2ec817553541ba3599a162d1e',1,'momentumopt::KinematicsOptimizer::initialize()']]],
+  ['integrateangularvelocity',['integrateAngularVelocity',['../OrientationUtils_8hpp.html#a42b13322f043e8eacb6875be91dd3a68',1,'momentumopt']]],
+  ['interpolator',['Interpolator',['../classmomentumopt_1_1Interpolator.html',1,'momentumopt']]],
+  ['ishand',['isHand',['../structmomentumopt_1_1Problem.html#a18ea271398958dd0b52968d4290a9474',1,'momentumopt::Problem']]]
 ];

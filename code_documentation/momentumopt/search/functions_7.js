@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['kinematicsoptimizer',['KinematicsOptimizer',['../classmomentumopt_1_1KinematicsOptimizer.html#a2a8622b4ff86ef2f741e55147d583341',1,'momentumopt::KinematicsOptimizer']]],
-  ['kinematicssequence',['kinematicsSequence',['../classmomentumopt_1_1KinematicsOptimizer.html#a8cf812e9f856bb8a0f91e20ef08f8131',1,'momentumopt::KinematicsOptimizer']]]
+  ['setplannersetting',['setPlannerSetting',['../classmomentumopt_1_1DynamicsFeedback.html#a5f9cc8c11d9267a8f40b8ffc530c29e3',1,'momentumopt::DynamicsFeedback']]],
+  ['solvetime',['solveTime',['../classmomentumopt_1_1DynamicsOptimizer.html#a03fa5e12b4b01f514e29491b30aeacf5',1,'momentumopt::DynamicsOptimizer']]]
 ];

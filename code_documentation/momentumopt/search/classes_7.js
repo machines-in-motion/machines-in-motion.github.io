@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['jointtrajectorygenerator',['JointTrajectoryGenerator',['../classmomentumopt_1_1kinoptpy_1_1momentum__kinematics__optimizer_1_1JointTrajectoryGenerator.html',1,'momentumopt::kinoptpy::momentum_kinematics_optimizer']]]
+  ['terraindescription',['TerrainDescription',['../classmomentumopt_1_1TerrainDescription.html',1,'momentumopt']]],
+  ['terrainregion',['TerrainRegion',['../classmomentumopt_1_1TerrainRegion.html',1,'momentumopt']]],
+  ['trajectorygenerator',['TrajectoryGenerator',['../classmomentumopt_1_1TrajectoryGenerator.html',1,'momentumopt']]]
 ];

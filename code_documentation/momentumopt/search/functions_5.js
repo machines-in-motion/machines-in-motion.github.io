@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['get_5fforce',['get_force',['../classmomentumopt_1_1quadruped_1_1simulator_1_1Simulator.html#ac8986f3aa93f42fe6eb0d9593bea0e0d',1,'momentumopt::quadruped::simulator::Simulator']]],
-  ['getsetting',['getSetting',['../classmomentumopt_1_1ContactPlanInterface.html#a1b09bf570efec6c798786705033746b3',1,'momentumopt::ContactPlanInterface']]]
+  ['optimize',['optimize',['../classmomentumopt_1_1DynamicsOptimizer.html#a4196284dcbf7afef9b01c2b21d642bd7',1,'momentumopt::DynamicsOptimizer::optimize()'],['../classmomentumopt_1_1KinematicsOptimizer.html#a81826d306c0e868721de6efb5d30a24a',1,'momentumopt::KinematicsOptimizer::optimize()']]],
+  ['orientationerror',['orientationError',['../OrientationUtils_8hpp.html#abd0f234cfdfe834545c4846377997696',1,'momentumopt']]]
 ];

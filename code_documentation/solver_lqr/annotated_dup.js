@@ -1,6 +1,5 @@
 var annotated_dup =
 [
-    [ "helpers", "namespacehelpers.html", "namespacehelpers" ],
     [ "solverlqr", null, [
       [ "BackwardPass", "classsolverlqr_1_1BackwardPass.html", "classsolverlqr_1_1BackwardPass" ],
       [ "ControlBase", "classsolverlqr_1_1ControlBase.html", "classsolverlqr_1_1ControlBase" ],
