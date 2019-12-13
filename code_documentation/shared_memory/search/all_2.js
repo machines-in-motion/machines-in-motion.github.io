@@ -1,10 +1,11 @@
 var searchData=
 [
-  ['clean',['clean',['../classshared__memory_1_1LockedConditionVariable.html#af28d382161f25706ed779f239a71c948',1,'shared_memory::LockedConditionVariable']]],
+  ['clean',['clean',['../classshared__memory_1_1LockedConditionVariable.html#aa3bca5020f84c8e0a90a2dad3e6521e5',1,'shared_memory::LockedConditionVariable']]],
   ['clean_5fmemory',['clean_memory',['../classshared__memory_1_1Exchange__manager__producer.html#a8574f4e075d6f755e567d21d04f24aab',1,'shared_memory::Exchange_manager_producer']]],
   ['clean_5fmemory_5fon_5fdestruction_5f',['clean_memory_on_destruction_',['../classshared__memory_1_1LockedConditionVariable.html#abe0963bc5746d19350e816ad42ff47b1',1,'shared_memory::LockedConditionVariable']]],
   ['clean_5fmutex',['clean_mutex',['../classshared__memory_1_1Exchange__manager__producer.html#af98fe4321e1fd280b509f5dfd2cf4a5b',1,'shared_memory::Exchange_manager_producer']]],
   ['clean_5fshared_5fmemory_2ecpp',['clean_shared_memory.cpp',['../clean__shared__memory_8cpp.html',1,'']]],
+  ['clear',['clear',['../classshared__memory_1_1Exchange__manager__producer.html#a733c4c3f794e10590569f94e3f320201',1,'shared_memory::Exchange_manager_producer']]],
   ['clear_5fmemory',['clear_memory',['../classshared__memory_1_1SharedMemorySegment.html#a0224739cd729dfb249c3d7882463e5eb',1,'shared_memory::SharedMemorySegment']]],
   ['clear_5fshared_5fmemory',['clear_shared_memory',['../namespaceshared__memory.html#aa8583540879db53fc80b31410b5eec68',1,'shared_memory']]],
   ['condition_5fvariable_5f',['condition_variable_',['../classshared__memory_1_1LockedConditionVariable.html#a8bc7fb73332304b406335e38ba4cdd1b',1,'shared_memory::LockedConditionVariable']]],

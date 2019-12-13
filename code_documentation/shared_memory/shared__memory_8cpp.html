@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>shared_memory: /workspace/software/workspace/src/catkin/core_robotics/shared_memory/src/shared_memory.cpp File Reference</title>
+<title>shared_memory: src/shared_memory.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -111,19 +111,20 @@ $(document).ready(function(){initNavTree('shared__memory_8cpp.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>Implementation of the <a class="el" href="shared__memory_8hpp.html" title="This file declares some function that encapsulate the use of the shared memory using the boost::inter...">shared_memory.hpp</a> API.  
+<p>Implementation of the <a class="el" href="shared__memory_8hpp.html" title="This file declares a class that is used for shared memory segment introspection (e.g. used and free memory) ">shared_memory.hpp</a> API.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="shared__memory_8hpp_source.html">shared_memory/shared_memory.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for shared_memory.cpp:</div>
 <div class="dyncontent">
-<div class="center"><img src="shared__memory_8cpp__incl.png" border="0" usemap="#_2workspace_2software_2workspace_2src_2catkin_2core__robotics_2shared__memory_2src_2shared__memory_8cpp" alt=""/></div>
-<map name="_2workspace_2software_2workspace_2src_2catkin_2core__robotics_2shared__memory_2src_2shared__memory_8cpp" id="_2workspace_2software_2workspace_2src_2catkin_2core__robotics_2shared__memory_2src_2shared__memory_8cpp">
-<area shape="rect" id="node2" href="shared__memory_8hpp.html" title="This file declares some function that encapsulate the use of the shared memory using the boost::inter..." alt="" coords="820,124,979,165"/>
-<area shape="rect" id="node13" href="serializer_8hpp_source.html" title="shared_memory/serializer.hpp" alt="" coords="365,221,561,247"/>
-<area shape="rect" id="node20" href="exceptions_8h.html" title="Defines debugging exceptions for this package. " alt="" coords="148,221,341,247"/>
-<area shape="rect" id="node22" href="shared__memory_8hxx.html" title="This file implements the functions from shared_memory.hpp that encapsulate the use of the shared memo..." alt="" coords="1827,213,1985,255"/>
-<area shape="rect" id="node19" href="serializer_8hxx_source.html" title="shared_memory/serializer.hxx" alt="" coords="632,303,828,329"/>
+<div class="center"><img src="shared__memory_8cpp__incl.png" border="0" usemap="#src_2shared__memory_8cpp" alt=""/></div>
+<map name="src_2shared__memory_8cpp" id="src_2shared__memory_8cpp">
+<area shape="rect" id="node2" href="shared__memory_8hpp.html" title="This file declares a class that is used for shared memory segment introspection (e.g. used and free memory) " alt="" coords="843,80,1001,121"/>
+<area shape="rect" id="node13" href="serializer_8hpp_source.html" title="shared_memory/serializer.hpp" alt="" coords="1645,177,1841,203"/>
+<area shape="rect" id="node20" href="exceptions_8h.html" title="Defines debugging exceptions for this package. " alt="" coords="1428,177,1621,203"/>
+<area shape="rect" id="node22" href="segment__info_8hpp_source.html" title="shared_memory/segment\l_info.hpp" alt="" coords="479,169,648,211"/>
+<area shape="rect" id="node23" href="shared__memory_8hxx.html" title="This file implements the functions from shared_memory.hpp that encapsulate the use of the shared memo..." alt="" coords="1865,169,2024,211"/>
+<area shape="rect" id="node19" href="serializer_8hxx_source.html" title="shared_memory/serializer.hxx" alt="" coords="2219,266,2415,293"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -135,9 +136,15 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:afe26d531f043f59bb36ea7816b8a40bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#afe26d531f043f59bb36ea7816b8a40bf">shared_memory::set_verbose</a> (bool mode)</td></tr>
+<tr class="memdesc:afe26d531f043f59bb36ea7816b8a40bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">if verbose mode set to true (starting default is false), informaton about newly created objects will be displayed in the terminal.  <a href="namespaceshared__memory.html#afe26d531f043f59bb36ea7816b8a40bf">More...</a><br /></td></tr>
+<tr class="separator:afe26d531f043f59bb36ea7816b8a40bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c76ec22ab70d3b7487becd3ec9943bc"><td class="memItemLeft" align="right" valign="top">SharedMemorySegment &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a7c76ec22ab70d3b7487becd3ec9943bc">shared_memory::get_segment</a> (const std::string &amp;segment_id, const bool clear_upon_destruction=false)</td></tr>
 <tr class="memdesc:a7c76ec22ab70d3b7487becd3ec9943bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">get_segment creates or give back a pointer to a <a class="el" href="classshared__memory_1_1SharedMemorySegment.html" title="The SharedMemorySegment contains the pointers of the shared objects in on shared memrory segment...">SharedMemorySegment</a> object.  <a href="namespaceshared__memory.html#a7c76ec22ab70d3b7487becd3ec9943bc">More...</a><br /></td></tr>
 <tr class="separator:a7c76ec22ab70d3b7487becd3ec9943bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70f7613a247615e323cab083934c803e"><td class="memItemLeft" align="right" valign="top">SegmentInfo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a70f7613a247615e323cab083934c803e">shared_memory::get_segment_info</a> (const std::string &amp;segment_id, const bool clear_upon_destruction=false)</td></tr>
+<tr class="memdesc:a70f7613a247615e323cab083934c803e"><td class="mdescLeft">&#160;</td><td class="mdescRight">performs introspection on the segment and return related information.  <a href="namespaceshared__memory.html#a70f7613a247615e323cab083934c803e">More...</a><br /></td></tr>
+<tr class="separator:a70f7613a247615e323cab083934c803e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82297c2b7b85c57c53578749c9bd6429"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a82297c2b7b85c57c53578749c9bd6429">shared_memory::segment_exists</a> (const std::string &amp;segment_id)</td></tr>
 <tr class="memdesc:a82297c2b7b85c57c53578749c9bd6429"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns true if a segment exists under this id  <a href="namespaceshared__memory.html#a82297c2b7b85c57c53578749c9bd6429">More...</a><br /></td></tr>
 <tr class="separator:a82297c2b7b85c57c53578749c9bd6429"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,7 +169,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="name
 <tr class="separator:a8a952cc446e3dce8fea8cd1ea02613f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Implementation of the <a class="el" href="shared__memory_8hpp.html" title="This file declares some function that encapsulate the use of the shared memory using the boost::inter...">shared_memory.hpp</a> API. </p>
+<div class="textblock"><p>Implementation of the <a class="el" href="shared__memory_8hpp.html" title="This file declares a class that is used for shared memory segment introspection (e.g. used and free memory) ">shared_memory.hpp</a> API. </p>
 <dl class="section author"><dt>Author</dt><dd>Maximilien Naveau (<a href="#" onclick="location.href='mai'+'lto:'+'max'+'im'+'ili'+'en'+'.na'+'ve'+'au@'+'gm'+'ail'+'.c'+'om'; return false;">maxim<span style="display: none;">.nosp@m.</span>ilie<span style="display: none;">.nosp@m.</span>n.nav<span style="display: none;">.nosp@m.</span>eau@<span style="display: none;">.nosp@m.</span>gmail<span style="display: none;">.nosp@m.</span>.com</a>)  License BSD-3-Clause </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2019, New York University and Max Planck Gesellschaft. </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2019-05-22 </dd></dl>
@@ -171,7 +178,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="name
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_80e6cdd9bbc895bd262b4f65e652822c.html">catkin</a></li><li class="navelem"><a class="el" href="dir_8394b391adb6dafd2c68185f9ad5b63a.html">core_robotics</a></li><li class="navelem"><a class="el" href="dir_e94e53f7d084ac91a866fce4e1a4fc88.html">shared_memory</a></li><li class="navelem"><a class="el" href="dir_970a38d0390f9949c5ff14e1be81f86e.html">src</a></li><li class="navelem"><a class="el" href="shared__memory_8cpp.html">shared_memory.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="shared__memory_8cpp.html">shared_memory.cpp</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>

@@ -5,7 +5,9 @@ var shared__memory_8cpp =
     [ "delete_segment", "shared__memory_8cpp.html#a60cbce63ae7fb64a2758b773f9006471", null ],
     [ "get", "shared__memory_8cpp.html#a8a952cc446e3dce8fea8cd1ea02613f9", null ],
     [ "get_segment", "shared__memory_8cpp.html#a7c76ec22ab70d3b7487becd3ec9943bc", null ],
+    [ "get_segment_info", "shared__memory_8cpp.html#a70f7613a247615e323cab083934c803e", null ],
     [ "get_segment_mutex", "shared__memory_8cpp.html#aed33c9701140a1c43e40f182a380199b", null ],
     [ "segment_exists", "shared__memory_8cpp.html#a82297c2b7b85c57c53578749c9bd6429", null ],
-    [ "set", "shared__memory_8cpp.html#a61a2945c994bcbe84cc8dce96a189edb", null ]
+    [ "set", "shared__memory_8cpp.html#a61a2945c994bcbe84cc8dce96a189edb", null ],
+    [ "set_verbose", "shared__memory_8cpp.html#afe26d531f043f59bb36ea7816b8a40bf", null ]
 ];

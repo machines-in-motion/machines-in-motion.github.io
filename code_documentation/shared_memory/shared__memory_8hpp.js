@@ -21,6 +21,7 @@ var shared__memory_8hpp =
     [ "get", "shared__memory_8hpp.html#a2579e9a10a16e0fbd006900c618addc8", null ],
     [ "get", "shared__memory_8hpp.html#add6604c2716e51cdcf17de2439251089", null ],
     [ "get_segment", "shared__memory_8hpp.html#a7c76ec22ab70d3b7487becd3ec9943bc", null ],
+    [ "get_segment_info", "shared__memory_8hpp.html#a70f7613a247615e323cab083934c803e", null ],
     [ "get_segment_mutex", "shared__memory_8hpp.html#aed33c9701140a1c43e40f182a380199b", null ],
     [ "segment_exists", "shared__memory_8hpp.html#a82297c2b7b85c57c53578749c9bd6429", null ],
     [ "serialize", "shared__memory_8hpp.html#a003005dc269ebf79f08523dc0f8d1ed0", null ],
@@ -30,5 +31,6 @@ var shared__memory_8hpp =
     [ "set", "shared__memory_8hpp.html#ac6521a6731fa97be21779b1d6c7589ee", null ],
     [ "set", "shared__memory_8hpp.html#ac8364e5cde6c8a2f1abc2a59035f26a6", null ],
     [ "set", "shared__memory_8hpp.html#a657bb799483a19a96f61706b50aca1e7", null ],
-    [ "set", "shared__memory_8hpp.html#a562e79433e54463f39c9c276b8440f4b", null ]
+    [ "set", "shared__memory_8hpp.html#a562e79433e54463f39c9c276b8440f4b", null ],
+    [ "set_verbose", "shared__memory_8hpp.html#afe26d531f043f59bb36ea7816b8a40bf", null ]
 ];

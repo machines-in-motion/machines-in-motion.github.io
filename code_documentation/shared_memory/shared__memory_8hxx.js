@@ -15,5 +15,6 @@ var shared__memory_8hxx =
     [ "set", "shared__memory_8hxx.html#ac8364e5cde6c8a2f1abc2a59035f26a6", null ],
     [ "set", "shared__memory_8hxx.html#a657bb799483a19a96f61706b50aca1e7", null ],
     [ "set", "shared__memory_8hxx.html#a562e79433e54463f39c9c276b8440f4b", null ],
-    [ "GLOBAL_SHM_SEGMENTS", "shared__memory_8hxx.html#ad1f78482aa062e165f37fd49e2e8f539", null ]
+    [ "GLOBAL_SHM_SEGMENTS", "shared__memory_8hxx.html#ad1f78482aa062e165f37fd49e2e8f539", null ],
+    [ "VERBOSE", "shared__memory_8hxx.html#adb7d7158652e09188fea583e05949bb5", null ]
 ];

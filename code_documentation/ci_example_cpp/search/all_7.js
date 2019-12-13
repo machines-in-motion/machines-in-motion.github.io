@@ -1,8 +1,4 @@
 var searchData=
 [
-  ['readme',['README',['../md__workspace_software_workspace_src_catkin_examples_ci_example_ci_example_cpp_include_README.html',1,'']]],
-  ['readme',['README',['../md__workspace_software_workspace_src_catkin_examples_ci_example_ci_example_cpp_README.html',1,'']]],
-  ['reset_5fintegral',['reset_integral',['../classci__example_1_1PID.html#a131db73682df8b9b5b2569b9d5eb56aa',1,'ci_example::PID']]],
-  ['rosparameters_5fconfiguration',['RosParameters_configuration',['../classci__example_1_1RosParameters__configuration.html#ad1da6a4d1a5a4f2596895994598ade39',1,'ci_example::RosParameters_configuration']]],
-  ['rosparameters_5fconfiguration',['RosParameters_configuration',['../classci__example_1_1RosParameters__configuration.html',1,'ci_example']]]
+  ['has_5ferror',['has_error',['../classci__example__cpp_1_1DefaultConfiguration.html#a393af555dc085b4dc97acc315b60cca3',1,'ci_example_cpp::DefaultConfiguration::has_error()'],['../classci__example__cpp_1_1File__configuration.html#a9cf12edce1b609fd6e798588ba6cd223',1,'ci_example_cpp::File_configuration::has_error()'],['../classci__example__cpp_1_1Gains__configuration.html#ae075925f60288519f8a4fcb477453a66',1,'ci_example_cpp::Gains_configuration::has_error()'],['../classci__example__cpp_1_1RosParameters__configuration.html#a72a8d33d1290f02068d681fb3902d31a',1,'ci_example_cpp::RosParameters_configuration::has_error()']]]
 ];

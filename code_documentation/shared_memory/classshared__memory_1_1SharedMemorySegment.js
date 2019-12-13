@@ -6,6 +6,7 @@ var classshared__memory_1_1SharedMemorySegment =
     [ "create_mutex", "classshared__memory_1_1SharedMemorySegment.html#ac8bbbc98968a8a2b3fe35c50e0768d8f", null ],
     [ "delete_object", "classshared__memory_1_1SharedMemorySegment.html#abc658e54589c81e89b147f0b3fbd67b8", null ],
     [ "destroy_mutex", "classshared__memory_1_1SharedMemorySegment.html#a64d69c4965cd448040bc20e4f9009abc", null ],
+    [ "get_info", "classshared__memory_1_1SharedMemorySegment.html#aa742cf04463a94a51239b96de2da6947", null ],
     [ "get_object", "classshared__memory_1_1SharedMemorySegment.html#ad73b5160f713c9a78e67c4b8590d8729", null ],
     [ "get_object", "classshared__memory_1_1SharedMemorySegment.html#a17aa3bfe778e05b543415b1e5137a26b", null ],
     [ "get_segment_id", "classshared__memory_1_1SharedMemorySegment.html#ab7f1f01a94d4e45ed907be9bcdb71a24", null ],

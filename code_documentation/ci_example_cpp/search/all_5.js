@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['has_5ferror',['has_error',['../classci__example_1_1Default__configuration.html#a44e73772eca2a36c90c19f17f15f1929',1,'ci_example::Default_configuration::has_error()'],['../classci__example_1_1File__configuration.html#a3f998dd1aa90d1326c3383970573734d',1,'ci_example::File_configuration::has_error()'],['../classci__example_1_1Gains__configuration.html#a58e0621cd409ed18496d88a1ca4cbea3',1,'ci_example::Gains_configuration::has_error()'],['../classci__example_1_1RosParameters__configuration.html#ad80671e51a0dc27ef1b3f5621fd11d71',1,'ci_example::RosParameters_configuration::has_error()']]]
+  ['file_5fconfiguration',['File_configuration',['../classci__example__cpp_1_1File__configuration.html',1,'ci_example_cpp']]],
+  ['file_5fconfiguration',['File_configuration',['../classci__example__cpp_1_1File__configuration.html#a9eb17de315392f3f755a327af4beb5d7',1,'ci_example_cpp::File_configuration']]],
+  ['file_5fconfiguration_2ecpp',['file_configuration.cpp',['../file__configuration_8cpp.html',1,'']]],
+  ['file_5fconfiguration_2ehpp',['file_configuration.hpp',['../file__configuration_8hpp.html',1,'']]]
 ];
