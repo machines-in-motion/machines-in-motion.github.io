@@ -1,7 +1,7 @@
 var NAVTREE =
 [
   [ "pinocchio_bullet", "index.html", [
-    [ "pinocchio_bullet", "md__workspace_software_workspace_src_catkin_robots_pinocchio_bullet_README.html", null ]
+    [ "pinocchio_bullet", "md_README.html", null ]
   ] ]
 ];
 
