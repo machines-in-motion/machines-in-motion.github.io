@@ -1,18 +1,14 @@
 var NAVTREE =
 [
   [ "dg_blmc_robots", "index.html", [
-    [ "DG BLMC ROBOTS", "md__workspace_software_workspace_src_catkin_robots_dg_blmc_robots_readme.html", null ],
-    [ "Namespaces", null, [
-      [ "Namespace List", "namespaces.html", "namespaces" ]
-    ] ],
+    [ "DG BLMC ROBOTS", "md_readme.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ],
-        [ "Variables", "functions_vars.html", null ]
+        [ "Functions", "functions_func.html", null ]
       ] ]
     ] ],
     [ "Files", null, [

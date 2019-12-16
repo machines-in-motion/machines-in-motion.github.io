@@ -1,6 +1,10 @@
 var searchData=
 [
-  ['legimpedancecontroller',['LegImpedanceController',['../classpython_1_1dg__tools_1_1leg__impedance__control_1_1leg__impedance__controller_1_1LegImpedanceController.html',1,'python::dg_tools::leg_impedance_control::leg_impedance_controller']]],
-  ['leglengthflsin',['leglengthflSIN',['../classdynamicgraph_1_1sot_1_1ComImpedanceControl.html#ae4f3968a33b09493a9e436d02b65290f',1,'dynamicgraph::sot::ComImpedanceControl']]],
-  ['loc',['loc',['../namespacepython_1_1dg__tools_1_1generate__traj.html#abcf6e62688ce6a4f8bf99295345197a4',1,'python::dg_tools::generate_traj']]]
+  ['reactive_5flqr_5fcontroller_2ehpp',['reactive_lqr_controller.hpp',['../reactive__lqr__controller_8hpp.html',1,'']]],
+  ['reactivelqrcontroller',['ReactiveLQRController',['../classdynamicgraph_1_1sot_1_1ReactiveLQRController.html',1,'dynamicgraph::sot']]],
+  ['return_5fdes_5fforce',['return_des_force',['../classdynamicgraph_1_1sot_1_1PowerJumpControl.html#a0172cfef3c8c11b441fee7380c69c227',1,'dynamicgraph::sot::PowerJumpControl']]],
+  ['return_5fdes_5fkp',['return_des_kp',['../classdynamicgraph_1_1sot_1_1PowerJumpControl.html#aa00816d8369775112bcb93b915790926',1,'dynamicgraph::sot::PowerJumpControl']]],
+  ['return_5fdes_5fpos',['return_des_pos',['../classdynamicgraph_1_1sot_1_1PowerJumpControl.html#ad132ac991b6fb6cddd9aa019a33425e9',1,'dynamicgraph::sot::PowerJumpControl']]],
+  ['return_5fend_5feff_5flqr_5ftau',['return_end_eff_lqr_tau',['../classdynamicgraph_1_1sot_1_1ComImpedanceControl.html#a3df6780c7565af64536541c04c7e55f4',1,'dynamicgraph::sot::ComImpedanceControl']]],
+  ['return_5flqr_5ftau',['return_lqr_tau',['../classdynamicgraph_1_1sot_1_1ComImpedanceControl.html#a6c33c88c2a5ae61dbde00dbd001355ca',1,'dynamicgraph::sot::ComImpedanceControl']]]
 ];

@@ -14,8 +14,5 @@ var annotated_dup =
         [ "PowerJumpControl", "classdynamicgraph_1_1sot_1_1PowerJumpControl.html", "classdynamicgraph_1_1sot_1_1PowerJumpControl" ],
         [ "ReactiveLQRController", "classdynamicgraph_1_1sot_1_1ReactiveLQRController.html", "classdynamicgraph_1_1sot_1_1ReactiveLQRController" ]
       ] ]
-    ] ],
-    [ "python", null, [
-      [ "dg_tools", "namespacepython_1_1dg__tools.html", "namespacepython_1_1dg__tools" ]
     ] ]
 ];

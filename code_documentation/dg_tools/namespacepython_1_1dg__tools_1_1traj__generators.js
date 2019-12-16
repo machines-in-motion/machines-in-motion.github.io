@@ -1,4 +1,0 @@
-var namespacepython_1_1dg__tools_1_1traj__generators =
-[
-    [ "CircularCartesianTrajectoryGenerator", "classpython_1_1dg__tools_1_1traj__generators_1_1CircularCartesianTrajectoryGenerator.html", "classpython_1_1dg__tools_1_1traj__generators_1_1CircularCartesianTrajectoryGenerator" ]
-];

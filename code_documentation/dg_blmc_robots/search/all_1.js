@@ -16,5 +16,5 @@ var searchData=
   ['dgmstuggihop',['DGMStuggihop',['../classdg__blmc__robots_1_1DGMStuggihop.html#a00d09c7496216833d0bbf9528dc91bf1',1,'dg_blmc_robots::DGMStuggihop']]],
   ['dgmteststand',['DGMTeststand',['../classdg__blmc__robots_1_1DGMTeststand.html',1,'dg_blmc_robots']]],
   ['dgmteststand',['DGMTeststand',['../classdg__blmc__robots_1_1DGMTeststand.html#ae6b6e00fbd3460f7083977ae9befb6fd',1,'dg_blmc_robots::DGMTeststand']]],
-  ['dg_20blmc_20robots',['DG BLMC ROBOTS',['../md__workspace_software_workspace_src_catkin_robots_dg_blmc_robots_readme.html',1,'']]]
+  ['dg_20blmc_20robots',['DG BLMC ROBOTS',['../md_readme.html',1,'']]]
 ];

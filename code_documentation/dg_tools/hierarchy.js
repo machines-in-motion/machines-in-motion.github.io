@@ -12,18 +12,5 @@ var hierarchy =
       [ "dynamicgraph::sot::ComImpedanceControl", "classdynamicgraph_1_1sot_1_1ComImpedanceControl.html", null ],
       [ "dynamicgraph::sot::PDController", "classdynamicgraph_1_1sot_1_1PDController.html", null ],
       [ "dynamicgraph::sot::ReactiveLQRController", "classdynamicgraph_1_1sot_1_1ReactiveLQRController.html", null ]
-    ] ],
-    [ "python.dg_tools.leg_impedance_control.leg_impedance_controller.LegImpedanceController", "classpython_1_1dg__tools_1_1leg__impedance__control_1_1leg__impedance__controller_1_1LegImpedanceController.html", null ],
-    [ "object", null, [
-      [ "python.dg_tools.math_small_entities.Add2Vectors", "classpython_1_1dg__tools_1_1math__small__entities_1_1Add2Vectors.html", null ],
-      [ "python.dg_tools.math_small_entities.ConstantDouble", "classpython_1_1dg__tools_1_1math__small__entities_1_1ConstantDouble.html", null ],
-      [ "python.dg_tools.math_small_entities.ConstantVector", "classpython_1_1dg__tools_1_1math__small__entities_1_1ConstantVector.html", null ],
-      [ "python.dg_tools.math_small_entities.MultiplyDoubleVector", "classpython_1_1dg__tools_1_1math__small__entities_1_1MultiplyDoubleVector.html", null ],
-      [ "python.dg_tools.math_small_entities.Stack2Vectors", "classpython_1_1dg__tools_1_1math__small__entities_1_1Stack2Vectors.html", null ],
-      [ "python.dg_tools.math_small_entities.StackZero", "classpython_1_1dg__tools_1_1math__small__entities_1_1StackZero.html", null ],
-      [ "python.dg_tools.sliders.Sliders", "classpython_1_1dg__tools_1_1sliders_1_1Sliders.html", null ],
-      [ "python.dg_tools.traj_generators.CircularCartesianTrajectoryGenerator", "classpython_1_1dg__tools_1_1traj__generators_1_1CircularCartesianTrajectoryGenerator.html", null ]
-    ] ],
-    [ "python.dg_tools.leg_impedance_control.quad_leg_impedance_controller.QuadrupedComControl", "classpython_1_1dg__tools_1_1leg__impedance__control_1_1quad__leg__impedance__controller_1_1QuadrupedComControl.html", null ],
-    [ "python.dg_tools.leg_impedance_control.quad_leg_impedance_controller.QuadrupedLegImpedanceController", "classpython_1_1dg__tools_1_1leg__impedance__control_1_1quad__leg__impedance__controller_1_1QuadrupedLegImpedanceController.html", null ]
+    ] ]
 ];
