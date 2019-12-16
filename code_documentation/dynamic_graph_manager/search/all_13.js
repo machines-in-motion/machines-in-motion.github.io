@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['jointstatertpublisher',['JointStateRtPublisher',['../namespacedynamic__graph.html#ae9ad83c8174a9aa5bc1688df02b4ee95',1,'dynamic_graph']]]
+  ['log_5fdir_5f',['log_dir_',['../classdynamic__graph_1_1DynamicGraphManager.html#ace11054bf618c29e4fda9a77905e8ff0',1,'dynamic_graph::DynamicGraphManager']]]
 ];

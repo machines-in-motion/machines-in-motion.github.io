@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['clear',['clear',['../structdynamic__graph_1_1internal_1_1BindedSignal.html#a8d377e90b7ece8b1861ddcfa8c7617c8',1,'dynamic_graph::internal::BindedSignal']]],
-  ['complete',['complete',['../classros_1_1dgcompleter_1_1DGCompleter.html#a0662ed6ab4e56fb2a828c5577e03b41e',1,'ros::dgcompleter::DGCompleter']]],
-  ['compute_5fsafety_5fcontrols',['compute_safety_controls',['../classdynamic__graph__manager_1_1SimpleDGM.html#a37b28e687ce4e724770f5c9f23da4d4f',1,'dynamic_graph_manager::SimpleDGM::compute_safety_controls()'],['../classdynamic__graph_1_1DynamicGraphManager.html#a60bb31040121d6041b4dd6556f5c7eac',1,'dynamic_graph::DynamicGraphManager::compute_safety_controls()']]],
-  ['converter',['converter',['../namespacedynamic__graph.html#aa00932c9efb8a607efd6997386d78680',1,'dynamic_graph::converter(D &amp;dst, const S &amp;src)'],['../namespacedynamic__graph.html#a38ff488b8b21c0b4f4d7f44572fa4ee5',1,'dynamic_graph::converter(U &amp;dst, V &amp;src)']]],
-  ['copy_5fdata_5finternally',['copy_data_internally',['../classdynamic__graph_1_1RosRobotStatePublisherMt.html#a80a4f8a4d9cf9be7c40927ae05d1897f',1,'dynamic_graph::RosRobotStatePublisherMt']]]
+  ['device',['Device',['../classdynamic__graph_1_1Device.html#a76c80f6d47e2151494e375e2faf78c0d',1,'dynamic_graph::Device::Device()'],['../classdynamic__graph_1_1DynamicGraphManager.html#a90bb14375da3d2aaaeafb356b6ca54f7',1,'dynamic_graph::DynamicGraphManager::device()']]],
+  ['devicesimulator',['DeviceSimulator',['../classdynamic__graph_1_1DeviceSimulator.html#ad1c52d0a4bfa4617c7653532570a2c90',1,'dynamic_graph::DeviceSimulator']]],
+  ['dynamicgraph_5ffactory_5fentity_5fplugin',['DYNAMICGRAPH_FACTORY_ENTITY_PLUGIN',['../device_8cpp.html#a94009a14081eac806149155d1f289f6d',1,'DYNAMICGRAPH_FACTORY_ENTITY_PLUGIN():&#160;device.cpp'],['../namespacedynamic__graph.html#a04797aa55f04bd1e07b64c0caa685c6b',1,'dynamic_graph::DYNAMICGRAPH_FACTORY_ENTITY_PLUGIN()']]],
+  ['dynamicgraphmanager',['DynamicGraphManager',['../classdynamic__graph_1_1DynamicGraphManager.html#afd98424082e5a1f878e6c7cb08a62c4a',1,'dynamic_graph::DynamicGraphManager']]]
 ];

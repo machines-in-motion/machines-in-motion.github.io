@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['trigger',['trigger',['../classdynamic__graph_1_1RosRobotStatePublisher.html#a4d66defbd1b308cd06394107f55f6cbb',1,'dynamic_graph::RosRobotStatePublisher::trigger()'],['../classdynamic__graph_1_1RosRobotStatePublisherMt.html#ab246d4672cb6ccf5d0733dae31c5adbf',1,'dynamic_graph::RosRobotStatePublisherMt::trigger()']]]
+  ['user_5fcommand_5fcallback',['user_command_callback',['../classdynamic__graph__manager_1_1SimpleDGM.html#adb40055a916691d326bc6466eab9680b',1,'dynamic_graph_manager::SimpleDGM']]]
 ];

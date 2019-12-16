@@ -2,7 +2,6 @@ var searchData=
 [
   ['device',['Device',['../classdynamic__graph_1_1Device.html',1,'dynamic_graph']]],
   ['devicesimulator',['DeviceSimulator',['../classdynamic__graph_1_1DeviceSimulator.html',1,'dynamic_graph']]],
-  ['dgcompleter',['DGCompleter',['../classros_1_1dgcompleter_1_1DGCompleter.html',1,'ros::dgcompleter']]],
   ['dgtoros',['DgToRos',['../classdynamic__graph_1_1DgToRos.html',1,'dynamic_graph']]],
   ['dgtoros_3c_20double_20_3e',['DgToRos&lt; double &gt;',['../structdynamic__graph_1_1DgToRos_3_01double_01_4.html',1,'dynamic_graph']]],
   ['dgtoros_3c_20matrix_20_3e',['DgToRos&lt; Matrix &gt;',['../structdynamic__graph_1_1DgToRos_3_01Matrix_01_4.html',1,'dynamic_graph']]],
