@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['measuretime',['MeasureTime',['../structMeasureTime.html',1,'']]],
-  ['memory_5foverflow_5fexception',['Memory_overflow_exception',['../classshared__memory_1_1Memory__overflow__exception.html',1,'shared_memory']]],
-  ['mutex',['Mutex',['../classshared__memory_1_1Mutex.html',1,'shared_memory']]]
+  ['lock',['Lock',['../classshared__memory_1_1Lock.html',1,'shared_memory']]],
+  ['lockedconditionvariable',['LockedConditionVariable',['../classshared__memory_1_1LockedConditionVariable.html',1,'shared_memory']]]
 ];

@@ -121,6 +121,9 @@ $(document).ready(function(){initNavTree('namespaceshared__memory.html','');});
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1Allocation__exception.html">Allocation_exception</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1array.html">array</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implement a shared array stored on a shared memory segment.  <a href="classshared__memory_1_1array.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1ConditionVariable.html">ConditionVariable</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1Exchange__manager__consumer.html">Exchange_manager_consumer</a></td></tr>
@@ -129,6 +132,8 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1Four__int__values.html">Four_int_values</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Example of an instance that can be serialized.  <a href="classshared__memory_1_1Four__int__values.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1Item.html">Item</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1Lock.html">Lock</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A scope lock object for locking a shared memory mutex, to use for example with a shared memory condition variable.  <a href="classshared__memory_1_1Lock.html#details">More...</a><br /></td></tr>
@@ -165,6 +170,15 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a98598a317e2364e30dec871c52491d3c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a98598a317e2364e30dec871c52491d3c"></a>
 typedef boost::interprocess::named_condition&#160;</td><td class="memItemRight" valign="bottom"><b>SHMCondition</b></td></tr>
 <tr class="separator:a98598a317e2364e30dec871c52491d3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd83b362cdc392e50b6a5c97570ff545"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afd83b362cdc392e50b6a5c97570ff545"></a>
+typedef std::integral_constant&lt; int, 0 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SERIALIZABLE</b></td></tr>
+<tr class="separator:afd83b362cdc392e50b6a5c97570ff545"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ebe7fef9fbe7e51b56660375107063d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1ebe7fef9fbe7e51b56660375107063d"></a>
+typedef std::integral_constant&lt; int, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>FUNDAMENTAL</b></td></tr>
+<tr class="separator:a1ebe7fef9fbe7e51b56660375107063d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f3848898f21f7051c40550c21c91762"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2f3848898f21f7051c40550c21c91762"></a>
+typedef std::integral_constant&lt; int, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>FUNDAMENTAL_ARRAY</b></td></tr>
+<tr class="separator:a2f3848898f21f7051c40550c21c91762"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1e27e85804c1f1c0b7c1bf077add7bf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa1e27e85804c1f1c0b7c1bf077add7bf"></a>
 typedef boost::interprocess::scoped_lock&lt; SHMMutex &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SHMScopeLock</b></td></tr>
 <tr class="separator:aa1e27e85804c1f1c0b7c1bf077add7bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -202,6 +216,19 @@ typedef std::map&lt; std::string, std::unique_ptr&lt; <a class="el" href="classs
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a0371eb6089f446098adf2f9c106333dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a0371eb6089f446098adf2f9c106333dc">clear_array</a> (std::string segment_id)</td></tr>
+<tr class="memdesc:a0371eb6089f446098adf2f9c106333dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">wipe the shared memory segment created by an instance of <a class="el" href="classshared__memory_1_1array.html" title="Implement a shared array stored on a shared memory segment. ">shared_memory::array</a>, including mutexes, if any.  <a href="#a0371eb6089f446098adf2f9c106333dc">More...</a><br /></td></tr>
+<tr class="separator:a0371eb6089f446098adf2f9c106333dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62e06d817f0f52addc9970db9f83e15d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a62e06d817f0f52addc9970db9f83e15d"></a>
+static uint&#160;</td><td class="memItemRight" valign="bottom"><b>get_segment_size</b> (size_t size_array, size_t size_item)</td></tr>
+<tr class="separator:a62e06d817f0f52addc9970db9f83e15d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8ef94dc78f444092f488f0143b155f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#ac8ef94dc78f444092f488f0143b155f2">set_segment_sizes</a> (uint multiplier_1025)</td></tr>
+<tr class="memdesc:ac8ef94dc78f444092f488f0143b155f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the size of the segments that will be newly created via the set methods.  <a href="#ac8ef94dc78f444092f488f0143b155f2">More...</a><br /></td></tr>
+<tr class="separator:ac8ef94dc78f444092f488f0143b155f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a841687861fcc9efe381ffbe84843ca33"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a841687861fcc9efe381ffbe84843ca33"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a841687861fcc9efe381ffbe84843ca33">set_default_segment_sizes</a> ()</td></tr>
+<tr class="memdesc:a841687861fcc9efe381ffbe84843ca33"><td class="mdescLeft">&#160;</td><td class="mdescRight">set the size of segment newly created to the default size value of 65536 <br /></td></tr>
+<tr class="separator:a841687861fcc9efe381ffbe84843ca33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c76ec22ab70d3b7487becd3ec9943bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classshared__memory_1_1SharedMemorySegment.html">SharedMemorySegment</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a7c76ec22ab70d3b7487becd3ec9943bc">get_segment</a> (const std::string &amp;segment_id, const bool clear_upon_destruction=false)</td></tr>
 <tr class="memdesc:a7c76ec22ab70d3b7487becd3ec9943bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">get_segment creates or give back a pointer to a <a class="el" href="classshared__memory_1_1SharedMemorySegment.html" title="The SharedMemorySegment contains the pointers of the shared objects in on shared memrory segment...">SharedMemorySegment</a> object.  <a href="#a7c76ec22ab70d3b7487becd3ec9943bc">More...</a><br /></td></tr>
 <tr class="separator:a7c76ec22ab70d3b7487becd3ec9943bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -306,10 +333,35 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>VERBOSE</b> =false</t
 <tr class="memitem:ad1f78482aa062e165f37fd49e2e8f539"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespaceshared__memory.html#a9aeebdfb6185497cac7c093cf3d765c5">SegmentMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#ad1f78482aa062e165f37fd49e2e8f539">GLOBAL_SHM_SEGMENTS</a></td></tr>
 <tr class="memdesc:ad1f78482aa062e165f37fd49e2e8f539"><td class="mdescLeft">&#160;</td><td class="mdescRight">GLOBAL_SHARED_MEMORY_SEGMENT is global variable that acts as a a shared memory manager.  <a href="#ad1f78482aa062e165f37fd49e2e8f539">More...</a><br /></td></tr>
 <tr class="separator:ad1f78482aa062e165f37fd49e2e8f539"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1aa02b0b88f0045c3711029f882d80fa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1aa02b0b88f0045c3711029f882d80fa"></a>
+static uint&#160;</td><td class="memItemRight" valign="bottom"><b>SEGMENT_SIZE</b> = DEFAULT_SHARED_MEMORY_SIZE</td></tr>
+<tr class="separator:a1aa02b0b88f0045c3711029f882d80fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c687b65860cde45c62305fbb7a19e71"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5c687b65860cde45c62305fbb7a19e71"></a>
+static std::mutex&#160;</td><td class="memItemRight" valign="bottom"><b>SEGMENT_SIZE_MUTEX</b></td></tr>
+<tr class="separator:a5c687b65860cde45c62305fbb7a19e71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>All templated types in this namespaces are elementary types: int, double, float, char*, ... </p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a0371eb6089f446098adf2f9c106333dc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void shared_memory::clear_array </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>segment_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>wipe the shared memory segment created by an instance of <a class="el" href="classshared__memory_1_1array.html" title="Implement a shared array stored on a shared memory segment. ">shared_memory::array</a>, including mutexes, if any. </p>
+<p>If there are no memory segment of this id, there will be no effect. If <a class="el" href="classshared__memory_1_1array.html" title="Implement a shared array stored on a shared memory segment. ">shared_memory::array</a> instances are pointing to the wiped out segment, their get and set functions may hang indefinitely. </p>
+
+</div>
+</div>
 <a class="anchor" id="aa8583540879db53fc80b31410b5eec68"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1237,6 +1289,30 @@ template&lt;typename KeyType , typename ValueType &gt; </div>
     <tr><td class="paramdir">[in]</td><td class="paramname">segment_id</td><td>is the name of the shared memory segment. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">object_id</td><td>is the name of the shared memory object to set. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">set_</td><td>is the string to be created in the shared memory </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ac8ef94dc78f444092f488f0143b155f2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void shared_memory::set_segment_sizes </td>
+          <td>(</td>
+          <td class="paramtype">uint&#160;</td>
+          <td class="paramname"><em>multiplier_1025</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>sets the size of the segments that will be newly created via the set methods. </p>
+<p>Until this function is called, segments are created with a size of 65536 bytes. This function is not interprocess : it will set the size of segments created in the current process </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">multiplier_1025</td><td>the size of create segment will be multiplier_1025 * 1025 bytes (because memory segment sizes have to be a multiple of 1025) </td></tr>
   </table>
   </dd>
 </dl>

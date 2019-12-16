@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['wait',['wait',['../classshared__memory_1_1ConditionVariable.html#a8746faccdf81b03dd36c5b405c9ab48d',1,'shared_memory::ConditionVariable::wait()'],['../classshared__memory_1_1LockedConditionVariable.html#a9eb84ab5d570a0c5a81f6eaeb4c4dd50',1,'shared_memory::LockedConditionVariable::wait()']]]
+  ['timed_5fwait',['timed_wait',['../classshared__memory_1_1ConditionVariable.html#af7b1ce584ff9ef9a0925f57cae8e6263',1,'shared_memory::ConditionVariable::timed_wait()'],['../classshared__memory_1_1LockedConditionVariable.html#a0d4ab218fc51fcce34146f2adca408d7',1,'shared_memory::LockedConditionVariable::timed_wait()']]],
+  ['try_5flock',['try_lock',['../classshared__memory_1_1LockedConditionVariable.html#a86b42b23b94593bca5b12b9d792d1275',1,'shared_memory::LockedConditionVariable']]]
 ];

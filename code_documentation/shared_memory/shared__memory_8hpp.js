@@ -2,9 +2,9 @@ var shared__memory_8hpp =
 [
     [ "ShmTypeHelper", "structshared__memory_1_1ShmTypeHelper.html", "structshared__memory_1_1ShmTypeHelper" ],
     [ "SharedMemorySegment", "classshared__memory_1_1SharedMemorySegment.html", "classshared__memory_1_1SharedMemorySegment" ],
+    [ "DEFAULT_SHARED_MEMORY_SIZE", "shared__memory_8hpp.html#acd2f5089f8d2870e833cdc9f7af461ec", null ],
     [ "MAP_STRING_KEY_SEPARATOR", "shared__memory_8hpp.html#af899411657e43cb548bc58ef7d88bec9", null ],
     [ "SHARED_MEMORY_HPP", "shared__memory_8hpp.html#af8fac614ab43478ad2a38d973f7ead6a", null ],
-    [ "SHARED_MEMORY_SIZE", "shared__memory_8hpp.html#a21a16aec41293c80beb10d71f79ad7a2", null ],
     [ "ShmCharAllocator", "shared__memory_8hpp.html#a36a105df63154c883e86f4282f380647", null ],
     [ "ShmObjects", "shared__memory_8hpp.html#ae50b2192256821112a69e47d5314b467", null ],
     [ "ShmString", "shared__memory_8hpp.html#a07ee51d077030d33ba8408f5938569cc", null ],
@@ -32,5 +32,7 @@ var shared__memory_8hpp =
     [ "set", "shared__memory_8hpp.html#ac8364e5cde6c8a2f1abc2a59035f26a6", null ],
     [ "set", "shared__memory_8hpp.html#a657bb799483a19a96f61706b50aca1e7", null ],
     [ "set", "shared__memory_8hpp.html#a562e79433e54463f39c9c276b8440f4b", null ],
+    [ "set_default_segment_sizes", "shared__memory_8hpp.html#a841687861fcc9efe381ffbe84843ca33", null ],
+    [ "set_segment_sizes", "shared__memory_8hpp.html#ac8ef94dc78f444092f488f0143b155f2", null ],
     [ "set_verbose", "shared__memory_8hpp.html#afe26d531f043f59bb36ea7816b8a40bf", null ]
 ];

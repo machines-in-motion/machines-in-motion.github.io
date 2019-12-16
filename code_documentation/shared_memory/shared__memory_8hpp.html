@@ -71,6 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -120,6 +121,7 @@ $(document).ready(function(){initNavTree('shared__memory_8hpp.html','');});
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;map&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;mutex&gt;</code><br />
 <code>#include &lt;eigen3/Eigen/Core&gt;</code><br />
 <code>#include &lt;boost/interprocess/managed_shared_memory.hpp&gt;</code><br />
 <code>#include &lt;boost/interprocess/containers/vector.hpp&gt;</code><br />
@@ -135,11 +137,11 @@ Include dependency graph for shared_memory.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="shared__memory_8hpp__incl.png" border="0" usemap="#include_2shared__memory_2shared__memory_8hpp" alt=""/></div>
 <map name="include_2shared__memory_2shared__memory_8hpp" id="include_2shared__memory_2shared__memory_8hpp">
-<area shape="rect" id="node12" href="serializer_8hpp_source.html" title="shared_memory/serializer.hpp" alt="" coords="1645,102,1841,129"/>
-<area shape="rect" id="node19" href="exceptions_8h.html" title="Defines debugging exceptions for this package. " alt="" coords="1428,102,1621,129"/>
-<area shape="rect" id="node21" href="segment__info_8hpp_source.html" title="shared_memory/segment\l_info.hpp" alt="" coords="479,95,648,136"/>
-<area shape="rect" id="node22" href="shared__memory_8hxx.html" title="This file implements the functions from shared_memory.hpp that encapsulate the use of the shared memo..." alt="" coords="1865,95,2024,136"/>
-<area shape="rect" id="node18" href="serializer_8hxx_source.html" title="shared_memory/serializer.hxx" alt="" coords="2219,191,2415,218"/>
+<area shape="rect" id="node13" href="serializer_8hpp_source.html" title="shared_memory/serializer.hpp" alt="" coords="1635,102,1831,129"/>
+<area shape="rect" id="node20" href="exceptions_8h.html" title="Defines debugging exceptions for this package. " alt="" coords="1418,102,1611,129"/>
+<area shape="rect" id="node22" href="segment__info_8hpp_source.html" title="shared_memory/segment\l_info.hpp" alt="" coords="180,95,350,136"/>
+<area shape="rect" id="node23" href="shared__memory_8hxx.html" title="This file implements the functions from shared_memory.hpp that encapsulate the use of the shared memo..." alt="" coords="1855,95,2014,136"/>
+<area shape="rect" id="node19" href="serializer_8hxx_source.html" title="shared_memory/serializer.hxx" alt="" coords="2235,191,2431,218"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -151,19 +153,22 @@ This graph shows which files directly or indirectly include this file:</div>
 <area shape="rect" id="node3" href="stress__set__api_8cpp.html" title="Benchmark the set method form the API. " alt="" coords="188,95,347,136"/>
 <area shape="rect" id="node4" href="get__data_8cpp.html" title="Create a small app that fetch the data from a shared memory. This memory is filled with the counter p..." alt="" coords="371,102,511,129"/>
 <area shape="rect" id="node5" href="set__data_8cpp.html" title="shows how to turn of console prints " alt="" coords="535,102,675,129"/>
-<area shape="rect" id="node6" href="exchange__manager__memory_8hpp.html" title="Interprocess exchange of serialized items. " alt="" coords="540,184,725,240"/>
-<area shape="rect" id="node12" href="locked__condition__variable_8hpp_source.html" title="include/shared_memory\l/locked_condition_variable.hpp" alt="" coords="934,191,1134,233"/>
-<area shape="rect" id="node13" href="mutex_8hpp_source.html" title="include/shared_memory\l/mutex.hpp" alt="" coords="750,95,910,136"/>
-<area shape="rect" id="node16" href="serializable__exchange_8hpp.html" title="Interface to a serializable object. " alt="" coords="985,95,1163,136"/>
-<area shape="rect" id="node17" href="shared__memory_8hxx.html" title="This file implements the functions from shared_memory.hpp that encapsulate the use of the shared memo..." alt="" coords="1187,95,1347,136"/>
-<area shape="rect" id="node18" href="shared__memory_8cpp.html" title="Implementation of the shared_memory.hpp API. " alt="" coords="1371,102,1534,129"/>
-<area shape="rect" id="node7" href="exchange__manager__consumer_8hpp.html" title="Interprocess exchange of serialized items. " alt="" coords="519,288,747,329"/>
-<area shape="rect" id="node11" href="exchange__manager__producer_8hpp.html" title="Interprocess exchange of serialized items. " alt="" coords="273,288,494,329"/>
-<area shape="rect" id="node8" href="exchange__manager__consumer_8cpp.html" title="Demonstrate how to use the exchange manage consummer. " alt="" coords="699,377,878,419"/>
-<area shape="rect" id="node9" href="exchange__manager__demo_8cpp.html" title="Demonstrate the use of the exhange manager. " alt="" coords="497,377,675,419"/>
-<area shape="rect" id="node10" href="exchange__manager__producer_8cpp.html" title="Demonstrate the use of the exhange manager producer. " alt="" coords="294,377,473,419"/>
-<area shape="rect" id="node14" href="lock_8hpp_source.html" title="include/shared_memory\l/lock.hpp" alt="" coords="750,191,910,233"/>
-<area shape="rect" id="node15" href="condition__variable_8hpp_source.html" title="include/shared_memory\l/condition_variable.hpp" alt="" coords="771,288,931,329"/>
+<area shape="rect" id="node6" href="array_8hpp_source.html" title="include/shared_memory\l/array.hpp" alt="" coords="469,191,629,233"/>
+<area shape="rect" id="node9" href="exchange__manager__memory_8hpp.html" title="Interprocess exchange of serialized items. " alt="" coords="671,184,856,240"/>
+<area shape="rect" id="node15" href="locked__condition__variable_8hpp_source.html" title="include/shared_memory\l/locked_condition_variable.hpp" alt="" coords="1065,191,1265,233"/>
+<area shape="rect" id="node16" href="mutex_8hpp_source.html" title="include/shared_memory\l/mutex.hpp" alt="" coords="801,95,961,136"/>
+<area shape="rect" id="node19" href="serializable__exchange_8hpp.html" title="Interface to a serializable object. " alt="" coords="1035,95,1214,136"/>
+<area shape="rect" id="node20" href="shared__memory_8hxx.html" title="This file implements the functions from shared_memory.hpp that encapsulate the use of the shared memo..." alt="" coords="1238,95,1398,136"/>
+<area shape="rect" id="node21" href="shared__memory_8cpp.html" title="Implementation of the shared_memory.hpp API. " alt="" coords="1422,102,1585,129"/>
+<area shape="rect" id="node7" href="demo__read__array_8cpp.html" title="example of reading from interprocesses arrays " alt="" coords="437,295,628,322"/>
+<area shape="rect" id="node8" href="demo__write__array_8cpp.html" title="example of writing into interprocesses arrays " alt="" coords="220,295,413,322"/>
+<area shape="rect" id="node10" href="exchange__manager__consumer_8hpp.html" title="Interprocess exchange of serialized items. " alt="" coords="899,288,1127,329"/>
+<area shape="rect" id="node14" href="exchange__manager__producer_8hpp.html" title="Interprocess exchange of serialized items. " alt="" coords="653,288,874,329"/>
+<area shape="rect" id="node11" href="exchange__manager__consumer_8cpp.html" title="Demonstrate how to use the exchange manage consummer. " alt="" coords="1079,377,1258,419"/>
+<area shape="rect" id="node12" href="exchange__manager__demo_8cpp.html" title="Demonstrate the use of the exhange manager. " alt="" coords="877,377,1055,419"/>
+<area shape="rect" id="node13" href="exchange__manager__producer_8cpp.html" title="Demonstrate the use of the exhange manager producer. " alt="" coords="674,377,853,419"/>
+<area shape="rect" id="node17" href="lock_8hpp_source.html" title="include/shared_memory\l/lock.hpp" alt="" coords="881,191,1041,233"/>
+<area shape="rect" id="node18" href="condition__variable_8hpp_source.html" title="include/shared_memory\l/condition_variable.hpp" alt="" coords="1151,288,1311,329"/>
 </map>
 </div>
 </div>
@@ -189,9 +194,9 @@ Macros</h2></td></tr>
 <tr class="memitem:af8fac614ab43478ad2a38d973f7ead6a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af8fac614ab43478ad2a38d973f7ead6a"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>SHARED_MEMORY_HPP</b></td></tr>
 <tr class="separator:af8fac614ab43478ad2a38d973f7ead6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21a16aec41293c80beb10d71f79ad7a2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a21a16aec41293c80beb10d71f79ad7a2"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SHARED_MEMORY_SIZE</b>&#160;&#160;&#160;65536</td></tr>
-<tr class="separator:a21a16aec41293c80beb10d71f79ad7a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd2f5089f8d2870e833cdc9f7af461ec"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acd2f5089f8d2870e833cdc9f7af461ec"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_SHARED_MEMORY_SIZE</b>&#160;&#160;&#160;65536</td></tr>
+<tr class="separator:acd2f5089f8d2870e833cdc9f7af461ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af899411657e43cb548bc58ef7d88bec9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af899411657e43cb548bc58ef7d88bec9"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>MAP_STRING_KEY_SEPARATOR</b>&#160;&#160;&#160;';'</td></tr>
 <tr class="separator:af899411657e43cb548bc58ef7d88bec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -213,6 +218,13 @@ typedef std::basic_string&lt; char, std::char_traits&lt; char &gt;, ShmCharAlloc
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ac8ef94dc78f444092f488f0143b155f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#ac8ef94dc78f444092f488f0143b155f2">shared_memory::set_segment_sizes</a> (uint multiplier_1025)</td></tr>
+<tr class="memdesc:ac8ef94dc78f444092f488f0143b155f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the size of the segments that will be newly created via the set methods.  <a href="namespaceshared__memory.html#ac8ef94dc78f444092f488f0143b155f2">More...</a><br /></td></tr>
+<tr class="separator:ac8ef94dc78f444092f488f0143b155f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a841687861fcc9efe381ffbe84843ca33"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a841687861fcc9efe381ffbe84843ca33"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a841687861fcc9efe381ffbe84843ca33">shared_memory::set_default_segment_sizes</a> ()</td></tr>
+<tr class="memdesc:a841687861fcc9efe381ffbe84843ca33"><td class="mdescLeft">&#160;</td><td class="mdescRight">set the size of segment newly created to the default size value of 65536 <br /></td></tr>
+<tr class="separator:a841687861fcc9efe381ffbe84843ca33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c76ec22ab70d3b7487becd3ec9943bc"><td class="memItemLeft" align="right" valign="top">SharedMemorySegment &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a7c76ec22ab70d3b7487becd3ec9943bc">shared_memory::get_segment</a> (const std::string &amp;segment_id, const bool clear_upon_destruction=false)</td></tr>
 <tr class="memdesc:a7c76ec22ab70d3b7487becd3ec9943bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">get_segment creates or give back a pointer to a <a class="el" href="classshared__memory_1_1SharedMemorySegment.html" title="The SharedMemorySegment contains the pointers of the shared objects in on shared memrory segment...">SharedMemorySegment</a> object.  <a href="namespaceshared__memory.html#a7c76ec22ab70d3b7487becd3ec9943bc">More...</a><br /></td></tr>
 <tr class="separator:a7c76ec22ab70d3b7487becd3ec9943bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
