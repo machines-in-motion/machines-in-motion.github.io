@@ -5,6 +5,7 @@ var classreal__time__tools_1_1RealTimeThreadParameters =
     [ "block_memory_", "classreal__time__tools_1_1RealTimeThreadParameters.html#a134856e17552d3f31a093f3a1f5d1639", null ],
     [ "cpu_dma_latency_", "classreal__time__tools_1_1RealTimeThreadParameters.html#afc9891b44025aab8b383e91d907d41b0", null ],
     [ "cpu_id_", "classreal__time__tools_1_1RealTimeThreadParameters.html#ac6879cacfd97ddf46ad46b94a79a9696", null ],
+    [ "dedicated_cpu_id_", "classreal__time__tools_1_1RealTimeThreadParameters.html#a5a6b8b14d0e82962ae6e68d34086ffed", null ],
     [ "delay_ns_", "classreal__time__tools_1_1RealTimeThreadParameters.html#a50e8eae41f8284867f073aa802d9afa2", null ],
     [ "keyword_", "classreal__time__tools_1_1RealTimeThreadParameters.html#a9db02f30ad6b4d6cfa3ca49dbd63e0f4", null ],
     [ "priority_", "classreal__time__tools_1_1RealTimeThreadParameters.html#aa373ac14aa6feca83382b8aefdf27409", null ],

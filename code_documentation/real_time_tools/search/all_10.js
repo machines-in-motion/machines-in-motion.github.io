@@ -14,6 +14,7 @@ var searchData=
   ['singletypethreadsafeobject',['SingletypeThreadsafeObject',['../classreal__time__tools_1_1SingletypeThreadsafeObject.html',1,'real_time_tools']]],
   ['singletypethreadsafeobject',['SingletypeThreadsafeObject',['../classreal__time__tools_1_1SingletypeThreadsafeObject.html#a00771da99b515b82cd0b10a431b4ccb1',1,'real_time_tools::SingletypeThreadsafeObject::SingletypeThreadsafeObject()'],['../classreal__time__tools_1_1SingletypeThreadsafeObject.html#ad33b8afc1581cc7adea5881c9d775128',1,'real_time_tools::SingletypeThreadsafeObject::SingletypeThreadsafeObject(const std::vector&lt; std::string &gt; &amp;names)']]],
   ['size',['SIZE',['../classreal__time__tools_1_1ThreadsafeObject.html#af05c02b66f0b75ea12cde9274bc2a97d',1,'real_time_tools::ThreadsafeObject::SIZE()'],['../classreal__time__tools_1_1SingletypeThreadsafeObject.html#af09735c0e632800487bc50e4f2f7f512',1,'real_time_tools::SingletypeThreadsafeObject::size()']]],
+  ['sleep_5fmicroseconds',['sleep_microseconds',['../classreal__time__tools_1_1Timer.html#a705486df1486d737ac30a04ecf7e2b97',1,'real_time_tools::Timer']]],
   ['sleep_5fms',['sleep_ms',['../classreal__time__tools_1_1Timer.html#abb2ce808994282d63846e7fca544f818',1,'real_time_tools::Timer']]],
   ['sleep_5fsec',['sleep_sec',['../classreal__time__tools_1_1Timer.html#a0a0df8a3baef34e820203e5579afda38',1,'real_time_tools::Timer']]],
   ['sleep_5funtil_5fsec',['sleep_until_sec',['../classreal__time__tools_1_1Timer.html#a8de5eedf9fe5607d78a703cd22665137',1,'real_time_tools::Timer']]],

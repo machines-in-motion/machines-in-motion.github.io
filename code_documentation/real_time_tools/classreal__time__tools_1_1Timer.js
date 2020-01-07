@@ -14,6 +14,7 @@ var classreal__time__tools_1_1Timer =
     [ "sec_to_timespec", "classreal__time__tools_1_1Timer.html#a7370c65fa7810c6bcbe1b2f33e21f2ff", null ],
     [ "set_memory_size", "classreal__time__tools_1_1Timer.html#a0319fbdc56fd5046d701c8728b27e860", null ],
     [ "set_name", "classreal__time__tools_1_1Timer.html#a1005cc3c2d7e68ab6d97c8d3167c7f93", null ],
+    [ "sleep_microseconds", "classreal__time__tools_1_1Timer.html#a705486df1486d737ac30a04ecf7e2b97", null ],
     [ "sleep_ms", "classreal__time__tools_1_1Timer.html#abb2ce808994282d63846e7fca544f818", null ],
     [ "sleep_sec", "classreal__time__tools_1_1Timer.html#a0a0df8a3baef34e820203e5579afda38", null ],
     [ "sleep_until_sec", "classreal__time__tools_1_1Timer.html#a8de5eedf9fe5607d78a703cd22665137", null ],
