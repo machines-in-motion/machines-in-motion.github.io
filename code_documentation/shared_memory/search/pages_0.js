@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['shared_20memory',['Shared Memory',['../md_README.html',1,'']]]
+  ['license',['License',['../license.html',1,'']]]
 ];

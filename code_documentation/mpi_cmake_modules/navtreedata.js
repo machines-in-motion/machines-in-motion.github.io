@@ -4,6 +4,7 @@ var NAVTREE =
     [ "Introduction", "index.html#intro", null ],
     [ "License", "index.html#lic", null ],
     [ "Authors", "index.html#author", null ],
+    [ "License", "license.html", null ],
     [ "Files", null, [
       [ "File List", "files.html", "files" ],
       [ "File Members", "globals.html", [

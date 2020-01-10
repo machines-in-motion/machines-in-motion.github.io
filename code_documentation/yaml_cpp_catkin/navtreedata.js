@@ -1,6 +1,7 @@
 var NAVTREE =
 [
   [ "yaml_cpp_catkin", "index.html", [
+    [ "License", "license.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ]
