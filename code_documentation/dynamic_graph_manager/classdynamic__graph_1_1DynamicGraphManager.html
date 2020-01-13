@@ -112,6 +112,8 @@ $(document).ready(function(){initNavTree('classdynamic__graph_1_1DynamicGraphMan
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="classdynamic__graph_1_1DynamicGraphManager-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">dynamic_graph::DynamicGraphManager Class Reference</div>  </div>
@@ -435,6 +437,42 @@ YAML::Node&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 <tr class="memitem:a1b7d9df75790d22b3258e1bd42fd537d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1b7d9df75790d22b3258e1bd42fd537d"></a>
 std::mutex&#160;</td><td class="memItemRight" valign="bottom"><b>hwc_mutex_</b></td></tr>
 <tr class="separator:a1b7d9df75790d22b3258e1bd42fd537d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a664c7a3810c13a33057ae060281966b1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdynamic__graph_1_1DynamicGraphManager.html#a664c7a3810c13a33057ae060281966b1">start_dynamic_graph</a> (std_srvs::Empty::Request &amp;, std_srvs::Empty::Response &amp;)</td></tr>
+<tr class="memdesc:a664c7a3810c13a33057ae060281966b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method NOT inherited.  <a href="#a664c7a3810c13a33057ae060281966b1">More...</a><br /></td></tr>
+<tr class="separator:a664c7a3810c13a33057ae060281966b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06740416640f3464edbbb57ee759b8fb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdynamic__graph_1_1DynamicGraphManager.html#a06740416640f3464edbbb57ee759b8fb">stop_dynamic_graph</a> (std_srvs::Empty::Request &amp;, std_srvs::Empty::Response &amp;)</td></tr>
+<tr class="memdesc:a06740416640f3464edbbb57ee759b8fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">stop_dg is the callback method of the ROS service stop dynamic graph  <a href="#a06740416640f3464edbbb57ee759b8fb">More...</a><br /></td></tr>
+<tr class="separator:a06740416640f3464edbbb57ee759b8fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa396c4c91c076a103e2d5cb6c5606a7d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa396c4c91c076a103e2d5cb6c5606a7d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdynamic__graph_1_1DynamicGraphManager.html#aa396c4c91c076a103e2d5cb6c5606a7d">start_ros_service</a> (ros::NodeHandle &amp;ros_node_handle)</td></tr>
+<tr class="memdesc:aa396c4c91c076a103e2d5cb6c5606a7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">start_ros_service is the method that advertise the different ros services. <br /></td></tr>
+<tr class="separator:aa396c4c91c076a103e2d5cb6c5606a7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72f9e755719ec8fde8f145a67b518333"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a72f9e755719ec8fde8f145a67b518333"></a>
+void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdynamic__graph_1_1DynamicGraphManager.html#a72f9e755719ec8fde8f145a67b518333">dynamic_graph_real_time_loop</a> ()</td></tr>
+<tr class="memdesc:a72f9e755719ec8fde8f145a67b518333"><td class="mdescLeft">&#160;</td><td class="mdescRight">dynamic_graph_real_time_loop is the method used to execute the dynamic graph. <br /></td></tr>
+<tr class="separator:a72f9e755719ec8fde8f145a67b518333"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ea4183f1a4bd2d450ffb4a0a22b4242"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4ea4183f1a4bd2d450ffb4a0a22b4242"></a>
+void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdynamic__graph_1_1DynamicGraphManager.html#a4ea4183f1a4bd2d450ffb4a0a22b4242">hardware_communication_real_time_loop</a> ()</td></tr>
+<tr class="memdesc:a4ea4183f1a4bd2d450ffb4a0a22b4242"><td class="mdescLeft">&#160;</td><td class="mdescRight">hardware_communication_real_time_loop is the method that communicate with the hardware and send the commands (torque, position, current, ...) <br /></td></tr>
+<tr class="separator:a4ea4183f1a4bd2d450ffb4a0a22b4242"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf3adb88c5913b21b51c1f7bfab6d0f3"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdynamic__graph_1_1DynamicGraphManager.html#adf3adb88c5913b21b51c1f7bfab6d0f3">single_process_real_time_loop</a> ()</td></tr>
+<tr class="memdesc:adf3adb88c5913b21b51c1f7bfab6d0f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">single_process_real_time_loop is the method that performs the control but in one single process.  <a href="#adf3adb88c5913b21b51c1f7bfab6d0f3">More...</a><br /></td></tr>
+<tr class="separator:adf3adb88c5913b21b51c1f7bfab6d0f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a7d289a916922f69796b0042f64de1499"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdynamic__graph_1_1DynamicGraphManager.html#a7d289a916922f69796b0042f64de1499">dynamic_graph_real_time_loop_helper</a> (void *context)</td></tr>
+<tr class="memdesc:a7d289a916922f69796b0042f64de1499"><td class="mdescLeft">&#160;</td><td class="mdescRight">dynamic_graph_real_time_loop_helper is a static member allowing to use the posix pthread_create.  <a href="#a7d289a916922f69796b0042f64de1499">More...</a><br /></td></tr>
+<tr class="separator:a7d289a916922f69796b0042f64de1499"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a771ad93758759932899273c5f01975fc"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdynamic__graph_1_1DynamicGraphManager.html#a771ad93758759932899273c5f01975fc">hardware_communication_real_time_loop_helper</a> (void *context)</td></tr>
+<tr class="memdesc:a771ad93758759932899273c5f01975fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">dynamic_graph_real_time_loop_helper is a static member allowing to use the posix pthread_create.  <a href="#a771ad93758759932899273c5f01975fc">More...</a><br /></td></tr>
+<tr class="separator:a771ad93758759932899273c5f01975fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af28f8990655ae8464acb3bd4c56a74c2"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdynamic__graph_1_1DynamicGraphManager.html#af28f8990655ae8464acb3bd4c56a74c2">single_process_real_time_loop_helper</a> (void *context)</td></tr>
+<tr class="memdesc:af28f8990655ae8464acb3bd4c56a74c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">dynamic_graph_real_time_loop_helper is a static member allowing to use the posix pthread_create.  <a href="#af28f8990655ae8464acb3bd4c56a74c2">More...</a><br /></td></tr>
+<tr class="separator:af28f8990655ae8464acb3bd4c56a74c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class has for purpose to manage the different processes during run time. </p>
@@ -512,6 +550,39 @@ std::mutex&#160;</td><td class="memItemRight" valign="bottom"><b>hwc_mutex_</b><
 
 </div>
 </div>
+<a class="anchor" id="a7d289a916922f69796b0042f64de1499"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void* dynamic_graph::DynamicGraphManager::dynamic_graph_real_time_loop_helper </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>context</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>dynamic_graph_real_time_loop_helper is a static member allowing to use the posix pthread_create. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">context</td><td>is the <a class="el" href="classdynamic__graph_1_1DynamicGraphManager.html" title="This class has for purpose to manage the different processes during run time. ">DynamicGraphManager</a> that spawned the thread. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>nothing interesting for us. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a7bddce83d5185433041ad27610b85b3a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -538,6 +609,39 @@ std::mutex&#160;</td><td class="memItemRight" valign="bottom"><b>hwc_mutex_</b><
 <p>Each robot must have a different implementation of this function. WARNING, this function needs to be overloaded using the actual drivers of the robot. </p>
 
 <p>Reimplemented in <a class="el" href="classdynamic__graph__manager_1_1SimpleDGM.html#aa92cd33a31c934835252f834bab7b9f4">dynamic_graph_manager::SimpleDGM</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a771ad93758759932899273c5f01975fc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void* dynamic_graph::DynamicGraphManager::hardware_communication_real_time_loop_helper </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>context</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>dynamic_graph_real_time_loop_helper is a static member allowing to use the posix pthread_create. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">context</td><td>is the <a class="el" href="classdynamic__graph_1_1DynamicGraphManager.html" title="This class has for purpose to manage the different processes during run time. ">DynamicGraphManager</a> that spawned the thread. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>nothing interesting for us. </dd></dl>
 
 </div>
 </div>
@@ -880,6 +984,65 @@ std::mutex&#160;</td><td class="memItemRight" valign="bottom"><b>hwc_mutex_</b><
 
 </div>
 </div>
+<a class="anchor" id="adf3adb88c5913b21b51c1f7bfab6d0f3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * DynamicGraphManager::single_process_real_time_loop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>single_process_real_time_loop is the method that performs the control but in one single process. </p>
+<p>(torque, position, current, ...) </p>
+
+</div>
+</div>
+<a class="anchor" id="af28f8990655ae8464acb3bd4c56a74c2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void* dynamic_graph::DynamicGraphManager::single_process_real_time_loop_helper </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>context</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>dynamic_graph_real_time_loop_helper is a static member allowing to use the posix pthread_create. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">context</td><td>is the <a class="el" href="classdynamic__graph_1_1DynamicGraphManager.html" title="This class has for purpose to manage the different processes during run time. ">DynamicGraphManager</a> that spawned the thread. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>nothing interesting for us. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a1bfd2b965dde19d12d63f5928a4f670c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -903,6 +1066,43 @@ std::mutex&#160;</td><td class="memItemRight" valign="bottom"><b>hwc_mutex_</b><
 
 <p>start_dynamic_graph start the DynamicGraph. </p>
 <p>;) </p>
+
+</div>
+</div>
+<a class="anchor" id="a664c7a3810c13a33057ae060281966b1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool dynamic_graph::DynamicGraphManager::start_dynamic_graph </td>
+          <td>(</td>
+          <td class="paramtype">std_srvs::Empty::Request &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std_srvs::Empty::Response &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Method NOT inherited. </p>
+<p>start_dg is the callback method of the ROS service start dynamic graph. </p><dl class="section return"><dt>Returns</dt><dd>true. </dd></dl>
 
 </div>
 </div>
@@ -955,6 +1155,43 @@ std::mutex&#160;</td><td class="memItemRight" valign="bottom"><b>hwc_mutex_</b><
 
 <p>stop_dynamic_graph stop the DynamicGraph. </p>
 <p>;) </p>
+
+</div>
+</div>
+<a class="anchor" id="a06740416640f3464edbbb57ee759b8fb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool dynamic_graph::DynamicGraphManager::stop_dynamic_graph </td>
+          <td>(</td>
+          <td class="paramtype">std_srvs::Empty::Request &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std_srvs::Empty::Response &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>stop_dg is the callback method of the ROS service stop dynamic graph </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
@@ -1144,7 +1381,7 @@ std::mutex&#160;</td><td class="memItemRight" valign="bottom"><b>hwc_mutex_</b><
 
 <p>motor_controls_map_ is a map of dynamicgraph::Vector. </p>
 <p>They represent all the controls to be sent to the robot. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="simple_dgm_8hpp-example.html#a14">simple_dgm.hpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="simple_dgm_8hpp-example.html#a15">simple_dgm.hpp</a>.</dd>
 </dl>
 </div>
 </div>

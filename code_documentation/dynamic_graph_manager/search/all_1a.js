@@ -8,5 +8,6 @@ var searchData=
   ['tools_2ehh',['tools.hh',['../tools_8hh.html',1,'']]],
   ['transformlistenerdata',['TransformListenerData',['../structdynamic__graph_1_1internal_1_1TransformListenerData.html',1,'dynamic_graph::internal']]],
   ['trigger',['trigger',['../classdynamic__graph_1_1RosRobotStatePublisher.html#a4d66defbd1b308cd06394107f55f6cbb',1,'dynamic_graph::RosRobotStatePublisher::trigger()'],['../classdynamic__graph_1_1RosRobotStatePublisherMt.html#ab246d4672cb6ccf5d0733dae31c5adbf',1,'dynamic_graph::RosRobotStatePublisherMt::trigger()']]],
+  ['trigger_5fsignal_5f',['trigger_signal_',['../classdynamic__graph_1_1RosRobotStatePublisher.html#a175914c0624474d019cb1360fa9c14e4',1,'dynamic_graph::RosRobotStatePublisher::trigger_signal_()'],['../classdynamic__graph_1_1RosRobotStatePublisherMt.html#af44e1e178bd62374b9b77a630d66ae71',1,'dynamic_graph::RosRobotStatePublisherMt::trigger_signal_()']]],
   ['twist',['Twist',['../classdynamic__graph_1_1specific_1_1Twist.html',1,'dynamic_graph::specific']]]
 ];

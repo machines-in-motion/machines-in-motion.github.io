@@ -111,6 +111,7 @@ $(document).ready(function(){initNavTree('classdynamic__graph_1_1RosPythonInterp
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classdynamic__graph_1_1RosPythonInterpreter-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">dynamic_graph::RosPythonInterpreter Class Reference</div>  </div>
@@ -159,6 +160,23 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a519321128872afdcec622a4892c63196"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdynamic__graph_1_1RosPythonInterpreter.html#a519321128872afdcec622a4892c63196">runPythonFileCallback</a> (dynamic_graph_manager::RunPythonFile::Request &amp;req, dynamic_graph_manager::RunPythonFile::Response &amp;res)</td></tr>
 <tr class="memdesc:a519321128872afdcec622a4892c63196"><td class="mdescLeft">&#160;</td><td class="mdescRight">runCommandCallback is the "run_python_script" ros service callback function.  <a href="#a519321128872afdcec622a4892c63196">More...</a><br /></td></tr>
 <tr class="separator:a519321128872afdcec622a4892c63196"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a1e4f91705887914b6e5f649b2fb7fcfa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1e4f91705887914b6e5f649b2fb7fcfa"></a>
+dynamicgraph::python::Interpreter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdynamic__graph_1_1RosPythonInterpreter.html#a1e4f91705887914b6e5f649b2fb7fcfa">interpreter_</a></td></tr>
+<tr class="memdesc:a1e4f91705887914b6e5f649b2fb7fcfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">interpreter_ is the python interpreter itself <br /></td></tr>
+<tr class="separator:a1e4f91705887914b6e5f649b2fb7fcfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0ff23f78488bfcbaa6afaae75ec5a8e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac0ff23f78488bfcbaa6afaae75ec5a8e"></a>
+ros::NodeHandle &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdynamic__graph_1_1RosPythonInterpreter.html#ac0ff23f78488bfcbaa6afaae75ec5a8e">ros_node_handle_</a></td></tr>
+<tr class="memdesc:ac0ff23f78488bfcbaa6afaae75ec5a8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">ros_node_handle_ is reference to the ros::NodeHandle used to advertize the ros::services <br /></td></tr>
+<tr class="separator:ac0ff23f78488bfcbaa6afaae75ec5a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10b59f74957922f74e84709b2a6920da"><td class="memItemLeft" align="right" valign="top">ros::ServiceServer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdynamic__graph_1_1RosPythonInterpreter.html#a10b59f74957922f74e84709b2a6920da">run_python_command_srv_</a></td></tr>
+<tr class="memdesc:a10b59f74957922f74e84709b2a6920da"><td class="mdescLeft">&#160;</td><td class="mdescRight">run_python_command_srv_ is the "run_python_command" ros::service c++ object  <a href="#a10b59f74957922f74e84709b2a6920da">More...</a><br /></td></tr>
+<tr class="separator:a10b59f74957922f74e84709b2a6920da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebb8e4197d11cef0bd49b613b761e081"><td class="memItemLeft" align="right" valign="top">ros::ServiceServer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdynamic__graph_1_1RosPythonInterpreter.html#aebb8e4197d11cef0bd49b613b761e081">run_python_file_srv_</a></td></tr>
+<tr class="memdesc:aebb8e4197d11cef0bd49b613b761e081"><td class="mdescLeft">&#160;</td><td class="mdescRight">run_python_file_srv_ is the "run_python_script" ros::service c++ object  <a href="#aebb8e4197d11cef0bd49b613b761e081">More...</a><br /></td></tr>
+<tr class="separator:aebb8e4197d11cef0bd49b613b761e081"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class wraps the implementation of the runCommand service. </p>
@@ -396,6 +414,53 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a10b59f74957922f74e84709b2a6920da"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ros::ServiceServer dynamic_graph::RosPythonInterpreter::run_python_command_srv_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>run_python_command_srv_ is the "run_python_command" ros::service c++ object </p>
+<p>This kind of ros object require <em>NOT</em> to be destroyed. otherwize the ros::service is cancelled. This is the reason why this object is an attribute of the class </p>
+
+</div>
+</div>
+<a class="anchor" id="aebb8e4197d11cef0bd49b613b761e081"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ros::ServiceServer dynamic_graph::RosPythonInterpreter::run_python_file_srv_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>run_python_file_srv_ is the "run_python_script" ros::service c++ object </p>
+<p>This kind of ros object require <em>NOT</em> to be destroyed. otherwize the ros::service is cancelled. This is the reason why this object is an attribute of the class </p>
 
 </div>
 </div>

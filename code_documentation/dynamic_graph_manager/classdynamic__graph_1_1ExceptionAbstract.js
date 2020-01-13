@@ -12,6 +12,7 @@ var classdynamic__graph_1_1ExceptionAbstract =
       [ "PATTERN_GENERATOR", "classdynamic__graph_1_1ExceptionAbstract.html#a6c51d9c9d422045a68340908bb766ee9a138932e1d820c541599a8d13203d8dbe", null ],
       [ "YAML_CPP_PARSING", "classdynamic__graph_1_1ExceptionAbstract.html#a6c51d9c9d422045a68340908bb766ee9a2505181d777ae1b44ed2493d0f0514bb", null ]
     ] ],
+    [ "ExceptionAbstract", "classdynamic__graph_1_1ExceptionAbstract.html#a474009850ce7a50c121e4c4294181e79", null ],
     [ "ExceptionAbstract", "classdynamic__graph_1_1ExceptionAbstract.html#a92d849e378aca22a59aa5294ed9717bb", null ],
     [ "~ExceptionAbstract", "classdynamic__graph_1_1ExceptionAbstract.html#a3868587f3960781151994d7957fb404b", null ],
     [ "getCode", "classdynamic__graph_1_1ExceptionAbstract.html#a4b3009fb1517a2e382026c31ef618526", null ],
