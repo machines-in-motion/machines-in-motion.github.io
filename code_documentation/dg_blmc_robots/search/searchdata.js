@@ -1,10 +1,10 @@
 var indexSectionsWithContent =
 {
-  0: "cdgis~",
+  0: "cdgils~",
   1: "d",
-  2: "cds",
+  2: "cd",
   3: "cdgis~",
-  4: "d"
+  4: "dl"
 };
 
 var indexSectionNames =

@@ -2,6 +2,7 @@ var NAVTREE =
 [
   [ "dg_blmc_robots", "index.html", [
     [ "DG BLMC ROBOTS", "md_readme.html", null ],
+    [ "License", "license.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],

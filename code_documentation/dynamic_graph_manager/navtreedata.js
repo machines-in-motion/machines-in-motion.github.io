@@ -5,6 +5,7 @@ var NAVTREE =
     [ "Motivation and history behind the implemention of this framework", "subpage_motivation_history.html", null ],
     [ "dynamic_graph_manager", "md_readme.html", null ],
     [ "Todo List", "todo.html", null ],
+    [ "License", "license.html", null ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -42,8 +43,8 @@ var NAVTREEINDEX =
 [
 ".html",
 "classdynamic__graph_1_1PeriodicCall.html#acf4cd14a78523d6612d4679cb5a67d8b",
-"matrix__geometry_8hh.html#af84ad658e1cf7d496958772210dd51b6",
-"structdynamic__graph_1_1internal_1_1BindedSignal.html#aa0b8c4e3dcea8585de50697b892ea0a4"
+"matrix__geometry_8hh.html#aabaea0c174dde41c755e8d3fb6d23caa",
+"structdynamic__graph_1_1internal_1_1BindedSignal.html#a93b1cf4373c6271937f535a68334c523"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
