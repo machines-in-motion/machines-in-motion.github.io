@@ -1,7 +1,7 @@
 var dir_62ec9a36618b482ae6c70546c8145fc7 =
 [
     [ "threadsafe_object.hpp", "threadsafe__object_8hpp.html", [
-      [ "ThreadsafeHistoryInterface", "classreal__time__tools_1_1ThreadsafeHistoryInterface.html", null ],
+      [ "ThreadsafeHistoryInterface", "classreal__time__tools_1_1ThreadsafeHistoryInterface.html", "classreal__time__tools_1_1ThreadsafeHistoryInterface" ],
       [ "SingletypeThreadsafeObject", "classreal__time__tools_1_1SingletypeThreadsafeObject.html", "classreal__time__tools_1_1SingletypeThreadsafeObject" ],
       [ "ThreadsafeObject", "classreal__time__tools_1_1ThreadsafeObject.html", "classreal__time__tools_1_1ThreadsafeObject" ]
     ] ],

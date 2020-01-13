@@ -8,7 +8,7 @@ var annotated_dup =
       [ "RealTimeThreadParameters", "classreal__time__tools_1_1RealTimeThreadParameters.html", "classreal__time__tools_1_1RealTimeThreadParameters" ],
       [ "SingletypeThreadsafeObject", "classreal__time__tools_1_1SingletypeThreadsafeObject.html", "classreal__time__tools_1_1SingletypeThreadsafeObject" ],
       [ "Spinner", "classreal__time__tools_1_1Spinner.html", "classreal__time__tools_1_1Spinner" ],
-      [ "ThreadsafeHistoryInterface", "classreal__time__tools_1_1ThreadsafeHistoryInterface.html", null ],
+      [ "ThreadsafeHistoryInterface", "classreal__time__tools_1_1ThreadsafeHistoryInterface.html", "classreal__time__tools_1_1ThreadsafeHistoryInterface" ],
       [ "ThreadsafeObject", "classreal__time__tools_1_1ThreadsafeObject.html", "classreal__time__tools_1_1ThreadsafeObject" ],
       [ "ThreadsafeTimeseries", "classreal__time__tools_1_1ThreadsafeTimeseries.html", "classreal__time__tools_1_1ThreadsafeTimeseries" ],
       [ "Timer", "classreal__time__tools_1_1Timer.html", "classreal__time__tools_1_1Timer" ],

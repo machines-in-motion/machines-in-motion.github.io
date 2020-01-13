@@ -1,5 +1,7 @@
 var classshared__memory_1_1Exchange__manager__producer =
 [
+    [ "Memory", "classshared__memory_1_1Exchange__manager__producer.html#af81bf9c3f570b3098be05823ff4ee82c", null ],
+    [ "Memory_ptr", "classshared__memory_1_1Exchange__manager__producer.html#ae0a1e281615051dcadbe2319ad546c28", null ],
     [ "Exchange_manager_producer", "classshared__memory_1_1Exchange__manager__producer.html#a3fb01ae44f85b9d8b4a22137f2da90f1", null ],
     [ "~Exchange_manager_producer", "classshared__memory_1_1Exchange__manager__producer.html#a2facf670e12bfea1d7c4900f3ffae7d7", null ],
     [ "clean_memory", "classshared__memory_1_1Exchange__manager__producer.html#a8574f4e075d6f755e567d21d04f24aab", null ],
@@ -11,7 +13,13 @@ var classshared__memory_1_1Exchange__manager__producer =
     [ "nb_char_written", "classshared__memory_1_1Exchange__manager__producer.html#ab31e6b87ad4c856736dec15486ed4489", null ],
     [ "producer_queue_empty", "classshared__memory_1_1Exchange__manager__producer.html#a32172d2cbf30e1bcb2a45778063e6ff2", null ],
     [ "ready_to_produce", "classshared__memory_1_1Exchange__manager__producer.html#a3ef5cfdd196a396edfd6ca502119f839", null ],
+    [ "reset", "classshared__memory_1_1Exchange__manager__producer.html#a2148cfb2e9a1973089d81237ea5735b9", null ],
     [ "reset_char_count", "classshared__memory_1_1Exchange__manager__producer.html#a742e8859608d49901d3dafbbe08e4674", null ],
     [ "set", "classshared__memory_1_1Exchange__manager__producer.html#a0f86798dbbb5bead856c566257bd1b07", null ],
-    [ "unlock", "classshared__memory_1_1Exchange__manager__producer.html#a9c02040ee5ef8db658f3112ae4b3b969", null ]
+    [ "unlock", "classshared__memory_1_1Exchange__manager__producer.html#a9c02040ee5ef8db658f3112ae4b3b969", null ],
+    [ "autolock_", "classshared__memory_1_1Exchange__manager__producer.html#a6d89b939f08bbb9180460a0fab2c877f", null ],
+    [ "leading_", "classshared__memory_1_1Exchange__manager__producer.html#a4c71d725b7b95e4dd00ecf68232d4ac9", null ],
+    [ "memory_", "classshared__memory_1_1Exchange__manager__producer.html#a67f2a2c049dabace06c85a35335d1614", null ],
+    [ "object_id_", "classshared__memory_1_1Exchange__manager__producer.html#a57ea2e6076963223331f3b6e78cbbc05", null ],
+    [ "segment_id_", "classshared__memory_1_1Exchange__manager__producer.html#a96ce58e9619ac28b31b46a81c53c20c2", null ]
 ];

@@ -11,5 +11,11 @@ var classreal__time__tools_1_1UsbStream =
     [ "set_poll_mode_timeout", "classreal__time__tools_1_1UsbStream.html#a1c61741541acfca7ecf6deaf0b8ad1fc", null ],
     [ "set_port_config", "classreal__time__tools_1_1UsbStream.html#adb0c41dc7a9603022a0a1e19c9ab8292", null ],
     [ "test_msg_equal", "classreal__time__tools_1_1UsbStream.html#ae3e565f6ea54fb5c4666b98745e9f87f", null ],
-    [ "write_device", "classreal__time__tools_1_1UsbStream.html#aa9fdd0d43fbf0cddbffb65538af60321", null ]
+    [ "write_device", "classreal__time__tools_1_1UsbStream.html#aa9fdd0d43fbf0cddbffb65538af60321", null ],
+    [ "buffer_", "classreal__time__tools_1_1UsbStream.html#ae5a19cde3cc21a0c878be3fe4cb54f2d", null ],
+    [ "file_id_", "classreal__time__tools_1_1UsbStream.html#a52bf9e29fde33e865daef464a01738af", null ],
+    [ "file_name_", "classreal__time__tools_1_1UsbStream.html#ac8d1e2727668e9549dda2038248943d5", null ],
+    [ "return_value_", "classreal__time__tools_1_1UsbStream.html#a272dd207ec047d29b00e099bff188ac6", null ],
+    [ "timeout_", "classreal__time__tools_1_1UsbStream.html#afa70d692f2715d9a42e1a2d3a91f876a", null ],
+    [ "timeout_set_", "classreal__time__tools_1_1UsbStream.html#a76378aaeca606027408ebd5c7f06e97e", null ]
 ];

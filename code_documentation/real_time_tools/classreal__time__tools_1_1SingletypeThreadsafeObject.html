@@ -108,6 +108,7 @@ $(document).ready(function(){initNavTree('classreal__time__tools_1_1SingletypeTh
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classreal__time__tools_1_1SingletypeThreadsafeObject-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">real_time_tools::SingletypeThreadsafeObject&lt; Type, SIZE &gt; Class Template Reference</div>  </div>
@@ -160,6 +161,36 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab5776496cf4fa4a015101c81811eb9fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classreal__time__tools_1_1SingletypeThreadsafeObject.html#ab5776496cf4fa4a015101c81811eb9fc">set</a> (const Type &amp;datum, const std::string &amp;name)</td></tr>
 <tr class="memdesc:ab5776496cf4fa4a015101c81811eb9fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set one element using at a designated name.  <a href="#ab5776496cf4fa4a015101c81811eb9fc">More...</a><br /></td></tr>
 <tr class="separator:ab5776496cf4fa4a015101c81811eb9fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:abb449516269c85f927246182abee83ff"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abb449516269c85f927246182abee83ff"></a>
+std::shared_ptr&lt; std::array&lt; Type, SIZE &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classreal__time__tools_1_1SingletypeThreadsafeObject.html#abb449516269c85f927246182abee83ff">data_</a></td></tr>
+<tr class="memdesc:abb449516269c85f927246182abee83ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the data buffer. <br /></td></tr>
+<tr class="separator:abb449516269c85f927246182abee83ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b242bedc7cd23b419d7928e661fdc10"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7b242bedc7cd23b419d7928e661fdc10"></a>
+std::shared_ptr&lt; std::array&lt; size_t, SIZE &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classreal__time__tools_1_1SingletypeThreadsafeObject.html#a7b242bedc7cd23b419d7928e661fdc10">modification_counts_</a></td></tr>
+<tr class="memdesc:a7b242bedc7cd23b419d7928e661fdc10"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is counting the data modification occurences for each individual buffers. <br /></td></tr>
+<tr class="separator:a7b242bedc7cd23b419d7928e661fdc10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3475e1d35b7af07acdbf74c0170ed45d"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classreal__time__tools_1_1SingletypeThreadsafeObject.html#a3475e1d35b7af07acdbf74c0170ed45d">total_modification_count_</a></td></tr>
+<tr class="memdesc:a3475e1d35b7af07acdbf74c0170ed45d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is counting the all data modification occurences for all buffer.  <a href="#a3475e1d35b7af07acdbf74c0170ed45d">More...</a><br /></td></tr>
+<tr class="separator:a3475e1d35b7af07acdbf74c0170ed45d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a27e1934ed7df5119e0e91ca228ac73"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1a27e1934ed7df5119e0e91ca228ac73"></a>
+std::map&lt; std::string, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classreal__time__tools_1_1SingletypeThreadsafeObject.html#a1a27e1934ed7df5119e0e91ca228ac73">name_to_index_</a></td></tr>
+<tr class="memdesc:a1a27e1934ed7df5119e0e91ca228ac73"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the map that allow to deal with data by their names. <br /></td></tr>
+<tr class="separator:a1a27e1934ed7df5119e0e91ca228ac73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a628a0eb20c8a683a95607468653c7b2e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a628a0eb20c8a683a95607468653c7b2e"></a>
+std::shared_ptr&lt; std::condition_variable &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classreal__time__tools_1_1SingletypeThreadsafeObject.html#a628a0eb20c8a683a95607468653c7b2e">condition_</a></td></tr>
+<tr class="memdesc:a628a0eb20c8a683a95607468653c7b2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This condition variable is used to wait untils any data has been changed. <br /></td></tr>
+<tr class="separator:a628a0eb20c8a683a95607468653c7b2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0bbdbc03580868de0a04e5be234408d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa0bbdbc03580868de0a04e5be234408d"></a>
+std::shared_ptr&lt; std::mutex &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classreal__time__tools_1_1SingletypeThreadsafeObject.html#aa0bbdbc03580868de0a04e5be234408d">condition_mutex_</a></td></tr>
+<tr class="memdesc:aa0bbdbc03580868de0a04e5be234408d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the mutex of the condition varaible. <br /></td></tr>
+<tr class="separator:aa0bbdbc03580868de0a04e5be234408d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55f7e015fa4915ea1c3af34757c2f671"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a55f7e015fa4915ea1c3af34757c2f671"></a>
+std::shared_ptr&lt; std::array&lt; std::mutex, SIZE &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classreal__time__tools_1_1SingletypeThreadsafeObject.html#a55f7e015fa4915ea1c3af34757c2f671">data_mutexes_</a></td></tr>
+<tr class="memdesc:a55f7e015fa4915ea1c3af34757c2f671"><td class="mdescLeft">&#160;</td><td class="mdescRight">These are the individual mutexes of each data upon setting and getting. <br /></td></tr>
+<tr class="separator:a55f7e015fa4915ea1c3af34757c2f671"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename Type, size_t SIZE&gt;<br />
@@ -541,6 +572,32 @@ template&lt;typename Type , size_t SIZE&gt; </div>
 
 <p>Wait unitl any data has been changed and return its index. </p>
 <dl class="section return"><dt>Returns</dt><dd>size_t </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a3475e1d35b7af07acdbf74c0170ed45d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Type , size_t SIZE&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;size_t&gt; <a class="el" href="classreal__time__tools_1_1SingletypeThreadsafeObject.html">real_time_tools::SingletypeThreadsafeObject</a>&lt; Type, SIZE &gt;::total_modification_count_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This is counting the all data modification occurences for all buffer. </p>
+<p>/todo Can't we just some the modification_counts_ array whenever needed? </p>
 
 </div>
 </div>

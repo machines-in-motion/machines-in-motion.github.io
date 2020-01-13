@@ -109,6 +109,7 @@ $(document).ready(function(){initNavTree('classshared__memory_1_1SharedMemorySeg
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classshared__memory_1_1SharedMemorySegment-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">shared_memory::SharedMemorySegment Class Reference</div>  </div>
@@ -185,6 +186,23 @@ Public Attributes</h2></td></tr>
 boost::interprocess::interprocess_mutex *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1SharedMemorySegment.html#a9e72fec52b3c76b9c2b0809b40b4e11d">mutex_</a></td></tr>
 <tr class="memdesc:a9e72fec52b3c76b9c2b0809b40b4e11d"><td class="mdescLeft">&#160;</td><td class="mdescRight">mutex_ this mutex secure ALL the shared memory. <br /></td></tr>
 <tr class="separator:a9e72fec52b3c76b9c2b0809b40b4e11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:af775c0982687b6e9bc9856b21aa1e009"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af775c0982687b6e9bc9856b21aa1e009"></a>
+boost::interprocess::managed_shared_memory&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1SharedMemorySegment.html#af775c0982687b6e9bc9856b21aa1e009">segment_manager_</a></td></tr>
+<tr class="memdesc:af775c0982687b6e9bc9856b21aa1e009"><td class="mdescLeft">&#160;</td><td class="mdescRight">shm_segment is the boost object that manages the shared memory segment <br /></td></tr>
+<tr class="separator:af775c0982687b6e9bc9856b21aa1e009"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c4d0eb6f2a620bf7e5b22a57c07380b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceshared__memory.html#ae50b2192256821112a69e47d5314b467">ShmObjects</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1SharedMemorySegment.html#a8c4d0eb6f2a620bf7e5b22a57c07380b">objects_</a></td></tr>
+<tr class="memdesc:a8c4d0eb6f2a620bf7e5b22a57c07380b"><td class="mdescLeft">&#160;</td><td class="mdescRight">objects_ are all the data stored in the segment.  <a href="#a8c4d0eb6f2a620bf7e5b22a57c07380b">More...</a><br /></td></tr>
+<tr class="separator:a8c4d0eb6f2a620bf7e5b22a57c07380b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08408dc6b860388eb3b08e493f0188d9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a08408dc6b860388eb3b08e493f0188d9"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1SharedMemorySegment.html#a08408dc6b860388eb3b08e493f0188d9">segment_id_</a></td></tr>
+<tr class="memdesc:a08408dc6b860388eb3b08e493f0188d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">segment_id_ is the name of the segment inside the shared memory <br /></td></tr>
+<tr class="separator:a08408dc6b860388eb3b08e493f0188d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af50ac70dca284926b15803f86958b220"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshared__memory_1_1SharedMemorySegment.html#af50ac70dca284926b15803f86958b220">clear_upon_destruction_</a></td></tr>
+<tr class="memdesc:af50ac70dca284926b15803f86958b220"><td class="mdescLeft">&#160;</td><td class="mdescRight">clear_upon_destruction_ flag decides if the segment should be cleared upon destruction.  <a href="#af50ac70dca284926b15803f86958b220">More...</a><br /></td></tr>
+<tr class="separator:af50ac70dca284926b15803f86958b220"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="classshared__memory_1_1SharedMemorySegment.html" title="The SharedMemorySegment contains the pointers of the shared objects in on shared memrory segment...">SharedMemorySegment</a> contains the pointers of the shared objects in on shared memrory segment. </p>
@@ -479,6 +497,54 @@ template&lt;typename ElemType &gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="af50ac70dca284926b15803f86958b220"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool shared_memory::SharedMemorySegment::clear_upon_destruction_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>clear_upon_destruction_ flag decides if the segment should be cleared upon destruction. </p>
+<p>Usage: typically only one process should set this flag to true. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8c4d0eb6f2a620bf7e5b22a57c07380b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceshared__memory.html#ae50b2192256821112a69e47d5314b467">ShmObjects</a> shared_memory::SharedMemorySegment::objects_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>objects_ are all the data stored in the segment. </p>
+<p>WARNING here we use void* so the use of the set and get functions is the RESPONSABILITY of the user.</p>
+<p>The user is to use the SAME type when calling set and get using the shared memory </p>
 
 </div>
 </div>

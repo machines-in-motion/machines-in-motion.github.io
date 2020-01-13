@@ -1,16 +1,8 @@
 var searchData=
 [
-  ['get',['get',['../classreal__time__tools_1_1SingletypeThreadsafeObject.html#adb4e58f3057002b931e570374cb8604e',1,'real_time_tools::SingletypeThreadsafeObject::get(const size_t &amp;index=0) const '],['../classreal__time__tools_1_1SingletypeThreadsafeObject.html#a72ed3358cc661ea9d5681ee359aed2e4',1,'real_time_tools::SingletypeThreadsafeObject::get(const std::string &amp;name) const '],['../classreal__time__tools_1_1SingletypeThreadsafeObject.html#a08d539478b86e0243de5fe2fa1680c06',1,'real_time_tools::SingletypeThreadsafeObject::get() const '],['../classreal__time__tools_1_1ThreadsafeObject.html#ad04e1268e2988a199e785dca817b937a',1,'real_time_tools::ThreadsafeObject::get()']]],
-  ['get_5favg_5felapsed_5fsec',['get_avg_elapsed_sec',['../classreal__time__tools_1_1Timer.html#a0b5b997f0984a684a16c5e35e5ca07e7',1,'real_time_tools::Timer']]],
-  ['get_5fbauderate',['get_bauderate',['../classreal__time__tools_1_1PortConfig.html#a9dc2941d278825ecc20a5f260a7fb076',1,'real_time_tools::PortConfig']]],
-  ['get_5fcurrent_5fdate_5fstr',['get_current_date_str',['../classreal__time__tools_1_1Timer.html#a6e5ef2fc811582b8ff4fe52775525e14',1,'real_time_tools::Timer']]],
-  ['get_5fcurrent_5ffrequency',['get_current_frequency',['../classreal__time__tools_1_1RealTimeCheck.html#a1cd5c3fb05a46970361064348c57197d',1,'real_time_tools::RealTimeCheck']]],
-  ['get_5fcurrent_5ftime_5fms',['get_current_time_ms',['../classreal__time__tools_1_1Timer.html#aa89f45d2228eb343418c71afb5eaf9b5',1,'real_time_tools::Timer']]],
-  ['get_5fcurrent_5ftime_5fsec',['get_current_time_sec',['../classreal__time__tools_1_1Timer.html#aa1e7794aa57dfba12f7cc30c852ea08c',1,'real_time_tools::Timer']]],
-  ['get_5fhome_5fdir',['get_home_dir',['../iostream_8hpp.html#a21f87296dd11ab3784e7b793033a21ed',1,'real_time_tools']]],
-  ['get_5flog_5fdir',['get_log_dir',['../iostream_8hpp.html#a5146f16f97588edcc7dbe28641f4a1fd',1,'real_time_tools']]],
-  ['get_5fmax_5felapsed_5fsec',['get_max_elapsed_sec',['../classreal__time__tools_1_1Timer.html#a365c7dfdddf6c3f14b41bd65b01bc79a',1,'real_time_tools::Timer']]],
-  ['get_5fmin_5felapsed_5fsec',['get_min_elapsed_sec',['../classreal__time__tools_1_1Timer.html#a7ff2401f6c1e28993575f153430db8ef',1,'real_time_tools::Timer']]],
-  ['get_5fstatistics',['get_statistics',['../classreal__time__tools_1_1RealTimeCheck.html#a4d9614b08d2b4bf7162e14c473b7d491',1,'real_time_tools::RealTimeCheck']]],
-  ['get_5fstd_5fdev_5felapsed_5fsec',['get_std_dev_elapsed_sec',['../classreal__time__tools_1_1Timer.html#a417d3213c6f315b9a27ad424410c7440',1,'real_time_tools::Timer']]]
+  ['file_5fid_5f',['file_id_',['../classreal__time__tools_1_1UsbStream.html#a52bf9e29fde33e865daef464a01738af',1,'real_time_tools::UsbStream']]],
+  ['file_5fname_5f',['file_name_',['../classreal__time__tools_1_1UsbStream.html#ac8d1e2727668e9549dda2038248943d5',1,'real_time_tools::UsbStream']]],
+  ['fix_5fcurrent_5fprocess_5fto_5fcpu',['fix_current_process_to_cpu',['../process__manager_8hpp.html#ae4959078e00ed85dd26b9a96dcd8fd3b',1,'real_time_tools']]],
+  ['flush',['flush',['../classreal__time__tools_1_1UsbStream.html#a0bc5fb5783f1833341d55b9b013be6c6',1,'real_time_tools::UsbStream']]],
+  ['frequency',['frequency',['../classConfiguration.html#ac6f09be53002bfb5404a241b3ce5486e',1,'Configuration']]]
 ];

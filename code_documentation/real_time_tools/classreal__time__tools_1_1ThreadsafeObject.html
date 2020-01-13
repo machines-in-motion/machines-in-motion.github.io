@@ -110,6 +110,7 @@ $(document).ready(function(){initNavTree('classreal__time__tools_1_1ThreadsafeOb
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classreal__time__tools_1_1ThreadsafeObject-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">real_time_tools::ThreadsafeObject&lt; Types &gt; Class Template Reference</div>  </div>
@@ -163,6 +164,32 @@ Static Public Attributes</h2></td></tr>
 static const std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classreal__time__tools_1_1ThreadsafeObject.html#af05c02b66f0b75ea12cde9274bc2a97d">SIZE</a> = sizeof...(Types)</td></tr>
 <tr class="memdesc:af05c02b66f0b75ea12cde9274bc2a97d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define the size of the different types. <br /></td></tr>
 <tr class="separator:af05c02b66f0b75ea12cde9274bc2a97d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a2e73d9d8db2fd54768adfd2f67df68fb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2e73d9d8db2fd54768adfd2f67df68fb"></a>
+std::shared_ptr&lt; std::tuple&lt; Types... &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classreal__time__tools_1_1ThreadsafeObject.html#a2e73d9d8db2fd54768adfd2f67df68fb">data_</a></td></tr>
+<tr class="memdesc:a2e73d9d8db2fd54768adfd2f67df68fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">the actual data buffers. <br /></td></tr>
+<tr class="separator:a2e73d9d8db2fd54768adfd2f67df68fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f39feab7508852adab81ad4318f47e6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0f39feab7508852adab81ad4318f47e6"></a>
+std::shared_ptr&lt; std::condition_variable &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classreal__time__tools_1_1ThreadsafeObject.html#a0f39feab7508852adab81ad4318f47e6">condition_</a></td></tr>
+<tr class="memdesc:a0f39feab7508852adab81ad4318f47e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">a condition variable that allow to wait until one data has been changed in the buffer. <br /></td></tr>
+<tr class="separator:a0f39feab7508852adab81ad4318f47e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a202a8fd66fe64138bc0cfa35a8dd745e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a202a8fd66fe64138bc0cfa35a8dd745e"></a>
+std::shared_ptr&lt; std::mutex &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classreal__time__tools_1_1ThreadsafeObject.html#a202a8fd66fe64138bc0cfa35a8dd745e">condition_mutex_</a></td></tr>
+<tr class="memdesc:a202a8fd66fe64138bc0cfa35a8dd745e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The mutex of the condition variable. <br /></td></tr>
+<tr class="separator:a202a8fd66fe64138bc0cfa35a8dd745e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20e108057d1da31ebc416d5b3577ac21"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a20e108057d1da31ebc416d5b3577ac21"></a>
+std::shared_ptr&lt; std::array&lt; size_t, <a class="el" href="classreal__time__tools_1_1ThreadsafeObject.html#af05c02b66f0b75ea12cde9274bc2a97d">SIZE</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classreal__time__tools_1_1ThreadsafeObject.html#a20e108057d1da31ebc416d5b3577ac21">modification_counts_</a></td></tr>
+<tr class="memdesc:a20e108057d1da31ebc416d5b3577ac21"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is counting the data modification occurences for each individual buffers. <br /></td></tr>
+<tr class="separator:a20e108057d1da31ebc416d5b3577ac21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12f866f5a2f955aa3b55b03623033fca"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classreal__time__tools_1_1ThreadsafeObject.html#a12f866f5a2f955aa3b55b03623033fca">total_modification_count_</a></td></tr>
+<tr class="memdesc:a12f866f5a2f955aa3b55b03623033fca"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is counting the all data modification occurences for all buffer.  <a href="#a12f866f5a2f955aa3b55b03623033fca">More...</a><br /></td></tr>
+<tr class="separator:a12f866f5a2f955aa3b55b03623033fca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a4e122257d25cf42a389c56daf41cb7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8a4e122257d25cf42a389c56daf41cb7"></a>
+std::shared_ptr&lt; std::array&lt; std::mutex, <a class="el" href="classreal__time__tools_1_1ThreadsafeObject.html#af05c02b66f0b75ea12cde9274bc2a97d">SIZE</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classreal__time__tools_1_1ThreadsafeObject.html#a8a4e122257d25cf42a389c56daf41cb7">data_mutexes_</a></td></tr>
+<tr class="memdesc:a8a4e122257d25cf42a389c56daf41cb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">These are the individual mutexes of each data upon setting and getting. <br /></td></tr>
+<tr class="separator:a8a4e122257d25cf42a389c56daf41cb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename... Types&gt;<br />
@@ -378,6 +405,32 @@ template&lt;class... Types&gt; </div>
 
 <p>Wait until any data has been changed. </p>
 <dl class="section return"><dt>Returns</dt><dd>size_t </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a12f866f5a2f955aa3b55b03623033fca"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Types&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;size_t&gt; <a class="el" href="classreal__time__tools_1_1ThreadsafeObject.html">real_time_tools::ThreadsafeObject</a>&lt; Types &gt;::total_modification_count_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This is counting the all data modification occurences for all buffer. </p>
+<p>/todo Can't we just some the modification_counts_ array whenever needed? </p>
 
 </div>
 </div>

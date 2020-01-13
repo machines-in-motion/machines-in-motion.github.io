@@ -109,6 +109,7 @@ $(document).ready(function(){initNavTree('classreal__time__tools_1_1ThreadsafeTi
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classreal__time__tools_1_1ThreadsafeTimeseries-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">real_time_tools::ThreadsafeTimeseries&lt; Type &gt; Class Template Reference</div>  </div>
@@ -187,6 +188,40 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classreal__time__tools_1_1ThreadsafeTimeseries.html#ae0a782bf3b1a483647d5d342a994335c">append</a> (const Type &amp;element)</td></tr>
 <tr class="memdesc:ae0a782bf3b1a483647d5d342a994335c"><td class="mdescLeft">&#160;</td><td class="mdescRight">appends a new element to the timeseries, e.g. we go from <img class="formulaInl" alt="$ X_{1:10} $" src="form_14.png"/> to <img class="formulaInl" alt="$ X_{1:11} $" src="form_15.png"/> (where <img class="formulaInl" alt="$ X_{11}=$" src="form_16.png"/> element). if the timeseries length is already equal to its max_length, then the oldest element is discarded, e.g. for a max_length = 10 we would go from <img class="formulaInl" alt="$ X_{1:10} $" src="form_14.png"/> to <img class="formulaInl" alt="$ X_{2:11} $" src="form_17.png"/>. <br /></td></tr>
 <tr class="separator:ae0a782bf3b1a483647d5d342a994335c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ac23cd95c9d5f6344e20db8d318f23005"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac23cd95c9d5f6344e20db8d318f23005"></a>
+std::shared_ptr&lt; std::vector&lt; Type &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classreal__time__tools_1_1ThreadsafeTimeseries.html#ac23cd95c9d5f6344e20db8d318f23005">history_elements_</a></td></tr>
+<tr class="memdesc:ac23cd95c9d5f6344e20db8d318f23005"><td class="mdescLeft">&#160;</td><td class="mdescRight">History of the values. <br /></td></tr>
+<tr class="separator:ac23cd95c9d5f6344e20db8d318f23005"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f90089325fee66a71a413e68f8ab02c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7f90089325fee66a71a413e68f8ab02c"></a>
+std::shared_ptr&lt; std::vector&lt; <a class="el" href="classreal__time__tools_1_1ThreadsafeTimeseries.html#a41e36f99889a580ce56491e573fa77b0">Timestamp</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classreal__time__tools_1_1ThreadsafeTimeseries.html#a7f90089325fee66a71a413e68f8ab02c">history_timestamps_</a></td></tr>
+<tr class="memdesc:a7f90089325fee66a71a413e68f8ab02c"><td class="mdescLeft">&#160;</td><td class="mdescRight">History of the headers. <br /></td></tr>
+<tr class="separator:a7f90089325fee66a71a413e68f8ab02c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa05382a6a6288769cade6f02a25d5d11"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa05382a6a6288769cade6f02a25d5d11"></a>
+<a class="el" href="classreal__time__tools_1_1ThreadsafeTimeseries.html#a9364696c534468d7ad927883b16ca981">Index</a>&#160;</td><td class="memItemRight" valign="bottom"><b>start_timeindex_</b></td></tr>
+<tr class="separator:aa05382a6a6288769cade6f02a25d5d11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07285b5905c1b4c73830a4f69dbd306b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a07285b5905c1b4c73830a4f69dbd306b"></a>
+<a class="el" href="classreal__time__tools_1_1ThreadsafeTimeseries.html#a9364696c534468d7ad927883b16ca981">Index</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classreal__time__tools_1_1ThreadsafeTimeseries.html#a07285b5905c1b4c73830a4f69dbd306b">oldest_timeindex_</a></td></tr>
+<tr class="memdesc:a07285b5905c1b4c73830a4f69dbd306b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Oldest time index. <br /></td></tr>
+<tr class="separator:a07285b5905c1b4c73830a4f69dbd306b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fd574dac314ee5d72ffdb5d578c13ac"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7fd574dac314ee5d72ffdb5d578c13ac"></a>
+<a class="el" href="classreal__time__tools_1_1ThreadsafeTimeseries.html#a9364696c534468d7ad927883b16ca981">Index</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classreal__time__tools_1_1ThreadsafeTimeseries.html#a7fd574dac314ee5d72ffdb5d578c13ac">newest_timeindex_</a></td></tr>
+<tr class="memdesc:a7fd574dac314ee5d72ffdb5d578c13ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Newest time index. <br /></td></tr>
+<tr class="separator:a7fd574dac314ee5d72ffdb5d578c13ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ccddbf7eda7ac6ac257eaef39d9cbc4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8ccddbf7eda7ac6ac257eaef39d9cbc4"></a>
+<a class="el" href="classreal__time__tools_1_1ThreadsafeTimeseries.html#a9364696c534468d7ad927883b16ca981">Index</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classreal__time__tools_1_1ThreadsafeTimeseries.html#a8ccddbf7eda7ac6ac257eaef39d9cbc4">tagged_timeindex_</a></td></tr>
+<tr class="memdesc:a8ccddbf7eda7ac6ac257eaef39d9cbc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tagged time index. <br /></td></tr>
+<tr class="separator:a8ccddbf7eda7ac6ac257eaef39d9cbc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46423f0837bcde91a274d49e9d8a32ee"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a46423f0837bcde91a274d49e9d8a32ee"></a>
+std::shared_ptr&lt; std::condition_variable &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classreal__time__tools_1_1ThreadsafeTimeseries.html#a46423f0837bcde91a274d49e9d8a32ee">condition_</a></td></tr>
+<tr class="memdesc:a46423f0837bcde91a274d49e9d8a32ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">A condition variable that protect the data during copy and reading. <br /></td></tr>
+<tr class="separator:a46423f0837bcde91a274d49e9d8a32ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a755bd4c399df29f2f9b9d2ed748dfae5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a755bd4c399df29f2f9b9d2ed748dfae5"></a>
+std::shared_ptr&lt; std::mutex &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classreal__time__tools_1_1ThreadsafeTimeseries.html#a755bd4c399df29f2f9b9d2ed748dfae5">mutex_</a></td></tr>
+<tr class="memdesc:a755bd4c399df29f2f9b9d2ed748dfae5"><td class="mdescLeft">&#160;</td><td class="mdescRight">A mutex variable that protect the data during copy and reading. <br /></td></tr>
+<tr class="separator:a755bd4c399df29f2f9b9d2ed748dfae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename Type = int&gt;<br />

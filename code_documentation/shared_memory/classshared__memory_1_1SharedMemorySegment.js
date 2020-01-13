@@ -15,5 +15,9 @@ var classshared__memory_1_1SharedMemorySegment =
     [ "register_object_read_only", "classshared__memory_1_1SharedMemorySegment.html#a830fee375b183642b999f6a64240f280", null ],
     [ "set_clear_upon_destruction", "classshared__memory_1_1SharedMemorySegment.html#ae2eb51704f44076db6ce79054e9d2572", null ],
     [ "set_object", "classshared__memory_1_1SharedMemorySegment.html#a16e6213d7dd1984799bbd8fbe14225dc", null ],
-    [ "mutex_", "classshared__memory_1_1SharedMemorySegment.html#a9e72fec52b3c76b9c2b0809b40b4e11d", null ]
+    [ "clear_upon_destruction_", "classshared__memory_1_1SharedMemorySegment.html#af50ac70dca284926b15803f86958b220", null ],
+    [ "mutex_", "classshared__memory_1_1SharedMemorySegment.html#a9e72fec52b3c76b9c2b0809b40b4e11d", null ],
+    [ "objects_", "classshared__memory_1_1SharedMemorySegment.html#a8c4d0eb6f2a620bf7e5b22a57c07380b", null ],
+    [ "segment_id_", "classshared__memory_1_1SharedMemorySegment.html#a08408dc6b860388eb3b08e493f0188d9", null ],
+    [ "segment_manager_", "classshared__memory_1_1SharedMemorySegment.html#af775c0982687b6e9bc9856b21aa1e009", null ]
 ];

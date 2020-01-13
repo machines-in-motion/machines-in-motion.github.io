@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['index',['Index',['../classreal__time__tools_1_1ThreadsafeTimeseries.html#a9364696c534468d7ad927883b16ca981',1,'real_time_tools::ThreadsafeTimeseries']]],
-  ['initialize',['initialize',['../classreal__time__tools_1_1Spinner.html#aadeb66828ba2635858876491f1ffac11',1,'real_time_tools::Spinner']]],
-  ['iostream_2ecpp',['iostream.cpp',['../iostream_8cpp.html',1,'']]],
-  ['iostream_2ehpp',['iostream.hpp',['../iostream_8hpp.html',1,'']]],
-  ['is_5fcontinuous_5fmode_5fon',['is_continuous_mode_on',['../demo__usb__stream__imu__3DM__GX3__25_8cpp.html#a8a096d7f567dad6d28f0fd870ba6bb43',1,'demo_usb_stream_imu_3DM_GX3_25.cpp']]]
+  ['has_5fchanged_5fsince_5ftag',['has_changed_since_tag',['../classreal__time__tools_1_1ThreadsafeTimeseries.html#ab9adfbafe82cd0dae68d1ba3607f5ecb',1,'real_time_tools::ThreadsafeTimeseries']]],
+  ['history_5felements_5f',['history_elements_',['../classreal__time__tools_1_1ThreadsafeTimeseries.html#ac23cd95c9d5f6344e20db8d318f23005',1,'real_time_tools::ThreadsafeTimeseries']]],
+  ['history_5ftimestamps_5f',['history_timestamps_',['../classreal__time__tools_1_1ThreadsafeTimeseries.html#a7f90089325fee66a71a413e68f8ab02c',1,'real_time_tools::ThreadsafeTimeseries']]]
 ];

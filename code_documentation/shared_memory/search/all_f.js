@@ -2,6 +2,8 @@ var searchData=
 [
   ['shared_20memory',['Shared Memory',['../md_README.html',1,'']]],
   ['segment_5fexists',['segment_exists',['../namespaceshared__memory.html#a82297c2b7b85c57c53578749c9bd6429',1,'shared_memory']]],
+  ['segment_5fid_5f',['segment_id_',['../classshared__memory_1_1SharedMemorySegment.html#a08408dc6b860388eb3b08e493f0188d9',1,'shared_memory::SharedMemorySegment']]],
+  ['segment_5fmanager_5f',['segment_manager_',['../classshared__memory_1_1LockedConditionVariable.html#ae6a197846be3bd4ccf4899754778f16b',1,'shared_memory::LockedConditionVariable::segment_manager_()'],['../classshared__memory_1_1SharedMemorySegment.html#af775c0982687b6e9bc9856b21aa1e009',1,'shared_memory::SharedMemorySegment::segment_manager_()']]],
   ['segmentinfo',['SegmentInfo',['../classshared__memory_1_1SegmentInfo.html',1,'shared_memory']]],
   ['segmentinfo',['SegmentInfo',['../classshared__memory_1_1SegmentInfo.html#a254ed3b9d7e7e69a6888c9927504fe3b',1,'shared_memory::SegmentInfo']]],
   ['segmentmap',['SegmentMap',['../namespaceshared__memory.html#a9aeebdfb6185497cac7c093cf3d765c5',1,'shared_memory']]],

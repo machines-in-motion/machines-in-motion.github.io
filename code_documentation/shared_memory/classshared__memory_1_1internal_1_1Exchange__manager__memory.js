@@ -1,5 +1,7 @@
 var classshared__memory_1_1internal_1_1Exchange__manager__memory =
 [
+    [ "consumer_queue", "classshared__memory_1_1internal_1_1Exchange__manager__memory.html#acfdce096249f1dd920c42d65176ba587", null ],
+    [ "producer_queue", "classshared__memory_1_1internal_1_1Exchange__manager__memory.html#acd7500dc11fa85fdff1c62b3bfec9bb5", null ],
     [ "Status", "classshared__memory_1_1internal_1_1Exchange__manager__memory.html#a111ddeef03bfb038bcbc170c28878c08", [
       [ "RESET", "classshared__memory_1_1internal_1_1Exchange__manager__memory.html#a111ddeef03bfb038bcbc170c28878c08ac60720cbbc2fc2421b210ed6da63eb4a", null ],
       [ "WAITING", "classshared__memory_1_1internal_1_1Exchange__manager__memory.html#a111ddeef03bfb038bcbc170c28878c08a437ddb419cf9c1a6399e3a98eae3db51", null ],
@@ -29,6 +31,8 @@ var classshared__memory_1_1internal_1_1Exchange__manager__memory =
     [ "consumed_", "classshared__memory_1_1internal_1_1Exchange__manager__memory.html#a859c731d30b829de85eb92ac9866ae36", null ],
     [ "consumed_buffer_", "classshared__memory_1_1internal_1_1Exchange__manager__memory.html#a2f3336a1a2a55972e4b1c61a81449fcb", null ],
     [ "locker_", "classshared__memory_1_1internal_1_1Exchange__manager__memory.html#a44d72a699c2a76b2ef127f02ee37d26b", null ],
+    [ "nb_char_read_", "classshared__memory_1_1internal_1_1Exchange__manager__memory.html#a954428f2d2e9f7b29cd4201bfb7fa51c", null ],
+    [ "nb_char_written_", "classshared__memory_1_1internal_1_1Exchange__manager__memory.html#a5669c5ec75442d54fd5e004a464233da", null ],
     [ "object_id_consumer_", "classshared__memory_1_1internal_1_1Exchange__manager__memory.html#ae438583144066ca87b4e1d12065b6e83", null ],
     [ "object_id_producer_", "classshared__memory_1_1internal_1_1Exchange__manager__memory.html#ab8c8000af66737cdc65a4a5b6c62cbd8", null ],
     [ "object_id_status_", "classshared__memory_1_1internal_1_1Exchange__manager__memory.html#aa01b4baeff59e90eb679b1fbf3099a02", null ],
