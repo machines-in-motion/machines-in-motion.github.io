@@ -1,11 +1,5 @@
 var searchData=
 [
-  ['terraindescription',['TerrainDescription',['../classmomentumopt_1_1TerrainDescription.html',1,'momentumopt']]],
-  ['terraindescription_2ecpp',['TerrainDescription.cpp',['../TerrainDescription_8cpp.html',1,'']]],
-  ['terraindescription_2ehpp',['TerrainDescription.hpp',['../TerrainDescription_8hpp.html',1,'']]],
-  ['terrainid',['terrainId',['../classmomentumopt_1_1TerrainRegion.html#a754279c40651515f7178ba27c48fd210',1,'momentumopt::TerrainRegion']]],
-  ['terrainregion',['TerrainRegion',['../classmomentumopt_1_1TerrainRegion.html',1,'momentumopt']]],
-  ['trajectorygenerator',['TrajectoryGenerator',['../classmomentumopt_1_1TrajectoryGenerator.html',1,'momentumopt']]],
-  ['trajectorygenerator_2ecpp',['TrajectoryGenerator.cpp',['../TrajectoryGenerator_8cpp.html',1,'']]],
-  ['trajectorygenerator_2ehpp',['TrajectoryGenerator.hpp',['../TrajectoryGenerator_8hpp.html',1,'']]]
+  ['setplannersetting',['setPlannerSetting',['../classmomentumopt_1_1DynamicsFeedback.html#a5f9cc8c11d9267a8f40b8ffc530c29e3',1,'momentumopt::DynamicsFeedback']]],
+  ['solvetime',['solveTime',['../classmomentumopt_1_1DynamicsOptimizer.html#a03fa5e12b4b01f514e29491b30aeacf5',1,'momentumopt::DynamicsOptimizer']]]
 ];

@@ -11,6 +11,7 @@ var NAVTREE =
       [ "Acknowledgements", "index.html#ack", null ],
       [ "Reference", "index.html#reference", null ]
     ] ],
+    [ "License", "license.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],

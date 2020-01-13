@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['setplannersetting',['setPlannerSetting',['../classmomentumopt_1_1DynamicsFeedback.html#a5f9cc8c11d9267a8f40b8ffc530c29e3',1,'momentumopt::DynamicsFeedback']]],
-  ['solvetime',['solveTime',['../classmomentumopt_1_1DynamicsOptimizer.html#a03fa5e12b4b01f514e29491b30aeacf5',1,'momentumopt::DynamicsOptimizer']]]
+  ['requiredangularvelocity',['requiredAngularVelocity',['../OrientationUtils_8hpp.html#a3115339f252c9729fdf7ec50940673bb',1,'momentumopt']]],
+  ['robotacceleration',['RobotAcceleration',['../classmomentumopt_1_1RobotAcceleration.html',1,'momentumopt']]],
+  ['robotposture',['RobotPosture',['../classmomentumopt_1_1RobotPosture.html',1,'momentumopt']]],
+  ['robotvelocity',['RobotVelocity',['../classmomentumopt_1_1RobotVelocity.html',1,'momentumopt']]]
 ];

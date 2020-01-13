@@ -47,6 +47,7 @@ var searchData=
   ['lbfgssolver',['LbfgsSolver',['../classsolver_1_1LbfgsSolver.html',1,'solver']]],
   ['lbfgssolver_2ecpp',['LbfgsSolver.cpp',['../LbfgsSolver_8cpp.html',1,'']]],
   ['lbfgssolver_2ehpp',['LbfgsSolver.hpp',['../LbfgsSolver_8hpp.html',1,'']]],
+  ['license',['License',['../license.html',1,'']]],
   ['linesearch',['linesearch',['../structsolver_1_1lbfgs__parameter__t.html#af36ab8c02ceaede08964cf53a3e200f9',1,'solver::lbfgs_parameter_t']]],
   ['linexpr',['LinExpr',['../classsolver_1_1LinExpr.html',1,'solver']]],
   ['linsolver',['LinSolver',['../classsolver_1_1LinSolver.html',1,'solver']]],
