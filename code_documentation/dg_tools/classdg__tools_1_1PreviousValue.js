@@ -9,5 +9,8 @@ var classdg__tools_1_1PreviousValue =
     [ "CLASS_NAME", "classdg__tools_1_1PreviousValue.html#ae1bcc71c1bdae70ad54f4ba7aa741a6e", null ],
     [ "dataSIN", "classdg__tools_1_1PreviousValue.html#a937b59c8319a7facb7289eff6235f0a1", null ],
     [ "dataSOUT", "classdg__tools_1_1PreviousValue.html#a655e7f859fcf867524ff51d319612b81", null ],
-    [ "previousSOUT", "classdg__tools_1_1PreviousValue.html#a5c76ee891d5ca88769a8b681f8c10bcc", null ]
+    [ "internal_history_", "classdg__tools_1_1PreviousValue.html#aae52a34a0b2e5a8049efb66dc1b80439", null ],
+    [ "is_initialized_", "classdg__tools_1_1PreviousValue.html#aa972a5500930267a6fd84c5570254c22", null ],
+    [ "previousSOUT", "classdg__tools_1_1PreviousValue.html#a5c76ee891d5ca88769a8b681f8c10bcc", null ],
+    [ "size_", "classdg__tools_1_1PreviousValue.html#a343c9292b3dd5f53a02da9c1ebe70cab", null ]
 ];

@@ -107,6 +107,8 @@ $(document).ready(function(){initNavTree('classdg__blmc__robots_1_1DGMTeststand.
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classdg__blmc__robots_1_1DGMTeststand-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">dg_blmc_robots::DGMTeststand Class Reference</div>  </div>
@@ -153,8 +155,63 @@ virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="memitem:a133087f3899672101df62fbf95fac292"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg__blmc__robots_1_1DGMTeststand.html#a133087f3899672101df62fbf95fac292">calibrate_joint_position_callback</a> (dg_blmc_robots::JointCalibration::Request &amp;req, dg_blmc_robots::JointCalibration::Response &amp;res)</td></tr>
 <tr class="memdesc:a133087f3899672101df62fbf95fac292"><td class="mdescLeft">&#160;</td><td class="mdescRight">ROS callback.  <a href="#a133087f3899672101df62fbf95fac292">More...</a><br /></td></tr>
 <tr class="separator:a133087f3899672101df62fbf95fac292"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a0bce1340d617bfd6665cebef4d091ab1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg__blmc__robots_1_1DGMTeststand.html#a0bce1340d617bfd6665cebef4d091ab1">calibrate_joint_position</a> (const Eigen::Vector2d &amp;zero_to_index_angle)</td></tr>
+<tr class="memdesc:a0bce1340d617bfd6665cebef4d091ab1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calibrate the robot joint position.  <a href="#a0bce1340d617bfd6665cebef4d091ab1">More...</a><br /></td></tr>
+<tr class="separator:a0bce1340d617bfd6665cebef4d091ab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a682499397e16186076999d8705e12c95"><td class="memItemLeft" align="right" valign="top">blmc_robots::Teststand&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg__blmc__robots_1_1DGMTeststand.html#a682499397e16186076999d8705e12c95">teststand_</a></td></tr>
+<tr class="memdesc:a682499397e16186076999d8705e12c95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entries for the real hardware.  <a href="#a682499397e16186076999d8705e12c95">More...</a><br /></td></tr>
+<tr class="separator:a682499397e16186076999d8705e12c95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c5db196b671570171458720ea4341a8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7c5db196b671570171458720ea4341a8"></a>
+Eigen::Vector2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg__blmc__robots_1_1DGMTeststand.html#a7c5db196b671570171458720ea4341a8">ctrl_joint_torques_</a></td></tr>
+<tr class="memdesc:a7c5db196b671570171458720ea4341a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">ctrl_joint_torques_ the joint torques to be sent <br /></td></tr>
+<tr class="separator:a7c5db196b671570171458720ea4341a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a788ef9391e891af10ab9b76f18139e5c"><td class="memItemLeft" align="right" valign="top">Eigen::Vector2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg__blmc__robots_1_1DGMTeststand.html#a788ef9391e891af10ab9b76f18139e5c">zero_to_index_angle_from_file_</a></td></tr>
+<tr class="memdesc:a788ef9391e891af10ab9b76f18139e5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">These are the calibration value extracted from the paramters.  <a href="#a788ef9391e891af10ab9b76f18139e5c">More...</a><br /></td></tr>
+<tr class="separator:a788ef9391e891af10ab9b76f18139e5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5821be382bfd2ec8b5bb668b2aacc2ea"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5821be382bfd2ec8b5bb668b2aacc2ea"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg__blmc__robots_1_1DGMTeststand.html#a5821be382bfd2ec8b5bb668b2aacc2ea">was_in_safety_mode_</a></td></tr>
+<tr class="memdesc:a5821be382bfd2ec8b5bb668b2aacc2ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">was_in_safety_mode_ Toggle to keep in safety mode once it was entered. <br /></td></tr>
+<tr class="separator:a5821be382bfd2ec8b5bb668b2aacc2ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a0bce1340d617bfd6665cebef4d091ab1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dg_blmc_robots::DGMTeststand::calibrate_joint_position </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::Vector2d &amp;&#160;</td>
+          <td class="paramname"><em>zero_to_index_angle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calibrate the robot joint position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">zero_to_index_angle</td><td>is the angle between the theoretical zero and the next positive angle. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a133087f3899672101df62fbf95fac292"></a>
 <div class="memitem">
 <div class="memproto">
@@ -262,6 +319,53 @@ false </dd></dl>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a682499397e16186076999d8705e12c95"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">blmc_robots::Teststand dg_blmc_robots::DGMTeststand::teststand_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Entries for the real hardware. </p>
+<p>test_bench_ the real test bench hardware drivers. </p>
+
+</div>
+</div>
+<a class="anchor" id="a788ef9391e891af10ab9b76f18139e5c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::Vector2d dg_blmc_robots::DGMTeststand::zero_to_index_angle_from_file_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>These are the calibration value extracted from the paramters. </p>
+<p>They represent the distance between the theorical zero joint angle and the next jont index. </p>
 
 </div>
 </div>
