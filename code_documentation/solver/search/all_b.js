@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['optimilitycheck',['optimilityCheck',['../classsolver_1_1BnBSolver.html#ae89a77c5cdb675b3496ed522c9217a3a',1,'solver::BnBSolver::optimilityCheck()'],['../classsolver_1_1NcvxBnBSolver.html#a467017be69dbb4af529e4e86313e0849',1,'solver::NcvxBnBSolver::optimilityCheck()']]],
   ['optimizationinfo',['OptimizationInfo',['../classsolver_1_1OptimizationInfo.html',1,'solver']]],
   ['optimizationvariable',['OptimizationVariable',['../classsolver_1_1OptimizationVariable.html',1,'solver']]],
   ['optimizationvariable',['OptimizationVariable',['../classsolver_1_1OptimizationVariable.html#a67ab2819d95bd5511317db1a6985fa46',1,'solver::OptimizationVariable']]],

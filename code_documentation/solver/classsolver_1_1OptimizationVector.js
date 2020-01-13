@@ -31,5 +31,6 @@ var classsolver_1_1OptimizationVector =
     [ "zSoc", "classsolver_1_1OptimizationVector.html#a058f25b538414f81ea3bfe952f075f77", null ],
     [ "zSoc", "classsolver_1_1OptimizationVector.html#a44fd52c48089139775eca2697bad2c2e", null ],
     [ "zSoc", "classsolver_1_1OptimizationVector.html#ae8768187058a30053ba12a736df311f0", null ],
-    [ "zSoc", "classsolver_1_1OptimizationVector.html#a74b5d6b446dc4c77ce29f010d23eb189", null ]
+    [ "zSoc", "classsolver_1_1OptimizationVector.html#a74b5d6b446dc4c77ce29f010d23eb189", null ],
+    [ "cone_", "classsolver_1_1OptimizationVector.html#a0311611bee8d4989922c09255db6b4ae", null ]
 ];

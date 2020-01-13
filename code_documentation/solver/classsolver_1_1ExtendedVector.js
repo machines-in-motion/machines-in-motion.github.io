@@ -17,5 +17,6 @@ var classsolver_1_1ExtendedVector =
     [ "zSoc", "classsolver_1_1ExtendedVector.html#a669b36bbd20e7c8039b13d491971fa46", null ],
     [ "zSoc", "classsolver_1_1ExtendedVector.html#ad20d533ca2eb012fd783860182f80d49", null ],
     [ "zSoc", "classsolver_1_1ExtendedVector.html#a561965bb575e8118e6841b4690d10af0", null ],
-    [ "zSoc", "classsolver_1_1ExtendedVector.html#a089da2e4870cf1b21b8d6d797cbb14ae", null ]
+    [ "zSoc", "classsolver_1_1ExtendedVector.html#a089da2e4870cf1b21b8d6d797cbb14ae", null ],
+    [ "cone_", "classsolver_1_1ExtendedVector.html#a17a96ed33db529a5e9eccf96510315be", null ]
 ];

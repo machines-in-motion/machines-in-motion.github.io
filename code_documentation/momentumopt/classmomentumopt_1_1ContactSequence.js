@@ -10,5 +10,7 @@ var classmomentumopt_1_1ContactSequence =
     [ "numEndeffectorContacts", "classmomentumopt_1_1ContactSequence.html#a718b085b40f65b82a829c6a2dbcbd9a4", null ],
     [ "numOptimizationContacts", "classmomentumopt_1_1ContactSequence.html#aeb07ba046ebb1effe4704afb2e49b8bf", null ],
     [ "toString", "classmomentumopt_1_1ContactSequence.html#a53f28660bf9db36e5aa252009cc3ac4b", null ],
-    [ "operator<<", "classmomentumopt_1_1ContactSequence.html#af7c7ad61e79911b87d73d7e547378381", null ]
+    [ "operator<<", "classmomentumopt_1_1ContactSequence.html#af7c7ad61e79911b87d73d7e547378381", null ],
+    [ "endeffector_contacts_", "classmomentumopt_1_1ContactSequence.html#ae93b2949166319bc0fc681f289cd9813", null ],
+    [ "num_optimization_contacts_", "classmomentumopt_1_1ContactSequence.html#a2b34ab190a28079d76dba1b438a5bd72", null ]
 ];

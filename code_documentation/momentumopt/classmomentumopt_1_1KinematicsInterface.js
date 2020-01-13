@@ -21,9 +21,19 @@ var classmomentumopt_1_1KinematicsInterface =
     [ "endeffectorJacobian", "classmomentumopt_1_1KinematicsInterface.html#a822b4063505fdb84fda69d417147f51e", null ],
     [ "endeffectorJacobians", "classmomentumopt_1_1KinematicsInterface.html#a461b3b31ecf65ee0af3c299e6b6526df", null ],
     [ "endeffectorJacobians", "classmomentumopt_1_1KinematicsInterface.html#a20e8e457e16e3dcafcf14aae4b5b582d", null ],
+    [ "getSetting", "classmomentumopt_1_1KinematicsInterface.html#ac52f01783551052e595da9efd1162154", null ],
+    [ "getSetting", "classmomentumopt_1_1KinematicsInterface.html#abc174e9b1cceff576430e77c02b1910f", null ],
     [ "initialize", "classmomentumopt_1_1KinematicsInterface.html#a5a3c128b728ecf3e594578a38a5df7e9", null ],
     [ "integratePosture", "classmomentumopt_1_1KinematicsInterface.html#afd6f5772c87c126acafef0b664b833d7", null ],
+    [ "internalInitialization", "classmomentumopt_1_1KinematicsInterface.html#ad8d242b705464559fa8401e066fdd45f", null ],
     [ "logarithmicMap", "classmomentumopt_1_1KinematicsInterface.html#ab21eb0c0d202dbe4eb28ca79dda0de46", null ],
     [ "updateJacobiansAndState", "classmomentumopt_1_1KinematicsInterface.html#a3785221f6cfb47b5ac337a51a2237775", null ],
-    [ "KinematicsOptimizer", "classmomentumopt_1_1KinematicsInterface.html#aaf4b0b4fa742820a44e715bd06da76ae", null ]
+    [ "KinematicsOptimizer", "classmomentumopt_1_1KinematicsInterface.html#aaf4b0b4fa742820a44e715bd06da76ae", null ],
+    [ "center_of_mass_jacobian_", "classmomentumopt_1_1KinematicsInterface.html#a5d7eec79a8e2faf5f8edaf05ea4f7cb3", null ],
+    [ "centroidal_momentum_matrix_", "classmomentumopt_1_1KinematicsInterface.html#ab79ce37e60bd2f19fbd1dda5875c33fa", null ],
+    [ "centroidal_momentum_matrix_variation_", "classmomentumopt_1_1KinematicsInterface.html#a8f66a892b6859fe827b459e05101b5d2", null ],
+    [ "constraints_matrix_", "classmomentumopt_1_1KinematicsInterface.html#a843a0a9897f7cf16c075ec6e6b3736a7", null ],
+    [ "constraints_vector_", "classmomentumopt_1_1KinematicsInterface.html#af1e7f9b2207f05ff204112abe08d5a52", null ],
+    [ "endeffector_jacobians_", "classmomentumopt_1_1KinematicsInterface.html#adf3004650aacb3e7e3f08b5ad8573417", null ],
+    [ "planner_setting_", "classmomentumopt_1_1KinematicsInterface.html#a420839e6b5565e16ce2060aa63ec9a9e", null ]
 ];

@@ -1,5 +1,7 @@
 var classrt__solver_1_1RtMatrixUtils =
 [
+    [ "RtMatrixUtils", "classrt__solver_1_1RtMatrixUtils.html#ad8fee6970e7ab371bf145fc68a11994d", null ],
+    [ "~RtMatrixUtils", "classrt__solver_1_1RtMatrixUtils.html#a0936598e5dd8115136705712a301a256", null ],
     [ "append", "classrt__solver_1_1RtMatrixUtils.html#adaf1bcf58f2e648753fc5100ce6438b3", null ],
     [ "appendAtColumn", "classrt__solver_1_1RtMatrixUtils.html#a9301f55bcfea18be61f2d208e042e60a", null ],
     [ "computeNullspaceMap", "classrt__solver_1_1RtMatrixUtils.html#a444ecad4117e2badc48a8f8f48dca28d", null ],

@@ -8,6 +8,7 @@ var searchData=
   ['conicproblem_2ehpp',['ConicProblem.hpp',['../ConicProblem_8hpp.html',1,'']]],
   ['conicvector',['ConicVector',['../classsolver_1_1ConicVector.html',1,'solver']]],
   ['conservativeresize',['conservativeResize',['../classrt__solver_1_1RtMatrixUtils.html#aa2a3e5a73918c5895d2addc66339c71a',1,'rt_solver::RtMatrixUtils']]],
+  ['createbranches',['createBranches',['../classsolver_1_1BnBSolver.html#a87980cce7f029fb5b121748412d85418',1,'solver::BnBSolver::createBranches()'],['../classsolver_1_1NcvxBnBSolver.html#a4302807b022f68c5dca51d8eac0921dd',1,'solver::NcvxBnBSolver::createBranches()']]],
   ['cubic_5fminimizer',['CUBIC_MINIMIZER',['../LbfgsSolver_8cpp.html#a9d3a80cab0ec28e3ee66ae4ffc80ec38',1,'LbfgsSolver.cpp']]],
   ['cubic_5fminimizer2',['CUBIC_MINIMIZER2',['../LbfgsSolver_8cpp.html#af8051d35306d140ca1231a12d7cdd9f3',1,'LbfgsSolver.cpp']]],
   ['cvxinfoprinter',['CvxInfoPrinter',['../classsolver_1_1CvxInfoPrinter.html',1,'solver']]],

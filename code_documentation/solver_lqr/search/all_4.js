@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['ocpbase',['OcpBase',['../classsolverlqr_1_1OcpBase.html',1,'solverlqr']]],
-  ['ocpdescription_2ecpp',['OcpDescription.cpp',['../OcpDescription_8cpp.html',1,'']]],
-  ['ocpdescription_2ehpp',['OcpDescription.hpp',['../OcpDescription_8hpp.html',1,'']]]
+  ['license',['License',['../license.html',1,'']]],
+  ['lqrinfoprinter',['LqrInfoPrinter',['../classsolverlqr_1_1LqrInfoPrinter.html',1,'solverlqr']]],
+  ['lqrinfoprinter_2ecpp',['LqrInfoPrinter.cpp',['../LqrInfoPrinter_8cpp.html',1,'']]],
+  ['lqrinfoprinter_2ehpp',['LqrInfoPrinter.hpp',['../LqrInfoPrinter_8hpp.html',1,'']]],
+  ['lqroptimizationinfo',['LqrOptimizationInfo',['../classsolverlqr_1_1LqrOptimizationInfo.html',1,'solverlqr']]]
 ];

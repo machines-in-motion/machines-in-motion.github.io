@@ -13,5 +13,7 @@ var classsolverlqr_1_1ControlBase =
     [ "operator+=", "classsolverlqr_1_1ControlBase.html#a0a3cb0f634f78cba7b28ce34597a4849", null ],
     [ "operator=", "classsolverlqr_1_1ControlBase.html#a3958d7c62fe8c2fbf84f8b02a664b959", null ],
     [ "setRandom", "classsolverlqr_1_1ControlBase.html#ac03ab50253be7f1974d2fd402c93e7d6", null ],
-    [ "setZero", "classsolverlqr_1_1ControlBase.html#a792280b9954715bee22db8847f7d81e3", null ]
+    [ "setZero", "classsolverlqr_1_1ControlBase.html#a792280b9954715bee22db8847f7d81e3", null ],
+    [ "feedback_", "classsolverlqr_1_1ControlBase.html#ac202801a4dc25aae35b4d8fd2338248e", null ],
+    [ "feedforward_", "classsolverlqr_1_1ControlBase.html#a0c20e08dd8be6e2c8316e168afcd25f8", null ]
 ];

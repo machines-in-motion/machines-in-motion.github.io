@@ -12,5 +12,6 @@ var classsolverlqr_1_1StateBase =
     [ "operator=", "classsolverlqr_1_1StateBase.html#a357ce6cc38bd2c3b5ad19d3264a430e7", null ],
     [ "resize", "classsolverlqr_1_1StateBase.html#ae8fa9e666a26989a2c2f424d28b5e2b5", null ],
     [ "stateVector", "classsolverlqr_1_1StateBase.html#a341cbcd87ba0a83cc2f507ac8149d8a5", null ],
-    [ "stateVector", "classsolverlqr_1_1StateBase.html#a4531e8a6bdec5fe34ac56835fd8c4471", null ]
+    [ "stateVector", "classsolverlqr_1_1StateBase.html#a4531e8a6bdec5fe34ac56835fd8c4471", null ],
+    [ "state_", "classsolverlqr_1_1StateBase.html#a1b402f42412d2811c61ca077e7fabe47", null ]
 ];

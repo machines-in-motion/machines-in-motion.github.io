@@ -18,5 +18,6 @@ var classsolver_1_1Vector =
     [ "zSoc", "classsolver_1_1Vector.html#a35ef15d4b2dfeed564962f3d47850b89", null ],
     [ "zSoc", "classsolver_1_1Vector.html#a4fcbac01b28afccd900c6d9d7d97bf24", null ],
     [ "zSoc", "classsolver_1_1Vector.html#a569053596658c7d576e6271ec851a84d", null ],
-    [ "zSoc", "classsolver_1_1Vector.html#a11acd19519379bf3227a670795178f30", null ]
+    [ "zSoc", "classsolver_1_1Vector.html#a11acd19519379bf3227a670795178f30", null ],
+    [ "cone_", "classsolver_1_1Vector.html#a7e4dc93eb2b61862e77e711bfef78f7a", null ]
 ];

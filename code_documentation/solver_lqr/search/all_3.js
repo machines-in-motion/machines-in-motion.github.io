@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['license',['License',['../license.html',1,'']]],
-  ['lqrinfoprinter',['LqrInfoPrinter',['../classsolverlqr_1_1LqrInfoPrinter.html',1,'solverlqr']]],
-  ['lqrinfoprinter_2ecpp',['LqrInfoPrinter.cpp',['../LqrInfoPrinter_8cpp.html',1,'']]],
-  ['lqrinfoprinter_2ehpp',['LqrInfoPrinter.hpp',['../LqrInfoPrinter_8hpp.html',1,'']]],
-  ['lqroptimizationinfo',['LqrOptimizationInfo',['../classsolverlqr_1_1LqrOptimizationInfo.html',1,'solverlqr']]]
+  ['finitedifferences',['FiniteDifferences',['../classsolverlqr_1_1FiniteDifferences.html',1,'solverlqr']]],
+  ['finitedifferences_2ecpp',['FiniteDifferences.cpp',['../FiniteDifferences_8cpp.html',1,'']]],
+  ['finitedifferences_2ehpp',['FiniteDifferences.hpp',['../FiniteDifferences_8hpp.html',1,'']]],
+  ['forwardpass',['ForwardPass',['../classsolverlqr_1_1ForwardPass.html',1,'solverlqr']]],
+  ['forwardpass_2ecpp',['ForwardPass.cpp',['../ForwardPass_8cpp.html',1,'']]],
+  ['forwardpass_2ehpp',['ForwardPass.hpp',['../ForwardPass_8hpp.html',1,'']]]
 ];

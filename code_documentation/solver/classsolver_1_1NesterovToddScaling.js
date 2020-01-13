@@ -22,5 +22,14 @@ var classsolver_1_1NesterovToddScaling =
     [ "v1", "classsolver_1_1NesterovToddScaling.html#aa3184b293af423aa9c00064411004664", null ],
     [ "w", "classsolver_1_1NesterovToddScaling.html#a54067905ee438f534b21bf4ed34b3f2e", null ],
     [ "w", "classsolver_1_1NesterovToddScaling.html#a009c44c2f73cd5233413f7e450f38f8f", null ],
-    [ "Cone", "classsolver_1_1NesterovToddScaling.html#a03209e24ad2bf104e4a8d1daa63d38e3", null ]
+    [ "Cone", "classsolver_1_1NesterovToddScaling.html#a03209e24ad2bf104e4a8d1daa63d38e3", null ],
+    [ "d1_", "classsolver_1_1NesterovToddScaling.html#ae685a580ec82a489ac04890a5a0faa70", null ],
+    [ "eta_", "classsolver_1_1NesterovToddScaling.html#a5ba3332881ca913b89ccf874ce948728", null ],
+    [ "eta_square_", "classsolver_1_1NesterovToddScaling.html#aa87c689661130410d3178c88c6b9c9fe", null ],
+    [ "SOC_id_", "classsolver_1_1NesterovToddScaling.html#a85ce002ffa6901524fac4ca7777ea979", null ],
+    [ "u0_", "classsolver_1_1NesterovToddScaling.html#a24b0ae409209f3b1c1bf36a9f8047ff9", null ],
+    [ "u1_", "classsolver_1_1NesterovToddScaling.html#a0166dcd73f2d4a008fcc5c806fceea4d", null ],
+    [ "v1_", "classsolver_1_1NesterovToddScaling.html#a9746426a0c64a1cb3cea4b636785c755", null ],
+    [ "w_", "classsolver_1_1NesterovToddScaling.html#a458fa1bd4f975a0eccec7ad17936f408", null ],
+    [ "wbar_", "classsolver_1_1NesterovToddScaling.html#a3f9f85336720110c30481f17c25c983d", null ]
 ];

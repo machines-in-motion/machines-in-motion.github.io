@@ -13,5 +13,7 @@ var classsolver_1_1Model =
     [ "getSetting", "classsolver_1_1Model.html#a43597400d0e52456f3c377cbc6c50344", null ],
     [ "getSetting", "classsolver_1_1Model.html#a241ee8991af18f29fc27ca5a3964e8c8", null ],
     [ "optimize", "classsolver_1_1Model.html#ab6896365cc089abd109416342f238a44", null ],
-    [ "setObjective", "classsolver_1_1Model.html#ac5e717445c46513f59d7798e73e0d324", null ]
+    [ "setObjective", "classsolver_1_1Model.html#ac5e717445c46513f59d7798e73e0d324", null ],
+    [ "conic_problem_", "classsolver_1_1Model.html#a65d0b8aa54d353e5304ccf104e0de16a", null ],
+    [ "ncvx_bnb_solver_", "classsolver_1_1Model.html#ab6c6ddc631b60a84171b0f2af14a3a9d", null ]
 ];

@@ -13,5 +13,6 @@ var classsolverlqr_1_1ControlSequence =
     [ "operator=", "classsolverlqr_1_1ControlSequence.html#a9763ca656663c4c127d3d553bcae8a6f", null ],
     [ "resize", "classsolverlqr_1_1ControlSequence.html#a1015ada926bcdc2d1a79a65e43f1de3a", null ],
     [ "setRandom", "classsolverlqr_1_1ControlSequence.html#acf1a94dbf61b3fbfa23d68059e4b4477", null ],
-    [ "size", "classsolverlqr_1_1ControlSequence.html#a949fd9a2d3e07e9851e7bb2c25f8524a", null ]
+    [ "size", "classsolverlqr_1_1ControlSequence.html#a949fd9a2d3e07e9851e7bb2c25f8524a", null ],
+    [ "controlseq_", "classsolverlqr_1_1ControlSequence.html#a3a613736acb4541cfcc57b65d65c60d5", null ]
 ];

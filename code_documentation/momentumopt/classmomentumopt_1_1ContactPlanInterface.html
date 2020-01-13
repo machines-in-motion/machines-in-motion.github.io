@@ -109,6 +109,7 @@ $(document).ready(function(){initNavTree('classmomentumopt_1_1ContactPlanInterfa
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="classmomentumopt_1_1ContactPlanInterface-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">momentumopt::ContactPlanInterface Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
@@ -132,10 +133,11 @@ Collaboration diagram for momentumopt::ContactPlanInterface:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmomentumopt_1_1ContactPlanInterface__coll__graph.png" border="0" usemap="#momentumopt_1_1ContactPlanInterface_coll__map" alt="Collaboration graph"/></div>
 <map name="momentumopt_1_1ContactPlanInterface_coll__map" id="momentumopt_1_1ContactPlanInterface_coll__map">
-<area shape="rect" id="node2" href="classmomentumopt_1_1ViapointSequence.html" title="This class is a container for a sequence of viapoint states for all end&#45;effectors. " alt="" coords="10,5,229,32"/>
-<area shape="rect" id="node3" href="classmomentumopt_1_1PlannerSetting.html" title="momentumopt::PlannerSetting" alt="" coords="20,56,219,83"/>
-<area shape="rect" id="node4" href="classmomentumopt_1_1ContactSequence.html" title="This class is a container for a sequence of contact states, for all end&#45;effectors. " alt="" coords="11,107,228,133"/>
-<area shape="rect" id="node5" href="classmomentumopt_1_1TrajectoryGenerator.html" title="momentumopt::TrajectoryGenerator" alt="" coords="5,157,233,184"/>
+<area shape="rect" id="node2" href="classmomentumopt_1_1ViapointSequence.html" title="This class is a container for a sequence of viapoint states for all end&#45;effectors. " alt="" coords="306,5,525,32"/>
+<area shape="rect" id="node3" href="classmomentumopt_1_1PlannerSetting.html" title="momentumopt::PlannerSetting" alt="" coords="316,56,515,83"/>
+<area shape="rect" id="node4" href="classmomentumopt_1_1ContactSequence.html" title="This class is a container for a sequence of contact states, for all end&#45;effectors. " alt="" coords="307,107,524,133"/>
+<area shape="rect" id="node5" href="classmomentumopt_1_1TrajectoryGenerator.html" title="momentumopt::TrajectoryGenerator" alt="" coords="301,157,529,184"/>
+<area shape="rect" id="node6" href="classmomentumopt_1_1Interpolator.html" title="momentumopt::Interpolator" alt="" coords="5,157,184,184"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -185,6 +187,24 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a57ca792b262e919b8399c2b2587d503f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a57ca792b262e919b8399c2b2587d503f"></a>
 const <a class="el" href="classmomentumopt_1_1PlannerSetting.html">PlannerSetting</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>planner_setting_</b></td></tr>
 <tr class="separator:a57ca792b262e919b8399c2b2587d503f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:af7af27e1d23a15d7d587727677ada96e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af7af27e1d23a15d7d587727677ada96e"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>mapIdToContactTime</b> (const <a class="el" href="classmomentumopt_1_1DynamicsSequence.html">DynamicsSequence</a> &amp;dyn_sequence, int map_id)</td></tr>
+<tr class="separator:af7af27e1d23a15d7d587727677ada96e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac120736d59addaf39996ca9e82412b0f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac120736d59addaf39996ca9e82412b0f"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>findMakeContactId</b> (const <a class="el" href="classmomentumopt_1_1DynamicsSequence.html">DynamicsSequence</a> &amp;dyn_seq, const int search_start_id, int eff_id)</td></tr>
+<tr class="separator:ac120736d59addaf39996ca9e82412b0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaed79f1900fa3379f2b7c92564aa43ca"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaed79f1900fa3379f2b7c92564aa43ca"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>findBreakContactId</b> (const <a class="el" href="classmomentumopt_1_1DynamicsSequence.html">DynamicsSequence</a> &amp;dyn_seq, const int search_start_id, int eff_id)</td></tr>
+<tr class="separator:aaed79f1900fa3379f2b7c92564aa43ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a525654824b6ab1a98fc1d09cbb9bbdc5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a525654824b6ab1a98fc1d09cbb9bbdc5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>findActiveViapoints</b> (Eigen::Vector3d &amp;viapoint_position, int eff_id, int cnt_id)</td></tr>
+<tr class="separator:a525654824b6ab1a98fc1d09cbb9bbdc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecd081fd421f2dd290a6274281e501f9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aecd081fd421f2dd290a6274281e501f9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>generateFlightPhase</b> (<a class="el" href="classmomentumopt_1_1DynamicsSequence.html">DynamicsSequence</a> &amp;dyn_seq, int start_id, int end_id, int eff_id, const Eigen::Quaternion&lt; double &gt; &amp;qini, const Eigen::Quaternion&lt; double &gt; &amp;qend)</td></tr>
+<tr class="separator:aecd081fd421f2dd290a6274281e501f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class implements a simple interface to store a sequence of contacts, including its activation and de-activation time, position and orientation of the contact, and a variable (set to 1) indicating if the forces at this contact are subject to friction cone constraints or (set to 2) if not, such as in the case of hands grasping bars. </p>

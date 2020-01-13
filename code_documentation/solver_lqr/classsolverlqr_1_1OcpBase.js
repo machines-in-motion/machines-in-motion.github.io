@@ -21,5 +21,8 @@ var classsolverlqr_1_1OcpBase =
     [ "BackwardPass", "classsolverlqr_1_1OcpBase.html#ae2c2a0bb70717b3cf5c113613ed5daf3", null ],
     [ "Estimator", "classsolverlqr_1_1OcpBase.html#a23813032f2cad201f537c6c9380440fc", null ],
     [ "FiniteDifferences", "classsolverlqr_1_1OcpBase.html#aa2ebe35f323d82b9e434738750398efc", null ],
-    [ "ForwardPass", "classsolverlqr_1_1OcpBase.html#a6bbc044a2a4fa3bc485db53310f8120f", null ]
+    [ "ForwardPass", "classsolverlqr_1_1OcpBase.html#a6bbc044a2a4fa3bc485db53310f8120f", null ],
+    [ "controlseq_", "classsolverlqr_1_1OcpBase.html#afcfe493fe80cf66c3e2fc1767d37fd5b", null ],
+    [ "setting_", "classsolverlqr_1_1OcpBase.html#a2b8ea65374cb689f9333dc5d84214bef", null ],
+    [ "stateseq_", "classsolverlqr_1_1OcpBase.html#a6bdac0716ef1506be0cfd3f326a887e7", null ]
 ];

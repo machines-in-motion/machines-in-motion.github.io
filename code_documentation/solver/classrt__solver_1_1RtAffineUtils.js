@@ -1,5 +1,7 @@
 var classrt__solver_1_1RtAffineUtils =
 [
+    [ "RtAffineUtils", "classrt__solver_1_1RtAffineUtils.html#a65aed118154a2e6f0ff9de475917087f", null ],
+    [ "~RtAffineUtils", "classrt__solver_1_1RtAffineUtils.html#ad242cd53fbff2e82318c9ab7f06bf7d0", null ],
     [ "append", "classrt__solver_1_1RtAffineUtils.html#a006d5c6ed457dd32e788d507abd77c25", null ],
     [ "append", "classrt__solver_1_1RtAffineUtils.html#ab9e9bcd76b22e1d0c6f745e7f0ed71d8", null ],
     [ "appendAtColumn", "classrt__solver_1_1RtAffineUtils.html#a2a018d41528b654f224e69d6f930be1e", null ],

@@ -2,6 +2,7 @@ var classmomentumopt_1_1ContactState =
 [
     [ "ContactState", "classmomentumopt_1_1ContactState.html#a55a2c1704b532588760c549bfe8bc040", null ],
     [ "~ContactState", "classmomentumopt_1_1ContactState.html#af935983ad732bd54733c7d29e6e5bc10", null ],
+    [ "ContactState", "classmomentumopt_1_1ContactState.html#a63ed72ec8002a3b12eed384a4af197f9", null ],
     [ "contactActivationTime", "classmomentumopt_1_1ContactState.html#af26e05ffa857681582bcb6067fc3fc51", null ],
     [ "contactActivationTime", "classmomentumopt_1_1ContactState.html#a81b25f3c00de8281096872c1ed44eea3", null ],
     [ "contactActivationTime", "classmomentumopt_1_1ContactState.html#afe22deaa283cc9e76bea8f88ed06b9f5", null ],
@@ -23,5 +24,13 @@ var classmomentumopt_1_1ContactState =
     [ "terrainId", "classmomentumopt_1_1ContactState.html#ac4341551311add5a078481d77110c261", null ],
     [ "toString", "classmomentumopt_1_1ContactState.html#a68d9e1aa7345c4876cb9a4dfb9e89b9d", null ],
     [ "ContactSequence", "classmomentumopt_1_1ContactState.html#a29d6b151c8347a3bf94af93a10fb4302", null ],
-    [ "operator<<", "classmomentumopt_1_1ContactState.html#ad030c20cd9edcaecee602556c0f4d46b", null ]
+    [ "operator<<", "classmomentumopt_1_1ContactState.html#ad030c20cd9edcaecee602556c0f4d46b", null ],
+    [ "contact_type_", "classmomentumopt_1_1ContactState.html#ae82c73810e51087e4fcdc005b4b99ea9", null ],
+    [ "optimization_id_", "classmomentumopt_1_1ContactState.html#a60faefe0466070612178f30bdb66c426", null ],
+    [ "orientation_", "classmomentumopt_1_1ContactState.html#a25bf752fb18114bfcd5d7cf35a5bb4f3", null ],
+    [ "position_", "classmomentumopt_1_1ContactState.html#a59adbfb09b001b2ba79336a512677872", null ],
+    [ "selected_as_active_", "classmomentumopt_1_1ContactState.html#a45b5d43760e05d25d24b221c1b280de5", null ],
+    [ "terrain_id_", "classmomentumopt_1_1ContactState.html#a4e0db2786e3c57669f94c8b6fae4a453", null ],
+    [ "time_end_", "classmomentumopt_1_1ContactState.html#a7c47d592fdaff21c025c9c4cbf80c4b6", null ],
+    [ "time_ini_", "classmomentumopt_1_1ContactState.html#a6bbac9d90f00d3131a88cdc05cbc96a5", null ]
 ];

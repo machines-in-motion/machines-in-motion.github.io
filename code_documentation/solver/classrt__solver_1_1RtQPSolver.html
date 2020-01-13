@@ -107,6 +107,9 @@ $(document).ready(function(){initNavTree('classrt__solver_1_1RtQPSolver.html',''
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-types">Private Types</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classrt__solver_1_1RtQPSolver-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">rt_solver::RtQPSolver&lt; nVars, nEqCon, nIneqCon &gt; Class Template Reference</div>  </div>
@@ -132,6 +135,7 @@ Collaboration diagram for rt_solver::RtQPSolver&lt; nVars, nEqCon, nIneqCon &gt;
 <area shape="rect" id="node6" href="structrt__solver_1_1RtMatrix.html" title="rt_solver::RtMatrix\l\&lt; max_num_eq, max_dim_qp \&gt;" alt="" coords="5,215,212,256"/>
 <area shape="rect" id="node7" href="structrt__solver_1_1RtVector.html" title="rt_solver::RtVector\l\&lt; max_num_eq \&gt;" alt="" coords="43,280,175,321"/>
 <area shape="rect" id="node8" href="structrt__solver_1_1RtVector.html" title="rt_solver::RtVector\l\&lt; max_num_ineq \&gt;" alt="" coords="41,345,176,387"/>
+<area shape="rect" id="node9" href="structrt__solver_1_1RtMatrix.html" title="rt_solver::RtMatrix\l\&lt; nVars, nVars \&gt;" alt="" coords="361,248,491,289"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -217,6 +221,61 @@ virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>checkSolution
 void&#160;</td><td class="memItemRight" valign="bottom"><b>printProblemCondition</b> (std::ostream &amp;stream)</td></tr>
 <tr class="separator:a00bb8f1666c8d1554824903abb9a947c inherit pub_methods_classrt__solver_1_1RtQPSolverInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr class="memitem:aeee7dd8b013bc79ab1ac3f3e096c1f03"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeee7dd8b013bc79ab1ac3f3e096c1f03"></a>
+typedef <a class="el" href="classrt__solver_1_1RtQPSolverInterface.html">RtQPSolverInterface</a>&lt; nVars, nEqCon, nIneqCon &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>BaseClass</b></td></tr>
+<tr class="separator:aeee7dd8b013bc79ab1ac3f3e096c1f03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a7b5e5693e77d9574e3923a0c91ddbd71"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7b5e5693e77d9574e3923a0c91ddbd71"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> ()</td></tr>
+<tr class="separator:a7b5e5693e77d9574e3923a0c91ddbd71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5edee46576ade6424f4aba9e3dbbf1f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac5edee46576ade6424f4aba9e3dbbf1f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> (int dim_qp, int num_eq, int num_ineq)</td></tr>
+<tr class="separator:ac5edee46576ade6424f4aba9e3dbbf1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51b6ff5a97a22613c6873353e26df23f"><td class="memTemplParams" colspan="2"><a class="anchor" id="a51b6ff5a97a22613c6873353e26df23f"></a>
+template&lt;typename Scalar &gt; </td></tr>
+<tr class="memitem:a51b6ff5a97a22613c6873353e26df23f"><td class="memTemplItemLeft" align="right" valign="top">Scalar&#160;</td><td class="memTemplItemRight" valign="bottom"><b>distance</b> (Scalar a, Scalar b)</td></tr>
+<tr class="separator:a51b6ff5a97a22613c6873353e26df23f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a948573b828540c04558e281d38cb59cf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a948573b828540c04558e281d38cb59cf"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>computeD</b> (typename <a class="el" href="structrt__solver_1_1RtVector.html">RtVector</a>&lt; nVars &gt;::d &amp;d, const typename <a class="el" href="structrt__solver_1_1RtMatrix.html">RtMatrix</a>&lt; nVars, nVars &gt;::d &amp;J, const typename <a class="el" href="structrt__solver_1_1RtVector.html">RtVector</a>&lt; nVars &gt;::d &amp;np)</td></tr>
+<tr class="separator:a948573b828540c04558e281d38cb59cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e9b85156b0b9d2f7ebb3060d29a786d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5e9b85156b0b9d2f7ebb3060d29a786d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>updateZ</b> (typename <a class="el" href="structrt__solver_1_1RtVector.html">RtVector</a>&lt; nVars &gt;::d &amp;z, const typename <a class="el" href="structrt__solver_1_1RtMatrix.html">RtMatrix</a>&lt; nVars, nVars &gt;::d &amp;J, const typename <a class="el" href="structrt__solver_1_1RtVector.html">RtVector</a>&lt; nVars &gt;::d &amp;d, int iq)</td></tr>
+<tr class="separator:a5e9b85156b0b9d2f7ebb3060d29a786d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef4e17c5895a145c15b42d85a3fec48b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aef4e17c5895a145c15b42d85a3fec48b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>updateR</b> (const typename <a class="el" href="structrt__solver_1_1RtMatrix.html">RtMatrix</a>&lt; nVars, nVars &gt;::d &amp;R, typename <a class="el" href="structrt__solver_1_1RtVector.html">RtVector</a>&lt; nIneqCon+nEqCon &gt;::d &amp;r, const typename <a class="el" href="structrt__solver_1_1RtVector.html">RtVector</a>&lt; nVars &gt;::d &amp;d, int iq)</td></tr>
+<tr class="separator:aef4e17c5895a145c15b42d85a3fec48b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a030bb4d5eee5b88d5cfe678bf6e45e40"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a030bb4d5eee5b88d5cfe678bf6e45e40"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>addConstraint</b> (typename <a class="el" href="structrt__solver_1_1RtMatrix.html">RtMatrix</a>&lt; nVars, nVars &gt;::d &amp;R, typename <a class="el" href="structrt__solver_1_1RtMatrix.html">RtMatrix</a>&lt; nVars, nVars &gt;::d &amp;J, typename <a class="el" href="structrt__solver_1_1RtVector.html">RtVector</a>&lt; nVars &gt;::d &amp;d, int &amp;iq, double &amp;R_norm)</td></tr>
+<tr class="separator:a030bb4d5eee5b88d5cfe678bf6e45e40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcf45cbe981efbd116e7fa9a0394bc88"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abcf45cbe981efbd116e7fa9a0394bc88"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>deleteConstraint</b> (typename <a class="el" href="structrt__solver_1_1RtMatrix.html">RtMatrix</a>&lt; nVars, nVars &gt;::d &amp;R, typename <a class="el" href="structrt__solver_1_1RtMatrix.html">RtMatrix</a>&lt; nVars, nVars &gt;::d &amp;J, typename <a class="el" href="structrt__solver_1_1RtVector.html">RtVector</a>&lt; nIneqCon+nEqCon &gt;::i &amp;A, typename <a class="el" href="structrt__solver_1_1RtVector.html">RtVector</a>&lt; nIneqCon+nEqCon &gt;::d &amp;u, int p, int &amp;iq, int l)</td></tr>
+<tr class="separator:abcf45cbe981efbd116e7fa9a0394bc88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90f743b06f1d05d475818c0a4666d0cf"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrt__solver_1_1RtQPSolver.html#a90f743b06f1d05d475818c0a4666d0cf">solveQP</a> (const typename <a class="el" href="structrt__solver_1_1RtMatrix.html">RtMatrix</a>&lt; nVars, nVars &gt;::d &amp;Hess, const typename <a class="el" href="structrt__solver_1_1RtVector.html">RtVector</a>&lt; nVars &gt;::d &amp;g0, const typename <a class="el" href="structrt__solver_1_1RtMatrix.html">RtMatrix</a>&lt; nEqCon, nVars &gt;::d &amp;CE, const typename <a class="el" href="structrt__solver_1_1RtVector.html">RtVector</a>&lt; nEqCon &gt;::d &amp;ce0, const typename <a class="el" href="structrt__solver_1_1RtMatrix.html">RtMatrix</a>&lt; nIneqCon, nVars &gt;::d &amp;CI, const typename <a class="el" href="structrt__solver_1_1RtVector.html">RtVector</a>&lt; nIneqCon &gt;::d &amp;ci0, typename <a class="el" href="structrt__solver_1_1RtVector.html">RtVector</a>&lt; nVars &gt;::d &amp;x)</td></tr>
+<tr class="memdesc:a90f743b06f1d05d475818c0a4666d0cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main function to solve QP using EigQuadProg min.  <a href="#a90f743b06f1d05d475818c0a4666d0cf">More...</a><br /></td></tr>
+<tr class="separator:a90f743b06f1d05d475818c0a4666d0cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a9da0972590fe3f882819b9132ff0f27a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9da0972590fe3f882819b9132ff0f27a"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>cleanup_ineqs_</b></td></tr>
+<tr class="separator:a9da0972590fe3f882819b9132ff0f27a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab13af98f918f1d6bf53ab49166c0fdb8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab13af98f918f1d6bf53ab49166c0fdb8"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>solver_return_</b></td></tr>
+<tr class="separator:ab13af98f918f1d6bf53ab49166c0fdb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad53bc811d0bff8c912cb7b6813ec3039"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad53bc811d0bff8c912cb7b6813ec3039"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_inverse_provided_</b></td></tr>
+<tr class="separator:ad53bc811d0bff8c912cb7b6813ec3039"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a730b7e9bf5e07657a68fe5fd2ca5d351"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a730b7e9bf5e07657a68fe5fd2ca5d351"></a>
+<a class="el" href="structrt__solver_1_1RtMatrix.html">RtMatrix</a>&lt; nVars, nVars &gt;::d&#160;</td><td class="memItemRight" valign="bottom"><b>Hessian_factor_inv_</b></td></tr>
+<tr class="separator:a730b7e9bf5e07657a68fe5fd2ca5d351"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af89330237d5ea3a11be74712db1cdb28"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af89330237d5ea3a11be74712db1cdb28"></a>
+Eigen::LLT&lt; typename <a class="el" href="structrt__solver_1_1RtMatrix.html">RtMatrix</a>&lt; nVars, nVars &gt;::d, Eigen::Lower &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>chol_</b></td></tr>
+<tr class="separator:af89330237d5ea3a11be74712db1cdb28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_types_classrt__solver_1_1RtQPSolverInterface"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classrt__solver_1_1RtQPSolverInterface')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classrt__solver_1_1RtQPSolverInterface.html">rt_solver::RtQPSolverInterface&lt; nVars, nEqCon, nIneqCon &gt;</a></td></tr>
@@ -249,6 +308,76 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>qp_properties_</b></td
 <a class="el" href="structrt__solver_1_1RtMatrix.html">RtMatrix</a>&lt; max_num_ineq, max_dim_qp &gt;::d&#160;</td><td class="memItemRight" valign="bottom"><b>Ineq_mat_</b></td></tr>
 <tr class="separator:a7ee866eebd6d353d2713cef4a5724ab9 inherit pro_attribs_classrt__solver_1_1RtQPSolverInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a90f743b06f1d05d475818c0a4666d0cf"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int nVars, int nEqCon, int nIneqCon&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="classrt__solver_1_1RtQPSolver.html">rt_solver::RtQPSolver</a>&lt; nVars, nEqCon, nIneqCon &gt;::solveQP </td>
+          <td>(</td>
+          <td class="paramtype">const typename <a class="el" href="structrt__solver_1_1RtMatrix.html">RtMatrix</a>&lt; nVars, nVars &gt;::d &amp;&#160;</td>
+          <td class="paramname"><em>Hess</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const typename <a class="el" href="structrt__solver_1_1RtVector.html">RtVector</a>&lt; nVars &gt;::d &amp;&#160;</td>
+          <td class="paramname"><em>g0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const typename <a class="el" href="structrt__solver_1_1RtMatrix.html">RtMatrix</a>&lt; nEqCon, nVars &gt;::d &amp;&#160;</td>
+          <td class="paramname"><em>CE</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const typename <a class="el" href="structrt__solver_1_1RtVector.html">RtVector</a>&lt; nEqCon &gt;::d &amp;&#160;</td>
+          <td class="paramname"><em>ce0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const typename <a class="el" href="structrt__solver_1_1RtMatrix.html">RtMatrix</a>&lt; nIneqCon, nVars &gt;::d &amp;&#160;</td>
+          <td class="paramname"><em>CI</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const typename <a class="el" href="structrt__solver_1_1RtVector.html">RtVector</a>&lt; nIneqCon &gt;::d &amp;&#160;</td>
+          <td class="paramname"><em>ci0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">typename <a class="el" href="structrt__solver_1_1RtVector.html">RtVector</a>&lt; nVars &gt;::d &amp;&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Main function to solve QP using EigQuadProg min. </p>
+<p>x' Hess x + 2 g0' x s.t. CE x + ce0 = 0 CI x + ci0 &lt;= 0 </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>include/solver/rt_optimizer/<a class="el" href="RtQPSolver_8hpp_source.html">RtQPSolver.hpp</a></li>
 </ul>

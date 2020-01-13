@@ -1,5 +1,7 @@
 var classrt__solver_1_1RtVectorUtils =
 [
+    [ "RtVectorUtils", "classrt__solver_1_1RtVectorUtils.html#a8a95e8266efc27caaaf6ecdf903a8dc5", null ],
+    [ "~RtVectorUtils", "classrt__solver_1_1RtVectorUtils.html#a67b16b46277666b38af4e5753f1d7843", null ],
     [ "append", "classrt__solver_1_1RtVectorUtils.html#a7ceb2deb1b8e51cc9bc9d2019e50592c", null ],
     [ "conservativeResize", "classrt__solver_1_1RtVectorUtils.html#a1f9407d03ceda24f87d6e938fac88b80", null ],
     [ "resize", "classrt__solver_1_1RtVectorUtils.html#a04475e0717d482396f7e7816bd529faf", null ],

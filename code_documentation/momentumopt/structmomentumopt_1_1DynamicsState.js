@@ -53,5 +53,22 @@ var structmomentumopt_1_1DynamicsState =
     [ "time", "structmomentumopt_1_1DynamicsState.html#a812d7dca8056b9c58b0b66e98406c638", null ],
     [ "time", "structmomentumopt_1_1DynamicsState.html#ab4001ac25b1f5ac0a30cf1bdf816c6c0", null ],
     [ "toString", "structmomentumopt_1_1DynamicsState.html#a7e6e85ae3b65f301aaa01927863d4c91", null ],
-    [ "operator<<", "structmomentumopt_1_1DynamicsState.html#a2b9636d0c56aaf7176943e8cc06c6518", null ]
+    [ "operator<<", "structmomentumopt_1_1DynamicsState.html#a2b9636d0c56aaf7176943e8cc06c6518", null ],
+    [ "amom_", "structmomentumopt_1_1DynamicsState.html#a37b9b58738cc940aaadbfcdcf0d498ce", null ],
+    [ "amomd_", "structmomentumopt_1_1DynamicsState.html#a4fe895d758b9a22e5c05810a0de37f36", null ],
+    [ "cnt_ids_", "structmomentumopt_1_1DynamicsState.html#ab9734c7f6d8f751d0358aeed1fcff041", null ],
+    [ "com_", "structmomentumopt_1_1DynamicsState.html#a417bf6be84c8fb9be8045488a0a22168", null ],
+    [ "dtime_", "structmomentumopt_1_1DynamicsState.html#a3b28af3b518531168e5fbd5ab896613e", null ],
+    [ "eefs_trqs_contact_point_", "structmomentumopt_1_1DynamicsState.html#ac537a8b7256540e75ee7a0879366ca0f", null ],
+    [ "eff_accelerations_", "structmomentumopt_1_1DynamicsState.html#a775652d53fd6703a3b31b05fc0f9975a", null ],
+    [ "eff_activations_", "structmomentumopt_1_1DynamicsState.html#a2281932450c843067c5152a1a84527dc", null ],
+    [ "eff_cops_", "structmomentumopt_1_1DynamicsState.html#aac7d650f6723e64c98c3632cd145817f", null ],
+    [ "eff_forces_", "structmomentumopt_1_1DynamicsState.html#a9f20aedb04fc091e742afd133ec3be5c", null ],
+    [ "eff_ids_", "structmomentumopt_1_1DynamicsState.html#a8bf9da370c3ff31a9ffb5cb8806d55c4", null ],
+    [ "eff_orientations_", "structmomentumopt_1_1DynamicsState.html#a4b5eefeb23b8b3b3ad649e6e8a79d57b", null ],
+    [ "eff_positions_", "structmomentumopt_1_1DynamicsState.html#aaca0b00c006b96510143dfa4479d4170", null ],
+    [ "eff_torques_", "structmomentumopt_1_1DynamicsState.html#ac1bc4a45130487096f0b4955952d6dff", null ],
+    [ "eff_velocities_", "structmomentumopt_1_1DynamicsState.html#af4d4aa8a9f0a9d934250cb3c7e73cd47", null ],
+    [ "lmom_", "structmomentumopt_1_1DynamicsState.html#af23f55886a539faf75638e93660003f7", null ],
+    [ "lmomd_", "structmomentumopt_1_1DynamicsState.html#ae8df5fbe10798463f33ff0046045146a", null ]
 ];

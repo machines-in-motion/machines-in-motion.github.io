@@ -39,5 +39,20 @@ var classsolver_1_1SolverStorage =
     [ "ut", "classsolver_1_1SolverStorage.html#a2267da31a966830c49e0e6e74a264c2f", null ],
     [ "ut", "classsolver_1_1SolverStorage.html#ab21d3f4e4deacc5f485cabfb1f87f234", null ],
     [ "v", "classsolver_1_1SolverStorage.html#aa371185c810064099c5e561dd09eba2f", null ],
-    [ "v", "classsolver_1_1SolverStorage.html#ae66a380d455b42d651ce6b40268abcde", null ]
+    [ "v", "classsolver_1_1SolverStorage.html#ae66a380d455b42d651ce6b40268abcde", null ],
+    [ "A_", "classsolver_1_1SolverStorage.html#abd06256bcf9d80139585c70a8944e7f7", null ],
+    [ "Acoeffs_", "classsolver_1_1SolverStorage.html#a3e8b3370c92528ab4b78abc465646251", null ],
+    [ "At_", "classsolver_1_1SolverStorage.html#a4b0a0ffd9953f81d9cd7f61e406df330", null ],
+    [ "cbh_", "classsolver_1_1SolverStorage.html#acbab94ded52da054a4f66978001b403d", null ],
+    [ "cbh_copy_", "classsolver_1_1SolverStorage.html#ad85b3aaec58836561c886f89ef1f569f", null ],
+    [ "cone_", "classsolver_1_1SolverStorage.html#ae83886c634419b2ddd0fcd820b7ea988", null ],
+    [ "G_", "classsolver_1_1SolverStorage.html#a3c5fd7b351fcc1d4393ad8b90e2c6f3b", null ],
+    [ "Gcoeffs_", "classsolver_1_1SolverStorage.html#a7f61152260e3bdf7246111ce0163b1d3", null ],
+    [ "Gt_", "classsolver_1_1SolverStorage.html#a69333b46bb1bab23aaf6ed6dd21f6d75", null ],
+    [ "gTh_", "classsolver_1_1SolverStorage.html#abddc451f4652eeeb0bc94be61db3244d", null ],
+    [ "stgs_", "classsolver_1_1SolverStorage.html#a459ea34f2d328b55ee1547f2b3846fb6", null ],
+    [ "u_opt_", "classsolver_1_1SolverStorage.html#aa973c2e8b2c6a9df389c04cc2a2eb592", null ],
+    [ "u_prev_opt_", "classsolver_1_1SolverStorage.html#ab40a4760514a221e2fa6335e9cae92d4", null ],
+    [ "u_t_opt_", "classsolver_1_1SolverStorage.html#a08ace73db1136faf45279ab15164203e", null ],
+    [ "v_opt_", "classsolver_1_1SolverStorage.html#aebf4997fac4c9962924d146a3509071a", null ]
 ];

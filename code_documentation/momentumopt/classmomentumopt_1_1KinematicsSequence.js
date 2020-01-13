@@ -10,5 +10,6 @@ var classmomentumopt_1_1KinematicsSequence =
     [ "resize", "classmomentumopt_1_1KinematicsSequence.html#a3c7b87486df10d5b178bec6cc4321996", null ],
     [ "size", "classmomentumopt_1_1KinematicsSequence.html#ab818c77009ef4a07c25edbe0cf110c69", null ],
     [ "toString", "classmomentumopt_1_1KinematicsSequence.html#a567854b580dd7fc35d890b4551d5ec85", null ],
-    [ "operator<<", "classmomentumopt_1_1KinematicsSequence.html#aad51ae9cf3f58d11c3cc15d1dc5448a7", null ]
+    [ "operator<<", "classmomentumopt_1_1KinematicsSequence.html#aad51ae9cf3f58d11c3cc15d1dc5448a7", null ],
+    [ "kinematics_sequence_", "classmomentumopt_1_1KinematicsSequence.html#a6e413ccb8d111e75a0021b738f2ffcdc", null ]
 ];

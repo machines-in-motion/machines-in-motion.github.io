@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['setplannersetting',['setPlannerSetting',['../classmomentumopt_1_1DynamicsFeedback.html#a5f9cc8c11d9267a8f40b8ffc530c29e3',1,'momentumopt::DynamicsFeedback']]],
-  ['solvetime',['solveTime',['../classmomentumopt_1_1DynamicsOptimizer.html#a03fa5e12b4b01f514e29491b30aeacf5',1,'momentumopt::DynamicsOptimizer']]]
+  ['n_5fendeffs_5f',['n_endeffs_',['../structmomentumopt_1_1Problem.html#a9ce07cedaa7825831910a869ad46041c',1,'momentumopt::Problem']]],
+  ['num_5fcom_5fviapoints_5f',['num_com_viapoints_',['../classmomentumopt_1_1PlannerSetting.html#a030900dd957cc9bfb20dd7c7278f9142',1,'momentumopt::PlannerSetting']]],
+  ['numregions',['numRegions',['../classmomentumopt_1_1TerrainDescription.html#ac6e70fee86ff9c5271fe2b9ec1341ebd',1,'momentumopt::TerrainDescription']]]
 ];

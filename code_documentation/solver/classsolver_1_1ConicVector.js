@@ -21,5 +21,6 @@ var classsolver_1_1ConicVector =
     [ "zSoc", "classsolver_1_1ConicVector.html#a54e3513caa48c7f7d5c9ed45042719ce", null ],
     [ "zSoc", "classsolver_1_1ConicVector.html#a2122d3e4805421406b37499065ac456d", null ],
     [ "zSoc", "classsolver_1_1ConicVector.html#a538a1e672c7c77986c402c2fd04dc2f0", null ],
-    [ "zSoc", "classsolver_1_1ConicVector.html#a6b9d8c6b20ee33ec4ec7c749772f6c41", null ]
+    [ "zSoc", "classsolver_1_1ConicVector.html#a6b9d8c6b20ee33ec4ec7c749772f6c41", null ],
+    [ "cone_", "classsolver_1_1ConicVector.html#aa8a3cfee1e178eac962c0a492adc9317", null ]
 ];

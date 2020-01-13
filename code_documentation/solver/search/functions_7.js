@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['substitute',['substitute',['../classrt__solver_1_1RtAffineUtils.html#a5b7096daf276d99c25468a6dbf5ea90b',1,'rt_solver::RtAffineUtils']]]
+  ['resize',['resize',['../classrt__solver_1_1RtMatrixUtils.html#afc26b7666c4883e29214361f90030c0e',1,'rt_solver::RtMatrixUtils']]]
 ];

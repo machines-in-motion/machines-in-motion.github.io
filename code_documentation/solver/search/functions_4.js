@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['lbfgs',['lbfgs',['../LbfgsSolver_8hpp.html#aeed43c3426a6927c3efa9fa34d537f98',1,'solver']]],
-  ['lbfgs_5ffree',['lbfgs_free',['../LbfgsSolver_8hpp.html#afbb8e42dd2cc22451130e688a01538b9',1,'solver']]],
-  ['lbfgs_5fmalloc',['lbfgs_malloc',['../LbfgsSolver_8hpp.html#a2f761090fe2f9deae32d6aa7996a312e',1,'solver']]],
-  ['lbfgs_5fparameter_5finit',['lbfgs_parameter_init',['../LbfgsSolver_8hpp.html#a0958781b11a057c3e6739f765e225aec',1,'solver']]]
+  ['id',['id',['../classsolver_1_1OptimizationVariable.html#a04923f5cca8b7c1ed8f5821662cc7780',1,'solver::OptimizationVariable']]],
+  ['initialize',['initialize',['../classsolver_1_1OptimizationVariable.html#a78b6408e9c4be7a8d72b07d47680a4d3',1,'solver::OptimizationVariable']]],
+  ['initializerootnode',['initializeRootNode',['../classsolver_1_1BnBSolver.html#a933b2ce6c4615aac2baa3c13c2525649',1,'solver::BnBSolver::initializeRootNode()'],['../classsolver_1_1NcvxBnBSolver.html#a988e3efb2e72ee13e9ab01a3bb9affac',1,'solver::NcvxBnBSolver::initializeRootNode()']]]
 ];

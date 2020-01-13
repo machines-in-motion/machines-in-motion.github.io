@@ -36,8 +36,10 @@ var NAVTREEINDEX =
 [
 ".html",
 "SolverSetting_8hpp.html#a81a6f3a6a60958225f6a500367c7ca5caa2d00c353d1f9a5f07852650030dbd53",
-"classsolver_1_1ConicProblem.html#a7b834a2297e5dcc008de223155dfa1fd",
-"classsolver_1_1OptimizationVariable.html#ab9f88f04d288ddeb177fbbe65da10946"
+"classrt__solver_1_1RtVectorUtils.html#a27fddbba3b5d8ec30e8d532c652ea8d1",
+"classsolver_1_1ExtendedVector.html#a669b36bbd20e7c8039b13d491971fa46",
+"classsolver_1_1NesterovToddScaling.html#a4bdd4b8e0d4cde6aa948150a2c7965f1",
+"classsolver_1_1Var.html#abf223982333e2fd416fc7055a553b5d0"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

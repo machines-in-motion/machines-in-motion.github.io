@@ -43,5 +43,8 @@ var classsolver_1_1LinExpr =
     [ "operator-", "classsolver_1_1LinExpr.html#a83e7aa1bf7dc9f23f78464465067cbc3", null ],
     [ "operator-", "classsolver_1_1LinExpr.html#a5916c0a4337d37ca5b44500a0b85723d", null ],
     [ "operator/", "classsolver_1_1LinExpr.html#a07c63d69bb17d8662d107701bb7f1cad", null ],
-    [ "operator<<", "classsolver_1_1LinExpr.html#a8ee6fd7ee6cdc4a4ae22badb1e0ae9f9", null ]
+    [ "operator<<", "classsolver_1_1LinExpr.html#a8ee6fd7ee6cdc4a4ae22badb1e0ae9f9", null ],
+    [ "coeffs_", "classsolver_1_1LinExpr.html#af882882c05ba9244a30c57ce703e8596", null ],
+    [ "constant_", "classsolver_1_1LinExpr.html#a64e28581b1c2bcd3dafdbc9f36102f05", null ],
+    [ "vars_", "classsolver_1_1LinExpr.html#ab67c4d54dafc47bb999ce7d52d6307c0", null ]
 ];

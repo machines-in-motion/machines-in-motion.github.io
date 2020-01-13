@@ -20,5 +20,12 @@ var classsolver_1_1DCPQuadExpr =
     [ "softConstraint", "classsolver_1_1DCPQuadExpr.html#ab017d86d40a6d0b36b9fe7d4bf072050", null ],
     [ "softConstraint", "classsolver_1_1DCPQuadExpr.html#ae44a635179a2edd282022ac75bd170b0", null ],
     [ "trustRegion", "classsolver_1_1DCPQuadExpr.html#a5222de0f9b30f49b695eee187614bcab", null ],
-    [ "trustRegion", "classsolver_1_1DCPQuadExpr.html#a2f55484f41343a7109370d920a89bb3e", null ]
+    [ "trustRegion", "classsolver_1_1DCPQuadExpr.html#a2f55484f41343a7109370d920a89bb3e", null ],
+    [ "coeffs_", "classsolver_1_1DCPQuadExpr.html#a95f286007c4d4ab112743812ec79ebd7", null ],
+    [ "extra_vars_", "classsolver_1_1DCPQuadExpr.html#a52365064d9a9e30f258fa98cd2b7ef08", null ],
+    [ "lexpr_", "classsolver_1_1DCPQuadExpr.html#a796c6e234583ad75b04d36961a9b5b0f", null ],
+    [ "qexpr_", "classsolver_1_1DCPQuadExpr.html#a142f78605ad601fcfa7cf5d33222106f", null ],
+    [ "sense_", "classsolver_1_1DCPQuadExpr.html#a9bbe88d7b7633668d68df173ae65b6c2", null ],
+    [ "soft_constraint_", "classsolver_1_1DCPQuadExpr.html#ab10bcb3d1bbf40e53a9770914e617309", null ],
+    [ "trust_region_", "classsolver_1_1DCPQuadExpr.html#a381beb1efa7807ed5e0c2e604691b57d", null ]
 ];

@@ -15,5 +15,9 @@ var classmomentumopt_1_1RobotPosture =
     [ "pyBaseOrientation", "classmomentumopt_1_1RobotPosture.html#a2ee15336b823b24cc05c7ccfa36f2962", null ],
     [ "pyBaseOrientation", "classmomentumopt_1_1RobotPosture.html#adf99be25c7a8cab162cde6c25b38fcdf", null ],
     [ "toString", "classmomentumopt_1_1RobotPosture.html#ab40dacbc2cd8b69010e3d811c0691640", null ],
-    [ "operator<<", "classmomentumopt_1_1RobotPosture.html#a6af93768c26174bf2fec81ae6f973d0c", null ]
+    [ "operator<<", "classmomentumopt_1_1RobotPosture.html#a6af93768c26174bf2fec81ae6f973d0c", null ],
+    [ "base_orientation_", "classmomentumopt_1_1RobotPosture.html#ad65daf5fba10d8169fa946358b7a225c", null ],
+    [ "base_position_", "classmomentumopt_1_1RobotPosture.html#a760604f412222545650984df0a4ffc19", null ],
+    [ "joint_positions_", "classmomentumopt_1_1RobotPosture.html#a0b11ec6f567a21423517f8eccd98a54d", null ],
+    [ "num_joints_", "classmomentumopt_1_1RobotPosture.html#a09459625120405f25946a3bad38eb3f3", null ]
 ];

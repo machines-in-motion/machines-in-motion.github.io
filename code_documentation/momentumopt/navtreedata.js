@@ -22,8 +22,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 ".html",
-"classmomentumopt_1_1ContactState.html#ac4341551311add5a078481d77110c261",
-"classmomentumopt_1_1ViapointSequence.html#a73f61c5515402cd78796aa1e409894e2"
+"classmomentumopt_1_1ContactState.html#a45b5d43760e05d25d24b221c1b280de5",
+"classmomentumopt_1_1KinematicsState.html#a0932533140538ff1fe29332d62fee8f2",
+"classmomentumopt_1_1TerrainRegion.html#a8c06b7f0af4fe42344b8712515a0adc9"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

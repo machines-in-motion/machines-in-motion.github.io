@@ -107,6 +107,8 @@ $(document).ready(function(){initNavTree('classmomentumopt_1_1DynamicsFeedback.h
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classmomentumopt_1_1DynamicsFeedback-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">momentumopt::DynamicsFeedback Class Reference</div>  </div>
@@ -129,6 +131,8 @@ Collaboration diagram for momentumopt::DynamicsFeedback:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmomentumopt_1_1DynamicsFeedback__coll__graph.png" border="0" usemap="#momentumopt_1_1DynamicsFeedback_coll__map" alt="Collaboration graph"/></div>
 <map name="momentumopt_1_1DynamicsFeedback_coll__map" id="momentumopt_1_1DynamicsFeedback_coll__map">
+<area shape="rect" id="node3" href="classmomentumopt_1_1DynamicsSequence.html" title="This class is a container for a sequence of dynamic states, for all time steps in the optimization..." alt="" coords="163,5,394,32"/>
+<area shape="rect" id="node4" href="classmomentumopt_1_1PlannerSetting.html" title="momentumopt::PlannerSetting" alt="" coords="418,5,617,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -141,6 +145,47 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1e943e0bb4a0c82d8d1bc22075daeca8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1e943e0bb4a0c82d8d1bc22075daeca8"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setStatesAndControls</b> (const <a class="el" href="structmomentumopt_1_1DynamicsState.html">DynamicsState</a> &amp;ini_state, const <a class="el" href="classmomentumopt_1_1DynamicsSequence.html">DynamicsSequence</a> &amp;dyn_sequence)</td></tr>
 <tr class="separator:a1e943e0bb4a0c82d8d1bc22075daeca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a5bcc50c49beb83c1d5829753a5c0a1bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmomentumopt_1_1DynamicsFeedback.html#a5bcc50c49beb83c1d5829753a5c0a1bb">configure</a> (const YAML::Node &amp;user_parameters)</td></tr>
+<tr class="separator:a5bcc50c49beb83c1d5829753a5c0a1bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed99df4daf94d08a3dbd9a9840ee4d5f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmomentumopt_1_1DynamicsFeedback.html#aed99df4daf94d08a3dbd9a9840ee4d5f">objective</a> (const solverlqr::StateBase &amp;state, const solverlqr::ControlBase &amp;control, int time_id, bool is_final_timestep)</td></tr>
+<tr class="separator:aed99df4daf94d08a3dbd9a9840ee4d5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdc5fe5399f8b3c337e7f67bb16402cd"><td class="memItemLeft" align="right" valign="top">solverlqr::StateBase&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmomentumopt_1_1DynamicsFeedback.html#afdc5fe5399f8b3c337e7f67bb16402cd">dynamics</a> (const solverlqr::StateBase &amp;state, const solverlqr::ControlBase &amp;control, int time_id)</td></tr>
+<tr class="separator:afdc5fe5399f8b3c337e7f67bb16402cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70072010ed60379d089ffba15a467273"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmomentumopt_1_1PlannerSetting.html">PlannerSetting</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmomentumopt_1_1DynamicsFeedback.html#a70072010ed60379d089ffba15a467273">getSetting</a> () const </td></tr>
+<tr class="separator:a70072010ed60379d089ffba15a467273"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2d65969c6bc1fb92fe53f0eb5309bf1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af2d65969c6bc1fb92fe53f0eb5309bf1"></a>
+const <a class="el" href="classmomentumopt_1_1DynamicsSequence.html">DynamicsSequence</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>dynamicsSequence</b> () const </td></tr>
+<tr class="separator:af2d65969c6bc1fb92fe53f0eb5309bf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ac6c20d5ff49d27ddf5591b8d1ea7aae6"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmomentumopt_1_1PlannerSetting.html">PlannerSetting</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmomentumopt_1_1DynamicsFeedback.html#ac6c20d5ff49d27ddf5591b8d1ea7aae6">setting_</a></td></tr>
+<tr class="separator:ac6c20d5ff49d27ddf5591b8d1ea7aae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3d7e635b5fcfb7dad5b6884a497983d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmomentumopt_1_1DynamicsSequence.html">DynamicsSequence</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmomentumopt_1_1DynamicsFeedback.html#aa3d7e635b5fcfb7dad5b6884a497983d">ref_dyn_sequence_</a></td></tr>
+<tr class="separator:aa3d7e635b5fcfb7dad5b6884a497983d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac70542b5ca07405e0dbae8c67c282994"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmomentumopt_1_1DynamicsFeedback.html#ac70542b5ca07405e0dbae8c67c282994">control_cost_</a></td></tr>
+<tr class="separator:ac70542b5ca07405e0dbae8c67c282994"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ef92a0498ab06b9b2fb8120b5c21d4c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8ef92a0498ab06b9b2fb8120b5c21d4c"></a>
+Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><b>com_tracking_</b></td></tr>
+<tr class="separator:a8ef92a0498ab06b9b2fb8120b5c21d4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a621b9b3b190b4e0b0b13ec13632607a0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a621b9b3b190b4e0b0b13ec13632607a0"></a>
+Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><b>lmom_tracking_</b></td></tr>
+<tr class="separator:a621b9b3b190b4e0b0b13ec13632607a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7eae409a351682622b1a017e00f68de"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab7eae409a351682622b1a017e00f68de"></a>
+Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><b>amom_tracking_</b></td></tr>
+<tr class="separator:ab7eae409a351682622b1a017e00f68de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2cfd9a7ac1ff877b24cdcfa9a860875"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab2cfd9a7ac1ff877b24cdcfa9a860875"></a>
+Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><b>com_final_tracking_</b></td></tr>
+<tr class="separator:ab2cfd9a7ac1ff877b24cdcfa9a860875"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ebaaa33c77155d0ec1fda9ba300d3cb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4ebaaa33c77155d0ec1fda9ba300d3cb"></a>
+Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><b>lmom_final_tracking_</b></td></tr>
+<tr class="separator:a4ebaaa33c77155d0ec1fda9ba300d3cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16349c146f7d192a531cb1e7a2b1f0dc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a16349c146f7d192a531cb1e7a2b1f0dc"></a>
+Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><b>amom_final_tracking_</b></td></tr>
+<tr class="separator:a16349c146f7d192a531cb1e7a2b1f0dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class that implements the dynamic description of momentum dynamics as an optimal control problem, to be used by an LQR algorithm to derive a feedback sequence. </p>
@@ -170,6 +215,143 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setStatesAndControls<
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a5bcc50c49beb83c1d5829753a5c0a1bb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void momentumopt::DynamicsFeedback::configure </td>
+          <td>(</td>
+          <td class="paramtype">const YAML::Node &amp;&#160;</td>
+          <td class="paramname"><em>user_parameters</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>function to give the user the possibility to read custom parameters </p>
+
+</div>
+</div>
+<a class="anchor" id="afdc5fe5399f8b3c337e7f67bb16402cd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">solverlqr::StateBase momentumopt::DynamicsFeedback::dynamics </td>
+          <td>(</td>
+          <td class="paramtype">const solverlqr::StateBase &amp;&#160;</td>
+          <td class="paramname"><em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const solverlqr::ControlBase &amp;&#160;</td>
+          <td class="paramname"><em>control</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>time_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>definition of the dynamics evolution for the optimal control problem </p>
+
+</div>
+</div>
+<a class="anchor" id="a70072010ed60379d089ffba15a467273"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmomentumopt_1_1PlannerSetting.html">PlannerSetting</a>&amp; momentumopt::DynamicsFeedback::getSetting </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>these functions give access to the planner setting and optimized motion reference plan </p>
+
+</div>
+</div>
+<a class="anchor" id="aed99df4daf94d08a3dbd9a9840ee4d5f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double momentumopt::DynamicsFeedback::objective </td>
+          <td>(</td>
+          <td class="paramtype">const solverlqr::StateBase &amp;&#160;</td>
+          <td class="paramname"><em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const solverlqr::ControlBase &amp;&#160;</td>
+          <td class="paramname"><em>control</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>time_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_final_timestep</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>definition of the objective function for the optimal control problem </p>
+
+</div>
+</div>
 <a class="anchor" id="a5f9cc8c11d9267a8f40b8ffc530c29e3"></a>
 <div class="memitem">
 <div class="memproto">
@@ -192,6 +374,70 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setStatesAndControls<
 </table>
 </div><div class="memdoc">
 <p>stores a pointer to the planner setting and reference dynamics sequence </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="ac70542b5ca07405e0dbae8c67c282994"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::MatrixXd momentumopt::DynamicsFeedback::control_cost_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>helper vector variables for the optimization problem </p>
+
+</div>
+</div>
+<a class="anchor" id="aa3d7e635b5fcfb7dad5b6884a497983d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmomentumopt_1_1DynamicsSequence.html">DynamicsSequence</a>* momentumopt::DynamicsFeedback::ref_dyn_sequence_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>pointer to dynamic sequence to be tracked </p>
+
+</div>
+</div>
+<a class="anchor" id="ac6c20d5ff49d27ddf5591b8d1ea7aae6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmomentumopt_1_1PlannerSetting.html">PlannerSetting</a>* momentumopt::DynamicsFeedback::setting_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>pointer to planner setting </p>
 
 </div>
 </div>

@@ -15,5 +15,7 @@ var classmomentumopt_1_1RobotVelocity =
     [ "jointVelocities", "classmomentumopt_1_1RobotVelocity.html#a15e2d56ccd24178e718df878d3265106", null ],
     [ "jointVelocities", "classmomentumopt_1_1RobotVelocity.html#aa352a109c32fde430acdec204178c533", null ],
     [ "toString", "classmomentumopt_1_1RobotVelocity.html#a07bb2f5d0ad98eeef005bfb4aafc174c", null ],
-    [ "operator<<", "classmomentumopt_1_1RobotVelocity.html#afcb2862ffef472410ab7cbab42fcf463", null ]
+    [ "operator<<", "classmomentumopt_1_1RobotVelocity.html#afcb2862ffef472410ab7cbab42fcf463", null ],
+    [ "generalized_joint_velocities_", "classmomentumopt_1_1RobotVelocity.html#a947463c8f1afe6906ca30d0588fc9875", null ],
+    [ "num_joints_", "classmomentumopt_1_1RobotVelocity.html#a8c487d7c1b3e90974257fc34b91fe4f5", null ]
 ];

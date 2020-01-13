@@ -15,5 +15,7 @@ var classmomentumopt_1_1RobotAcceleration =
     [ "jointAccelerations", "classmomentumopt_1_1RobotAcceleration.html#a920384f06340185f6b0c5ab2d47f30aa", null ],
     [ "jointAccelerations", "classmomentumopt_1_1RobotAcceleration.html#a93f337e4220c6e6213a75d4092091488", null ],
     [ "toString", "classmomentumopt_1_1RobotAcceleration.html#af87132f4e14fedcc8d63ca8731607894", null ],
-    [ "operator<<", "classmomentumopt_1_1RobotAcceleration.html#a597c11f473f8c0f95438734b73fb3ebf", null ]
+    [ "operator<<", "classmomentumopt_1_1RobotAcceleration.html#a597c11f473f8c0f95438734b73fb3ebf", null ],
+    [ "generalized_joint_accelerations_", "classmomentumopt_1_1RobotAcceleration.html#a0763e50825745513db984add3648b275", null ],
+    [ "num_joints_", "classmomentumopt_1_1RobotAcceleration.html#a35abaf75c3d2578b76f93a1b259d0a34", null ]
 ];

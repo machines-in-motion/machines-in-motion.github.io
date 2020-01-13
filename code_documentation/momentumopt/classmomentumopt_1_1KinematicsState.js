@@ -32,5 +32,16 @@ var classmomentumopt_1_1KinematicsState =
     [ "robotVelocity", "classmomentumopt_1_1KinematicsState.html#a4e029f85e456588532a6d41dab016b5f", null ],
     [ "robotVelocity", "classmomentumopt_1_1KinematicsState.html#a9ee4be412be903715cf5fa96b02ea893", null ],
     [ "toString", "classmomentumopt_1_1KinematicsState.html#a40be67dcf03810b3777bcbd40cac927e", null ],
-    [ "operator<<", "classmomentumopt_1_1KinematicsState.html#a613b1fdfbf3565131742b80b5d95fb1a", null ]
+    [ "operator<<", "classmomentumopt_1_1KinematicsState.html#a613b1fdfbf3565131742b80b5d95fb1a", null ],
+    [ "amom_", "classmomentumopt_1_1KinematicsState.html#a4fd7099ba114ac220d34c9fe90b47170", null ],
+    [ "com_", "classmomentumopt_1_1KinematicsState.html#a2e03ac7e698a80d1ea7c5807fd22e137", null ],
+    [ "eff_accelerations_", "classmomentumopt_1_1KinematicsState.html#a48cb56d55de2a46debbb2550e5ebae58", null ],
+    [ "eff_orientations_", "classmomentumopt_1_1KinematicsState.html#ab0796af7fdcfa19f2a751f20871ccbb8", null ],
+    [ "eff_positions_", "classmomentumopt_1_1KinematicsState.html#afd185dcf7abd591a4673fc7e06a1603e", null ],
+    [ "eff_velocities_", "classmomentumopt_1_1KinematicsState.html#a6f4943fed399d6c4aa8e142d459612ec", null ],
+    [ "lmom_", "classmomentumopt_1_1KinematicsState.html#ae9b3f01504ab05c94903eaa1bf9162b2", null ],
+    [ "num_joints_", "classmomentumopt_1_1KinematicsState.html#a6a0c20ee807142e8cf09084dc3254c67", null ],
+    [ "robot_acceleration_", "classmomentumopt_1_1KinematicsState.html#ac6cc9ea69c64b030c3216fb0a26b8e22", null ],
+    [ "robot_posture_", "classmomentumopt_1_1KinematicsState.html#aa1c4151bdfd39b74289c9695dbae0671", null ],
+    [ "robot_velocity_", "classmomentumopt_1_1KinematicsState.html#aabdbeaad7d2c3b00ea1df6768e28690e", null ]
 ];

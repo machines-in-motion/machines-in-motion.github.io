@@ -5,7 +5,11 @@ var NAVTREE =
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
-      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ]
+      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
+      [ "Class Members", "functions.html", [
+        [ "All", "functions.html", null ],
+        [ "Variables", "functions_vars.html", null ]
+      ] ]
     ] ],
     [ "Files", null, [
       [ "File List", "files.html", "files" ]
@@ -16,7 +20,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 ".html",
-"classsolverlqr_1_1SolverLqrSetting.html#a7c598da7c467730ef65e1382366cb6bb"
+"classsolverlqr_1_1ForwardPass.html#a24cd07cdccff659328c429ca41660d80"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

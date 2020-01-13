@@ -52,5 +52,6 @@ var searchData=
   ['linexpr',['LinExpr',['../classsolver_1_1LinExpr.html',1,'solver']]],
   ['linsolver',['LinSolver',['../classsolver_1_1LinSolver.html',1,'solver']]],
   ['linsolver_2ecpp',['LinSolver.cpp',['../LinSolver_8cpp.html',1,'']]],
-  ['linsolver_2ehpp',['LinSolver.hpp',['../LinSolver_8hpp.html',1,'']]]
+  ['linsolver_2ehpp',['LinSolver.hpp',['../LinSolver_8hpp.html',1,'']]],
+  ['loadsolution',['loadSolution',['../classsolver_1_1BnBSolver.html#ad61b358dd5be043f3154f659e746e70b',1,'solver::BnBSolver::loadSolution()'],['../classsolver_1_1NcvxBnBSolver.html#a2204dee94b3e3e60a0cbe4f7e4ff0385',1,'solver::NcvxBnBSolver::loadSolution()']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['requiredangularvelocity',['requiredAngularVelocity',['../OrientationUtils_8hpp.html#a3115339f252c9729fdf7ec50940673bb',1,'momentumopt']]]
+  ['numregions',['numRegions',['../classmomentumopt_1_1TerrainDescription.html#ac6e70fee86ff9c5271fe2b9ec1341ebd',1,'momentumopt::TerrainDescription']]]
 ];

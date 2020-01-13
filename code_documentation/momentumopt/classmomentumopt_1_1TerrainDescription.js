@@ -8,5 +8,7 @@ var classmomentumopt_1_1TerrainDescription =
     [ "terrainRegion", "classmomentumopt_1_1TerrainDescription.html#ace003a2720e1525bcaed48ed99f7c438", null ],
     [ "terrainRegion", "classmomentumopt_1_1TerrainDescription.html#a3530cfbedb7503042144665ba8e13689", null ],
     [ "toString", "classmomentumopt_1_1TerrainDescription.html#a6eb96cbe62c680153441f63d658e5550", null ],
-    [ "operator<<", "classmomentumopt_1_1TerrainDescription.html#a8aedd3f0b0fb415fc5b396a6f96d77c5", null ]
+    [ "operator<<", "classmomentumopt_1_1TerrainDescription.html#a8aedd3f0b0fb415fc5b396a6f96d77c5", null ],
+    [ "num_terrain_regions_", "classmomentumopt_1_1TerrainDescription.html#a1146a38b6fa32ff14aa511fbf2954e0f", null ],
+    [ "terrain_regions_", "classmomentumopt_1_1TerrainDescription.html#a8420e0be5c78c3e1886828bacdbbd5c3", null ]
 ];

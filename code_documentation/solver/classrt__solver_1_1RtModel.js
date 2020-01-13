@@ -27,10 +27,19 @@ var classrt__solver_1_1RtModel =
     [ "subCostComposers", "classrt__solver_1_1RtModel.html#a1901f64102ee5fd69bfc0ee097dd37a7", null ],
     [ "update", "classrt__solver_1_1RtModel.html#ad18a93b58905726f7210ddb8f252885f", null ],
     [ "full_to_opt_variable_index_", "classrt__solver_1_1RtModel.html#a6f8cbd12f279a9fd0d018955c89e9910", null ],
+    [ "hierarchies_without_slacks_", "classrt__solver_1_1RtModel.html#a86be60fef4bce989f037b18999a0291d", null ],
     [ "hqp_solver_", "classrt__solver_1_1RtModel.html#a6edb16979cd4bfc5cd48def3f42328b1", null ],
     [ "is_solution_valid_", "classrt__solver_1_1RtModel.html#a997bb967d9fa05f0a8b203c6be3e2782", null ],
+    [ "leqcons_", "classrt__solver_1_1RtModel.html#ac12c6ce21b923eeffe7df87b6b25ce3f", null ],
+    [ "lineqcons_", "classrt__solver_1_1RtModel.html#a9574d53792eb96219636ce6be845661b", null ],
     [ "n_solved_ranks_", "classrt__solver_1_1RtModel.html#a1641e93c6fcc6fb4f202a8f3a8e7602d", null ],
+    [ "next_eq_cost_mat_", "classrt__solver_1_1RtModel.html#a7419bdc89c8cbebaedeafd49d1f324aa", null ],
+    [ "next_eq_cost_vec_", "classrt__solver_1_1RtModel.html#abb3c620babc59b74bd7971ebf43f566d", null ],
+    [ "next_ineq_cost_mat_", "classrt__solver_1_1RtModel.html#a466a39298cbf885608114379b8bca373", null ],
+    [ "next_ineq_cost_vec_", "classrt__solver_1_1RtModel.html#a2fb5eeee34a204758fad4c0f680f355d", null ],
     [ "num_variables_optimized_", "classrt__solver_1_1RtModel.html#a0d16d46ff1d892972db402dd0a77b1e4", null ],
     [ "qp_dur_", "classrt__solver_1_1RtModel.html#a85d777032f4e8cd90ca457a18a93338f", null ],
-    [ "svd_wait_", "classrt__solver_1_1RtModel.html#a2eeb070b2a23d3389026c0230c7aaa2e", null ]
+    [ "sub_cost_composers_", "classrt__solver_1_1RtModel.html#adc02248d20f3b00e499b7c5aa002a290", null ],
+    [ "svd_wait_", "classrt__solver_1_1RtModel.html#a2eeb070b2a23d3389026c0230c7aaa2e", null ],
+    [ "vars_", "classrt__solver_1_1RtModel.html#ac3b6ec4afa6bf12dcbc875188cd448aa", null ]
 ];

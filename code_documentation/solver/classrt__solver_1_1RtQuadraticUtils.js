@@ -1,5 +1,7 @@
 var classrt__solver_1_1RtQuadraticUtils =
 [
+    [ "RtQuadraticUtils", "classrt__solver_1_1RtQuadraticUtils.html#ab444d018840635b47c154cac90fe46b9", null ],
+    [ "~RtQuadraticUtils", "classrt__solver_1_1RtQuadraticUtils.html#a1f97f83335dc59d60f3ffe4bb5941286", null ],
     [ "addFromNorm", "classrt__solver_1_1RtQuadraticUtils.html#a0a3899519687b840cd30993eaa294782", null ],
     [ "addFromNorm", "classrt__solver_1_1RtQuadraticUtils.html#a7919e8342889906dba9b23532dccd7a5", null ],
     [ "addFromWeightedNorm", "classrt__solver_1_1RtQuadraticUtils.html#adb5b6e84c5f4d07c8a9dcfdce92aa940", null ],

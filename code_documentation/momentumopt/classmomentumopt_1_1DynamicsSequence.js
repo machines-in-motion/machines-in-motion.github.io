@@ -12,5 +12,7 @@ var classmomentumopt_1_1DynamicsSequence =
     [ "resize", "classmomentumopt_1_1DynamicsSequence.html#ab347625ed731b3d4b57b7be2d9b779f3", null ],
     [ "size", "classmomentumopt_1_1DynamicsSequence.html#ac4ed7b8151656d586d761028b4956498", null ],
     [ "toString", "classmomentumopt_1_1DynamicsSequence.html#a98087477c0166a48a965c18987cb86eb", null ],
-    [ "operator<<", "classmomentumopt_1_1DynamicsSequence.html#adedd3ad178c1d7c8f6d4b1f77e1f8642", null ]
+    [ "operator<<", "classmomentumopt_1_1DynamicsSequence.html#adedd3ad178c1d7c8f6d4b1f77e1f8642", null ],
+    [ "active_endeffector_steps_", "classmomentumopt_1_1DynamicsSequence.html#a12972a588b8458a53d2677e196027e32", null ],
+    [ "dynamics_sequence_", "classmomentumopt_1_1DynamicsSequence.html#ace8d9498020e39a8e3cd7ac21643c791", null ]
 ];

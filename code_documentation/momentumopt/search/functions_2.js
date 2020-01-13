@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['idtoendeffectorstring',['idToEndeffectorString',['../structmomentumopt_1_1Problem.html#acac0826d39c0c00240540d9099a2d534',1,'momentumopt::Problem']]],
-  ['initialize',['initialize',['../classmomentumopt_1_1DynamicsOptimizer.html#a60dc92e7d2b8c5c9023882bdf8990870',1,'momentumopt::DynamicsOptimizer::initialize()'],['../classmomentumopt_1_1KinematicsOptimizer.html#a22d944f2ec817553541ba3599a162d1e',1,'momentumopt::KinematicsOptimizer::initialize()']]],
-  ['integrateangularvelocity',['integrateAngularVelocity',['../OrientationUtils_8hpp.html#a42b13322f043e8eacb6875be91dd3a68',1,'momentumopt']]],
-  ['ishand',['isHand',['../structmomentumopt_1_1Problem.html#a18ea271398958dd0b52968d4290a9474',1,'momentumopt::Problem']]]
+  ['displaymotion',['displayMotion',['../classmomentumopt_1_1KinematicsOptimizer.html#adae0ed165647548d37f7da4f851fde70',1,'momentumopt::KinematicsOptimizer']]],
+  ['dynamics',['dynamics',['../classmomentumopt_1_1DynamicsFeedback.html#afdc5fe5399f8b3c337e7f67bb16402cd',1,'momentumopt::DynamicsFeedback']]],
+  ['dynamicsfeedback',['DynamicsFeedback',['../classmomentumopt_1_1DynamicsFeedback.html#aaa88a51a7e3ddcdebdfc0c88e88c092a',1,'momentumopt::DynamicsFeedback']]],
+  ['dynamicsoptimizer',['DynamicsOptimizer',['../classmomentumopt_1_1DynamicsOptimizer.html#abd91235bc8b2baa7b4135aaee66b5a0f',1,'momentumopt::DynamicsOptimizer']]],
+  ['dynamicssequence',['dynamicsSequence',['../classmomentumopt_1_1DynamicsOptimizer.html#a84cbe0d7cf22883c566ebd7af7548f49',1,'momentumopt::DynamicsOptimizer']]]
 ];

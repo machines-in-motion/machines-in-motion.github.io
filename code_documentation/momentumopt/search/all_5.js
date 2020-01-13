@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['idtoendeffectorstring',['idToEndeffectorString',['../structmomentumopt_1_1Problem.html#acac0826d39c0c00240540d9099a2d534',1,'momentumopt::Problem']]],
-  ['initialize',['initialize',['../classmomentumopt_1_1DynamicsOptimizer.html#a60dc92e7d2b8c5c9023882bdf8990870',1,'momentumopt::DynamicsOptimizer::initialize()'],['../classmomentumopt_1_1KinematicsOptimizer.html#a22d944f2ec817553541ba3599a162d1e',1,'momentumopt::KinematicsOptimizer::initialize()']]],
-  ['integrateangularvelocity',['integrateAngularVelocity',['../OrientationUtils_8hpp.html#a42b13322f043e8eacb6875be91dd3a68',1,'momentumopt']]],
-  ['interpolator',['Interpolator',['../classmomentumopt_1_1Interpolator.html',1,'momentumopt']]],
-  ['ishand',['isHand',['../structmomentumopt_1_1Problem.html#a18ea271398958dd0b52968d4290a9474',1,'momentumopt::Problem']]]
+  ['getsetting',['getSetting',['../classmomentumopt_1_1ContactPlanInterface.html#a1b09bf570efec6c798786705033746b3',1,'momentumopt::ContactPlanInterface::getSetting()'],['../classmomentumopt_1_1DynamicsFeedback.html#a70072010ed60379d089ffba15a467273',1,'momentumopt::DynamicsFeedback::getSetting()'],['../classmomentumopt_1_1DynamicsOptimizer.html#a50f50640ba0cb391bda25130ff0818f6',1,'momentumopt::DynamicsOptimizer::getSetting()'],['../classmomentumopt_1_1KinematicsInterface.html#ac52f01783551052e595da9efd1162154',1,'momentumopt::KinematicsInterface::getSetting()'],['../classmomentumopt_1_1KinematicsOptimizer.html#a95ac58c91744e58f305d5b6f7b82a88a',1,'momentumopt::KinematicsOptimizer::getSetting()']]],
+  ['gravity_5f',['gravity_',['../classmomentumopt_1_1PlannerSetting.html#a4cabef4384c265f0728658ecf9a5075b',1,'momentumopt::PlannerSetting']]]
 ];

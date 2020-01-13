@@ -107,6 +107,8 @@ $(document).ready(function(){initNavTree('classsolver_1_1EqRoutine.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classsolver_1_1EqRoutine-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">solver::EqRoutine Class Reference</div>  </div>
@@ -114,6 +116,16 @@ $(document).ready(function(){initNavTree('classsolver_1_1EqRoutine.html','');});
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="EqRoutine_8hpp_source.html">EqRoutine.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for solver::EqRoutine:</div>
+<div class="dyncontent">
+<div class="center"><img src="classsolver_1_1EqRoutine__coll__graph.png" border="0" usemap="#solver_1_1EqRoutine_coll__map" alt="Collaboration graph"/></div>
+<map name="solver_1_1EqRoutine_coll__map" id="solver_1_1EqRoutine_coll__map">
+<area shape="rect" id="node2" href="classsolver_1_1Vector.html" title="Helper class to work with optimization variables, lay down in normal order. " alt="" coords="17,95,120,121"/>
+<area shape="rect" id="node4" href="classsolver_1_1Cone.html" title="This class contains all information about the conic optimization problem, and provides functionality ..." alt="" coords="127,5,223,32"/>
+<area shape="rect" id="node5" href="classsolver_1_1ScalingOperator.html" title="solver::ScalingOperator" alt="" coords="159,95,317,121"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -132,6 +144,33 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>scaleVariables</b> (<
 <tr class="memitem:ac472cbbfe57c3bb8de6d9a4af49ffc02"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac472cbbfe57c3bb8de6d9a4af49ffc02"></a>
 const <a class="el" href="classsolver_1_1Vector.html">Vector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>equilVec</b> () const </td></tr>
 <tr class="separator:ac472cbbfe57c3bb8de6d9a4af49ffc02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a3af7a8ec3ed75ee01916794f7c92ca24"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3af7a8ec3ed75ee01916794f7c92ca24"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ruizEquilibration</b> (<a class="el" href="classsolver_1_1SolverStorage.html">SolverStorage</a> &amp;stg)</td></tr>
+<tr class="separator:a3af7a8ec3ed75ee01916794f7c92ca24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a233fa0969f71a15868d147326d03319f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a233fa0969f71a15868d147326d03319f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>maxRowsCols</b> (double *row_vec, double *col_vec, const Eigen::SparseMatrix&lt; double &gt; &amp;mat)</td></tr>
+<tr class="separator:a233fa0969f71a15868d147326d03319f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9b2c9a95c37e5dfb8111cff41c87362"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae9b2c9a95c37e5dfb8111cff41c87362"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>equilibrateRowsCols</b> (const double *row_vec, const double *col_vec, Eigen::SparseMatrix&lt; double &gt; &amp;mat)</td></tr>
+<tr class="separator:ae9b2c9a95c37e5dfb8111cff41c87362"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0046535eeb68391d49630a0f1802090b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0046535eeb68391d49630a0f1802090b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>unequilibrateRowsCols</b> (const double *row_vec, const double *col_vec, Eigen::SparseMatrix&lt; double &gt; &amp;mat)</td></tr>
+<tr class="separator:a0046535eeb68391d49630a0f1802090b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ac466e950b60d080d038993a35ac562ad"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac466e950b60d080d038993a35ac562ad"></a>
+<a class="el" href="classsolver_1_1Vector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><b>equil_vec_</b></td></tr>
+<tr class="separator:ac466e950b60d080d038993a35ac562ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c5eddcfff64478a66f72134cdf90e76"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7c5eddcfff64478a66f72134cdf90e76"></a>
+std::shared_ptr&lt; <a class="el" href="classsolver_1_1Cone.html">Cone</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>cone_</b></td></tr>
+<tr class="separator:a7c5eddcfff64478a66f72134cdf90e76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ad7d322f5a2b6807471ac5314669466"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7ad7d322f5a2b6807471ac5314669466"></a>
+std::shared_ptr&lt; <a class="el" href="classsolver_1_1SolverSetting.html">SolverSetting</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>stgs_</b></td></tr>
+<tr class="separator:a7ad7d322f5a2b6807471ac5314669466"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Equilibration routine to improve condition number of matrices involved in the optimization problem. The method provided by default is Ruiz equilibration. </p>
