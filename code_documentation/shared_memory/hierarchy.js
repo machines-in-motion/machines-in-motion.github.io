@@ -25,6 +25,7 @@ var hierarchy =
     [ "MeasureTime", "structMeasureTime.html", null ],
     [ "shared_memory::Mutex", "classshared__memory_1_1Mutex.html", null ],
     [ "shared_memory::SegmentInfo", "classshared__memory_1_1SegmentInfo.html", null ],
+    [ "Serializable< SIZE >", "classSerializable.html", null ],
     [ "shared_memory::Serializable_exchange< Serializable >", "classshared__memory_1_1Serializable__exchange.html", null ],
     [ "SerializableExample", "classSerializableExample.html", null ],
     [ "shared_memory::internal::Serialized_read< Serializable >", "classshared__memory_1_1internal_1_1Serialized__read.html", null ],

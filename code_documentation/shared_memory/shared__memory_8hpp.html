@@ -152,7 +152,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <area shape="rect" id="node2" href="stress__get__api_8cpp.html" title="Benchmark on the get method of the API. " alt="" coords="5,95,164,136"/>
 <area shape="rect" id="node3" href="stress__set__api_8cpp.html" title="Benchmark the set method form the API. " alt="" coords="188,95,347,136"/>
 <area shape="rect" id="node4" href="get__data_8cpp.html" title="Create a small app that fetch the data from a shared memory. This memory is filled with the counter p..." alt="" coords="371,102,511,129"/>
-<area shape="rect" id="node5" href="set__data_8cpp.html" title="shows how to turn of console prints " alt="" coords="535,102,675,129"/>
+<area shape="rect" id="node5" href="set__data_8cpp.html" title="shows how to serialize an instance of a class with an eigen matrix as attribute " alt="" coords="535,102,675,129"/>
 <area shape="rect" id="node6" href="array_8hpp_source.html" title="include/shared_memory\l/array.hpp" alt="" coords="469,191,629,233"/>
 <area shape="rect" id="node9" href="exchange__manager__memory_8hpp.html" title="Interprocess exchange of serialized items. " alt="" coords="671,184,856,240"/>
 <area shape="rect" id="node15" href="locked__condition__variable_8hpp_source.html" title="include/shared_memory\l/locked_condition_variable.hpp" alt="" coords="1065,191,1265,233"/>
@@ -306,12 +306,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="name
 <tr class="memdesc:add6604c2716e51cdcf17de2439251089"><td class="mdescLeft">&#160;</td><td class="mdescRight">get gets a pointer to a std::vector&lt;ElemType&gt; or an Eigen::Matrix&lt;ElemType, any, any&gt; in the shared memory.  <a href="namespaceshared__memory.html#add6604c2716e51cdcf17de2439251089">More...</a><br /></td></tr>
 <tr class="separator:add6604c2716e51cdcf17de2439251089"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a003005dc269ebf79f08523dc0f8d1ed0"><td class="memTemplParams" colspan="2">template&lt;class Serializable &gt; </td></tr>
-<tr class="memitem:a003005dc269ebf79f08523dc0f8d1ed0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a003005dc269ebf79f08523dc0f8d1ed0">shared_memory::serialize</a> (const std::string &amp;segment, const std::string &amp;object, const Serializable &amp;serializable)</td></tr>
+<tr class="memitem:a003005dc269ebf79f08523dc0f8d1ed0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a003005dc269ebf79f08523dc0f8d1ed0">shared_memory::serialize</a> (const std::string &amp;segment, const std::string &amp;object, const <a class="el" href="classSerializable.html">Serializable</a> &amp;serializable)</td></tr>
 <tr class="memdesc:a003005dc269ebf79f08523dc0f8d1ed0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize the instance into a string which is written in the shared memory.  <a href="namespaceshared__memory.html#a003005dc269ebf79f08523dc0f8d1ed0">More...</a><br /></td></tr>
 <tr class="separator:a003005dc269ebf79f08523dc0f8d1ed0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33e39adccccefb603e2dafc7ea8733e8"><td class="memTemplParams" colspan="2">template&lt;class Serializable &gt; </td></tr>
-<tr class="memitem:a33e39adccccefb603e2dafc7ea8733e8"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a33e39adccccefb603e2dafc7ea8733e8">shared_memory::deserialize</a> (const std::string &amp;segment, const std::string &amp;object, Serializable &amp;serializable)</td></tr>
-<tr class="memdesc:a33e39adccccefb603e2dafc7ea8733e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read from the memory a string that is deserialized into the passed instance of Serializable.  <a href="namespaceshared__memory.html#a33e39adccccefb603e2dafc7ea8733e8">More...</a><br /></td></tr>
+<tr class="memitem:a33e39adccccefb603e2dafc7ea8733e8"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a33e39adccccefb603e2dafc7ea8733e8">shared_memory::deserialize</a> (const std::string &amp;segment, const std::string &amp;object, <a class="el" href="classSerializable.html">Serializable</a> &amp;serializable)</td></tr>
+<tr class="memdesc:a33e39adccccefb603e2dafc7ea8733e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read from the memory a string that is deserialized into the passed instance of <a class="el" href="classSerializable.html">Serializable</a>.  <a href="namespaceshared__memory.html#a33e39adccccefb603e2dafc7ea8733e8">More...</a><br /></td></tr>
 <tr class="separator:a33e39adccccefb603e2dafc7ea8733e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe26d531f043f59bb36ea7816b8a40bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#afe26d531f043f59bb36ea7816b8a40bf">shared_memory::set_verbose</a> (bool mode)</td></tr>
 <tr class="memdesc:afe26d531f043f59bb36ea7816b8a40bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">if verbose mode set to true (starting default is false), informaton about newly created objects will be displayed in the terminal.  <a href="namespaceshared__memory.html#afe26d531f043f59bb36ea7816b8a40bf">More...</a><br /></td></tr>
@@ -323,13 +323,13 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="name
 <dl class="section author"><dt>Author</dt><dd>Vincent Berenz </dd>
 <dd>
 Maximilien Naveau (<a href="#" onclick="location.href='mai'+'lto:'+'max'+'im'+'ili'+'en'+'.na'+'ve'+'au@'+'gm'+'ail'+'.c'+'om'; return false;">maxim<span style="display: none;">.nosp@m.</span>ilie<span style="display: none;">.nosp@m.</span>n.nav<span style="display: none;">.nosp@m.</span>eau@<span style="display: none;">.nosp@m.</span>gmail<span style="display: none;">.nosp@m.</span>.com</a>) </dd></dl>
-<dl class="license"><dt><b><a class="el" href="license.html#_license000023">License:</a></b></dt><dd>License BSD-3-Clause </dd></dl>
+<dl class="license"><dt><b><a class="el" href="license.html#_license000024">License:</a></b></dt><dd>License BSD-3-Clause </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2019, New York University and Max Planck Gesellschaft. </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2019-05-22</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Vincent Berenz </dd>
 <dd>
 Maximilien Naveau (<a href="#" onclick="location.href='mai'+'lto:'+'max'+'im'+'ili'+'en'+'.na'+'ve'+'au@'+'gm'+'ail'+'.c'+'om'; return false;">maxim<span style="display: none;">.nosp@m.</span>ilie<span style="display: none;">.nosp@m.</span>n.nav<span style="display: none;">.nosp@m.</span>eau@<span style="display: none;">.nosp@m.</span>gmail<span style="display: none;">.nosp@m.</span>.com</a>) </dd></dl>
-<dl class="license"><dt><b><a class="el" href="license.html#_license000027">License:</a></b></dt><dd>License BSD-3-Clause </dd></dl>
+<dl class="license"><dt><b><a class="el" href="license.html#_license000028">License:</a></b></dt><dd>License BSD-3-Clause </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2019, New York University and Max Planck Gesellschaft. </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2019-05-22 </dd></dl>
 </div></div><!-- contents -->
