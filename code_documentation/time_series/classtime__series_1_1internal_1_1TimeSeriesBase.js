@@ -1,0 +1,27 @@
+var classtime__series_1_1internal_1_1TimeSeriesBase =
+[
+    [ "TimeSeriesBase", "classtime__series_1_1internal_1_1TimeSeriesBase.html#a51a42310d90cc8c817c1df75acf49974", null ],
+    [ "append", "classtime__series_1_1internal_1_1TimeSeriesBase.html#a09293ae95cdc492e7de78729b0e0e398", null ],
+    [ "count_appended_elements", "classtime__series_1_1internal_1_1TimeSeriesBase.html#a1e384606bee9664d05803f33235a0d60", null ],
+    [ "has_changed_since_tag", "classtime__series_1_1internal_1_1TimeSeriesBase.html#a38511cb227e3e423922eaaea626a15ee", null ],
+    [ "length", "classtime__series_1_1internal_1_1TimeSeriesBase.html#ae6da9bd31ca06b30413f2073bc2e48e6", null ],
+    [ "max_length", "classtime__series_1_1internal_1_1TimeSeriesBase.html#aee1bf636a094a3068f9de731688c3972", null ],
+    [ "newest_element", "classtime__series_1_1internal_1_1TimeSeriesBase.html#a12bd405933d326fd8396fb2bc1267223", null ],
+    [ "newest_timeindex", "classtime__series_1_1internal_1_1TimeSeriesBase.html#aac02c35ae67fad14a3567dd01565d058", null ],
+    [ "oldest_timeindex", "classtime__series_1_1internal_1_1TimeSeriesBase.html#ace0e19f7ce8e25e50cb704ba58a80d35", null ],
+    [ "operator[]", "classtime__series_1_1internal_1_1TimeSeriesBase.html#aa7267458e4fadff7314037a4bd1d53bb", null ],
+    [ "read_indexes", "classtime__series_1_1internal_1_1TimeSeriesBase.html#a1f379b0886fe36f5a7ea99ebb56a3bbf", null ],
+    [ "tag", "classtime__series_1_1internal_1_1TimeSeriesBase.html#ad20c1f90dd2f9016f32132caa3f976f7", null ],
+    [ "timestamp_ms", "classtime__series_1_1internal_1_1TimeSeriesBase.html#a1e4c7ca710bb14e7dce57a1dd9c4f929", null ],
+    [ "timestamp_s", "classtime__series_1_1internal_1_1TimeSeriesBase.html#aacca694af4c53fa4ae9cd3593c12bf58", null ],
+    [ "wait_for_timeindex", "classtime__series_1_1internal_1_1TimeSeriesBase.html#a5651e522492514408e38a5b99e144a06", null ],
+    [ "write_indexes", "classtime__series_1_1internal_1_1TimeSeriesBase.html#ae45f307ebdfe4508fa342a6a259aea38", null ],
+    [ "condition_ptr_", "classtime__series_1_1internal_1_1TimeSeriesBase.html#a728279a5c045f0784c176282cc5ae1fe", null ],
+    [ "history_elements_ptr_", "classtime__series_1_1internal_1_1TimeSeriesBase.html#aec36178b209eb829fa44f8c0292e1065", null ],
+    [ "history_timestamps_ptr_", "classtime__series_1_1internal_1_1TimeSeriesBase.html#aa9e47bae6a7e2270a1984bee683d1525", null ],
+    [ "mutex_ptr_", "classtime__series_1_1internal_1_1TimeSeriesBase.html#ac192edc73cd3244e0a5ceb7ba1ff3bb6", null ],
+    [ "newest_timeindex_", "classtime__series_1_1internal_1_1TimeSeriesBase.html#af82c823d37375e138e8c11c46a506cae", null ],
+    [ "oldest_timeindex_", "classtime__series_1_1internal_1_1TimeSeriesBase.html#aec2ed21821c0dc475c9360e9124aa550", null ],
+    [ "start_timeindex_", "classtime__series_1_1internal_1_1TimeSeriesBase.html#a6f78dd0d9435126ff803248499fad636", null ],
+    [ "tagged_timeindex_", "classtime__series_1_1internal_1_1TimeSeriesBase.html#a68c415d1fa3de6d751d3178d0c10006a", null ]
+];
