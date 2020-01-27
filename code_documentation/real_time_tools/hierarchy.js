@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "real_time_tools::CheckpointTimer< NUM_CHECKPOINTS, ENABLED >", "classreal__time__tools_1_1CheckpointTimer.html", null ],
     [ "Computation", "classComputation.html", [
       [ "Matrix_computation_no_eigen", "classMatrix__computation__no__eigen.html", null ]
     ] ],

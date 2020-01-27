@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['checkpoint',['checkpoint',['../classreal__time__tools_1_1CheckpointTimer.html#a6e91b61b72c433a220b1bddb7a634bf5',1,'real_time_tools::CheckpointTimer']]],
   ['clean_5fmemory',['clean_memory',['../realtime__test_8cpp.html#ae7878b49a48dc0ca3bcb00390121cf5f',1,'realtime_test.cpp']]],
   ['close_5fdevice',['close_device',['../classreal__time__tools_1_1UsbStream.html#acea75055bb37f2a7f351300dbaf28d9e',1,'real_time_tools::UsbStream']]],
   ['compute',['compute',['../classComputation.html#a1b2d101b74dadde0624f837a62c051c6',1,'Computation::compute()'],['../classMatrix__computation__no__eigen.html#a588b833136c503e9726d7276f358f117',1,'Matrix_computation_no_eigen::compute(int i, int j)'],['../classMatrix__computation__no__eigen.html#a7fbc5e6986b2f630e8356e4d276aa03e',1,'Matrix_computation_no_eigen::compute()']]],

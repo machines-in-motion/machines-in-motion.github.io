@@ -17,5 +17,6 @@ var searchData=
   ['sleep_5fsec',['sleep_sec',['../classreal__time__tools_1_1Timer.html#a0a0df8a3baef34e820203e5579afda38',1,'real_time_tools::Timer']]],
   ['sleep_5funtil_5fsec',['sleep_until_sec',['../classreal__time__tools_1_1Timer.html#a8de5eedf9fe5607d78a703cd22665137',1,'real_time_tools::Timer']]],
   ['spin',['spin',['../classreal__time__tools_1_1Spinner.html#aa07d4fa32ead44008daa73663508139d',1,'real_time_tools::Spinner']]],
+  ['start',['start',['../classreal__time__tools_1_1CheckpointTimer.html#ad93a12cb74103528c8db4e7b1745eae6',1,'real_time_tools::CheckpointTimer']]],
   ['stop',['stop',['../realtime__test_8cpp.html#aba399b0a6a6e3bd37af95bd04e8def6f',1,'stop(int):&#160;realtime_test.cpp'],['../realtime__test__display_8cpp.html#aba399b0a6a6e3bd37af95bd04e8def6f',1,'stop(int):&#160;realtime_test_display.cpp']]]
 ];

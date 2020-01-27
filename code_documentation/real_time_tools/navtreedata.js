@@ -2,6 +2,7 @@ var NAVTREE =
 [
   [ "real_time_tools", "index.html", [
     [ "Todo List", "todo.html", null ],
+    [ "License", "license.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -30,7 +31,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 ".html",
-"iostream_8cpp.html"
+"dir_1b468353c8d27e9110676c362ef81d55.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

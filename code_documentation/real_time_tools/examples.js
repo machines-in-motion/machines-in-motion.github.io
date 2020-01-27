@@ -1,5 +1,6 @@
 var examples =
 [
+    [ "demo_checkpoint_timer.cpp", "demo_checkpoint_timer_8cpp-example.html", null ],
     [ "demo_realtime_check.cpp", "demo_realtime_check_8cpp-example.html", null ],
     [ "demo_realtime_strict_check.cpp", "demo_realtime_strict_check_8cpp-example.html", null ],
     [ "demo_spinner.cpp", "demo_spinner_8cpp-example.html", null ],

@@ -7,5 +7,6 @@ var searchData=
   ['time_5fmeasurement_5fbuffer_5f',['time_measurement_buffer_',['../classreal__time__tools_1_1Timer.html#a9b509f58fc1eef3f7ce4145f75c01fa9',1,'real_time_tools::Timer']]],
   ['timeout_5f',['timeout_',['../classreal__time__tools_1_1UsbStream.html#afa70d692f2715d9a42e1a2d3a91f876a',1,'real_time_tools::UsbStream']]],
   ['timeout_5fset_5f',['timeout_set_',['../classreal__time__tools_1_1UsbStream.html#a76378aaeca606027408ebd5c7f06e97e',1,'real_time_tools::UsbStream']]],
+  ['timers_5f',['timers_',['../classreal__time__tools_1_1CheckpointTimer.html#a0abbead69aaf780b649f6af01f50cc62',1,'real_time_tools::CheckpointTimer']]],
   ['total_5fmodification_5fcount_5f',['total_modification_count_',['../classreal__time__tools_1_1SingletypeThreadsafeObject.html#a3475e1d35b7af07acdbf74c0170ed45d',1,'real_time_tools::SingletypeThreadsafeObject::total_modification_count_()'],['../classreal__time__tools_1_1ThreadsafeObject.html#a12f866f5a2f955aa3b55b03623033fca',1,'real_time_tools::ThreadsafeObject::total_modification_count_()']]]
 ];
