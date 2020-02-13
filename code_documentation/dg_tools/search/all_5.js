@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['pdcontroller',['PDController',['../classdynamicgraph_1_1sot_1_1PDController.html',1,'dynamicgraph::sot']]],
-  ['power_5fjump_2ehpp',['power_jump.hpp',['../power__jump_8hpp.html',1,'']]],
-  ['powerjumpcontrol',['PowerJumpControl',['../classdynamicgraph_1_1sot_1_1PowerJumpControl.html',1,'dynamicgraph::sot']]],
-  ['previousvalue',['PreviousValue',['../classdg__tools_1_1PreviousValue.html',1,'dg_tools']]]
+  ['filter',['filter',['../classpython_1_1dg__tools_1_1filter_1_1ButterWorthFilter.html#aaa37fb9c14becc324528c1a5eb7a0a86',1,'python::dg_tools::filter::ButterWorthFilter']]],
+  ['filter_2epy',['filter.py',['../filter_8py.html',1,'']]]
 ];

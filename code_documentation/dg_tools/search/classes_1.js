@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['historyrecorder',['HistoryRecorder',['../classdg__tools_1_1HistoryRecorder.html',1,'dg_tools']]]
+  ['butterworthfilter',['ButterWorthFilter',['../classpython_1_1dg__tools_1_1filter_1_1ButterWorthFilter.html',1,'python::dg_tools::filter']]]
 ];

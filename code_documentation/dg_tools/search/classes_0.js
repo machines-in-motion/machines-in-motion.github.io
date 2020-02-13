@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['calibrator',['Calibrator',['../classdynamicgraph_1_1sot_1_1Calibrator.html',1,'dynamicgraph::sot']]],
-  ['comimpedancecontrol',['ComImpedanceControl',['../classdynamicgraph_1_1sot_1_1ComImpedanceControl.html',1,'dynamicgraph::sot']]]
+  ['add2vectors',['Add2Vectors',['../classpython_1_1dg__tools_1_1math__small__entities_1_1Add2Vectors.html',1,'python::dg_tools::math_small_entities']]]
 ];

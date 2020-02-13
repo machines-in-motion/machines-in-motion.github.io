@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['upsampler_2ehpp',['upsampler.hpp',['../upsampler_8hpp.html',1,'']]]
+  ['leg_5fimpedance_5fcontroller_2epy',['leg_impedance_controller.py',['../leg__impedance__controller_8py.html',1,'']]]
 ];

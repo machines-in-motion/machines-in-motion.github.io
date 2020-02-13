@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['calibrator',['Calibrator',['../classdynamicgraph_1_1sot_1_1Calibrator.html',1,'dynamicgraph::sot']]],
-  ['comimpedancecontrol',['ComImpedanceControl',['../classdynamicgraph_1_1sot_1_1ComImpedanceControl.html',1,'dynamicgraph::sot']]],
-  ['comimpedancecontroller_2ehpp',['ComImpedanceController.hpp',['../ComImpedanceController_8hpp.html',1,'']]],
-  ['control_5fpd_2ehpp',['control_pd.hpp',['../control__pd_8hpp.html',1,'']]]
+  ['_5f_5finit_5f_5f',['__init__',['../classpython_1_1dg__tools_1_1filter_1_1ButterWorthFilter.html#ac9534f4a0ab7b60766183e3351093054',1,'python.dg_tools.filter.ButterWorthFilter.__init__()'],['../classpython_1_1dg__tools_1_1leg__impedance__control_1_1solo12__impedance__controller_1_1Solo12LegImpedanceController.html#aa956e758651721d07585b2c1d6f197c7',1,'python.dg_tools.leg_impedance_control.solo12_impedance_controller.Solo12LegImpedanceController.__init__()'],['../classpython_1_1dg__tools_1_1sliders_1_1Sliders.html#a15296d91738a560a655787add144df3a',1,'python.dg_tools.sliders.Sliders.__init__()']]],
+  ['_5fcompute_5fcontrol_5ftorques',['_compute_control_torques',['../classpython_1_1dg__tools_1_1leg__impedance__control_1_1solo12__impedance__controller_1_1Solo12LegImpedanceController.html#a76309b4d0de6543fa99768e34e6f8844',1,'python::dg_tools::leg_impedance_control::solo12_impedance_controller::Solo12LegImpedanceController']]],
+  ['_5fcompute_5fjacobian',['_compute_jacobian',['../classpython_1_1dg__tools_1_1leg__impedance__control_1_1solo12__impedance__controller_1_1Solo12LegImpedanceController.html#a4cd43033ff5ac89001656ccb968c2c14',1,'python::dg_tools::leg_impedance_control::solo12_impedance_controller::Solo12LegImpedanceController']]],
+  ['_5fcompute_5fleg_5flength',['_compute_leg_length',['../classpython_1_1dg__tools_1_1leg__impedance__control_1_1solo12__impedance__controller_1_1Solo12LegImpedanceController.html#a304acaa7c8804da7b9c5421bf9f1eb67',1,'python::dg_tools::leg_impedance_control::solo12_impedance_controller::Solo12LegImpedanceController']]],
+  ['_5fslice_5fvec',['_slice_vec',['../classpython_1_1dg__tools_1_1leg__impedance__control_1_1solo12__impedance__controller_1_1Solo12ImpedanceController.html#a0782f26b37ab4ada7b2443685975a673',1,'python::dg_tools::leg_impedance_control::solo12_impedance_controller::Solo12ImpedanceController']]]
 ];
