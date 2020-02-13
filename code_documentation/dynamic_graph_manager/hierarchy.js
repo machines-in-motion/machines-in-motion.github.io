@@ -5,6 +5,7 @@ var hierarchy =
     [ "dynamic_graph::internal::BindedSignalBase", "structdynamic__graph_1_1internal_1_1BindedSignalBase.html", [
       [ "dynamic_graph::internal::BindedSignal< T, BufferSize >", "structdynamic__graph_1_1internal_1_1BindedSignal.html", null ]
     ] ],
+    [ "ros.dgcompleter.DGCompleter", "classros_1_1dgcompleter_1_1DGCompleter.html", null ],
     [ "dynamic_graph::DgToRos< SotType >", "classdynamic__graph_1_1DgToRos.html", null ],
     [ "dynamic_graph::DgToRos< double >", "structdynamic__graph_1_1DgToRos_3_01double_01_4.html", null ],
     [ "dynamic_graph::DgToRos< Matrix >", "structdynamic__graph_1_1DgToRos_3_01Matrix_01_4.html", null ],
@@ -43,6 +44,10 @@ var hierarchy =
       ] ]
     ] ],
     [ "dynamic_graph::GlobalRos", "structdynamic__graph_1_1GlobalRos.html", null ],
+    [ "object", null, [
+      [ "robot.Robot", "classrobot_1_1Robot.html", null ],
+      [ "ros.ros.Ros", "classros_1_1ros_1_1Ros.html", null ]
+    ] ],
     [ "dynamic_graph::PeriodicCall", "classdynamic__graph_1_1PeriodicCall.html", null ],
     [ "dynamic_graph::RosPythonInterpreter", "classdynamic__graph_1_1RosPythonInterpreter.html", null ],
     [ "dynamic_graph::RosRobotStatePublisherInternal", "structdynamic__graph_1_1RosRobotStatePublisherInternal.html", null ],

@@ -1,10 +1,7 @@
 var searchData=
 [
-  ['get_5fcontrols_5fto_5fmap',['get_controls_to_map',['../classdynamic__graph_1_1Device.html#a3291a91974c35f03719220e237512aa8',1,'dynamic_graph::Device']]],
-  ['get_5fhas_5fuser_5fcommand_5fbeen_5fexecuted',['get_has_user_command_been_executed',['../classdynamic__graph__manager_1_1SimpleDGM.html#a08793eb7410b2820e00e028688d890a9',1,'dynamic_graph_manager::SimpleDGM']]],
-  ['get_5fsensors_5fto_5fmap',['get_sensors_to_map',['../classdynamic__graph__manager_1_1SimpleDGM.html#aa92cd33a31c934835252f834bab7b9f4',1,'dynamic_graph_manager::SimpleDGM::get_sensors_to_map()'],['../classdynamic__graph_1_1DynamicGraphManager.html#a7bddce83d5185433041ad27610b85b3a',1,'dynamic_graph::DynamicGraphManager::get_sensors_to_map()']]],
-  ['getclassname',['getClassName',['../classdynamic__graph_1_1Device.html#a2aa0523e36b0818e98ad8b12ce7ade6d',1,'dynamic_graph::Device::getClassName()'],['../classdynamic__graph_1_1RosRobotStatePublisher.html#ad71cb08409f890ba45d6afd25e284341',1,'dynamic_graph::RosRobotStatePublisher::getClassName()'],['../classdynamic__graph_1_1RosRobotStatePublisherMt.html#abf9c4c7acd9ad405340f35dd7431f118',1,'dynamic_graph::RosRobotStatePublisherMt::getClassName()']]],
-  ['getcode',['getCode',['../classdynamic__graph_1_1ExceptionAbstract.html#a4b3009fb1517a2e382026c31ef618526',1,'dynamic_graph::ExceptionAbstract']]],
-  ['getmessage',['getMessage',['../classdynamic__graph_1_1ExceptionAbstract.html#aa7b63b9c5529a7d07d5a9a880bf9a0a5',1,'dynamic_graph::ExceptionAbstract']]],
-  ['getstringmessage',['getStringMessage',['../classdynamic__graph_1_1ExceptionAbstract.html#ab43a64baae9d779737b03c7c1fbb6919',1,'dynamic_graph::ExceptionAbstract']]]
+  ['exceptionabstract',['ExceptionAbstract',['../classdynamic__graph_1_1ExceptionAbstract.html#a474009850ce7a50c121e4c4294181e79',1,'dynamic_graph::ExceptionAbstract']]],
+  ['execute_5fgraph',['execute_graph',['../classdynamic__graph_1_1Device.html#adb596e7acd67089bb4929cf577b3c6ff',1,'dynamic_graph::Device::execute_graph()'],['../classdynamic__graph_1_1DeviceSimulator.html#a614c51ee8d55765019ae98715f875ed5',1,'dynamic_graph::DeviceSimulator::execute_graph()']]],
+  ['execute_5fgraph_5fdeprecated',['execute_graph_deprecated',['../classdynamic__graph_1_1Device.html#a126268314fea8fff802fc957cbf3e0d7',1,'dynamic_graph::Device']]],
+  ['export_5fdevice_5fdg_5fto_5fros',['export_device_dg_to_ros',['../classrobot_1_1Robot.html#ad5787c862823008387c047da5f34dd7e',1,'robot::Robot']]]
 ];

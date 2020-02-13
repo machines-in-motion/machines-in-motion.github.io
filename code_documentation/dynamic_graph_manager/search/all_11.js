@@ -1,15 +1,21 @@
 var searchData=
 [
-  ['initialize',['initialize',['../classdynamic__graph_1_1Device.html#af6edd01afac2838c4e336c76caa4338a',1,'dynamic_graph::Device::initialize()'],['../classdynamic__graph_1_1DeviceSimulator.html#a346995902653feca7707f8c62ab4bf95',1,'dynamic_graph::DeviceSimulator::initialize()'],['../classdynamic__graph_1_1DynamicGraphManager.html#ac6859456bbdd4307cb880dc5e54131dd',1,'dynamic_graph::DynamicGraphManager::initialize()']]],
-  ['initialize_5fdynamic_5fgraph_5fprocess',['initialize_dynamic_graph_process',['../classdynamic__graph_1_1DynamicGraphManager.html#a81926d5d33573d667bc6511bbb2d8f52',1,'dynamic_graph::DynamicGraphManager']]],
-  ['initialize_5ffrom_5ffile',['initialize_from_file',['../classdynamic__graph_1_1Device.html#af71d151e69555e9530d770d3d90b7f3e',1,'dynamic_graph::Device::initialize_from_file()'],['../classdynamic__graph_1_1DeviceSimulator.html#a8a9370f236ba03162be2472c79f865f2',1,'dynamic_graph::DeviceSimulator::initialize_from_file()']]],
-  ['initialize_5fhardware_5fcommunication_5fprocess',['initialize_hardware_communication_process',['../classdynamic__graph__manager_1_1SimpleDGM.html#a5d771fc5a9ae6dd524a658d50fbee5d3',1,'dynamic_graph_manager::SimpleDGM::initialize_hardware_communication_process()'],['../classdynamic__graph_1_1DynamicGraphManager.html#ae3927887762c52c7bf50ab5a565c3077',1,'dynamic_graph::DynamicGraphManager::initialize_hardware_communication_process()']]],
-  ['initialize_5fmaps',['initialize_maps',['../classdynamic__graph_1_1Device.html#ac4203f6753b2d534c0ade84fb52ac47e',1,'dynamic_graph::Device']]],
-  ['interpreter_5f',['interpreter_',['../classdynamic__graph_1_1RosPythonInterpreter.html#a1e4f91705887914b6e5f649b2fb7fcfa',1,'dynamic_graph::RosPythonInterpreter']]],
-  ['is_5fdynamic_5fgraph_5fstopped',['is_dynamic_graph_stopped',['../classdynamic__graph_1_1DynamicGraphManager.html#ab929d21277e5d2fba726b8ae422c27a8',1,'dynamic_graph::DynamicGraphManager']]],
-  ['is_5fdynamic_5fgraph_5fstopped_5f',['is_dynamic_graph_stopped_',['../classdynamic__graph_1_1DynamicGraphManager.html#a87baafbaadf396a7663da653dc5da106',1,'dynamic_graph::DynamicGraphManager']]],
-  ['is_5fhardware_5fcommunication_5fstopped',['is_hardware_communication_stopped',['../classdynamic__graph_1_1DynamicGraphManager.html#afcc53ebec6e5f2057c23a05894715125',1,'dynamic_graph::DynamicGraphManager']]],
-  ['is_5fhardware_5fcommunication_5fstopped_5f',['is_hardware_communication_stopped_',['../classdynamic__graph_1_1DynamicGraphManager.html#ab1a2bc0a8f04126638056f430297097e',1,'dynamic_graph::DynamicGraphManager']]],
-  ['is_5fin_5fsafety_5fmode',['is_in_safety_mode',['../classdynamic__graph__manager_1_1SimpleDGM.html#a5fe81f9feb5d982761d7a427aa31e7b4',1,'dynamic_graph_manager::SimpleDGM::is_in_safety_mode()'],['../classdynamic__graph_1_1DynamicGraphManager.html#aea29e8dc351e0a50a8d2803d854d238d',1,'dynamic_graph::DynamicGraphManager::is_in_safety_mode()']]],
-  ['is_5freal_5frobot_5f',['is_real_robot_',['../classdynamic__graph_1_1DynamicGraphManager.html#a81617144faf55e4ed2bf60165060b0f5',1,'dynamic_graph::DynamicGraphManager']]]
+  ['hardware_5fcommunication_5freal_5ftime_5floop',['hardware_communication_real_time_loop',['../classdynamic__graph_1_1DynamicGraphManager.html#a4ea4183f1a4bd2d450ffb4a0a22b4242',1,'dynamic_graph::DynamicGraphManager']]],
+  ['hardware_5fcommunication_5freal_5ftime_5floop_5fhelper',['hardware_communication_real_time_loop_helper',['../classdynamic__graph_1_1DynamicGraphManager.html#a771ad93758759932899273c5f01975fc',1,'dynamic_graph::DynamicGraphManager']]],
+  ['has_5fbeen_5fwaken_5fby_5fdg_5f',['has_been_waken_by_dg_',['../classdynamic__graph_1_1DynamicGraphManager.html#a7e6cc5e58f1accce947f929d233a67fd',1,'dynamic_graph::DynamicGraphManager']]],
+  ['has_5fdynamic_5fgraph_5fprocess_5fdied',['has_dynamic_graph_process_died',['../classdynamic__graph_1_1DynamicGraphManager.html#ab980a2384c817ab5f59e712a54b2261a',1,'dynamic_graph::DynamicGraphManager']]],
+  ['hw_5fcom_5fros_5fnode_5fname_5f',['hw_com_ros_node_name_',['../classdynamic__graph_1_1DynamicGraphManager.html#a415f24927dbe9dfd0ee4a6462428bd48',1,'dynamic_graph::DynamicGraphManager']]],
+  ['hw_5fmeas_5factive_5ftime_5f',['hw_meas_active_time_',['../classdynamic__graph_1_1DynamicGraphManager.html#af4c9ca6b9c161ac578b6726eaa7b7826',1,'dynamic_graph::DynamicGraphManager']]],
+  ['hw_5fmeas_5fsleep_5ftime_5f',['hw_meas_sleep_time_',['../classdynamic__graph_1_1DynamicGraphManager.html#afb2f9b39e5c529d525999c3e91e06213',1,'dynamic_graph::DynamicGraphManager']]],
+  ['hw_5fref_5fsleep_5ftime_5f',['hw_ref_sleep_time_',['../classdynamic__graph_1_1DynamicGraphManager.html#aa89f848a27f201aed320e2c6a441dc02',1,'dynamic_graph::DynamicGraphManager']]],
+  ['hw_5ftime_5floop_5fafter_5fsleep_5f',['hw_time_loop_after_sleep_',['../classdynamic__graph_1_1DynamicGraphManager.html#a3641066efdd3424bb2bd745f6ba8d315',1,'dynamic_graph::DynamicGraphManager']]],
+  ['hw_5ftime_5floop_5fbefore_5fsleep_5f',['hw_time_loop_before_sleep_',['../classdynamic__graph_1_1DynamicGraphManager.html#a26167d2936575dfdbe31be4717b70cc5',1,'dynamic_graph::DynamicGraphManager']]],
+  ['hwc_5factive_5ftimer_5f',['hwc_active_timer_',['../classdynamic__graph_1_1DynamicGraphManager.html#afe6c823bac22d756fc649f911fc1c29b',1,'dynamic_graph::DynamicGraphManager']]],
+  ['hwc_5factive_5ftimer_5ffile_5f',['hwc_active_timer_file_',['../classdynamic__graph_1_1DynamicGraphManager.html#a2bd29dbd358b8c02805f4df970e75936',1,'dynamic_graph::DynamicGraphManager']]],
+  ['hwc_5fpredicted_5fsleeping_5ftime_5f',['hwc_predicted_sleeping_time_',['../classdynamic__graph_1_1DynamicGraphManager.html#af5aa11023c1dd272d7bbabdcccc511b6',1,'dynamic_graph::DynamicGraphManager']]],
+  ['hwc_5fsleep_5ftimer_5f',['hwc_sleep_timer_',['../classdynamic__graph_1_1DynamicGraphManager.html#a89eb402f9e2eaa8dfad090f6c9845f6c',1,'dynamic_graph::DynamicGraphManager']]],
+  ['hwc_5fsleep_5ftimer_5ffile_5f',['hwc_sleep_timer_file_',['../classdynamic__graph_1_1DynamicGraphManager.html#a5db6275d202963665a35c5eb2e68088d',1,'dynamic_graph::DynamicGraphManager']]],
+  ['hwc_5fspinner_5f',['hwc_spinner_',['../classdynamic__graph_1_1DynamicGraphManager.html#ab4716c8ec6194816235e6199863f46f9',1,'dynamic_graph::DynamicGraphManager']]],
+  ['hwc_5ftimer_5f',['hwc_timer_',['../classdynamic__graph_1_1DynamicGraphManager.html#a08ef83c411e5439204fa05b28f8e2794',1,'dynamic_graph::DynamicGraphManager']]],
+  ['hwc_5ftimer_5ffile_5f',['hwc_timer_file_',['../classdynamic__graph_1_1DynamicGraphManager.html#a84f97c9eebbecee1af314e74fe22d8ed',1,'dynamic_graph::DynamicGraphManager']]]
 ];
