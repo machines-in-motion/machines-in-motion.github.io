@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['joint_5fviapoints_5f',['joint_viapoints_',['../classmomentumopt_1_1PlannerSetting.html#a48990bd2a790905b47b584204dccfc64',1,'momentumopt::PlannerSetting']]]
+  ['ini_5fstate_5f',['ini_state_',['../classmomentumopt_1_1DynamicsOptimizer.html#a5a5afbfe369e0453be8533bd2aec504d',1,'momentumopt::DynamicsOptimizer::ini_state_()'],['../classmomentumopt_1_1KinematicsOptimizer.html#ac8eb971f4e04e246d72ea371893b9292',1,'momentumopt::KinematicsOptimizer::ini_state_()']]]
 ];

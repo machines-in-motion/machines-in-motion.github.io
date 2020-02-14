@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['has_5fconverged_5f',['has_converged_',['../classmomentumopt_1_1DynamicsOptimizer.html#a8a93ae2b30d544990846fe61a53c9a7d',1,'momentumopt::DynamicsOptimizer']]],
-  ['heuristic_5f',['heuristic_',['../classmomentumopt_1_1PlannerSetting.html#a3a0345b0ef1a8ac7715dd0ddc2de7d53',1,'momentumopt::PlannerSetting']]]
+  ['friction_5fcone_5f',['friction_cone_',['../classmomentumopt_1_1DynamicsOptimizer.html#a1a2ec159be06bcaffece1125961c1a92',1,'momentumopt::DynamicsOptimizer']]],
+  ['frictioncone',['FrictionCone',['../structmomentumopt_1_1FrictionCone.html',1,'momentumopt']]]
 ];

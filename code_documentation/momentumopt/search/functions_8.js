@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['requiredangularvelocity',['requiredAngularVelocity',['../OrientationUtils_8hpp.html#a3115339f252c9729fdf7ec50940673bb',1,'momentumopt']]]
+  ['log_5fquaternion',['log_quaternion',['../classmomentumopt_1_1kinoptpy_1_1lqr__gain__manifold_1_1CentroidalLqr.html#a3a9ff1218fc17a87aedb660619914448',1,'momentumopt::kinoptpy::lqr_gain_manifold::CentroidalLqr']]]
 ];

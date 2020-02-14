@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['addvariabletomodel',['addVariableToModel',['../classmomentumopt_1_1DynamicsOptimizer.html#a750aefa15e0288b67ae00b6451409b1a',1,'momentumopt::DynamicsOptimizer::addVariableToModel()'],['../classmomentumopt_1_1KinematicsOptimizer.html#a29f0e02dba6bfa00bf74dffb2e136a94',1,'momentumopt::KinematicsOptimizer::addVariableToModel()']]]
+  ['_5fsmooth_5finv',['_smooth_inv',['../classmomentumopt_1_1kinoptpy_1_1lqr__gain__manifold_1_1CentroidalLqr.html#adee84eac4a716c68a3337338b98b0713',1,'momentumopt::kinoptpy::lqr_gain_manifold::CentroidalLqr']]]
 ];

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['max_5feef_5flengths_5f',['max_eef_lengths_',['../classmomentumopt_1_1PlannerSetting.html#acadce33b26bbf09903843376207cc63c',1,'momentumopt::PlannerSetting']]],
-  ['model_5f',['model_',['../classmomentumopt_1_1DynamicsOptimizer.html#a91715e6f26e1e70f43799aaa891b72ab',1,'momentumopt::DynamicsOptimizer::model_()'],['../classmomentumopt_1_1KinematicsOptimizer.html#ac5f923c7e807e78375d47b144a0acfcf',1,'momentumopt::KinematicsOptimizer::model_()']]]
+  ['lin_5fcons_5f',['lin_cons_',['../classmomentumopt_1_1DynamicsOptimizer.html#a92c046ad3c51d85e8803280fc62d2e87',1,'momentumopt::DynamicsOptimizer::lin_cons_()'],['../classmomentumopt_1_1KinematicsOptimizer.html#ac88e0f19da19ebfd9070d6489f4258a8',1,'momentumopt::KinematicsOptimizer::lin_cons_()']]]
 ];

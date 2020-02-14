@@ -1,24 +1,5 @@
 var searchData=
 [
-  ['cfg_5ffile_5f',['cfg_file_',['../classmomentumopt_1_1PlannerSetting.html#ac778f2a5f566fd97faccaef11789ff19',1,'momentumopt::PlannerSetting']]],
-  ['clock',['Clock',['../classmomentumopt_1_1Clock.html',1,'momentumopt']]],
-  ['clock_2ehpp',['Clock.hpp',['../Clock_8hpp.html',1,'']]],
-  ['com_5fpos_5fgoal_5f',['com_pos_goal_',['../classmomentumopt_1_1DynamicsOptimizer.html#a41d3f5a491e7d162d5bfabace5879d28',1,'momentumopt::DynamicsOptimizer']]],
-  ['com_5fviapoints_5f',['com_viapoints_',['../classmomentumopt_1_1PlannerSetting.html#aa34a8bea3d2de90c242da8ce38e9b62b',1,'momentumopt::PlannerSetting']]],
-  ['configure',['configure',['../classmomentumopt_1_1DynamicsFeedback.html#a5bcc50c49beb83c1d5829753a5c0a1bb',1,'momentumopt::DynamicsFeedback']]],
-  ['constraints_5fvector_5f',['constraints_vector_',['../classmomentumopt_1_1KinematicsInterface.html#af1e7f9b2207f05ff204112abe08d5a52',1,'momentumopt::KinematicsInterface']]],
-  ['contact_5fplan_5f',['contact_plan_',['../classmomentumopt_1_1DynamicsOptimizer.html#a3c09af4c799976dceb1ece5f0aab5814',1,'momentumopt::DynamicsOptimizer::contact_plan_()'],['../classmomentumopt_1_1KinematicsOptimizer.html#a8729b90404b779807217944fc6b66e8d',1,'momentumopt::KinematicsOptimizer::contact_plan_()']]],
-  ['contactplanfromfile',['ContactPlanFromFile',['../classmomentumopt_1_1ContactPlanFromFile.html',1,'momentumopt']]],
-  ['contactplanfromfile_2ecpp',['ContactPlanFromFile.cpp',['../ContactPlanFromFile_8cpp.html',1,'']]],
-  ['contactplanfromfile_2ehpp',['ContactPlanFromFile.hpp',['../ContactPlanFromFile_8hpp.html',1,'']]],
-  ['contactplaninterface',['ContactPlanInterface',['../classmomentumopt_1_1ContactPlanInterface.html',1,'momentumopt']]],
-  ['contactplaninterface_2ecpp',['ContactPlanInterface.cpp',['../ContactPlanInterface_8cpp.html',1,'']]],
-  ['contactplaninterface_2ehpp',['ContactPlanInterface.hpp',['../ContactPlanInterface_8hpp.html',1,'']]],
-  ['contactsequence',['ContactSequence',['../classmomentumopt_1_1ContactSequence.html',1,'momentumopt']]],
-  ['contactstate',['ContactState',['../classmomentumopt_1_1ContactState.html',1,'momentumopt']]],
-  ['contactstate_2ecpp',['ContactState.cpp',['../ContactState_8cpp.html',1,'']]],
-  ['contactstate_2ehpp',['ContactState.hpp',['../ContactState_8hpp.html',1,'']]],
-  ['contacttype',['contactType',['../classmomentumopt_1_1DynamicsOptimizer.html#a47eda318c402eda737917def2024c0c3',1,'momentumopt::DynamicsOptimizer::contactType()'],['../ContactState_8hpp.html#aff6d76c8e2d97a91b98d32b8f4f2ca50',1,'momentumopt::ContactType()']]],
-  ['control_5fcost_5f',['control_cost_',['../classmomentumopt_1_1DynamicsFeedback.html#ac70542b5ca07405e0dbae8c67c282994',1,'momentumopt::DynamicsFeedback']]],
-  ['cop_5frange_5f',['cop_range_',['../classmomentumopt_1_1PlannerSetting.html#ac3171b0fd56ddf964e27dba3943ea145',1,'momentumopt::PlannerSetting']]]
+  ['a_5ft',['A_t',['../classmomentumopt_1_1kinoptpy_1_1end__eff__lqr__gain__computation_1_1end__effector__lqr.html#a52bf940882445977d3efc309bb9eb3a1',1,'momentumopt.kinoptpy.end_eff_lqr_gain_computation.end_effector_lqr.A_t()'],['../classmomentumopt_1_1kinoptpy_1_1lqr__gain__computation_1_1centroidal__lqr.html#a40091cf052835e7e420881b7ae3eff7c',1,'momentumopt.kinoptpy.lqr_gain_computation.centroidal_lqr.A_t()']]],
+  ['addvariabletomodel',['addVariableToModel',['../classmomentumopt_1_1DynamicsOptimizer.html#a750aefa15e0288b67ae00b6451409b1a',1,'momentumopt::DynamicsOptimizer::addVariableToModel()'],['../classmomentumopt_1_1KinematicsOptimizer.html#a29f0e02dba6bfa00bf74dffb2e136a94',1,'momentumopt::KinematicsOptimizer::addVariableToModel()']]]
 ];

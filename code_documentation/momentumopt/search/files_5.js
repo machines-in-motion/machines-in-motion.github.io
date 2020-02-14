@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['terraindescription_2ecpp',['TerrainDescription.cpp',['../TerrainDescription_8cpp.html',1,'']]],
-  ['terraindescription_2ehpp',['TerrainDescription.hpp',['../TerrainDescription_8hpp.html',1,'']]],
-  ['trajectorygenerator_2ecpp',['TrajectoryGenerator.cpp',['../TrajectoryGenerator_8cpp.html',1,'']]],
-  ['trajectorygenerator_2ehpp',['TrajectoryGenerator.hpp',['../TrajectoryGenerator_8hpp.html',1,'']]]
+  ['lqr_5fgain_5fcomputation_2epy',['lqr_gain_computation.py',['../lqr__gain__computation_8py.html',1,'']]],
+  ['lqr_5fgain_5fmanifold_2epy',['lqr_gain_manifold.py',['../lqr__gain__manifold_8py.html',1,'']]]
 ];

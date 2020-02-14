@@ -1,4 +1,10 @@
 var searchData=
 [
-  ['getsetting',['getSetting',['../classmomentumopt_1_1ContactPlanInterface.html#a1b09bf570efec6c798786705033746b3',1,'momentumopt::ContactPlanInterface::getSetting()'],['../classmomentumopt_1_1DynamicsFeedback.html#a70072010ed60379d089ffba15a467273',1,'momentumopt::DynamicsFeedback::getSetting()'],['../classmomentumopt_1_1DynamicsOptimizer.html#a50f50640ba0cb391bda25130ff0818f6',1,'momentumopt::DynamicsOptimizer::getSetting()'],['../classmomentumopt_1_1KinematicsInterface.html#ac52f01783551052e595da9efd1162154',1,'momentumopt::KinematicsInterface::getSetting()'],['../classmomentumopt_1_1KinematicsOptimizer.html#a95ac58c91744e58f305d5b6f7b82a88a',1,'momentumopt::KinematicsOptimizer::getSetting()']]]
+  ['diff_5fx',['diff_x',['../classmomentumopt_1_1kinoptpy_1_1lqr__gain__manifold_1_1CentroidalLqr.html#a4166abc9635112013572e679556ab6c6',1,'momentumopt::kinoptpy::lqr_gain_manifold::CentroidalLqr']]],
+  ['displaymotion',['displayMotion',['../classmomentumopt_1_1KinematicsOptimizer.html#adae0ed165647548d37f7da4f851fde70',1,'momentumopt::KinematicsOptimizer']]],
+  ['dynamics',['dynamics',['../classmomentumopt_1_1DynamicsFeedback.html#afdc5fe5399f8b3c337e7f67bb16402cd',1,'momentumopt::DynamicsFeedback']]],
+  ['dynamics_5fderivatives',['dynamics_derivatives',['../classmomentumopt_1_1kinoptpy_1_1lqr__gain__manifold_1_1CentroidalLqr.html#a9e0cb033d63f0892c7c876a0fef96967',1,'momentumopt::kinoptpy::lqr_gain_manifold::CentroidalLqr']]],
+  ['dynamicsfeedback',['DynamicsFeedback',['../classmomentumopt_1_1DynamicsFeedback.html#aaa88a51a7e3ddcdebdfc0c88e88c092a',1,'momentumopt::DynamicsFeedback']]],
+  ['dynamicsoptimizer',['DynamicsOptimizer',['../classmomentumopt_1_1DynamicsOptimizer.html#abd91235bc8b2baa7b4135aaee66b5a0f',1,'momentumopt::DynamicsOptimizer']]],
+  ['dynamicssequence',['dynamicsSequence',['../classmomentumopt_1_1DynamicsOptimizer.html#a84cbe0d7cf22883c566ebd7af7548f49',1,'momentumopt::DynamicsOptimizer']]]
 ];

@@ -1,13 +1,12 @@
 var searchData=
 [
-  ['terraindescription',['TerrainDescription',['../classmomentumopt_1_1TerrainDescription.html',1,'momentumopt']]],
-  ['terraindescription_2ecpp',['TerrainDescription.cpp',['../TerrainDescription_8cpp.html',1,'']]],
-  ['terraindescription_2ehpp',['TerrainDescription.hpp',['../TerrainDescription_8hpp.html',1,'']]],
-  ['terrainid',['terrainId',['../classmomentumopt_1_1TerrainRegion.html#a754279c40651515f7178ba27c48fd210',1,'momentumopt::TerrainRegion']]],
-  ['terrainregion',['TerrainRegion',['../classmomentumopt_1_1TerrainRegion.html',1,'momentumopt']]],
-  ['time_5frange_5f',['time_range_',['../classmomentumopt_1_1PlannerSetting.html#aa5b40d5406211540b879d9ed567a1692',1,'momentumopt::PlannerSetting']]],
-  ['timer_5f',['timer_',['../classmomentumopt_1_1DynamicsOptimizer.html#ac0973494a664a3afaea7b23c253e435b',1,'momentumopt::DynamicsOptimizer']]],
-  ['trajectorygenerator',['TrajectoryGenerator',['../classmomentumopt_1_1TrajectoryGenerator.html',1,'momentumopt']]],
-  ['trajectorygenerator_2ecpp',['TrajectoryGenerator.cpp',['../TrajectoryGenerator_8cpp.html',1,'']]],
-  ['trajectorygenerator_2ehpp',['TrajectoryGenerator.hpp',['../TrajectoryGenerator_8hpp.html',1,'']]]
+  ['qp_2epy',['qp.py',['../qp_8py.html',1,'']]],
+  ['qpsolver',['QpSolver',['../classmomentumopt_1_1kinoptpy_1_1qp_1_1QpSolver.html',1,'momentumopt::kinoptpy::qp']]],
+  ['quadprog_5fsolve_5fqp',['quadprog_solve_qp',['../classmomentumopt_1_1kinoptpy_1_1qp_1_1QpSolver.html#aa54258f44de0076c214dfec30d99d370',1,'momentumopt::kinoptpy::qp::QpSolver']]],
+  ['quadruped12wrapper',['Quadruped12Wrapper',['../classmomentumopt_1_1quadruped_1_1quadruped__wrapper_1_1Quadruped12Wrapper.html',1,'momentumopt::quadruped::quadruped_wrapper']]],
+  ['quadruped_5fwrapper_2epy',['quadruped_wrapper.py',['../quadruped__wrapper_8py.html',1,'']]],
+  ['quadrupedwrapper',['QuadrupedWrapper',['../classmomentumopt_1_1quadruped_1_1quadruped__wrapper_1_1QuadrupedWrapper.html',1,'momentumopt::quadruped::quadruped_wrapper']]],
+  ['quaternion_5fdifference',['quaternion_difference',['../classmomentumopt_1_1kinoptpy_1_1lqr__gain__manifold_1_1CentroidalLqr.html#af5780909e1bd403fb597a478d6c74a6c',1,'momentumopt::kinoptpy::lqr_gain_manifold::CentroidalLqr']]],
+  ['quaternion_5fproduct',['quaternion_product',['../classmomentumopt_1_1kinoptpy_1_1lqr__gain__manifold_1_1CentroidalLqr.html#aa79792418c337e3f795fc30699015bdb',1,'momentumopt::kinoptpy::lqr_gain_manifold::CentroidalLqr']]],
+  ['quaternion_5fto_5frotation',['quaternion_to_rotation',['../classmomentumopt_1_1kinoptpy_1_1lqr__gain__manifold_1_1CentroidalLqr.html#a29cfe057dab6a3023b8110496fb35230',1,'momentumopt::kinoptpy::lqr_gain_manifold::CentroidalLqr']]]
 ];

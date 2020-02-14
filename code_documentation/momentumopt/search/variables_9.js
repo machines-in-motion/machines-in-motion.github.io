@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['lin_5fcons_5f',['lin_cons_',['../classmomentumopt_1_1DynamicsOptimizer.html#a92c046ad3c51d85e8803280fc62d2e87',1,'momentumopt::DynamicsOptimizer::lin_cons_()'],['../classmomentumopt_1_1KinematicsOptimizer.html#ac88e0f19da19ebfd9070d6489f4258a8',1,'momentumopt::KinematicsOptimizer::lin_cons_()']]]
+  ['kin_5finterface_5f',['kin_interface_',['../classmomentumopt_1_1KinematicsOptimizer.html#ab232309c31468a4f398ab468c4f8c21c',1,'momentumopt::KinematicsOptimizer']]],
+  ['kin_5fsequence_5f',['kin_sequence_',['../classmomentumopt_1_1KinematicsOptimizer.html#a8aa2204b577758d37987bd1ffa3337c8',1,'momentumopt::KinematicsOptimizer']]]
 ];

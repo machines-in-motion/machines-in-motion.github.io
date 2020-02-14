@@ -2,6 +2,14 @@ var NAVTREE =
 [
   [ "momentumopt", "index.html", [
     [ "License", "license.html", null ],
+    [ "Namespaces", null, [
+      [ "Namespace List", "namespaces.html", "namespaces" ],
+      [ "Namespace Members", "namespacemembers.html", [
+        [ "All", "namespacemembers.html", null ],
+        [ "Functions", "namespacemembers_func.html", null ],
+        [ "Enumerations", "namespacemembers_enum.html", null ]
+      ] ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -22,9 +30,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 ".html",
-"classmomentumopt_1_1ContactState.html#a45b5d43760e05d25d24b221c1b280de5",
-"classmomentumopt_1_1KinematicsState.html#a0932533140538ff1fe29332d62fee8f2",
-"classmomentumopt_1_1TerrainRegion.html#a8c06b7f0af4fe42344b8712515a0adc9"
+"classmomentumopt_1_1ContactSequence.html#a7d46156cc6316a55f6a4aee8a4070a12",
+"classmomentumopt_1_1KinematicsSequence.html#a2c819bc477c1bc675e289e8b0eb90f76",
+"classmomentumopt_1_1RobotVelocity.html#ae266d7223e0c0e5bae2a27ec11bb9565",
+"classmomentumopt_1_1motion__execution_1_1MotionExecutor.html#a11bcb7fe492f0a8e907b014d6ad15ebd",
+"structmomentumopt_1_1DynamicsState.html#aaca0b00c006b96510143dfa4479d4170"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
