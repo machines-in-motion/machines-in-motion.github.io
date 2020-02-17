@@ -3,6 +3,7 @@ var searchData=
   ['robot_2epy',['robot.py',['../robot_8py.html',1,'']]],
   ['robot_5fpose_5fpublisher_2epy',['robot_pose_publisher.py',['../robot__pose__publisher_8py.html',1,'']]],
   ['ros_2epy',['ros.py',['../ros_8py.html',1,'']]],
+  ['ros_5fclient_2epy',['ros_client.py',['../ros__client_8py.html',1,'']]],
   ['ros_5finit_2ecpp',['ros_init.cpp',['../ros__init_8cpp.html',1,'']]],
   ['ros_5finit_2ehh',['ros_init.hh',['../ros__init_8hh.html',1,'']]],
   ['ros_5finterpreter_2ecpp',['ros_interpreter.cpp',['../ros__interpreter_8cpp.html',1,'']]],

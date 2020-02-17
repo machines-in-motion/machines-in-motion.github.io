@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['save_5fhistory',['save_history',['../run__command_8py.html#a635bda591a17fb43c98d4bffc1627e4b',1,'ros_nodes::run_command']]],
   ['send_5fdata',['send_data',['../classdynamic__graph_1_1RosRobotStatePublisher.html#a196621509ce1e5becada60a7093bcb3a',1,'dynamic_graph::RosRobotStatePublisher::send_data()'],['../classdynamic__graph_1_1RosRobotStatePublisherMt.html#ac1826cd456058c929f709b3684d85544',1,'dynamic_graph::RosRobotStatePublisherMt::send_data()']]],
   ['set_5fmotor_5fcontrols_5ffrom_5fmap',['set_motor_controls_from_map',['../classdynamic__graph__manager_1_1SimpleDGM.html#ad38ccd35cc0c409a0aaefa8565634109',1,'dynamic_graph_manager::SimpleDGM::set_motor_controls_from_map()'],['../classdynamic__graph_1_1DynamicGraphManager.html#a506e6f37ac7205efaf0efe4202cde897',1,'dynamic_graph::DynamicGraphManager::set_motor_controls_from_map()']]],
   ['set_5fsensors_5ffrom_5fmap',['set_sensors_from_map',['../classdynamic__graph_1_1Device.html#ab8dc9a016ebbc34521812a27b5aa6efa',1,'dynamic_graph::Device']]],

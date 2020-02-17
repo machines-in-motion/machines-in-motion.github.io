@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['save_5fhistory',['save_history',['../run__command_8py.html#a635bda591a17fb43c98d4bffc1627e4b',1,'ros_nodes::run_command']]],
   ['send_5fdata',['send_data',['../classdynamic__graph_1_1RosRobotStatePublisher.html#a196621509ce1e5becada60a7093bcb3a',1,'dynamic_graph::RosRobotStatePublisher::send_data()'],['../classdynamic__graph_1_1RosRobotStatePublisherMt.html#ac1826cd456058c929f709b3684d85544',1,'dynamic_graph::RosRobotStatePublisherMt::send_data()']]],
   ['sensors_5fmap_5f',['sensors_map_',['../classdynamic__graph_1_1Device.html#a338b04580b75994516b8cc04d6605541',1,'dynamic_graph::Device::sensors_map_()'],['../classdynamic__graph_1_1DynamicGraphManager.html#a896bf6cb22d2d88a5a6a307a2e44608e',1,'dynamic_graph::DynamicGraphManager::sensors_map_()']]],
   ['sensors_5fmap_5fname_5f',['sensors_map_name_',['../classdynamic__graph_1_1DynamicGraphManager.html#abd4e4f618fbdacfda8c2cdece08e401b',1,'dynamic_graph::DynamicGraphManager']]],
@@ -9,6 +10,7 @@ var searchData=
   ['set_5ftf_5fmsg_5fto_5fidentity',['set_tf_msg_to_identity',['../classdynamic__graph_1_1RosRobotStatePublisher.html#af3e0cfe13273ecd8c6e01b59bb6220e7',1,'dynamic_graph::RosRobotStatePublisher::set_tf_msg_to_identity()'],['../classdynamic__graph_1_1RosRobotStatePublisherMt.html#af4d3c3ef459132bcce1d47e3a828f0b9',1,'dynamic_graph::RosRobotStatePublisherMt::set_tf_msg_to_identity()']]],
   ['setup_2epy',['setup.py',['../setup_8py.html',1,'']]],
   ['shared_5fmemory_5fname_5f',['shared_memory_name_',['../classdynamic__graph_1_1DynamicGraphManager.html#a97fa7b0a31efa6192c3dcc44fbe63886',1,'dynamic_graph::DynamicGraphManager']]],
+  ['shell_5fclient_2epy',['shell_client.py',['../shell__client_8py.html',1,'']]],
   ['signal_5fhandler',['signal_handler',['../run__command_8py.html#aeae6fad83a1b92e70bce5c7a3b602025',1,'ros_nodes::run_command']]],
   ['signalin',['SignalIN',['../namespacedynamic__graph.html#ae1463c695a6915ea3f9ab4311beb527a',1,'dynamic_graph']]],
   ['signalout',['SignalOUT',['../namespacedynamic__graph.html#a9d80c350c95e161319d7a6e629ecdc4b',1,'dynamic_graph']]],

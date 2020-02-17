@@ -12,6 +12,17 @@ var annotated_dup =
       ] ],
       [ "ros", null, [
         [ "Ros", "classros_1_1ros_1_1Ros.html", "classros_1_1ros_1_1Ros" ]
+      ] ],
+      [ "ros_client", null, [
+        [ "RosPythonInterpreter", "classros_1_1ros__client_1_1RosPythonInterpreter.html", "classros_1_1ros__client_1_1RosPythonInterpreter" ]
+      ] ],
+      [ "shell_client", null, [
+        [ "DynamicGraphInteractiveConsole", "classros_1_1shell__client_1_1DynamicGraphInteractiveConsole.html", "classros_1_1shell__client_1_1DynamicGraphInteractiveConsole" ]
+      ] ]
+    ] ],
+    [ "ros_nodes", null, [
+      [ "run_command", null, [
+        [ "DynamicGraphInteractiveConsole", "classros__nodes_1_1run__command_1_1DynamicGraphInteractiveConsole.html", "classros__nodes_1_1run__command_1_1DynamicGraphInteractiveConsole" ]
       ] ]
     ] ]
 ];

@@ -44,9 +44,14 @@ var hierarchy =
       ] ]
     ] ],
     [ "dynamic_graph::GlobalRos", "structdynamic__graph_1_1GlobalRos.html", null ],
+    [ "InteractiveConsole", null, [
+      [ "ros.shell_client.DynamicGraphInteractiveConsole", "classros_1_1shell__client_1_1DynamicGraphInteractiveConsole.html", null ],
+      [ "ros_nodes.run_command.DynamicGraphInteractiveConsole", "classros__nodes_1_1run__command_1_1DynamicGraphInteractiveConsole.html", null ]
+    ] ],
     [ "object", null, [
       [ "robot.Robot", "classrobot_1_1Robot.html", null ],
-      [ "ros.ros.Ros", "classros_1_1ros_1_1Ros.html", null ]
+      [ "ros.ros.Ros", "classros_1_1ros_1_1Ros.html", null ],
+      [ "ros.ros_client.RosPythonInterpreter", "classros_1_1ros__client_1_1RosPythonInterpreter.html", null ]
     ] ],
     [ "dynamic_graph::PeriodicCall", "classdynamic__graph_1_1PeriodicCall.html", null ],
     [ "dynamic_graph::RosPythonInterpreter", "classdynamic__graph_1_1RosPythonInterpreter.html", null ],
