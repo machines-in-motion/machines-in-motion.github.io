@@ -1,7 +1,7 @@
 var searchData=
 [
   ['second_5fmoment_5felapsed_5ftime_5f',['second_moment_elapsed_time_',['../classreal__time__tools_1_1Timer.html#a1d4e8ddf078ef1c544e2715a0420726a',1,'real_time_tools::Timer']]],
-  ['size',['SIZE',['../classreal__time__tools_1_1ThreadsafeObject.html#af05c02b66f0b75ea12cde9274bc2a97d',1,'real_time_tools::ThreadsafeObject::SIZE()'],['../classMatrix__computation__no__eigen.html#a1f73cf9e7670c6a78a64cb8977f2dcc6',1,'Matrix_computation_no_eigen::size()']]],
+  ['size',['size',['../classMatrix__computation__no__eigen.html#a1f73cf9e7670c6a78a64cb8977f2dcc6',1,'Matrix_computation_no_eigen::size()'],['../classreal__time__tools_1_1ThreadsafeObject.html#af05c02b66f0b75ea12cde9274bc2a97d',1,'real_time_tools::ThreadsafeObject::SIZE()']]],
   ['stack_5fsize_5f',['stack_size_',['../classreal__time__tools_1_1RealTimeThreadParameters.html#ac31bba1a59fa600c2c0e4737a79807c4',1,'real_time_tools::RealTimeThreadParameters']]],
   ['start_5ftime',['start_time',['../classreal__time__tools_1_1RealTimeCheck.html#a969600ce8ecc4ec48bbf59e8d669749e',1,'real_time_tools::RealTimeCheck']]],
   ['started',['started',['../classreal__time__tools_1_1RealTimeCheck.html#a21b5703a3c61b09955d94d06a3562667',1,'real_time_tools::RealTimeCheck']]],
