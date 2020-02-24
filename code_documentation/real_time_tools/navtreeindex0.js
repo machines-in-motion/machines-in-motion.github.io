@@ -217,11 +217,6 @@ var NAVTREEINDEX0 =
 "classreal__time__tools_1_1UsbStream.html#ae3e565f6ea54fb5c4666b98745e9f87f":[2,0,0,12,10],
 "classreal__time__tools_1_1UsbStream.html#ae5a19cde3cc21a0c878be3fe4cb54f2d":[2,0,0,12,12],
 "classreal__time__tools_1_1UsbStream.html#afa70d692f2715d9a42e1a2d3a91f876a":[2,0,0,12,16],
-"compute__statistics_8py.html":[3,0,2,0,0],
-"compute__statistics_8py.html#a0489a5cc5b7c5e9b2bcf3ccfc75e9a74":[3,0,2,0,0,1],
-"compute__statistics_8py.html#a2fab7d549fda19c2b9123657f8fe90cf":[3,0,2,0,0,3],
-"compute__statistics_8py.html#a9839ab0f0089f8cb4807311df8a352cf":[3,0,2,0,0,2],
-"compute__statistics_8py.html#afe7eec3c0b928f482ac5cf67fc0d5660":[3,0,2,0,0,0],
 "demo__checkpoint__timer_8cpp.html":[3,0,0,0],
 "demo__checkpoint__timer_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947":[3,0,0,0,1],
 "demo__checkpoint__timer_8cpp.html#a609e6537df0c7eb15c1f5b4e02fbe0ed":[3,0,0,0,3],
@@ -249,5 +244,10 @@ var NAVTREEINDEX0 =
 "demo__usb__stream__imu__3DM__GX3__25_8cpp.html#a8a096d7f567dad6d28f0fd870ba6bb43":[3,0,0,6,2],
 "demo__usb__stream__imu__3DM__GX3__25_8cpp.html#af04ed9328c659fc57f91d74cdeedda72":[3,0,0,6,4],
 "demo__usb__stream__imu__3DM__GX3__25_8cpp.html#af411ef352aef0f8d040d8d60c49eac7a":[3,0,0,6,1],
-"demo_checkpoint_timer_8cpp-example.html":[4,0]
+"demo_checkpoint_timer_8cpp-example.html":[4,0],
+"demo_realtime_check_8cpp-example.html":[4,1],
+"demo_realtime_strict_check_8cpp-example.html":[4,2],
+"demo_spinner_8cpp-example.html":[4,3],
+"demo_timing_8cpp-example.html":[4,4],
+"demo_usb_stream_imu_3DM_GX3_25_8cpp-example.html":[4,5]
 };
