@@ -30,11 +30,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 ".html",
-"classmomentumopt_1_1ContactSequence.html#a7d46156cc6316a55f6a4aee8a4070a12",
-"classmomentumopt_1_1KinematicsSequence.html#a2c819bc477c1bc675e289e8b0eb90f76",
-"classmomentumopt_1_1RobotVelocity.html#ae266d7223e0c0e5bae2a27ec11bb9565",
-"classmomentumopt_1_1motion__execution_1_1MotionExecutor.html#a11bcb7fe492f0a8e907b014d6ad15ebd",
-"structmomentumopt_1_1DynamicsState.html#aaca0b00c006b96510143dfa4479d4170"
+"classmomentumopt_1_1ContactPlanInterface.html#ad8245f52920515b76cb7de2bd8af1e4f",
+"classmomentumopt_1_1KinematicsOptimizer.html#aaf14bf0316288245d9d00cccf65ec3af",
+"classmomentumopt_1_1RobotPosture.html#afc2096a2535a70505f46213f8d5ca5f4",
+"classmomentumopt_1_1kinoptpy_1_1min__jerk__traj_1_1Polynomial.html#ad8abc51bd5294ae6c71be476779668da",
+"end__eff__lqr__gain__computation_8py.html#a83ea0ca6b1f3b8976e6710a3e9e31ad1"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

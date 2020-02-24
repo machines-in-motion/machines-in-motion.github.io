@@ -12,6 +12,7 @@ var searchData=
   ['compute_5ftrajectory_5ffrom_5fcontrols',['compute_trajectory_from_controls',['../classmomentumopt_1_1kinoptpy_1_1lqr__gain__manifold_1_1CentroidalLqr.html#adf42cddc117e41f7aedda103a98f30de',1,'momentumopt::kinoptpy::lqr_gain_manifold::CentroidalLqr']]],
   ['configure',['configure',['../classmomentumopt_1_1DynamicsFeedback.html#a5bcc50c49beb83c1d5829753a5c0a1bb',1,'momentumopt::DynamicsFeedback']]],
   ['constraints_5fvector_5f',['constraints_vector_',['../classmomentumopt_1_1KinematicsInterface.html#af1e7f9b2207f05ff204112abe08d5a52',1,'momentumopt::KinematicsInterface']]],
+  ['contact',['Contact',['../classmomentumopt_1_1kinoptpy_1_1momentum__kinematics__optimizer_1_1Contact.html',1,'momentumopt::kinoptpy::momentum_kinematics_optimizer']]],
   ['contact_5fplan_5f',['contact_plan_',['../classmomentumopt_1_1DynamicsOptimizer.html#a3c09af4c799976dceb1ece5f0aab5814',1,'momentumopt::DynamicsOptimizer::contact_plan_()'],['../classmomentumopt_1_1KinematicsOptimizer.html#a8729b90404b779807217944fc6b66e8d',1,'momentumopt::KinematicsOptimizer::contact_plan_()']]],
   ['contactplanfromfile',['ContactPlanFromFile',['../classmomentumopt_1_1ContactPlanFromFile.html',1,'momentumopt']]],
   ['contactplanfromfile_2ecpp',['ContactPlanFromFile.cpp',['../ContactPlanFromFile_8cpp.html',1,'']]],

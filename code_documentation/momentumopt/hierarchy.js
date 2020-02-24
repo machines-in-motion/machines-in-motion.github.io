@@ -26,6 +26,10 @@ var hierarchy =
     [ "object", null, [
       [ "momentumopt.kinoptpy.inverse_kinematics.PointContactInverseKinematics", "classmomentumopt_1_1kinoptpy_1_1inverse__kinematics_1_1PointContactInverseKinematics.html", null ],
       [ "momentumopt.kinoptpy.min_jerk_traj.PolynominalList", "classmomentumopt_1_1kinoptpy_1_1min__jerk__traj_1_1PolynominalList.html", null ],
+      [ "momentumopt.kinoptpy.momentum_kinematics_optimizer.Contact", "classmomentumopt_1_1kinoptpy_1_1momentum__kinematics__optimizer_1_1Contact.html", null ],
+      [ "momentumopt.kinoptpy.momentum_kinematics_optimizer.EndeffectorTrajectoryGenerator", "classmomentumopt_1_1kinoptpy_1_1momentum__kinematics__optimizer_1_1EndeffectorTrajectoryGenerator.html", null ],
+      [ "momentumopt.kinoptpy.momentum_kinematics_optimizer.JointTrajectoryGenerator", "classmomentumopt_1_1kinoptpy_1_1momentum__kinematics__optimizer_1_1JointTrajectoryGenerator.html", null ],
+      [ "momentumopt.kinoptpy.momentum_kinematics_optimizer.MomentumKinematicsOptimizer", "classmomentumopt_1_1kinoptpy_1_1momentum__kinematics__optimizer_1_1MomentumKinematicsOptimizer.html", null ],
       [ "momentumopt.motion_execution.MotionSimulator", "classmomentumopt_1_1motion__execution_1_1MotionSimulator.html", [
         [ "momentumopt.motion_execution.MotionExecutor", "classmomentumopt_1_1motion__execution_1_1MotionExecutor.html", null ]
       ] ],

@@ -17,6 +17,12 @@ var namespacemomentumopt =
         [ "Polynomial", "classmomentumopt_1_1kinoptpy_1_1min__jerk__traj_1_1Polynomial.html", "classmomentumopt_1_1kinoptpy_1_1min__jerk__traj_1_1Polynomial" ],
         [ "PolynominalList", "classmomentumopt_1_1kinoptpy_1_1min__jerk__traj_1_1PolynominalList.html", "classmomentumopt_1_1kinoptpy_1_1min__jerk__traj_1_1PolynominalList" ]
       ] ],
+      [ "momentum_kinematics_optimizer", null, [
+        [ "Contact", "classmomentumopt_1_1kinoptpy_1_1momentum__kinematics__optimizer_1_1Contact.html", "classmomentumopt_1_1kinoptpy_1_1momentum__kinematics__optimizer_1_1Contact" ],
+        [ "EndeffectorTrajectoryGenerator", "classmomentumopt_1_1kinoptpy_1_1momentum__kinematics__optimizer_1_1EndeffectorTrajectoryGenerator.html", "classmomentumopt_1_1kinoptpy_1_1momentum__kinematics__optimizer_1_1EndeffectorTrajectoryGenerator" ],
+        [ "JointTrajectoryGenerator", "classmomentumopt_1_1kinoptpy_1_1momentum__kinematics__optimizer_1_1JointTrajectoryGenerator.html", "classmomentumopt_1_1kinoptpy_1_1momentum__kinematics__optimizer_1_1JointTrajectoryGenerator" ],
+        [ "MomentumKinematicsOptimizer", "classmomentumopt_1_1kinoptpy_1_1momentum__kinematics__optimizer_1_1MomentumKinematicsOptimizer.html", "classmomentumopt_1_1kinoptpy_1_1momentum__kinematics__optimizer_1_1MomentumKinematicsOptimizer" ]
+      ] ],
       [ "qp", null, [
         [ "QpSolver", "classmomentumopt_1_1kinoptpy_1_1qp_1_1QpSolver.html", "classmomentumopt_1_1kinoptpy_1_1qp_1_1QpSolver" ]
       ] ]
