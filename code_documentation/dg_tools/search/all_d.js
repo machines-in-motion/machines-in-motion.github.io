@@ -1,10 +1,12 @@
 var searchData=
 [
-  ['set_5ftime_5fperiod',['set_time_period',['../classpython_1_1dg__tools_1_1traj__generators_1_1CircularCartesianTrajectoryGenerator.html#a5863b65052d601d51c1c4f7a7a51ef86',1,'python::dg_tools::traj_generators::CircularCartesianTrajectoryGenerator']]],
-  ['sliders',['Sliders',['../classpython_1_1dg__tools_1_1sliders_1_1Sliders.html',1,'python::dg_tools::sliders']]],
-  ['solo12_5fimpedance_5fcontroller_2epy',['solo12_impedance_controller.py',['../solo12__impedance__controller_8py.html',1,'']]],
-  ['solo12impedancecontroller',['Solo12ImpedanceController',['../classpython_1_1dg__tools_1_1leg__impedance__control_1_1solo12__impedance__controller_1_1Solo12ImpedanceController.html',1,'python::dg_tools::leg_impedance_control::solo12_impedance_controller']]],
-  ['solo12legimpedancecontroller',['Solo12LegImpedanceController',['../classpython_1_1dg__tools_1_1leg__impedance__control_1_1solo12__impedance__controller_1_1Solo12LegImpedanceController.html',1,'python::dg_tools::leg_impedance_control::solo12_impedance_controller']]],
-  ['stack2vectors',['Stack2Vectors',['../classpython_1_1dg__tools_1_1math__small__entities_1_1Stack2Vectors.html',1,'python::dg_tools::math_small_entities']]],
-  ['stackzero',['StackZero',['../classpython_1_1dg__tools_1_1math__small__entities_1_1StackZero.html',1,'python::dg_tools::math_small_entities']]]
+  ['reactive_5flqr_5fcontroller_2ehpp',['reactive_lqr_controller.hpp',['../reactive__lqr__controller_8hpp.html',1,'']]],
+  ['reactivelqrcontroller',['ReactiveLQRController',['../classdynamicgraph_1_1sot_1_1ReactiveLQRController.html',1,'dynamicgraph::sot']]],
+  ['return_5fcom_5ftorques',['return_com_torques',['../classpython_1_1dg__tools_1_1leg__impedance__control_1_1solo12__impedance__controller_1_1Solo12ComController.html#a6791d1b7bbdcca3859cb85358822bb07',1,'python::dg_tools::leg_impedance_control::solo12_impedance_controller::Solo12ComController']]],
+  ['return_5fdes_5fforce',['return_des_force',['../classdynamicgraph_1_1sot_1_1PowerJumpControl.html#a0172cfef3c8c11b441fee7380c69c227',1,'dynamicgraph::sot::PowerJumpControl']]],
+  ['return_5fdes_5fkp',['return_des_kp',['../classdynamicgraph_1_1sot_1_1PowerJumpControl.html#aa00816d8369775112bcb93b915790926',1,'dynamicgraph::sot::PowerJumpControl']]],
+  ['return_5fdes_5fpos',['return_des_pos',['../classdynamicgraph_1_1sot_1_1PowerJumpControl.html#ad132ac991b6fb6cddd9aa019a33425e9',1,'dynamicgraph::sot::PowerJumpControl']]],
+  ['return_5fend_5feff_5flqr_5ftau',['return_end_eff_lqr_tau',['../classdynamicgraph_1_1sot_1_1ComImpedanceControl.html#a3df6780c7565af64536541c04c7e55f4',1,'dynamicgraph::sot::ComImpedanceControl::return_end_eff_lqr_tau()'],['../classpython_1_1dg__tools_1_1leg__impedance__control_1_1quad__leg__impedance__controller_1_1QuadrupedComControl.html#a68a8b7ea897a69259d9409e0f703b7d3',1,'python.dg_tools.leg_impedance_control.quad_leg_impedance_controller.QuadrupedComControl.return_end_eff_lqr_tau()']]],
+  ['return_5fleg_5flength',['return_leg_length',['../classpython_1_1dg__tools_1_1leg__impedance__control_1_1leg__impedance__controller_1_1LegImpedanceController.html#a4c88fb5d9e5a89c4cb1df9198475bda9',1,'python::dg_tools::leg_impedance_control::leg_impedance_controller::LegImpedanceController']]],
+  ['return_5flqr_5ftau',['return_lqr_tau',['../classdynamicgraph_1_1sot_1_1ComImpedanceControl.html#a6c33c88c2a5ae61dbde00dbd001355ca',1,'dynamicgraph::sot::ComImpedanceControl::return_lqr_tau()'],['../classpython_1_1dg__tools_1_1leg__impedance__control_1_1quad__leg__impedance__controller_1_1QuadrupedComControl.html#a7b2d46aa0abd8e9ced9e3cce2147d124',1,'python.dg_tools.leg_impedance_control.quad_leg_impedance_controller.QuadrupedComControl.return_lqr_tau()']]]
 ];

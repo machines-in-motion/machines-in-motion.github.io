@@ -13,6 +13,7 @@ var classdynamicgraph_1_1sot_1_1ComImpedanceControl =
     [ "set_vel_bias", "classdynamicgraph_1_1sot_1_1ComImpedanceControl.html#a0b09ed32454cbecee116b2ac229a7b44", null ],
     [ "setsize", "classdynamicgraph_1_1sot_1_1ComImpedanceControl.html#a347f5be0bd9167793b5ca5cfe1fcee1b", null ],
     [ "threshold_cnt_sensor", "classdynamicgraph_1_1sot_1_1ComImpedanceControl.html#a5bf7ea6d98e8aba42ec6fa782fbe0b4c", null ],
+    [ "absendeffposSIN", "classdynamicgraph_1_1sot_1_1ComImpedanceControl.html#a1dfac0859d4c86d6ba0e8f960c979d78", null ],
     [ "absendeffvelSIN", "classdynamicgraph_1_1sot_1_1ComImpedanceControl.html#a6f164fcd07ce3c69a5f5021cf9069202", null ],
     [ "actrlSIN", "classdynamicgraph_1_1sot_1_1ComImpedanceControl.html#abefb5e83b41571348605b35c2f22fab8", null ],
     [ "angcontrolSOUT", "classdynamicgraph_1_1sot_1_1ComImpedanceControl.html#a2702e983aa2f5d0f5ead23475acef432", null ],

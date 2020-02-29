@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['upsampler',['Upsampler',['../classdg__tools_1_1Upsampler.html',1,'dg_tools']]],
-  ['upsampler_2ehpp',['upsampler.hpp',['../upsampler_8hpp.html',1,'']]]
+  ['track_5fcom',['track_com',['../classpython_1_1dg__tools_1_1leg__impedance__control_1_1solo12__impedance__controller_1_1Solo12ComController.html#a386f7ccf7b6fc883ca4f9ca361283ff1',1,'python::dg_tools::leg_impedance_control::solo12_impedance_controller::Solo12ComController']]],
+  ['traj_5fgenerators_2epy',['traj_generators.py',['../traj__generators_8py.html',1,'']]]
 ];

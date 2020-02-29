@@ -1,10 +1,14 @@
 var annotated_dup =
 [
     [ "dg_tools", null, [
+      [ "Division_of_double", "classdg__tools_1_1Division__of__double.html", "classdg__tools_1_1Division__of__double" ],
       [ "HistoryRecorder", "classdg__tools_1_1HistoryRecorder.html", "classdg__tools_1_1HistoryRecorder" ],
       [ "MemoryReplay", "classdg__tools_1_1MemoryReplay.html", "classdg__tools_1_1MemoryReplay" ],
+      [ "PoseQuaternionToPoseRPY", "classdg__tools_1_1PoseQuaternionToPoseRPY.html", "classdg__tools_1_1PoseQuaternionToPoseRPY" ],
       [ "PreviousValue", "classdg__tools_1_1PreviousValue.html", "classdg__tools_1_1PreviousValue" ],
-      [ "Upsampler", "classdg__tools_1_1Upsampler.html", "classdg__tools_1_1Upsampler" ]
+      [ "Sinus", "classdg__tools_1_1Sinus.html", "classdg__tools_1_1Sinus" ],
+      [ "Upsampler", "classdg__tools_1_1Upsampler.html", "classdg__tools_1_1Upsampler" ],
+      [ "VectorIntegrator", "classdg__tools_1_1VectorIntegrator.html", "classdg__tools_1_1VectorIntegrator" ]
     ] ],
     [ "dynamicgraph", null, [
       [ "sot", null, [
@@ -29,6 +33,7 @@ var annotated_dup =
             [ "QuadrupedLegImpedanceController", "classpython_1_1dg__tools_1_1leg__impedance__control_1_1quad__leg__impedance__controller_1_1QuadrupedLegImpedanceController.html", "classpython_1_1dg__tools_1_1leg__impedance__control_1_1quad__leg__impedance__controller_1_1QuadrupedLegImpedanceController" ]
           ] ],
           [ "solo12_impedance_controller", null, [
+            [ "Solo12ComController", "classpython_1_1dg__tools_1_1leg__impedance__control_1_1solo12__impedance__controller_1_1Solo12ComController.html", "classpython_1_1dg__tools_1_1leg__impedance__control_1_1solo12__impedance__controller_1_1Solo12ComController" ],
             [ "Solo12ImpedanceController", "classpython_1_1dg__tools_1_1leg__impedance__control_1_1solo12__impedance__controller_1_1Solo12ImpedanceController.html", "classpython_1_1dg__tools_1_1leg__impedance__control_1_1solo12__impedance__controller_1_1Solo12ImpedanceController" ],
             [ "Solo12LegImpedanceController", "classpython_1_1dg__tools_1_1leg__impedance__control_1_1solo12__impedance__controller_1_1Solo12LegImpedanceController.html", "classpython_1_1dg__tools_1_1leg__impedance__control_1_1solo12__impedance__controller_1_1Solo12LegImpedanceController" ]
           ] ]
@@ -46,6 +51,11 @@ var annotated_dup =
         ] ],
         [ "traj_generators", null, [
           [ "CircularCartesianTrajectoryGenerator", "classpython_1_1dg__tools_1_1traj__generators_1_1CircularCartesianTrajectoryGenerator.html", "classpython_1_1dg__tools_1_1traj__generators_1_1CircularCartesianTrajectoryGenerator" ]
+        ] ],
+        [ "utils", null, [
+          [ "BaseOperatorSignal", "classpython_1_1dg__tools_1_1utils_1_1BaseOperatorSignal.html", "classpython_1_1dg__tools_1_1utils_1_1BaseOperatorSignal" ],
+          [ "DoubleSignal", "classpython_1_1dg__tools_1_1utils_1_1DoubleSignal.html", "classpython_1_1dg__tools_1_1utils_1_1DoubleSignal" ],
+          [ "VectorSignal", "classpython_1_1dg__tools_1_1utils_1_1VectorSignal.html", "classpython_1_1dg__tools_1_1utils_1_1VectorSignal" ]
         ] ]
       ] ]
     ] ]

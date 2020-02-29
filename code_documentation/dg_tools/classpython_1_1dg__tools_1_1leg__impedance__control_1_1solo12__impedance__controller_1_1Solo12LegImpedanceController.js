@@ -4,7 +4,7 @@ var classpython_1_1dg__tools_1_1leg__impedance__control_1_1solo12__impedance__co
     [ "_compute_control_torques", "classpython_1_1dg__tools_1_1leg__impedance__control_1_1solo12__impedance__controller_1_1Solo12LegImpedanceController.html#a76309b4d0de6543fa99768e34e6f8844", null ],
     [ "_compute_jacobian", "classpython_1_1dg__tools_1_1leg__impedance__control_1_1solo12__impedance__controller_1_1Solo12LegImpedanceController.html#a4cd43033ff5ac89001656ccb968c2c14", null ],
     [ "_compute_leg_length", "classpython_1_1dg__tools_1_1leg__impedance__control_1_1solo12__impedance__controller_1_1Solo12LegImpedanceController.html#a304acaa7c8804da7b9c5421bf9f1eb67", null ],
-    [ "compute_control_torques", "classpython_1_1dg__tools_1_1leg__impedance__control_1_1solo12__impedance__controller_1_1Solo12LegImpedanceController.html#a459d65e5e62d928fd241162eac8099ad", null ],
+    [ "compute_control_torques", "classpython_1_1dg__tools_1_1leg__impedance__control_1_1solo12__impedance__controller_1_1Solo12LegImpedanceController.html#a50833108bac36327c6971e15f4ae8ff5", null ],
     [ "record_data", "classpython_1_1dg__tools_1_1leg__impedance__control_1_1solo12__impedance__controller_1_1Solo12LegImpedanceController.html#a4ccf4791677cb4b38c1bd2470f2c1ed4", null ],
     [ "control_torques", "classpython_1_1dg__tools_1_1leg__impedance__control_1_1solo12__impedance__controller_1_1Solo12LegImpedanceController.html#a98ac0df383d1b2da4ec02a747eb61b88", null ],
     [ "estimated_foot_force", "classpython_1_1dg__tools_1_1leg__impedance__control_1_1solo12__impedance__controller_1_1Solo12LegImpedanceController.html#a43ce76842cdfa999ce245a450e875691", null ],

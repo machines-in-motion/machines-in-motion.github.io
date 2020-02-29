@@ -25,8 +25,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 ".html",
-"classdynamicgraph_1_1sot_1_1ReactiveLQRController.html#a37ed7a82a1de99a7345cf214e54788a6",
-"demo__filter_8py.html#aa01427541d4ee283edc3405ce298fa68"
+"classdynamicgraph_1_1sot_1_1PowerJumpControl.html#a22bbb3ec98196791f646dcdd59d2a210",
+"classpython_1_1dg__tools_1_1math__small__entities_1_1ConstantDouble.html#a05a3ff952b97d1e86ee08e6dae3b343a"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
