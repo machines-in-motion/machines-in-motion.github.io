@@ -1,6 +1,6 @@
 var classtime__series_1_1internal_1_1TimeSeriesBase =
 [
-    [ "TimeSeriesBase", "classtime__series_1_1internal_1_1TimeSeriesBase.html#a51a42310d90cc8c817c1df75acf49974", null ],
+    [ "TimeSeriesBase", "classtime__series_1_1internal_1_1TimeSeriesBase.html#a60aa9cdab364cd01a5f070bb75c187a3", null ],
     [ "append", "classtime__series_1_1internal_1_1TimeSeriesBase.html#a09293ae95cdc492e7de78729b0e0e398", null ],
     [ "count_appended_elements", "classtime__series_1_1internal_1_1TimeSeriesBase.html#a1e384606bee9664d05803f33235a0d60", null ],
     [ "has_changed_since_tag", "classtime__series_1_1internal_1_1TimeSeriesBase.html#a38511cb227e3e423922eaaea626a15ee", null ],
