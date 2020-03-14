@@ -2,6 +2,7 @@ var classpython_1_1py__pinocchio__bullet_1_1wrapper_1_1PinBulletWrapper =
 [
     [ "__init__", "classpython_1_1py__pinocchio__bullet_1_1wrapper_1_1PinBulletWrapper.html#ad50c0916de58d6c8eda6dcfa81e84b9d", null ],
     [ "_action", "classpython_1_1py__pinocchio__bullet_1_1wrapper_1_1PinBulletWrapper.html#ab40bb4a94859d3bad4d22f00ab47450d", null ],
+    [ "get_base_velocity_world", "classpython_1_1py__pinocchio__bullet_1_1wrapper_1_1PinBulletWrapper.html#af3f64a253e479c47111b4cba94dfd77a", null ],
     [ "get_force", "classpython_1_1py__pinocchio__bullet_1_1wrapper_1_1PinBulletWrapper.html#ab91d7c32be024c5d90bbb7af527313fb", null ],
     [ "get_state", "classpython_1_1py__pinocchio__bullet_1_1wrapper_1_1PinBulletWrapper.html#a35ba3a21b8b36df34d1ad8389f4c4caa", null ],
     [ "get_state_update_pinocchio", "classpython_1_1py__pinocchio__bullet_1_1wrapper_1_1PinBulletWrapper.html#ab4ea626824c8043f48aa3c57b7504426", null ],
