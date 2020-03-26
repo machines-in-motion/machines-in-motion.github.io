@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>mpi_cmake_modules: mpi_cmake_modules</title>
+<title>mpi_cmake_modules: Clang Format</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -45,8 +45,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li class="current"><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -78,7 +78,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('index.html','');});
+$(document).ready(function(){initNavTree('md_doc_clang_format.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -97,13 +97,29 @@ $(document).ready(function(){initNavTree('index.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">mpi_cmake_modules </div>  </div>
+<div class="title">Clang Format </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h2>Generic introduction</h2>
-<p>For a generic introduction see the <a class="el" href="md_readme.html">readme</a> file. It's content is stored in the <a class="el" href="md_readme.html">mpi_cmake_modules</a> subsection.</p>
-<h2>Getting started</h2>
-</div></div><!-- contents -->
+<div class="textblock"><h2>Introduction</h2>
+<p>This package provide some tools in order to format the C/C++ code using clang-format and the <a href="https://machines-in-motion.github.io/code_documentation/ci_example_cpp/coding_guidelines_1.html">machines-in-motions</a> specific set of rules.</p>
+<h2>Executable</h2>
+<p>In order to use it one need to source the workspace environment: </p><pre class="fragment">source workspace/devel/setup.bash
+</pre><p>And to run the following command: </p><pre class="fragment">rosrun mpi_cmake_modules clang_format &lt;list of files&gt; &lt;list of folders&gt;
+</pre><p>For those not willing to use rosrun the executable is located in </p><pre class="fragment">mpi_cmake_modules/scripts/clang_format
+</pre><p>So one can simply get the full path of the executable in order to use it. A cleaner way would be to properly install the executable script.</p>
+<p>The executable will create the list of all files to be formatted by checking all arguments (which order does not matter). And perform the following tests:</p><ul>
+<li>If you provided a file it will keep it if:<ul>
+<li>it exists &amp;</li>
+<li>it is a source files</li>
+</ul>
+</li>
+<li>If you provided a folder it will search recursively all the files and perform the above checks.</li>
+</ul>
+<p>Once the list is created the tool format each selected files.</p>
+<h2>CMake macro</h2>
+<p>This package also provide a CMake macro allowing you to perform automatically the formatting upon build.</p>
+<p>The macro to add is located in the <code>mpi_cmake_modules/cmake/clang-format.cmake</code> and is called </p><pre class="fragment">format_code()
+</pre><p>By default it does nothing. In order to activate it you need to add the folowwing CMake argument: </p><pre class="fragment">catkin build mpi_cmake_modules --cmake-args -DFORMAT_CODE=ON </pre> </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

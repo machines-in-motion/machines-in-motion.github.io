@@ -1,15 +1,18 @@
 var NAVTREE =
 [
   [ "mpi_cmake_modules", "index.html", [
-    [ "Introduction", "index.html#intro", null ],
-    [ "License", "index.html#lic", null ],
-    [ "Authors", "index.html#author", null ]
+    [ "Clang Format", "md_doc_clang_format.html", null ],
+    [ "mpi_cmake_modules", "md_readme.html", null ],
+    [ "License", "license.html", null ],
+    [ "Files", null, [
+      [ "File List", "files.html", "files" ]
+    ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"index.html"
+"files.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
