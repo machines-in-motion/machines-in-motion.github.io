@@ -1,7 +1,7 @@
 var classshared__memory_1_1Exchange__manager__consumer =
 [
-    [ "Memory", "classshared__memory_1_1Exchange__manager__consumer.html#a28316c67129574b56a95077a63a7662c", null ],
-    [ "Memory_ptr", "classshared__memory_1_1Exchange__manager__consumer.html#a1768ac5459af68967ee583d857c743a4", null ],
+    [ "Memory", "classshared__memory_1_1Exchange__manager__consumer.html#a1699ba86d1d5b943d428fc1b391abd42", null ],
+    [ "Memory_ptr", "classshared__memory_1_1Exchange__manager__consumer.html#a92ad5c787b53c26d5b3c75712ca539f3", null ],
     [ "Exchange_manager_consumer", "classshared__memory_1_1Exchange__manager__consumer.html#a15b2b91e57fb8c9c60ec354274edf20d", null ],
     [ "~Exchange_manager_consumer", "classshared__memory_1_1Exchange__manager__consumer.html#a163df4d7e66a1cae7d0b0cb5f7692c59", null ],
     [ "clean_memory", "classshared__memory_1_1Exchange__manager__consumer.html#a828a56d15a0f68edd8e3b395c41b0c0c", null ],

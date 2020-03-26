@@ -1,6 +1,6 @@
 var classSerializable =
 [
-    [ "Vector", "classSerializable.html#a9e183769bd4a5bd34e1cc2e1bd5445db", null ],
+    [ "Vector", "classSerializable.html#a41015ba50b004943be3691039863377e", null ],
     [ "Serializable", "classSerializable.html#a19f5d95bf1ae68c1a20d40c0dcc69982", null ],
     [ "get", "classSerializable.html#a5f762ded2b44a416b362f6dfd9cf9976", null ],
     [ "serialize", "classSerializable.html#a442df4ac2ecad585776f620405b8ce0e", null ],
