@@ -1,8 +1,8 @@
 var indexSectionsWithContent =
 {
-  0: "clms",
+  0: "bcdlmps",
   1: "s",
-  2: "clm"
+  2: "bcdlmp"
 };
 
 var indexSectionNames =
