@@ -48,6 +48,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -101,7 +102,23 @@ $(document).ready(function(){initNavTree('md_doc_doxygen.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h2>Introduction</h2>
+<p>In the machines-in-motion group we use doxygen in order to build all documentations from C/C++ and Python code. The main idea is that we can have a unifyed way to generate the documentation.</p>
 <h2>Usage</h2>
+<p>In order to use this macro one obviously needs to depend on this package through a <code>find_package</code> or using <code>catkin</code> components. Once the dependency is found the following macro needs to be added to the CMakelists.txt: </p><pre class="fragment">build_doxygen_documentation()
+</pre><p>This macro is idle by default. To activate it one need to pass the following CMake argument: </p><pre class="fragment">catkin build --cmake-args -DBUILD_DOCUMENTATION=ON
+</pre><p>The macro will generate a specific target using the name of the project for unicity. The docuementation is located in: </p><pre class="fragment">workspace/devel/share/&lt;project name&gt;/doc/html/
+</pre><p>In order to visual the built documentation with firefox please run: </p><pre class="fragment">firefox workspace/devel/share/&lt;project name&gt;/doc/html/index.html
+</pre><h2>Writting a documentation</h2>
+<p>In order to write a decent docuementation one need to make sure that Doxygen do not output warnings. A warning from DOxygen proves that a code item is not documentated. See the <a href="https://machines-in-motion.github.io/code_documentation/ci_example_cpp/coding_guidelines_1.html">C++ coding guidelines</a> , the <a href="https://machines-in-motion.github.io/code_documentation/ci_example_python/coding_guidelines_1.html">Python coding guidelines</a> and the <a href="https://machines-in-motion.github.io/code_documentation/ci_example_cpp/coding_guidelines_0.html">General coding guidelines</a> For more information on how our code style and the good code practice.</p>
+<p>The documentation of your code is combined with several main items:</p>
+<ul>
+<li>First, one need to add the docstring of the language.</li>
+<li>Second, one need to provide unittests, these usually are good basis for an external user to understand the API.</li>
+<li>Third, one need to provide demos of the API defining the usual use case of the code. These code must contain doc-strings containing the key word, e.g. with C/C++: ```C /**<ul>
+<li></li>
+</ul>
+</li>
+</ul>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
