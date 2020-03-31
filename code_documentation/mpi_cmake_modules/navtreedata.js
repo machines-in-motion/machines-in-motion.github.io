@@ -11,14 +11,13 @@ var NAVTREE =
     [ "License", "license.html", null ],
     [ "Files", null, [
       [ "File List", "files.html", "files" ]
-    ] ],
-    [ "Examples", "examples.html", "examples" ]
+    ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"examples.html"
+"files.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -48,7 +48,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
-      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -114,11 +113,22 @@ $(document).ready(function(){initNavTree('md_doc_doxygen.html','');});
 <ul>
 <li>First, one need to add the docstring of the language.</li>
 <li>Second, one need to provide unittests, these usually are good basis for an external user to understand the API.</li>
-<li>Third, one need to provide demos of the API defining the usual use case of the code. These code must contain doc-strings containing the key word, e.g. with C/C++: ```C /**<ul>
-<li></li>
+<li>Third, one need to provide demos of the API defining the usual use case of the code. These code must contain doc-strings containing the key word, e.g. with C/C++: <pre class="fragment">```C++
+/** 
+  * \@example &lt;file name&gt; This example provide an exmaple on how to use ...
+  * Remarque: remove the `\` before the `@`.
+  */
+```
+</pre></li>
+<li>Finally whenever you feel like documenting more extensively something and adding graph, image, extensive text explanatin, link, etc, it is way more convenitent to use markdown. Therefore one need to provide a <code>doc/</code> folder containing the additionnal documentation.</li>
 </ul>
-</li>
+<p>For more detail on how to use doxygen here is a list of extremely useful links:</p><ul>
+<li><a href="http://doxygen.nl/manual/commands.html">List of doxygen commands</a></li>
+<li><a href="http://doxygen.nl/manual/markdown.html#markdown_dox">Doxygen markdown support</a></li>
 </ul>
+<h2>Implementation details</h2>
+<p>The <code>Doxyfile.in</code> place in this repository's <code>resources</code> folder is reponsible for the parsing paramters and shape of the documentation. The idea here is that upon build Doxygen will go recursively through all the current project files looking for the C/C++/Python/Markdown files and generate the documentation automatically.</p>
+<p>The subtility about python is that we use the <a href="https://github.com/Feneric/doxypypy">doxypypy</a> package in order to convert the Google docstring in the python code into Doxygen recognizable docstrings. So one need to install this dependency using pip for example. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

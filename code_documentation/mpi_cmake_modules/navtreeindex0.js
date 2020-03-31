@@ -1,7 +1,5 @@
 var NAVTREEINDEX0 =
 {
-"examples.html":[9],
-"file-example.html":[9,0],
 "files.html":[8,0],
 "index.html":[],
 "license.html":[7],
