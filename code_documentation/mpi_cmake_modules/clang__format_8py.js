@@ -13,7 +13,6 @@ var clang__format_8py =
     [ "metavar", "clang__format_8py.html#ada47d42b1c0ceb8a8f2304095144d336", null ],
     [ "nargs", "clang__format_8py.html#aee8f23ec8c0baaca9e2d58a98743e507", null ],
     [ "parser", "clang__format_8py.html#aed55b633a579a342ef5fdf770b732fa2", null ],
-    [ "str", "clang__format_8py.html#a83b252d5bcf673082b95209236bfb6e6", null ],
     [ "type", "clang__format_8py.html#a4c79f934042f45a221314625304c5352", null ],
     [ "which", "clang__format_8py.html#a69c93a1da52a27430c5c942c41070465", null ]
 ];

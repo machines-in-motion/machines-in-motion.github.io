@@ -1,24 +1,30 @@
 var indexSectionsWithContent =
 {
-  0: "_bcdflmpsy",
-  1: "_csy",
-  2: "f",
-  3: "bcdlmp"
+  0: "_abcdefhlmnpstwy",
+  1: "m",
+  2: "_csy",
+  3: "eflty",
+  4: "acfhlmnpstw",
+  5: "bcdlmp"
 };
 
 var indexSectionNames =
 {
   0: "all",
-  1: "files",
-  2: "functions",
-  3: "pages"
+  1: "namespaces",
+  2: "files",
+  3: "functions",
+  4: "variables",
+  5: "pages"
 };
 
 var indexSectionLabels =
 {
   0: "All",
-  1: "Files",
-  2: "Functions",
-  3: "Pages"
+  1: "Namespaces",
+  2: "Files",
+  3: "Functions",
+  4: "Variables",
+  5: "Pages"
 };
 
