@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['test_5fvalid_5ffile',['test_valid_file',['../namespacempi__cmake__modules_1_1clang__format.html#acb6fbec955cedb1a927454770df55040',1,'mpi_cmake_modules::clang_format']]],
-  ['type',['type',['../namespacempi__cmake__modules_1_1clang__format.html#a4c79f934042f45a221314625304c5352',1,'mpi_cmake_modules::clang_format']]]
+  ['set_20if_20empty',['Set if empty',['../md_doc_set_if_empty.html',1,'']]],
+  ['setup',['setup',['../namespacesetup.html',1,'']]],
+  ['setup_2epy',['setup.py',['../setup_8py.html',1,'']]],
+  ['setup_5fargs',['setup_args',['../namespacesetup.html#a504ffa482edfe0eff08f64b2f5dff0e9',1,'setup']]]
 ];
