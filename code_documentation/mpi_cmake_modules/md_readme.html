@@ -104,8 +104,9 @@ $(document).ready(function(){initNavTree('md_readme.html','');});
 <div class="textblock"><h1>Introduction</h1>
 <p>This package defines a list of usefull cmake macros. It can be used by simply depending on it using catkin.</p>
 <h1>Getting started</h1>
-<p>In order to use the CMake macros contained in this package one need to depend on it in the following way: </p><pre class="fragment">find_package(catkin REQUIRED COMPONENTS ${CATKIN_PKGS}) mpi_cmake_modules)
-</pre><p>Remarque: This will perform by default:</p><ul>
+<p>In order to use the CMake macros contained in this package one need to depend on it in the following way:</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;find_package(catkin REQUIRED COMPONENTS ${CATKIN_PKGS}) mpi_cmake_modules)</div></div><!-- fragment --><p>And add the following line in your <code>package.xml</code></p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;<span class="keywordtype">depend</span>&gt;<span class="keyword">mpi_cmake_modules</span>&lt;/<span class="keywordtype">depend</span>&gt;</div></div><!-- fragment --><p>Remarque: This will perform by default:</p><ul>
 <li>the <code>define_os()</code> macro defined in cmake/os_detection.cmake</li>
 <li>the <code>setup_xenomai()</code> macro defined in the cmake/setup_xenomai.cmake if the OS Xenomai is detected.</li>
 </ul>
