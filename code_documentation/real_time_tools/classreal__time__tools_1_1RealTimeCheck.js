@@ -1,6 +1,7 @@
 var classreal__time__tools_1_1RealTimeCheck =
 [
     [ "RealTimeCheck", "classreal__time__tools_1_1RealTimeCheck.html#a2f26472092432e628167f89a3a19e27e", null ],
+    [ "get_average_frequency", "classreal__time__tools_1_1RealTimeCheck.html#a2b891d59055829fab442ba4c382778e3", null ],
     [ "get_current_frequency", "classreal__time__tools_1_1RealTimeCheck.html#a1cd5c3fb05a46970361064348c57197d", null ],
     [ "get_statistics", "classreal__time__tools_1_1RealTimeCheck.html#a4d9614b08d2b4bf7162e14c473b7d491", null ],
     [ "print", "classreal__time__tools_1_1RealTimeCheck.html#a9c9c68da79843098085204095286a143", null ],

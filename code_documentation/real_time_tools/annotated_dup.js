@@ -2,6 +2,7 @@ var annotated_dup =
 [
     [ "real_time_tools", null, [
       [ "CheckpointTimer", "classreal__time__tools_1_1CheckpointTimer.html", "classreal__time__tools_1_1CheckpointTimer" ],
+      [ "FrequencyManager", "classreal__time__tools_1_1FrequencyManager.html", "classreal__time__tools_1_1FrequencyManager" ],
       [ "PortConfig", "classreal__time__tools_1_1PortConfig.html", "classreal__time__tools_1_1PortConfig" ],
       [ "RealTimeCheck", "classreal__time__tools_1_1RealTimeCheck.html", "classreal__time__tools_1_1RealTimeCheck" ],
       [ "RealTimeMutex", "classreal__time__tools_1_1RealTimeMutex.html", "classreal__time__tools_1_1RealTimeMutex" ],

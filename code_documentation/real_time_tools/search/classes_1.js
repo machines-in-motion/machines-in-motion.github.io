@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['matrix_5fcomputation_5fno_5feigen',['Matrix_computation_no_eigen',['../classMatrix__computation__no__eigen.html',1,'']]]
+  ['frequencymanager',['FrequencyManager',['../classreal__time__tools_1_1FrequencyManager.html',1,'real_time_tools']]]
 ];

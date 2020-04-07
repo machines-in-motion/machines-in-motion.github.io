@@ -31,7 +31,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 ".html",
-"demo_realtime_check_8cpp-example.html"
+"demo__usb__stream__imu__3DM__GX3__25_8cpp.html#a1d00f7ae49ec05ecaf8ecd4d76129573"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

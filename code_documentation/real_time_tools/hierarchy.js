@@ -5,6 +5,7 @@ var hierarchy =
       [ "Matrix_computation_no_eigen", "classMatrix__computation__no__eigen.html", null ]
     ] ],
     [ "Configuration", "classConfiguration.html", null ],
+    [ "real_time_tools::FrequencyManager", "classreal__time__tools_1_1FrequencyManager.html", null ],
     [ "real_time_tools::PortConfig", "classreal__time__tools_1_1PortConfig.html", null ],
     [ "real_time_tools::RealTimeCheck", "classreal__time__tools_1_1RealTimeCheck.html", null ],
     [ "real_time_tools::RealTimeMutex", "classreal__time__tools_1_1RealTimeMutex.html", null ],

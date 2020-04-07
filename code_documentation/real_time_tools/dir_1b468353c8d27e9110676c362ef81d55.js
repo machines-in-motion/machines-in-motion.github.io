@@ -5,6 +5,9 @@ var dir_1b468353c8d27e9110676c362ef81d55 =
       [ "CheckpointTimer", "classreal__time__tools_1_1CheckpointTimer.html", "classreal__time__tools_1_1CheckpointTimer" ]
     ] ],
     [ "checkpoint_timer.hxx", "checkpoint__timer_8hxx.html", null ],
+    [ "frequency_manager.hpp", "frequency__manager_8hpp.html", [
+      [ "FrequencyManager", "classreal__time__tools_1_1FrequencyManager.html", "classreal__time__tools_1_1FrequencyManager" ]
+    ] ],
     [ "iostream.hpp", "iostream_8hpp.html", "iostream_8hpp" ],
     [ "mutex.hpp", "mutex_8hpp.html", "mutex_8hpp" ],
     [ "process_manager.hpp", "process__manager_8hpp.html", "process__manager_8hpp" ],
