@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['filename',['filename',['../namespacempi__cmake__modules_1_1yaml2oneline.html#ac27969d1fd9b275701d6a253c87c6eb1',1,'mpi_cmake_modules::yaml2oneline']]],
-  ['find_5fclang_5fformat',['find_clang_format',['../namespacempi__cmake__modules_1_1clang__format.html#afe8dc8c8d15623fc93c48e51f5814787',1,'mpi_cmake_modules::clang_format']]]
+  ['license',['License',['../license.html',1,'']]],
+  ['list_5fof_5ffiles_5fto_5fformat',['list_of_files_to_format',['../clang__format_8py.html#a45f75cf60b9373143390257a3ef49214',1,'mpi_cmake_modules::clang_format']]],
+  ['load_5fclang_5fformat_5fconfig',['load_clang_format_config',['../clang__format_8py.html#a9d5af1fa13452a51570bb28d245d5d79',1,'mpi_cmake_modules::clang_format']]]
 ];

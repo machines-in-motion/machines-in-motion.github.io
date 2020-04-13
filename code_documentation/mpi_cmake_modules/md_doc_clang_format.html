@@ -106,7 +106,10 @@ $(document).ready(function(){initNavTree('md_doc_clang_format.html','');});
 <h2>Executable</h2>
 <p>In order to use it one need to source the workspace environment: </p><pre class="fragment">source workspace/devel/setup.bash
 </pre><p>And to run the following command: </p><pre class="fragment">rosrun mpi_cmake_modules clang_format &lt;list of files&gt; &lt;list of folders&gt;
-</pre><p>For those not willing to use rosrun the executable is located in </p><pre class="fragment">mpi_cmake_modules/scripts/clang_format
+</pre><p>&lt;list_of_files&gt; and </p><ul>
+</ul>
+<p>be either relative paths or absolute paths.</p>
+<p>For those not willing to use rosrun the executable is located in </p><pre class="fragment">mpi_cmake_modules/scripts/clang_format
 </pre><p>So one can simply get the full path of the executable in order to use it. A cleaner way would be to properly install the executable script.</p>
 <p>The executable will create the list of all files to be formatted by checking all arguments (which order does not matter). And perform the following tests:</p><ul>
 <li>If you provided a file it will keep it if:<ul>
