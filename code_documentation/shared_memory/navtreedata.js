@@ -1,7 +1,7 @@
 var NAVTREE =
 [
   [ "shared_memory", "index.html", [
-    [ "Shared Memory", "md_README.html", null ],
+    [ "README", "md_README.html", null ],
     [ "License", "license.html", null ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ],
