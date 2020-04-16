@@ -12,6 +12,7 @@ var classtime__series_1_1internal_1_1TimeSeriesBase =
     [ "operator[]", "classtime__series_1_1internal_1_1TimeSeriesBase.html#aa7267458e4fadff7314037a4bd1d53bb", null ],
     [ "read_indexes", "classtime__series_1_1internal_1_1TimeSeriesBase.html#a1f379b0886fe36f5a7ea99ebb56a3bbf", null ],
     [ "tag", "classtime__series_1_1internal_1_1TimeSeriesBase.html#ad20c1f90dd2f9016f32132caa3f976f7", null ],
+    [ "tagged_timeindex", "classtime__series_1_1internal_1_1TimeSeriesBase.html#adadeeff6e42776853e26aa5f74264909", null ],
     [ "timestamp_ms", "classtime__series_1_1internal_1_1TimeSeriesBase.html#a1e4c7ca710bb14e7dce57a1dd9c4f929", null ],
     [ "timestamp_s", "classtime__series_1_1internal_1_1TimeSeriesBase.html#aacca694af4c53fa4ae9cd3593c12bf58", null ],
     [ "wait_for_timeindex", "classtime__series_1_1internal_1_1TimeSeriesBase.html#a5651e522492514408e38a5b99e144a06", null ],
