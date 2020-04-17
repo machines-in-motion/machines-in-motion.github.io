@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>ci_example_python: Related Pages</title>
+<title>ci_example_python: List of flake8 Plugins for Popular Editors</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -81,7 +81,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('pages.html','');});
+$(document).ready(function(){initNavTree('md_doc_flake8_plugins.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -100,17 +100,22 @@ $(document).ready(function(){initNavTree('pages.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Related Pages</div>  </div>
+<div class="title">List of flake8 Plugins for Popular Editors </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock">Here is a list of all related documentation pages:</div><div class="directory">
-<table class="directory">
-<tr id="row_0_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="md_doc_flake8_plugins.html" target="_self">List of flake8 Plugins for Popular Editors</a></td><td class="desc"></td></tr>
-<tr id="row_1_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="coding_guidelines_0.html" target="_self">1. General rules applied in the code base</a></td><td class="desc"></td></tr>
-<tr id="row_2_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="coding_guidelines_1.html" target="_self">2. Python Coding Guidelines</a></td><td class="desc"></td></tr>
-</table>
-</div><!-- directory -->
-</div><!-- contents -->
+<div class="textblock"><p>Feel free to extend the list if you find a plugin for an editor not yet listed here or a better plugin for one that is already listed.</p>
+<p>Note that you need to be careful to use flake8 for the correct Python version.</p>
+<h2>Visual Studio Code</h2>
+<p>VS Code already has built-in support for flake8 but it needs to be enabled in the configuration. See <a href="https://code.visualstudio.com/docs/python/linting">the official documentation</a> for instructions.</p>
+<h2>Vim</h2>
+<h3>Syntastic</h3>
+<p><a href="https://github.com/vim-syntastic/syntastic">Syntastic</a> is a plugin for running external style checkers that can run flake8. </p><pre class="fragment">let g:syntastic_python_checkers = ['flake8']
+" to ensure flake8 checks for python 3 code:
+let g:syntastic_python_flake8_exe = 'python3 -m flake8'
+</pre><h3>ALE</h3>
+<p><a href="https://github.com/dense-analysis/ale">ALE</a> is a plugin for running linters asynchronously. As it runs the linter in the background, it is preferable over Syntastic, however, it needs Vim version 8 or later or Neovim.</p>
+<p>To ensure using flake for Python 3, use the following configuration: </p><pre class="fragment">let g:ale_python_flake8_executable = 'python3'
+let g:ale_python_flake8_options = '-m flake8'</pre> </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

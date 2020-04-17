@@ -116,7 +116,11 @@ $(document).ready(function(){initNavTree('coding_guidelines_1.html','');});
 <li>Executable scripts should be placed in the <code>scripts/</code> folder. And should have a CMake <b>install rule</b> that makes them executable upon installation.</li>
 </ul>
 <h2>II. Python Coding Guidelines</h2>
-<p>Regarding the style, follow <a href="https://www.python.org/dev/peps/pep-0008/">PEP 8</a>.</p>
+<ul>
+<li>Regarding the style, follow <a href="https://www.python.org/dev/peps/pep-0008/">PEP 8</a>.</li>
+<li>Use <a href="https://flake8.pycqa.org">flake8</a> and fix all issues it shows. This will ensure compliance with PEP 8 and also point out some critical issues like usage of undefined variables. It is recommended to install a plugin to automatically run flake8 in your favourite editor. See [List of flake8 Plugins for Popular Editors](flake8_plugins).</li>
+<li>To automatically format you code, you may use <a href="https://black.readthedocs.io">black</a>. When doing this, add <code>--line-length 79</code> to not violate PEP 8. Note, however, that black requires Pytyon 3.6, which may not be available for everyone. Therefore its usage is not mandatory.</li>
+</ul>
 <h2>III. Python Version</h2>
 <p><b>Use Python 3.</b></p>
 <p>In case it is not possible to avoid <b>Python 2</b> for some reason, add the following import at the top of your files to make it easier to port the code to <b>Python 3</b> in the future and to avoid confusion about unexpected integer division: </p><pre class="fragment"># Python 3 compatibility. It has to be the first import.
