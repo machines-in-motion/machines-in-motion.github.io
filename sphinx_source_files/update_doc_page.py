@@ -25,7 +25,7 @@ def get_ros_install_share_path():
     raise Exception('The ROS install/share folder has not been found.\n'
                     'Used ' + str(potentially_cloned_package) + ' packages to '
                     'find it but neither has been cloned')
-    return 
+    return
 
 
 def copy_doc_package(package_name, share_path):
@@ -35,7 +35,7 @@ def copy_doc_package(package_name, share_path):
     share_path = get_ros_install_share_path()
     local_doc = path.join("code_documentation", package_name)
     local_doc_html = path.join(share_path, package_name, "doc", "html")
-    
+
     if not path.isdir(local_doc_html):
         print ("WARNING: cannot find the documentation for the package [",
                package_name,
@@ -44,7 +44,7 @@ def copy_doc_package(package_name, share_path):
 
     if path.isdir(local_doc):
         shutil.rmtree(local_doc)
-    
+
     shutil.copytree(local_doc_html, local_doc)
     return
 
@@ -65,7 +65,7 @@ def find_ros_packages(share_path):
                 for file in files:
                     if file == "package.xml":
                         packages_list.append(path.basename(root))
-    
+
     return packages_list
 
 
@@ -80,8 +80,8 @@ def update_index_html(exported_doc_list, exported_code_cov_list):
     exported_doc_list.sort()
     for doc_folder in exported_doc_list:
         string_href = (
-          "https://machines-in-motion.github.io/code_documentation/" +
-          doc_folder + "/"
+            "https://machines-in-motion.github.io/code_documentation/" +
+            doc_folder + "/"
         )
         string_displayed = doc_folder
 
@@ -95,8 +95,8 @@ def update_index_html(exported_doc_list, exported_code_cov_list):
     pkg_tag_ul = soup.find(id="list_code_coverage")
     for code_cov_folder in exported_code_cov_list:
         string_href = (
-          "https://machines-in-motion.github.io/code_coverage/" +
-          code_cov_folder + "/"
+            "https://machines-in-motion.github.io/code_coverage/" +
+            code_cov_folder + "/"
         )
         string_displayed = code_cov_folder
 
@@ -106,9 +106,48 @@ def update_index_html(exported_doc_list, exported_code_cov_list):
         pkg_tag_a = soup.new_tag("a", href=string_href)
         pkg_tag_a.string = string_displayed
         pkg_tag_li.append(pkg_tag_a)
-    
+
     with open("index.html", 'w') as fp:
         fp.write(soup.prettify())
+
+
+def update_index_rst(exported_doc_list, exported_code_cov_list):
+    with open('index.rst.in', 'r') as file:
+        filedata = file.read()
+
+    first_column_header = " Repositories "
+    second_column_header = " Doxygen "
+    third_column_header = " Sphinx "
+
+    first_column_width = max([first_column_header] + exported_doc_list) + 2
+    
+    table_documentation = ("+" + first_column_width * "-" + "+" +
+                           len(second_column_header) * "-" + "+" +
+                           len(third_column_header) * "-" + "+\n")
+    table_documentation += ("| " + first_column_header +
+                            (first_column_width - (len(first_column_header) -1))
+                            * " " + "|" + second_column_header + "|" +
+                            third_column_header + "|\n")
+    table_documentation += ("+" + first_column_width * "=" + "+" +
+                            len(second_column_header) * "=" + "+" +
+                            len(third_column_header) * "=" + "+\n")
+    for exported_doc in exported_doc_list:
+        table_documentation += ()
+        table_documentation += ("+" + first_column_width * "-" + "+" +
+                                len(second_column_header) * "-" + "+" +
+                                len(third_column_header) * "-" + "+\n")
+    
+
+    # `Python home page <http://www.python.org>`_
+
+    filedata = filedata.replace('@table_documentation@', table_documentation)
+    filedata = filedata.replace('@table_unittest_coverage@',
+                                table_unittest_coverage)
+    filedata = filedata.replace('@ref_doc@', ref_doc)
+    filedata = filedata.replace('@ref_coverage@', ref_coverage)
+
+    with open('Doxyfile', 'w') as file:
+        file.write(filedata)
 
 
 if __name__ == "__main__":
@@ -124,7 +163,7 @@ if __name__ == "__main__":
 
     # We copy the built documentation inside this repository
     for package in packages_list:
-        print ("copying the doc from ", package) 
+        print ("copying the doc from ", package)
         copy_doc_package(package, share_path)
 
     # We get all the package names form which the documentation is available
@@ -143,7 +182,11 @@ if __name__ == "__main__":
     print("The list of all the available code coverage yet")
     print (exported_code_cov_list)
 
+    exported_code_cov_list.sort()
+    exported_doc_list.sort()
+
     # We update the list in the website
-    update_index_html(exported_doc_list, exported_code_cov_list)
+    # update_index_html(exported_doc_list, exported_code_cov_list)
+    update_index_rst(exported_doc_list, exported_code_cov_list)
 
     print("Done updating the website")
