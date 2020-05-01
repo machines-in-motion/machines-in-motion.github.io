@@ -28,7 +28,9 @@ on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 # -- Project information -----------------------------------------------------
 
 project = u'Machines-in-Motion'
-copyright = datetime.date.year + u' New York University and Max Planck Gesellschaft. All rights reserved.'
+copyright = (str(datetime.date.year) +
+             ' New York University and Max Planck Gesellschaft. ' +
+             'All rights reserved.')
 author = u'Maximilien Naveau'
 
 # The short X.Y version

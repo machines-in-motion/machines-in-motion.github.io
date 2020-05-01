@@ -10,7 +10,7 @@ DOC_BUILD_DIR        = _build
 SPHINXOPTS      =
 SPHINX_BUILD    = sphinx-build
 SPHINX_QUIET	= #-Q
-SPHINX_BUILD_IN = $(DOC_BUILD_DIR)/sphinx
+SPHINX_BUILD_IN = $(DOC_BUILD_DIR)
 SPHINX_BUILD_OUT = $(SPHINX_BUILD_IN)
 
 all:
@@ -33,10 +33,12 @@ help:
 	cp -r sphinx_source_files/* $(DOC_BUILD_DIR)
 
 	# Setup the new index.rst from Python
-	python $(DOC_BUILD_DIR)/update_doc_page.py $(DOC_BUILD_DIR)
+	cd $(DOC_BUILD_DIR) && python update_doc_page.py && cd -
 
 	# Copy the markdown doc files
-	cp readme.md $(DOC_BUILD_DIR)
+	cp readme.md license.txt $(DOC_BUILD_DIR)
 
 	# Generate the final layout.
 	@$(SPHINX_BUILD) -M $@ "$(SPHINX_BUILD_IN)" "$(SPHINX_BUILD_OUT)" $(SPHINXOPTS) $(O) $(SPHINX_QUIET)
+
+	cp -r $(DOC_BUILD_DIR)/html/* .

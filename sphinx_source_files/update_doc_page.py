@@ -34,7 +34,7 @@ def copy_doc_package(package_name, share_path):
     """
     share_path = get_ros_install_share_path()
     local_doc = path.join("code_documentation", package_name)
-    local_doc_html = path.join(share_path, package_name, "doc", "html")
+    local_doc_html = path.join(share_path, package_name, "docs")
 
     if not path.isdir(local_doc_html):
         print ("WARNING: cannot find the documentation for the package [",
@@ -112,41 +112,89 @@ def update_index_html(exported_doc_list, exported_code_cov_list):
 
 
 def update_index_rst(exported_doc_list, exported_code_cov_list):
+    """Create the ReStructured text file of the main page from its template.
+
+    Args:
+        exported_doc_list (list(str)): List of the stored package names.
+        exported_code_cov_list (list(str)): List of the stored project code coverage.
+    """
+    # Open the template files.
     with open('index.rst.in', 'r') as file:
         filedata = file.read()
 
-    first_column_header = " Repositories "
-    second_column_header = " Doxygen "
-    third_column_header = " Sphinx "
-
-    first_column_width = max([first_column_header] + exported_doc_list) + 2
-    
+    # Create the table of all the links to the doxygen/sphinx documentations.
+    first_column = ["Repositories"] + exported_doc_list
+    first_column_width = len(max(first_column, key=len)) + 2
+    #
+    second_column = ["Doxygen Documentation"] + exported_doc_list
+    for i, item in enumerate(second_column[1:]):
+        second_column[i+1] = (
+            "`Doxygen " +
+            "<https://machines-in-motion.github.io/code_documentation/" + item +
+            "/docs/doxygen/html/index.html>`_")
+    second_column_width = len(max(second_column, key=len)) + 2
+    #
+    third_column = ["Sphinx Documentation"] + exported_doc_list
+    for i, item in enumerate(third_column[1:]):
+        third_column[i+1] = (
+            "`Sphinx " +
+            "<https://machines-in-motion.github.io/code_documentation/" + item +
+            "/docs/sphinx/html/index.html>`_")
+    third_column_width = len(max(third_column, key=len)) + 2
+    #
     table_documentation = ("+" + first_column_width * "-" + "+" +
-                           len(second_column_header) * "-" + "+" +
-                           len(third_column_header) * "-" + "+\n")
-    table_documentation += ("| " + first_column_header +
-                            (first_column_width - (len(first_column_header) -1))
-                            * " " + "|" + second_column_header + "|" +
-                            third_column_header + "|\n")
-    table_documentation += ("+" + first_column_width * "=" + "+" +
-                            len(second_column_header) * "=" + "+" +
-                            len(third_column_header) * "=" + "+\n")
-    for exported_doc in exported_doc_list:
-        table_documentation += ()
-        table_documentation += ("+" + first_column_width * "-" + "+" +
-                                len(second_column_header) * "-" + "+" +
-                                len(third_column_header) * "-" + "+\n")
-    
+                           second_column_width * "-" + "+" +
+                           third_column_width * "-" + "+\n")
+    for i, (first, second, third) in enumerate(zip(first_column, second_column, third_column)):
 
-    # `Python home page <http://www.python.org>`_
+        table_documentation += (
+            "| " + first + (first_column_width - (len(first) + 1)) * " " +
+            "| " + second + (second_column_width - (len(second) + 1)) * " " +
+            "| " + third + (third_column_width - (len(third) + 1)) * " " +
+            "|\n")
+
+        if i == 0:
+            table_documentation += ("+" + first_column_width * "=" + "+" +
+                                    second_column_width * "=" + "+" +
+                                    third_column_width * "=" + "+\n")
+        else:
+            table_documentation += ("+" + first_column_width * "-" + "+" +
+                                    second_column_width * "-" + "+" +
+                                    third_column_width * "-" + "+\n")
+
+    # Create the table of all the project code coverage.
+    first_column = ["Projects"] + exported_code_cov_list
+    first_column_width = len(max(first_column, key=len)) + 2
+    #
+    second_column = ["Code coverage"] + exported_code_cov_list
+    for i, item in enumerate(second_column[1:]):
+        second_column[i+1] = (
+            "`Doxygen " +
+            "<https://machines-in-motion.github.io/code_coverage/" + item +
+            "/index.html>`_")
+    second_column_width = len(max(second_column, key=len)) + 2
+    #
+    table_unittest_coverage = ("+" + first_column_width * "-" + "+" +
+                               second_column_width * "-" + "+\n")
+    for i, (first, second) in enumerate(zip(first_column, second_column)):
+
+        table_unittest_coverage += (
+            "| " + first + (first_column_width - (len(first) + 1)) * " " +
+            "| " + second + (second_column_width - (len(second) + 1)) * " " +
+            "|\n")
+
+        if i == 0:
+            table_unittest_coverage += ("+" + first_column_width * "=" + "+" +
+                                        second_column_width * "=" + "+\n")
+        else:
+            table_unittest_coverage += ("+" + first_column_width * "-" + "+" +
+                                        second_column_width * "-" + "+\n")
 
     filedata = filedata.replace('@table_documentation@', table_documentation)
     filedata = filedata.replace('@table_unittest_coverage@',
                                 table_unittest_coverage)
-    filedata = filedata.replace('@ref_doc@', ref_doc)
-    filedata = filedata.replace('@ref_coverage@', ref_coverage)
 
-    with open('Doxyfile', 'w') as file:
+    with open('index.rst', 'w') as file:
         file.write(filedata)
 
 
@@ -168,7 +216,7 @@ if __name__ == "__main__":
 
     # We get all the package names form which the documentation is available
     exported_doc_list = []
-    for (dirpath, dirnames, filenames) in walk("code_documentation"):
+    for (dirpath, dirnames, filenames) in walk("../code_documentation"):
         exported_doc_list.extend(dirnames)
         break
     print("The list of all the available documentation yet")
@@ -176,7 +224,7 @@ if __name__ == "__main__":
 
     # We get all the code coverage computed from the bamboo agents
     exported_code_cov_list = []
-    for (dirpath, dirnames, filenames) in walk("code_coverage"):
+    for (dirpath, dirnames, filenames) in walk("../code_coverage"):
         exported_code_cov_list.extend(dirnames)
         break
     print("The list of all the available code coverage yet")
