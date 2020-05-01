@@ -39,6 +39,6 @@ help:
 	cp readme.md license.txt $(DOC_BUILD_DIR)
 
 	# Generate the final layout.
-	@$(SPHINX_BUILD) -M $@ "$(SPHINX_BUILD_IN)" "$(SPHINX_BUILD_OUT)" $(SPHINXOPTS) $(O) $(SPHINX_QUIET)
+	cd $(DOC_BUILD_DIR) && @$(SPHINX_BUILD) -M $@ "$(SPHINX_BUILD_IN)" "$(SPHINX_BUILD_OUT)" $(SPHINXOPTS) $(O) $(SPHINX_QUIET) && cd -
 
 	cp -r $(DOC_BUILD_DIR)/html/* .
