@@ -10,7 +10,7 @@ DOC_BUILD_DIR        = _build
 SPHINXOPTS      =
 SPHINX_BUILD    = sphinx-build
 SPHINX_QUIET	= #-Q
-SPHINX_BUILD_IN = $(DOC_BUILD_DIR)
+SPHINX_BUILD_IN = .
 SPHINX_BUILD_OUT = $(SPHINX_BUILD_IN)
 
 all:
@@ -39,6 +39,6 @@ help:
 	cp readme.md license.txt $(DOC_BUILD_DIR)
 
 	# Generate the final layout.
-	cd $(DOC_BUILD_DIR) && @$(SPHINX_BUILD) -M $@ "$(SPHINX_BUILD_IN)" "$(SPHINX_BUILD_OUT)" $(SPHINXOPTS) $(O) $(SPHINX_QUIET) && cd -
+	@cd $(DOC_BUILD_DIR) && $(SPHINX_BUILD) -M $@ "$(SPHINX_BUILD_IN)" "$(SPHINX_BUILD_OUT)" $(SPHINXOPTS) $(O) $(SPHINX_QUIET) && cd -
 
 	cp -r $(DOC_BUILD_DIR)/html/* .
