@@ -12,5 +12,5 @@ All repositories here are open-sourced packages licensed under the
 Please see the license.txt
 
 This work is done in collaboration between the
-[Max Planck Institute for Intelligen System]("https://is.tuebingen.mpg.de/")
-and the [New York University]("https://engineering.nyu.edu/")
+`Max Planck Institute for Intelligen System <https://is.tuebingen.mpg.de/>`_
+and the `New York University <https://engineering.nyu.edu/>`_
