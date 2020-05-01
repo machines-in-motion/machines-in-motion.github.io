@@ -169,7 +169,7 @@ def update_index_rst(exported_doc_list, exported_code_cov_list):
     second_column = ["Code coverage"] + exported_code_cov_list
     for i, item in enumerate(second_column[1:]):
         second_column[i+1] = (
-            "`Doxygen " +
+            "`gcovr " +
             "<https://machines-in-motion.github.io/code_coverage/" + item +
             "/index.html>`_")
     second_column_width = len(max(second_column, key=len)) + 2

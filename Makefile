@@ -42,3 +42,7 @@ help:
 	@cd $(DOC_BUILD_DIR) && $(SPHINX_BUILD) -M $@ "$(SPHINX_BUILD_IN)" "$(SPHINX_BUILD_OUT)" $(SPHINXOPTS) $(O) $(SPHINX_QUIET) && cd -
 
 	cp -r $(DOC_BUILD_DIR)/html/* .
+
+# Clean the build
+clean:
+	rm -fr *.html *.inv *.js _sources/ _static/ _build/
