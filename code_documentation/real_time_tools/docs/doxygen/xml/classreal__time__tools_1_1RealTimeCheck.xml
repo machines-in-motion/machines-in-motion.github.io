@@ -1,0 +1,335 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classreal__time__tools_1_1RealTimeCheck" kind="class" language="C++" prot="public">
+    <compoundname>real_time_tools::RealTimeCheck</compoundname>
+    <includes refid="realtime__check_8hpp" local="no">realtime_check.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classreal__time__tools_1_1RealTimeCheck_1a21b5703a3c61b09955d94d06a3562667" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool real_time_tools::RealTimeCheck::started</definition>
+        <argsstring></argsstring>
+        <name>started</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>true if tick has been called once </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/realtime_check.hpp" line="71" column="1" bodyfile="include/real_time_tools/realtime_check.hpp" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classreal__time__tools_1_1RealTimeCheck_1a969600ce8ecc4ec48bbf59e8d669749e" prot="private" static="no" mutable="no">
+        <type>std::chrono::high_resolution_clock::time_point</type>
+        <definition>std::chrono::high_resolution_clock::time_point real_time_tools::RealTimeCheck::start_time</definition>
+        <argsstring></argsstring>
+        <name>start_time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>time at which tick was called first </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/realtime_check.hpp" line="74" column="1" bodyfile="include/real_time_tools/realtime_check.hpp" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classreal__time__tools_1_1RealTimeCheck_1a3e200c0376362dcc9a7db7d77a124931" prot="private" static="no" mutable="no">
+        <type>std::chrono::high_resolution_clock::time_point</type>
+        <definition>std::chrono::high_resolution_clock::time_point real_time_tools::RealTimeCheck::last_tick</definition>
+        <argsstring></argsstring>
+        <name>last_tick</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>last time system was ticked </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/realtime_check.hpp" line="77" column="1" bodyfile="include/real_time_tools/realtime_check.hpp" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classreal__time__tools_1_1RealTimeCheck_1a126c13a50d06703c515b35f87c3e867c" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double real_time_tools::RealTimeCheck::target_frequency</definition>
+        <argsstring></argsstring>
+        <name>target_frequency</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>frequency at which ticks are expected </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/realtime_check.hpp" line="80" column="1" bodyfile="include/real_time_tools/realtime_check.hpp" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classreal__time__tools_1_1RealTimeCheck_1ab6a059be584e4a92254002d35713d0df" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double real_time_tools::RealTimeCheck::epsilon</definition>
+        <argsstring></argsstring>
+        <name>epsilon</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>small quantity </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/realtime_check.hpp" line="83" column="1" bodyfile="include/real_time_tools/realtime_check.hpp" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classreal__time__tools_1_1RealTimeCheck_1ae2acb20d9f1e49cc35eb5505d63201aa" prot="private" static="no" mutable="no">
+        <type>uint</type>
+        <definition>uint real_time_tools::RealTimeCheck::ticks</definition>
+        <argsstring></argsstring>
+        <name>ticks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>number of iterations </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/realtime_check.hpp" line="86" column="1" bodyfile="include/real_time_tools/realtime_check.hpp" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classreal__time__tools_1_1RealTimeCheck_1acc235579eeb245f043fd188790540fa9" prot="private" static="no" mutable="no">
+        <type>uint</type>
+        <definition>uint real_time_tools::RealTimeCheck::switchs</definition>
+        <argsstring></argsstring>
+        <name>switchs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>number of time realtime was lost (target frequency not respected between two ticks) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/realtime_check.hpp" line="90" column="1" bodyfile="include/real_time_tools/realtime_check.hpp" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classreal__time__tools_1_1RealTimeCheck_1a3ffb6de7e7c01a7248c2293e29b98011" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double real_time_tools::RealTimeCheck::average_frequency</definition>
+        <argsstring></argsstring>
+        <name>average_frequency</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>average frequency </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/realtime_check.hpp" line="93" column="1" bodyfile="include/real_time_tools/realtime_check.hpp" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classreal__time__tools_1_1RealTimeCheck_1a3605c41d8c5c616879fa9af469860470" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double real_time_tools::RealTimeCheck::worse_frequency</definition>
+        <argsstring></argsstring>
+        <name>worse_frequency</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>worse frequency ever experienced </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/realtime_check.hpp" line="96" column="1" bodyfile="include/real_time_tools/realtime_check.hpp" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classreal__time__tools_1_1RealTimeCheck_1a235895032a789539a8ba957caac621ec" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double real_time_tools::RealTimeCheck::switch_frequency</definition>
+        <argsstring></argsstring>
+        <name>switch_frequency</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>nb of switches will increase by 1 each time measured frequency below this value </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/realtime_check.hpp" line="101" column="1" bodyfile="include/real_time_tools/realtime_check.hpp" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classreal__time__tools_1_1RealTimeCheck_1a935b4c6b8ebf569e6510d47376f8499f" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double real_time_tools::RealTimeCheck::current_frequency</definition>
+        <argsstring></argsstring>
+        <name>current_frequency</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>latest frequency that was measured </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/realtime_check.hpp" line="104" column="1" bodyfile="include/real_time_tools/realtime_check.hpp" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classreal__time__tools_1_1RealTimeCheck_1a3a7cc4ef87fac5e4052a3240aced88d1" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex real_time_tools::RealTimeCheck::mutex</definition>
+        <argsstring></argsstring>
+        <name>mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>multithreading safety </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/realtime_check.hpp" line="107" column="1" bodyfile="include/real_time_tools/realtime_check.hpp" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classreal__time__tools_1_1RealTimeCheck_1a2f26472092432e628167f89a3a19e27e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>real_time_tools::RealTimeCheck::RealTimeCheck</definition>
+        <argsstring>(double target_frequency, double switch_frequency)</argsstring>
+        <name>RealTimeCheck</name>
+        <param>
+          <type>double</type>
+          <declname>target_frequency</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>switch_frequency</declname>
+        </param>
+        <briefdescription>
+<para>Construct a new <ref refid="classreal__time__tools_1_1RealTimeCheck" kindref="compound">RealTimeCheck</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>target_frequency</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the loop frequency. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>switch_frequency</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the admissible frequency. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/realtime_check.hpp" line="36" column="1" bodyfile="src/realtime_check.cpp" bodystart="17" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classreal__time__tools_1_1RealTimeCheck_1a83fdf97352d36aa20e482d7dfae442d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void real_time_tools::RealTimeCheck::tick</definition>
+        <argsstring>()</argsstring>
+        <name>tick</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>inform the instance of this class that an iteration passed </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/realtime_check.hpp" line="39" column="1" bodyfile="src/realtime_check.cpp" bodystart="44" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classreal__time__tools_1_1RealTimeCheck_1af4fcff0b49162ff802192c2e4832568a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool real_time_tools::RealTimeCheck::was_realtime_lost</definition>
+        <argsstring>() const </argsstring>
+        <name>was_realtime_lost</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>true if realtime was lost at least once (frequency between two ticks was below target frequencies) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/realtime_check.hpp" line="43" column="1" bodyfile="src/realtime_check.cpp" bodystart="30" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classreal__time__tools_1_1RealTimeCheck_1a4d9614b08d2b4bf7162e14c473b7d491" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool real_time_tools::RealTimeCheck::get_statistics</definition>
+        <argsstring>(int &amp;ticks, int &amp;switchs, double &amp;target_frequency, double &amp;switch_frequency, double &amp;average_frequency, double &amp;current_frequency, double &amp;worse_frequency)</argsstring>
+        <name>get_statistics</name>
+        <param>
+          <type>int &amp;</type>
+          <declname>ticks</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>switchs</declname>
+        </param>
+        <param>
+          <type>double &amp;</type>
+          <declname>target_frequency</declname>
+        </param>
+        <param>
+          <type>double &amp;</type>
+          <declname>switch_frequency</declname>
+        </param>
+        <param>
+          <type>double &amp;</type>
+          <declname>average_frequency</declname>
+        </param>
+        <param>
+          <type>double &amp;</type>
+          <declname>current_frequency</declname>
+        </param>
+        <param>
+          <type>double &amp;</type>
+          <declname>worse_frequency</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>return true if statistics are available, false otherwise (false is returned is tick has never been called or if ticks reached maximum integer value) switchs in the number of time realtime was lost. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/realtime_check.hpp" line="50" column="1" bodyfile="src/realtime_check.cpp" bodystart="100" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="classreal__time__tools_1_1RealTimeCheck_1a2b891d59055829fab442ba4c382778e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double real_time_tools::RealTimeCheck::get_average_frequency</definition>
+        <argsstring>()</argsstring>
+        <name>get_average_frequency</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>return the averaged observed frequency if statistics are available, -1 otherwise (false is returned is tick has never been called or if ticks reached maximum integer value). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/realtime_check.hpp" line="61" column="1" bodyfile="src/realtime_check.cpp" bodystart="125" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="classreal__time__tools_1_1RealTimeCheck_1a1cd5c3fb05a46970361064348c57197d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double real_time_tools::RealTimeCheck::get_current_frequency</definition>
+        <argsstring>() const </argsstring>
+        <name>get_current_frequency</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>returns observed frequency after last call to tick </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/realtime_check.hpp" line="64" column="1" bodyfile="src/realtime_check.cpp" bodystart="94" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classreal__time__tools_1_1RealTimeCheck_1a9c9c68da79843098085204095286a143" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void real_time_tools::RealTimeCheck::print</definition>
+        <argsstring>()</argsstring>
+        <name>print</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Display the results of the frequency measurement. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/realtime_check.hpp" line="67" column="1" bodyfile="src/realtime_check.cpp" bodystart="139" bodyend="167"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>super simple class for checking if thread ever lost realtime. </para>    </briefdescription>
+    <detaileddescription>
+<para>simply measure frequency between two calls to the tick function. </para>    </detaileddescription>
+    <location file="include/real_time_tools/realtime_check.hpp" line="27" column="1" bodyfile="include/real_time_tools/realtime_check.hpp" bodystart="27" bodyend="108"/>
+    <listofallmembers>
+      <member refid="classreal__time__tools_1_1RealTimeCheck_1a3ffb6de7e7c01a7248c2293e29b98011" prot="private" virt="non-virtual"><scope>real_time_tools::RealTimeCheck</scope><name>average_frequency</name></member>
+      <member refid="classreal__time__tools_1_1RealTimeCheck_1a935b4c6b8ebf569e6510d47376f8499f" prot="private" virt="non-virtual"><scope>real_time_tools::RealTimeCheck</scope><name>current_frequency</name></member>
+      <member refid="classreal__time__tools_1_1RealTimeCheck_1ab6a059be584e4a92254002d35713d0df" prot="private" virt="non-virtual"><scope>real_time_tools::RealTimeCheck</scope><name>epsilon</name></member>
+      <member refid="classreal__time__tools_1_1RealTimeCheck_1a2b891d59055829fab442ba4c382778e3" prot="public" virt="non-virtual"><scope>real_time_tools::RealTimeCheck</scope><name>get_average_frequency</name></member>
+      <member refid="classreal__time__tools_1_1RealTimeCheck_1a1cd5c3fb05a46970361064348c57197d" prot="public" virt="non-virtual"><scope>real_time_tools::RealTimeCheck</scope><name>get_current_frequency</name></member>
+      <member refid="classreal__time__tools_1_1RealTimeCheck_1a4d9614b08d2b4bf7162e14c473b7d491" prot="public" virt="non-virtual"><scope>real_time_tools::RealTimeCheck</scope><name>get_statistics</name></member>
+      <member refid="classreal__time__tools_1_1RealTimeCheck_1a3e200c0376362dcc9a7db7d77a124931" prot="private" virt="non-virtual"><scope>real_time_tools::RealTimeCheck</scope><name>last_tick</name></member>
+      <member refid="classreal__time__tools_1_1RealTimeCheck_1a3a7cc4ef87fac5e4052a3240aced88d1" prot="private" virt="non-virtual"><scope>real_time_tools::RealTimeCheck</scope><name>mutex</name></member>
+      <member refid="classreal__time__tools_1_1RealTimeCheck_1a9c9c68da79843098085204095286a143" prot="public" virt="non-virtual"><scope>real_time_tools::RealTimeCheck</scope><name>print</name></member>
+      <member refid="classreal__time__tools_1_1RealTimeCheck_1a2f26472092432e628167f89a3a19e27e" prot="public" virt="non-virtual"><scope>real_time_tools::RealTimeCheck</scope><name>RealTimeCheck</name></member>
+      <member refid="classreal__time__tools_1_1RealTimeCheck_1a969600ce8ecc4ec48bbf59e8d669749e" prot="private" virt="non-virtual"><scope>real_time_tools::RealTimeCheck</scope><name>start_time</name></member>
+      <member refid="classreal__time__tools_1_1RealTimeCheck_1a21b5703a3c61b09955d94d06a3562667" prot="private" virt="non-virtual"><scope>real_time_tools::RealTimeCheck</scope><name>started</name></member>
+      <member refid="classreal__time__tools_1_1RealTimeCheck_1a235895032a789539a8ba957caac621ec" prot="private" virt="non-virtual"><scope>real_time_tools::RealTimeCheck</scope><name>switch_frequency</name></member>
+      <member refid="classreal__time__tools_1_1RealTimeCheck_1acc235579eeb245f043fd188790540fa9" prot="private" virt="non-virtual"><scope>real_time_tools::RealTimeCheck</scope><name>switchs</name></member>
+      <member refid="classreal__time__tools_1_1RealTimeCheck_1a126c13a50d06703c515b35f87c3e867c" prot="private" virt="non-virtual"><scope>real_time_tools::RealTimeCheck</scope><name>target_frequency</name></member>
+      <member refid="classreal__time__tools_1_1RealTimeCheck_1a83fdf97352d36aa20e482d7dfae442d5" prot="public" virt="non-virtual"><scope>real_time_tools::RealTimeCheck</scope><name>tick</name></member>
+      <member refid="classreal__time__tools_1_1RealTimeCheck_1ae2acb20d9f1e49cc35eb5505d63201aa" prot="private" virt="non-virtual"><scope>real_time_tools::RealTimeCheck</scope><name>ticks</name></member>
+      <member refid="classreal__time__tools_1_1RealTimeCheck_1af4fcff0b49162ff802192c2e4832568a" prot="public" virt="non-virtual"><scope>real_time_tools::RealTimeCheck</scope><name>was_realtime_lost</name></member>
+      <member refid="classreal__time__tools_1_1RealTimeCheck_1a3605c41d8c5c616879fa9af469860470" prot="private" virt="non-virtual"><scope>real_time_tools::RealTimeCheck</scope><name>worse_frequency</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

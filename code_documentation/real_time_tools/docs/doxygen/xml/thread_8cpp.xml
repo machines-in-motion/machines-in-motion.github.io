@@ -1,0 +1,338 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="thread_8cpp" kind="file" language="C++">
+    <compoundname>thread.cpp</compoundname>
+    <includes local="no">stdexcept</includes>
+    <includes refid="thread_8hpp" local="yes">real_time_tools/thread.hpp</includes>
+    <includes refid="process__manager_8hpp" local="yes">real_time_tools/process_manager.hpp</includes>
+    <incdepgraph>
+      <node id="787">
+        <label>functional</label>
+      </node>
+      <node id="782">
+        <label>stdexcept</label>
+      </node>
+      <node id="784">
+        <label>string</label>
+      </node>
+      <node id="783">
+        <label>real_time_tools/thread.hpp</label>
+        <link refid="thread_8hpp"/>
+        <childnode refid="784" relation="include">
+        </childnode>
+        <childnode refid="785" relation="include">
+        </childnode>
+        <childnode refid="786" relation="include">
+        </childnode>
+        <childnode refid="787" relation="include">
+        </childnode>
+      </node>
+      <node id="785">
+        <label>vector</label>
+      </node>
+      <node id="781">
+        <label>src/thread.cpp</label>
+        <link refid="thread.cpp"/>
+        <childnode refid="782" relation="include">
+        </childnode>
+        <childnode refid="783" relation="include">
+        </childnode>
+        <childnode refid="788" relation="include">
+        </childnode>
+      </node>
+      <node id="788">
+        <label>real_time_tools/process_manager.hpp</label>
+        <link refid="process__manager_8hpp"/>
+        <childnode refid="785" relation="include">
+        </childnode>
+      </node>
+      <node id="786">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespacereal__time__tools">real_time_tools</innernamespace>
+    <briefdescription>
+<para>Implement method to create and join threads. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Maximilien Naveau (<ulink url="mailto:maximilien.naveau@gmail.com">maximilien.naveau@gmail.com</ulink>) license License BSD-3-Clause </para></simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2019, New York University and Max Planck Gesellschaft. </para></simplesect>
+<simplesect kind="date"><para>2019-05-22 </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="10"><highlight class="preprocessor">#include<sp/>&lt;stdexcept&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="thread_8hpp" kindref="compound">real_time_tools/thread.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="process__manager_8hpp" kindref="compound">real_time_tools/process_manager.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacereal__time__tools" kindref="compound">real_time_tools</ref><sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined<sp/>RT_PREEMPT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><ref refid="classreal__time__tools_1_1RealTimeThread_1aca6224b9cbe75e3a85b281e0de096b64" kindref="member">RealTimeThread::RealTimeThread</ref>()</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>thread_.reset(</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><ref refid="classreal__time__tools_1_1RealTimeThread_1a8e94b07c6ff51d50b1861887fbd1f69f" kindref="member">RealTimeThread::~RealTimeThread</ref>()</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1RealTimeThread_1a2f455db9fd80b81e5e69cd22e8529979" kindref="member">join</ref>();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>thread_.reset(</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>exec(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(*f)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*),</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>args)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>f(args);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>rt_preempt_error_message(</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;NOTE:<sp/>This<sp/>program<sp/>must<sp/>be<sp/>executed<sp/>with<sp/>special<sp/>permission<sp/>to<sp/>get<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;the<sp/>required<sp/>real<sp/>time<sp/>permissions.\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Either<sp/>use<sp/>sudo<sp/>or<sp/>be<sp/>part<sp/>of<sp/>the<sp/>\&apos;realtime\&apos;<sp/>group&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Aborting<sp/>thread<sp/>creation.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeThread_1a232e3955fee6e80c3a7ded68f165414b" kindref="member">RealTimeThread::create_realtime_thread</ref>(</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*(*<ref refid="demo__realtime__check_8cpp_1a16919b2a4211953c87d405d40b432427" kindref="member">thread_function</ref>)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*),<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>args)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(thread_<sp/>!=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Thread<sp/>already<sp/>running&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classreal__time__tools_1_1RealTimeThread_1aa15b5633e76ea6b4c31cd74b3968686a" kindref="member">parameters_</ref>.<ref refid="classreal__time__tools_1_1RealTimeThreadParameters_1afc9891b44025aab8b383e91d907d41b0" kindref="member">cpu_dma_latency_</ref><sp/>&gt;=<sp/>0)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="process__manager_8hpp_1a6a8ceffef6761ee22e436a1151f020af" kindref="member">set_cpu_dma_latency</ref>(<ref refid="classreal__time__tools_1_1RealTimeThread_1aa15b5633e76ea6b4c31cd74b3968686a" kindref="member">parameters_</ref>.<ref refid="classreal__time__tools_1_1RealTimeThreadParameters_1afc9891b44025aab8b383e91d907d41b0" kindref="member">cpu_dma_latency_</ref>);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>thread_.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>pthread_t());</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classreal__time__tools_1_1RealTimeThread_1aa15b5633e76ea6b4c31cd74b3968686a" kindref="member">parameters_</ref>.<ref refid="classreal__time__tools_1_1RealTimeThreadParameters_1a134856e17552d3f31a093f3a1f5d1639" kindref="member">block_memory_</ref>)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1RealTimeThread_1a704b245872cc7bc49e01181f09732535" kindref="member">block_memory</ref>();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sched_param<sp/>param;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_attr_t<sp/>attr;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>ret<sp/>=<sp/>pthread_attr_init(&amp;attr);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ret)<sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%s<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>(</highlight><highlight class="stringliteral">&quot;init<sp/>pthread<sp/>attributes<sp/>failed.<sp/>Ret=&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rt_preempt_error_message).c_str(),<sp/>ret);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>a<sp/>specific<sp/>stack<sp/>size<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>ret<sp/>=<sp/>pthread_attr_setstacksize(&amp;attr,<sp/><ref refid="classreal__time__tools_1_1RealTimeThread_1aa15b5633e76ea6b4c31cd74b3968686a" kindref="member">parameters_</ref>.<ref refid="classreal__time__tools_1_1RealTimeThreadParameters_1ac31bba1a59fa600c2c0e4737a79807c4" kindref="member">stack_size_</ref>);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ret)<sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%s<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>(</highlight><highlight class="stringliteral">&quot;pthread<sp/>setstacksize<sp/>failed.<sp/>Ret=&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rt_preempt_error_message).c_str(),<sp/>ret);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>scheduler<sp/>policy<sp/>and<sp/>priority<sp/>of<sp/>pthread<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>ret<sp/>=<sp/>pthread_attr_setschedpolicy(&amp;attr,<sp/>SCHED_FIFO);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>ret<sp/>=<sp/>pthread_attr_setschedpolicy(&amp;attr,<sp/>SCHED_RR);<sp/>//<sp/>WARNING<sp/>LAAS<sp/>is<sp/>using<sp/>this<sp/>one!!!!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ret)<sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%s<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>(</highlight><highlight class="stringliteral">&quot;pthread<sp/>setschedpolicy<sp/>failed.<sp/>Ret=&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rt_preempt_error_message).c_str(),<sp/>ret);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>param.sched_priority<sp/>=<sp/><ref refid="classreal__time__tools_1_1RealTimeThread_1aa15b5633e76ea6b4c31cd74b3968686a" kindref="member">parameters_</ref>.<ref refid="classreal__time__tools_1_1RealTimeThreadParameters_1aa373ac14aa6feca83382b8aefdf27409" kindref="member">priority_</ref>;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>ret<sp/>=<sp/>pthread_attr_setschedparam(&amp;attr,<sp/>&amp;param);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ret)<sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%s<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>(</highlight><highlight class="stringliteral">&quot;pthread<sp/>setschedparam<sp/>failed.<sp/>Ret=&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rt_preempt_error_message).c_str(),<sp/>ret);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Use<sp/>scheduling<sp/>parameters<sp/>of<sp/>attr<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>ret<sp/>=<sp/>pthread_attr_setinheritsched(&amp;attr,<sp/>PTHREAD_EXPLICIT_SCHED);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ret)<sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%s<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>(</highlight><highlight class="stringliteral">&quot;pthread<sp/>setinheritsched<sp/>failed.<sp/>Ret=&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rt_preempt_error_message).c_str(),<sp/>ret);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Create<sp/>a<sp/>pthread<sp/>with<sp/>specified<sp/>attributes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>ret<sp/>=<sp/>pthread_create(thread_.get(),<sp/>&amp;attr,<sp/><ref refid="demo__realtime__check_8cpp_1a16919b2a4211953c87d405d40b432427" kindref="member">thread_function</ref>,<sp/>args);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ret)<sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%s<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>(</highlight><highlight class="stringliteral">&quot;create<sp/>pthread<sp/>failed.<sp/>Ret=&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rt_preempt_error_message).c_str(),<sp/>ret);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classreal__time__tools_1_1RealTimeThread_1aa15b5633e76ea6b4c31cd74b3968686a" kindref="member">parameters_</ref>.<ref refid="classreal__time__tools_1_1RealTimeThreadParameters_1ac6879cacfd97ddf46ad46b94a79a9696" kindref="member">cpu_id_</ref>.size()&gt;0)</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>cpu_set_t<sp/>cpuset;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>CPU_ZERO(&amp;cpuset);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>i=0<sp/>;<sp/>i&lt;<ref refid="classreal__time__tools_1_1RealTimeThread_1aa15b5633e76ea6b4c31cd74b3968686a" kindref="member">parameters_</ref>.<ref refid="classreal__time__tools_1_1RealTimeThreadParameters_1ac6879cacfd97ddf46ad46b94a79a9696" kindref="member">cpu_id_</ref>.size()<sp/>;<sp/>++i)</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CPU_SET(<ref refid="classreal__time__tools_1_1RealTimeThread_1aa15b5633e76ea6b4c31cd74b3968686a" kindref="member">parameters_</ref>.<ref refid="classreal__time__tools_1_1RealTimeThreadParameters_1ac6879cacfd97ddf46ad46b94a79a9696" kindref="member">cpu_id_</ref>[i],<sp/>&amp;cpuset);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ret<sp/>=<sp/>pthread_setaffinity_np(*thread_,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(cpu_set_t),<sp/>&amp;cpuset);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ret)</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%s<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>(</highlight><highlight class="stringliteral">&quot;Associate<sp/>thread<sp/>to<sp/>a<sp/>specific<sp/>cpu<sp/>failed.<sp/>Ret=&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rt_preempt_error_message).c_str(),<sp/>ret);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>get_aff_error<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>get_aff_error<sp/>=<sp/>pthread_getaffinity_np(*thread_,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(cpu_set_t),<sp/>&amp;cpuset);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(get_aff_error)</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%s<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>(</highlight><highlight class="stringliteral">&quot;Check<sp/>the<sp/>thread<sp/>cpu<sp/>affinity<sp/>failed.<sp/>Ret=&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rt_preempt_error_message).c_str(),<sp/>ret);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Set<sp/>returned<sp/>by<sp/>pthread_getaffinity_np()<sp/>contained:<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/>CPU_SETSIZE;<sp/>j++)</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(CPU_ISSET(j,<sp/>&amp;cpuset))</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;CPU<sp/>%d,<sp/>&quot;</highlight><highlight class="normal">,<sp/>j);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeThread_1a2f455db9fd80b81e5e69cd22e8529979" kindref="member">RealTimeThread::join</ref>()</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ret<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(thread_<sp/>!=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Join<sp/>the<sp/>thread<sp/>and<sp/>wait<sp/>until<sp/>it<sp/>is<sp/>done<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ret<sp/>=<sp/>pthread_join(*thread_,<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ret)</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;join<sp/>pthread<sp/>failed.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>thread_.reset(</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeThread_1a704b245872cc7bc49e01181f09732535" kindref="member">RealTimeThread::block_memory</ref>()</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Lock<sp/>memory<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(mlockall(MCL_CURRENT|MCL_FUTURE)<sp/>==<sp/>-1)<sp/>{</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;mlockall<sp/>failed:<sp/>%m\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>exit(-2);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>Defined<sp/>RT_PREEMPT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/**********************************************************</highlight></codeline>
+<codeline lineno="177"><highlight class="comment"><sp/><sp/><sp/>*<sp/>TODO:<sp/>Check<sp/>the<sp/>implementation<sp/>of<sp/>this<sp/>thread<sp/>creation<sp/>*</highlight></codeline>
+<codeline lineno="178"><highlight class="comment"><sp/><sp/><sp/>**********************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined<sp/>XENOMAI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><ref refid="classreal__time__tools_1_1RealTimeThread_1aca6224b9cbe75e3a85b281e0de096b64" kindref="member">RealTimeThread::RealTimeThread</ref>()</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/>{}</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><ref refid="classreal__time__tools_1_1RealTimeThread_1a8e94b07c6ff51d50b1861887fbd1f69f" kindref="member">RealTimeThread::~RealTimeThread</ref>()</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1RealTimeThread_1a2f455db9fd80b81e5e69cd22e8529979" kindref="member">join</ref>();</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeThread_1a232e3955fee6e80c3a7ded68f165414b" kindref="member">RealTimeThread::create_realtime_thread</ref>(</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(*thread_function)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*),<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>args)</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>initializing<sp/>rt_printf,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>nothing<sp/>would<sp/>get<sp/>printed<sp/>otherwise</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>rt_print_auto_init(1);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classreal__time__tools_1_1RealTimeThread_1aa15b5633e76ea6b4c31cd74b3968686a" kindref="member">parameters_</ref>.<ref refid="classreal__time__tools_1_1RealTimeThreadParameters_1a5a6b8b14d0e82962ae6e68d34086ffed" kindref="member">dedicated_cpu_id_</ref>&gt;=0)</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/>ret<sp/>=<sp/>rt_task_spawn(&amp;thread_,</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1RealTimeThread_1aa15b5633e76ea6b4c31cd74b3968686a" kindref="member">parameters_</ref>.<ref refid="classreal__time__tools_1_1RealTimeThreadParameters_1a9db02f30ad6b4d6cfa3ca49dbd63e0f4" kindref="member">keyword_</ref>.c_str(),</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1RealTimeThread_1aa15b5633e76ea6b4c31cd74b3968686a" kindref="member">parameters_</ref>.<ref refid="classreal__time__tools_1_1RealTimeThreadParameters_1ac31bba1a59fa600c2c0e4737a79807c4" kindref="member">stack_size_</ref>,</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1RealTimeThread_1aa15b5633e76ea6b4c31cd74b3968686a" kindref="member">parameters_</ref>.<ref refid="classreal__time__tools_1_1RealTimeThreadParameters_1aa373ac14aa6feca83382b8aefdf27409" kindref="member">priority_</ref>,</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>T_FPU<sp/>|<sp/>T_JOINABLE<sp/>|<sp/></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>T_CPU(<ref refid="classreal__time__tools_1_1RealTimeThread_1aa15b5633e76ea6b4c31cd74b3968686a" kindref="member">parameters_</ref>.<ref refid="classreal__time__tools_1_1RealTimeThreadParameters_1a5a6b8b14d0e82962ae6e68d34086ffed" kindref="member">dedicated_cpu_id_</ref>),</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="demo__realtime__check_8cpp_1a16919b2a4211953c87d405d40b432427" kindref="member">thread_function</ref>,</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>args);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/>ret<sp/>=<sp/>rt_task_spawn(&amp;thread_,</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1RealTimeThread_1aa15b5633e76ea6b4c31cd74b3968686a" kindref="member">parameters_</ref>.<ref refid="classreal__time__tools_1_1RealTimeThreadParameters_1a9db02f30ad6b4d6cfa3ca49dbd63e0f4" kindref="member">keyword_</ref>.c_str(),</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1RealTimeThread_1aa15b5633e76ea6b4c31cd74b3968686a" kindref="member">parameters_</ref>.<ref refid="classreal__time__tools_1_1RealTimeThreadParameters_1ac31bba1a59fa600c2c0e4737a79807c4" kindref="member">stack_size_</ref>,</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1RealTimeThread_1aa15b5633e76ea6b4c31cd74b3968686a" kindref="member">parameters_</ref>.<ref refid="classreal__time__tools_1_1RealTimeThreadParameters_1aa373ac14aa6feca83382b8aefdf27409" kindref="member">priority_</ref>,</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>T_FPU<sp/>|<sp/>T_JOINABLE,</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="demo__realtime__check_8cpp_1a16919b2a4211953c87d405d40b432427" kindref="member">thread_function</ref>,</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>args);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeThread_1a2f455db9fd80b81e5e69cd22e8529979" kindref="member">RealTimeThread::join</ref>()</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ret<sp/>=<sp/>rt_task_join(&amp;thread_);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeThread_1a704b245872cc7bc49e01181f09732535" kindref="member">RealTimeThread::block_memory</ref>()</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(mlockall(MCL_CURRENT|MCL_FUTURE)<sp/>==<sp/>-1)<sp/>{</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;mlockall<sp/>failed:<sp/>%m\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>exit(-2);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>Defined<sp/>XENOMAI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/**********************************************************</highlight></codeline>
+<codeline lineno="241"><highlight class="comment"><sp/><sp/><sp/>*<sp/>TODO:<sp/>Check<sp/>the<sp/>implementation<sp/>of<sp/>this<sp/>thread<sp/>creation<sp/>*</highlight></codeline>
+<codeline lineno="242"><highlight class="comment"><sp/><sp/><sp/>**********************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined<sp/>NON_REAL_TIME</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><ref refid="classreal__time__tools_1_1RealTimeThread_1aca6224b9cbe75e3a85b281e0de096b64" kindref="member">RealTimeThread::RealTimeThread</ref>()</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/>thread_.reset(</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><ref refid="classreal__time__tools_1_1RealTimeThread_1a8e94b07c6ff51d50b1861887fbd1f69f" kindref="member">RealTimeThread::~RealTimeThread</ref>()</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1RealTimeThread_1a2f455db9fd80b81e5e69cd22e8529979" kindref="member">join</ref>();</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/>thread_.reset(</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeThread_1a232e3955fee6e80c3a7ded68f165414b" kindref="member">RealTimeThread::create_realtime_thread</ref>(</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*(*thread_function)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*),<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>args)</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Warning<sp/>this<sp/>thread<sp/>is<sp/>not<sp/>going<sp/>to<sp/>be<sp/>real<sp/>time.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Create<sp/>a<sp/>standard<sp/>thread<sp/>for<sp/>non-real<sp/>time<sp/>OS<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/>thread_.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>std::thread(thread_function,<sp/>args));</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeThread_1a2f455db9fd80b81e5e69cd22e8529979" kindref="member">RealTimeThread::join</ref>()</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(thread_<sp/>!=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(thread_-&gt;joinable())</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>thread_-&gt;join();</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeThread_1a704b245872cc7bc49e01181f09732535" kindref="member">RealTimeThread::block_memory</ref>()</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>do<sp/>nothing</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>Defined<sp/>NON_REAL_TIME</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>real_time_tools</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/thread.cpp"/>
+  </compounddef>
+</doxygen>

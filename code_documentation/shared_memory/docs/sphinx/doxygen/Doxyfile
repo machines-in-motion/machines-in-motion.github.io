@@ -1,0 +1,44 @@
+#
+# Doxyfile for the C++ API
+# 
+
+PROJECT_NAME           = shared_memory
+
+# Next, choose the location of the resulting XML database:
+OUTPUT_DIRECTORY       = .
+
+# Program listing vastly increases the size of XML so it's recommended
+# to turning it OFF:
+XML_PROGRAMLISTING = YES
+
+# The next one is essential! Sphinx uses lowercase reference IDs,
+# so Doxygen can't use mixed-case IDs:
+CASE_SENSE_NAMES = NO
+
+# The next one is important for C++ projects -- otherwise Doxygen
+# may generate lots of bogus links to template arguments:
+HIDE_UNDOC_RELATIONS = YES
+
+JAVADOC_AUTOBRIEF      = YES
+TAB_SIZE               = 4
+
+# Extract as much as we can
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+
+EXAMPLE_PATH           = /home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/demos
+INPUT                  = /home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory
+IMAGE_PATH             = /home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory
+FILE_PATTERNS          = *.h *.hpp *.hh *.cpp *.c *.cc *.hxx
+EXCLUDE_PATTERNS       = */*deprecated*/*
+EXCLUDE_PATTERNS      += */*build*/*
+EXCLUDE_PATTERNS      += */tests/*
+EXCLUDE_PATTERNS      += */resources/*
+RECURSIVE              = YES
+GENERATE_LATEX         = No
+GENERATE_TAGFILE       = /home/mnaveau/devel/workspace/devel/.private/shared_memory/share/shared_memory/docs/sphinx/doxygen/shared_memory.tag
+GENERATE_TREEVIEW = YES
+GENERATE_HTML = No
+GENERATE_XML = YES
+ALIASES += imageSize{3}="\htmlonly <style> div.image img[src=\"\1\"]{\2} </style> \endhtmlonly \image html \1 \"\3\""

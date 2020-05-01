@@ -17,6 +17,9 @@ var annotated_dup =
           [ "TeststandBulletRobot", "classdg__blmc__robots_1_1teststand_1_1teststand__bullet_1_1TeststandBulletRobot.html", "classdg__blmc__robots_1_1teststand_1_1teststand__bullet_1_1TeststandBulletRobot" ]
         ] ]
       ] ],
+      [ "vicon_client_bullet", null, [
+        [ "ViconClientEntityBullet", "classdg__blmc__robots_1_1vicon__client__bullet_1_1ViconClientEntityBullet.html", "classdg__blmc__robots_1_1vicon__client__bullet_1_1ViconClientEntityBullet" ]
+      ] ],
       [ "DGMQuadrupedSimu", "classdg__blmc__robots_1_1DGMQuadrupedSimu.html", "classdg__blmc__robots_1_1DGMQuadrupedSimu" ],
       [ "DGMSingleMotor", "classdg__blmc__robots_1_1DGMSingleMotor.html", "classdg__blmc__robots_1_1DGMSingleMotor" ],
       [ "DGMSolo12", "classdg__blmc__robots_1_1DGMSolo12.html", "classdg__blmc__robots_1_1DGMSolo12" ],

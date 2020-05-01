@@ -1,0 +1,321 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="shared__memory_8cpp" kind="file" language="C++">
+    <compoundname>shared_memory.cpp</compoundname>
+    <includes refid="shared__memory_8hpp" local="yes">shared_memory/shared_memory.hpp</includes>
+    <incdepgraph>
+      <node id="3310">
+        <label>shared_memory/serializer.hxx</label>
+        <link refid="serializer_8hxx"/>
+      </node>
+      <node id="3306">
+        <label>cereal/archives/binary.hpp</label>
+      </node>
+      <node id="3305">
+        <label>shared_memory/serializer.hpp</label>
+        <link refid="serializer_8hpp"/>
+        <childnode refid="3306" relation="include">
+        </childnode>
+        <childnode refid="3307" relation="include">
+        </childnode>
+        <childnode refid="3308" relation="include">
+        </childnode>
+        <childnode refid="3303" relation="include">
+        </childnode>
+        <childnode refid="3309" relation="include">
+        </childnode>
+        <childnode refid="3310" relation="include">
+        </childnode>
+      </node>
+      <node id="3311">
+        <label>shared_memory/shared_memory.hxx</label>
+        <link refid="shared__memory_8hxx"/>
+        <childnode refid="3289" relation="include">
+        </childnode>
+      </node>
+      <node id="3288">
+        <label>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/src/shared_memory.cpp</label>
+        <link refid="shared_memory.cpp"/>
+        <childnode refid="3289" relation="include">
+        </childnode>
+      </node>
+      <node id="3298">
+        <label>boost/interprocess/containers/string.hpp</label>
+      </node>
+      <node id="3293">
+        <label>string</label>
+      </node>
+      <node id="3289">
+        <label>shared_memory/shared_memory.hpp</label>
+        <link refid="shared__memory_8hpp"/>
+        <childnode refid="3290" relation="include">
+        </childnode>
+        <childnode refid="3291" relation="include">
+        </childnode>
+        <childnode refid="3292" relation="include">
+        </childnode>
+        <childnode refid="3293" relation="include">
+        </childnode>
+        <childnode refid="3294" relation="include">
+        </childnode>
+        <childnode refid="3295" relation="include">
+        </childnode>
+        <childnode refid="3296" relation="include">
+        </childnode>
+        <childnode refid="3297" relation="include">
+        </childnode>
+        <childnode refid="3298" relation="include">
+        </childnode>
+        <childnode refid="3299" relation="include">
+        </childnode>
+        <childnode refid="3300" relation="include">
+        </childnode>
+        <childnode refid="3301" relation="include">
+        </childnode>
+        <childnode refid="3304" relation="include">
+        </childnode>
+        <childnode refid="3305" relation="include">
+        </childnode>
+        <childnode refid="3311" relation="include">
+        </childnode>
+      </node>
+      <node id="3291">
+        <label>map</label>
+      </node>
+      <node id="3302">
+        <label>exception</label>
+      </node>
+      <node id="3304">
+        <label>shared_memory/segment_info.hpp</label>
+        <link refid="segment__info_8hpp"/>
+        <childnode refid="3300" relation="include">
+        </childnode>
+        <childnode refid="3290" relation="include">
+        </childnode>
+      </node>
+      <node id="3299">
+        <label>boost/interprocess/containers/vector.hpp</label>
+      </node>
+      <node id="3294">
+        <label>vector</label>
+      </node>
+      <node id="3297">
+        <label>boost/interprocess/containers/deque.hpp</label>
+      </node>
+      <node id="3309">
+        <label>utility</label>
+      </node>
+      <node id="3303">
+        <label>sstream</label>
+      </node>
+      <node id="3296">
+        <label>boost/interprocess/allocators/allocator.hpp</label>
+      </node>
+      <node id="3290">
+        <label>iostream</label>
+      </node>
+      <node id="3292">
+        <label>mutex</label>
+      </node>
+      <node id="3295">
+        <label>eigen3/Eigen/Core</label>
+      </node>
+      <node id="3307">
+        <label>cereal/types/array.hpp</label>
+      </node>
+      <node id="3300">
+        <label>boost/interprocess/managed_shared_memory.hpp</label>
+      </node>
+      <node id="3308">
+        <label>cereal/types/vector.hpp</label>
+      </node>
+      <node id="3301">
+        <label>shared_memory/exceptions.h</label>
+        <link refid="exceptions_8h"/>
+        <childnode refid="3302" relation="include">
+        </childnode>
+        <childnode refid="3290" relation="include">
+        </childnode>
+        <childnode refid="3303" relation="include">
+        </childnode>
+        <childnode refid="3293" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceshared__memory">shared_memory</innernamespace>
+    <briefdescription>
+<para>Implementation of the <ref refid="shared__memory_8hpp" kindref="compound">shared_memory.hpp</ref> API. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Maximilien Naveau (<ulink url="mailto:maximilien.naveau@gmail.com">maximilien.naveau@gmail.com</ulink>)  License BSD-3-Clause </para></simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2019, New York University and Max Planck Gesellschaft. </para></simplesect>
+<simplesect kind="date"><para>2019-05-22 </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="11"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="shared__memory_8hpp" kindref="compound">shared_memory/shared_memory.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">bi<sp/>=<sp/>boost::interprocess;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceshared__memory" kindref="compound">shared_memory</ref></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint<sp/><ref refid="namespaceshared__memory_1a1aa02b0b88f0045c3711029f882d80fa" kindref="member">SEGMENT_SIZE</ref><sp/>=<sp/><ref refid="shared__memory_8hpp_1acd2f5089f8d2870e833cdc9f7af461ec" kindref="member">DEFAULT_SHARED_MEMORY_SIZE</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::mutex<sp/><ref refid="namespaceshared__memory_1a5c687b65860cde45c62305fbb7a19e71" kindref="member">SEGMENT_SIZE_MUTEX</ref>;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceshared__memory_1ac8ef94dc78f444092f488f0143b155f2" kindref="member">set_segment_sizes</ref>(uint<sp/>multiplier_1025)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>SEGMENT_SIZE_MUTEX.lock();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>SEGMENT_SIZE<sp/>=<sp/>multiplier_1025<sp/>*<sp/>1025;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>SEGMENT_SIZE_MUTEX.unlock();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceshared__memory_1a841687861fcc9efe381ffbe84843ca33" kindref="member">set_default_segment_sizes</ref>()</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>SEGMENT_SIZE_MUTEX.lock();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>SEGMENT_SIZE<sp/>=<sp/><ref refid="shared__memory_8hpp_1acd2f5089f8d2870e833cdc9f7af461ec" kindref="member">DEFAULT_SHARED_MEMORY_SIZE</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>SEGMENT_SIZE_MUTEX.unlock();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceshared__memory_1adb7d7158652e09188fea583e05949bb5" kindref="member">VERBOSE</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceshared__memory_1afe26d531f043f59bb36ea7816b8a40bf" kindref="member">set_verbose</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>mode)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>VERBOSE<sp/>=<sp/>mode;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment">/***********************************************</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/>Definition<sp/>of<sp/>the<sp/>SharedMemorySegment<sp/>class<sp/>*</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>***********************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><ref refid="classshared__memory_1_1_shared_memory_segment_1ae984411227bd175e684f90c9c28c976c" kindref="member">SharedMemorySegment::SharedMemorySegment</ref>(std::string<sp/>segment_id,</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>clear_upon_destruction)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>save<sp/>the<sp/>id<sp/>the<sp/>of<sp/>the<sp/>segment</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classshared__memory_1_1_shared_memory_segment_1a08408dc6b860388eb3b08e493f0188d9" kindref="member">segment_id_</ref><sp/>=<sp/>segment_id;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>check<sp/>if<sp/>we<sp/>should<sp/>delete<sp/>the<sp/>memory<sp/>upon<sp/>destruction.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classshared__memory_1_1_shared_memory_segment_1af50ac70dca284926b15803f86958b220" kindref="member">clear_upon_destruction_</ref><sp/>=<sp/>clear_upon_destruction;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>create<sp/>and/or<sp/>map<sp/>the<sp/>memory<sp/>segment</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>SEGMENT_SIZE_MUTEX.lock();</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classshared__memory_1_1_shared_memory_segment_1af775c0982687b6e9bc9856b21aa1e009" kindref="member">segment_manager_</ref><sp/>=<sp/>boost::interprocess::managed_shared_memory(</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::interprocess::open_or_create,<sp/>segment_id.c_str(),<sp/><ref refid="namespaceshared__memory_1a1aa02b0b88f0045c3711029f882d80fa" kindref="member">SEGMENT_SIZE</ref>);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>SEGMENT_SIZE_MUTEX.unlock();</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classshared__memory_1_1_shared_memory_segment_1ac8bbbc98968a8a2b3fe35c50e0768d8f" kindref="member">create_mutex</ref>();</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classshared__memory_1_1_shared_memory_segment_1a0224739cd729dfb249c3d7882463e5eb" kindref="member">SharedMemorySegment::clear_memory</ref>()</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::interprocess::shared_memory_object::remove(<ref refid="classshared__memory_1_1_shared_memory_segment_1a08408dc6b860388eb3b08e493f0188d9" kindref="member">segment_id_</ref>.c_str());</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classshared__memory_1_1_shared_memory_segment_1ad73b5160f713c9a78e67c4b8590d8729" kindref="member">SharedMemorySegment::get_object</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;object_id,</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>&amp;get_)</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classshared__memory_1_1_shared_memory_segment_1a9e72fec52b3c76b9c2b0809b40b4e11d" kindref="member">mutex_</ref>-&gt;lock();</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>register_object_read_only&lt;char&gt;(object_id);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>get_<sp/>=<sp/>std::string(static_cast&lt;char<sp/>*&gt;(<ref refid="classshared__memory_1_1_shared_memory_segment_1a8c4d0eb6f2a620bf7e5b22a57c07380b" kindref="member">objects_</ref>[object_id].first),</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classshared__memory_1_1_shared_memory_segment_1a8c4d0eb6f2a620bf7e5b22a57c07380b" kindref="member">objects_</ref>[object_id].second);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classshared__memory_1_1_shared_memory_segment_1a9e72fec52b3c76b9c2b0809b40b4e11d" kindref="member">mutex_</ref>-&gt;unlock();</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><ref refid="classshared__memory_1_1_shared_memory_segment_1ae984411227bd175e684f90c9c28c976c" kindref="member">SharedMemorySegment</ref><sp/>&amp;<ref refid="namespaceshared__memory_1a7c76ec22ab70d3b7487becd3ec9943bc" kindref="member">get_segment</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;segment_id,</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>clear_upon_destruction)</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceshared__memory_1ad1f78482aa062e165f37fd49e2e8f539" kindref="member">GLOBAL_SHM_SEGMENTS</ref>.count(segment_id)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceshared__memory_1ad1f78482aa062e165f37fd49e2e8f539" kindref="member">GLOBAL_SHM_SEGMENTS</ref>[segment_id].reset(</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classshared__memory_1_1_shared_memory_segment_1ae984411227bd175e684f90c9c28c976c" kindref="member">SharedMemorySegment</ref>(segment_id,<sp/>clear_upon_destruction));</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceshared__memory_1ad1f78482aa062e165f37fd49e2e8f539" kindref="member">GLOBAL_SHM_SEGMENTS</ref>[segment_id]-&gt;set_clear_upon_destruction(</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>clear_upon_destruction);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*<ref refid="namespaceshared__memory_1ad1f78482aa062e165f37fd49e2e8f539" kindref="member">GLOBAL_SHM_SEGMENTS</ref>[segment_id];</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal">SegmentInfo<sp/><ref refid="namespaceshared__memory_1a70f7613a247615e323cab083934c803e" kindref="member">get_segment_info</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;segment_id,</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>clear_upon_destruction)</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classshared__memory_1_1_shared_memory_segment_1ae984411227bd175e684f90c9c28c976c" kindref="member">SharedMemorySegment</ref><sp/>&amp;segment<sp/>=</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceshared__memory_1a7c76ec22ab70d3b7487becd3ec9943bc" kindref="member">get_segment</ref>(segment_id,<sp/>clear_upon_destruction);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>segment.get_info();</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceshared__memory_1a82297c2b7b85c57c53578749c9bd6429" kindref="member">segment_exists</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;segment_id)</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceshared__memory_1ad1f78482aa062e165f37fd49e2e8f539" kindref="member">GLOBAL_SHM_SEGMENTS</ref>.count(segment_id)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal">boost::interprocess::interprocess_mutex<sp/>&amp;<ref refid="namespaceshared__memory_1aed33c9701140a1c43e40f182a380199b" kindref="member">get_segment_mutex</ref>(</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>segment_id)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classshared__memory_1_1_shared_memory_segment_1ae984411227bd175e684f90c9c28c976c" kindref="member">SharedMemorySegment</ref><sp/>&amp;segment<sp/>=<sp/><ref refid="namespaceshared__memory_1a7c76ec22ab70d3b7487becd3ec9943bc" kindref="member">get_segment</ref>(segment_id);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*segment.mutex_;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceshared__memory_1a60cbce63ae7fb64a2758b773f9006471" kindref="member">delete_segment</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;segment_id)</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>here<sp/>the<sp/>unique<sp/>pointer<sp/>destroy<sp/>the<sp/>object<sp/>for<sp/>us.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceshared__memory_1ad1f78482aa062e165f37fd49e2e8f539" kindref="member">GLOBAL_SHM_SEGMENTS</ref>.erase(segment_id);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceshared__memory_1a1f88dd41dca9a23387090866213dbd85" kindref="member">delete_all_segment</ref>()</highlight></codeline>
+<codeline lineno="123"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(SegmentMap::iterator<sp/>seg_it<sp/>=<sp/><ref refid="namespaceshared__memory_1ad1f78482aa062e165f37fd49e2e8f539" kindref="member">GLOBAL_SHM_SEGMENTS</ref>.begin();</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>seg_it<sp/>!=<sp/><ref refid="namespaceshared__memory_1ad1f78482aa062e165f37fd49e2e8f539" kindref="member">GLOBAL_SHM_SEGMENTS</ref>.end();</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>seg_it<sp/>=<sp/><ref refid="namespaceshared__memory_1ad1f78482aa062e165f37fd49e2e8f539" kindref="member">GLOBAL_SHM_SEGMENTS</ref>.begin())</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceshared__memory_1a7c76ec22ab70d3b7487becd3ec9943bc" kindref="member">get_segment</ref>(seg_it-&gt;second-&gt;get_segment_id(),<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceshared__memory_1ad1f78482aa062e165f37fd49e2e8f539" kindref="member">GLOBAL_SHM_SEGMENTS</ref>.erase(seg_it);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceshared__memory_1aa8583540879db53fc80b31410b5eec68" kindref="member">clear_shared_memory</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;segment_id)</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::interprocess::shared_memory_object::remove(segment_id.c_str());</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceshared__memory_1a60cbce63ae7fb64a2758b773f9006471" kindref="member">delete_segment</ref>(segment_id);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="comment">/***********************************</highlight></codeline>
+<codeline lineno="140"><highlight class="comment"><sp/>*<sp/>Definition<sp/>of<sp/>all<sp/>set<sp/>functions<sp/>*</highlight></codeline>
+<codeline lineno="141"><highlight class="comment"><sp/>***********************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">set</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;segment_id,</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;object_id,</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;set_)</highlight></codeline>
+<codeline lineno="146"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>set&lt;char&gt;(segment_id,<sp/>object_id,<sp/>set_.c_str(),<sp/>set_.size());</highlight></codeline>
+<codeline lineno="148"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="comment">/***********************************</highlight></codeline>
+<codeline lineno="151"><highlight class="comment"><sp/>*<sp/>Definition<sp/>of<sp/>all<sp/>get<sp/>functions<sp/>*</highlight></codeline>
+<codeline lineno="152"><highlight class="comment"><sp/>***********************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">get</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;segment_id,</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;object_id,</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>&amp;get_)</highlight></codeline>
+<codeline lineno="157"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classshared__memory_1_1_shared_memory_segment_1ae984411227bd175e684f90c9c28c976c" kindref="member">SharedMemorySegment</ref><sp/>&amp;segment<sp/>=<sp/><ref refid="namespaceshared__memory_1a7c76ec22ab70d3b7487becd3ec9943bc" kindref="member">get_segment</ref>(segment_id);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>segment.get_object(object_id,<sp/>get_);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::interprocess::bad_alloc<sp/>&amp;)</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="classshared__memory_1_1_allocation__exception" kindref="compound">shared_memory::Allocation_exception</ref>(segment_id,<sp/>object_id);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::interprocess::interprocess_exception<sp/>&amp;)</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="171"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>shared_memory</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/src/shared_memory.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="segment__info_8cpp" kind="file" language="C++">
+    <compoundname>segment_info.cpp</compoundname>
+    <includes refid="segment__info_8hpp" local="yes">shared_memory/segment_info.hpp</includes>
+    <incdepgraph>
+      <node id="3283">
+        <label>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/src/segment_info.cpp</label>
+        <link refid="segment_info.cpp"/>
+        <childnode refid="3284" relation="include">
+        </childnode>
+      </node>
+      <node id="3284">
+        <label>shared_memory/segment_info.hpp</label>
+        <link refid="segment__info_8hpp"/>
+        <childnode refid="3285" relation="include">
+        </childnode>
+        <childnode refid="3286" relation="include">
+        </childnode>
+      </node>
+      <node id="3286">
+        <label>iostream</label>
+      </node>
+      <node id="3285">
+        <label>boost/interprocess/managed_shared_memory.hpp</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceshared__memory">shared_memory</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Copyright<sp/>2019<sp/>@<sp/>Max<sp/>Planck<sp/>Gesellschaft<sp/>and<sp/>New<sp/>York<sp/>University</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>License<sp/>BSD-3-Clause</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="segment__info_8hpp" kindref="compound">shared_memory/segment_info.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceshared__memory" kindref="compound">shared_memory</ref></highlight></codeline>
+<codeline lineno="7"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>dev<sp/>note<sp/>:<sp/>the<sp/>boost<sp/>api<sp/>does<sp/>not<sp/>allow<sp/>for<sp/>msm<sp/>to<sp/>be<sp/>const</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><ref refid="classshared__memory_1_1_segment_info_1a254ed3b9d7e7e69a6888c9927504fe3b" kindref="member">SegmentInfo::SegmentInfo</ref>(boost::interprocess::managed_shared_memory<sp/>&amp;msm)</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classshared__memory_1_1_segment_info_1a87f1d90b4bfefd07945ba0e7d42959f4" kindref="member">size_</ref><sp/>=<sp/>msm.get_size();</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classshared__memory_1_1_segment_info_1ab1b9e3b023e45ccb327e7322d9dde554" kindref="member">free_memory_</ref><sp/>=<sp/>msm.get_free_memory();</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classshared__memory_1_1_segment_info_1a727ff0d1a39302da90b26207de2ffc26" kindref="member">has_issues_</ref><sp/>=<sp/>!msm.check_sanity();</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>-1<sp/>:<sp/>there<sp/>is<sp/>one<sp/>default<sp/>object<sp/>per<sp/>segment.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>it<sp/>is<sp/>clearer<sp/>to<sp/>returns<sp/>the<sp/>number<sp/>of<sp/>objects<sp/>created</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>by<sp/>users</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classshared__memory_1_1_segment_info_1a56992f58b9b7c0bebbbff56d85a95a4b" kindref="member">nb_objects_</ref><sp/>=<sp/>msm.get_num_named_objects()<sp/>-<sp/>1;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">uint<sp/><ref refid="classshared__memory_1_1_segment_info_1a0ab35167b7075c39adc5493511104b09" kindref="member">SegmentInfo::get_size</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="21"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classshared__memory_1_1_segment_info_1a87f1d90b4bfefd07945ba0e7d42959f4" kindref="member">size_</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">uint<sp/><ref refid="classshared__memory_1_1_segment_info_1aa91bb7d043ff723bc134fd4bcf38f718" kindref="member">SegmentInfo::get_free_memory</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="26"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classshared__memory_1_1_segment_info_1ab1b9e3b023e45ccb327e7322d9dde554" kindref="member">free_memory_</ref>;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classshared__memory_1_1_segment_info_1ace1754181cbe2be66e2eaebac7342795" kindref="member">SegmentInfo::has_issues</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="31"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classshared__memory_1_1_segment_info_1a727ff0d1a39302da90b26207de2ffc26" kindref="member">has_issues_</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal">uint<sp/><ref refid="classshared__memory_1_1_segment_info_1aa1ecf75582e0df02205ad80c2797bc94" kindref="member">SegmentInfo::nb_objects</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="36"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classshared__memory_1_1_segment_info_1a56992f58b9b7c0bebbbff56d85a95a4b" kindref="member">nb_objects_</ref>;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classshared__memory_1_1_segment_info_1a821eb6fc85451b03ea862e4cf5d6890c" kindref="member">SegmentInfo::print</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="41"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Memory<sp/>segment:&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\tsize:\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classshared__memory_1_1_segment_info_1a87f1d90b4bfefd07945ba0e7d42959f4" kindref="member">size_</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\tfree:\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classshared__memory_1_1_segment_info_1ab1b9e3b023e45ccb327e7322d9dde554" kindref="member">free_memory_</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\tused:\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classshared__memory_1_1_segment_info_1a87f1d90b4bfefd07945ba0e7d42959f4" kindref="member">size_</ref><sp/>-<sp/><ref refid="classshared__memory_1_1_segment_info_1ab1b9e3b023e45ccb327e7322d9dde554" kindref="member">free_memory_</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\tobjects\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classshared__memory_1_1_segment_info_1a56992f58b9b7c0bebbbff56d85a95a4b" kindref="member">nb_objects_</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\thas<sp/>issues:\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classshared__memory_1_1_segment_info_1a727ff0d1a39302da90b26207de2ffc26" kindref="member">has_issues_</ref><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>shared_memory</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/src/segment_info.cpp"/>
+  </compounddef>
+</doxygen>

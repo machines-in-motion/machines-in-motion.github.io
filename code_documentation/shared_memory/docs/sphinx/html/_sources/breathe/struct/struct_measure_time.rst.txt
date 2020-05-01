@@ -1,0 +1,4 @@
+Struct MeasureTime
+==================
+
+.. doxygenstruct:: MeasureTime

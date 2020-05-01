@@ -20,12 +20,20 @@ def get_ros_install_share_path():
     potentially_cloned_package = ["mpi_cmake_modules"]
     for package in potentially_cloned_package:
         if package in ros_pack.list():
-            return path.dirname(ros_pack.get_path(package))
+            share_path = path.dirname(ros_pack.get_path(package))
+            break
+
+    if share_path.endswith(path.join("install", "share")) and path.isdir(share_path):
+        return share_path
+
+    share_path = path.join(treep.files._find_root(share_path, True)[
+                           0], "workspace", "devel", "share")
+    if path.isdir(share_path):
+        return share_path
 
     raise Exception('The ROS install/share folder has not been found.\n'
                     'Used ' + str(potentially_cloned_package) + ' packages to '
                     'find it but neither has been cloned')
-    return
 
 
 def copy_doc_package(package_name, share_path):

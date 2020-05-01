@@ -1,0 +1,377 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="forceZ__vs__PosError__quasistatic_8py" kind="file" language="Python">
+    <compoundname>forceZ_vs_PosError_quasistatic.py</compoundname>
+    <innernamespace refid="namespaceforceZ__vs__PosError__quasistatic">forceZ_vs_PosError_quasistatic</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">import</highlight><highlight class="normal"><sp/>sys,<sp/>os</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>os.path<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>expanduser</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>copy<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>deepcopy</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>numpy<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>np</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>numpy<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>math</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>RAI</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>pkg_resources</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>scipy.signal<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>butter,<sp/>lfilter,<sp/>freqz,<sp/>filtfilt</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Plot<sp/>parameters</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>matplotlib</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">#matplotlib.use(&apos;Agg&apos;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>matplotlib<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>pyplot<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>plt</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">font<sp/>=<sp/>{</highlight><highlight class="stringliteral">&apos;family&apos;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&apos;normal&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>&apos;weight&apos;<sp/>:<sp/>&apos;bold&apos;,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;size&apos;</highlight><highlight class="normal"><sp/><sp/><sp/>:<sp/>22}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">matplotlib.rc(</highlight><highlight class="stringliteral">&apos;font&apos;</highlight><highlight class="normal">,<sp/>**font)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Helpful<sp/>methods</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">polyfit(x,<sp/>y,<sp/>degree):</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>results<sp/>=<sp/>{}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>coeffs<sp/>=<sp/>np.polyfit(x,<sp/>y,<sp/>degree)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Polynomial<sp/>Coefficients</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>results[</highlight><highlight class="stringliteral">&apos;polynomial&apos;</highlight><highlight class="normal">]<sp/>=<sp/>coeffs.tolist()</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>r-squared</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>p<sp/>=<sp/>np.poly1d(coeffs)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>fit<sp/>values,<sp/>and<sp/>mean</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>yhat<sp/>=<sp/>p(x)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>or<sp/>[p(z)<sp/>for<sp/>z<sp/>in<sp/>x]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>ybar<sp/>=<sp/>np.sum(y)/len(y)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>or<sp/>sum(y)/len(y)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>ssreg<sp/>=<sp/>np.sum((yhat-ybar)**2)<sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>or<sp/>sum([<sp/>(yihat<sp/>-<sp/>ybar)**2<sp/>for<sp/>yihat<sp/>in<sp/>yhat])</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>sstot<sp/>=<sp/>np.sum((y<sp/>-<sp/>ybar)**2)<sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>or<sp/>sum([<sp/>(yi<sp/>-<sp/>ybar)**2<sp/>for<sp/>yi<sp/>in<sp/>y])</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>results[</highlight><highlight class="stringliteral">&apos;determination&apos;</highlight><highlight class="normal">]<sp/>=<sp/>ssreg<sp/>/<sp/>sstot</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>results</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">butter_lowpass(cutoff,<sp/>fs,<sp/>order=5):</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>nyq<sp/>=<sp/>0.5<sp/>*<sp/>fs</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>normal_cutoff<sp/>=<sp/>cutoff<sp/>/<sp/>nyq</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>b,<sp/>a<sp/>=<sp/>butter(order,<sp/>normal_cutoff,<sp/>btype=</highlight><highlight class="stringliteral">&apos;low&apos;</highlight><highlight class="normal">,<sp/>analog=</highlight><highlight class="keyword">False</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>b,<sp/>a</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">butter_lowpass_filter(data,<sp/>cutoff,<sp/>fs,<sp/>order=5):</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>b,<sp/>a<sp/>=<sp/>butter_lowpass(cutoff,<sp/>fs,<sp/>order=order)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>y<sp/>=<sp/>lfilter(b,<sp/>a,<sp/>data)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>y<sp/>=<sp/>filtfilt(b,<sp/>a,<sp/>data)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>y</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">get_data(rai_data,<sp/>start_value,<sp/>end_value):</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="61"><highlight class="stringliteral"><sp/><sp/>Parse<sp/>the<sp/>data<sp/>file</highlight></codeline>
+<codeline lineno="62"><highlight class="stringliteral"><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>field<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>rai_data.fields:</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">print</highlight><highlight class="normal"><sp/>field</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/>Fx<sp/>=<sp/>np.array(rai_data.get_streams(</highlight><highlight class="stringliteral">&quot;data0/dg_hopper_teststand-ati_force.dat[0]&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/>Fz<sp/>=<sp/>np.array(rai_data.get_streams(</highlight><highlight class="stringliteral">&quot;data0/dg_hopper_teststand-ati_force.dat[2]&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/>Fz_filtered<sp/>=<sp/>np.array(rai_data.get_streams(</highlight><highlight class="stringliteral">&quot;data0/dg_stiffness_measurement_force_sensor-sout.dat[2]&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/>pos_error_x<sp/>=<sp/>np.array(rai_data.get_streams(</highlight><highlight class="stringliteral">&quot;data0/dg_pos_error_hopper-sout.dat[0]&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/>pos_error_z<sp/>=<sp/>np.array(rai_data.get_streams(</highlight><highlight class="stringliteral">&quot;data0/dg_pos_error_hopper-sout.dat[2]&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/>pos_error_height_sensor_filtered<sp/>=<sp/>np.array(rai_data.get_streams(</highlight><highlight class="stringliteral">&quot;data0/dg_stiffness_measurement_height_sensor-sout.dat[0]&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/>pos_error_height_sensor<sp/>=<sp/>np.array(rai_data.get_streams(</highlight><highlight class="stringliteral">&quot;data0/dg_hopper_teststand-height_sensors.dat[0]&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/>HFE_u<sp/>=<sp/>np.array(rai_data.get_streams(</highlight><highlight class="stringliteral">&quot;data0/dg_hopper_teststand-joint_torques.dat[0]&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/>KFE_u<sp/>=<sp/>np.array(rai_data.get_streams(</highlight><highlight class="stringliteral">&quot;data0/dg_hopper_teststand-joint_torques.dat[1]&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/>k_value_x<sp/>=<sp/>np.divide(Fx,<sp/>pos_error_x)</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/>k_value_z<sp/>=<sp/>np.divide(Fz,<sp/>pos_error_z)</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">#<sp/>experiment<sp/>with<sp/>free<sp/>foot</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">#<sp/>pos_error_height_sensor_filtered<sp/>=<sp/>0.22<sp/>+<sp/>0.017<sp/>-<sp/>pos_error_height_sensor_filtered</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">#<sp/>pos_error_height_sensor<sp/>=<sp/>0.22<sp/>+<sp/>0.017<sp/>-<sp/>pos_error_height_sensor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">#<sp/>Fz<sp/>=<sp/>0.0<sp/>+<sp/>Fz</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">#<sp/>experiment<sp/>with<sp/>attached<sp/>foot</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/>pos_error_height_sensor_filtered<sp/>=<sp/>0.28<sp/>-<sp/>(pos_error_height_sensor_filtered<sp/>+<sp/>0.007)<sp/></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/>pos_error_height_sensor<sp/>=<sp/>0.28<sp/>-<sp/>(pos_error_height_sensor<sp/>+<sp/>0.007)</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/>Fz<sp/>=<sp/>0.0<sp/>+<sp/>Fz</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/>Fx<sp/>=<sp/>Fx[start_value:end_value]</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/>Fz<sp/>=<sp/>Fz[start_value:end_value]</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>Fz_filtered<sp/>=<sp/>Fz_filtered[start_value:end_value]</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/>pos_error_x<sp/>=<sp/>pos_error_x[start_value:end_value]</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/>pos_error_z<sp/>=<sp/>pos_error_z[start_value:end_value]</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/>k_value_x<sp/>=<sp/>k_value_x[start_value:end_value]</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/>k_value_z<sp/>=<sp/>k_value_z[start_value:end_value]</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/>HFE_u<sp/>=<sp/>HFE_u[start_value:end_value]</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/>KFE_u<sp/>=<sp/>KFE_u[start_value:end_value]</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/>pos_error_height_sensor<sp/>=<sp/>pos_error_height_sensor[start_value:end_value]</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/>pos_error_height_sensor_filtered<sp/>=<sp/>pos_error_height_sensor_filtered[start_value:end_value]</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Fx,<sp/>Fz,<sp/>Fz_filtered,<sp/>pos_error_x,<sp/>pos_error_z,<sp/>pos_error_height_sensor,<sp/>pos_error_height_sensor_filtered,<sp/>HFE_u,<sp/>KFE_u,<sp/>k_value_x,<sp/>k_value_z</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Main<sp/>plotting<sp/>method</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;__main__&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="108"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>main<sp/>function</highlight></codeline>
+<codeline lineno="109"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Parse<sp/>the<sp/>arguments</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>folder<sp/>=<sp/>os.path.join(expanduser(</highlight><highlight class="stringliteral">&quot;~&quot;</highlight><highlight class="normal">),</highlight><highlight class="stringliteral">&quot;fgrimminger_paper_log&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;stiffness_data_compain_v2_plot&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>file_names<sp/>=<sp/>[</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>os.path.join(folder,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-03-13&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-03-13.npz&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>os.path.join(folder,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-04-15&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-04-15.npz&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>os.path.join(folder,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-05-17&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-05-17.npz&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>os.path.join(folder,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-05-54&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-05-54.npz&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>os.path.join(folder,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-06-36&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-06-36.npz&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>os.path.join(folder,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-07-42&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-07-42.npz&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>os.path.join(folder,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-08-19&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-08-19.npz&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>os.path.join(folder,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-09-06&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-09-06.npz&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>os.path.join(folder,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-09-53&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-09-53.npz&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>os.path.join(folder,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-11-57&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-11-57.npz&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>os.path.join(folder,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-12-42&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-12-42.npz&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>os.path.join(folder,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-15-52&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-15-52.npz&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>os.path.join(folder,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-16-51&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-16-51.npz&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>os.path.join(folder,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-17-43&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-17-43.npz&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>os.path.join(folder,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-20-09&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-20-09.npz&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>os.path.join(folder,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-21-00&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-21-00.npz&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>os.path.join(folder,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-24-16&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-24-16.npz&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>os.path.join(folder,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-25-06&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;2019-07-04_16-25-06.npz&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>]</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>nb_files<sp/>=<sp/>len(file_names)</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>list_labels<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>i<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>range(nb_files):</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list_labels.append(</highlight><highlight class="stringliteral">&quot;K=&quot;</highlight><highlight class="normal">+str((i+1)*20)+</highlight><highlight class="stringliteral">&quot;N/m&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">print</highlight><highlight class="normal"><sp/>(</highlight><highlight class="stringliteral">&quot;number<sp/>of<sp/>file<sp/>to<sp/>read:<sp/>&quot;</highlight><highlight class="normal">,<sp/>nb_files)</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">print</highlight><highlight class="normal"><sp/>(</highlight><highlight class="stringliteral">&quot;file<sp/>names:<sp/>&quot;</highlight><highlight class="normal">,<sp/>file_names)</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">print</highlight><highlight class="normal"><sp/>(</highlight><highlight class="stringliteral">&quot;labels:<sp/>&quot;</highlight><highlight class="normal">,<sp/>list_labels)</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Create<sp/>data<sp/>lists</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>list_sensors_data<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>list_data<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>list_Fx<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>list_Fz<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>list_Fz_filtered<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>list_pos_error_x<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>list_pos_error_z<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>list_pos_error_height_sensor<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>list_pos_error_height_sensor_filtered<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>list_HFE_u<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>list_KFE_u<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>list_k_value_x<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>list_k_value_z<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>list_Fz_cutoff<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>list_pos_error_height_sensor_cutoff<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>limit<sp/>values</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>start_value<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>end_value<sp/>=<sp/>-1</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Load<sp/>the<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>i<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>range(nb_files):</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;loading<sp/>file<sp/>:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>file_names[i])</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list_sensors_data.append(RAI.sensors.SensorsData(file_names[i]))</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list_data.append(list_sensors_data[-1].get_all_streams())</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(Fx,<sp/>Fz,<sp/>Fz_filtered,<sp/>pos_error_x,<sp/>pos_error_z,<sp/>pos_error_height_sensor,</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos_error_height_sensor_filtered,<sp/>HFE_u,<sp/>KFE_u,</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>k_value_x,<sp/>k_value_z)<sp/>=<sp/>get_data(list_sensors_data[i],<sp/>start_value,<sp/>end_value)</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>filter<sp/>the<sp/>force<sp/>with<sp/>a<sp/>simple<sp/>low<sp/>pass<sp/>filter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Filter<sp/>requirements.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>order<sp/>=<sp/>3</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fs<sp/>=<sp/>1000.0<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>sample<sp/>rate,<sp/>Hz</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cutoff<sp/>=<sp/>50.0<sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>desired<sp/>cutoff<sp/>frequency<sp/>of<sp/>the<sp/>filter,<sp/>Hz</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Fz_cutoff<sp/>=<sp/>butter_lowpass_filter(Fz,<sp/>cutoff,<sp/>fs,<sp/>order)</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos_error_height_sensor_cutoff<sp/>=<sp/>butter_lowpass_filter(pos_error_height_sensor,<sp/>cutoff,<sp/>fs,<sp/>order)</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>ignore<sp/>the<sp/>first<sp/>40<sp/>iteration<sp/>(to<sp/>make<sp/>the<sp/>filter<sp/>converge)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>start_index<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list_Fx.append(Fx[start_index:])</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list_Fz.append(Fz[start_index:])</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list_Fz_filtered.append(Fz_filtered[start_index:])</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list_pos_error_x.append(pos_error_x[start_index:])</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list_pos_error_z.append(pos_error_z[start_index:])</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list_pos_error_height_sensor.append(pos_error_height_sensor[start_index:])</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list_pos_error_height_sensor_filtered.append(pos_error_height_sensor_filtered[start_index:])</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list_HFE_u.append(HFE_u[start_index:])</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list_KFE_u.append(KFE_u[start_index:])</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list_k_value_x.append(k_value_x[start_index:])</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list_k_value_z.append(k_value_z[start_index:])</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list_Fz_cutoff.append(Fz_cutoff[start_index:])</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list_pos_error_height_sensor_cutoff.append(pos_error_height_sensor_cutoff[start_index:])</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Prepare<sp/>plot</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Drop<sp/>test<sp/>Fz(t)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>for<sp/>i<sp/>in<sp/>range(nb_files):</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>fig<sp/>=<sp/>plt.figure(&quot;Vertical<sp/>Forces,<sp/>k=&quot;<sp/>+<sp/>str((i+1)*100)<sp/>+<sp/>&quot;N/m&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>#<sp/>plt.plot(list_pos_error_height_sensor[i],<sp/>list_Fz[i],<sp/>label<sp/>=<sp/>list_labels[i])</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>plt.plot(list_Fz[i],<sp/>label<sp/>=<sp/>list_labels[i])</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>#<sp/>plt.plot(list_Fz_cutoff[i],<sp/>label<sp/>=<sp/>list_labels[i]<sp/>+<sp/>&quot;<sp/>cutoff&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>#<sp/>plt.plot(list_Fz_filtered[i],<sp/>label<sp/>=<sp/>list_labels[i]<sp/>+<sp/>&quot;<sp/>filtered&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>fig.legend()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>plt.grid()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>plt.xlabel(&quot;time<sp/>[ms]&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>plt.ylabel(&quot;Vertical<sp/>Force<sp/>[N]&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>#<sp/>fig.set_xlim(-0.10,<sp/>0.17)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>#<sp/>fig.set_ylim(-100.0,<sp/>20.0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Drop<sp/>test<sp/>DeltaZ(t)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>for<sp/>i<sp/>in<sp/>range(nb_files):</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>fig<sp/>=<sp/>plt.figure(&quot;Height<sp/>error,<sp/>k=&quot;<sp/>+<sp/>str((i+1)*100)<sp/>+<sp/>&quot;N/m&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>plt.plot(list_pos_error_height_sensor[i],<sp/>label<sp/>=<sp/>list_labels[i])</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>plt.plot(list_pos_error_height_sensor_cutoff[i],<sp/>label<sp/>=<sp/>list_labels[i]<sp/>+<sp/>&quot;<sp/>cutoff&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>plt.plot(list_pos_error_height_sensor_filtered[i],<sp/>label<sp/>=<sp/>list_labels[i]<sp/>+<sp/>&quot;<sp/>cutoff&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>fig.legend()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>plt.grid()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>plt.xlabel(&quot;time<sp/>[ms]&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>plt.ylabel(&quot;Vertical<sp/>Foot<sp/>Displacement<sp/>[m]&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Drop<sp/>test<sp/>mean(<sp/>Fz(DeltaZ)<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>for<sp/>i<sp/>in<sp/>range(nb_files):</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>x=np.array([])</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>y=np.array([])</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>for<sp/>phase<sp/>in<sp/>range(2,<sp/>len(list_phase[i]),<sp/>2):</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>np.append(x,<sp/>list_pos_error_height_sensor[i][list_phase[i][phase]:list_phase[i][phase+1]])</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y<sp/>=<sp/>np.append(y,<sp/>list_Fz[i][list_phase[i][phase]:list_phase[i][phase+1]])<sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>y<sp/>=<sp/>y[<sp/>x<sp/>&lt;<sp/>0.1<sp/>]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>x[<sp/>x<sp/>&lt;<sp/>0.1<sp/>]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>poly<sp/>=<sp/>polyfit(x,<sp/>y,<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>print(&quot;i=&quot;,i,&quot;<sp/>polyfit=&quot;,<sp/>poly)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>k_data<sp/>=<sp/>poly[&apos;polynomial&apos;][0]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>dx<sp/>=<sp/>np.linspace(np.min(0.0),<sp/>np.max(x),<sp/>num=2000,<sp/>endpoint=True)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>f<sp/>=<sp/>poly[&apos;polynomial&apos;][0]<sp/>*<sp/>dx<sp/>+<sp/>poly[&apos;polynomial&apos;][1]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>fig<sp/>=<sp/>plt.figure(&quot;Test&quot;+str(i))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>plt.plot(x,y)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>plt.plot(dx,f)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Drop<sp/>test<sp/>Fz(DeltaZ),<sp/>Fz_max,<sp/>mean(<sp/>Fz(DeltaZ)<sp/>),<sp/>theoretical<sp/>Fz(DeltaZ)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/>fig<sp/>=<sp/>plt.figure(</highlight><highlight class="stringliteral">&quot;quasistatic_experiment&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>compute<sp/>the<sp/>cartesian<sp/>upper<sp/>bound</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/>x0<sp/>=<sp/>0.28<sp/></highlight><highlight class="comment">#<sp/>Resting<sp/>position<sp/>of<sp/>the<sp/>stiffness<sp/>controller</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/>i_max<sp/>=<sp/>12.0<sp/></highlight><highlight class="comment">#<sp/>max<sp/>current</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/>tau_max<sp/>=<sp/>12.0<sp/>*<sp/>9.0<sp/>*<sp/>0.025<sp/></highlight><highlight class="comment">#<sp/>max<sp/>joint<sp/>torque</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/>leg_segment_length<sp/>=<sp/>0.16<sp/></highlight><highlight class="comment">#<sp/>leg<sp/>segment<sp/>length<sp/>(equal<sp/>for<sp/>upper<sp/>and<sp/>lower<sp/>leg)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/>dx<sp/>=<sp/>np.linspace(0.0,<sp/>np.max(list_pos_error_height_sensor[i]),<sp/>num=2000,<sp/>endpoint=</highlight><highlight class="keyword">True</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/>alpha<sp/>=<sp/>np.arcsin(<sp/>(x0<sp/>-<sp/>dx)<sp/>/<sp/>(2<sp/>*<sp/>leg_segment_length)<sp/>)<sp/></highlight><highlight class="comment">#<sp/>half<sp/>knee<sp/>angle</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/>level_arm<sp/>=<sp/>leg_segment_length<sp/>*<sp/>np.cos(alpha)</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/>Fz_max<sp/>=<sp/>tau_max<sp/>/<sp/>level_arm</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/>plt.plot(dx,<sp/>Fz_max,<sp/>label<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Max<sp/>force<sp/>(N)&quot;</highlight><highlight class="normal">,<sp/>color=</highlight><highlight class="stringliteral">&quot;black&quot;</highlight><highlight class="normal">,<sp/>linewidth=3.0)</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>i<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>range(nb_files):</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>k=(i+1)*20<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Compute<sp/>and<sp/>plot<sp/>theoretical<sp/>stiffness</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>dx<sp/>=<sp/>np.linspace(0.0,<sp/>np.max(list_pos_error_height_sensor[i]),<sp/>num=2000,<sp/>endpoint=True)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>f<sp/>=<sp/>k<sp/>*<sp/>dx</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>gain_color<sp/>=<sp/>0.2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>my_color<sp/>=<sp/>(gain_color<sp/>*<sp/>0.0,<sp/>gain_color<sp/>*<sp/>0.0,<sp/>gain_color<sp/>*<sp/>1.0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>plt.plot(dx,<sp/>f,<sp/>label<sp/>=<sp/>&quot;Theoretical<sp/>stiffness,<sp/>k=&quot;<sp/>+<sp/>str(k),<sp/>color=&quot;forestgreen&quot;)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Compute<sp/>and<sp/>plot<sp/>actual<sp/>stiffness</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>list_pos_error_height_sensor[i].copy()</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y<sp/>=<sp/>list_Fz[i].copy()</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y<sp/>=<sp/>y[<sp/>np.all(<sp/>[0<sp/>&lt;<sp/>x,<sp/>x<sp/>&lt;<sp/>0.07],<sp/>axis=0)<sp/>]</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>x[<sp/>np.all(<sp/>[0<sp/>&lt;<sp/>x,<sp/>x<sp/>&lt;<sp/>0.07],<sp/>axis=0)<sp/>]</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>poly<sp/>=<sp/>polyfit(x,<sp/>y,<sp/>1)</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>poly[</highlight><highlight class="stringliteral">&apos;polynomial&apos;</highlight><highlight class="normal">][0]</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dx<sp/>=<sp/>np.linspace(np.min(list_pos_error_height_sensor[i]),<sp/>np.max(list_pos_error_height_sensor[i]),<sp/>num=2000,<sp/>endpoint=</highlight><highlight class="keyword">True</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f<sp/>=<sp/>poly[</highlight><highlight class="stringliteral">&apos;polynomial&apos;</highlight><highlight class="normal">][0]<sp/>*<sp/>dx<sp/>+<sp/>poly[</highlight><highlight class="stringliteral">&apos;polynomial&apos;</highlight><highlight class="normal">][1]</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>actual_stiffeness_plot<sp/>=<sp/>plt.plot(dx,f,<sp/>label<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,<sp/>linewidth=1.0,<sp/>linestyle=</highlight><highlight class="stringliteral">&quot;--&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>plot<sp/>mean<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fz<sp/>=<sp/>np.array([])</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>deltaz<sp/>=<sp/>np.linspace(np.min(list_pos_error_height_sensor[i]),<sp/>np.max(list_pos_error_height_sensor[i]),<sp/>num=100,<sp/>endpoint=</highlight><highlight class="keyword">True</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>j<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>range(deltaz.shape[0]-1):</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fz<sp/>=<sp/>np.append(<sp/>fz,<sp/><sp/>np.mean(<sp/><sp/><sp/>list_Fz_cutoff[i][<sp/>np.all(<sp/>[deltaz[j]<sp/>&lt;<sp/>list_pos_error_height_sensor[i],<sp/>list_pos_error_height_sensor[i]<sp/>&lt;<sp/>deltaz[j+1]],<sp/>axis=0)<sp/>]<sp/><sp/>)<sp/>)</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>plt.plot(deltaz[:-1],<sp/>fz,</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>label=<sp/>list_labels[i]<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;K_m={:.2f}N/m&quot;</highlight><highlight class="normal">.format(poly[</highlight><highlight class="stringliteral">&apos;polynomial&apos;</highlight><highlight class="normal">][0]),</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>color=actual_stiffeness_plot[0].get_color(),</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>linestyle=</highlight><highlight class="stringliteral">&quot;-&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>linewidth=3.0)</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>plot<sp/>actual<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>plt.plot(list_pos_error_height_sensor_cutoff[i],<sp/>list_Fz_cutoff[i],</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>label=&quot;Fz(dZ)&quot;,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>color=&quot;dodgerblue&quot;,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>linestyle=actual_stiffeness_plot[0].get_linestyle())</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight></codeline>
+<codeline lineno="317"><highlight class="normal"></highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fig.legend(prop={</highlight><highlight class="stringliteral">&apos;size&apos;</highlight><highlight class="normal">:<sp/>18})</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>plt.grid()</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>plt.xlabel(</highlight><highlight class="stringliteral">&quot;Vertical<sp/>Foot<sp/>Displacement<sp/>(dZ)<sp/>[m]&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>plt.ylabel(</highlight><highlight class="stringliteral">&quot;Vertical<sp/>Force<sp/>(Fz)<sp/>[N]&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>plt.xlim(-0.10,<sp/>0.17)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>plt.ylim(-100.0,<sp/>20.0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight></codeline>
+<codeline lineno="325"><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Drop<sp/>test<sp/>Fz(t),<sp/>Fz_max(t),<sp/>K<sp/>*<sp/>DeltaZ<sp/>(&gt;0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>for<sp/>i<sp/>in<sp/>range(nb_files):</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>#<sp/>setup<sp/>the<sp/>figure</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>k<sp/>=<sp/>(i+1)*100</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>fig<sp/>=<sp/>plt.figure(&quot;drop_test_vs_time_k_&quot;<sp/>+<sp/>str(k))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>#<sp/>The<sp/>time<sp/>array</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>nb_time_pt<sp/>=<sp/>list_pos_error_height_sensor[i].shape[0]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>time<sp/>=<sp/>np.linspace(0.0,<sp/>nb_time_pt<sp/>*<sp/>0.001,<sp/>num=nb_time_pt,<sp/>endpoint=False)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>#<sp/>The<sp/>perfect<sp/>control</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>fz_perfect_ctrl<sp/>=<sp/>list_pos_error_height_sensor[i]<sp/>*<sp/>k</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>fz_perfect_ctrl[<sp/>fz_perfect_ctrl<sp/>&lt;<sp/>0.0<sp/>]<sp/>=<sp/>0.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>#<sp/>compute<sp/>the<sp/>cartesian<sp/>upper<sp/>bound</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>x0<sp/>=<sp/>0.28<sp/>#<sp/>Resting<sp/>position<sp/>of<sp/>the<sp/>stiffness<sp/>controller</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>i_max<sp/>=<sp/>12.0<sp/>#<sp/>max<sp/>current</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>tau_max<sp/>=<sp/>12.0<sp/>*<sp/>9.0<sp/>*<sp/>0.025<sp/>#<sp/>max<sp/>joint<sp/>torque</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>leg_segment_length<sp/>=<sp/>0.16<sp/>#<sp/>leg<sp/>segment<sp/>length<sp/>(equal<sp/>for<sp/>upper<sp/>and<sp/>lower<sp/>leg)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>alpha<sp/>=<sp/>np.arcsin(<sp/>(x0<sp/>-<sp/>list_pos_error_height_sensor[i])<sp/>/<sp/>(2<sp/>*<sp/>leg_segment_length)<sp/>)<sp/>#<sp/>half<sp/>knee<sp/>angle</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>level_arm<sp/>=<sp/>leg_segment_length<sp/>*<sp/>np.cos(alpha)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>Fz_max<sp/>=<sp/>tau_max<sp/>/<sp/>level_arm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>Fz_max[<sp/>Fz_max<sp/>&gt;<sp/>42<sp/>]<sp/>=<sp/>np.nan</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="351"><highlight class="normal"></highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>#<sp/>The<sp/>plots</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>plt.plot(time,<sp/>Fz_max,<sp/>label<sp/>=<sp/>&quot;Fz<sp/>max&quot;,<sp/>color=&quot;black&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>plt.plot(time,<sp/>fz_perfect_ctrl,<sp/>label=&quot;Fz<sp/>ideal&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>plt.plot(time,<sp/>list_Fz[i],<sp/>label=&quot;Fz&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="356"><highlight class="normal"></highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>fig.legend()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>plt.grid()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>plt.xlabel(&quot;time<sp/>[s]&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>plt.ylabel(&quot;Vertical<sp/>Force<sp/>[N]&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="362"><highlight class="normal"></highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/>plt.show()</highlight></codeline>
+    </programlisting>
+    <location file="python/dg_blmc_robots/teststand/plot_teststand/forceZ_vs_PosError_quasistatic.py"/>
+  </compounddef>
+</doxygen>

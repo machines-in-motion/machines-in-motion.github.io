@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="subpage_plot" kind="page">
+    <compoundname>subpage_plot</compoundname>
+    <title>5/ Oscilloscope / Plotting / Logging / Motor and control process timing</title>
+    <detaileddescription>
+<para>In dynamic graph manager, the sensor and control signals from and to the device are automatically exposed via rostopics.</para><para>Using rqt_plot, it is possible to get a live view of the signals&apos; values. In addition, it is possible to log values to file (using a tracer).</para><sect1 id="subpage_plot_1plot_sec_tracer">
+<title>5.1/ Start and stop logging a trace</title>
+<para>You can start and stop logging the current registered tracer signals using: <programlisting><codeline><highlight class="normal">#<sp/>Signals<sp/>from<sp/>the<sp/>device<sp/>are<sp/>logged<sp/>by<sp/>default.<sp/>You<sp/>can<sp/>add<sp/>your<sp/>own<sp/>signals<sp/>as<sp/>shown<sp/>below.</highlight></codeline>
+<codeline><highlight class="normal">robot.start_tracer()</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Run<sp/>your<sp/>experiments.</highlight></codeline>
+<codeline><highlight class="normal">robot.stop_tracer()</highlight></codeline>
+</programlisting> The log files are stored under &quot;~/dynamic_graph_manager/&lt;date&gt;_&lt;time&gt;/.&quot;</para></sect1>
+<sect1 id="subpage_plot_1plot_sec_add_trace">
+<title>5.2/ Adding new signals to the tracer (for logging) and ros</title>
+<para>By default, the input and output signals of the device are logged by the tracer and are exposed to ros. If you want to add other signals, you can do this using <programlisting><codeline><highlight class="normal">robot.add_trace(entityName,<sp/>sigName)</highlight></codeline>
+<codeline><highlight class="normal">robot.add_to_ros(entityName,<sp/>sigName)</highlight></codeline>
+</programlisting></para><para>Expose the entity&apos;s signal to ros and the tracer together. <programlisting><codeline><highlight class="normal">robot.add_ros_and_trace(entityName,<sp/>sigName)</highlight></codeline>
+</programlisting></para></sect1>
+<sect1 id="subpage_plot_1plot_sec_add_rai">
+<title>5.3/ Opening dynamic graph traces in RAI</title>
+<para>To use the RAI plotting tool (<ulink url="https://gitlab.tuebingen.mpg.de/SoW/amd-robot-plotting-framework">https://gitlab.tuebingen.mpg.de/SoW/amd-robot-plotting-framework</ulink>), use this script (<ulink url="https://git-amd.tuebingen.mpg.de/amd-clmc/dg_tools/blob/master/scripts/convert_dg_to_rai.py">https://git-amd.tuebingen.mpg.de/amd-clmc/dg_tools/blob/master/scripts/convert_dg_to_rai.py</ulink>) to convert a folder with dynamic graph dat files into a numpy compessed data file. RAI can read this compressed file. <xrefsect id="todo_1_todo000003"><xreftitle>Todo</xreftitle><xrefdescription><para>add a parser for the dynamic graph in RAI.</para></xrefdescription></xrefsect></para></sect1>
+<sect1 id="subpage_plot_1plot_sec_add_rqt_plot">
+<title>5.4/ How to open rqt_plot</title>
+<para><image type="html" name="rqt_plot.png"></image>
+<itemizedlist>
+<listitem><para>Make sure you have your dynamic graph manager started and the dynamic graph is running</para></listitem><listitem><para>Open the rqt_plot by executing the following command in a terminal <programlisting><codeline><highlight class="normal">rosrun<sp/>rqt_plot<sp/>rqt_plot</highlight></codeline>
+</programlisting></para></listitem><listitem><para>Add the values you want to plot using the input &quot;Topic&quot; at the top. Name the signal to plot like &quot;/dg__device__ati_ft_sensor/&quot; and then which vector entry you want to log &quot;/dg__device__ati_ft_sensor/data[0]&quot; to log the first entry from the &quot;ati_ft_sensor&quot; vector.</para></listitem></itemizedlist>
+</para></sect1>
+<sect1 id="subpage_plot_1plot_sec_add_rqt_troubleshooting">
+<title>5.5/ Troubleshooting with rqt in general:</title>
+<para>If you ever have the case where the rqt plugins loads properly but the is not responding. You should delete the lock file that are located in &quot;~/.config/ros.org&quot;. <programlisting><codeline><highlight class="normal">rm<sp/>-fr<sp/>~/.config/ros.org/*</highlight></codeline>
+</programlisting></para></sect1>
+<sect1 id="subpage_plot_1plot_sec_add_timing">
+<title>5.6/ Logging of motor and control process timing</title>
+<para>The dynamic graph manager has a build in support for logging a set of timing informations. These include:</para><para><table rows="7" cols="2"><caption></caption>
+<row>
+<entry thead="no"><para>dg_timer.dat </para></entry><entry thead="no"><para>How long it took to run the dynamic graph process in s. </para></entry></row>
+<row>
+<entry thead="no"><para>dg_active_timer.dat </para></entry><entry thead="no"><para>How long the dynamic-graph process was active in s. </para></entry></row>
+<row>
+<entry thead="no"><para>dg_sleep_timer.dat </para></entry><entry thead="no"><para>How long the dynamic-grpah process was sleeping in s. </para></entry></row>
+<row>
+<entry thead="no"><para>hwc_active_timer.dat </para></entry><entry thead="no"><para>How long the motor process was active in s. That is the time without sleeping. At the point of writing this includes:<itemizedlist>
+<listitem><para>Reading the control signals from the control process or run the saftey controller</para></listitem><listitem><para>Execute the control signals on the hardware by calling set_motor_controls_from_map</para></listitem><listitem><para>Read the new sensor values from the robot by calling get_sensors_to_map</para></listitem><listitem><para>Process the user commands </para></listitem></itemizedlist>
+</para></entry></row>
+<row>
+<entry thead="no"><para>hwc_sleep_timer.dat </para></entry><entry thead="no"><para>How long the motor process was sleeping in s. The sleeping is done to ensure the motor process runs as the desired control frequency. </para></entry></row>
+<row>
+<entry thead="no"><para>hwc_timer.dat </para></entry><entry thead="no"><para>How long the motor process was sleeping in s. The sleeping is done to ensure the motor process runs as the desired control frequency. </para></entry></row>
+<row>
+<entry thead="no"><para>hwc_timer.dat </para></entry><entry thead="no"><para>The total time passed between two sleeping times of the motor process in s. </para></entry></row>
+</table>
+</para><para>By default these files are created in the dynamic graph manager log directory. However, the files are empty. This is as by default a length zero history is recorded. To record N timesteps, the parameter &quot;debug_timer_history_length: 10000&quot; (where N=10000 here, which corresponds to 10 seconds at 1 kHz) has to be specified at the top level of the robot yaml file. </para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

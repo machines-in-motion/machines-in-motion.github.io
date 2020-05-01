@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="serializable__exchange_8hxx" kind="file" language="C++">
+    <compoundname>serializable_exchange.hxx</compoundname>
+    <includedby refid="serializable__exchange_8hpp" local="yes">/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/serializable_exchange.hpp</includedby>
+    <invincdepgraph>
+      <node id="2906">
+        <label>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/serializable_exchange.hpp</label>
+        <link refid="serializable__exchange_8hpp"/>
+      </node>
+      <node id="2905">
+        <label>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/serializable_exchange.hxx</label>
+        <link refid="serializable_exchange.hxx"/>
+        <childnode refid="2906" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <briefdescription>
+<para>Define the template method of the Serializable_exchange. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Vincent Berenz  License BSD-3-Clause </para></simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2019, New York University and Max Planck Gesellschaft. </para></simplesect>
+<simplesect kind="date"><para>2019-05-22 </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="12"><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Serializable&gt;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">Serializable_exchange&lt;Serializable&gt;::Serializable_exchange(</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>segment_id,<sp/>std::string<sp/>object_id)</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>segment_id_(segment_id),<sp/>object_id_(object_id)</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classshared__memory_1_1_serializable__exchange_1a1923d2803a05846f61ee4738dac10674" kindref="member">data_</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">[Serializable::serialization_size];</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>Serializable::serialization_size;<sp/>i++)<sp/><ref refid="classshared__memory_1_1_serializable__exchange_1a1923d2803a05846f61ee4738dac10674" kindref="member">data_</ref>[i]<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceshared__memory_1ace68bf582cfe50ba83a9cfc9b7aed3b2" kindref="member">shared_memory::set</ref>(</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classshared__memory_1_1_serializable__exchange_1a495d9d0320ec199625deed0f1cd0ea20" kindref="member">segment_id_</ref>,<sp/><ref refid="classshared__memory_1_1_serializable__exchange_1a21968aa2fbfc11fa6ecc298320ebfb9a" kindref="member">object_id_</ref>,<sp/><ref refid="classshared__memory_1_1_serializable__exchange_1a1923d2803a05846f61ee4738dac10674" kindref="member">data_</ref>,<sp/>Serializable::serialization_size);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Serializable&gt;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><ref refid="classshared__memory_1_1_serializable__exchange_1a42a477866b9e8b79c6b801efe7bd0d9f" kindref="member">Serializable_exchange&lt;Serializable&gt;::~Serializable_exchange</ref>()</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Serializable&gt;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classshared__memory_1_1_serializable__exchange_1a29943c12f26bbd6e876b979d366fd110" kindref="member">Serializable_exchange&lt;Serializable&gt;::set</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_serializable" kindref="compound">Serializable</ref><sp/>&amp;serializable)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>serializable.<ref refid="class_serializable_1a442df4ac2ecad585776f620405b8ce0e" kindref="member">serialize</ref>(<ref refid="classshared__memory_1_1_serializable__exchange_1a1923d2803a05846f61ee4738dac10674" kindref="member">data_</ref>);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceshared__memory_1ace68bf582cfe50ba83a9cfc9b7aed3b2" kindref="member">shared_memory::set</ref>(</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classshared__memory_1_1_serializable__exchange_1a495d9d0320ec199625deed0f1cd0ea20" kindref="member">segment_id_</ref>,<sp/><ref refid="classshared__memory_1_1_serializable__exchange_1a21968aa2fbfc11fa6ecc298320ebfb9a" kindref="member">object_id_</ref>,<sp/><ref refid="classshared__memory_1_1_serializable__exchange_1a1923d2803a05846f61ee4738dac10674" kindref="member">data_</ref>,<sp/>Serializable::serialization_size);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Serializable&gt;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classshared__memory_1_1_serializable__exchange_1a3b69842f01b73a15bfefed264b8e3dd3" kindref="member">Serializable_exchange&lt;Serializable&gt;::read</ref>(<ref refid="class_serializable" kindref="compound">Serializable</ref><sp/>&amp;serializable)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceshared__memory_1ad017562102dbe044db2de6c79c0669d3" kindref="member">shared_memory::get</ref>(</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classshared__memory_1_1_serializable__exchange_1a495d9d0320ec199625deed0f1cd0ea20" kindref="member">segment_id_</ref>,<sp/><ref refid="classshared__memory_1_1_serializable__exchange_1a21968aa2fbfc11fa6ecc298320ebfb9a" kindref="member">object_id_</ref>,<sp/><ref refid="classshared__memory_1_1_serializable__exchange_1a1923d2803a05846f61ee4738dac10674" kindref="member">data_</ref>,<sp/>Serializable::serialization_size);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>serializable.create(<ref refid="classshared__memory_1_1_serializable__exchange_1a1923d2803a05846f61ee4738dac10674" kindref="member">data_</ref>);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/serializable_exchange.hxx"/>
+  </compounddef>
+</doxygen>

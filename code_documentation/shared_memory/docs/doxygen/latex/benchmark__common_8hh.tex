@@ -1,0 +1,101 @@
+\hypertarget{benchmark__common_8hh}{}\section{include/shared\+\_\+memory/benchmarks/benchmark\+\_\+common.hh File Reference}
+\label{benchmark__common_8hh}\index{include/shared\+\_\+memory/benchmarks/benchmark\+\_\+common.\+hh@{include/shared\+\_\+memory/benchmarks/benchmark\+\_\+common.\+hh}}
+
+
+Common tools for benchmarking.  
+
+
+{\ttfamily \#include $<$signal.\+h$>$}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include $<$chrono$>$}\\*
+{\ttfamily \#include $<$cmath$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+Include dependency graph for benchmark\+\_\+common.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{benchmark__common_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{benchmark__common_8hh__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structMeasureTime}{Measure\+Time}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries S\+H\+A\+R\+E\+D\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+S\+I\+ZE}~65536\hypertarget{benchmark__common_8hh_a21a16aec41293c80beb10d71f79ad7a2}{}\label{benchmark__common_8hh_a21a16aec41293c80beb10d71f79ad7a2}
+
+\item 
+\#define {\bfseries S\+I\+ZE}~1000\hypertarget{benchmark__common_8hh_a70ed59adcb4159ac551058053e649640}{}\label{benchmark__common_8hh_a70ed59adcb4159ac551058053e649640}
+
+\item 
+\#define {\bfseries N\+U\+M\+B\+E\+R\+\_\+\+O\+R\+\_\+\+M\+E\+A\+S\+U\+R\+E\+D\+\_\+\+I\+T\+E\+R\+A\+T\+I\+O\+NS}~1000\hypertarget{benchmark__common_8hh_adf00b55c2043a89ad0ac69b3a2428281}{}\label{benchmark__common_8hh_adf00b55c2043a89ad0ac69b3a2428281}
+
+\item 
+\#define {\bfseries M\+A\+X\+\_\+\+N\+U\+N\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+I\+T\+E\+R\+A\+T\+I\+ON}~10000\hypertarget{benchmark__common_8hh_adc5fa90d9af8c15b5dc4c72697821c36}{}\label{benchmark__common_8hh_adc5fa90d9af8c15b5dc4c72697821c36}
+
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::chrono\+::high\+\_\+resolution\+\_\+clock\+::time\+\_\+point {\bfseries Time\+Type}\hypertarget{benchmark__common_8hh_ac3379ce076aff9d7667b3fc267a87f48}{}\label{benchmark__common_8hh_ac3379ce076aff9d7667b3fc267a87f48}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ double $>$ {\bfseries D\+A\+TA} (S\+I\+ZE, 2)\hypertarget{benchmark__common_8hh_a59c33a6b3ce646e26614a12d0193a2bd}{}\label{benchmark__common_8hh_a59c33a6b3ce646e26614a12d0193a2bd}
+
+\item 
+static std\+::string {\bfseries S\+H\+M\+\_\+\+N\+A\+ME} (\char`\"{}stress\+\_\+test\char`\"{})\hypertarget{benchmark__common_8hh_a2eab504a26ce27f25dc75a77486f0291}{}\label{benchmark__common_8hh_a2eab504a26ce27f25dc75a77486f0291}
+
+\item 
+static std\+::string {\bfseries S\+H\+M\+\_\+\+O\+B\+J\+E\+C\+T\+\_\+\+N\+A\+ME} (\char`\"{}stress\+\_\+object\char`\"{})\hypertarget{benchmark__common_8hh_a7b0c439ad35b06a4ef0180f55a6d005a}{}\label{benchmark__common_8hh_a7b0c439ad35b06a4ef0180f55a6d005a}
+
+\item 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&os, const \hyperlink{structMeasureTime}{Measure\+Time} \&time)\hypertarget{benchmark__common_8hh_a8dd0271b9a992c4b761972f7082052a0}{}\label{benchmark__common_8hh_a8dd0271b9a992c4b761972f7082052a0}
+
+\item 
+void {\bfseries init\+\_\+benchmark} ()\hypertarget{benchmark__common_8hh_aa10d0d36e9613185c60cd04e376e12bc}{}\label{benchmark__common_8hh_aa10d0d36e9613185c60cd04e376e12bc}
+
+\item 
+void {\bfseries code\+\_\+to\+\_\+benchamrk} ()\hypertarget{benchmark__common_8hh_a91d65608f8757f45d8db7c6e58dfe9f4}{}\label{benchmark__common_8hh_a91d65608f8757f45d8db7c6e58dfe9f4}
+
+\item 
+void {\bfseries end\+\_\+benchmark} ()\hypertarget{benchmark__common_8hh_a3ae3ecd5464dfa055c802feb243e62d9}{}\label{benchmark__common_8hh_a3ae3ecd5464dfa055c802feb243e62d9}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries R\+U\+N\+N\+I\+NG}\hypertarget{benchmark__common_8hh_a383e703fc3e9dd425f075cf463ee4c5b}{}\label{benchmark__common_8hh_a383e703fc3e9dd425f075cf463ee4c5b}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Common tools for benchmarking. 
+
+\begin{DoxyAuthor}{Author}
+Vincent Berenz 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{License}
+\item[\hyperlink{license__license000018}{License}]License B\+S\+D-\/3-\/\+Clause \end{DoxyRefDesc}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2019, New York University and Max Planck Gesellschaft. 
+\end{DoxyCopyright}
+\begin{DoxyDate}{Date}
+2019-\/05-\/22 
+\end{DoxyDate}

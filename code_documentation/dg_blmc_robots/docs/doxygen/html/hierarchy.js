@@ -9,6 +9,9 @@ var hierarchy =
       [ "dg_blmc_robots::DGMStuggihop", "classdg__blmc__robots_1_1DGMStuggihop.html", null ],
       [ "dg_blmc_robots::DGMTeststand", "classdg__blmc__robots_1_1DGMTeststand.html", null ]
     ] ],
+    [ "object", null, [
+      [ "dg_blmc_robots.vicon_client_bullet.ViconClientEntityBullet", "classdg__blmc__robots_1_1vicon__client__bullet_1_1ViconClientEntityBullet.html", null ]
+    ] ],
     [ "Robot", null, [
       [ "dg_blmc_robots.solo.solo_base_bullet.SoloBaseRobot", "classdg__blmc__robots_1_1solo_1_1solo__base__bullet_1_1SoloBaseRobot.html", [
         [ "dg_blmc_robots.solo.solo12_bullet.Solo12BulletRobot", "classdg__blmc__robots_1_1solo_1_1solo12__bullet_1_1Solo12BulletRobot.html", null ],

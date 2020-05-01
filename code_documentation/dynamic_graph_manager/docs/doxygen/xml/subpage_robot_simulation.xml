@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="subpage_robot_simulation" kind="page">
+    <compoundname>subpage_robot_simulation</compoundname>
+    <title>7/ Interfacing with a robot simulator</title>
+    <detaileddescription>
+<para>A robot implemented with dynamic graph manager doesn&apos;t come with a simulator by default.</para><para>There are multiple ways and at different levels to implement a simulator:<itemizedlist>
+<listitem><para>Implement a simulator in C++ and start it as dynamic graph manager from the console</para></listitem><listitem><para>Create a device in python and use another simulator from python</para></listitem></itemizedlist>
+</para><sect1 id="subpage_robot_simulation_1simu_sec_cpp">
+<title>7.1/ Simulator implementation in C++</title>
+<para>For an example, see <ulink url="https://git-amd.tuebingen.mpg.de/amd-clmc/dynamic_graph_manager/blob/master/demos/single_motor/single_motor_device_simulator.cpp">https://git-amd.tuebingen.mpg.de/amd-clmc/dynamic_graph_manager/blob/master/demos/single_motor/single_motor_device_simulator.cpp</ulink>.</para></sect1>
+<sect1 id="subpage_robot_simulation_1simu_sec_python">
+<title>7.2/ Device in python</title>
+<para>To test a dynamic graph implementation, one way is to create a Device object in python. This device object is created using the same / a similar robot-yaml file as for the dynamic graph manger&apos;s real robot. At every integration step of the simulation, the sensor values must be stored on the sensor signals of the device and the dynamic graph is executed. Last, the control commands must be forwarded to a simulator, the simulator is stepped and the next cycle begins.</para><para>The following code shows how to create a device and robot. It also scatches how to do the simulation loop. <programlisting><codeline><highlight class="normal">from<sp/>dynamic_graph_manager.device<sp/>import<sp/>Device</highlight></codeline>
+<codeline><highlight class="normal">from<sp/>dynamic_graph_manager.device.robot<sp/>import<sp/>Robot</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Create<sp/>the<sp/>device<sp/>and<sp/>robot<sp/>object.</highlight></codeline>
+<codeline><highlight class="normal">device<sp/>=<sp/>Device(&quot;your_robot_name&quot;)</highlight></codeline>
+<codeline><highlight class="normal">device.initialize(&quot;path_to_the_robot_yaml_file.yaml&quot;)</highlight></codeline>
+<codeline><highlight class="normal">robot<sp/>=<sp/>Robot(name=local_device.name,<sp/>device=local_device)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>This<sp/>creates<sp/>the<sp/>controllers<sp/>and<sp/>plugs<sp/>the<sp/>sensor<sp/>to<sp/>the<sp/>control<sp/>signals<sp/>etc.</highlight></codeline>
+<codeline><highlight class="normal">setup_controller(robot)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Setup<sp/>your<sp/>simulator.<sp/>This<sp/>might<sp/>be<sp/>pybullet<sp/>etc.</highlight></codeline>
+<codeline><highlight class="normal">sim<sp/>=<sp/>create_simulator()</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Do<sp/>the<sp/>simulation<sp/>loop.<sp/>Here,<sp/>we<sp/>assume<sp/>to<sp/>simulate<sp/>4000<sp/>steps</highlight></codeline>
+<codeline><highlight class="normal">for<sp/>it<sp/>in<sp/>range(4000):</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>#<sp/>Fill<sp/>all<sp/>the<sp/>sensor<sp/>signals<sp/>based<sp/>on<sp/>the<sp/>simulator<sp/>values.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>robot.device.&lt;join_positions&gt;.value<sp/>=<sp/>sim.get_joint_positions()</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>...</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>#<sp/>Execute<sp/>the<sp/>dynamic<sp/>graph.<sp/>This<sp/>computes<sp/>the<sp/>control<sp/>output.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>robot.device.executeGraph()</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>#<sp/>Pass<sp/>the<sp/>computed<sp/>control<sp/>signals<sp/>to<sp/>the<sp/>simulator.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>sim.control(robot.device.&lt;ctrl_commands&gt;.value)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>#<sp/>Step<sp/>the<sp/>simulator<sp/>by<sp/>one<sp/>dt.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>sim.step()</highlight></codeline>
+</programlisting> </para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

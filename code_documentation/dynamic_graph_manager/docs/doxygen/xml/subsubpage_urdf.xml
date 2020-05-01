@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="subsubpage_urdf" kind="page">
+    <compoundname>subsubpage_urdf</compoundname>
+    <title>4.4/ HowTo create URDF files</title>
+    <detaileddescription>
+<para>The URDF file encodes all the information regarding dimensions, weight, inertias and meshes that are required for realistic simulation.</para><para><table rows="7" cols="2"><caption></caption>
+<row>
+<entry thead="yes"><para>Steps </para></entry><entry thead="yes"><para>Screenshots </para></entry></row>
+<row>
+<entry thead="no"><para>For calculating the inertias in Solidworks the mass properties have to be set correctly for all of the subcomponents.</para><para>For parts with constant density set the material properties to the right material.</para><para>For the 3d printed parts I use the following materials:<itemizedlist>
+<listitem><para>Fortus PC or Duraform HST → Solidworks Material ABS PC with density of 1070 kg/m3</para></listitem><listitem><para>Projet MX3 Material → PMMA with density of 1190 kg/m3</para></listitem><listitem><para>Stainless Steel Screws → 1.4000 X6CR13 with density of 7700 kg/m3 </para></listitem></itemizedlist>
+</para></entry><entry thead="no"><para><image type="html" name="upper_leg.jpg"></image>
+ <image type="html" name="sw_urdf_1.jpg"></image>
+ </para></entry></row>
+<row>
+<entry thead="no"><para>For parts made from different material or unknown density you can override the mass calculation and set the total weight manually.</para><para>Determine the weight of all the parts with a weight scale.</para><para>In Solidworks choose → Evaluate → Mass Properties → Override Mass Properties and input the correct mass.</para><para>Example: The motor rotor consists of an aluminum frame with steel magnets.</para><para>Therefore the weight has to be measured and set correctly in Solidworks. </para></entry><entry thead="no"><para><image type="html" name="motor_rotor.jpg"></image>
+ <image type="html" name="sw_urdf_2.jpg"></image>
+ </para></entry></row>
+<row>
+<entry thead="no"><para>Once the weight of all of the subcomponents is set open the assembly and verify that the combined weight is correct.</para><para>In the case of the upper leg the total weight is 149g. </para></entry><entry thead="no"><para><image type="html" name="upper_leg_2.jpg"></image>
+ <image type="html" name="sw_urdf_3.jpg"></image>
+ </para></entry></row>
+<row>
+<entry thead="no"><para>Create a coordinate system according to your conventions.</para><para>The coordinate systems has to match the one from the STL files. Quadruped STL files for Visualisation</para><para>Choose Evaluate → Mass Properties and set the output coordinate system to the one you created!</para><para>For the quadruped robot we need a right and left version of the coordinate system. </para></entry><entry thead="no"><para><image type="html" name="sw_urdf_4.jpg"></image>
+ </para></entry></row>
+<row>
+<entry thead="no"><para>Set the units to Meters and Kilogramms.</para><para>Set the precision to 8 decimal spaces. </para></entry><entry thead="no"><para><image type="html" name="sw_urdf_6.jpg"></image>
+ </para></entry></row>
+<row>
+<entry thead="no"><para>Copy and record the weight, the center of mass position and the inertia matrix.</para><para>Use the second inertia matrix that Solidworks calculates. (Lxx / Lxy / Lxz / ...)</para><para>That is the inertia of all the parts with respect to the center of mass and aligned to the coordinate system that you have defined.</para><para>The URDF data required for the upper leg would be the following:</para><para>Mass: 0.14853845 Kilogramm</para><para>Center of Mass Position [m]: X = -0.00001377 Y = -0.01936299 Z = -0.07871217</para><para>Inertia Matrix:</para><para>Trägheitsmomente: ( Kilogramm * Quadratmeter ) Bezogen auf den Massenmittelpunkt und ausgerichtet auf das Ausgabekoordinatensystem. Lxx = 0.00041100 Lxy = 0.00000000 Lxz = -0.00000009 Lyx = 0.00000000 Lyy = 0.00041184 Lyz = 0.00004668 Lzx = -0.00000009 Lzy = 0.00004668 Lzz = 0.00003022</para><para>Document all of the data on the Wiki. </para></entry><entry thead="no"><para><image type="html" name="sw_urdf_5.jpg"></image>
+ </para></entry></row>
+</table>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

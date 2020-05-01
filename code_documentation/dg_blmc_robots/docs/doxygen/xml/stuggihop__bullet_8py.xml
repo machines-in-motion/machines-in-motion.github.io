@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="stuggihop__bullet_8py" kind="file" language="Python">
+    <compoundname>stuggihop_bullet.py</compoundname>
+    <innerclass refid="classstuggihop__bullet_1_1StuggihopBulletRobot" prot="public">stuggihop_bullet::StuggihopBulletRobot</innerclass>
+    <innernamespace refid="namespacestuggihop__bullet">stuggihop_bullet</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">from</highlight><highlight class="normal"><sp/>__future__<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>print_function</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>os</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>rospkg</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>numpy<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>np</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>time</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>dynamic_graph_manager<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>dgm</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>dynamic_graph_manager.device<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>Device</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>dynamic_graph_manager.device.robot<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>Robot</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>py_robot_properties_stuggihop</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>py_robot_properties_stuggihop.config<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>StuggihopConfig</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>pybullet<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>p</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>pinocchio<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>se3</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>pinocchio.utils<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>zero</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>dynamic_graph.sot.core.vector_constant<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>VectorConstant</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>py_pinocchio_bullet.wrapper<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>PinBulletWrapper</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="classstuggihop__bullet_1_1StuggihopBulletRobot" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classstuggihop__bullet_1_1StuggihopBulletRobot" kindref="compound">StuggihopBulletRobot</ref>(Robot):</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">__init__(self):</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classstuggihop__bullet_1_1StuggihopBulletRobot_1adb65069912552a6965de216f00b90fd1" kindref="member">physicsClient</ref><sp/>=<sp/>p.connect(p.GUI)</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Load<sp/>the<sp/>plain.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>plain_urdf<sp/>=<sp/>rospkg.RosPack().get_path(</highlight><highlight class="stringliteral">&quot;robot_properties_stuggihop&quot;</highlight><highlight class="normal">)<sp/>\</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/></highlight><highlight class="stringliteral">&quot;/urdf/plane_with_restitution.urdf&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classstuggihop__bullet_1_1StuggihopBulletRobot_1a5f2633e92b6b3e436506a013130883a4" kindref="member">planeId</ref><sp/>=<sp/>p.loadURDF(plain_urdf)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;Loaded<sp/>ground.&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Load<sp/>the<sp/>robot</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>robotStartPos<sp/>=<sp/>[0.,0,0.40]</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>robotStartOrientation<sp/>=<sp/>p.getQuaternionFromEuler([0,0,0])</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classstuggihop__bullet_1_1StuggihopBulletRobot_1a3b15c6b3034759600cbeac8e032d9399" kindref="member">urdf_path</ref><sp/>=<sp/>StuggihopConfig.urdf_path</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classstuggihop__bullet_1_1StuggihopBulletRobot_1ae60b1846bc5e43f4f7128b56db2c7b54" kindref="member">robotId</ref><sp/>=<sp/>p.loadURDF(self.<ref refid="classstuggihop__bullet_1_1StuggihopBulletRobot_1a3b15c6b3034759600cbeac8e032d9399" kindref="member">urdf_path</ref>,<sp/>robotStartPos,</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>robotStartOrientation,<sp/>flags=p.URDF_USE_INERTIA_FROM_FILE,</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>useFixedBase=</highlight><highlight class="keyword">True</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p.getBasePositionAndOrientation(self.<ref refid="classstuggihop__bullet_1_1StuggihopBulletRobot_1ae60b1846bc5e43f4f7128b56db2c7b54" kindref="member">robotId</ref>)</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Create<sp/>the<sp/>robot<sp/>wrapper<sp/>in<sp/>pinocchio.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>package_dirs<sp/>=<sp/>[os.path.dirname(os.path.dirname(self.<ref refid="classstuggihop__bullet_1_1StuggihopBulletRobot_1a3b15c6b3034759600cbeac8e032d9399" kindref="member">urdf_path</ref>))</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/></highlight><highlight class="stringliteral">&apos;/urdf&apos;</highlight><highlight class="normal">]</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classstuggihop__bullet_1_1StuggihopBulletRobot_1af545fbec7bccee36c4d5013855bef6cc" kindref="member">pin_robot</ref><sp/>=<sp/>StuggihopConfig.buildRobotWrapper()</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Query<sp/>all<sp/>the<sp/>joints.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>num_joints<sp/>=<sp/>p.getNumJoints(self.<ref refid="classstuggihop__bullet_1_1StuggihopBulletRobot_1ae60b1846bc5e43f4f7128b56db2c7b54" kindref="member">robotId</ref>)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>ji<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>range(num_joints):</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p.changeDynamics(self.<ref refid="classstuggihop__bullet_1_1StuggihopBulletRobot_1ae60b1846bc5e43f4f7128b56db2c7b54" kindref="member">robotId</ref>,<sp/>ji,<sp/>linearDamping=.04,</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>angularDamping=0.04,<sp/>restitution=0.0,<sp/>lateralFriction=0.5)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p.setGravity(0,0,<sp/>-9.81)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p.setPhysicsEngineParameter(1e-3,<sp/>numSubSteps=1)</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>no<sp/>base<sp/>link,<sp/>since<sp/>we&apos;re<sp/>using<sp/>a<sp/>fixed<sp/>base</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>self.base_link_name<sp/>=<sp/>&quot;base_link&quot;<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classstuggihop__bullet_1_1StuggihopBulletRobot_1a2fbaabbf4de99f16a713447f0b670c6b" kindref="member">joint_names</ref><sp/>=<sp/>[</highlight><highlight class="stringliteral">&apos;joint_x&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;joint_z&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;HFE&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;KFE&apos;</highlight><highlight class="normal">]</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>no<sp/>controlled<sp/>joints...<sp/>not<sp/>sure<sp/>why.<sp/>This<sp/>is<sp/>from<sp/>stuggihop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>controlled_joints<sp/>=<sp/>[&apos;FL_HFE&apos;,<sp/>&apos;FL_KFE&apos;,<sp/>&apos;FR_HFE&apos;,<sp/>&apos;FR_KFE&apos;,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>&apos;HL_HFE&apos;,<sp/>&apos;HL_KFE&apos;,<sp/>&apos;HR_HFE&apos;,<sp/>&apos;HR_KFE&apos;]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classstuggihop__bullet_1_1StuggihopBulletRobot_1a22182836b54d5b885b004bd423361ef8" kindref="member">wrapper</ref><sp/>=<sp/>PinBulletWrapper(self.<ref refid="classstuggihop__bullet_1_1StuggihopBulletRobot_1ae60b1846bc5e43f4f7128b56db2c7b54" kindref="member">robotId</ref>,<sp/>self.<ref refid="classstuggihop__bullet_1_1StuggihopBulletRobot_1af545fbec7bccee36c4d5013855bef6cc" kindref="member">pin_robot</ref>,</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classstuggihop__bullet_1_1StuggihopBulletRobot_1a2fbaabbf4de99f16a713447f0b670c6b" kindref="member">joint_names</ref>,[</highlight><highlight class="stringliteral">&apos;END&apos;</highlight><highlight class="normal">],<sp/>useFixedBase=</highlight><highlight class="keyword">True</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>controlled_joints,<sp/>#<sp/>this<sp/>is<sp/>fro<sp/>stuggihop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>[&apos;HL_END&apos;,<sp/>&apos;HR_END&apos;,<sp/>&apos;FL_END&apos;,<sp/>&apos;FR_END&apos;])</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Initialize<sp/>the<sp/>device.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classstuggihop__bullet_1_1StuggihopBulletRobot_1a0f035485d9a2c506839c4917b5b27daf" kindref="member">device</ref><sp/>=<sp/>Device(</highlight><highlight class="stringliteral">&apos;bullet_stuggihop&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.device.initialize(StuggihopConfig.yaml_path)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>#<sp/>Create<sp/>signals<sp/>for<sp/>the<sp/>base.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>self.signal_base_pos_<sp/>=<sp/>VectorConstant(&quot;bullet_stuggihop_base_pos&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>self.signal_base_vel_<sp/>=<sp/>VectorConstant(&quot;bullet_stuggihop_base_vel&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>self.signal_base_pos_.sout.value<sp/>=<sp/>np.hstack([robotStartPos,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>robotStartOrientation]).tolist()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>self.signal_base_vel_.sout.value<sp/>=<sp/>[0.,<sp/>0.,<sp/>0.,<sp/>0.,<sp/>0.,<sp/>0.]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Initialize<sp/>signals<sp/>that<sp/>are<sp/>not<sp/>filled<sp/>in<sp/>sim2signals.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#self.device.motor_encoder_indexes.value<sp/>=<sp/>8<sp/>*<sp/>[0.]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>self.device.slider_positions.value<sp/>=<sp/>1<sp/>*<sp/>[0.]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>self.device.contact_sensors.value<sp/>=<sp/>1<sp/>*<sp/>[0.]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>self.device.height_sensors.value<sp/>=<sp/>1<sp/>*<sp/>[0.]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Sync<sp/>the<sp/>current<sp/>robot<sp/>state<sp/>to<sp/>the<sp/>graph<sp/>input<sp/>signals.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classstuggihop__bullet_1_1StuggihopBulletRobot_1af75d6c773ccea849139a291173c0af09" kindref="member">sim2signal_</ref>()</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classstuggihop__bullet_1_1StuggihopBulletRobot_1a891f4a1c2e0cebdcdfe6b6e4963b97c0" kindref="member">steps_</ref><sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>super(StuggihopBulletRobot,<sp/>self).__init__(</highlight><highlight class="stringliteral">&apos;bullet_stuggihop&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classstuggihop__bullet_1_1StuggihopBulletRobot_1a0f035485d9a2c506839c4917b5b27daf" kindref="member">device</ref>)</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">pinocchio_robot_wrapper(self):</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>self.<ref refid="classstuggihop__bullet_1_1StuggihopBulletRobot_1af545fbec7bccee36c4d5013855bef6cc" kindref="member">pin_robot</ref></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>def<sp/>base_signals(self):</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/>return<sp/>self.signal_base_pos_.sout,<sp/>self.signal_base_vel_.sout</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classstuggihop__bullet_1_1StuggihopBulletRobot_1af75d6c773ccea849139a291173c0af09" kindref="member">sim2signal_</ref>(self):</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;<sp/>Reads<sp/>the<sp/>state<sp/>from<sp/>the<sp/>simulator<sp/></highlight></codeline>
+<codeline lineno="106"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>fills<sp/>the<sp/>corresponding<sp/>signals.<sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>TODO:<sp/>Handle<sp/>the<sp/>following<sp/>signals:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>-<sp/>joint_target_torques</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>-<sp/>joint_torques</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>q,<sp/>dq<sp/>=<sp/>[np.array(t).reshape(-1).tolist()<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>t<sp/>\</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>self.wrapper.get_state()]</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>device<sp/>=<sp/>self.<ref refid="classstuggihop__bullet_1_1StuggihopBulletRobot_1a0f035485d9a2c506839c4917b5b27daf" kindref="member">device</ref></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>device.joint_positions.value<sp/>=<sp/>q[2:]</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>device.joint_velocities.value<sp/>=<sp/>dq[2:]</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>device.base_positions.value<sp/>=<sp/>q[0:1]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>device.base_velocities.value<sp/>=<sp/>dq[0:1]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>??<sp/>Base<sp/>values?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">run(self,<sp/>steps=1,<sp/>delay=0.):</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tau<sp/>=<sp/>zero(self.wrapper.nv)<sp/></highlight><highlight class="comment">#<sp/>we<sp/>need<sp/>to<sp/>skip<sp/>the<sp/>unactuated<sp/>DoFs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>i<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>range(steps):</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.device.execute_graph()</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tau[2:]<sp/>=<sp/>np.matrix(self.device.ctrl_joint_torques.value).T</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.wrapper.send_joint_command(tau)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p.stepSimulation()</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classstuggihop__bullet_1_1StuggihopBulletRobot_1af75d6c773ccea849139a291173c0af09" kindref="member">sim2signal_</ref>()</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classstuggihop__bullet_1_1StuggihopBulletRobot_1a891f4a1c2e0cebdcdfe6b6e4963b97c0" kindref="member">steps_</ref><sp/>+=<sp/>1</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>TODO:<sp/>what<sp/>is<sp/>this<sp/>magic<sp/>nbr?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>delay<sp/>!=<sp/>0.<sp/></highlight><highlight class="keywordflow">and</highlight><highlight class="normal"><sp/>self.<ref refid="classstuggihop__bullet_1_1StuggihopBulletRobot_1a891f4a1c2e0cebdcdfe6b6e4963b97c0" kindref="member">steps_</ref><sp/>%<sp/>17<sp/>==<sp/>0:</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>time.sleep(delay)</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classstuggihop__bullet_1_1StuggihopBulletRobot_1aea04a3ddb2665ed7aa19c81206c95bf7" kindref="member">reset_state</ref>(self,<sp/>q,<sp/>dq):</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;<sp/>Sets<sp/>the<sp/>bullet<sp/>simulator<sp/>and<sp/></highlight></codeline>
+<codeline lineno="139"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the<sp/>signals<sp/>to<sp/>the<sp/>provided<sp/>state<sp/>values.<sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.wrapper.reset_state(q,<sp/>dq)</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classstuggihop__bullet_1_1StuggihopBulletRobot_1af75d6c773ccea849139a291173c0af09" kindref="member">sim2signal_</ref>()</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classstuggihop__bullet_1_1StuggihopBulletRobot_1ae497030ea6a7849f0a6bd6fb881f3935" kindref="member">set_gravity</ref>(self,<sp/>vec):</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;<sp/>Sets<sp/>gravity<sp/>in<sp/>the<sp/>simulator<sp/>to<sp/>(x,y,z),<sp/>where<sp/></highlight></codeline>
+<codeline lineno="145"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>z<sp/>is<sp/>the<sp/>vertical<sp/>axis.<sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p.setGravity(vec[0],vec[1],<sp/>vec[2])</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">get_stuggihop_robot():</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classstuggihop__bullet_1_1StuggihopBulletRobot" kindref="compound">StuggihopBulletRobot</ref>()</highlight></codeline>
+    </programlisting>
+    <location file="python/dg_blmc_robots/stuggihop/stuggihop_bullet.py"/>
+  </compounddef>
+</doxygen>

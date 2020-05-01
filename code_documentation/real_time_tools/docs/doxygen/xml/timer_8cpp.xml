@@ -1,0 +1,306 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="timer_8cpp" kind="file" language="C++">
+    <compoundname>timer.cpp</compoundname>
+    <includes local="no">fstream</includes>
+    <includes local="no">sstream</includes>
+    <includes local="no">iomanip</includes>
+    <includes local="no">time.h</includes>
+    <includes refid="iostream_8hpp" local="no">real_time_tools/iostream.hpp</includes>
+    <includes refid="timer_8hpp" local="no">real_time_tools/timer.hpp</includes>
+    <incdepgraph>
+      <node id="790">
+        <label>src/timer.cpp</label>
+        <link refid="timer.cpp"/>
+        <childnode refid="791" relation="include">
+        </childnode>
+        <childnode refid="792" relation="include">
+        </childnode>
+        <childnode refid="793" relation="include">
+        </childnode>
+        <childnode refid="794" relation="include">
+        </childnode>
+        <childnode refid="795" relation="include">
+        </childnode>
+        <childnode refid="797" relation="include">
+        </childnode>
+      </node>
+      <node id="793">
+        <label>iomanip</label>
+      </node>
+      <node id="795">
+        <label>real_time_tools/iostream.hpp</label>
+        <link refid="iostream_8hpp"/>
+        <childnode refid="796" relation="include">
+        </childnode>
+      </node>
+      <node id="801">
+        <label>cmath</label>
+      </node>
+      <node id="799">
+        <label>string</label>
+      </node>
+      <node id="791">
+        <label>fstream</label>
+      </node>
+      <node id="802">
+        <label>unistd.h</label>
+      </node>
+      <node id="796">
+        <label>boost/filesystem.hpp</label>
+      </node>
+      <node id="792">
+        <label>sstream</label>
+      </node>
+      <node id="794">
+        <label>time.h</label>
+      </node>
+      <node id="800">
+        <label>deque</label>
+      </node>
+      <node id="797">
+        <label>real_time_tools/timer.hpp</label>
+        <link refid="timer_8hpp"/>
+        <childnode refid="798" relation="include">
+        </childnode>
+        <childnode refid="799" relation="include">
+        </childnode>
+        <childnode refid="800" relation="include">
+        </childnode>
+        <childnode refid="801" relation="include">
+        </childnode>
+        <childnode refid="802" relation="include">
+        </childnode>
+        <childnode refid="795" relation="include">
+        </childnode>
+      </node>
+      <node id="798">
+        <label>chrono</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespacereal__time__tools">real_time_tools</innernamespace>
+    <briefdescription>
+<para>This file implements tools to acquire the time, the date, and do timing measurement. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Maximilien Naveau (<ulink url="mailto:maximilien.naveau@gmail.com">maximilien.naveau@gmail.com</ulink>) license License BSD-3-Clause </para></simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2019, New York University and Max Planck Gesellschaft. </para></simplesect>
+<simplesect kind="date"><para>2019-05-22 </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="12"><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iomanip&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;time.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="iostream_8hpp" kindref="compound">real_time_tools/iostream.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="timer_8hpp" kindref="compound">real_time_tools/timer.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacereal__time__tools" kindref="compound">real_time_tools</ref><sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::chrono::duration&lt;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/>int,<sp/>std::ratio_multiply&lt;std::chrono::hours::period,</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/>std::ratio&lt;24&gt;<sp/>&gt;::type&gt;<sp/><ref refid="timer_8cpp_1a4481ea2a14fb44cfe1bf76fc43357b59" kindref="member">days</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">std::string<sp/><ref refid="classreal__time__tools_1_1Timer_1a6e5ef2fc811582b8ff4fe52775525e14" kindref="member">Timer::get_current_date_str</ref>()</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/>std::ostringstream<sp/>oss;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>now<sp/>=<sp/>std::chrono::system_clock::now();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/>std::time_t<sp/>now_c<sp/>=<sp/>std::chrono::system_clock::to_time_t(now);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">tm<sp/>*parts<sp/>=<sp/>std::localtime(&amp;now_c);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/>oss<sp/>&lt;&lt;<sp/>(int)(1900<sp/>+<sp/>parts-&gt;tm_year)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;-&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/>oss<sp/>&lt;&lt;<sp/>std::setfill(</highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/>std::setw(2)<sp/>&lt;&lt;<sp/>1<sp/>+<sp/>parts-&gt;tm_mon<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;-&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/>oss<sp/>&lt;&lt;<sp/>std::setfill(</highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/>std::setw(2)<sp/>&lt;&lt;<sp/>parts-&gt;tm_mday<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;_&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/>oss<sp/>&lt;&lt;<sp/>std::setfill(</highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/>std::setw(2)<sp/>&lt;&lt;<sp/>parts-&gt;tm_hour<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;-&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/>oss<sp/>&lt;&lt;<sp/>std::setfill(</highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/>std::setw(2)<sp/>&lt;&lt;<sp/>parts-&gt;tm_min<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;-&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/>oss<sp/>&lt;&lt;<sp/>std::setfill(</highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/>std::setw(2)<sp/>&lt;&lt;<sp/>parts-&gt;tm_sec;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>oss.str();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><ref refid="classreal__time__tools_1_1Timer_1a572f7022db18de269ba08b31b05b4af7" kindref="member">Timer::Timer</ref>()</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>initialize<sp/>the<sp/>tic<sp/>and<sp/>tac<sp/>times<sp/>by<sp/>the<sp/>current<sp/>time</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><ref refid="classreal__time__tools_1_1Timer_1a19c7f3297d2762948843afaba92eade6" kindref="member">tic_time_</ref><sp/>=<sp/>std::numeric_limits&lt;double&gt;::quiet_NaN();</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>initialize<sp/>the<sp/>memory<sp/>buffer<sp/>size,<sp/>allocate<sp/>memory<sp/>and<sp/>set<sp/>counter<sp/>to<sp/>zero.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><ref refid="classreal__time__tools_1_1Timer_1a0319fbdc56fd5046d701c8728b27e860" kindref="member">set_memory_size</ref>(60000);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>default<sp/>name</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><ref refid="classreal__time__tools_1_1Timer_1aadcaf1f743a7d3d967b740ec04fc0607" kindref="member">name_</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;timer&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>reset<sp/>all<sp/>the<sp/>statistic<sp/>memebers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><ref refid="classreal__time__tools_1_1Timer_1a212c2fff68b8098731ab59f14416ce01" kindref="member">min_elapsed_time_</ref><sp/>=<sp/>std::numeric_limits&lt;double&gt;::infinity();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><ref refid="classreal__time__tools_1_1Timer_1a6d794ee63c2eafb0399d55b433c27c43" kindref="member">max_elapsed_time_</ref><sp/>=<sp/>-std::numeric_limits&lt;double&gt;::infinity();</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><ref refid="classreal__time__tools_1_1Timer_1a058a28efa6f0fd3c4e332068e7db8574" kindref="member">avg_elapsed_time_</ref><sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><ref refid="classreal__time__tools_1_1Timer_1a1d4e8ddf078ef1c544e2715a0420726a" kindref="member">second_moment_elapsed_time_</ref><sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><ref refid="classreal__time__tools_1_1Timer_1a3967e7252cf6d9795e5b04c60763037d" kindref="member">count_</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1Timer_1a540f7f6925768c6f333b2fef4a914374" kindref="member">Timer::tic</ref>()</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>get<sp/>the<sp/>current<sp/>time</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><ref refid="classreal__time__tools_1_1Timer_1a19c7f3297d2762948843afaba92eade6" kindref="member">tic_time_</ref><sp/>=<sp/><ref refid="classreal__time__tools_1_1Timer_1aa1e7794aa57dfba12f7cc30c852ea08c" kindref="member">Timer::get_current_time_sec</ref>();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1Timer_1a3d55794492714544c5c83aed23d8f1f9" kindref="member">Timer::tac</ref>()</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tac_time<sp/>=<sp/><ref refid="classreal__time__tools_1_1Timer_1aa1e7794aa57dfba12f7cc30c852ea08c" kindref="member">Timer::get_current_time_sec</ref>();</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>time_interval<sp/>=<sp/>tac_time<sp/>-<sp/><ref refid="classreal__time__tools_1_1Timer_1a19c7f3297d2762948843afaba92eade6" kindref="member">tic_time_</ref>;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><ref refid="classreal__time__tools_1_1Timer_1a14bd35142437b42533b1b478ce044c8f" kindref="member">log_time_interval</ref>(time_interval);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>time_interval;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1Timer_1a310fc3b9165c3751a36ff92586f0facd" kindref="member">Timer::tac_tic</ref>()</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tac_time<sp/>=<sp/><ref refid="classreal__time__tools_1_1Timer_1aa1e7794aa57dfba12f7cc30c852ea08c" kindref="member">Timer::get_current_time_sec</ref>();</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>time_interval<sp/>=<sp/>tac_time<sp/>-<sp/><ref refid="classreal__time__tools_1_1Timer_1a19c7f3297d2762948843afaba92eade6" kindref="member">tic_time_</ref>;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1Timer_1a14bd35142437b42533b1b478ce044c8f" kindref="member">log_time_interval</ref>(time_interval);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>tic_time_<sp/>=<sp/>tac_time;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>time_interval;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1Timer_1a14bd35142437b42533b1b478ce044c8f" kindref="member">Timer::log_time_interval</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>time_interval)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(std::isnan(time_interval))</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Only<sp/>store<sp/>into<sp/>the<sp/>buffer<sp/>if<sp/>the<sp/>buffer<sp/>is<sp/>non-zero.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classreal__time__tools_1_1Timer_1ac0f102a03a84fdebd3803a0199e352a2" kindref="member">memory_buffer_size_</ref><sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>check<sp/>if<sp/>the<sp/>buffer<sp/>is<sp/>full</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classreal__time__tools_1_1Timer_1a3967e7252cf6d9795e5b04c60763037d" kindref="member">count_</ref><sp/>&gt;=<sp/><ref refid="classreal__time__tools_1_1Timer_1a9b509f58fc1eef3f7ce4145f75c01fa9" kindref="member">time_measurement_buffer_</ref>.size())</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1Timer_1a9b509f58fc1eef3f7ce4145f75c01fa9" kindref="member">time_measurement_buffer_</ref>.pop_front();</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1Timer_1a9b509f58fc1eef3f7ce4145f75c01fa9" kindref="member">time_measurement_buffer_</ref>.push_back(time_interval);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>save<sp/>the<sp/>current<sp/>time<sp/>elapsed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1Timer_1a9b509f58fc1eef3f7ce4145f75c01fa9" kindref="member">time_measurement_buffer_</ref>[<ref refid="classreal__time__tools_1_1Timer_1a3967e7252cf6d9795e5b04c60763037d" kindref="member">count_</ref>]<sp/>=<sp/>time_interval;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>increase<sp/>the<sp/>count</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>++<ref refid="classreal__time__tools_1_1Timer_1a3967e7252cf6d9795e5b04c60763037d" kindref="member">count_</ref>;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>compute<sp/>some<sp/>statistics</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1Timer_1a212c2fff68b8098731ab59f14416ce01" kindref="member">min_elapsed_time_</ref><sp/>=<sp/>time_interval<sp/>&lt;<sp/><ref refid="classreal__time__tools_1_1Timer_1a212c2fff68b8098731ab59f14416ce01" kindref="member">min_elapsed_time_</ref><sp/>?</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>time_interval<sp/>:<sp/><ref refid="classreal__time__tools_1_1Timer_1a212c2fff68b8098731ab59f14416ce01" kindref="member">min_elapsed_time_</ref>;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1Timer_1a6d794ee63c2eafb0399d55b433c27c43" kindref="member">max_elapsed_time_</ref><sp/>=<sp/>time_interval<sp/>&gt;<sp/><ref refid="classreal__time__tools_1_1Timer_1a6d794ee63c2eafb0399d55b433c27c43" kindref="member">max_elapsed_time_</ref><sp/>?</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>time_interval<sp/>:<sp/><ref refid="classreal__time__tools_1_1Timer_1a6d794ee63c2eafb0399d55b433c27c43" kindref="member">max_elapsed_time_</ref>;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1Timer_1a058a28efa6f0fd3c4e332068e7db8574" kindref="member">avg_elapsed_time_</ref><sp/>=<sp/>(double(<ref refid="classreal__time__tools_1_1Timer_1a3967e7252cf6d9795e5b04c60763037d" kindref="member">count_</ref><sp/>-<sp/>1)<sp/>*<sp/><ref refid="classreal__time__tools_1_1Timer_1a058a28efa6f0fd3c4e332068e7db8574" kindref="member">avg_elapsed_time_</ref><sp/>+<sp/>time_interval)<sp/>/</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">(<ref refid="classreal__time__tools_1_1Timer_1a3967e7252cf6d9795e5b04c60763037d" kindref="member">count_</ref>);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1Timer_1a1d4e8ddf078ef1c544e2715a0420726a" kindref="member">second_moment_elapsed_time_</ref><sp/>=</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(double(<ref refid="classreal__time__tools_1_1Timer_1a3967e7252cf6d9795e5b04c60763037d" kindref="member">count_</ref><sp/>-<sp/>1)<sp/>*<sp/><ref refid="classreal__time__tools_1_1Timer_1a1d4e8ddf078ef1c544e2715a0420726a" kindref="member">second_moment_elapsed_time_</ref><sp/>+</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>time_interval<sp/>*<sp/>time_interval)<sp/>/<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">(<ref refid="classreal__time__tools_1_1Timer_1a3967e7252cf6d9795e5b04c60763037d" kindref="member">count_</ref>);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1Timer_1a1a20b4d7dcb04af92769857396408e54" kindref="member">Timer::dump_measurements</ref>(std::string<sp/>file_name)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="123"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>std::ofstream<sp/>log_file(file_name,<sp/>std::ios::binary<sp/>|<sp/>std::ios::out);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>log_file.precision(10);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i<sp/>&lt;<sp/>std::min(<ref refid="classreal__time__tools_1_1Timer_1a3967e7252cf6d9795e5b04c60763037d" kindref="member">count_</ref>,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal">)<ref refid="classreal__time__tools_1_1Timer_1ac0f102a03a84fdebd3803a0199e352a2" kindref="member">memory_buffer_size_</ref>);<sp/>++i)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>log_file<sp/>&lt;&lt;<sp/>i<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classreal__time__tools_1_1Timer_1a9b509f58fc1eef3f7ce4145f75c01fa9" kindref="member">time_measurement_buffer_</ref>[i]<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>log_file.flush();</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>log_file.close();</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/>}</highlight><highlight class="keywordflow">catch</highlight><highlight class="normal">(...){</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>rt_printf(</highlight><highlight class="stringliteral">&quot;fstream<sp/>Error<sp/>in<sp/>dump_tic_tac_measurements():<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;no<sp/>time<sp/>measurment<sp/>saved\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1Timer_1a71a7ad376bbc8cf60cfb839fefe6f805" kindref="member">Timer::print_statistics</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="141"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/>rt_printf(</highlight><highlight class="stringliteral">&quot;%s<sp/>--------------------------------\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="classreal__time__tools_1_1Timer_1aadcaf1f743a7d3d967b740ec04fc0607" kindref="member">name_</ref>.c_str());</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/>rt_printf(</highlight><highlight class="stringliteral">&quot;count:<sp/>%ld\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;min_elapsed_sec:<sp/>%f\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;max_elapsed_sec:<sp/>%f\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;avg_elapsed_sec:<sp/>%f\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;std_dev_elapsed_sec:<sp/>%f\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1Timer_1a3967e7252cf6d9795e5b04c60763037d" kindref="member">count_</ref>,</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1Timer_1a7ff2401f6c1e28993575f153430db8ef" kindref="member">get_min_elapsed_sec</ref>(),</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1Timer_1a365c7dfdddf6c3f14b41bd65b01bc79a" kindref="member">get_max_elapsed_sec</ref>(),</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1Timer_1a0b5b997f0984a684a16c5e35e5ca07e7" kindref="member">get_avg_elapsed_sec</ref>(),</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1Timer_1a417d3213c6f315b9a27ad424410c7440" kindref="member">get_std_dev_elapsed_sec</ref>());</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/>rt_printf(</highlight><highlight class="stringliteral">&quot;--------------------------------------------\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MAC_OS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1Timer_1a0055b704a4e0b518269b0ab5fbed9278" kindref="member">Timer::timespec_add_sec</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>timespec&amp;<sp/>date_spec,</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>duration_sec)</highlight></codeline>
+<codeline lineno="159"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>total_time_sec<sp/>=<sp/>duration_sec<sp/>+</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(date_spec.tv_nsec)<sp/>/<sp/>1e9<sp/>+</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>static_cast&lt;double&gt;(date_spec.tv_sec);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><ref refid="classreal__time__tools_1_1Timer_1a7370c65fa7810c6bcbe1b2f33e21f2ff" kindref="member">sec_to_timespec</ref>(total_time_sec,<sp/>date_spec);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1Timer_1a7370c65fa7810c6bcbe1b2f33e21f2ff" kindref="member">Timer::sec_to_timespec</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>date_sec,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>timespec&amp;<sp/>date_spec)</highlight></codeline>
+<codeline lineno="167"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/>date_sec<sp/>+=<sp/>0.5e-9;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/>date_spec.tv_sec<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">long</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(date_sec);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/>date_spec.tv_nsec<sp/>=</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">long</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">((date_sec<sp/>-</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(date_spec.tv_sec))<sp/>*<sp/>1e9);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1Timer_1aa1e7794aa57dfba12f7cc30c852ea08c" kindref="member">Timer::get_current_time_sec</ref>()</highlight></codeline>
+<codeline lineno="178"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>MAC_OS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::nan();</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">timespec<sp/>now;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/>clock_gettime(CLOCK_REALTIME,<sp/>&amp;now);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(now.tv_sec)<sp/>+</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>static_cast&lt;double&gt;(now.tv_nsec)<sp/>/<sp/>1e9;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1Timer_1a705486df1486d737ac30a04ecf7e2b97" kindref="member">Timer::sleep_microseconds</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sleep_duration_us)</highlight></codeline>
+<codeline lineno="192"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#ifdef<sp/>MAC_OS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#elseif<sp/>XENOMAI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rt_task_sleep(sleep_duration_us*1e3);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/>usleep(sleep_duration_us);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1Timer_1a0a0df8a3baef34e820203e5579afda38" kindref="member">Timer::sleep_sec</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">&amp;<sp/>sleep_duration_sec)</highlight></codeline>
+<codeline lineno="204"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>MAC_OS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">timespec<sp/>abs_target_time;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/>clock_gettime(CLOCK_REALTIME,<sp/>&amp;abs_target_time);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><ref refid="classreal__time__tools_1_1Timer_1a0055b704a4e0b518269b0ab5fbed9278" kindref="member">timespec_add_sec</ref>(abs_target_time,<sp/>sleep_duration_sec);</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/>clock_nanosleep(CLOCK_REALTIME,<sp/>TIMER_ABSTIME,<sp/>&amp;abs_target_time,<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1Timer_1a8de5eedf9fe5607d78a703cd22665137" kindref="member">Timer::sleep_until_sec</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">&amp;<sp/>date_sec)</highlight></codeline>
+<codeline lineno="216"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>MAC_OS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">timespec<sp/>abs_target_time;</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><ref refid="classreal__time__tools_1_1Timer_1a7370c65fa7810c6bcbe1b2f33e21f2ff" kindref="member">sec_to_timespec</ref>(date_sec,<sp/>abs_target_time);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/>clock_nanosleep(CLOCK_REALTIME,<sp/>TIMER_ABSTIME,<sp/>&amp;abs_target_time,<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>real_time_tools</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/timer.cpp"/>
+  </compounddef>
+</doxygen>

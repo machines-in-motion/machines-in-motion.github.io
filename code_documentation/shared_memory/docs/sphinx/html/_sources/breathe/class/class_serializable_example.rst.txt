@@ -1,0 +1,4 @@
+Class SerializableExample
+=========================
+
+.. doxygenclass:: SerializableExample

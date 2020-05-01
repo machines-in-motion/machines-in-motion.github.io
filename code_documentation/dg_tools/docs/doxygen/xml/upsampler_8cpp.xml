@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="upsampler_8cpp" kind="file" language="C++">
+    <compoundname>upsampler.cpp</compoundname>
+    <includes refid="upsampler_8hpp" local="yes">dg_tools/data/upsampler.hpp</includes>
+    <includes local="no">sot/core/debug.hh</includes>
+    <includes local="no">dynamic-graph/factory.h</includes>
+    <includes local="no">dynamic-graph/all-commands.h</includes>
+    <incdepgraph>
+      <node id="221">
+        <label>dynamic-graph/factory.h</label>
+      </node>
+      <node id="220">
+        <label>sot/core/debug.hh</label>
+      </node>
+      <node id="216">
+        <label>dynamic-graph/linear-algebra.h</label>
+      </node>
+      <node id="222">
+        <label>dynamic-graph/all-commands.h</label>
+      </node>
+      <node id="215">
+        <label>dg_tools/data/upsampler.hpp</label>
+        <link refid="upsampler_8hpp"/>
+        <childnode refid="216" relation="include">
+        </childnode>
+        <childnode refid="217" relation="include">
+        </childnode>
+        <childnode refid="218" relation="include">
+        </childnode>
+        <childnode refid="219" relation="include">
+        </childnode>
+      </node>
+      <node id="217">
+        <label>dynamic-graph/signal-time-dependent.h</label>
+      </node>
+      <node id="214">
+        <label>src/data/upsampler.cpp</label>
+        <link refid="upsampler.cpp"/>
+        <childnode refid="215" relation="include">
+        </childnode>
+        <childnode refid="220" relation="include">
+        </childnode>
+        <childnode refid="221" relation="include">
+        </childnode>
+        <childnode refid="222" relation="include">
+        </childnode>
+      </node>
+      <node id="218">
+        <label>dynamic-graph/signal-ptr.h</label>
+      </node>
+      <node id="219">
+        <label>dynamic-graph/entity.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="upsampler_8cpp_1a7897a4ff2eca376ba990eebf2fcb5a2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DYNAMICGRAPH_FACTORY_ENTITY_PLUGIN</definition>
+        <argsstring>(Upsampler,&quot;Upsampler&quot;)</argsstring>
+        <name>DYNAMICGRAPH_FACTORY_ENTITY_PLUGIN</name>
+        <param>
+          <type><ref refid="classdg__tools_1_1Upsampler" kindref="compound">Upsampler</ref></type>
+        </param>
+        <param>
+          <type>&quot;Upsampler&quot;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/data/upsampler.cpp" line="17" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="6"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="upsampler_8hpp" kindref="compound">dg_tools/data/upsampler.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sot/core/debug.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dynamic-graph/factory.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dynamic-graph/all-commands.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacedg__tools" kindref="compound">dg_tools</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">DYNAMICGRAPH_FACTORY_ENTITY_PLUGIN(<ref refid="classdg__tools_1_1Upsampler" kindref="compound">Upsampler</ref>,<sp/></highlight><highlight class="stringliteral">&quot;Upsampler&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal">Upsampler::Upsampler(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name<sp/>)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/>:Entity(name)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/>,upsampling_factor_(1)</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/>,is_initialized_(false)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/>,data_inputSIN(NULL,</highlight><highlight class="stringliteral">&quot;Upsampler(&quot;</highlight><highlight class="normal">+name+</highlight><highlight class="stringliteral">&quot;)::input(vector)::sin&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/>,data_outSOUT(<sp/>boost::bind(&amp;<ref refid="classdg__tools_1_1Upsampler" kindref="compound">Upsampler</ref>::data_out_callback,this,_1,_2),</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data_inputSIN,</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Upsampler(&quot;</highlight><highlight class="normal">+name+</highlight><highlight class="stringliteral">&quot;)::output(vector)::sout&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/>Entity::signalRegistration(data_inputSIN<sp/>&lt;&lt;<sp/>data_outSOUT);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/>addCommand<sp/>(</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;init&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>dynamicgraph::command::makeCommandVoid1(</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>&amp;Upsampler::init,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>dynamicgraph::command::docCommandVoid1(</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Init<sp/>the<sp/>upsampler&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;int:<sp/>upsampling<sp/>factor<sp/>(how<sp/>often<sp/>to<sp/>repeat<sp/>the<sp/>previous<sp/>input<sp/>signal)&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/>);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Upsampler::init(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>upsampling_factor)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/>upsampling_factor_<sp/>=<sp/>upsampling_factor;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal">dg::Vector&amp;<sp/>Upsampler::data_out_callback(dg::Vector&amp;<sp/>out,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>time)</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!is_initialized_)<sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>is_initialized_<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>first_time_<sp/>=<sp/>time;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((time<sp/>-<sp/>first_time_)<sp/>%<sp/>upsampling_factor_<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>use<sp/>the<sp/>time<sp/>relative<sp/>to<sp/>the<sp/>first<sp/>time.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>last_input_<sp/>=<sp/>data_inputSIN((time<sp/>-<sp/>first_time_)<sp/>/<sp/>upsampling_factor_);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/>out<sp/>=<sp/>last_input_;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>out;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/data/upsampler.cpp"/>
+  </compounddef>
+</doxygen>

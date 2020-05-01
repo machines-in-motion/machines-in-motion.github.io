@@ -23,6 +23,9 @@ var annotated_dup =
     [ "ros_nodes", null, [
       [ "run_command", null, [
         [ "DynamicGraphInteractiveConsole", "classros__nodes_1_1run__command_1_1DynamicGraphInteractiveConsole.html", "classros__nodes_1_1run__command_1_1DynamicGraphInteractiveConsole" ]
+      ] ],
+      [ "run_command_backup", null, [
+        [ "RosShell", "classros__nodes_1_1run__command__backup_1_1RosShell.html", "classros__nodes_1_1run__command__backup_1_1RosShell" ]
       ] ]
     ] ]
 ];

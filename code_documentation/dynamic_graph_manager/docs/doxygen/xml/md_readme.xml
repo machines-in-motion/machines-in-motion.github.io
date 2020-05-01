@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="md_readme" kind="page">
+    <compoundname>md_readme</compoundname>
+    <title>dynamic_graph_manager</title>
+    <detaileddescription>
+<para><heading level="2">What is it</heading>
+</para><para>Dynamic graph &quot;glue code&quot; responsible for the instanciation of the graph and the python interpreter. Provide a ROS server in order to create distant ROS clients.</para><para><heading level="2">Authors</heading>
+</para><para><itemizedlist>
+<listitem><para>Maximilien Naveau</para></listitem><listitem><para>Julian Viereck</para></listitem><listitem><para>Andrea Delprete</para></listitem></itemizedlist>
+</para><para><heading level="2">Copyrights</heading>
+</para><para>Copyright (c) 2019, New York University and Max Planck Gesellschaft.</para><para><heading level="2">License</heading>
+</para><para>License BSD-3-Clause</para><para><heading level="2">Installation:</heading>
+</para><para>This is a ros package so it should be in a ROS environment. One can still test its compilation by using the following instruction:</para><para>`cd <ref refid="namespacedynamic__graph__manager" kindref="compound">dynamic_graph_manager</ref> mkdir _build cd _build cmake .. make -j8`</para><para><heading level="2">Usage:</heading>
+</para><para>Inherite from the class DynamicGraphManager and overload the three functions responsible for the hardware: <verbatim> `virtual void initialize_hardware_communication_process()`
+
+ `virtual void get_sensors_to_map(VectorDGMap&amp;)`
+</verbatim></para><para>and <verbatim>`virtual void set_motor_controls_from_map(const VectorDGMap&amp;)`
+</verbatim></para><para><heading level="2">Documentation:</heading>
+</para><para>See demo and unit tests for more information on the API. Doxygen informations are available by calling: <verbatim>`catkin_make -DBUILD_DOCUMENTATION=ON`</verbatim> </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

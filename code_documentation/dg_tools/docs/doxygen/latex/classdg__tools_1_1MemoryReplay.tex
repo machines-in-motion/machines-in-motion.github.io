@@ -1,0 +1,87 @@
+\hypertarget{classdg__tools_1_1MemoryReplay}{}\section{dg\+\_\+tools\+:\+:Memory\+Replay Class Reference}
+\label{classdg__tools_1_1MemoryReplay}\index{dg\+\_\+tools\+::\+Memory\+Replay@{dg\+\_\+tools\+::\+Memory\+Replay}}
+
+
+Provided with a matrix, the entity returns the row indexed by the current time index at every timestep.  
+
+
+
+
+{\ttfamily \#include $<$memory\+\_\+replay.\+hpp$>$}
+
+
+
+Inheritance diagram for dg\+\_\+tools\+:\+:Memory\+Replay\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classdg__tools_1_1MemoryReplay__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for dg\+\_\+tools\+:\+:Memory\+Replay\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classdg__tools_1_1MemoryReplay__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Memory\+Replay} (const std\+::string \&name)\hypertarget{classdg__tools_1_1MemoryReplay_a8337a556eae14b1f8259487c0ab79b31}{}\label{classdg__tools_1_1MemoryReplay_a8337a556eae14b1f8259487c0ab79b31}
+
+\item 
+void {\bfseries init} (const dg\+::\+Matrix \&data)\hypertarget{classdg__tools_1_1MemoryReplay_a6fabc46d90fc14020e3122638528a3c4}{}\label{classdg__tools_1_1MemoryReplay_a6fabc46d90fc14020e3122638528a3c4}
+
+\item 
+void {\bfseries rewind} ()\hypertarget{classdg__tools_1_1MemoryReplay_a659c4c6d6a053d4a62ddd3593dba2c23}{}\label{classdg__tools_1_1MemoryReplay_a659c4c6d6a053d4a62ddd3593dba2c23}
+
+\item 
+virtual const std\+::string \& {\bfseries get\+Class\+Name} (void) const \hypertarget{classdg__tools_1_1MemoryReplay_a0bb7c62a85661716411924aa0a9dad51}{}\label{classdg__tools_1_1MemoryReplay_a0bb7c62a85661716411924aa0a9dad51}
+
+\item 
+dg\+::\+Vector \& {\bfseries get\+Value} (dg\+::\+Vector \&sout, int time)\hypertarget{classdg__tools_1_1MemoryReplay_a8ab59d0192c29bc4701171276f8d3e67}{}\label{classdg__tools_1_1MemoryReplay_a8ab59d0192c29bc4701171276f8d3e67}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+dg\+::\+Signal\+Time\+Dependent$<$ dg\+::\+Vector, int $>$ {\bfseries internal\+\_\+signal\+\_\+refresher\+\_\+}\hypertarget{classdg__tools_1_1MemoryReplay_a2d096c1d9ab01da6af070141de32a1ad}{}\label{classdg__tools_1_1MemoryReplay_a2d096c1d9ab01da6af070141de32a1ad}
+
+\item 
+dg\+::\+Signal\+Time\+Dependent$<$ dg\+::\+Vector, int $>$ {\bfseries sout}\hypertarget{classdg__tools_1_1MemoryReplay_a2a7e1605201f102754dbb9d79b14a79d}{}\label{classdg__tools_1_1MemoryReplay_a2a7e1605201f102754dbb9d79b14a79d}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const std\+::string {\bfseries C\+L\+A\+S\+S\+\_\+\+N\+A\+ME}\hypertarget{classdg__tools_1_1MemoryReplay_a99b1ae11beccebec65c26e38b670366e}{}\label{classdg__tools_1_1MemoryReplay_a99b1ae11beccebec65c26e38b670366e}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries is\+\_\+started\+\_\+}\hypertarget{classdg__tools_1_1MemoryReplay_a878349c497242a2dbe9ef0314fc22cf7}{}\label{classdg__tools_1_1MemoryReplay_a878349c497242a2dbe9ef0314fc22cf7}
+
+\item 
+int {\bfseries start\+\_\+time\+\_\+}\hypertarget{classdg__tools_1_1MemoryReplay_a7d1394b959e16997e30ee1b5f92776d3}{}\label{classdg__tools_1_1MemoryReplay_a7d1394b959e16997e30ee1b5f92776d3}
+
+\item 
+dg\+::\+Matrix {\bfseries data\+\_\+}\hypertarget{classdg__tools_1_1MemoryReplay_a690c7a438233ac381cbfafb0fb0a93da}{}\label{classdg__tools_1_1MemoryReplay_a690c7a438233ac381cbfafb0fb0a93da}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Provided with a matrix, the entity returns the row indexed by the current time index at every timestep. 
+
+Example\+: Store a desired trajectory in memory and get the desired position at every timestep. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/dg\+\_\+tools/data/memory\+\_\+replay.\+hpp\item 
+src/data/memory\+\_\+replay.\+cpp\end{DoxyCompactItemize}

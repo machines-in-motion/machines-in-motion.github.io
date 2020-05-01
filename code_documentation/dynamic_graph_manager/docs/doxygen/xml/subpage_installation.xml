@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="subpage_installation" kind="page">
+    <compoundname>subpage_installation</compoundname>
+    <title>2/ Installation Procedure</title>
+    <detaileddescription>
+<sect1 id="subpage_installation_1install_sec_introduction">
+<title>2.1/ Introduction</title>
+<para>In here we are going to explain the different way of obtaining the code base. And in particular the dependencies. We <bold> highly recommand </bold> a binary installation of the dependencies.</para></sect1>
+<sect1 id="subpage_installation_1install_sec_binary">
+<title>2.2/ Binary Installation</title>
+<sect2 id="subpage_installation_1install_subsec_official_image">
+<title>2.2.1/ Install using the official image on UBUNTU 16.04</title>
+<para>First clone the official image git repository. <programlisting><codeline><highlight class="normal">git<sp/>clone<sp/>https://git-amd.tuebingen.mpg.de/amd-clmc/ubuntu_installation_scripts</highlight></codeline>
+</programlisting> The repositories contains convenience installation scripts for ubuntu. The most useful script is &quot;official/setup_ubuntu&quot;. This script is meant to be called after a fresh installation of ubuntu, and install all typical dependencies required for programming robots. These include ROS, dynamic graph and related &quot;robot-pkg&quot; software (e.g stack of task and pinocchio). Only 16.04 is fully supported. The script will also work on 14.04, but mostly ROS and dependencies related to SL will be installed. Usage: <programlisting><codeline><highlight class="normal">cd<sp/>ubuntu_installation_scripts/official</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>./setup_ubuntu<sp/>install</highlight></codeline>
+</programlisting> This setup script is sometimes updated. You may run it again: <programlisting><codeline><highlight class="normal">cd<sp/>ubuntu_installation_scripts/official</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>./setup_ubuntu<sp/>update</highlight></codeline>
+</programlisting> To see the list of software this script install (and how it install it), visit the related dockerfile (e.g. for 16.04 : <ulink url="https://git-amd.tuebingen.mpg.de/amd-clmc/ubuntu_installation_scripts/blob/master/official/ubuntu_16_04/docker/Dockerfile">https://git-amd.tuebingen.mpg.de/amd-clmc/ubuntu_installation_scripts/blob/master/official/ubuntu_16_04/docker/Dockerfile</ulink>).</para><para>With this process a file in /opt/openrobots/setup.bash should have been created. In order to use the binary installation you <bold>MUST</bold> source this file: <programlisting><codeline><highlight class="normal">source<sp/>/opt/openrobots/setup.bash</highlight></codeline>
+</programlisting> one can add this line to its &quot;.bashrc&quot;</para></sect2>
+<sect2 id="subpage_installation_1install_subsec_binary">
+<title>2.2.2/ Do the same as the official image but install uniquely the dynamic graph.</title>
+<para>First get the robotpkg PPA. Assuming you are using Ubuntu 16.04, if not, please adjust the &quot;xenial&quot; to the output of <computeroutput>lsb_release -c</computeroutput>: <programlisting><codeline><highlight class="normal">sudo<sp/>sh<sp/>-c<sp/>&quot;echo<sp/>&apos;deb<sp/>[arch=amd64]<sp/>http://robotpkg.openrobots.org/wip/packages/debian/pub<sp/>xenialrobotpkg\ndeb<sp/>[arch=amd64]<sp/>http://robotpkg.openrobots.org/packages/debian/pub<sp/>xenial<sp/>robotpkg&apos;<sp/>&gt;<sp/>/etc/apt/sources.list.d/robotpkg.list&quot;</highlight></codeline>
+<codeline><highlight class="normal">curl<sp/>http://robotpkg.openrobots.org/packages/debian</highlight></codeline>
+<codeline><highlight class="normal">/robotpkg.key<sp/>|<sp/>sudo<sp/>apt-key<sp/>add<sp/>-</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>apt-get<sp/>update</highlight></codeline>
+</programlisting></para><para>Install the following packages from robotpkg using apt-get:</para><para><programlisting><codeline><highlight class="normal">sudo<sp/>apt-get<sp/>install<sp/>-y<sp/>robotpkg-dynamic-graph-v3<sp/>`#<sp/>The<sp/>dynamic<sp/>graph`<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>robotpkg-py27-dynamic-graph-v3<sp/>`#<sp/>Thedynamic<sp/>graph<sp/>python<sp/>bindings`<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>robotpkg-tsid<sp/>`#<sp/>AndreaDelprete<sp/>Task<sp/>Space<sp/>Inverse<sp/>Dynamics`<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>robotpkg-pinocchio<sp/>`#<sp/>Eigenbased<sp/>rigid<sp/>body<sp/>dynamics<sp/>library`<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>robotpkg-hpp-fcl<sp/>`#<sp/>collision<sp/>detection<sp/>for<sp/>pinocchio`<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>robotpkg-libccd<sp/>`#<sp/>notsure`<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>robotpkg-octomap<sp/>`#<sp/>notsure`<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>robotpkg-parametric-curves<sp/>`#<sp/>Splineand<sp/>polynomes<sp/>library`<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>robotpkg-simple-humanoid-description<sp/>`#<sp/>Simplehumanoid<sp/>robot_properties<sp/>package`<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>robotpkg-eigen-quadprog<sp/>`#<sp/>Quadprog<sp/>package`<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>robotpkg-sot-core-v3<sp/>`#<sp/>DynamicGraph<sp/>Utilities`<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>robotpkg-sot-tools-v3<sp/>`#<sp/>DynamicGraph<sp/>Utilities`<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>robotpkg-sot-dynamic-pinocchio-v3<sp/>`#<sp/>DGwrapper<sp/>around<sp/>pinocchio`<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>robotpkg-sot-torque-control<sp/>`#<sp/>AndreaDelprete<sp/>dynamic<sp/>graph<sp/>entities`<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>robotpkg-py27-eigenpy<sp/>`#<sp/>Pythonbindings`<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>robotpkg-py27-pinocchio<sp/>`#<sp/>Pythonbindings`<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>robotpkg-py27-parametric-curves<sp/>`#<sp/>Pythonbindings`<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>robotpkg-py27-sot-core-v3<sp/>`#<sp/>Pythonbindings`<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>robotpkg-py27-sot-torque-control<sp/>`#<sp/>Pythonbindings`<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>robotpkg-py27-sot-dynamic-pinocchio-v3<sp/>`#<sp/>Pythonbindings`<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>robotpkg-py27-qt4-gepetto-viewer-corba<sp/>`#<sp/>LAAS<sp/>3Drobot<sp/>viewer<sp/>network<sp/>client/server`<sp/>;</highlight></codeline>
+</programlisting></para><para>Export the following environment variables e.g. by adding exports in ~/. bashrc file:</para><para><programlisting><codeline><highlight class="normal">export<sp/>PATH=/opt/openrobots/bin:$PATH</highlight></codeline>
+<codeline><highlight class="normal">export<sp/>PKG_CONFIG_PATH=/opt/openrobots/lib/pkgconfig:$PKG_CONFIG_PATH</highlight></codeline>
+<codeline><highlight class="normal">export<sp/>LD_LIBRARY_PATH=/opt/openrobots/lib:/opt/openrobots/lib/plugin:$LD_LIBRARY_PATH</highlight></codeline>
+<codeline><highlight class="normal">export<sp/>PYTHONPATH=/opt/openrobots/lib/python2.7/site-packages:$PYTHONPATH</highlight></codeline>
+<codeline><highlight class="normal">export<sp/>ROS_PACKAGE_PATH=&quot;/opt/openrobots/share:$ROS_PACKAGE_PATH&quot;</highlight></codeline>
+</programlisting></para></sect2>
+<sect2 id="subpage_installation_1install_subsec_troubleshooting">
+<title>2.2.3/ Troubleshooting</title>
+<para><orderedlist>
+<listitem><para><bold>Python 3</bold>: When using python3 and you installed packages with prefix /opt/openrobots/, you have to remove the python2.7 path and add the python3.5 one.</para></listitem><listitem><para>Compilation problem: upon catkin_make the package &quot;dynamic-graph&quot; is not found.<orderedlist>
+<listitem><para>make sure the environment variable concerning /opt/openrobots has been set. See the previous paragraph. In order to verify this one can run: <programlisting><codeline><highlight class="normal">env<sp/>|<sp/>grep<sp/>openrobots</highlight></codeline>
+</programlisting></para></listitem><listitem><para>The folder /opt/openerobots does belong to roor and/or does not have the correct permissions. In order to fix this one can do: <programlisting><codeline><highlight class="normal">sudo<sp/>chown<sp/>root:root<sp/>-R<sp/>/opt/openerobots</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>chmod<sp/>755<sp/>-R<sp/>/opt/openerobots</highlight></codeline>
+</programlisting></para></listitem></orderedlist>
+</para></listitem></orderedlist>
+</para></sect2>
+</sect1>
+<sect1 id="subpage_installation_1install_sec_source">
+<title>2.3/ From source Installation</title>
+<sect2 id="subpage_installation_1install_subsec_python2">
+<title>2.3.1/ For python2</title>
+<para><orderedlist>
+<listitem><para>first make sure you have treep installed. <programlisting><codeline><highlight class="normal">pip2<sp/>install<sp/>--user<sp/>treep</highlight></codeline>
+</programlisting> or <programlisting><codeline><highlight class="normal">pip3<sp/>install<sp/>--user<sp/>treep</highlight></codeline>
+</programlisting></para></listitem><listitem><para>Then clone the different packages.<itemizedlist>
+<listitem><para>For just the dynamic graph: <programlisting><codeline><highlight class="normal">mkdir<sp/>devel<sp/>#<sp/>or<sp/>your<sp/>favorite<sp/>development<sp/>folder</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>devel</highlight></codeline>
+<codeline><highlight class="normal">git<sp/>clone<sp/>git@github.com:machines-in-motion/treep_machines_in_motion.git</highlight></codeline>
+<codeline><highlight class="normal">treep<sp/>--clone<sp/>DYNAMIC_GRAPH</highlight></codeline>
+</programlisting> At this point you should see something like this: <image type="html" name="treep-clone-dg.png"></image>
+</para></listitem><listitem><para>If you decided to clone every package it would look like this: <programlisting><codeline><highlight class="normal">mkdir<sp/>devel<sp/>#<sp/>or<sp/>your<sp/>favorite<sp/>development<sp/>folder</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>devel</highlight></codeline>
+<codeline><highlight class="normal">git<sp/>clone<sp/>git@github.com:machines-in-motion/treep_machines_in_motion.git</highlight></codeline>
+<codeline><highlight class="normal">treep<sp/>--clone<sp/>ALL_LAAS</highlight></codeline>
+</programlisting> At this point you should see something like this: <image type="html" name="treep-clone-laas.png"></image>
+</para></listitem></itemizedlist>
+</para></listitem><listitem><para>Now let us assume you have something clone in your workspace/src folder.<itemizedlist>
+<listitem><para>The next step is to generate the compilation script. <programlisting><codeline><highlight class="normal">treep<sp/>--compilation-script</highlight></codeline>
+</programlisting> The ouput: <image type="html" name="treep-compile-script.png"></image>
+ At this point treep generated a compilation script in bash that you need to <bold>execute</bold> anytime you do the compilation.</para></listitem><listitem><para>If the compilation script is not an executable you should do a <programlisting><codeline><highlight class="normal">chmod<sp/>+x<sp/>compilation.sh</highlight></codeline>
+</programlisting> The compilation script is based on the python script in the treep_dynamic_manager package. A quick glance should allow you to tune the installation folder and type of compilation (Debug/Release/...) A &quot;dynamic_graph_setup.bash&quot; is generated as well in the installation folder. If you source it you will tell your system to use the installed binary.</para></listitem></itemizedlist>
+</para></listitem><listitem><para>Launch the compilation: <programlisting><codeline><highlight class="normal">./compilation.sh</highlight></codeline>
+</programlisting> This should build and install all the repositories.<itemizedlist>
+<listitem><para>Troubleshooting with &quot;sphinx&quot; <programlisting><codeline><highlight class="normal">sudo<sp/>-H<sp/>pip2<sp/>install<sp/>sphinx</highlight></codeline>
+</programlisting></para></listitem></itemizedlist>
+</para></listitem></orderedlist>
+</para></sect2>
+<sect2 id="subpage_installation_1install_subsec_python2_3">
+<title>2.3.2/ For using python3 alongside python2</title>
+<para>Installing the eigenpy and pinocchio libraries into the same folder creates problem when loading the libraries. Instead of using the boost_python-py35 library, eigenpy also tries to load the boost_python- py27 library. To avoid this, it is recommended to<itemizedlist>
+<listitem><para>create a separate &quot;devel&quot; folder for the python3 installation like devel_py35</para></listitem><listitem><para>make sure to source the corresponding &quot;dynamic_graph_setu
+p.bash&quot;. And to edit the <programlisting><codeline><highlight class="normal">export<sp/>PYTHONPATH=/opt/openrobots_py35/lib/python3.5/site-packages:$PYTHONPATH</highlight></codeline>
+</programlisting> Otherwise, eigenpy tries to load boost_python-py27 libraries. This boils down to using separate functions to source either python2 or python3: <programlisting><codeline><highlight class="normal">source_devel_py27()<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>#<sp/>robotpkg<sp/>installation.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>export<sp/>PATH=/opt/openrobots/bin:$PATH</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>export<sp/>PKG_CONFIG_PATH=/opt/openrobots/lib/pkgconfig:$PKG_CONFIG_PATH</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>export<sp/>LD_LIBRARY_PATH=/opt/openrobots/lib::/opt/openrobots/lib/plugin:$LD_LIBRARY_PATH</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>export<sp/>PYTHONPATH=/opt/openrobots/lib/python2.7/site-packages:$PYTHONPATH</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>export<sp/>LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">source_devel_py35()<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>export<sp/>PATH=/opt/openrobots_py35/bin:$PATH</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>export<sp/>PKG_CONFIG_PATH=/opt/openrobots_py35/lib/pkgconfig:$PKG_CONFIG_PATH</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>export<sp/>LD_LIBRARY_PATH=/opt/openrobots_py35/lib:/opt/openrobots_py35/lib/plugin:$LD_LIBRARY_PATH</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>export<sp/>PYTHONPATH=/opt/openrobots_py35/lib/python3.5/site-packages:$PYTHONPATH</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>export<sp/>LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting> In order to build the pacakges for Python 3, use the cmake configuration as: <programlisting><codeline><highlight class="normal">cmake<sp/>..<sp/>-DCMAKE_BUILD_TYPE=Release<sp/>-DPYTHON_EXECUTABLE=`which<sp/>python3`<sp/>-DCMAKE_INSTALL_PREFIX=/path/to/your/devel_py35/workspace/devel</highlight></codeline>
+</programlisting> For using the catkin project using python3, install the following packages <programlisting><codeline><highlight class="normal">pip3<sp/>install<sp/>rospkg<sp/>catkin_pkg</highlight></codeline>
+</programlisting> and build the catkin workspace with python3 (make sure you have source the python3 environment variables using source_openrobots_py35) <programlisting><codeline><highlight class="normal">catkin_make<sp/>-DCMAKE_BUILD_TYPE=Release<sp/>-DPYTHON_EXECUTABLE=&quot;`which<sp/>python3`&quot;</highlight></codeline>
+</programlisting></para></listitem></itemizedlist>
+</para></sect2>
+</sect1>
+<sect1 id="subpage_installation_1install_sec_dgm">
+<title>2.4/ Installation of dynamic graph manager</title>
+<para><orderedlist>
+<listitem><para>First make sure you have treep installed. <programlisting><codeline><highlight class="normal">pip2<sp/>install<sp/>--user<sp/>treep</highlight></codeline>
+</programlisting> or <programlisting><codeline><highlight class="normal">pip3<sp/>install<sp/>--user<sp/>treep</highlight></codeline>
+</programlisting></para></listitem><listitem><para>Clone the repository manager &quot;treep_machines_in_motion&quot;. All actions on the repositories can be done via the &quot;treep&quot; executable. <programlisting><codeline><highlight class="normal">cd</highlight></codeline>
+<codeline><highlight class="normal">mkdir<sp/>devel<sp/>#<sp/>devel<sp/>could<sp/>be<sp/>also<sp/>devel_dg<sp/>or<sp/>your<sp/>favorite<sp/>cat<sp/>name</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>devel</highlight></codeline>
+<codeline><highlight class="normal">git<sp/>clone<sp/>git@github.com:machines-in-motion/treep_machines_in_motion.git</highlight></codeline>
+<codeline><highlight class="normal">treep<sp/>--clone<sp/>DYNAMIC_GRAPH_MANAGER</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>workspace</highlight></codeline>
+</programlisting> If you do not have the ssh key allowing you to download it, please contact Maximilien Naveau (<ulink url="mailto:maximilien.naveau@gmail.com">maximilien.naveau@gmail.com</ulink>) or Vincent Berenz (<ulink url="mailto:vberenz@tue.mpg.de">vberenz@tue.mpg.de</ulink>).</para></listitem><listitem><para>Source &quot;ros&quot;. Pick your favorite one (On ubuntu16.04 kinetic is the one used): <programlisting><codeline><highlight class="normal">source<sp/>/opt/ros/kinetic/setup.bash</highlight></codeline>
+</programlisting></para></listitem><listitem><para>Finally run the build process by calling the catkin executable. <programlisting><codeline><highlight class="normal">catkin_make<sp/>install</highlight></codeline>
+</programlisting> </para></listitem></orderedlist>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

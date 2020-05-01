@@ -1,0 +1,143 @@
+\hypertarget{classreal__time__tools_1_1ThreadsafeTimeseries}{}\section{real\+\_\+time\+\_\+tools\+:\+:Threadsafe\+Timeseries$<$ Type $>$ Class Template Reference}
+\label{classreal__time__tools_1_1ThreadsafeTimeseries}\index{real\+\_\+time\+\_\+tools\+::\+Threadsafe\+Timeseries$<$ Type $>$@{real\+\_\+time\+\_\+tools\+::\+Threadsafe\+Timeseries$<$ Type $>$}}
+
+
+implements a timeseries $ X_{{oldest}:{newest}} $ which can safely be accessed from multiple threads.  
+
+
+
+
+{\ttfamily \#include $<$threadsafe\+\_\+timeseries.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef long int \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_a9364696c534468d7ad927883b16ca981}{Index}\hypertarget{classreal__time__tools_1_1ThreadsafeTimeseries_a9364696c534468d7ad927883b16ca981}{}\label{classreal__time__tools_1_1ThreadsafeTimeseries_a9364696c534468d7ad927883b16ca981}
+
+\begin{DoxyCompactList}\small\item\em Alias for the index type. \end{DoxyCompactList}\item 
+typedef long double \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_a41e36f99889a580ce56491e573fa77b0}{Timestamp}\hypertarget{classreal__time__tools_1_1ThreadsafeTimeseries_a41e36f99889a580ce56491e573fa77b0}{}\label{classreal__time__tools_1_1ThreadsafeTimeseries_a41e36f99889a580ce56491e573fa77b0}
+
+\begin{DoxyCompactList}\small\item\em alias for the Timestamp. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_a06769598feb483bda198edb9c88c8de4}{Threadsafe\+Timeseries} (size\+\_\+t \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_a4d1fd7d17f1c896a81ea62923591dbc4}{max\+\_\+length}, \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_a9364696c534468d7ad927883b16ca981}{Index} start\+\_\+timeindex=0)
+\begin{DoxyCompactList}\small\item\em initializes to an empty timeseries with the given $ maxlength $. when the first element will be inserted, it will have index start\+\_\+timeindex. \end{DoxyCompactList}\item 
+virtual \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_a9364696c534468d7ad927883b16ca981}{Index} \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_a6e453d4c31109908fc074dddf8cfa0f4}{newest\+\_\+timeindex} () const \hypertarget{classreal__time__tools_1_1ThreadsafeTimeseries_a6e453d4c31109908fc074dddf8cfa0f4}{}\label{classreal__time__tools_1_1ThreadsafeTimeseries_a6e453d4c31109908fc074dddf8cfa0f4}
+
+\begin{DoxyCompactList}\small\item\em returns $ newest $. waits if the timeseries is empty. \end{DoxyCompactList}\item 
+virtual \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_a9364696c534468d7ad927883b16ca981}{Index} \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_afcf05dc48b7cf190b7aeb11e0352cbd6}{count\+\_\+appended\+\_\+elements} () const \hypertarget{classreal__time__tools_1_1ThreadsafeTimeseries_afcf05dc48b7cf190b7aeb11e0352cbd6}{}\label{classreal__time__tools_1_1ThreadsafeTimeseries_afcf05dc48b7cf190b7aeb11e0352cbd6}
+
+\begin{DoxyCompactList}\small\item\em returns the number of element contained in the queue. \end{DoxyCompactList}\item 
+virtual \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_a9364696c534468d7ad927883b16ca981}{Index} \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_af3f4bbdf3f588f6936c8d1f5777dbf6e}{oldest\+\_\+timeindex} () const \hypertarget{classreal__time__tools_1_1ThreadsafeTimeseries_af3f4bbdf3f588f6936c8d1f5777dbf6e}{}\label{classreal__time__tools_1_1ThreadsafeTimeseries_af3f4bbdf3f588f6936c8d1f5777dbf6e}
+
+\begin{DoxyCompactList}\small\item\em returns $ oldest $. waits if the timeseries is empty. \end{DoxyCompactList}\item 
+virtual Type \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_a287dbff07cc90e36a41dde73466314a9}{newest\+\_\+element} () const \hypertarget{classreal__time__tools_1_1ThreadsafeTimeseries_a287dbff07cc90e36a41dde73466314a9}{}\label{classreal__time__tools_1_1ThreadsafeTimeseries_a287dbff07cc90e36a41dde73466314a9}
+
+\begin{DoxyCompactList}\small\item\em returns $ X_{newest} $. waits if the timeseries is empty. \end{DoxyCompactList}\item 
+virtual Type \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_aeaeb6428ee3190538a8e82b525ec0f87}{operator\mbox{[}$\,$\mbox{]}} (const \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_a9364696c534468d7ad927883b16ca981}{Index} \&timeindex) const \hypertarget{classreal__time__tools_1_1ThreadsafeTimeseries_aeaeb6428ee3190538a8e82b525ec0f87}{}\label{classreal__time__tools_1_1ThreadsafeTimeseries_aeaeb6428ee3190538a8e82b525ec0f87}
+
+\begin{DoxyCompactList}\small\item\em returns $ X_{timeindex} $. waits if the timeseries is empty or if $timeindex > newest $. \end{DoxyCompactList}\item 
+virtual \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_a41e36f99889a580ce56491e573fa77b0}{Timestamp} \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_a2014a6970029b85598d8d4b08b501832}{timestamp\+\_\+ms} (const \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_a9364696c534468d7ad927883b16ca981}{Index} \&timeindex) const \hypertarget{classreal__time__tools_1_1ThreadsafeTimeseries_a2014a6970029b85598d8d4b08b501832}{}\label{classreal__time__tools_1_1ThreadsafeTimeseries_a2014a6970029b85598d8d4b08b501832}
+
+\begin{DoxyCompactList}\small\item\em returns the time in miliseconds when $ X_{timeindex} $ was appended. Waits if the timeseries is empty or if $timeindex > newest $. \end{DoxyCompactList}\item 
+virtual \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_a41e36f99889a580ce56491e573fa77b0}{Timestamp} \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_adec397db4b4568f6b3369105122cc919}{timestamp\+\_\+s} (const \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_a9364696c534468d7ad927883b16ca981}{Index} \&timeindex) const \hypertarget{classreal__time__tools_1_1ThreadsafeTimeseries_adec397db4b4568f6b3369105122cc919}{}\label{classreal__time__tools_1_1ThreadsafeTimeseries_adec397db4b4568f6b3369105122cc919}
+
+\begin{DoxyCompactList}\small\item\em returns the time in seconds when $ X_{timeindex} $ was appended. Waits if the timeseries is empty or if $timeindex > newest $. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_ac6cee8cdf659da4a25de6a269648cf4e}{wait\+\_\+for\+\_\+timeindex} (const \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_a9364696c534468d7ad927883b16ca981}{Index} \&timeindex, const double \&max\+\_\+duration\+\_\+s=std\+::numeric\+\_\+limits$<$ double $>$\+::quiet\+\_\+\+NaN()) const \hypertarget{classreal__time__tools_1_1ThreadsafeTimeseries_ac6cee8cdf659da4a25de6a269648cf4e}{}\label{classreal__time__tools_1_1ThreadsafeTimeseries_ac6cee8cdf659da4a25de6a269648cf4e}
+
+\begin{DoxyCompactList}\small\item\em Wait until the defined time index is reached. If the input time is below the oldest time index that have been registered read an exception is return. \end{DoxyCompactList}\item 
+virtual size\+\_\+t \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_a7ed15c2faf8b304f8f6ef97e9cd31020}{length} () const \hypertarget{classreal__time__tools_1_1ThreadsafeTimeseries_a7ed15c2faf8b304f8f6ef97e9cd31020}{}\label{classreal__time__tools_1_1ThreadsafeTimeseries_a7ed15c2faf8b304f8f6ef97e9cd31020}
+
+\begin{DoxyCompactList}\small\item\em returns the length of the timeseries, i.\+e. $0$ if it is empty, otherwise $newest - oldest +1 $. \end{DoxyCompactList}\item 
+virtual size\+\_\+t \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_a4d1fd7d17f1c896a81ea62923591dbc4}{max\+\_\+length} () const 
+\begin{DoxyCompactList}\small\item\em returns the maximum length of the time serie. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_ab9adfbafe82cd0dae68d1ba3607f5ecb}{has\+\_\+changed\+\_\+since\+\_\+tag} () const \hypertarget{classreal__time__tools_1_1ThreadsafeTimeseries_ab9adfbafe82cd0dae68d1ba3607f5ecb}{}\label{classreal__time__tools_1_1ThreadsafeTimeseries_ab9adfbafe82cd0dae68d1ba3607f5ecb}
+
+\begin{DoxyCompactList}\small\item\em returns boolean indicating whether new elements have been appended since the last time the \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_a07a775400d1b9446bded449ad953a8d9}{tag()} function was called. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_a07a775400d1b9446bded449ad953a8d9}{tag} (const \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_a9364696c534468d7ad927883b16ca981}{Index} \&timeindex)\hypertarget{classreal__time__tools_1_1ThreadsafeTimeseries_a07a775400d1b9446bded449ad953a8d9}{}\label{classreal__time__tools_1_1ThreadsafeTimeseries_a07a775400d1b9446bded449ad953a8d9}
+
+\begin{DoxyCompactList}\small\item\em tags the current timeseries, can later be used to check whether new elements have been added \end{DoxyCompactList}\item 
+virtual void \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_ae0a782bf3b1a483647d5d342a994335c}{append} (const Type \&element)\hypertarget{classreal__time__tools_1_1ThreadsafeTimeseries_ae0a782bf3b1a483647d5d342a994335c}{}\label{classreal__time__tools_1_1ThreadsafeTimeseries_ae0a782bf3b1a483647d5d342a994335c}
+
+\begin{DoxyCompactList}\small\item\em appends a new element to the timeseries, e.\+g. we go from $ X_{1:10} $ to $ X_{1:11} $ (where $ X_{11}=$ element). if the timeseries length is already equal to its max\+\_\+length, then the oldest element is discarded, e.\+g. for a max\+\_\+length = 10 we would go from $ X_{1:10} $ to $ X_{2:11} $. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ std\+::vector$<$ Type $>$ $>$ \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_ac23cd95c9d5f6344e20db8d318f23005}{history\+\_\+elements\+\_\+}\hypertarget{classreal__time__tools_1_1ThreadsafeTimeseries_ac23cd95c9d5f6344e20db8d318f23005}{}\label{classreal__time__tools_1_1ThreadsafeTimeseries_ac23cd95c9d5f6344e20db8d318f23005}
+
+\begin{DoxyCompactList}\small\item\em History of the values. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ std\+::vector$<$ \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_a41e36f99889a580ce56491e573fa77b0}{Timestamp} $>$ $>$ \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_a7f90089325fee66a71a413e68f8ab02c}{history\+\_\+timestamps\+\_\+}\hypertarget{classreal__time__tools_1_1ThreadsafeTimeseries_a7f90089325fee66a71a413e68f8ab02c}{}\label{classreal__time__tools_1_1ThreadsafeTimeseries_a7f90089325fee66a71a413e68f8ab02c}
+
+\begin{DoxyCompactList}\small\item\em History of the headers. \end{DoxyCompactList}\item 
+\hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_a9364696c534468d7ad927883b16ca981}{Index} {\bfseries start\+\_\+timeindex\+\_\+}\hypertarget{classreal__time__tools_1_1ThreadsafeTimeseries_aa05382a6a6288769cade6f02a25d5d11}{}\label{classreal__time__tools_1_1ThreadsafeTimeseries_aa05382a6a6288769cade6f02a25d5d11}
+
+\item 
+\hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_a9364696c534468d7ad927883b16ca981}{Index} \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_a07285b5905c1b4c73830a4f69dbd306b}{oldest\+\_\+timeindex\+\_\+}\hypertarget{classreal__time__tools_1_1ThreadsafeTimeseries_a07285b5905c1b4c73830a4f69dbd306b}{}\label{classreal__time__tools_1_1ThreadsafeTimeseries_a07285b5905c1b4c73830a4f69dbd306b}
+
+\begin{DoxyCompactList}\small\item\em Oldest time index. \end{DoxyCompactList}\item 
+\hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_a9364696c534468d7ad927883b16ca981}{Index} \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_a7fd574dac314ee5d72ffdb5d578c13ac}{newest\+\_\+timeindex\+\_\+}\hypertarget{classreal__time__tools_1_1ThreadsafeTimeseries_a7fd574dac314ee5d72ffdb5d578c13ac}{}\label{classreal__time__tools_1_1ThreadsafeTimeseries_a7fd574dac314ee5d72ffdb5d578c13ac}
+
+\begin{DoxyCompactList}\small\item\em Newest time index. \end{DoxyCompactList}\item 
+\hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_a9364696c534468d7ad927883b16ca981}{Index} \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_a8ccddbf7eda7ac6ac257eaef39d9cbc4}{tagged\+\_\+timeindex\+\_\+}\hypertarget{classreal__time__tools_1_1ThreadsafeTimeseries_a8ccddbf7eda7ac6ac257eaef39d9cbc4}{}\label{classreal__time__tools_1_1ThreadsafeTimeseries_a8ccddbf7eda7ac6ac257eaef39d9cbc4}
+
+\begin{DoxyCompactList}\small\item\em Tagged time index. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ std\+::condition\+\_\+variable $>$ \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_a46423f0837bcde91a274d49e9d8a32ee}{condition\+\_\+}\hypertarget{classreal__time__tools_1_1ThreadsafeTimeseries_a46423f0837bcde91a274d49e9d8a32ee}{}\label{classreal__time__tools_1_1ThreadsafeTimeseries_a46423f0837bcde91a274d49e9d8a32ee}
+
+\begin{DoxyCompactList}\small\item\em A condition variable that protect the data during copy and reading. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ std\+::mutex $>$ \hyperlink{classreal__time__tools_1_1ThreadsafeTimeseries_a755bd4c399df29f2f9b9d2ed748dfae5}{mutex\+\_\+}\hypertarget{classreal__time__tools_1_1ThreadsafeTimeseries_a755bd4c399df29f2f9b9d2ed748dfae5}{}\label{classreal__time__tools_1_1ThreadsafeTimeseries_a755bd4c399df29f2f9b9d2ed748dfae5}
+
+\begin{DoxyCompactList}\small\item\em A mutex variable that protect the data during copy and reading. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Type = int$>$\\*
+class real\+\_\+time\+\_\+tools\+::\+Threadsafe\+Timeseries$<$ Type $>$}
+
+implements a timeseries $ X_{{oldest}:{newest}} $ which can safely be accessed from multiple threads. 
+
+this object has the following properties\+:
+\begin{DoxyItemize}
+\item an oldest timeindex $ oldest$,
+\item a newest timeindex $ newest $,
+\item a value $ X_i $ for each $ i \in \{oldest, oldest + 1 , ..., newest\} $,
+\item a length $length$
+\item and a maximum length $maxlength$ 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\index{real\+\_\+time\+\_\+tools\+::\+Threadsafe\+Timeseries@{real\+\_\+time\+\_\+tools\+::\+Threadsafe\+Timeseries}!Threadsafe\+Timeseries@{Threadsafe\+Timeseries}}
+\index{Threadsafe\+Timeseries@{Threadsafe\+Timeseries}!real\+\_\+time\+\_\+tools\+::\+Threadsafe\+Timeseries@{real\+\_\+time\+\_\+tools\+::\+Threadsafe\+Timeseries}}
+\subsubsection[{\texorpdfstring{Threadsafe\+Timeseries(size\+\_\+t max\+\_\+length, Index start\+\_\+timeindex=0)}{ThreadsafeTimeseries(size_t max_length, Index start_timeindex=0)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Type $>$ {\bf real\+\_\+time\+\_\+tools\+::\+Threadsafe\+Timeseries}$<$ Type $>$\+::{\bf Threadsafe\+Timeseries} (
+\begin{DoxyParamCaption}
+\item[{size\+\_\+t}]{max\+\_\+length, }
+\item[{{\bf Index}}]{start\+\_\+timeindex = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\hypertarget{classreal__time__tools_1_1ThreadsafeTimeseries_a06769598feb483bda198edb9c88c8de4}{}\label{classreal__time__tools_1_1ThreadsafeTimeseries_a06769598feb483bda198edb9c88c8de4}
+
+
+initializes to an empty timeseries with the given $ maxlength $. when the first element will be inserted, it will have index start\+\_\+timeindex. 
+
+this means that this timeseries contains no elements yet, hence $ newest $ and $ oldest $ are not defined after construction, there exist no elements and $length$ is zero 
+
+\subsection{Member Function Documentation}
+\index{real\+\_\+time\+\_\+tools\+::\+Threadsafe\+Timeseries@{real\+\_\+time\+\_\+tools\+::\+Threadsafe\+Timeseries}!max\+\_\+length@{max\+\_\+length}}
+\index{max\+\_\+length@{max\+\_\+length}!real\+\_\+time\+\_\+tools\+::\+Threadsafe\+Timeseries@{real\+\_\+time\+\_\+tools\+::\+Threadsafe\+Timeseries}}
+\subsubsection[{\texorpdfstring{max\+\_\+length() const }{max_length() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Type $>$ size\+\_\+t {\bf real\+\_\+time\+\_\+tools\+::\+Threadsafe\+Timeseries}$<$ Type $>$\+::max\+\_\+length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classreal__time__tools_1_1ThreadsafeTimeseries_a4d1fd7d17f1c896a81ea62923591dbc4}{}\label{classreal__time__tools_1_1ThreadsafeTimeseries_a4d1fd7d17f1c896a81ea62923591dbc4}
+
+
+returns the maximum length of the time serie. 
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+t 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/real\+\_\+time\+\_\+tools/threadsafe/\hyperlink{threadsafe__timeseries_8hpp}{threadsafe\+\_\+timeseries.\+hpp}\item 
+include/real\+\_\+time\+\_\+tools/threadsafe/\hyperlink{threadsafe__timeseries_8hxx}{threadsafe\+\_\+timeseries.\+hxx}\end{DoxyCompactItemize}

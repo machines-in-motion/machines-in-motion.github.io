@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classreal__time__tools_1_1RealTimeThread" kind="class" language="C++" prot="public">
+    <compoundname>real_time_tools::RealTimeThread</compoundname>
+    <includes refid="thread_8hpp" local="no">thread.hpp</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classreal__time__tools_1_1RealTimeThread_1aa15b5633e76ea6b4c31cd74b3968686a" prot="public" static="no" mutable="no">
+        <type><ref refid="classreal__time__tools_1_1RealTimeThreadParameters" kindref="compound">RealTimeThreadParameters</ref></type>
+        <definition>RealTimeThreadParameters real_time_tools::RealTimeThread::parameters_</definition>
+        <argsstring></argsstring>
+        <name>parameters_</name>
+        <briefdescription>
+<para>Paramter of the real time thread. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/thread.hpp" line="196" column="1" bodyfile="include/real_time_tools/thread.hpp" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classreal__time__tools_1_1RealTimeThread_1aca6224b9cbe75e3a85b281e0de096b64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>real_time_tools::RealTimeThread::RealTimeThread</definition>
+        <argsstring>()</argsstring>
+        <name>RealTimeThread</name>
+        <briefdescription>
+<para>Construct a new ThreadInfo object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/thread.hpp" line="153" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classreal__time__tools_1_1RealTimeThread_1a5d2cba4b8f65bdbf36edc0bcc589e45e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>real_time_tools::RealTimeThread::RealTimeThread</definition>
+        <argsstring>(const real_time_tools::RealTimeThread &amp;other)=delete</argsstring>
+        <name>RealTimeThread</name>
+        <param>
+          <type>const <ref refid="classreal__time__tools_1_1RealTimeThread" kindref="compound">real_time_tools::RealTimeThread</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>We do not allow copies of this object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/thread.hpp" line="158" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classreal__time__tools_1_1RealTimeThread_1a8e94b07c6ff51d50b1861887fbd1f69f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>real_time_tools::RealTimeThread::~RealTimeThread</definition>
+        <argsstring>()</argsstring>
+        <name>~RealTimeThread</name>
+        <briefdescription>
+<para>Destroy the <ref refid="classreal__time__tools_1_1RealTimeThread" kindref="compound">RealTimeThread</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/thread.hpp" line="163" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classreal__time__tools_1_1RealTimeThread_1a232e3955fee6e80c3a7ded68f165414b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int real_time_tools::RealTimeThread::create_realtime_thread</definition>
+        <argsstring>(void *(*thread_function)(void *), void *args=nullptr)</argsstring>
+        <name>create_realtime_thread</name>
+        <param>
+          <type>void *(*)(void *)</type>
+          <declname>thread_function</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>args</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>create_realtime_thread spawns a real time thread if the OS allows it. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">thread_function</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the executing function for the thread. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>arguments to be passed to the thread. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the error code. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/thread.hpp" line="176" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classreal__time__tools_1_1RealTimeThread_1a2f455db9fd80b81e5e69cd22e8529979" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int real_time_tools::RealTimeThread::join</definition>
+        <argsstring>()</argsstring>
+        <name>join</name>
+        <briefdescription>
+<para>join join the real time thread </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the error code. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/thread.hpp" line="184" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classreal__time__tools_1_1RealTimeThread_1a704b245872cc7bc49e01181f09732535" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void real_time_tools::RealTimeThread::block_memory</definition>
+        <argsstring>()</argsstring>
+        <name>block_memory</name>
+        <briefdescription>
+<para>block_memory block the current and futur memory pages. </para>        </briefdescription>
+        <detaileddescription>
+<para>see <ulink url="https://wiki.linuxfoundation.org/realtime/documentation/howto/applications/memory#memory-locking">https://wiki.linuxfoundation.org/realtime/documentation/howto/applications/memory#memory-locking</ulink> for further explanation. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/thread.hpp" line="191" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class allows you to spawn thread. </para>    </briefdescription>
+    <detaileddescription>
+<para>Its parameter are defined above. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="59">
+        <label>real_time_tools::RealTimeThreadParameters</label>
+        <link refid="classreal__time__tools_1_1RealTimeThreadParameters"/>
+      </node>
+      <node id="58">
+        <label>real_time_tools::RealTimeThread</label>
+        <link refid="classreal__time__tools_1_1RealTimeThread"/>
+        <childnode refid="59" relation="usage">
+          <edgelabel>parameters_</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/real_time_tools/thread.hpp" line="148" column="1" bodyfile="include/real_time_tools/thread.hpp" bodystart="147" bodyend="206"/>
+    <listofallmembers>
+      <member refid="classreal__time__tools_1_1RealTimeThread_1a704b245872cc7bc49e01181f09732535" prot="public" virt="non-virtual"><scope>real_time_tools::RealTimeThread</scope><name>block_memory</name></member>
+      <member refid="classreal__time__tools_1_1RealTimeThread_1a232e3955fee6e80c3a7ded68f165414b" prot="public" virt="non-virtual"><scope>real_time_tools::RealTimeThread</scope><name>create_realtime_thread</name></member>
+      <member refid="classreal__time__tools_1_1RealTimeThread_1a2f455db9fd80b81e5e69cd22e8529979" prot="public" virt="non-virtual"><scope>real_time_tools::RealTimeThread</scope><name>join</name></member>
+      <member refid="classreal__time__tools_1_1RealTimeThread_1aa15b5633e76ea6b4c31cd74b3968686a" prot="public" virt="non-virtual"><scope>real_time_tools::RealTimeThread</scope><name>parameters_</name></member>
+      <member refid="classreal__time__tools_1_1RealTimeThread_1aca6224b9cbe75e3a85b281e0de096b64" prot="public" virt="non-virtual"><scope>real_time_tools::RealTimeThread</scope><name>RealTimeThread</name></member>
+      <member refid="classreal__time__tools_1_1RealTimeThread_1a5d2cba4b8f65bdbf36edc0bcc589e45e" prot="public" virt="non-virtual"><scope>real_time_tools::RealTimeThread</scope><name>RealTimeThread</name></member>
+      <member refid="classreal__time__tools_1_1RealTimeThread_1a8e94b07c6ff51d50b1861887fbd1f69f" prot="public" virt="non-virtual"><scope>real_time_tools::RealTimeThread</scope><name>~RealTimeThread</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

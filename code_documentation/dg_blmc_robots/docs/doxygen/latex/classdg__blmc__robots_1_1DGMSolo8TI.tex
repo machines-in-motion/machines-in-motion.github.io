@@ -1,0 +1,176 @@
+\hypertarget{classdg__blmc__robots_1_1DGMSolo8TI}{}\section{dg\+\_\+blmc\+\_\+robots\+:\+:D\+G\+M\+Solo8\+TI Class Reference}
+\label{classdg__blmc__robots_1_1DGMSolo8TI}\index{dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+TI@{dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+TI}}
+
+
+Inheritance diagram for dg\+\_\+blmc\+\_\+robots\+:\+:D\+G\+M\+Solo8\+TI\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classdg__blmc__robots_1_1DGMSolo8TI__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for dg\+\_\+blmc\+\_\+robots\+:\+:D\+G\+M\+Solo8\+TI\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classdg__blmc__robots_1_1DGMSolo8TI__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdg__blmc__robots_1_1DGMSolo8TI_abee90d8f11708199fca29849b559cc81}{D\+G\+M\+Solo8\+TI} ()\hypertarget{classdg__blmc__robots_1_1DGMSolo8TI_abee90d8f11708199fca29849b559cc81}{}\label{classdg__blmc__robots_1_1DGMSolo8TI_abee90d8f11708199fca29849b559cc81}
+
+\begin{DoxyCompactList}\small\item\em Demo\+Single\+Motor is the constructor. \end{DoxyCompactList}\item 
+\hyperlink{classdg__blmc__robots_1_1DGMSolo8TI_adc55a8663b9682a54c50dea30ef66eaf}{$\sim$\+D\+G\+M\+Solo8\+TI} ()\hypertarget{classdg__blmc__robots_1_1DGMSolo8TI_adc55a8663b9682a54c50dea30ef66eaf}{}\label{classdg__blmc__robots_1_1DGMSolo8TI_adc55a8663b9682a54c50dea30ef66eaf}
+
+\begin{DoxyCompactList}\small\item\em $\sim$\+Demo\+Single\+Motor is the destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classdg__blmc__robots_1_1DGMSolo8TI_a2a21728cb1b63fa63242514d09c2e7bf}{initialize\+\_\+hardware\+\_\+communication\+\_\+process} ()
+\begin{DoxyCompactList}\small\item\em initialize\+\_\+hardware\+\_\+communication\+\_\+process is the function that initialize the hardware. \end{DoxyCompactList}\item 
+void \hyperlink{classdg__blmc__robots_1_1DGMSolo8TI_afd126d69bc1d226c2666a4653e306b46}{get\+\_\+sensors\+\_\+to\+\_\+map} (dynamic\+\_\+graph\+::\+Vector\+D\+G\+Map \&map)
+\begin{DoxyCompactList}\small\item\em get\+\_\+sensors\+\_\+to\+\_\+map acquieres the sensors data and feed it to the input/output map \end{DoxyCompactList}\item 
+void \hyperlink{classdg__blmc__robots_1_1DGMSolo8TI_aef367ff385590dce6ca8fd4d8b10e813}{set\+\_\+motor\+\_\+controls\+\_\+from\+\_\+map} (const dynamic\+\_\+graph\+::\+Vector\+D\+G\+Map \&map)
+\begin{DoxyCompactList}\small\item\em set\+\_\+motor\+\_\+controls\+\_\+from\+\_\+map reads the input map that contains the controls and send these controls to the hardware. \end{DoxyCompactList}\item 
+bool \hyperlink{classdg__blmc__robots_1_1DGMSolo8TI_ab862135f110f2b497931892f6abbb879}{calibrate\+\_\+joint\+\_\+position\+\_\+callback} (dg\+\_\+blmc\+\_\+robots\+::\+Joint\+Calibration\+::\+Request \&req, dg\+\_\+blmc\+\_\+robots\+::\+Joint\+Calibration\+::\+Response \&res)
+\begin{DoxyCompactList}\small\item\em Handle the calibrate\+\_\+joint callback. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classdg__blmc__robots_1_1DGMSolo8TI_a9b4b07438fdce74f3875576ad8b38b9b}{calibrate\+\_\+joint\+\_\+position} (const blmc\+\_\+robots\+::\+Vector8d \&zero\+\_\+to\+\_\+index\+\_\+angle)
+\begin{DoxyCompactList}\small\item\em Calibrate the robot joint position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+blmc\+\_\+robots\+::\+Solo8\+TI \hyperlink{classdg__blmc__robots_1_1DGMSolo8TI_ae1fd04476b371df57db40d6a97783731}{solo\+\_\+}
+\begin{DoxyCompactList}\small\item\em Entries for the real hardware. \end{DoxyCompactList}\item 
+blmc\+\_\+robots\+::\+Vector8d \hyperlink{classdg__blmc__robots_1_1DGMSolo8TI_accfae6534d5201f28278eeba0febb22e}{ctrl\+\_\+joint\+\_\+torques\+\_\+}
+\begin{DoxyCompactList}\small\item\em ctrl\+\_\+joint\+\_\+torques\+\_\+ the joint torques to be sent. \end{DoxyCompactList}\item 
+bool \hyperlink{classdg__blmc__robots_1_1DGMSolo8TI_a2f99efb27e8260c0f900a96e67e810db}{was\+\_\+in\+\_\+safety\+\_\+mode\+\_\+}\hypertarget{classdg__blmc__robots_1_1DGMSolo8TI_a2f99efb27e8260c0f900a96e67e810db}{}\label{classdg__blmc__robots_1_1DGMSolo8TI_a2f99efb27e8260c0f900a96e67e810db}
+
+\begin{DoxyCompactList}\small\item\em Check if we entered once in the safety mode and stay there if so. \end{DoxyCompactList}\item 
+blmc\+\_\+robots\+::\+Vector8d \hyperlink{classdg__blmc__robots_1_1DGMSolo8TI_a05609f544243050ecac91ec55c9d7066}{zero\+\_\+to\+\_\+index\+\_\+angle\+\_\+from\+\_\+file\+\_\+}
+\begin{DoxyCompactList}\small\item\em These are the calibration value extracted from the paramters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+TI@{dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+TI}!calibrate\+\_\+joint\+\_\+position@{calibrate\+\_\+joint\+\_\+position}}
+\index{calibrate\+\_\+joint\+\_\+position@{calibrate\+\_\+joint\+\_\+position}!dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+TI@{dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+TI}}
+\subsubsection[{\texorpdfstring{calibrate\+\_\+joint\+\_\+position(const blmc\+\_\+robots\+::\+Vector8d \&zero\+\_\+to\+\_\+index\+\_\+angle)}{calibrate_joint_position(const blmc_robots::Vector8d &zero_to_index_angle)}}]{\setlength{\rightskip}{0pt plus 5cm}void dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+T\+I\+::calibrate\+\_\+joint\+\_\+position (
+\begin{DoxyParamCaption}
+\item[{const blmc\+\_\+robots\+::\+Vector8d \&}]{zero\+\_\+to\+\_\+index\+\_\+angle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classdg__blmc__robots_1_1DGMSolo8TI_a9b4b07438fdce74f3875576ad8b38b9b}{}\label{classdg__blmc__robots_1_1DGMSolo8TI_a9b4b07438fdce74f3875576ad8b38b9b}
+
+
+Calibrate the robot joint position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em zero\+\_\+to\+\_\+index\+\_\+angle} & is the angle between the theoretical zero and the next positive angle. \\
+\hline
+\end{DoxyParams}
+\index{dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+TI@{dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+TI}!calibrate\+\_\+joint\+\_\+position\+\_\+callback@{calibrate\+\_\+joint\+\_\+position\+\_\+callback}}
+\index{calibrate\+\_\+joint\+\_\+position\+\_\+callback@{calibrate\+\_\+joint\+\_\+position\+\_\+callback}!dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+TI@{dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+TI}}
+\subsubsection[{\texorpdfstring{calibrate\+\_\+joint\+\_\+position\+\_\+callback(dg\+\_\+blmc\+\_\+robots\+::\+Joint\+Calibration\+::\+Request \&req, dg\+\_\+blmc\+\_\+robots\+::\+Joint\+Calibration\+::\+Response \&res)}{calibrate_joint_position_callback(dg_blmc_robots::JointCalibration::Request &req, dg_blmc_robots::JointCalibration::Response &res)}}]{\setlength{\rightskip}{0pt plus 5cm}bool dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+T\+I\+::calibrate\+\_\+joint\+\_\+position\+\_\+callback (
+\begin{DoxyParamCaption}
+\item[{dg\+\_\+blmc\+\_\+robots\+::\+Joint\+Calibration\+::\+Request \&}]{req, }
+\item[{dg\+\_\+blmc\+\_\+robots\+::\+Joint\+Calibration\+::\+Response \&}]{res}
+\end{DoxyParamCaption}
+)}\hypertarget{classdg__blmc__robots_1_1DGMSolo8TI_ab862135f110f2b497931892f6abbb879}{}\label{classdg__blmc__robots_1_1DGMSolo8TI_ab862135f110f2b497931892f6abbb879}
+
+
+Handle the calibrate\+\_\+joint callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & R\+OS request. \\
+\hline
+{\em res} & R\+OS response. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if calibration was successful, false otherwise. 
+\end{DoxyReturn}
+\index{dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+TI@{dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+TI}!get\+\_\+sensors\+\_\+to\+\_\+map@{get\+\_\+sensors\+\_\+to\+\_\+map}}
+\index{get\+\_\+sensors\+\_\+to\+\_\+map@{get\+\_\+sensors\+\_\+to\+\_\+map}!dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+TI@{dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+TI}}
+\subsubsection[{\texorpdfstring{get\+\_\+sensors\+\_\+to\+\_\+map(dynamic\+\_\+graph\+::\+Vector\+D\+G\+Map \&map)}{get_sensors_to_map(dynamic_graph::VectorDGMap &map)}}]{\setlength{\rightskip}{0pt plus 5cm}void dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+T\+I\+::get\+\_\+sensors\+\_\+to\+\_\+map (
+\begin{DoxyParamCaption}
+\item[{dynamic\+\_\+graph\+::\+Vector\+D\+G\+Map \&}]{map}
+\end{DoxyParamCaption}
+)}\hypertarget{classdg__blmc__robots_1_1DGMSolo8TI_afd126d69bc1d226c2666a4653e306b46}{}\label{classdg__blmc__robots_1_1DGMSolo8TI_afd126d69bc1d226c2666a4653e306b46}
+
+
+get\+\_\+sensors\+\_\+to\+\_\+map acquieres the sensors data and feed it to the input/output map 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em } & \\
+\hline
+\end{DoxyParams}
+Joint data
+
+Additional data
+
+Robot status\index{dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+TI@{dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+TI}!initialize\+\_\+hardware\+\_\+communication\+\_\+process@{initialize\+\_\+hardware\+\_\+communication\+\_\+process}}
+\index{initialize\+\_\+hardware\+\_\+communication\+\_\+process@{initialize\+\_\+hardware\+\_\+communication\+\_\+process}!dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+TI@{dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+TI}}
+\subsubsection[{\texorpdfstring{initialize\+\_\+hardware\+\_\+communication\+\_\+process()}{initialize_hardware_communication_process()}}]{\setlength{\rightskip}{0pt plus 5cm}void dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+T\+I\+::initialize\+\_\+hardware\+\_\+communication\+\_\+process (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classdg__blmc__robots_1_1DGMSolo8TI_a2a21728cb1b63fa63242514d09c2e7bf}{}\label{classdg__blmc__robots_1_1DGMSolo8TI_a2a21728cb1b63fa63242514d09c2e7bf}
+
+
+initialize\+\_\+hardware\+\_\+communication\+\_\+process is the function that initialize the hardware. 
+
+Load the calibration parameters
+
+initialize the user commands \index{dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+TI@{dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+TI}!set\+\_\+motor\+\_\+controls\+\_\+from\+\_\+map@{set\+\_\+motor\+\_\+controls\+\_\+from\+\_\+map}}
+\index{set\+\_\+motor\+\_\+controls\+\_\+from\+\_\+map@{set\+\_\+motor\+\_\+controls\+\_\+from\+\_\+map}!dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+TI@{dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+TI}}
+\subsubsection[{\texorpdfstring{set\+\_\+motor\+\_\+controls\+\_\+from\+\_\+map(const dynamic\+\_\+graph\+::\+Vector\+D\+G\+Map \&map)}{set_motor_controls_from_map(const dynamic_graph::VectorDGMap &map)}}]{\setlength{\rightskip}{0pt plus 5cm}void dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+T\+I\+::set\+\_\+motor\+\_\+controls\+\_\+from\+\_\+map (
+\begin{DoxyParamCaption}
+\item[{const dynamic\+\_\+graph\+::\+Vector\+D\+G\+Map \&}]{map}
+\end{DoxyParamCaption}
+)}\hypertarget{classdg__blmc__robots_1_1DGMSolo8TI_aef367ff385590dce6ca8fd4d8b10e813}{}\label{classdg__blmc__robots_1_1DGMSolo8TI_aef367ff385590dce6ca8fd4d8b10e813}
+
+
+set\+\_\+motor\+\_\+controls\+\_\+from\+\_\+map reads the input map that contains the controls and send these controls to the hardware. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\index{dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+TI@{dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+TI}!ctrl\+\_\+joint\+\_\+torques\+\_\+@{ctrl\+\_\+joint\+\_\+torques\+\_\+}}
+\index{ctrl\+\_\+joint\+\_\+torques\+\_\+@{ctrl\+\_\+joint\+\_\+torques\+\_\+}!dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+TI@{dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+TI}}
+\subsubsection[{\texorpdfstring{ctrl\+\_\+joint\+\_\+torques\+\_\+}{ctrl_joint_torques_}}]{\setlength{\rightskip}{0pt plus 5cm}blmc\+\_\+robots\+::\+Vector8d dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+T\+I\+::ctrl\+\_\+joint\+\_\+torques\+\_\+\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classdg__blmc__robots_1_1DGMSolo8TI_accfae6534d5201f28278eeba0febb22e}{}\label{classdg__blmc__robots_1_1DGMSolo8TI_accfae6534d5201f28278eeba0febb22e}
+
+
+ctrl\+\_\+joint\+\_\+torques\+\_\+ the joint torques to be sent. 
+
+Used in this class to perform a local copy of the control. This is need in order to send this copy to the blmc\+\_\+robots\+::\+Solo class \index{dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+TI@{dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+TI}!solo\+\_\+@{solo\+\_\+}}
+\index{solo\+\_\+@{solo\+\_\+}!dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+TI@{dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+TI}}
+\subsubsection[{\texorpdfstring{solo\+\_\+}{solo_}}]{\setlength{\rightskip}{0pt plus 5cm}blmc\+\_\+robots\+::\+Solo8\+TI dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+T\+I\+::solo\+\_\+\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classdg__blmc__robots_1_1DGMSolo8TI_ae1fd04476b371df57db40d6a97783731}{}\label{classdg__blmc__robots_1_1DGMSolo8TI_ae1fd04476b371df57db40d6a97783731}
+
+
+Entries for the real hardware. 
+
+test\+\_\+bench\+\_\+ the real test bench hardware drivers. \index{dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+TI@{dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+TI}!zero\+\_\+to\+\_\+index\+\_\+angle\+\_\+from\+\_\+file\+\_\+@{zero\+\_\+to\+\_\+index\+\_\+angle\+\_\+from\+\_\+file\+\_\+}}
+\index{zero\+\_\+to\+\_\+index\+\_\+angle\+\_\+from\+\_\+file\+\_\+@{zero\+\_\+to\+\_\+index\+\_\+angle\+\_\+from\+\_\+file\+\_\+}!dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+TI@{dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+TI}}
+\subsubsection[{\texorpdfstring{zero\+\_\+to\+\_\+index\+\_\+angle\+\_\+from\+\_\+file\+\_\+}{zero_to_index_angle_from_file_}}]{\setlength{\rightskip}{0pt plus 5cm}blmc\+\_\+robots\+::\+Vector8d dg\+\_\+blmc\+\_\+robots\+::\+D\+G\+M\+Solo8\+T\+I\+::zero\+\_\+to\+\_\+index\+\_\+angle\+\_\+from\+\_\+file\+\_\+\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classdg__blmc__robots_1_1DGMSolo8TI_a05609f544243050ecac91ec55c9d7066}{}\label{classdg__blmc__robots_1_1DGMSolo8TI_a05609f544243050ecac91ec55c9d7066}
+
+
+These are the calibration value extracted from the paramters. 
+
+They represent the distance between the theorical zero joint angle and the next jont index. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/dg\+\_\+blmc\+\_\+robots/dgm\+\_\+solo8ti.\+hpp\item 
+src/dgm\+\_\+solo8ti.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="quadruped_8py" kind="file" language="Python">
+    <compoundname>quadruped.py</compoundname>
+    <innerclass refid="classquadruped_1_1QuadrupedRobot" prot="public">quadruped::QuadrupedRobot</innerclass>
+    <innernamespace refid="namespacequadruped">quadruped</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">#///////////////////////////////////////////////////////////////////////////////</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">#//<sp/>BSD<sp/>3-Clause<sp/>License</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">#//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">#//<sp/>Copyright<sp/>(C)<sp/>2018-2019,<sp/>New<sp/>York<sp/>University<sp/>,<sp/>Max<sp/>Planck<sp/>Gesellschaft</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">#//<sp/>Copyright<sp/>note<sp/>valid<sp/>unless<sp/>otherwise<sp/>stated<sp/>in<sp/>individual<sp/>files.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">#//<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">#///////////////////////////////////////////////////////////////////////////////</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">#<sp/>brief<sp/>Example<sp/>for<sp/>using<sp/>the<sp/>PinBulletWrapper<sp/>for<sp/>a<sp/>quadruped<sp/>robot.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>__future__<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>print_function</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>os</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>rospkg</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>numpy<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>np</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>time</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>robot_properties_solo</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>robot_properties_solo.config<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>SoloConfig</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>pybullet<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>p</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>pinocchio<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>se3</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>pinocchio.utils<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>zero</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>py_pinocchio_bullet.wrapper<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>PinBulletWrapper</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="classquadruped_1_1QuadrupedRobot" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classquadruped_1_1QuadrupedRobot" kindref="compound">QuadrupedRobot</ref>(PinBulletWrapper):</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">__init__(self,<sp/>physicsClient=None):</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>physicsClient<sp/></highlight><highlight class="keywordflow">is</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classquadruped_1_1QuadrupedRobot_1aa887aeaac1b638e055e79f18e03a045d" kindref="member">physicsClient</ref><sp/>=<sp/>p.connect(p.DIRECT)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p.setGravity(0,0,<sp/>-9.81)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p.setPhysicsEngineParameter(fixedTimeStep=1.0/1000.0,<sp/>numSubSteps=1)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Load<sp/>the<sp/>plain.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>plain_urdf<sp/>=<sp/>(rospkg.RosPack().get_path(</highlight><highlight class="stringliteral">&quot;robot_properties_solo&quot;</highlight><highlight class="normal">)<sp/>+</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;/urdf/plane_with_restitution.urdf&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classquadruped_1_1QuadrupedRobot_1a49f5fd9cb0672ae09162c99646ac5445" kindref="member">planeId</ref><sp/>=<sp/>p.loadURDF(plain_urdf)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Load<sp/>the<sp/>robot</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>robotStartPos<sp/>=<sp/>[0.,0,0.40]</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>robotStartOrientation<sp/>=<sp/>p.getQuaternionFromEuler([0,0,0])</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classquadruped_1_1QuadrupedRobot_1a467b697aeca43fd6864e6cd022046aa6" kindref="member">urdf_path</ref><sp/>=<sp/>SoloConfig.urdf_path</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classquadruped_1_1QuadrupedRobot_1a105f6c0b8ffc1d09f9131934608a20dd" kindref="member">robotId</ref><sp/>=<sp/>p.loadURDF(self.<ref refid="classquadruped_1_1QuadrupedRobot_1a467b697aeca43fd6864e6cd022046aa6" kindref="member">urdf_path</ref>,<sp/>robotStartPos,</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>robotStartOrientation,<sp/>flags=p.URDF_USE_INERTIA_FROM_FILE,</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>useFixedBase=</highlight><highlight class="keyword">False</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p.getBasePositionAndOrientation(self.<ref refid="classquadruped_1_1QuadrupedRobot_1a105f6c0b8ffc1d09f9131934608a20dd" kindref="member">robotId</ref>)</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Create<sp/>the<sp/>robot<sp/>wrapper<sp/>in<sp/>pinocchio.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>package_dirs<sp/>=<sp/>[os.path.dirname(os.path.dirname(self.<ref refid="classquadruped_1_1QuadrupedRobot_1a467b697aeca43fd6864e6cd022046aa6" kindref="member">urdf_path</ref>))<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;/urdf&apos;</highlight><highlight class="normal">]</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classquadruped_1_1QuadrupedRobot_1a5a3e8b0ed6f8b333adb8c9416b394d11" kindref="member">pin_robot</ref><sp/>=<sp/>SoloConfig.buildRobotWrapper()</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Query<sp/>all<sp/>the<sp/>joints.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>num_joints<sp/>=<sp/>p.getNumJoints(self.<ref refid="classquadruped_1_1QuadrupedRobot_1a105f6c0b8ffc1d09f9131934608a20dd" kindref="member">robotId</ref>)</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>ji<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>range(num_joints):</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p.changeDynamics(self.<ref refid="classquadruped_1_1QuadrupedRobot_1a105f6c0b8ffc1d09f9131934608a20dd" kindref="member">robotId</ref>,<sp/>ji,<sp/>linearDamping=.04,</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>angularDamping=0.04,<sp/>restitution=0.0,<sp/>lateralFriction=0.5)</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classquadruped_1_1QuadrupedRobot_1ad5320c45135714963a6f8cd85f8eaef7" kindref="member">base_link_name</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;base_link&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classquadruped_1_1QuadrupedRobot_1ac5b376bb29520b25119944ee667987f2" kindref="member">joint_names</ref><sp/>=<sp/>[</highlight><highlight class="stringliteral">&apos;FL_HFE&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;FL_KFE&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;FR_HFE&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;FR_KFE&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;HL_HFE&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;HL_KFE&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;HR_HFE&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;HR_KFE&apos;</highlight><highlight class="normal">]</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>controlled_joints<sp/>=<sp/>[</highlight><highlight class="stringliteral">&apos;FL_HFE&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;FL_KFE&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;FR_HFE&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;FR_KFE&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;HL_HFE&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;HL_KFE&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;HR_HFE&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;HR_KFE&apos;</highlight><highlight class="normal">]</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Creates<sp/>the<sp/>wrapper<sp/>by<sp/>calling<sp/>the<sp/>super.__init__.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>super(QuadrupedRobot,self).__init__(self.<ref refid="classquadruped_1_1QuadrupedRobot_1a105f6c0b8ffc1d09f9131934608a20dd" kindref="member">robotId</ref>,<sp/>self.<ref refid="classquadruped_1_1QuadrupedRobot_1a5a3e8b0ed6f8b333adb8c9416b394d11" kindref="member">pin_robot</ref>,</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>controlled_joints,</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[</highlight><highlight class="stringliteral">&apos;FL_ANKLE&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;FR_ANKLE&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;HL_ANKLE&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;HR_ANKLE&apos;</highlight><highlight class="normal">]</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;__main__&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>np.set_printoptions(precision=2,<sp/>suppress=</highlight><highlight class="keyword">True</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Setup<sp/>pybullet<sp/>for<sp/>the<sp/>quadruped<sp/>and<sp/>a<sp/>wrapper<sp/>to<sp/>pinocchio.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>quad<sp/>=<sp/><ref refid="classquadruped_1_1QuadrupedRobot" kindref="compound">QuadrupedRobot</ref>()</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Get<sp/>the<sp/>current<sp/>state<sp/>and<sp/>modify<sp/>the<sp/>joints<sp/>to<sp/>have<sp/>the<sp/>legs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>bend<sp/>inwards.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>q,<sp/>dq<sp/>=<sp/>quad.get_state()</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>q[7]<sp/>=<sp/>q[9]<sp/>=<sp/>0.8</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>q[11]<sp/>=<sp/>q[13]<sp/>=<sp/>-0.8</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>q[8]<sp/>=<sp/>q[10]<sp/>=<sp/>-1.6</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>q[12]<sp/>=<sp/>q[14]<sp/>=<sp/>1.6</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Take<sp/>the<sp/>initial<sp/>joint<sp/>states<sp/>as<sp/>desired<sp/>state.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>q_des<sp/>=<sp/>q[7:].copy()</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Update<sp/>the<sp/>simulation<sp/>state<sp/>to<sp/>the<sp/>new<sp/>initial<sp/>configuration.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>quad.reset_state(q,<sp/>dq)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Run<sp/>the<sp/>simulator<sp/>for<sp/>2000<sp/>steps<sp/>=<sp/>2<sp/>seconds.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>i<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>range(2000):</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Get<sp/>the<sp/>current<sp/>state<sp/>(position<sp/>and<sp/>velocity)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>q,<sp/>dq<sp/>=<sp/>quad.get_state()</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>active_contact_frames,<sp/>contact_forces<sp/>=<sp/>quad.get_force()</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Alternative,<sp/>if<sp/>you<sp/>want<sp/>to<sp/>use<sp/>properties<sp/>from<sp/>the<sp/>pinocchio<sp/>robot</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>like<sp/>the<sp/>jacobian<sp/>or<sp/>similar,<sp/>you<sp/>can<sp/>also<sp/>get<sp/>the<sp/>state<sp/>and<sp/>update</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>the<sp/>pinocchio<sp/>internals<sp/>with<sp/>one<sp/>call:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/>q,<sp/>dq<sp/>=<sp/>quad.get_state_update_pinocchio()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>i<sp/>%<sp/>100<sp/>==<sp/>0:</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&apos;Forces:&apos;</highlight><highlight class="normal">,<sp/>active_contact_frames,<sp/>contact_forces)</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Compute<sp/>the<sp/>command<sp/>torques<sp/>at<sp/>the<sp/>joints.<sp/>The<sp/>torque</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>vector<sp/>only<sp/>takes<sp/>the<sp/>actuated<sp/>joints<sp/>(excluding<sp/>the<sp/>base)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tau<sp/>=<sp/>5.<sp/>*<sp/>(q_des<sp/>-<sp/>q[7:])<sp/>-<sp/>0.1<sp/>*<sp/>dq[6:]</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Send<sp/>the<sp/>commands<sp/>to<sp/>the<sp/>robot.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>quad.send_joint_command(tau)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Step<sp/>the<sp/>simulator<sp/>and<sp/>sleep.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p.stepSimulation()</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>time.sleep(0.001)</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Print<sp/>the<sp/>final<sp/>active<sp/>force<sp/>frames<sp/>and<sp/>the<sp/>forces</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>force_frames,<sp/>forces<sp/>=<sp/>quad.get_force()</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;Active<sp/>force_frames:&quot;</highlight><highlight class="normal">,<sp/>force_frames)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;Corresponding<sp/>forces:&quot;</highlight><highlight class="normal">,<sp/>forces)</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="demo/quadruped.py"/>
+  </compounddef>
+</doxygen>

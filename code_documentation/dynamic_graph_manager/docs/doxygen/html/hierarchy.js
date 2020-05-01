@@ -60,5 +60,8 @@ var hierarchy =
     [ "dynamic_graph::PeriodicCall::SignalToCall", "structdynamic__graph_1_1PeriodicCall_1_1SignalToCall.html", null ],
     [ "dynamic_graph::internal::TransformListenerData", "structdynamic__graph_1_1internal_1_1TransformListenerData.html", null ],
     [ "dynamic_graph::specific::Twist", "classdynamic__graph_1_1specific_1_1Twist.html", null ],
-    [ "dynamic_graph::specific::Vector3", "classdynamic__graph_1_1specific_1_1Vector3.html", null ]
+    [ "dynamic_graph::specific::Vector3", "classdynamic__graph_1_1specific_1_1Vector3.html", null ],
+    [ "InteractiveConsole", null, [
+      [ "ros_nodes.run_command_backup.RosShell", "classros__nodes_1_1run__command__backup_1_1RosShell.html", null ]
+    ] ]
 ];

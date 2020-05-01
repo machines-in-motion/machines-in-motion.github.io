@@ -1,0 +1,43 @@
+\mbox{[}\mbox{]}(url)
+
+\section*{Shared Memory}
+
+\subsection*{what it is}
+
+
+\begin{DoxyItemize}
+\item This library is a convenient wrapper over boost\+:interprocess. It is meant to be trivial to use, and to make interprocess communication between processes trivial
+\item It is meant to be realtime friendly (no dynamic allocation)
+\end{DoxyItemize}
+
+\subsection*{how it works / A\+PI}
+
+An example covering the complete A\+PI is in \href{https://git-amd.tuebingen.mpg.de/amd-clmc/shared_memory/tree/master/src/examples}{\tt src/examples} . You may run the related executables.
+
+\subsection*{how to run the unit tests}
+
+
+\begin{DoxyCode}
+1 catkin\_make install run\_tests
+\end{DoxyCode}
+
+
+This will {\itshape not} work (\textquotesingle{}install\textquotesingle{} is required) \+:
+
+
+\begin{DoxyCode}
+1 catkin\_make run\_tests
+\end{DoxyCode}
+
+
+\subsection*{Limitations}
+
+
+\begin{DoxyItemize}
+\item There must be in the code a \char`\"{}manual\char`\"{} cleanup of the memory. See for example\+: \href{https://git-amd.tuebingen.mpg.de/amd-clmc/shared_memory/blob/master/src/examples/set_data.cpp#L16}{\tt set\+\_\+data}
+\item Arrays, map and vectors are expected to be of a predefined fixed size. Even when using the \textquotesingle{}get\textquotesingle{} methods, they are expected to have been declared with the correct size (and with the correct set of keys for maps)
+\end{DoxyItemize}
+
+\subsection*{Removing shared memory file}
+
+On linux, the shared memory mappings are created under {\ttfamily /dev/shm}. If necessary (e.\+g. if a program was creating the shared memory with the wrong permissions), these files can be delted manually. 
