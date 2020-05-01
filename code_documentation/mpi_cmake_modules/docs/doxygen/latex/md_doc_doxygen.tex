@@ -1,0 +1,54 @@
+\subsection*{Introduction}
+
+In the machines-\/in-\/motion group we use doxygen in order to build all documentations from C/\+C++ and Python code. The main idea is that we can have a unifyed way to generate the documentation.
+
+\subsection*{Usage}
+
+In order to use this macro one obviously needs to depend on this package through a {\ttfamily find\+\_\+package} or using {\ttfamily catkin} components. Once the dependency is found the following macro needs to be added to the C\+Makelists.\+txt\+: \begin{DoxyVerb}build_doxygen_documentation()
+\end{DoxyVerb}
+
+
+This macro is idle by default. To activate it one need to pass the following C\+Make argument\+: \begin{DoxyVerb}catkin build --cmake-args -DBUILD_DOCUMENTATION=ON
+\end{DoxyVerb}
+
+
+The macro will generate a specific target using the name of the project for unicity. The docuementation is located in\+: \begin{DoxyVerb}workspace/devel/share/<project name>/doc/html/
+\end{DoxyVerb}
+
+
+In order to visual the built documentation with firefox please run\+: \begin{DoxyVerb}firefox workspace/devel/share/<project name>/doc/html/index.html
+\end{DoxyVerb}
+
+
+\subsection*{Writting a documentation}
+
+In order to write a decent docuementation one need to make sure that Doxygen do not output warnings. A warning from D\+Oxygen proves that a code item is not documentated. See the \href{https://machines-in-motion.github.io/code_documentation/ci_example_cpp/coding_guidelines_1.html}{\tt C++ coding guidelines} , the \href{https://machines-in-motion.github.io/code_documentation/ci_example_python/coding_guidelines_1.html}{\tt Python coding guidelines} and the \href{https://machines-in-motion.github.io/code_documentation/ci_example_cpp/coding_guidelines_0.html}{\tt General coding guidelines} For more information on how our code style and the good code practice.
+
+The documentation of your code is combined with several main items\+:
+
+
+\begin{DoxyItemize}
+\item First, one need to add the docstring of the language.
+\item Second, one need to provide unittests, these usually are good basis for an external user to understand the A\+PI.
+\item Third, one need to provide demos of the A\+PI defining the usual use case of the code. These code must contain doc-\/strings containing the key word, e.\+g. with C/\+C++\+: \begin{DoxyVerb}```C++
+/** 
+  * \@example <file name> This example provide an exmaple on how to use ...
+  * Remarque: remove the `\` before the `@`.
+  */
+```
+\end{DoxyVerb}
+
+\item Finally whenever you feel like documenting more extensively something and adding graph, image, extensive text explanatin, link, etc, it is way more convenitent to use markdown. Therefore one need to provide a {\ttfamily doc/} folder containing the additionnal documentation.
+\end{DoxyItemize}
+
+For more detail on how to use doxygen here is a list of extremely useful links\+:
+\begin{DoxyItemize}
+\item \href{http://doxygen.nl/manual/commands.html}{\tt List of doxygen commands}
+\item \href{http://doxygen.nl/manual/markdown.html#markdown_dox}{\tt Doxygen markdown support}
+\end{DoxyItemize}
+
+\subsection*{Implementation details}
+
+The {\ttfamily Doxyfile.\+in} place in this repository\textquotesingle{}s {\ttfamily resources} folder is reponsible for the parsing paramters and shape of the documentation. The idea here is that upon build Doxygen will go recursively through all the current project files looking for the C/\+C++/\+Python/\+Markdown files and generate the documentation automatically.
+
+The subtility about python is that we use the \href{https://github.com/Feneric/doxypypy}{\tt doxypypy} package in order to convert the Google docstring in the python code into Doxygen recognizable docstrings. So one need to install this dependency using pip for example. 

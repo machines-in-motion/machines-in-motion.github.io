@@ -1,0 +1,30 @@
+\subsection*{Introduction}
+
+This C\+Make module is based on the \href{https://linux.die.net/man/1/pkg-config}{\tt pkg-\/config} module. And a compatibility with the \href{http://wiki.ros.org/catkin/CMakeLists.txt}{\tt Catkin C\+Make module}.
+
+This tool is done for finding non-\/catkin depencies using a cross platform and efficient tool. P\+K\+G-\/config is based on {\ttfamily .pc} files containing the dependencies informations. For P\+K\+G-\/config to work one need to properly setup the {\ttfamily P\+K\+G\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+P\+A\+TH} to the path of the {\ttfamily .pc} files locations. Typically {\ttfamily lib/pkgconfig} in the install folders.
+
+\subsection*{Usage}
+
+\subsubsection*{Basic usage}
+
+The basic usage of this is like the following\+: \begin{DoxyVerb}# Look for the dependency
+ADD_OPTIONAL_DEPENDENCY(<dependency name 1>)
+ADD_REQUIRED_DEPENDENCY(<dependency name 2>)
+
+# Use the dependency on a CMake target:
+PKG_CONFIG_USE_DEPENDENCY(target <dependency name 1>)
+PKG_CONFIG_USE_DEPENDENCY(target <dependency name 2>)
+\end{DoxyVerb}
+
+
+\subsubsection*{Usage in combination with catkin}
+
+The usage inside a catkin package allows us to skip the second part\+: \begin{DoxyVerb}# Look for the dependency and feed the catkin variables with the relevant
+# information
+CATKIN_ADD_OPTIONAL_DEPENDENCY(<dependency name 1>)
+CATKIN_ADD_REQUIRED_DEPENDENCY(<dependency name 2>)
+
+# use the dependencies using catkin variables
+TARGET_LINK_LIBRARIES(<target> ${catkin_LIBRARIES})\end{DoxyVerb}
+ 

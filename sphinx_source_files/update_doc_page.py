@@ -17,7 +17,7 @@ def get_ros_install_share_path():
     Use rospack to get the path to the installation folder (supposed sourced)
     """
     ros_pack = rospkg.RosPack()
-    potentially_cloned_package = ["shared_memory", "momentumopt"]
+    potentially_cloned_package = ["mpi_cmake_modules"]
     for package in potentially_cloned_package:
         if package in ros_pack.list():
             return path.dirname(ros_pack.get_path(package))
@@ -33,7 +33,7 @@ def copy_doc_package(package_name, share_path):
     Copy/Replace the documentation of the ros package in this repository.
     """
     share_path = get_ros_install_share_path()
-    local_doc = path.join("code_documentation", package_name)
+    local_doc = path.join("../code_documentation", package_name, "docs")
     local_doc_html = path.join(share_path, package_name, "docs")
 
     if not path.isdir(local_doc_html):
@@ -130,7 +130,9 @@ def update_index_rst(exported_doc_list, exported_code_cov_list):
     for i, item in enumerate(second_column[1:]):
         second_column[i+1] = (
             "`Doxygen " +
-            "<https://machines-in-motion.github.io/code_documentation/" + item +
+            "<" +
+            # "https://machines-in-motion.github.io/" +
+            "code_documentation/" + item +
             "/docs/doxygen/html/index.html>`_")
     second_column_width = len(max(second_column, key=len)) + 2
     #
@@ -138,7 +140,9 @@ def update_index_rst(exported_doc_list, exported_code_cov_list):
     for i, item in enumerate(third_column[1:]):
         third_column[i+1] = (
             "`Sphinx " +
-            "<https://machines-in-motion.github.io/code_documentation/" + item +
+            "<" +
+            # "https://machines-in-motion.github.io/" +
+            "code_documentation/" + item +
             "/docs/sphinx/html/index.html>`_")
     third_column_width = len(max(third_column, key=len)) + 2
     #
@@ -170,7 +174,9 @@ def update_index_rst(exported_doc_list, exported_code_cov_list):
     for i, item in enumerate(second_column[1:]):
         second_column[i+1] = (
             "`gcovr " +
-            "<https://machines-in-motion.github.io/code_coverage/" + item +
+            "<" +
+            # "https://machines-in-motion.github.io/" +
+            "code_coverage/" + item +
             "/index.html>`_")
     second_column_width = len(max(second_column, key=len)) + 2
     #

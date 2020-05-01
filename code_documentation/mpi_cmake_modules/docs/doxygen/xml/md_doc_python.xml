@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="md_doc_python" kind="page">
+    <compoundname>md_doc_python</compoundname>
+    <title>Python</title>
+    <detaileddescription>
+<para><heading level="2">Introduction</heading>
+</para><para>This module is very important as it provide tools to search for the Python libraries and includes depending on the required Python version. Plus some tools to create python bindings using boost python or pybind11.</para><para><heading level="2">Usage</heading>
+</para><para><heading level="3">Search for Python</heading>
+</para><para>The simplest thing is here to find the default Python library: <verbatim>search_for_python()
+</verbatim></para><para>This macros is influenced by <computeroutput>PYTHON_EXECUTABLE</computeroutput> and <computeroutput>PYTHON_LIBRARY</computeroutput> which can be set for Python2 via the command: <verbatim>catkin build --cmake-args -DPYTHON_EXECUTABLE=`which python2` -DPYTHON_LIBRARY=`/usr/lib/x86_64-linux-gnu/libpython2.7.so`
+</verbatim></para><para>or for Python3 via the command <verbatim>catkin build --cmake-args -DPYTHON_EXECUTABLE=`which python3` -DPYTHON_LIBRARY=`/usr/lib/x86_64-linux-gnu/libpython3.5m.so`
+</verbatim></para><para>Please make sure the library exists at the defined place before executing the above commands.</para><para><heading level="3">Search for Numpy</heading>
+</para><para>Numpy includes can be found via the following macro: <verbatim>search_for_numpy()
+</verbatim></para><para>The macro <computeroutput>search_for_python()</computeroutput> must have been called before hand. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

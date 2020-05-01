@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="md_doc_clang_format" kind="page">
+    <compoundname>md_doc_clang_format</compoundname>
+    <title>Clang Format</title>
+    <detaileddescription>
+<para><heading level="2">Introduction</heading>
+</para><para>This package provide some tools in order to format the C/C++ code using clang-format and the <ulink url="https://machines-in-motion.github.io/code_documentation/ci_example_cpp/coding_guidelines_1.html">machines-in-motions</ulink> specific set of rules.</para><para><heading level="2">Executable</heading>
+</para><para>In order to use it one need to source the workspace environment: <verbatim>source workspace/devel/setup.bash
+</verbatim></para><para>And to run the following command: <verbatim>rosrun mpi_cmake_modules clang_format &lt;list of files&gt; &lt;list of folders&gt;
+</verbatim></para><para>&lt;list_of_files&gt; and <itemizedlist>
+</itemizedlist>
+be either relative paths or absolute paths.</para><para>For those not willing to use rosrun the executable is located in <verbatim>mpi_cmake_modules/scripts/clang_format
+</verbatim></para><para>So one can simply get the full path of the executable in order to use it. A cleaner way would be to properly install the executable script.</para><para>The executable will create the list of all files to be formatted by checking all arguments (which order does not matter). And perform the following tests:<itemizedlist>
+<listitem><para>If you provided a file it will keep it if:<itemizedlist>
+<listitem><para>it exists &amp;</para></listitem><listitem><para>it is a source files</para></listitem></itemizedlist>
+</para></listitem><listitem><para>If you provided a folder it will search recursively all the files and perform the above checks.</para></listitem></itemizedlist>
+</para><para>Once the list is created the tool format each selected files.</para><para><heading level="2">CMake macro</heading>
+</para><para>This package also provide a CMake macro allowing you to perform automatically the formatting upon build.</para><para>The macro to add is located in the <computeroutput>mpi_cmake_modules/cmake/clang-format.cmake</computeroutput> and is called <verbatim>format_code()
+</verbatim></para><para>By default it does nothing. In order to activate it you need to add the folowwing CMake argument: <verbatim>catkin build mpi_cmake_modules --cmake-args -DFORMAT_CODE=ON </verbatim> </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

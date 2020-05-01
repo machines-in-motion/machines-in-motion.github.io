@@ -41,6 +41,7 @@ help:
 	# Generate the final layout.
 	@cd $(DOC_BUILD_DIR) && $(SPHINX_BUILD) -M $@ "$(SPHINX_BUILD_IN)" "$(SPHINX_BUILD_OUT)" $(SPHINXOPTS) $(O) $(SPHINX_QUIET) && cd -
 
+	# Export the html website.
 	cp -r $(DOC_BUILD_DIR)/html/* .
 
 # Clean the build
