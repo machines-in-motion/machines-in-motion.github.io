@@ -131,7 +131,7 @@ def update_index_rst(exported_doc_list, exported_code_cov_list):
         second_column[i+1] = (
             "`Doxygen " +
             "<" +
-            # "https://machines-in-motion.github.io/" +
+            "https://machines-in-motion.github.io/" +
             "code_documentation/" + item +
             "/docs/doxygen/html/index.html>`_")
     second_column_width = len(max(second_column, key=len)) + 2
@@ -141,7 +141,7 @@ def update_index_rst(exported_doc_list, exported_code_cov_list):
         third_column[i+1] = (
             "`Sphinx " +
             "<" +
-            # "https://machines-in-motion.github.io/" +
+            "https://machines-in-motion.github.io/" +
             "code_documentation/" + item +
             "/docs/sphinx/html/index.html>`_")
     third_column_width = len(max(third_column, key=len)) + 2
@@ -175,7 +175,7 @@ def update_index_rst(exported_doc_list, exported_code_cov_list):
         second_column[i+1] = (
             "`gcovr " +
             "<" +
-            # "https://machines-in-motion.github.io/" +
+            "https://machines-in-motion.github.io/" +
             "code_coverage/" + item +
             "/index.html>`_")
     second_column_width = len(max(second_column, key=len)) + 2
