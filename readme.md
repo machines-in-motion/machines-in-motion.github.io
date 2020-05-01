@@ -10,3 +10,7 @@ All repositories here are open-sourced packages licensed under the
 `BSD 3-Clause license`. And under the 
 `Copyright (c) 2019-2020, New York University and Max Planck Gesellschaft. All rights reserved.`
 Please see the license.txt
+
+This work is done in collaboration between the
+[Max Planck Institute for Intelligen System]("https://is.tuebingen.mpg.de/")
+and the [New York University]("https://engineering.nyu.edu/")
