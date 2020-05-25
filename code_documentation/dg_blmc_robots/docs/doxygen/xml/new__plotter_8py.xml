@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="new__plotter_8py" kind="file" language="Python">
+    <compoundname>new_plotter.py</compoundname>
+    <innernamespace refid="namespacenew__plotter">new_plotter</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">import</highlight><highlight class="normal"><sp/>numpy<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>np</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>RAI</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>pkg_resources</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>matplotlib</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">#matplotlib.use(&apos;Agg&apos;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>matplotlib<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>pyplot<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>plt</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>sys,<sp/>os</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>numpy<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>math</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>pinocchio<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>se3</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">##############################################################################</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">load_file(name):</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Sensors<sp/>files</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>sensors_filename<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;./data/&apos;</highlight><highlight class="normal"><sp/>+<sp/>name</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>print(sensors_filename)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Set<sp/>up<sp/>views</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#views_data<sp/>=<sp/>{}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#views_data[&apos;SingleView&apos;]<sp/>=<sp/>{0:<sp/>[&apos;data0/y&apos;,<sp/>&apos;data1/z&apos;],<sp/>1:<sp/>[&apos;data1/y&apos;]}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Create<sp/>and<sp/>launch<sp/>session</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>my_session<sp/>=<sp/>Session(sensors_filename)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>my_session.launch()</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">read_data(name):</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;reading_data...&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>sensors_data<sp/>=<sp/>RAI.sensors.SensorsData(</highlight><highlight class="stringliteral">&quot;./data/&quot;</highlight><highlight class="normal"><sp/>+<sp/>name)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;completed<sp/>reading<sp/>data...&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sensors_data</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">hopper_sensors_data(sensors_data):</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>Fx<sp/>=<sp/>np.array(sensors_data.get_streams(</highlight><highlight class="stringliteral">&quot;data0/dg_hopper_teststand-ati_force.dat[0]&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>Fy<sp/>=<sp/>np.array(sensors_data.get_streams(</highlight><highlight class="stringliteral">&quot;data0/dg_hopper_teststand-ati_force.dat[1]&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>Fz<sp/>=<sp/>np.array(sensors_data.get_streams(</highlight><highlight class="stringliteral">&quot;data0/dg_hopper_teststand-ati_force.dat[2]&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>F<sp/>=<sp/>np.transpose(np.vstack((Fx,Fy,Fz)))</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>cnt_sensor<sp/>=<sp/>np.array(sensors_data.get_streams(</highlight><highlight class="stringliteral">&quot;data0/dg_hopper_teststand-contact_sensors.dat[0]&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>height_sensor<sp/>=<sp/>np.array(sensors_data.get_streams(</highlight><highlight class="stringliteral">&quot;data0/dg_hopper_teststand-height_sensors.dat[0]&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>HFE_u<sp/>=<sp/>np.array(sensors_data.get_streams(</highlight><highlight class="stringliteral">&quot;data0/dg_hopper_teststand-joint_torques.dat[0]&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>KFE_u<sp/>=<sp/>np.array(sensors_data.get_streams(</highlight><highlight class="stringliteral">&quot;data0/dg_hopper_teststand-joint_torques.dat[1]&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>tau<sp/>=<sp/>np.transpose(np.vstack((HFE_u,<sp/>KFE_u)))</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>F,<sp/>cnt_sensor,<sp/>height_sensor,<sp/>tau</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">hopper_foot_data(sensors_data):</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>rel_pos_foot_x<sp/>=<sp/>np.array(sensors_data.get_streams(</highlight><highlight class="stringliteral">&quot;data0/dg_rel_pos_foot_hopper-sout.dat[0]&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>rel_pos_foot_z<sp/>=<sp/>np.array(sensors_data.get_streams(</highlight><highlight class="stringliteral">&quot;data0/dg_rel_pos_foot_hopper-sout.dat[2]&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>des_pos_x<sp/>=<sp/>np.array(sensors_data.get_streams(</highlight><highlight class="stringliteral">&quot;data0/dg_power_jump_ctrl-des_pos.dat[0]&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>des_pos_z<sp/>=<sp/>np.array(sensors_data.get_streams(</highlight><highlight class="stringliteral">&quot;data0/dg_power_jump_ctrl-des_pos.dat[2]&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>rel_vel_foot_x<sp/>=<sp/>np.array(sensors_data.get_streams(</highlight><highlight class="stringliteral">&quot;data0/dg_rel_vel_foot_hopper-sout.dat[0]&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>rel_vel_foot_z<sp/>=<sp/>np.array(sensors_data.get_streams(</highlight><highlight class="stringliteral">&quot;data0/dg_rel_vel_foot_hopper-sout.dat[2]&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>des_force_x<sp/>=<sp/>np.array(sensors_data.get_streams(</highlight><highlight class="stringliteral">&quot;data0/dg_power_jump_ctrl-des_force.dat[0]&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>des_force_z<sp/>=<sp/>np.array(sensors_data.get_streams(</highlight><highlight class="stringliteral">&quot;data0/dg_power_jump_ctrl-des_force.dat[2]&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>rel_pos_foot<sp/>=<sp/>np.transpose(np.vstack((rel_pos_foot_x,<sp/>rel_pos_foot_z)))</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>rel_vel_foot<sp/>=<sp/>np.transpose(np.vstack((rel_vel_foot_x,<sp/>rel_vel_foot_z)))</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>des_force<sp/>=<sp/>np.transpose(np.vstack((des_force_x,<sp/>des_force_z)))</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>des_pos<sp/>=<sp/>np.transpose(np.vstack((des_pos_x,<sp/>des_pos_z)))</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>des_vel<sp/>=<sp/>np.zeros((np.shape(des_pos)))</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rel_pos_foot,<sp/>rel_vel_foot,<sp/>des_force,<sp/>des_pos,<sp/>des_vel</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">hopper_joint_data(sensors_data):</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>theta_1<sp/>=<sp/>np.array(sensors_data.get_streams(</highlight><highlight class="stringliteral">&quot;data0/dg_hopper_teststand-joint_positions.dat[0]&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>theta_2<sp/>=<sp/>np.array(sensors_data.get_streams(</highlight><highlight class="stringliteral">&quot;data0/dg_hopper_teststand-joint_positions.dat[1]&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>theta_d1<sp/>=<sp/>np.array(sensors_data.get_streams(</highlight><highlight class="stringliteral">&quot;data0/dg_hopper_teststand-joint_velocities.dat[0]&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>theta_d2<sp/>=<sp/>np.array(sensors_data.get_streams(</highlight><highlight class="stringliteral">&quot;data0/dg_hopper_teststand-joint_velocities.dat[1]&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>theta_1,<sp/>theta_2</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="comment">##############################################################################</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="comment">###<sp/>functions<sp/>to<sp/>compute<sp/>torques<sp/>for<sp/>forces<sp/>read<sp/>through<sp/>ati<sp/>sensor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">compute_torques(theta_1,<sp/>theta_2,<sp/>Fx,<sp/>Fz):</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>des_tau<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>i<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>range(len(theta_1)):</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fy<sp/>=<sp/>Fx[i]</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fx<sp/>=<sp/>Fz[i]</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>F_vector<sp/>=<sp/>np.matrix([fx,<sp/>fy])</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>l1<sp/>=<sp/>0.16</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>l2<sp/>=<sp/>0.16</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>k1<sp/>=<sp/>-l1*(np.sin(theta_1[i]))</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>k2<sp/>=<sp/>-l2*(np.sin(theta_1[i]<sp/>+<sp/>theta_2[i]))</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>k3<sp/>=<sp/>l1*(np.cos(theta_1[i]))</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>k4<sp/>=<sp/>l2*(np.cos(theta_1[i]<sp/>+<sp/>theta_2[i]))</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>jacT<sp/>=<sp/>np.matrix([[k1<sp/>+<sp/>k2,<sp/>k3+k4],<sp/>[k2,<sp/>k4]])</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#print(jacT)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>torques<sp/>=<sp/>np.matmul(jacT,<sp/>np.transpose(F_vector))</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>des_tau.append(torques)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>np.asarray(des_tau)</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="comment">###############################################################################</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal">name<sp/>=<sp/>str(sys.argv[1])</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">print(</highlight><highlight class="stringliteral">&quot;loading<sp/>file<sp/>:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>name)</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal">sensors_data<sp/>=<sp/>read_data(name)</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal">ati_f,<sp/>cnt_sensor,<sp/>ht_sensor,<sp/>tau<sp/>=<sp/>hopper_sensors_data(sensors_data)</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">rel_pos_foot,<sp/>rel_vel_foot,<sp/>des_force,<sp/>des_pos,<sp/>des_vel<sp/>=<sp/>hopper_foot_data(sensors_data)</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">theta_1,<sp/>theta_2<sp/>=<sp/>hopper_joint_data(sensors_data)</highlight></codeline>
+<codeline lineno="126"><highlight class="normal">des_tau<sp/>=<sp/>compute_torques(theta_1,<sp/>theta_2,<sp/>des_force[:,<sp/>0],<sp/>des_force[:,<sp/>1])</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="comment">###############################################################################</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="comment">##<sp/>plots<sp/>for<sp/>des_position<sp/>and<sp/>velocity<sp/>vas<sp/>actual<sp/>values.<sp/>and<sp/>Hip<sp/>and<sp/>Knee<sp/>torques</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal">fig1,<sp/>ax1<sp/>=<sp/>plt.subplots(7,1,<sp/>sharex<sp/>=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">ax1[0].plot(des_pos[:,<sp/>1],<sp/>color<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;black&quot;</highlight><highlight class="normal">,<sp/>label<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;des_pos_z&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">ax1[0].plot(rel_pos_foot[:,<sp/>1],<sp/>color<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;red&quot;</highlight><highlight class="normal">,<sp/>label<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;actual_foot_pos_z&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="136"><highlight class="normal">ax1[0].legend()</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">ax1[0].set_xlabel(</highlight><highlight class="stringliteral">&quot;millisec&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="138"><highlight class="normal">ax1[0].set_ylabel(</highlight><highlight class="stringliteral">&quot;m&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">ax1[0].grid()</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal">ax1[1].plot(ht_sensor,<sp/>color<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;black&quot;</highlight><highlight class="normal">,<sp/>label<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;ht_sensor&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">ax1[1].legend()</highlight></codeline>
+<codeline lineno="143"><highlight class="normal">ax1[1].set_xlabel(</highlight><highlight class="stringliteral">&quot;millisec&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">ax1[1].set_ylabel(</highlight><highlight class="stringliteral">&quot;m&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="145"><highlight class="normal">ax1[1].grid()</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal">ax1[2].plot(ati_f[:<sp/>,0],<sp/>color<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;black&quot;</highlight><highlight class="normal">,<sp/>label<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Fx&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="148"><highlight class="normal">ax1[2].plot(des_force[:<sp/>,0],<sp/>color<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;red&quot;</highlight><highlight class="normal">,<sp/>label<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;des_fx&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="149"><highlight class="normal">ax1[2].legend()</highlight></codeline>
+<codeline lineno="150"><highlight class="normal">ax1[2].set_xlabel(</highlight><highlight class="stringliteral">&quot;millisec&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="151"><highlight class="normal">ax1[2].set_ylabel(</highlight><highlight class="stringliteral">&quot;N&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="152"><highlight class="normal">ax1[2].grid()</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal">ax1[3].plot(ati_f[:<sp/>,2],<sp/>color<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;black&quot;</highlight><highlight class="normal">,<sp/>label<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Fz&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="155"><highlight class="normal">ax1[3].plot(des_force[:<sp/>,1],<sp/>color<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;red&quot;</highlight><highlight class="normal">,<sp/>label<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;des_Fz&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="156"><highlight class="normal">ax1[3].legend()</highlight></codeline>
+<codeline lineno="157"><highlight class="normal">ax1[3].set_xlabel(</highlight><highlight class="stringliteral">&quot;millisec&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="158"><highlight class="normal">ax1[3].set_ylabel(</highlight><highlight class="stringliteral">&quot;N&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="159"><highlight class="normal">ax1[3].grid()</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal">ax1[4].plot(cnt_sensor,<sp/>color<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;black&quot;</highlight><highlight class="normal">,<sp/>label<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;cnt_sensor&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="162"><highlight class="normal">ax1[4].legend()</highlight></codeline>
+<codeline lineno="163"><highlight class="normal">ax1[4].set_xlabel(</highlight><highlight class="stringliteral">&quot;millisec&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="164"><highlight class="normal">ax1[4].set_ylabel(</highlight><highlight class="stringliteral">&quot;No-metric&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="165"><highlight class="normal">ax1[4].grid()</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal">ax1[5].plot(tau[:<sp/>,0],<sp/>color<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;red&quot;</highlight><highlight class="normal">,<sp/>label<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;HFE_u&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="168"><highlight class="normal">ax1[5].plot(des_tau[:<sp/>,0],<sp/>color<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;green&quot;</highlight><highlight class="normal">,<sp/>label<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;des_HFE_u&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="169"><highlight class="normal">ax1[5].set_xlabel(</highlight><highlight class="stringliteral">&quot;millisec&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="170"><highlight class="normal">ax1[5].set_ylabel(</highlight><highlight class="stringliteral">&quot;Nm&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="171"><highlight class="normal">ax1[5].legend()</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">ax1[5].grid()</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal">ax1[6].plot(tau[:<sp/>,1],<sp/>color<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;red&quot;</highlight><highlight class="normal">,<sp/>label<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;KFE_u&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="175"><highlight class="normal">ax1[6].plot(des_tau[:<sp/>,1],<sp/>color<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;green&quot;</highlight><highlight class="normal">,<sp/>label<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;des_KFE_u&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="176"><highlight class="normal">ax1[6].set_xlabel(</highlight><highlight class="stringliteral">&quot;millisec&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="177"><highlight class="normal">ax1[6].set_ylabel(</highlight><highlight class="stringliteral">&quot;Nm&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="178"><highlight class="normal">ax1[6].legend()</highlight></codeline>
+<codeline lineno="179"><highlight class="normal">ax1[6].grid()</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal">plt.show()</highlight></codeline>
+    </programlisting>
+    <location file="python/dg_blmc_robots/teststand/plot_teststand/new_plotter.py"/>
+  </compounddef>
+</doxygen>

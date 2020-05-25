@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="threadsafe__timeseries_8hpp" kind="file" language="C++">
+    <compoundname>threadsafe_timeseries.hpp</compoundname>
+    <includes local="no">memory</includes>
+    <includes local="no">vector</includes>
+    <includes refid="timer_8hpp" local="yes">real_time_tools/timer.hpp</includes>
+    <includes local="no">condition_variable</includes>
+    <includes local="no">mutex</includes>
+    <includes refid="threadsafe__timeseries_8hxx" local="yes">real_time_tools/threadsafe/threadsafe_timeseries.hxx</includes>
+    <includedby refid="threadsafe__timeseries_8hxx" local="yes">include/real_time_tools/threadsafe/threadsafe_timeseries.hxx</includedby>
+    <incdepgraph>
+      <node id="636">
+        <label>real_time_tools/iostream.hpp</label>
+        <link refid="iostream_8hpp"/>
+        <childnode refid="637" relation="include">
+        </childnode>
+      </node>
+      <node id="640">
+        <label>real_time_tools/threadsafe/threadsafe_timeseries.hxx</label>
+        <link refid="threadsafe__timeseries_8hxx"/>
+        <childnode refid="631" relation="include">
+        </childnode>
+        <childnode refid="634" relation="include">
+        </childnode>
+        <childnode refid="627" relation="include">
+        </childnode>
+      </node>
+      <node id="634">
+        <label>cmath</label>
+      </node>
+      <node id="627">
+        <label>include/real_time_tools/threadsafe/threadsafe_timeseries.hpp</label>
+        <link refid="threadsafe_timeseries.hpp"/>
+        <childnode refid="628" relation="include">
+        </childnode>
+        <childnode refid="629" relation="include">
+        </childnode>
+        <childnode refid="630" relation="include">
+        </childnode>
+        <childnode refid="638" relation="include">
+        </childnode>
+        <childnode refid="639" relation="include">
+        </childnode>
+        <childnode refid="640" relation="include">
+        </childnode>
+      </node>
+      <node id="632">
+        <label>string</label>
+      </node>
+      <node id="638">
+        <label>condition_variable</label>
+      </node>
+      <node id="635">
+        <label>unistd.h</label>
+      </node>
+      <node id="629">
+        <label>vector</label>
+      </node>
+      <node id="637">
+        <label>boost/filesystem.hpp</label>
+      </node>
+      <node id="633">
+        <label>deque</label>
+      </node>
+      <node id="630">
+        <label>real_time_tools/timer.hpp</label>
+        <link refid="timer_8hpp"/>
+        <childnode refid="631" relation="include">
+        </childnode>
+        <childnode refid="632" relation="include">
+        </childnode>
+        <childnode refid="633" relation="include">
+        </childnode>
+        <childnode refid="634" relation="include">
+        </childnode>
+        <childnode refid="635" relation="include">
+        </childnode>
+        <childnode refid="636" relation="include">
+        </childnode>
+      </node>
+      <node id="639">
+        <label>mutex</label>
+      </node>
+      <node id="631">
+        <label>chrono</label>
+      </node>
+      <node id="628">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="642">
+        <label>include/real_time_tools/threadsafe/threadsafe_timeseries.hxx</label>
+        <link refid="threadsafe__timeseries_8hxx"/>
+        <childnode refid="641" relation="include">
+        </childnode>
+      </node>
+      <node id="641">
+        <label>include/real_time_tools/threadsafe/threadsafe_timeseries.hpp</label>
+        <link refid="threadsafe_timeseries.hpp"/>
+        <childnode refid="642" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classreal__time__tools_1_1ThreadsafeTimeseries" prot="public">real_time_tools::ThreadsafeTimeseries</innerclass>
+    <innernamespace refid="namespacereal__time__tools">real_time_tools</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Manuel Wuthrich (<ulink url="mailto:manuel.wuthrich@gmail.com">manuel.wuthrich@gmail.com</ulink>) </para></simplesect>
+<simplesect kind="author"><para>Maximilien Naveau (<ulink url="mailto:maximilien.naveau@gmail.com">maximilien.naveau@gmail.com</ulink>) </para></simplesect>
+<simplesect kind="version"><para>0.1 </para></simplesect>
+<simplesect kind="date"><para>2018-11-27</para></simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2018 </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="13"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="timer_8hpp" kindref="compound">real_time_tools/timer.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;condition_variable&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacereal__time__tools" kindref="compound">real_time_tools</ref><sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="classreal__time__tools_1_1ThreadsafeTimeseries" refkind="compound"><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Type<sp/>=<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classreal__time__tools_1_1ThreadsafeTimeseries" kindref="compound">ThreadsafeTimeseries</ref><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="42" refid="classreal__time__tools_1_1ThreadsafeTimeseries_1a9364696c534468d7ad927883b16ca981" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1ThreadsafeTimeseries_1a9364696c534468d7ad927883b16ca981" kindref="member">Index</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="classreal__time__tools_1_1ThreadsafeTimeseries_1a41e36f99889a580ce56491e573fa77b0" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1ThreadsafeTimeseries_1a41e36f99889a580ce56491e573fa77b0" kindref="member">Timestamp</ref>;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><ref refid="classreal__time__tools_1_1ThreadsafeTimeseries_1a06769598feb483bda198edb9c88c8de4" kindref="member">ThreadsafeTimeseries</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1ThreadsafeTimeseries_1a4d1fd7d17f1c896a81ea62923591dbc4" kindref="member">max_length</ref>,<sp/>Index<sp/>start_timeindex<sp/>=<sp/>0);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>accessors<sp/>---------------------------------------------------------------</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>Index<sp/><ref refid="classreal__time__tools_1_1ThreadsafeTimeseries_1a6e453d4c31109908fc074dddf8cfa0f4" kindref="member">newest_timeindex</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>Index<sp/><ref refid="classreal__time__tools_1_1ThreadsafeTimeseries_1afcf05dc48b7cf190b7aeb11e0352cbd6" kindref="member">count_appended_elements</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>Index<sp/><ref refid="classreal__time__tools_1_1ThreadsafeTimeseries_1af3f4bbdf3f588f6936c8d1f5777dbf6e" kindref="member">oldest_timeindex</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>Type<sp/><ref refid="classreal__time__tools_1_1ThreadsafeTimeseries_1a287dbff07cc90e36a41dde73466314a9" kindref="member">newest_element</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>Type<sp/><ref refid="classreal__time__tools_1_1ThreadsafeTimeseries_1aeaeb6428ee3190538a8e82b525ec0f87" kindref="member">operator[]</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Index<sp/>&amp;timeindex)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>Timestamp<sp/><ref refid="classreal__time__tools_1_1ThreadsafeTimeseries_1a2014a6970029b85598d8d4b08b501832" kindref="member">timestamp_ms</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Index<sp/>&amp;timeindex)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>Timestamp<sp/><ref refid="classreal__time__tools_1_1ThreadsafeTimeseries_1adec397db4b4568f6b3369105122cc919" kindref="member">timestamp_s</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Index<sp/>&amp;timeindex)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><ref refid="classreal__time__tools_1_1ThreadsafeTimeseries_1ac6cee8cdf659da4a25de6a269648cf4e" kindref="member">wait_for_timeindex</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Index<sp/>&amp;timeindex,</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>&amp;max_duration_s<sp/>=</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::numeric_limits&lt;double&gt;::quiet_NaN())<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1ThreadsafeTimeseries_1a7ed15c2faf8b304f8f6ef97e9cd31020" kindref="member">length</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1ThreadsafeTimeseries_1a4d1fd7d17f1c896a81ea62923591dbc4" kindref="member">max_length</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1ThreadsafeTimeseries_1ab9adfbafe82cd0dae68d1ba3607f5ecb" kindref="member">has_changed_since_tag</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>mutators<sp/>----------------------------------------------------------------</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1ThreadsafeTimeseries_1a07a775400d1b9446bded449ad953a8d9" kindref="member">tag</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Index<sp/>&amp;timeindex);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1ThreadsafeTimeseries_1ae0a782bf3b1a483647d5d342a994335c" kindref="member">append</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Type<sp/>&amp;element);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="134" refid="classreal__time__tools_1_1ThreadsafeTimeseries_1ac23cd95c9d5f6344e20db8d318f23005" refkind="member"><highlight class="normal"><sp/><sp/>std::shared_ptr&lt;std::vector&lt;Type&gt;&gt;<sp/><ref refid="classreal__time__tools_1_1ThreadsafeTimeseries_1ac23cd95c9d5f6344e20db8d318f23005" kindref="member">history_elements_</ref>;</highlight></codeline>
+<codeline lineno="136" refid="classreal__time__tools_1_1ThreadsafeTimeseries_1a7f90089325fee66a71a413e68f8ab02c" refkind="member"><highlight class="normal"><sp/><sp/>std::shared_ptr&lt;std::vector&lt;Timestamp&gt;&gt;<sp/><ref refid="classreal__time__tools_1_1ThreadsafeTimeseries_1a7f90089325fee66a71a413e68f8ab02c" kindref="member">history_timestamps_</ref>;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/>Index<sp/>start_timeindex_;</highlight></codeline>
+<codeline lineno="140" refid="classreal__time__tools_1_1ThreadsafeTimeseries_1a07285b5905c1b4c73830a4f69dbd306b" refkind="member"><highlight class="normal"><sp/><sp/>Index<sp/><ref refid="classreal__time__tools_1_1ThreadsafeTimeseries_1a07285b5905c1b4c73830a4f69dbd306b" kindref="member">oldest_timeindex_</ref>;</highlight></codeline>
+<codeline lineno="142" refid="classreal__time__tools_1_1ThreadsafeTimeseries_1a7fd574dac314ee5d72ffdb5d578c13ac" refkind="member"><highlight class="normal"><sp/><sp/>Index<sp/><ref refid="classreal__time__tools_1_1ThreadsafeTimeseries_1a7fd574dac314ee5d72ffdb5d578c13ac" kindref="member">newest_timeindex_</ref>;</highlight></codeline>
+<codeline lineno="144" refid="classreal__time__tools_1_1ThreadsafeTimeseries_1a8ccddbf7eda7ac6ac257eaef39d9cbc4" refkind="member"><highlight class="normal"><sp/><sp/>Index<sp/><ref refid="classreal__time__tools_1_1ThreadsafeTimeseries_1a8ccddbf7eda7ac6ac257eaef39d9cbc4" kindref="member">tagged_timeindex_</ref>;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150" refid="classreal__time__tools_1_1ThreadsafeTimeseries_1a46423f0837bcde91a274d49e9d8a32ee" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">mutable</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;std::condition_variable&gt;<sp/><ref refid="classreal__time__tools_1_1ThreadsafeTimeseries_1a46423f0837bcde91a274d49e9d8a32ee" kindref="member">condition_</ref>;</highlight></codeline>
+<codeline lineno="155" refid="classreal__time__tools_1_1ThreadsafeTimeseries_1a755bd4c399df29f2f9b9d2ed748dfae5" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">mutable</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;std::mutex&gt;<sp/><ref refid="classreal__time__tools_1_1ThreadsafeTimeseries_1a755bd4c399df29f2f9b9d2ed748dfae5" kindref="member">mutex_</ref>;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="157"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="threadsafe__timeseries_8hxx" kindref="compound">real_time_tools/threadsafe/threadsafe_timeseries.hxx</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/real_time_tools/threadsafe/threadsafe_timeseries.hpp"/>
+  </compounddef>
+</doxygen>

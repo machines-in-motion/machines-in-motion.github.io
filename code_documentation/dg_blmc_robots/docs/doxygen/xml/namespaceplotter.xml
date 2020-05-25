@@ -1,0 +1,1103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespaceplotter" kind="namespace" language="Python">
+    <compoundname>plotter</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a6a8aed949e22db24ec7c7deb9dc58cd0" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.if_check</definition>
+        <argsstring></argsstring>
+        <name>if_check</name>
+        <initializer>= int(sys.argv[1])</initializer>
+        <briefdescription>
+<para>Testing ###############################################################. </para>        </briefdescription>
+        <detaileddescription>
+<para>read data file </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="42" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a3bad59feac2c2c45507f95b7ee647fb3" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <initializer>= str(sys.argv[2])</initializer>
+        <briefdescription>
+<para>plots for friction estimation at joints </para>        </briefdescription>
+        <detaileddescription>
+<para>Force estimation with contact sensors.</para><para>plots postion tracking experiments to understand why position tracking is not smooth </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="50" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a67715158cce128299c4269759edcddb1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.sensors_data</definition>
+        <argsstring></argsstring>
+        <name>sensors_data</name>
+        <initializer>= RAI.sensors.SensorsData(&quot;./data/&quot; + name)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="53" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1aea96a072074d3a8f35f1678ebb176518" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <initializer>= sensors_data.get_all_streams()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="54" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a968347b009d23845b4047c373118d27c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.Fx</definition>
+        <argsstring></argsstring>
+        <name>Fx</name>
+        <initializer>= np.array(sensors_data.get_streams(&quot;data0/dg_hopper_teststand-ati_force.dat[0]&quot;))</initializer>
+        <briefdescription>
+<para>data0/dg_pos_error-sout.dat[] data0/dg_rel_pos_foot-sout.dat[] </para>        </briefdescription>
+        <detaileddescription>
+<para>data0/dg_pos_errorhopper-sout.dat[] data0/dg_rel_pos_foot-sout.dat[] </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="60" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a270cd94bb3c53b994c5977496835db17" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.Fz</definition>
+        <argsstring></argsstring>
+        <name>Fz</name>
+        <initializer>= np.array(sensors_data.get_streams(&quot;data0/dg_hopper_teststand-ati_force.dat[2]&quot;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="61" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1aa633c829292b0a558db67c34d6eb2ab9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.pos_error_x</definition>
+        <argsstring></argsstring>
+        <name>pos_error_x</name>
+        <initializer>= np.array(sensors_data.get_streams(&quot;data0/dg_pos_error_hopper-sout.dat[0]&quot;))</initializer>
+        <briefdescription>
+<para>data0/dg_pos_errorhopper-sout.dat[] data0/dg_rel_pos_foot-sout.dat[] </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="62" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1aa30af3d0eed3f8e1c4e1a7a68ce6a3e0" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.pos_error_z</definition>
+        <argsstring></argsstring>
+        <name>pos_error_z</name>
+        <initializer>= np.array(sensors_data.get_streams(&quot;data0/dg_pos_error_hopper-sout.dat[2]&quot;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="63" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1adac4b0971221b050290f4037ec8d599f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.pos_error_height_sensor</definition>
+        <argsstring></argsstring>
+        <name>pos_error_height_sensor</name>
+        <initializer>= np.array(sensors_data.get_streams(&quot;data0/dg_stiffness_measurement_height_sensor-sout.dat[0]&quot;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="64" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a3a896b5fc40f5c71f88d5c2f476092e9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.HFE_u</definition>
+        <argsstring></argsstring>
+        <name>HFE_u</name>
+        <initializer>= np.array(sensors_data.get_streams(&quot;data0/dg_hopper_teststand-joint_torques.dat[0]&quot;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="65" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a036b4d6f66453fb7e27c098369c76eb5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.KFE_u</definition>
+        <argsstring></argsstring>
+        <name>KFE_u</name>
+        <initializer>= np.array(sensors_data.get_streams(&quot;data0/dg_hopper_teststand-joint_torques.dat[1]&quot;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="66" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a09f1dd05629f6af7f1ce3f012d55e265" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.k_value_x</definition>
+        <argsstring></argsstring>
+        <name>k_value_x</name>
+        <initializer>= np.divide(Fx, pos_error_x)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="69" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1ac40f45b010a29ead001ab64a32139739" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.k_value_z</definition>
+        <argsstring></argsstring>
+        <name>k_value_z</name>
+        <initializer>= np.divide(Fz, pos_error_z)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="70" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1acf1b67582372df6f5c6536a2f004cc2f" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int plotter::start_value</definition>
+        <argsstring></argsstring>
+        <name>start_value</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>(29,17707) print(np.shape(data[0])) limit values </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="75" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a3924cd822db5fb3b531b0aafa9fb5d53" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int plotter::end_value</definition>
+        <argsstring></argsstring>
+        <name>end_value</name>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="76" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1aa3a5b6e7b2c19145be4eb818abb861ad" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.fig1</definition>
+        <argsstring></argsstring>
+        <name>fig1</name>
+        <briefdescription>
+<para>plots for des_position and velocity vas actual values. </para>        </briefdescription>
+        <detaileddescription>
+<para>and Hip and Knee torques </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="88" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a560e9236c91034a93a139a1d0e67e835" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.ax1</definition>
+        <argsstring></argsstring>
+        <name>ax1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="88" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1aa381afad5f214ecbdab891e6cda2379b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.sharex</definition>
+        <argsstring></argsstring>
+        <name>sharex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="88" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a05b950e24ee2d01159e14ebeec669200" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.color</definition>
+        <argsstring></argsstring>
+        <name>color</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="89" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1ad86fcffa76050cfefcf5c40741ce3337" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.label</definition>
+        <argsstring></argsstring>
+        <name>label</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="89" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1abe97f888d025125ea3bece1a34fa97ae" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.fig2</definition>
+        <argsstring></argsstring>
+        <name>fig2</name>
+        <briefdescription>
+<para>plots of rel and actual velocity </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="119" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a307991d1bec8e1ead740ae5dfadd774d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.ax2</definition>
+        <argsstring></argsstring>
+        <name>ax2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="119" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a4b1e13f7462da8eafa344d16c25fccdd" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.name1</definition>
+        <argsstring></argsstring>
+        <name>name1</name>
+        <initializer>= str(sys.argv[2])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="145" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a34e83241693d67e4d61f474e1a84ced8" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.name2</definition>
+        <argsstring></argsstring>
+        <name>name2</name>
+        <initializer>= str(sys.argv[3])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="146" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1ae0f3805b80a7ff1fcf6f65cbac59dbce" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.Fz_1</definition>
+        <argsstring></argsstring>
+        <name>Fz_1</name>
+        <initializer>= np.array(sensors_data.get_streams(&quot;data0/dg_hopper_teststand-ati_force.dat[2]&quot;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="148" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1ace2cc834be182e096413fff21fc78442" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.pos_error_z_1</definition>
+        <argsstring></argsstring>
+        <name>pos_error_z_1</name>
+        <initializer>= np.array(sensors_data.get_streams(&quot;data0/dg_pos_error_hopper-sout.dat[2]&quot;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="149" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1ae28c66a431743e66f7a9323ec4247d81" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.k_value_z_1</definition>
+        <argsstring></argsstring>
+        <name>k_value_z_1</name>
+        <initializer>= np.divide(Fz_1, pos_error_z_1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="150" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1aac0673167b8b8ee2ba3f1e5f900fbd36" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.Fz_2</definition>
+        <argsstring></argsstring>
+        <name>Fz_2</name>
+        <initializer>= np.array(sensors_data.get_streams(&quot;data0/dg_hopper_teststand-ati_force.dat[2]&quot;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="153" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1adffb195daa163559c652e630e1e9a3ba" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.pos_error_z_2</definition>
+        <argsstring></argsstring>
+        <name>pos_error_z_2</name>
+        <initializer>= np.array(sensors_data.get_streams(&quot;data0/dg_pos_error_hopper-sout.dat[2]&quot;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="154" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a640c659b90df986e920356f755b14d04" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.k_value_z_2</definition>
+        <argsstring></argsstring>
+        <name>k_value_z_2</name>
+        <initializer>= np.divide(Fz_2, pos_error_z_2)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="155" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a5b950b8084d89d7cc6c6e202a9a68e1d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.theta_1</definition>
+        <argsstring></argsstring>
+        <name>theta_1</name>
+        <initializer>= np.array(sensors_data.get_streams(&quot;data0/dg_hopper_teststand-joint_positions.dat[0]&quot;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="195" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="195" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1ad50feb35526ca9ef61d9489fe4801c9e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.theta_2</definition>
+        <argsstring></argsstring>
+        <name>theta_2</name>
+        <initializer>= np.array(sensors_data.get_streams(&quot;data0/dg_hopper_teststand-joint_positions.dat[1]&quot;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="196" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a76964b980e309f94a559450adec843cd" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.theta_d1</definition>
+        <argsstring></argsstring>
+        <name>theta_d1</name>
+        <initializer>= np.array(sensors_data.get_streams(&quot;data0/dg_hopper_teststand-joint_velocities.dat[0]&quot;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="197" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="197" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a4b77204565da42d33f79d258220d2d44" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.theta_d2</definition>
+        <argsstring></argsstring>
+        <name>theta_d2</name>
+        <initializer>= np.array(sensors_data.get_streams(&quot;data0/dg_hopper_teststand-joint_velocities.dat[1]&quot;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="198" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="198" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1ac20f7f2f560c31e4970b288d4e468617" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.motor_HFE</definition>
+        <argsstring></argsstring>
+        <name>motor_HFE</name>
+        <initializer>= np.array(sensors_data.get_streams(&quot;data0/dg_hopper_teststand-motor_positions.dat[0]&quot;))</initializer>
+        <briefdescription>
+<para>to evaluate coggin with modulo function </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="200" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a17eb6b95b5ca45accdcc903c3ef996ef" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.motor_KFE</definition>
+        <argsstring></argsstring>
+        <name>motor_KFE</name>
+        <initializer>= np.array(sensors_data.get_streams(&quot;data0/dg_hopper_teststand-motor_positions.dat[1]&quot;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="201" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="201" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1aa4ee071608e78337a322bc3576e341e6" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list plotter.friction_torques_1</definition>
+        <argsstring></argsstring>
+        <name>friction_torques_1</name>
+        <initializer>= []</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="226" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="226" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1ac837f1e92b3581e91b409803edd3bead" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list plotter.friction_torques_2</definition>
+        <argsstring></argsstring>
+        <name>friction_torques_2</name>
+        <initializer>= []</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="227" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="227" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a9c5867f08e8036950001072897f53cb1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.friction_torques</definition>
+        <argsstring></argsstring>
+        <name>friction_torques</name>
+        <initializer>= compute_torques(theta_1[i], theta_2[i], Fx[i]-0.7, Fz[i])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="229" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="229" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a2a39dde0704ebdea14814ca4616a1015" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.hip_fric_vel_ratio</definition>
+        <argsstring></argsstring>
+        <name>hip_fric_vel_ratio</name>
+        <initializer>= np.divide(np.multiply(friction_torques_1, -20.0), theta_d1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="233" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="233" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a2b5b1deccbc2630b60921d4844304a3c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.knee_fric_vel_ratio</definition>
+        <argsstring></argsstring>
+        <name>knee_fric_vel_ratio</name>
+        <initializer>= np.divide(np.multiply(friction_torques_2, 20.0), theta_d2)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="234" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="234" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a6f4ddebae70008f818441fe7d8908abb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.rel_pos_foot_x</definition>
+        <argsstring></argsstring>
+        <name>rel_pos_foot_x</name>
+        <initializer>= np.array(sensors_data.get_streams(&quot;data0/dg_rel_pos_foot_hopper-sout.dat[0]&quot;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="322" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="322" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1ac46aaa38b9a30e5bda81f60b96186c56" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.rel_pos_foot_z</definition>
+        <argsstring></argsstring>
+        <name>rel_pos_foot_z</name>
+        <initializer>= np.array(sensors_data.get_streams(&quot;data0/dg_rel_pos_foot_hopper-sout.dat[2]&quot;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="323" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="323" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1adc1e2634dbc91911263916c6d670fe67" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.des_pos_x</definition>
+        <argsstring></argsstring>
+        <name>des_pos_x</name>
+        <initializer>= np.array(sensors_data.get_streams(&quot;data0/dg_des_leg_length_pos-sout.dat[0]&quot;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="325" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="325" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1abc87540d53b836f3d4597428b7420b94" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.des_pos_z</definition>
+        <argsstring></argsstring>
+        <name>des_pos_z</name>
+        <initializer>= np.array(sensors_data.get_streams(&quot;data0/dg_des_leg_length_pos-sout.dat[2]&quot;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="326" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="326" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a7067ee45423c5ff38aa3798d092ef4ff" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.des_vel_x</definition>
+        <argsstring></argsstring>
+        <name>des_vel_x</name>
+        <initializer>= np.array(sensors_data.get_streams(&quot;data0/dg_des_leg_length_vel-sout.dat[0]&quot;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="328" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="328" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a6f392493738ce6abd3917487def8f83c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.des_vel_z</definition>
+        <argsstring></argsstring>
+        <name>des_vel_z</name>
+        <initializer>= np.array(sensors_data.get_streams(&quot;data0/dg_des_leg_length_vel-sout.dat[2]&quot;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="329" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="329" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1ab55d1817506ad6e3708a86ba38601608" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.rel_vel_foot_x</definition>
+        <argsstring></argsstring>
+        <name>rel_vel_foot_x</name>
+        <initializer>= np.array(sensors_data.get_streams(&quot;data0/dg_rel_vel_foot_hopper-sout.dat[0]&quot;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="331" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="331" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a4710db2db88ccef01efe3a3866db5e46" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.rel_vel_foot_z</definition>
+        <argsstring></argsstring>
+        <name>rel_vel_foot_z</name>
+        <initializer>= np.array(sensors_data.get_streams(&quot;data0/dg_rel_vel_foot_hopper-sout.dat[2]&quot;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="332" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="332" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1ac8bb7c6f41fbd9ae88019e1de487be49" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.min_len</definition>
+        <argsstring></argsstring>
+        <name>min_len</name>
+        <initializer>= int(min(len(rel_pos_foot_z), len(des_pos_z)))</initializer>
+        <briefdescription>
+<para>computing position error offline </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="374" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="374" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a4f81fbe8fa6a76c2dbd2b7de362c9db3" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.pos_err_z</definition>
+        <argsstring></argsstring>
+        <name>pos_err_z</name>
+        <initializer>= np.subtract(rel_pos_foot_z[0:min_len], des_pos_z[0:min_len])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="376" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="376" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1af6f7c0db9713e34ae4411284f7d53634" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.pos_err_x</definition>
+        <argsstring></argsstring>
+        <name>pos_err_x</name>
+        <initializer>= np.subtract(rel_pos_foot_x[0:min_len], des_pos_x[0:min_len])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="377" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="377" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a81f590f30d3397cbb09be2a5aa629d7f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.motor_HFE_modulo</definition>
+        <argsstring></argsstring>
+        <name>motor_HFE_modulo</name>
+        <initializer>= np.mod(motor_HFE, 5.0*np.pi/180.0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="379" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="379" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a9c3d5ad4fb28c510ad5586c34e480820" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.motor_KFE_modulo</definition>
+        <argsstring></argsstring>
+        <name>motor_KFE_modulo</name>
+        <initializer>= np.mod(motor_KFE, 5.0*np.pi/180.0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="380" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="380" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a96148c232789d6ac01a0eadf473d209e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.fig3</definition>
+        <argsstring></argsstring>
+        <name>fig3</name>
+        <briefdescription>
+<para>plots of motor positions with modulo </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="436" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="436" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a8bd62d5b4c0c0aa7df6e002e840496ad" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.ax3</definition>
+        <argsstring></argsstring>
+        <name>ax3</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="436" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="436" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a08c3a7db5d0a268b69c48395cd19d446" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.est_Fx</definition>
+        <argsstring></argsstring>
+        <name>est_Fx</name>
+        <initializer>= np.array(sensors_data.get_streams(&quot;data0/dg_est_f_hopper-sout.dat[0]&quot;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="493" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="493" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a41c399b2f1dd2a3c2156ba736ce86949" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.est_Fz</definition>
+        <argsstring></argsstring>
+        <name>est_Fz</name>
+        <initializer>= np.array(sensors_data.get_streams(&quot;data0/dg_est_f_hopper-sout.dat[2]&quot;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="494" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="494" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1aa41c225fc69b9764eadb1a98d16168bc" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.cnt_sensor</definition>
+        <argsstring></argsstring>
+        <name>cnt_sensor</name>
+        <initializer>= np.array(sensors_data.get_streams(&quot;data0/dg_hopper_teststand-contact_sensors.dat[0]&quot;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="496" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="496" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a8b91664d343613461f9b0f2d1725d322" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.height_sensor</definition>
+        <argsstring></argsstring>
+        <name>height_sensor</name>
+        <initializer>= np.array(sensors_data.get_streams(&quot;data0/dg_hopper_teststand-height_sensors.dat[0]&quot;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="498" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="498" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1ad26583fc89e2cc71ab13369202ee5e97" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.cnt_confidence</definition>
+        <argsstring></argsstring>
+        <name>cnt_confidence</name>
+        <initializer>= np.subtract(1,cnt_sensor)</initializer>
+        <briefdescription>
+<para>Fusing forces with contact sensor for more accurate contact sensing. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="503" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="503" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1a0a438def7ce9a0911638ed34f38b0ebb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.est_Fx_with_cnt_sensor</definition>
+        <argsstring></argsstring>
+        <name>est_Fx_with_cnt_sensor</name>
+        <initializer>= np.multiply(cnt_confidence, est_Fx)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="504" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="504" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="teststand_2plot__teststand_2plotter_8py_1aafe45a615c21bb781848dada999dfe3f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>plotter.est_Fz_with_cnt_sensor</definition>
+        <argsstring></argsstring>
+        <name>est_Fz_with_cnt_sensor</name>
+        <initializer>= np.multiply(cnt_confidence, est_Fz)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="505" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="505" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="plot_2plotter_8py_1aeed935ea8dbcde2c631ace6c6952fb46" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def plotter.load_file</definition>
+        <argsstring>(name)</argsstring>
+        <name>load_file</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/plot/plotter.py" line="19" column="1" bodyfile="python/dg_blmc_robots/plot/plotter.py" bodystart="19" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="plot_2plotter_8py_1ab2fb74575fbea06d5fb8b8ee3d948165" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def plotter.read_data</definition>
+        <argsstring>(name)</argsstring>
+        <name>read_data</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/plot/plotter.py" line="32" column="1" bodyfile="python/dg_blmc_robots/plot/plotter.py" bodystart="32" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="plot_2plotter_8py_1abe6ee13b24940e9f4c9cefca95e2f5fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def plotter.get_leg_data</definition>
+        <argsstring>(leg_name, sensors_data)</argsstring>
+        <name>get_leg_data</name>
+        <param>
+          <type>leg_name</type>
+          <defname>leg_name</defname>
+        </param>
+        <param>
+          <type>sensors_data</type>
+          <defname>sensors_data</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/plot/plotter.py" line="38" column="1" bodyfile="python/dg_blmc_robots/plot/plotter.py" bodystart="38" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="plot_2plotter_8py_1abc838d0ac26c503ae80563984e69d33e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def plotter.get_joint_torques</definition>
+        <argsstring>(sensors_data)</argsstring>
+        <name>get_joint_torques</name>
+        <param>
+          <type>sensors_data</type>
+          <defname>sensors_data</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/plot/plotter.py" line="59" column="1" bodyfile="python/dg_blmc_robots/plot/plotter.py" bodystart="59" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="plot_2plotter_8py_1a939ee11c144ff828beb1ed5362e18a41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def plotter.get_des_data</definition>
+        <argsstring>(sensors_data)</argsstring>
+        <name>get_des_data</name>
+        <param>
+          <type>sensors_data</type>
+          <defname>sensors_data</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/plot/plotter.py" line="80" column="1" bodyfile="python/dg_blmc_robots/plot/plotter.py" bodystart="80" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="plot_2plotter_8py_1a0adfcebee1d2514396bf928c1154fadd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def plotter.get_des_traj</definition>
+        <argsstring>(sensors_data)</argsstring>
+        <name>get_des_traj</name>
+        <param>
+          <type>sensors_data</type>
+          <defname>sensors_data</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/plot/plotter.py" line="102" column="1" bodyfile="python/dg_blmc_robots/plot/plotter.py" bodystart="102" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="plot_2plotter_8py_1a4508eeb5f3d00c68d23630ea7404cb4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def plotter.get_slider_data</definition>
+        <argsstring>(sensors_data)</argsstring>
+        <name>get_slider_data</name>
+        <param>
+          <type>sensors_data</type>
+          <defname>sensors_data</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/plot/plotter.py" line="128" column="1" bodyfile="python/dg_blmc_robots/plot/plotter.py" bodystart="128" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="plot_2plotter_8py_1a670584cb395a4eeb024d9a25c637d44f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def plotter.quaternion_to_euler</definition>
+        <argsstring>(x, y, z, w)</argsstring>
+        <name>quaternion_to_euler</name>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <param>
+          <type>y</type>
+          <defname>y</defname>
+        </param>
+        <param>
+          <type>z</type>
+          <defname>z</defname>
+        </param>
+        <param>
+          <type>w</type>
+          <defname>w</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/plot/plotter.py" line="135" column="1" bodyfile="python/dg_blmc_robots/plot/plotter.py" bodystart="135" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="plot_2plotter_8py_1adcfa3156cae02037c99198ba3fccf70e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def plotter.get_com_data</definition>
+        <argsstring>(sensors_data)</argsstring>
+        <name>get_com_data</name>
+        <param>
+          <type>sensors_data</type>
+          <defname>sensors_data</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/plot/plotter.py" line="150" column="1" bodyfile="python/dg_blmc_robots/plot/plotter.py" bodystart="150" bodyend="181"/>
+      </memberdef>
+      <memberdef kind="function" id="plot_2plotter_8py_1a7e6fe63281869cd199b40752ae47f991" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def plotter.bias_data</definition>
+        <argsstring>(data_stream)</argsstring>
+        <name>bias_data</name>
+        <param>
+          <type>data_stream</type>
+          <defname>data_stream</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/plot/plotter.py" line="184" column="1" bodyfile="python/dg_blmc_robots/plot/plotter.py" bodystart="184" bodyend="192"/>
+      </memberdef>
+      <memberdef kind="function" id="teststand_2plot__teststand_2plotter_8py_1a93eeb8916a7a1fdce12703265eb50dc1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def plotter.compute_torques</definition>
+        <argsstring>(theta_1, theta_2, Fx, Fz)</argsstring>
+        <name>compute_torques</name>
+        <param>
+          <type>theta_1</type>
+          <defname>theta_1</defname>
+        </param>
+        <param>
+          <type>theta_2</type>
+          <defname>theta_2</defname>
+        </param>
+        <param>
+          <type>Fx</type>
+          <defname>Fx</defname>
+        </param>
+        <param>
+          <type>Fz</type>
+          <defname>Fz</defname>
+        </param>
+        <briefdescription>
+<para>functions to compute torques for forces read through ati sensor </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" line="17" column="1" bodyfile="python/dg_blmc_robots/teststand/plot_teststand/plotter.py" bodystart="17" bodyend="37"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="python/dg_blmc_robots/plot/plotter.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

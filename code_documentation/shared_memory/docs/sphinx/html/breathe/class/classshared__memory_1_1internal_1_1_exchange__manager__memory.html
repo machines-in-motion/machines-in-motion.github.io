@@ -1,0 +1,485 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Class shared_memory::internal::Exchange_manager_memory &mdash; shared_memory 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Class shared_memory::internal::Serialized_read" href="classshared__memory_1_1internal_1_1_serialized__read.html" />
+    <link rel="prev" title="Class shared_memory::array" href="classshared__memory_1_1array.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> shared_memory
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Readme</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../readme.html">Shared Memory</a></li>
+</ul>
+<p class="caption"><span class="caption-text">C++ API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../doxygen_index.html">C++ API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../classlist.html">Class list</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="class_config.html">Class Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_serializable.html">Class Serializable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_serializable_example.html">Class SerializableExample</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_allocation__exception.html">Class shared_memory::Allocation_exception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_condition_variable.html">Class shared_memory::ConditionVariable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_exchange__manager__consumer.html">Class shared_memory::Exchange_manager_consumer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_exchange__manager__producer.html">Class shared_memory::Exchange_manager_producer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_four__int__values.html">Class shared_memory::Four_int_values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_item.html">Class shared_memory::Item</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_lock.html">Class shared_memory::Lock</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_locked_condition_variable.html">Class shared_memory::LockedConditionVariable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_memory__overflow__exception.html">Class shared_memory::Memory_overflow_exception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_mutex.html">Class shared_memory::Mutex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_not__consumed__exception.html">Class shared_memory::Not_consumed_exception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_segment_info.html">Class shared_memory::SegmentInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_serializable__exchange.html">Class shared_memory::Serializable_exchange</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_serializer.html">Class shared_memory::Serializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_shared_memory_segment.html">Class shared_memory::SharedMemorySegment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_unexpected__map__key.html">Class shared_memory::Unexpected_map_key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_unexpected__size__exception.html">Class shared_memory::Unexpected_size_exception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1array.html">Class shared_memory::array</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Class shared_memory::internal::Exchange_manager_memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1internal_1_1_serialized__read.html">Class shared_memory::internal::Serialized_read</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1internal_1_1_serialized__write.html">Class shared_memory::internal::Serialized_write</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1internal_1_1array__members.html">Class shared_memory::internal::array_members</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1internal_1_1array__members_3_01_t_00_010_00_01typename_01std_1_1enable__i0b78bb453aa1c4894c6c714e5f291fcb.html">Class shared_memory::internal::array_members&lt; T, 0, typename std::enable_if&lt; std::is_fundamental&lt; T &gt;::value &gt;::type &gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1internal_1_1array__members_3_01_t_00_01_s_i_z_e_00_01typename_01std_1_1en156d1526c68ed70465b623c682765180.html">Class shared_memory::internal::array_members&lt; T, SIZE, typename std::enable_if&lt; std::is_fundamental&lt; T &gt;::value &amp;&amp;SIZE!=0 &gt;::type &gt;</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../filelist.html">File list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../doxygen_index_one_page.html">C++ API and example</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">shared_memory</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../doxygen_index.html">C++ API</a> &raquo;</li>
+        
+          <li><a href="../classlist.html">Class list</a> &raquo;</li>
+        
+      <li>Class shared_memory::internal::Exchange_manager_memory</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/breathe/class/classshared__memory_1_1internal_1_1_exchange__manager__memory.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="class-shared-memory-internal-exchange-manager-memory">
+<h1>Class shared_memory::internal::Exchange_manager_memory<a class="headerlink" href="#class-shared-memory-internal-exchange-manager-memory" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="_CPPv4I0_iEN13shared_memory8internal23Exchange_manager_memoryE">
+<span id="_CPPv3I0_iEN13shared_memory8internal23Exchange_manager_memoryE"></span><span id="_CPPv2I0_iEN13shared_memory8internal23Exchange_manager_memoryE"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory"></span>template&lt;class <code class="sig-name descname">Serializable</code>, int <code class="sig-name descname">QUEUE_SIZE</code>&gt;<br /><em class="property">class </em><code class="sig-name descname">Exchange_manager_memory</code><a class="headerlink" href="#_CPPv4I0_iEN13shared_memory8internal23Exchange_manager_memoryE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="enum">
+<dt id="_CPPv4N13shared_memory8internal23Exchange_manager_memory6StatusE">
+<span id="_CPPv3N13shared_memory8internal23Exchange_manager_memory6StatusE"></span><span id="_CPPv2N13shared_memory8internal23Exchange_manager_memory6StatusE"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1a111ddeef03bfb038bcbc170c28878c08"></span><em class="property">enum </em><code class="sig-name descname">Status</code><a class="headerlink" href="#_CPPv4N13shared_memory8internal23Exchange_manager_memory6StatusE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="enumerator">
+<dt id="_CPPv4N13shared_memory8internal23Exchange_manager_memory5RESETE">
+<span id="_CPPv3N13shared_memory8internal23Exchange_manager_memory5RESETE"></span><span id="_CPPv2N13shared_memory8internal23Exchange_manager_memory5RESETE"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1a111ddeef03bfb038bcbc170c28878c08ac60720cbbc2fc2421b210ed6da63eb4a"></span><code class="sig-name descname">RESET</code><a class="headerlink" href="#_CPPv4N13shared_memory8internal23Exchange_manager_memory5RESETE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N13shared_memory8internal23Exchange_manager_memory7WAITINGE">
+<span id="_CPPv3N13shared_memory8internal23Exchange_manager_memory7WAITINGE"></span><span id="_CPPv2N13shared_memory8internal23Exchange_manager_memory7WAITINGE"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1a111ddeef03bfb038bcbc170c28878c08a437ddb419cf9c1a6399e3a98eae3db51"></span><code class="sig-name descname">WAITING</code><a class="headerlink" href="#_CPPv4N13shared_memory8internal23Exchange_manager_memory7WAITINGE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N13shared_memory8internal23Exchange_manager_memory7RUNNINGE">
+<span id="_CPPv3N13shared_memory8internal23Exchange_manager_memory7RUNNINGE"></span><span id="_CPPv2N13shared_memory8internal23Exchange_manager_memory7RUNNINGE"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1a111ddeef03bfb038bcbc170c28878c08ad7cbdf97bec755c256d0777f729fa0b1"></span><code class="sig-name descname">RUNNING</code><a class="headerlink" href="#_CPPv4N13shared_memory8internal23Exchange_manager_memory7RUNNINGE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv4N23Exchange_manager_memory23Exchange_manager_memoryENSt6stringENSt6stringE">
+<span id="_CPPv3N23Exchange_manager_memory23Exchange_manager_memoryENSt6stringENSt6stringE"></span><span id="_CPPv2N23Exchange_manager_memory23Exchange_manager_memoryENSt6stringENSt6stringE"></span><span id="Exchange_manager_memory::Exchange_manager_memory__ss.ss"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1a4bb976aa1b16314bf4181035bb746869"></span><code class="sig-name descname">Exchange_manager_memory</code><span class="sig-paren">(</span>std::string <em>segment_id</em>, std::string <em>object_id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N23Exchange_manager_memory23Exchange_manager_memoryENSt6stringENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N23Exchange_manager_memoryD0Ev">
+<span id="_CPPv3N23Exchange_manager_memoryD0Ev"></span><span id="_CPPv2N23Exchange_manager_memoryD0Ev"></span><span id="Exchange_manager_memory::~Exchange_manager_memory"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1a021d123a58b5e0f47906f7550ebb9016"></span><code class="sig-name descname">~Exchange_manager_memory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N23Exchange_manager_memoryD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N23Exchange_manager_memory15read_serializedER12Serializable">
+<span id="_CPPv3N23Exchange_manager_memory15read_serializedER12Serializable"></span><span id="_CPPv2N23Exchange_manager_memory15read_serializedER12Serializable"></span><span id="Exchange_manager_memory::read_serialized__SerializableR"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1aa0efbb57f5fafc8faa52f112b4db705e"></span>bool <code class="sig-name descname">read_serialized</code><span class="sig-paren">(</span>Serializable &amp;<em>serializable</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N23Exchange_manager_memory15read_serializedER12Serializable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N23Exchange_manager_memory16write_serializedERK12Serializable">
+<span id="_CPPv3N23Exchange_manager_memory16write_serializedERK12Serializable"></span><span id="_CPPv2N23Exchange_manager_memory16write_serializedERK12Serializable"></span><span id="Exchange_manager_memory::write_serialized__SerializableCR"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1a4b5fddf9270c80e4fbcb041947b4142c"></span>bool <code class="sig-name descname">write_serialized</code><span class="sig-paren">(</span><em class="property">const</em> Serializable &amp;<em>serializable</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N23Exchange_manager_memory16write_serializedERK12Serializable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N23Exchange_manager_memory19write_serialized_idEi">
+<span id="_CPPv3N23Exchange_manager_memory19write_serialized_idEi"></span><span id="_CPPv2N23Exchange_manager_memory19write_serialized_idEi"></span><span id="Exchange_manager_memory::write_serialized_id__i"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1a89d6cea01eca5ba87bff929e6bc7049f"></span>void <code class="sig-name descname">write_serialized_id</code><span class="sig-paren">(</span>int <em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N23Exchange_manager_memory19write_serialized_idEi" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N23Exchange_manager_memory5clearEv">
+<span id="_CPPv3N23Exchange_manager_memory5clearEv"></span><span id="_CPPv2N23Exchange_manager_memory5clearEv"></span><span id="Exchange_manager_memory::clear"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1ae9babbca9b477db799c6bbfe3aab425b"></span>void <code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N23Exchange_manager_memory5clearEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N23Exchange_manager_memory16get_consumed_idsERNSt5dequeIiEE">
+<span id="_CPPv3N23Exchange_manager_memory16get_consumed_idsERNSt5dequeIiEE"></span><span id="_CPPv2N23Exchange_manager_memory16get_consumed_idsERNSt5dequeIiEE"></span><span id="Exchange_manager_memory::get_consumed_ids__std::deque:i:R"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1a166fd53fb2da0da38801138ff1119e4c"></span>void <code class="sig-name descname">get_consumed_ids</code><span class="sig-paren">(</span>std::deque&lt;int&gt; &amp;<em>get_ids</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N23Exchange_manager_memory16get_consumed_idsERNSt5dequeIiEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N23Exchange_manager_memory10set_statusE6Status">
+<span id="_CPPv3N23Exchange_manager_memory10set_statusE6Status"></span><span id="_CPPv2N23Exchange_manager_memory10set_statusE6Status"></span><span id="Exchange_manager_memory::set_status__Status"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1a9294652f5d187c25308fc185107405ce"></span>void <code class="sig-name descname">set_status</code><span class="sig-paren">(</span>Status <em>status</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N23Exchange_manager_memory10set_statusE6Status" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N23Exchange_manager_memory10get_statusER6Status">
+<span id="_CPPv3N23Exchange_manager_memory10get_statusER6Status"></span><span id="_CPPv2N23Exchange_manager_memory10get_statusER6Status"></span><span id="Exchange_manager_memory::get_status__StatusR"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1a5c012017aedf7a85fce4f05e62a33ff5"></span>void <code class="sig-name descname">get_status</code><span class="sig-paren">(</span>Status &amp;<em>status</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N23Exchange_manager_memory10get_statusER6Status" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N23Exchange_manager_memory15purge_feedbacksEv">
+<span id="_CPPv3N23Exchange_manager_memory15purge_feedbacksEv"></span><span id="_CPPv2N23Exchange_manager_memory15purge_feedbacksEv"></span><span id="Exchange_manager_memory::purge_feedbacks"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1a328cc8181f3ad7e4b4f06c736e1c1d5c"></span>bool <code class="sig-name descname">purge_feedbacks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N23Exchange_manager_memory15purge_feedbacksEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N23Exchange_manager_memory5cleanEv">
+<span id="_CPPv3N23Exchange_manager_memory5cleanEv"></span><span id="_CPPv2N23Exchange_manager_memory5cleanEv"></span><span id="Exchange_manager_memory::clean"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1aa38a21be32f34e170e4f69824cd797a6"></span>void <code class="sig-name descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N23Exchange_manager_memory5cleanEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N23Exchange_manager_memory4lockEv">
+<span id="_CPPv3N23Exchange_manager_memory4lockEv"></span><span id="_CPPv2N23Exchange_manager_memory4lockEv"></span><span id="Exchange_manager_memory::lock"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1adae77aef8f3669914535f35085be8192"></span>void <code class="sig-name descname">lock</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N23Exchange_manager_memory4lockEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N23Exchange_manager_memory6unlockEv">
+<span id="_CPPv3N23Exchange_manager_memory6unlockEv"></span><span id="_CPPv2N23Exchange_manager_memory6unlockEv"></span><span id="Exchange_manager_memory::unlock"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1aa8723a5ac8aa9cd763ea7c5c18a89cf9"></span>void <code class="sig-name descname">unlock</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N23Exchange_manager_memory6unlockEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK23Exchange_manager_memory20consumer_queue_emptyEv">
+<span id="_CPPv3NK23Exchange_manager_memory20consumer_queue_emptyEv"></span><span id="_CPPv2NK23Exchange_manager_memory20consumer_queue_emptyEv"></span><span id="Exchange_manager_memory::consumer_queue_emptyC"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1a38fffdc598bdef77782e49b7653f34b5"></span>bool <code class="sig-name descname">consumer_queue_empty</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK23Exchange_manager_memory20consumer_queue_emptyEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK23Exchange_manager_memory20producer_queue_emptyEv">
+<span id="_CPPv3NK23Exchange_manager_memory20producer_queue_emptyEv"></span><span id="_CPPv2NK23Exchange_manager_memory20producer_queue_emptyEv"></span><span id="Exchange_manager_memory::producer_queue_emptyC"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1af9457fa77852bfecf90f26c2b3ce6f76"></span>bool <code class="sig-name descname">producer_queue_empty</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK23Exchange_manager_memory20producer_queue_emptyEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N23Exchange_manager_memory11weird_purgeEv">
+<span id="_CPPv3N23Exchange_manager_memory11weird_purgeEv"></span><span id="_CPPv2N23Exchange_manager_memory11weird_purgeEv"></span><span id="Exchange_manager_memory::weird_purge"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1a8d1197e044147a47f162c28e82ebf18a"></span>void <code class="sig-name descname">weird_purge</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N23Exchange_manager_memory11weird_purgeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N23Exchange_manager_memory16reset_char_countEv">
+<span id="_CPPv3N23Exchange_manager_memory16reset_char_countEv"></span><span id="_CPPv2N23Exchange_manager_memory16reset_char_countEv"></span><span id="Exchange_manager_memory::reset_char_count"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1a871ca7c6476c78d1887e271b3f2bea62"></span>void <code class="sig-name descname">reset_char_count</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N23Exchange_manager_memory16reset_char_countEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N23Exchange_manager_memory15nb_char_writtenEv">
+<span id="_CPPv3N23Exchange_manager_memory15nb_char_writtenEv"></span><span id="_CPPv2N23Exchange_manager_memory15nb_char_writtenEv"></span><span id="Exchange_manager_memory::nb_char_written"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1ad30f6606b230c0fe4b4d3ec73da96a6c"></span>int <code class="sig-name descname">nb_char_written</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N23Exchange_manager_memory15nb_char_writtenEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N23Exchange_manager_memory12nb_char_readEv">
+<span id="_CPPv3N23Exchange_manager_memory12nb_char_readEv"></span><span id="_CPPv2N23Exchange_manager_memory12nb_char_readEv"></span><span id="Exchange_manager_memory::nb_char_read"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1a76284109b7af9a05bf763154ba36391e"></span>int <code class="sig-name descname">nb_char_read</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N23Exchange_manager_memory12nb_char_readEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv4N13shared_memory8internal23Exchange_manager_memory11segment_id_E">
+<span id="_CPPv3N13shared_memory8internal23Exchange_manager_memory11segment_id_E"></span><span id="_CPPv2N13shared_memory8internal23Exchange_manager_memory11segment_id_E"></span><span id="shared_memory::internal::Exchange_manager_memory::segment_id___ss"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1a8d9578755fec571f772caec5908fdd38"></span>std::string <code class="sig-name descname">segment_id_</code><a class="headerlink" href="#_CPPv4N13shared_memory8internal23Exchange_manager_memory11segment_id_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N13shared_memory8internal23Exchange_manager_memory19object_id_producer_E">
+<span id="_CPPv3N13shared_memory8internal23Exchange_manager_memory19object_id_producer_E"></span><span id="_CPPv2N13shared_memory8internal23Exchange_manager_memory19object_id_producer_E"></span><span id="shared_memory::internal::Exchange_manager_memory::object_id_producer___ss"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1ab8c8000af66737cdc65a4a5b6c62cbd8"></span>std::string <code class="sig-name descname">object_id_producer_</code><a class="headerlink" href="#_CPPv4N13shared_memory8internal23Exchange_manager_memory19object_id_producer_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N13shared_memory8internal23Exchange_manager_memory19object_id_consumer_E">
+<span id="_CPPv3N13shared_memory8internal23Exchange_manager_memory19object_id_consumer_E"></span><span id="_CPPv2N13shared_memory8internal23Exchange_manager_memory19object_id_consumer_E"></span><span id="shared_memory::internal::Exchange_manager_memory::object_id_consumer___ss"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1ae438583144066ca87b4e1d12065b6e83"></span>std::string <code class="sig-name descname">object_id_consumer_</code><a class="headerlink" href="#_CPPv4N13shared_memory8internal23Exchange_manager_memory19object_id_consumer_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N13shared_memory8internal23Exchange_manager_memory17object_id_status_E">
+<span id="_CPPv3N13shared_memory8internal23Exchange_manager_memory17object_id_status_E"></span><span id="_CPPv2N13shared_memory8internal23Exchange_manager_memory17object_id_status_E"></span><span id="shared_memory::internal::Exchange_manager_memory::object_id_status___ss"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1aa01b4baeff59e90eb679b1fbf3099a02"></span>std::string <code class="sig-name descname">object_id_status_</code><a class="headerlink" href="#_CPPv4N13shared_memory8internal23Exchange_manager_memory17object_id_status_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N13shared_memory8internal23Exchange_manager_memory8segment_E">
+<span id="_CPPv3N13shared_memory8internal23Exchange_manager_memory8segment_E"></span><span id="_CPPv2N13shared_memory8internal23Exchange_manager_memory8segment_E"></span><span id="shared_memory::internal::Exchange_manager_memory::segment___bip::managed_shared_memory"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1a91205f52e14b9e843f3ba07b9c3d4d14"></span>bip::managed_shared_memory <code class="sig-name descname">segment_</code><a class="headerlink" href="#_CPPv4N13shared_memory8internal23Exchange_manager_memory8segment_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N13shared_memory8internal23Exchange_manager_memory9produced_E">
+<span id="_CPPv3N13shared_memory8internal23Exchange_manager_memory9produced_E"></span><span id="_CPPv2N13shared_memory8internal23Exchange_manager_memory9produced_E"></span><span id="shared_memory::internal::Exchange_manager_memory::produced___producer_queueP"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1ab333730dadc8519f23608e77c0974928"></span><a class="reference internal" href="#_CPPv4N13shared_memory8internal23Exchange_manager_memory14producer_queueE" title="shared_memory::internal::Exchange_manager_memory::producer_queue">producer_queue</a> *<code class="sig-name descname">produced_</code><a class="headerlink" href="#_CPPv4N13shared_memory8internal23Exchange_manager_memory9produced_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N13shared_memory8internal23Exchange_manager_memory16consumed_buffer_E">
+<span id="_CPPv3N13shared_memory8internal23Exchange_manager_memory16consumed_buffer_E"></span><span id="_CPPv2N13shared_memory8internal23Exchange_manager_memory16consumed_buffer_E"></span><span id="shared_memory::internal::Exchange_manager_memory::consumed_buffer___std::deque:i:"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1a2f3336a1a2a55972e4b1c61a81449fcb"></span>std::deque&lt;int&gt; <code class="sig-name descname">consumed_buffer_</code><a class="headerlink" href="#_CPPv4N13shared_memory8internal23Exchange_manager_memory16consumed_buffer_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N13shared_memory8internal23Exchange_manager_memory9consumed_E">
+<span id="_CPPv3N13shared_memory8internal23Exchange_manager_memory9consumed_E"></span><span id="_CPPv2N13shared_memory8internal23Exchange_manager_memory9consumed_E"></span><span id="shared_memory::internal::Exchange_manager_memory::consumed___consumer_queueP"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1a859c731d30b829de85eb92ac9866ae36"></span><a class="reference internal" href="#_CPPv4N13shared_memory8internal23Exchange_manager_memory14consumer_queueE" title="shared_memory::internal::Exchange_manager_memory::consumer_queue">consumer_queue</a> *<code class="sig-name descname">consumed_</code><a class="headerlink" href="#_CPPv4N13shared_memory8internal23Exchange_manager_memory9consumed_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N13shared_memory8internal23Exchange_manager_memory7values_E">
+<span id="_CPPv3N13shared_memory8internal23Exchange_manager_memory7values_E"></span><span id="_CPPv2N13shared_memory8internal23Exchange_manager_memory7values_E"></span><span id="shared_memory::internal::Exchange_manager_memory::values___cP"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1a32794be03e7f992a26fcad1f550a5b33"></span>char *<code class="sig-name descname">values_</code><a class="headerlink" href="#_CPPv4N13shared_memory8internal23Exchange_manager_memory7values_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N13shared_memory8internal23Exchange_manager_memory7locker_E">
+<span id="_CPPv3N13shared_memory8internal23Exchange_manager_memory7locker_E"></span><span id="_CPPv2N13shared_memory8internal23Exchange_manager_memory7locker_E"></span><span id="shared_memory::internal::Exchange_manager_memory::locker___shared_memory::Mutex"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1a44d72a699c2a76b2ef127f02ee37d26b"></span><a class="reference internal" href="../file/array_8cpp.html#_CPPv413shared_memory" title="shared_memory">shared_memory</a>::<a class="reference internal" href="classshared__memory_1_1_mutex.html#_CPPv4N13shared_memory5MutexE" title="shared_memory::Mutex">Mutex</a> <code class="sig-name descname">locker_</code><a class="headerlink" href="#_CPPv4N13shared_memory8internal23Exchange_manager_memory7locker_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N13shared_memory8internal23Exchange_manager_memory16serialized_read_E">
+<span id="_CPPv3N13shared_memory8internal23Exchange_manager_memory16serialized_read_E"></span><span id="_CPPv2N13shared_memory8internal23Exchange_manager_memory16serialized_read_E"></span><span id="shared_memory::internal::Exchange_manager_memory::serialized_read___Serialized_read:Serializable:"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1a3a5127e519eec82ec2a4181eee4ddab5"></span>Serialized_read&lt;Serializable&gt; <code class="sig-name descname">serialized_read_</code><a class="headerlink" href="#_CPPv4N13shared_memory8internal23Exchange_manager_memory16serialized_read_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N13shared_memory8internal23Exchange_manager_memory17serialized_write_E">
+<span id="_CPPv3N13shared_memory8internal23Exchange_manager_memory17serialized_write_E"></span><span id="_CPPv2N13shared_memory8internal23Exchange_manager_memory17serialized_write_E"></span><span id="shared_memory::internal::Exchange_manager_memory::serialized_write___Serialized_write:Serializable:"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1a1999cdf0f4f438e448bec0ef86a153b3"></span>Serialized_write&lt;Serializable&gt; <code class="sig-name descname">serialized_write_</code><a class="headerlink" href="#_CPPv4N13shared_memory8internal23Exchange_manager_memory17serialized_write_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N13shared_memory8internal23Exchange_manager_memory18serializable_size_E">
+<span id="_CPPv3N13shared_memory8internal23Exchange_manager_memory18serializable_size_E"></span><span id="_CPPv2N13shared_memory8internal23Exchange_manager_memory18serializable_size_E"></span><span id="shared_memory::internal::Exchange_manager_memory::serializable_size___i"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1af2d9740e5a2c4498a3d234175c515f26"></span>int <code class="sig-name descname">serializable_size_</code><a class="headerlink" href="#_CPPv4N13shared_memory8internal23Exchange_manager_memory18serializable_size_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Static Functions</p>
+<dl class="function">
+<dt id="_CPPv4N23Exchange_manager_memory11clean_mutexENSt6stringE">
+<span id="_CPPv3N23Exchange_manager_memory11clean_mutexENSt6stringE"></span><span id="_CPPv2N23Exchange_manager_memory11clean_mutexENSt6stringE"></span><span id="Exchange_manager_memory::clean_mutex__ss"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1a080eaca6885c4760620fd1df11907b66"></span>void <code class="sig-name descname">clean_mutex</code><span class="sig-paren">(</span>std::string <em>segment_id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N23Exchange_manager_memory11clean_mutexENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N23Exchange_manager_memory12clean_memoryENSt6stringE">
+<span id="_CPPv3N23Exchange_manager_memory12clean_memoryENSt6stringE"></span><span id="_CPPv2N23Exchange_manager_memory12clean_memoryENSt6stringE"></span><span id="Exchange_manager_memory::clean_memory__ss"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1ab87f3b0b0511bebd1f084ca088044e5f"></span>void <code class="sig-name descname">clean_memory</code><span class="sig-paren">(</span>std::string <em>segment_id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N23Exchange_manager_memory12clean_memoryENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Private Types</p>
+<dl class="type">
+<dt id="_CPPv4N13shared_memory8internal23Exchange_manager_memory14producer_queueE">
+<span id="_CPPv3N13shared_memory8internal23Exchange_manager_memory14producer_queueE"></span><span id="_CPPv2N13shared_memory8internal23Exchange_manager_memory14producer_queueE"></span><span id="shared_memory::internal::Exchange_manager_memory::producer_queue"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1acd7500dc11fa85fdff1c62b3bfec9bb5"></span><em class="property">typedef </em>boost::lockfree::queue&lt;char, boost::lockfree::fixed_sized&lt;true&gt;, boost::lockfree::capacity&lt;QUEUE_SIZE&gt;&gt; <code class="sig-name descname">producer_queue</code><a class="headerlink" href="#_CPPv4N13shared_memory8internal23Exchange_manager_memory14producer_queueE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="type">
+<dt id="_CPPv4N13shared_memory8internal23Exchange_manager_memory14consumer_queueE">
+<span id="_CPPv3N13shared_memory8internal23Exchange_manager_memory14consumer_queueE"></span><span id="_CPPv2N13shared_memory8internal23Exchange_manager_memory14consumer_queueE"></span><span id="shared_memory::internal::Exchange_manager_memory::consumer_queue"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1acfdce096249f1dd920c42d65176ba587"></span><em class="property">typedef </em>boost::lockfree::queue&lt;int, boost::lockfree::fixed_sized&lt;true&gt;, boost::lockfree::capacity&lt;QUEUE_SIZE&gt;&gt; <code class="sig-name descname">consumer_queue</code><a class="headerlink" href="#_CPPv4N13shared_memory8internal23Exchange_manager_memory14consumer_queueE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Private Members</p>
+<dl class="member">
+<dt id="_CPPv4N13shared_memory8internal23Exchange_manager_memory13nb_char_read_E">
+<span id="_CPPv3N13shared_memory8internal23Exchange_manager_memory13nb_char_read_E"></span><span id="_CPPv2N13shared_memory8internal23Exchange_manager_memory13nb_char_read_E"></span><span id="shared_memory::internal::Exchange_manager_memory::nb_char_read___i"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1a954428f2d2e9f7b29cd4201bfb7fa51c"></span>int <code class="sig-name descname">nb_char_read_</code><a class="headerlink" href="#_CPPv4N13shared_memory8internal23Exchange_manager_memory13nb_char_read_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N13shared_memory8internal23Exchange_manager_memory16nb_char_written_E">
+<span id="_CPPv3N13shared_memory8internal23Exchange_manager_memory16nb_char_written_E"></span><span id="_CPPv2N13shared_memory8internal23Exchange_manager_memory16nb_char_written_E"></span><span id="shared_memory::internal::Exchange_manager_memory::nb_char_written___i"></span><span class="target" id="classshared__memory_1_1internal_1_1_exchange__manager__memory_1a5669c5ec75442d54fd5e004a464233da"></span>int <code class="sig-name descname">nb_char_written_</code><a class="headerlink" href="#_CPPv4N13shared_memory8internal23Exchange_manager_memory16nb_char_written_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="classshared__memory_1_1internal_1_1_serialized__read.html" class="btn btn-neutral float-right" title="Class shared_memory::internal::Serialized_read" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="classshared__memory_1_1array.html" class="btn btn-neutral float-left" title="Class shared_memory::array" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright (c) 2020, New York University and Max Planck Gesellschaft. License under the BSD 3-clause.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

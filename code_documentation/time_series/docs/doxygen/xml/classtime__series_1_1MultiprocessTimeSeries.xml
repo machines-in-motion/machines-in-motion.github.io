@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classtime__series_1_1MultiprocessTimeSeries" kind="class" language="C++" prot="public">
+    <compoundname>time_series::MultiprocessTimeSeries</compoundname>
+    <basecompoundref refid="classtime__series_1_1internal_1_1TimeSeriesBase" prot="public" virt="non-virtual">time_series::internal::TimeSeriesBase&lt; internal::MultiProcesses, T &gt;</basecompoundref>
+    <includes refid="multiprocess__time__series_8hpp" local="no">multiprocess_time_series.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+        <defval>int</defval>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classtime__series_1_1MultiprocessTimeSeries_1a0ae05ba33e9f73f839e2229677062518" prot="protected" static="no" mutable="no">
+        <type>shared_memory::array&lt; Index &gt;</type>
+        <definition>shared_memory::array&lt;Index&gt; time_series::MultiprocessTimeSeries&lt; T &gt;::indexes_</definition>
+        <argsstring></argsstring>
+        <name>indexes_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/time_series/multiprocess_time_series.hpp" line="104" column="1" bodyfile="include/time_series/multiprocess_time_series.hpp" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtime__series_1_1MultiprocessTimeSeries_1a118890497b42365a56221c66edbb478e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>time_series::MultiprocessTimeSeries&lt; T &gt;::MultiprocessTimeSeries</definition>
+        <argsstring>(std::string segment_id, size_t max_length, bool leader=true, Index start_timeindex=0)</argsstring>
+        <name>MultiprocessTimeSeries</name>
+        <param>
+          <type>std::string</type>
+          <declname>segment_id</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>max_length</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>leader</declname>
+          <defval>true</defval>
+        </param>
+        <param>
+          <type>Index</type>
+          <declname>start_timeindex</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>create a new instance pointing to the specified shared memory segment </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>segment_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the id of the segment to point to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max_length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>max number of elements in the time series </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>leader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if true, the shared memory segment will initialize the shared time series, and wiped the related shared memory on destruction. Instantiating a first <ref refid="classtime__series_1_1MultiprocessTimeSeries" kindref="compound">MultiprocessTimeSeries</ref> with leader set to false will result in undefined behavior. When the leader instance is destroyed, other instances are pointing to the shared segment may crash or hang. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/time_series/multiprocess_time_series.hpp" line="61" column="1" bodyfile="include/time_series/multiprocess_time_series.hpp" bodystart="61" bodyend="85"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classtime__series_1_1MultiprocessTimeSeries_1a44445322f664019684a02caa31639c14" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void time_series::MultiprocessTimeSeries&lt; T &gt;::read_indexes</definition>
+        <argsstring>()</argsstring>
+        <name>read_indexes</name>
+        <reimplements refid="classtime__series_1_1internal_1_1TimeSeriesBase_1a1f379b0886fe36f5a7ea99ebb56a3bbf">read_indexes</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/time_series/multiprocess_time_series.hpp" line="88" column="1" bodyfile="include/time_series/multiprocess_time_series.hpp" bodystart="88" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="classtime__series_1_1MultiprocessTimeSeries_1abc59736f908b8e3f4e6881607e2253a7" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void time_series::MultiprocessTimeSeries&lt; T &gt;::write_indexes</definition>
+        <argsstring>()</argsstring>
+        <name>write_indexes</name>
+        <reimplements refid="classtime__series_1_1internal_1_1TimeSeriesBase_1ae45f307ebdfe4508fa342a6a259aea38">write_indexes</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/time_series/multiprocess_time_series.hpp" line="96" column="1" bodyfile="include/time_series/multiprocess_time_series.hpp" bodystart="96" bodyend="102"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Multiprocess Time Series. </para>    </briefdescription>
+    <detaileddescription>
+<para>Several instances hosted by different processes, if pointing to the same shared memory segment (as specified by the segment_id), may read/write from the same underlying time series. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="61">
+        <label>time_series::TimeSeriesInterface&lt; T &gt;</label>
+        <link refid="classtime__series_1_1TimeSeriesInterface"/>
+      </node>
+      <node id="59">
+        <label>time_series::MultiprocessTimeSeries&lt; T &gt;</label>
+        <link refid="classtime__series_1_1MultiprocessTimeSeries"/>
+        <childnode refid="60" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="60">
+        <label>time_series::internal::TimeSeriesBase&lt; internal::MultiProcesses, T &gt;</label>
+        <link refid="classtime__series_1_1internal_1_1TimeSeriesBase"/>
+        <childnode refid="61" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="64">
+        <label>time_series::TimeSeriesInterface&lt; T &gt;</label>
+        <link refid="classtime__series_1_1TimeSeriesInterface"/>
+      </node>
+      <node id="62">
+        <label>time_series::MultiprocessTimeSeries&lt; T &gt;</label>
+        <link refid="classtime__series_1_1MultiprocessTimeSeries"/>
+        <childnode refid="63" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="63">
+        <label>time_series::internal::TimeSeriesBase&lt; internal::MultiProcesses, T &gt;</label>
+        <link refid="classtime__series_1_1internal_1_1TimeSeriesBase"/>
+        <childnode refid="64" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/time_series/multiprocess_time_series.hpp" line="47" column="1" bodyfile="include/time_series/multiprocess_time_series.hpp" bodystart="45" bodyend="105"/>
+    <listofallmembers>
+      <member refid="classtime__series_1_1internal_1_1TimeSeriesBase_1a09293ae95cdc492e7de78729b0e0e398" prot="public" virt="virtual"><scope>time_series::MultiprocessTimeSeries</scope><name>append</name></member>
+      <member refid="classtime__series_1_1internal_1_1TimeSeriesBase_1a728279a5c045f0784c176282cc5ae1fe" prot="protected" virt="non-virtual"><scope>time_series::MultiprocessTimeSeries</scope><name>condition_ptr_</name></member>
+      <member refid="classtime__series_1_1internal_1_1TimeSeriesBase_1a1e384606bee9664d05803f33235a0d60" prot="public" virt="virtual"><scope>time_series::MultiprocessTimeSeries</scope><name>count_appended_elements</name></member>
+      <member refid="classtime__series_1_1internal_1_1TimeSeriesBase_1a38511cb227e3e423922eaaea626a15ee" prot="public" virt="virtual"><scope>time_series::MultiprocessTimeSeries</scope><name>has_changed_since_tag</name></member>
+      <member refid="classtime__series_1_1internal_1_1TimeSeriesBase_1aec36178b209eb829fa44f8c0292e1065" prot="protected" virt="non-virtual"><scope>time_series::MultiprocessTimeSeries</scope><name>history_elements_ptr_</name></member>
+      <member refid="classtime__series_1_1internal_1_1TimeSeriesBase_1aa9e47bae6a7e2270a1984bee683d1525" prot="protected" virt="non-virtual"><scope>time_series::MultiprocessTimeSeries</scope><name>history_timestamps_ptr_</name></member>
+      <member refid="classtime__series_1_1MultiprocessTimeSeries_1a0ae05ba33e9f73f839e2229677062518" prot="protected" virt="non-virtual"><scope>time_series::MultiprocessTimeSeries</scope><name>indexes_</name></member>
+      <member refid="classtime__series_1_1internal_1_1TimeSeriesBase_1ae6da9bd31ca06b30413f2073bc2e48e6" prot="public" virt="virtual"><scope>time_series::MultiprocessTimeSeries</scope><name>length</name></member>
+      <member refid="classtime__series_1_1internal_1_1TimeSeriesBase_1aee1bf636a094a3068f9de731688c3972" prot="public" virt="virtual"><scope>time_series::MultiprocessTimeSeries</scope><name>max_length</name></member>
+      <member refid="classtime__series_1_1MultiprocessTimeSeries_1a118890497b42365a56221c66edbb478e" prot="public" virt="non-virtual"><scope>time_series::MultiprocessTimeSeries</scope><name>MultiprocessTimeSeries</name></member>
+      <member refid="classtime__series_1_1internal_1_1TimeSeriesBase_1ac192edc73cd3244e0a5ceb7ba1ff3bb6" prot="protected" virt="non-virtual"><scope>time_series::MultiprocessTimeSeries</scope><name>mutex_ptr_</name></member>
+      <member refid="classtime__series_1_1internal_1_1TimeSeriesBase_1a12bd405933d326fd8396fb2bc1267223" prot="public" virt="virtual"><scope>time_series::MultiprocessTimeSeries</scope><name>newest_element</name></member>
+      <member refid="classtime__series_1_1internal_1_1TimeSeriesBase_1aac02c35ae67fad14a3567dd01565d058" prot="public" virt="virtual"><scope>time_series::MultiprocessTimeSeries</scope><name>newest_timeindex</name></member>
+      <member refid="classtime__series_1_1internal_1_1TimeSeriesBase_1af82c823d37375e138e8c11c46a506cae" prot="protected" virt="non-virtual"><scope>time_series::MultiprocessTimeSeries</scope><name>newest_timeindex_</name></member>
+      <member refid="classtime__series_1_1internal_1_1TimeSeriesBase_1ace0e19f7ce8e25e50cb704ba58a80d35" prot="public" virt="virtual"><scope>time_series::MultiprocessTimeSeries</scope><name>oldest_timeindex</name></member>
+      <member refid="classtime__series_1_1internal_1_1TimeSeriesBase_1aec2ed21821c0dc475c9360e9124aa550" prot="protected" virt="non-virtual"><scope>time_series::MultiprocessTimeSeries</scope><name>oldest_timeindex_</name></member>
+      <member refid="classtime__series_1_1internal_1_1TimeSeriesBase_1aa7267458e4fadff7314037a4bd1d53bb" prot="public" virt="virtual"><scope>time_series::MultiprocessTimeSeries</scope><name>operator[]</name></member>
+      <member refid="classtime__series_1_1MultiprocessTimeSeries_1a44445322f664019684a02caa31639c14" prot="protected" virt="virtual"><scope>time_series::MultiprocessTimeSeries</scope><name>read_indexes</name></member>
+      <member refid="classtime__series_1_1internal_1_1TimeSeriesBase_1a6f78dd0d9435126ff803248499fad636" prot="protected" virt="non-virtual"><scope>time_series::MultiprocessTimeSeries</scope><name>start_timeindex_</name></member>
+      <member refid="classtime__series_1_1internal_1_1TimeSeriesBase_1ad20c1f90dd2f9016f32132caa3f976f7" prot="public" virt="virtual"><scope>time_series::MultiprocessTimeSeries</scope><name>tag</name></member>
+      <member refid="classtime__series_1_1internal_1_1TimeSeriesBase_1adadeeff6e42776853e26aa5f74264909" prot="public" virt="virtual"><scope>time_series::MultiprocessTimeSeries</scope><name>tagged_timeindex</name></member>
+      <member refid="classtime__series_1_1internal_1_1TimeSeriesBase_1a68c415d1fa3de6d751d3178d0c10006a" prot="protected" virt="non-virtual"><scope>time_series::MultiprocessTimeSeries</scope><name>tagged_timeindex_</name></member>
+      <member refid="classtime__series_1_1internal_1_1TimeSeriesBase_1a60aa9cdab364cd01a5f070bb75c187a3" prot="public" virt="non-virtual"><scope>time_series::MultiprocessTimeSeries</scope><name>TimeSeriesBase</name></member>
+      <member refid="classtime__series_1_1internal_1_1TimeSeriesBase_1a1e4c7ca710bb14e7dce57a1dd9c4f929" prot="public" virt="virtual"><scope>time_series::MultiprocessTimeSeries</scope><name>timestamp_ms</name></member>
+      <member refid="classtime__series_1_1internal_1_1TimeSeriesBase_1aacca694af4c53fa4ae9cd3593c12bf58" prot="public" virt="virtual"><scope>time_series::MultiprocessTimeSeries</scope><name>timestamp_s</name></member>
+      <member refid="classtime__series_1_1internal_1_1TimeSeriesBase_1a5651e522492514408e38a5b99e144a06" prot="public" virt="virtual"><scope>time_series::MultiprocessTimeSeries</scope><name>wait_for_timeindex</name></member>
+      <member refid="classtime__series_1_1MultiprocessTimeSeries_1abc59736f908b8e3f4e6881607e2253a7" prot="protected" virt="virtual"><scope>time_series::MultiprocessTimeSeries</scope><name>write_indexes</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

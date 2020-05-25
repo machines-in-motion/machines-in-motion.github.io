@@ -1,0 +1,303 @@
+\hypertarget{classreal__time__tools_1_1SingletypeThreadsafeObject}{}\section{real\+\_\+time\+\_\+tools\+:\+:Singletype\+Threadsafe\+Object$<$ Type, S\+I\+ZE $>$ Class Template Reference}
+\label{classreal__time__tools_1_1SingletypeThreadsafeObject}\index{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object$<$ Type, S\+I\+Z\+E $>$@{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object$<$ Type, S\+I\+Z\+E $>$}}
+
+
+The \hyperlink{classreal__time__tools_1_1SingletypeThreadsafeObject}{Singletype\+Threadsafe\+Object} is a thread safe object.  
+
+
+
+
+{\ttfamily \#include $<$threadsafe\+\_\+object.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classreal__time__tools_1_1SingletypeThreadsafeObject_a00771da99b515b82cd0b10a431b4ccb1}{Singletype\+Threadsafe\+Object} ()\hypertarget{classreal__time__tools_1_1SingletypeThreadsafeObject_a00771da99b515b82cd0b10a431b4ccb1}{}\label{classreal__time__tools_1_1SingletypeThreadsafeObject_a00771da99b515b82cd0b10a431b4ccb1}
+
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classreal__time__tools_1_1SingletypeThreadsafeObject}{Singletype\+Threadsafe\+Object} object. \end{DoxyCompactList}\item 
+\hyperlink{classreal__time__tools_1_1SingletypeThreadsafeObject_ad33b8afc1581cc7adea5881c9d775128}{Singletype\+Threadsafe\+Object} (const std\+::vector$<$ std\+::string $>$ \&names)
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classreal__time__tools_1_1SingletypeThreadsafeObject}{Singletype\+Threadsafe\+Object} object. \end{DoxyCompactList}\item 
+void \hyperlink{classreal__time__tools_1_1SingletypeThreadsafeObject_ace9ae42bea412eadcd251097089c30cc}{wait\+\_\+for\+\_\+update} (const size\+\_\+t \&index) const 
+\begin{DoxyCompactList}\small\item\em Wait until the data at the given index is modified. \end{DoxyCompactList}\item 
+void \hyperlink{classreal__time__tools_1_1SingletypeThreadsafeObject_a222e0fbdabcdccd95e9d66663e849a58}{wait\+\_\+for\+\_\+update} (const std\+::string \&name) const 
+\begin{DoxyCompactList}\small\item\em Wait until the data at the given name is modified. \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{classreal__time__tools_1_1SingletypeThreadsafeObject_ad86f983aa4366695415ca3816002a3fd}{wait\+\_\+for\+\_\+update} () const 
+\begin{DoxyCompactList}\small\item\em Wait unitl any data has been changed and return its index. \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{classreal__time__tools_1_1SingletypeThreadsafeObject_af09735c0e632800487bc50e4f2f7f512}{size} ()
+\begin{DoxyCompactList}\small\item\em Getters. \end{DoxyCompactList}\item 
+Type \hyperlink{classreal__time__tools_1_1SingletypeThreadsafeObject_adb4e58f3057002b931e570374cb8604e}{get} (const size\+\_\+t \&index=0) const 
+\begin{DoxyCompactList}\small\item\em Get the data by its index in the buffer. \end{DoxyCompactList}\item 
+Type \hyperlink{classreal__time__tools_1_1SingletypeThreadsafeObject_a72ed3358cc661ea9d5681ee359aed2e4}{get} (const std\+::string \&name) const 
+\begin{DoxyCompactList}\small\item\em Get the data by its name in the buffer. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int I\+N\+D\+EX = 0$>$ }\\Type \hyperlink{classreal__time__tools_1_1SingletypeThreadsafeObject_a08d539478b86e0243de5fe2fa1680c06}{get} () const 
+\begin{DoxyCompactList}\small\item\em Get the data by its index in the buffer. \end{DoxyCompactList}\item 
+void \hyperlink{classreal__time__tools_1_1SingletypeThreadsafeObject_a6d09deb1c28dcddee0a3986184af7bd5}{set} (const Type \&datum, const size\+\_\+t \&index=0)
+\begin{DoxyCompactList}\small\item\em Setters. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int I\+N\+D\+EX = 0$>$ }\\void \hyperlink{classreal__time__tools_1_1SingletypeThreadsafeObject_a1f852a4b68d3a0ff112cb9c5d7c6b33e}{set} (Type datum)
+\begin{DoxyCompactList}\small\item\em Set one element at a designated index. \end{DoxyCompactList}\item 
+void \hyperlink{classreal__time__tools_1_1SingletypeThreadsafeObject_ab5776496cf4fa4a015101c81811eb9fc}{set} (const Type \&datum, const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Set one element using at a designated name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ std\+::array$<$ Type, S\+I\+ZE $>$ $>$ \hyperlink{classreal__time__tools_1_1SingletypeThreadsafeObject_abb449516269c85f927246182abee83ff}{data\+\_\+}\hypertarget{classreal__time__tools_1_1SingletypeThreadsafeObject_abb449516269c85f927246182abee83ff}{}\label{classreal__time__tools_1_1SingletypeThreadsafeObject_abb449516269c85f927246182abee83ff}
+
+\begin{DoxyCompactList}\small\item\em This is the data buffer. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ std\+::array$<$ size\+\_\+t, S\+I\+ZE $>$ $>$ \hyperlink{classreal__time__tools_1_1SingletypeThreadsafeObject_a7b242bedc7cd23b419d7928e661fdc10}{modification\+\_\+counts\+\_\+}\hypertarget{classreal__time__tools_1_1SingletypeThreadsafeObject_a7b242bedc7cd23b419d7928e661fdc10}{}\label{classreal__time__tools_1_1SingletypeThreadsafeObject_a7b242bedc7cd23b419d7928e661fdc10}
+
+\begin{DoxyCompactList}\small\item\em This is counting the data modification occurences for each individual buffers. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ size\+\_\+t $>$ \hyperlink{classreal__time__tools_1_1SingletypeThreadsafeObject_a3475e1d35b7af07acdbf74c0170ed45d}{total\+\_\+modification\+\_\+count\+\_\+}
+\begin{DoxyCompactList}\small\item\em This is counting the all data modification occurences for all buffer. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, size\+\_\+t $>$ \hyperlink{classreal__time__tools_1_1SingletypeThreadsafeObject_a1a27e1934ed7df5119e0e91ca228ac73}{name\+\_\+to\+\_\+index\+\_\+}\hypertarget{classreal__time__tools_1_1SingletypeThreadsafeObject_a1a27e1934ed7df5119e0e91ca228ac73}{}\label{classreal__time__tools_1_1SingletypeThreadsafeObject_a1a27e1934ed7df5119e0e91ca228ac73}
+
+\begin{DoxyCompactList}\small\item\em This is the map that allow to deal with data by their names. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ std\+::condition\+\_\+variable $>$ \hyperlink{classreal__time__tools_1_1SingletypeThreadsafeObject_a628a0eb20c8a683a95607468653c7b2e}{condition\+\_\+}\hypertarget{classreal__time__tools_1_1SingletypeThreadsafeObject_a628a0eb20c8a683a95607468653c7b2e}{}\label{classreal__time__tools_1_1SingletypeThreadsafeObject_a628a0eb20c8a683a95607468653c7b2e}
+
+\begin{DoxyCompactList}\small\item\em This condition variable is used to wait untils any data has been changed. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ std\+::mutex $>$ \hyperlink{classreal__time__tools_1_1SingletypeThreadsafeObject_aa0bbdbc03580868de0a04e5be234408d}{condition\+\_\+mutex\+\_\+}\hypertarget{classreal__time__tools_1_1SingletypeThreadsafeObject_aa0bbdbc03580868de0a04e5be234408d}{}\label{classreal__time__tools_1_1SingletypeThreadsafeObject_aa0bbdbc03580868de0a04e5be234408d}
+
+\begin{DoxyCompactList}\small\item\em This is the mutex of the condition varaible. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ std\+::array$<$ std\+::mutex, S\+I\+ZE $>$ $>$ \hyperlink{classreal__time__tools_1_1SingletypeThreadsafeObject_a55f7e015fa4915ea1c3af34757c2f671}{data\+\_\+mutexes\+\_\+}\hypertarget{classreal__time__tools_1_1SingletypeThreadsafeObject_a55f7e015fa4915ea1c3af34757c2f671}{}\label{classreal__time__tools_1_1SingletypeThreadsafeObject_a55f7e015fa4915ea1c3af34757c2f671}
+
+\begin{DoxyCompactList}\small\item\em These are the individual mutexes of each data upon setting and getting. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Type, size\+\_\+t S\+I\+ZE$>$\\*
+class real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object$<$ Type, S\+I\+Z\+E $>$}
+
+The \hyperlink{classreal__time__tools_1_1SingletypeThreadsafeObject}{Singletype\+Threadsafe\+Object} is a thread safe object. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Type} & is the data type to store in the buffer. \\
+\hline
+{\em S\+I\+ZE} & is the size of the buffer. It is better to know it at compile time to be 100\% real time safe. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object@{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}!Singletype\+Threadsafe\+Object@{Singletype\+Threadsafe\+Object}}
+\index{Singletype\+Threadsafe\+Object@{Singletype\+Threadsafe\+Object}!real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object@{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}}
+\subsubsection[{\texorpdfstring{Singletype\+Threadsafe\+Object(const std\+::vector$<$ std\+::string $>$ \&names)}{SingletypeThreadsafeObject(const std::vector< std::string > &names)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Type , size\+\_\+t S\+I\+ZE$>$ {\bf real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}$<$ Type, S\+I\+ZE $>$\+::{\bf Singletype\+Threadsafe\+Object} (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ std\+::string $>$ \&}]{names}
+\end{DoxyParamCaption}
+)}\hypertarget{classreal__time__tools_1_1SingletypeThreadsafeObject_ad33b8afc1581cc7adea5881c9d775128}{}\label{classreal__time__tools_1_1SingletypeThreadsafeObject_ad33b8afc1581cc7adea5881c9d775128}
+
+
+Construct a new \hyperlink{classreal__time__tools_1_1SingletypeThreadsafeObject}{Singletype\+Threadsafe\+Object} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em names} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object@{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}!get@{get}}
+\index{get@{get}!real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object@{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}}
+\subsubsection[{\texorpdfstring{get(const size\+\_\+t \&index=0) const }{get(const size_t &index=0) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Type , size\+\_\+t S\+I\+ZE$>$ Type {\bf real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}$<$ Type, S\+I\+ZE $>$\+::get (
+\begin{DoxyParamCaption}
+\item[{const size\+\_\+t \&}]{index = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classreal__time__tools_1_1SingletypeThreadsafeObject_adb4e58f3057002b931e570374cb8604e}{}\label{classreal__time__tools_1_1SingletypeThreadsafeObject_adb4e58f3057002b931e570374cb8604e}
+
+
+Get the data by its index in the buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Type 
+\end{DoxyReturn}
+\index{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object@{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}!get@{get}}
+\index{get@{get}!real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object@{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}}
+\subsubsection[{\texorpdfstring{get(const std\+::string \&name) const }{get(const std::string &name) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Type , size\+\_\+t S\+I\+ZE$>$ Type {\bf real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}$<$ Type, S\+I\+ZE $>$\+::get (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classreal__time__tools_1_1SingletypeThreadsafeObject_a72ed3358cc661ea9d5681ee359aed2e4}{}\label{classreal__time__tools_1_1SingletypeThreadsafeObject_a72ed3358cc661ea9d5681ee359aed2e4}
+
+
+Get the data by its name in the buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Type 
+\end{DoxyReturn}
+\index{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object@{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}!get@{get}}
+\index{get@{get}!real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object@{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}}
+\subsubsection[{\texorpdfstring{get() const }{get() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Type , size\+\_\+t S\+I\+ZE$>$ template$<$int I\+N\+D\+EX = 0$>$ Type {\bf real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}$<$ Type, S\+I\+ZE $>$\+::get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classreal__time__tools_1_1SingletypeThreadsafeObject_a08d539478b86e0243de5fe2fa1680c06}{}\label{classreal__time__tools_1_1SingletypeThreadsafeObject_a08d539478b86e0243de5fe2fa1680c06}
+
+
+Get the data by its index in the buffer. 
+
+Index is solved during compile time
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em I\+N\+D\+E\+X=0} & \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+Type 
+\end{DoxyReturn}
+\index{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object@{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}!set@{set}}
+\index{set@{set}!real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object@{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}}
+\subsubsection[{\texorpdfstring{set(const Type \&datum, const size\+\_\+t \&index=0)}{set(const Type &datum, const size_t &index=0)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Type , size\+\_\+t S\+I\+ZE$>$ void {\bf real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}$<$ Type, S\+I\+ZE $>$\+::set (
+\begin{DoxyParamCaption}
+\item[{const Type \&}]{datum, }
+\item[{const size\+\_\+t \&}]{index = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\hypertarget{classreal__time__tools_1_1SingletypeThreadsafeObject_a6d09deb1c28dcddee0a3986184af7bd5}{}\label{classreal__time__tools_1_1SingletypeThreadsafeObject_a6d09deb1c28dcddee0a3986184af7bd5}
+
+
+Setters. 
+
+Set one element at a designated index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em datum} & \\
+\hline
+{\em index} & \\
+\hline
+\end{DoxyParams}
+\index{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object@{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}!set@{set}}
+\index{set@{set}!real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object@{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}}
+\subsubsection[{\texorpdfstring{set(\+Type datum)}{set(Type datum)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Type , size\+\_\+t S\+I\+ZE$>$ template$<$int I\+N\+D\+EX = 0$>$ void {\bf real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}$<$ Type, S\+I\+ZE $>$\+::set (
+\begin{DoxyParamCaption}
+\item[{Type}]{datum}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classreal__time__tools_1_1SingletypeThreadsafeObject_a1f852a4b68d3a0ff112cb9c5d7c6b33e}{}\label{classreal__time__tools_1_1SingletypeThreadsafeObject_a1f852a4b68d3a0ff112cb9c5d7c6b33e}
+
+
+Set one element at a designated index. 
+
+Warning the index is resolved at compile time. This is used for backward comaptibility. \begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000003}{Todo}]\char`\"{}\+This is used for backward comaptibility.\char`\"{}, Manuel Which bakward?\end{DoxyRefDesc}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em I\+N\+D\+E\+X=0} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em datum} & \\
+\hline
+\end{DoxyParams}
+\index{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object@{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}!set@{set}}
+\index{set@{set}!real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object@{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}}
+\subsubsection[{\texorpdfstring{set(const Type \&datum, const std\+::string \&name)}{set(const Type &datum, const std::string &name)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Type , size\+\_\+t S\+I\+ZE$>$ void {\bf real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}$<$ Type, S\+I\+ZE $>$\+::set (
+\begin{DoxyParamCaption}
+\item[{const Type \&}]{datum, }
+\item[{const std\+::string \&}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classreal__time__tools_1_1SingletypeThreadsafeObject_ab5776496cf4fa4a015101c81811eb9fc}{}\label{classreal__time__tools_1_1SingletypeThreadsafeObject_ab5776496cf4fa4a015101c81811eb9fc}
+
+
+Set one element using at a designated name. 
+
+Internally this name is map to an index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em datum} & \\
+\hline
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\index{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object@{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}!size@{size}}
+\index{size@{size}!real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object@{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}}
+\subsubsection[{\texorpdfstring{size()}{size()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Type , size\+\_\+t S\+I\+ZE$>$ size\+\_\+t {\bf real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}$<$ Type, S\+I\+ZE $>$\+::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classreal__time__tools_1_1SingletypeThreadsafeObject_af09735c0e632800487bc50e4f2f7f512}{}\label{classreal__time__tools_1_1SingletypeThreadsafeObject_af09735c0e632800487bc50e4f2f7f512}
+
+
+Getters. 
+
+get size.
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+t 
+\end{DoxyReturn}
+\index{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object@{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}!wait\+\_\+for\+\_\+update@{wait\+\_\+for\+\_\+update}}
+\index{wait\+\_\+for\+\_\+update@{wait\+\_\+for\+\_\+update}!real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object@{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}}
+\subsubsection[{\texorpdfstring{wait\+\_\+for\+\_\+update(const size\+\_\+t \&index) const }{wait_for_update(const size_t &index) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Type , size\+\_\+t S\+I\+ZE$>$ void {\bf real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}$<$ Type, S\+I\+ZE $>$\+::wait\+\_\+for\+\_\+update (
+\begin{DoxyParamCaption}
+\item[{const size\+\_\+t \&}]{index}
+\end{DoxyParamCaption}
+) const}\hypertarget{classreal__time__tools_1_1SingletypeThreadsafeObject_ace9ae42bea412eadcd251097089c30cc}{}\label{classreal__time__tools_1_1SingletypeThreadsafeObject_ace9ae42bea412eadcd251097089c30cc}
+
+
+Wait until the data at the given index is modified. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+\end{DoxyParams}
+\index{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object@{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}!wait\+\_\+for\+\_\+update@{wait\+\_\+for\+\_\+update}}
+\index{wait\+\_\+for\+\_\+update@{wait\+\_\+for\+\_\+update}!real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object@{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}}
+\subsubsection[{\texorpdfstring{wait\+\_\+for\+\_\+update(const std\+::string \&name) const }{wait_for_update(const std::string &name) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Type , size\+\_\+t S\+I\+ZE$>$ void {\bf real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}$<$ Type, S\+I\+ZE $>$\+::wait\+\_\+for\+\_\+update (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classreal__time__tools_1_1SingletypeThreadsafeObject_a222e0fbdabcdccd95e9d66663e849a58}{}\label{classreal__time__tools_1_1SingletypeThreadsafeObject_a222e0fbdabcdccd95e9d66663e849a58}
+
+
+Wait until the data at the given name is modified. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\index{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object@{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}!wait\+\_\+for\+\_\+update@{wait\+\_\+for\+\_\+update}}
+\index{wait\+\_\+for\+\_\+update@{wait\+\_\+for\+\_\+update}!real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object@{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}}
+\subsubsection[{\texorpdfstring{wait\+\_\+for\+\_\+update() const }{wait_for_update() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Type , size\+\_\+t S\+I\+ZE$>$ size\+\_\+t {\bf real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}$<$ Type, S\+I\+ZE $>$\+::wait\+\_\+for\+\_\+update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classreal__time__tools_1_1SingletypeThreadsafeObject_ad86f983aa4366695415ca3816002a3fd}{}\label{classreal__time__tools_1_1SingletypeThreadsafeObject_ad86f983aa4366695415ca3816002a3fd}
+
+
+Wait unitl any data has been changed and return its index. 
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+t 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\index{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object@{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}!total\+\_\+modification\+\_\+count\+\_\+@{total\+\_\+modification\+\_\+count\+\_\+}}
+\index{total\+\_\+modification\+\_\+count\+\_\+@{total\+\_\+modification\+\_\+count\+\_\+}!real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object@{real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}}
+\subsubsection[{\texorpdfstring{total\+\_\+modification\+\_\+count\+\_\+}{total_modification_count_}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Type , size\+\_\+t S\+I\+ZE$>$ std\+::shared\+\_\+ptr$<$size\+\_\+t$>$ {\bf real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object}$<$ Type, S\+I\+ZE $>$\+::total\+\_\+modification\+\_\+count\+\_\+\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classreal__time__tools_1_1SingletypeThreadsafeObject_a3475e1d35b7af07acdbf74c0170ed45d}{}\label{classreal__time__tools_1_1SingletypeThreadsafeObject_a3475e1d35b7af07acdbf74c0170ed45d}
+
+
+This is counting the all data modification occurences for all buffer. 
+
+/todo Can\textquotesingle{}t we just some the modification\+\_\+counts\+\_\+ array whenever needed? 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/real\+\_\+time\+\_\+tools/threadsafe/\hyperlink{threadsafe__object_8hpp}{threadsafe\+\_\+object.\+hpp}\item 
+include/real\+\_\+time\+\_\+tools/threadsafe/\hyperlink{threadsafe__object_8hxx}{threadsafe\+\_\+object.\+hxx}\end{DoxyCompactItemize}

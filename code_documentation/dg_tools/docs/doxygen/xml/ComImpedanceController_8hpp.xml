@@ -1,0 +1,234 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="ComImpedanceController_8hpp" kind="file" language="C++">
+    <compoundname>ComImpedanceController.hpp</compoundname>
+    <includes local="no">math.h</includes>
+    <includes local="no">dynamic-graph/linear-algebra.h</includes>
+    <includes local="no">eigen-quadprog/QuadProg.h</includes>
+    <includes local="no">dynamic-graph/signal-time-dependent.h</includes>
+    <includes local="no">dynamic-graph/signal-ptr.h</includes>
+    <includes local="no">dynamic-graph/entity.h</includes>
+    <includedby refid="com__impedance__controller_8cpp" local="yes">src/com_impedance_control/com_impedance_controller.cpp</includedby>
+    <incdepgraph>
+      <node id="50">
+        <label>eigen-quadprog/QuadProg.h</label>
+      </node>
+      <node id="49">
+        <label>dynamic-graph/linear-algebra.h</label>
+      </node>
+      <node id="47">
+        <label>include/dg_tools/ComImpedanceControl/ComImpedanceController.hpp</label>
+        <link refid="ComImpedanceController.hpp"/>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>dynamic-graph/signal-time-dependent.h</label>
+      </node>
+      <node id="48">
+        <label>math.h</label>
+      </node>
+      <node id="52">
+        <label>dynamic-graph/signal-ptr.h</label>
+      </node>
+      <node id="53">
+        <label>dynamic-graph/entity.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classdynamicgraph_1_1sot_1_1ComImpedanceControl" prot="public">dynamicgraph::sot::ComImpedanceControl</innerclass>
+    <innernamespace refid="namespacedynamicgraph">dynamicgraph</innernamespace>
+    <innernamespace refid="namespacedynamicgraph_1_1sot">dynamicgraph::sot</innernamespace>
+    <briefdescription>
+<para>impedance controller implementation for COM (used for quadruped) </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Avadesh Meduri </para></simplesect>
+<xrefsect id="license_1_license000001"><xreftitle>License</xreftitle><xrefdescription><para>License BSD-3-Clause </para></xrefdescription></xrefsect><simplesect kind="copyright"><para>Copyright (c) 2019, New York University and Max Planck Gesellschaft. </para></simplesect>
+<simplesect kind="date"><para>2019-03-19 </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="11"><highlight class="preprocessor">#ifndef<sp/>__SOT_com_impedance_Control_HH__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/><sp/>__SOT_com_impedance_Control_HH__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Math<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Matrix<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dynamic-graph/linear-algebra.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacedynamicgraph" kindref="compound">dg</ref><sp/>=<sp/><ref refid="namespacedynamicgraph" kindref="compound">dynamicgraph</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">/*QP<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/>eigen-quadprog</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;eigen-quadprog/QuadProg.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>SOT<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dynamic-graph/signal-time-dependent.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dynamic-graph/signal-ptr.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dynamic-graph/entity.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacedynamicgraph" kindref="compound">dynamicgraph</ref>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">sot<sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>----<sp/>CLASS<sp/>----------------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="classdynamicgraph_1_1sot_1_1ComImpedanceControl" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classdynamicgraph_1_1sot_1_1ComImpedanceControl" kindref="compound">ComImpedanceControl</ref></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>Entity</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:<sp/></highlight><highlight class="comment">/*------<sp/>Constructor<sp/>--------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamicgraph_1_1sot_1_1ComImpedanceControl" kindref="compound">ComImpedanceControl</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;name);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:<sp/></highlight><highlight class="comment">/*------<sp/>init<sp/>--------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>init(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">&amp;<sp/>step){};</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:<sp/></highlight><highlight class="comment">/*------<sp/>CONSTANTS<sp/>--------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>TIME_STEP_DEFAULT;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:<sp/></highlight><highlight class="comment">/*<sp/>-----<sp/>ENTITY<sp/>INHERITANCE<sp/>-----*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>CLASS_NAME;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>getClassName(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>CLASS_NAME;}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:<sp/></highlight><highlight class="comment">/*<sp/>------<sp/>SIGNALS<sp/>---------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalPtr&lt;dg::Vector,<sp/>int&gt;<sp/>KpSIN;<sp/></highlight><highlight class="comment">//<sp/>is<sp/>a<sp/>3d<sp/>vector</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalPtr&lt;dg::Vector,<sp/>int&gt;<sp/>KpAngSIN;<sp/></highlight><highlight class="comment">//<sp/>is<sp/>a<sp/>3d<sp/>vector</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalPtr&lt;dg::Vector,<sp/>int&gt;<sp/>KdAngSIN;<sp/></highlight><highlight class="comment">//<sp/>is<sp/>a<sp/>3d<sp/>vector</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalPtr&lt;dg::Vector,<sp/>int&gt;<sp/>KdSIN;<sp/></highlight><highlight class="comment">//<sp/>is<sp/>a<sp/>3d<sp/>vector</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalPtr&lt;dg::Vector,<sp/>int&gt;<sp/>positionSIN;<sp/><sp/></highlight><highlight class="comment">//<sp/>is<sp/>a<sp/>3d<sp/>vector</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalPtr&lt;dg::Vector,<sp/>int&gt;<sp/>desiredpositionSIN;<sp/></highlight><highlight class="comment">//<sp/>is<sp/>a<sp/>3d<sp/>vector</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalPtr&lt;dg::Vector,<sp/>int&gt;<sp/>biasedpositionSIN;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalPtr&lt;dg::Vector,<sp/>int&gt;<sp/>velocitySIN;<sp/></highlight><highlight class="comment">//<sp/>is<sp/>a<sp/>3d<sp/>vector</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalPtr&lt;dg::Vector,<sp/>int&gt;<sp/>desiredvelocitySIN;<sp/></highlight><highlight class="comment">//<sp/>is<sp/>a<sp/>3d<sp/>vector</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalPtr&lt;dg::Vector,<sp/>int&gt;<sp/>biasedvelocitySIN;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalPtr&lt;dg::Vector,<sp/>int&gt;<sp/>inertiaSIN;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalPtr&lt;dg::Vector,<sp/>int&gt;<sp/>massSIN;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalPtr&lt;dg::Vector,<sp/>int&gt;<sp/>oriSIN;<sp/></highlight><highlight class="comment">//base<sp/>orientation<sp/>4d<sp/>vector<sp/>quaternion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalPtr&lt;dg::Vector,<sp/>int&gt;<sp/>desoriSIN;<sp/></highlight><highlight class="comment">//base<sp/>orientation<sp/>4d<sp/>vector<sp/>quaternion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalPtr&lt;dg::Vector,<sp/>int&gt;<sp/>angvelSIN;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalPtr&lt;dg::Vector,<sp/>int&gt;<sp/>desiredangvelSIN;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalPtr&lt;dg::Vector,<sp/>int&gt;<sp/>feedforwardforceSIN;<sp/></highlight><highlight class="comment">//<sp/>is<sp/>a<sp/>3d<sp/>vector</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalPtr&lt;dg::Vector,<sp/>int&gt;<sp/>feedforwardtorquesSIN;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalPtr&lt;dg::Vector,<sp/>int&gt;<sp/>cntsensorSIN;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalPtr&lt;dg::Vector,<sp/>int&gt;<sp/>thrcntvalueSIN;<sp/></highlight><highlight class="comment">//<sp/>thresholded<sp/>contact<sp/>sensor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalPtr&lt;dg::Vector,<sp/>int&gt;<sp/>lqrerrorSIN;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalPtr&lt;dg::Vector,<sp/>int&gt;<sp/>lqrgainSIN;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalPtr&lt;dg::Vector,<sp/>int&gt;<sp/>lctrlSIN;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalPtr&lt;dg::Vector,<sp/>int&gt;<sp/>actrlSIN;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalPtr&lt;dg::Matrix,<sp/>int&gt;<sp/>hessSIN;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalPtr&lt;dg::Vector,<sp/>int&gt;<sp/>g0SIN;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalPtr&lt;dg::Matrix,<sp/>int&gt;<sp/>ceSIN;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>SignalPtr&lt;dg::Vector,<sp/>int&gt;<sp/>ce0SIN;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalPtr&lt;dg::Matrix,<sp/>int&gt;<sp/>ciSIN;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalPtr&lt;dg::Vector,<sp/>int&gt;<sp/>ci0SIN;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalPtr&lt;dg::Matrix,<sp/>int&gt;<sp/>regSIN;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalPtr&lt;dg::Vector,<sp/>int&gt;<sp/>absendeffposSIN;<sp/></highlight><highlight class="comment">//<sp/>absolute<sp/>end<sp/>effector<sp/>position<sp/>from<sp/>the<sp/>plan<sp/>12d</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalPtr&lt;dg::Vector,<sp/>int&gt;<sp/>absendeffvelSIN;<sp/></highlight><highlight class="comment">//<sp/>absolute<sp/>end<sp/>effector<sp/>velocity<sp/>from<sp/>the<sp/>plan<sp/>12d</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="classdynamicgraph_1_1sot_1_1ComImpedanceControl_1ae4f3968a33b09493a9e436d02b65290f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalPtr&lt;dg::Vector,<sp/>int&gt;<sp/><ref refid="classdynamicgraph_1_1sot_1_1ComImpedanceControl_1ae4f3968a33b09493a9e436d02b65290f" kindref="member">leglengthflSIN</ref>;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalPtr&lt;dg::Vector,<sp/>int&gt;<sp/>leglengthhlSIN;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalTimeDependent&lt;dg::Vector,<sp/>int&gt;<sp/>controlSOUT;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalTimeDependent&lt;dg::Vector,<sp/>int&gt;<sp/>angcontrolSOUT;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalTimeDependent&lt;dg::Vector,<sp/>int&gt;<sp/>SetPosBiasSOUT;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalTimeDependent&lt;dg::Vector,<sp/>int&gt;<sp/>SetVelBiasSOUT;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalTimeDependent&lt;dg::Vector,<sp/>int&gt;<sp/>ThrCntSensorSOUT;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalTimeDependent&lt;dg::Vector,<sp/>int&gt;<sp/>lqrcontrolSOUT;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalTimeDependent&lt;dg::Vector,<sp/>int&gt;<sp/>endefflqrcontrolSOUT;<sp/></highlight><highlight class="comment">//end_effector<sp/>lqr<sp/>computation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalTimeDependent&lt;dg::Vector,<sp/>int&gt;<sp/>wbcontrolSOUT;<sp/></highlight><highlight class="comment">//whole<sp/>body<sp/>control</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>for<sp/>balancing<sp/>on<sp/>a<sp/>planck</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalTimeDependent&lt;dg::Vector,<sp/>int&gt;<sp/>descomposSOUT;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>TimeStep;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">&amp;<sp/>setsize(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dimension);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dg::Vector&amp;<sp/>return_control_torques(<sp/>dg::Vector&amp;<sp/>tau,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>t);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dg::Vector&amp;<sp/>return_angcontrol_torques(<sp/>dg::Vector&amp;<sp/>angtau,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>t);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dg::Vector&amp;<sp/>set_pos_bias(dg::Vector&amp;<sp/>pos_bias,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>t);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dg::Vector&amp;<sp/>set_vel_bias(dg::Vector&amp;<sp/>vel_bias,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>t);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dg::Vector&amp;<sp/>threshold_cnt_sensor(dg::Vector&amp;<sp/>thr_cnt_sensor,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>t);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dg::Vector&amp;<sp/><ref refid="classdynamicgraph_1_1sot_1_1ComImpedanceControl_1a6c33c88c2a5ae61dbde00dbd001355ca" kindref="member">return_lqr_tau</ref>(<sp/>dg::Vector&amp;<sp/>lqrtau,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>t);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dg::Vector&amp;<sp/><ref refid="classdynamicgraph_1_1sot_1_1ComImpedanceControl_1a3df6780c7565af64536541c04c7e55f4" kindref="member">return_end_eff_lqr_tau</ref>(<sp/>dg::Vector&amp;<sp/>end_eff_lqr_tau,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>t);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dg::Vector&amp;<sp/>compute_end_eff_forces(<sp/>dg::Vector<sp/>&amp;<sp/>end_forces,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>t);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dg::Vector&amp;<sp/>compute_des_com_pos(<sp/>dg::Vector<sp/>&amp;<sp/>des_com_pos,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>t);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dg::Vector<sp/>pos_error;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dg::Vector<sp/>vel_error;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dg::Vector<sp/>h_error;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dg::Vector<sp/>ori_error;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dg::Vector<sp/>position_bias;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dg::Vector<sp/>velocity_bias;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>w1;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>w2;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dg::Vector<sp/>ce0;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dg::Vector<sp/>end_forces;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dg::Matrix<sp/>hess_new;<sp/></highlight><highlight class="comment">//<sp/>modified<sp/>based<sp/>on<sp/>which<sp/>foor<sp/>is<sp/>on<sp/>the<sp/>ground</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dg::Vector<sp/>g0_new;<sp/></highlight><highlight class="comment">//<sp/>modified<sp/>based<sp/>on<sp/>which<sp/>foot<sp/>is<sp/>on<sp/>the<sp/>ground</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dg::Matrix<sp/>ce_new;<sp/></highlight><highlight class="comment">//<sp/>modified<sp/>based<sp/>on<sp/>which<sp/>foot<sp/>is<sp/>on<sp/>the<sp/>ground</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dg::Matrix<sp/>ci_new;<sp/></highlight><highlight class="comment">//<sp/>modified<sp/>based<sp/>on<sp/>which<sp/>foot<sp/>is<sp/>on<sp/>the<sp/>ground</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::QuadProgDense<sp/>qp;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::Quaternion&lt;double&gt;<sp/>ori_quat;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::Quaternion&lt;double&gt;<sp/>des_ori_quat;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::Quaternion&lt;double&gt;<sp/>ori_error_quat;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::Matrix&lt;double,<sp/>3,<sp/>3&gt;<sp/>ori_se3;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::Matrix&lt;double,<sp/>3,<sp/>3&gt;<sp/>des_ori_se3;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::Matrix&lt;double,<sp/>3,<sp/>3&gt;<sp/>ori_error_se3;<sp/></highlight><highlight class="comment">//<sp/>refer<sp/>to<sp/>christian<sp/>ott<sp/>paper<sp/>for<sp/>definitions<sp/>(Rdb)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>for<sp/>balncing<sp/>task</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dg::Vector<sp/>diff;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>LQR<sp/>centroidal<sp/>space<sp/>computations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::MatrixXd<sp/>K;<sp/></highlight><highlight class="comment">//<sp/>lqr_gain<sp/>matrix</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::VectorXd<sp/>delta_x;<sp/></highlight><highlight class="comment">//<sp/>13d</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::Vector3d<sp/>lqr_pos_error;</highlight><highlight class="comment">//<sp/>3d</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::Vector3d<sp/>lqr_vel_error;</highlight><highlight class="comment">//<sp/>3d</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::Vector4d<sp/>lqr_ori_error;</highlight><highlight class="comment">//<sp/>3d</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::Vector3d<sp/>lqr_ang_vel_error;</highlight><highlight class="comment">//<sp/>3d</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::VectorXd<sp/>f_des;<sp/></highlight><highlight class="comment">//<sp/>contains<sp/>des<sp/>centroidal<sp/>f<sp/>and<sp/>tau</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>init_flag_pos;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>init_flag_vel;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isbiasset;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>safetyswitch;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>t_start;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bias_time;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="comment">//namespace<sp/>sot</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal">}</highlight><highlight class="comment">//namespace<sp/>dynamic_graph</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>#ifndef</highlight></codeline>
+    </programlisting>
+    <location file="include/dg_tools/ComImpedanceControl/ComImpedanceController.hpp"/>
+  </compounddef>
+</doxygen>

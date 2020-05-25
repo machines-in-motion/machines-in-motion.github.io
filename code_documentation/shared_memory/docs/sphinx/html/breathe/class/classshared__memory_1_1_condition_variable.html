@@ -1,0 +1,338 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Class shared_memory::ConditionVariable &mdash; shared_memory 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Class shared_memory::Exchange_manager_consumer" href="classshared__memory_1_1_exchange__manager__consumer.html" />
+    <link rel="prev" title="Class shared_memory::Allocation_exception" href="classshared__memory_1_1_allocation__exception.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> shared_memory
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Readme</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../readme.html">Shared Memory</a></li>
+</ul>
+<p class="caption"><span class="caption-text">C++ API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../doxygen_index.html">C++ API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../classlist.html">Class list</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="class_config.html">Class Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_serializable.html">Class Serializable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_serializable_example.html">Class SerializableExample</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_allocation__exception.html">Class shared_memory::Allocation_exception</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Class shared_memory::ConditionVariable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_exchange__manager__consumer.html">Class shared_memory::Exchange_manager_consumer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_exchange__manager__producer.html">Class shared_memory::Exchange_manager_producer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_four__int__values.html">Class shared_memory::Four_int_values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_item.html">Class shared_memory::Item</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_lock.html">Class shared_memory::Lock</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_locked_condition_variable.html">Class shared_memory::LockedConditionVariable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_memory__overflow__exception.html">Class shared_memory::Memory_overflow_exception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_mutex.html">Class shared_memory::Mutex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_not__consumed__exception.html">Class shared_memory::Not_consumed_exception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_segment_info.html">Class shared_memory::SegmentInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_serializable__exchange.html">Class shared_memory::Serializable_exchange</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_serializer.html">Class shared_memory::Serializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_shared_memory_segment.html">Class shared_memory::SharedMemorySegment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_unexpected__map__key.html">Class shared_memory::Unexpected_map_key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_unexpected__size__exception.html">Class shared_memory::Unexpected_size_exception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1array.html">Class shared_memory::array</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1internal_1_1_exchange__manager__memory.html">Class shared_memory::internal::Exchange_manager_memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1internal_1_1_serialized__read.html">Class shared_memory::internal::Serialized_read</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1internal_1_1_serialized__write.html">Class shared_memory::internal::Serialized_write</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1internal_1_1array__members.html">Class shared_memory::internal::array_members</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1internal_1_1array__members_3_01_t_00_010_00_01typename_01std_1_1enable__i0b78bb453aa1c4894c6c714e5f291fcb.html">Class shared_memory::internal::array_members&lt; T, 0, typename std::enable_if&lt; std::is_fundamental&lt; T &gt;::value &gt;::type &gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1internal_1_1array__members_3_01_t_00_01_s_i_z_e_00_01typename_01std_1_1en156d1526c68ed70465b623c682765180.html">Class shared_memory::internal::array_members&lt; T, SIZE, typename std::enable_if&lt; std::is_fundamental&lt; T &gt;::value &amp;&amp;SIZE!=0 &gt;::type &gt;</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../filelist.html">File list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../doxygen_index_one_page.html">C++ API and example</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">shared_memory</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../doxygen_index.html">C++ API</a> &raquo;</li>
+        
+          <li><a href="../classlist.html">Class list</a> &raquo;</li>
+        
+      <li>Class shared_memory::ConditionVariable</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/breathe/class/classshared__memory_1_1_condition_variable.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="class-shared-memory-conditionvariable">
+<h1>Class shared_memory::ConditionVariable<a class="headerlink" href="#class-shared-memory-conditionvariable" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="_CPPv4N13shared_memory17ConditionVariableE">
+<span id="_CPPv3N13shared_memory17ConditionVariableE"></span><span id="_CPPv2N13shared_memory17ConditionVariableE"></span><span id="shared_memory::ConditionVariable"></span><span class="target" id="classshared__memory_1_1_condition_variable"></span><em class="property">class </em><code class="sig-name descname">ConditionVariable</code><a class="headerlink" href="#_CPPv4N13shared_memory17ConditionVariableE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv4N13shared_memory17ConditionVariable17ConditionVariableEKNSt6stringEb">
+<span id="_CPPv3N13shared_memory17ConditionVariable17ConditionVariableEKNSt6stringEb"></span><span id="_CPPv2N13shared_memory17ConditionVariable17ConditionVariableEKNSt6stringEb"></span><span id="shared_memory::ConditionVariable::ConditionVariable__ssC.b"></span><span class="target" id="classshared__memory_1_1_condition_variable_1ae4b6accfbe98b2e23f9e20789cea46f7"></span><code class="sig-name descname">ConditionVariable</code><span class="sig-paren">(</span><em class="property">const</em> std::string <em>object_id</em>, bool <em>clean_memory_on_destruction</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13shared_memory17ConditionVariable17ConditionVariableEKNSt6stringEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>A condition variable shared over the memory The condition variable is cleaned from the memory on destruction if clean_memory_on_destruction is set to true. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N13shared_memory17ConditionVariableD0Ev">
+<span id="_CPPv3N13shared_memory17ConditionVariableD0Ev"></span><span id="_CPPv2N13shared_memory17ConditionVariableD0Ev"></span><span id="shared_memory::ConditionVariable::~ConditionVariable"></span><span class="target" id="classshared__memory_1_1_condition_variable_1a84ccb3bcc9255cd145d30b3a91db4e2b"></span><code class="sig-name descname">~ConditionVariable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13shared_memory17ConditionVariableD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N13shared_memory17ConditionVariable10notify_allEv">
+<span id="_CPPv3N13shared_memory17ConditionVariable10notify_allEv"></span><span id="_CPPv2N13shared_memory17ConditionVariable10notify_allEv"></span><span id="shared_memory::ConditionVariable::notify_all"></span><span class="target" id="classshared__memory_1_1_condition_variable_1abc70cd1401f40e23ca4a6afb33f28bb5"></span>void <code class="sig-name descname">notify_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13shared_memory17ConditionVariable10notify_allEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>notify_all is notifying all condition variables with the same mutex </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N13shared_memory17ConditionVariable10notify_oneEv">
+<span id="_CPPv3N13shared_memory17ConditionVariable10notify_oneEv"></span><span id="_CPPv2N13shared_memory17ConditionVariable10notify_oneEv"></span><span id="shared_memory::ConditionVariable::notify_one"></span><span class="target" id="classshared__memory_1_1_condition_variable_1a8953b054a1074ab5ef0a9f9b35f58a42"></span>void <code class="sig-name descname">notify_one</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13shared_memory17ConditionVariable10notify_oneEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>notify_one notifies one condition variable with the same mutex </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N13shared_memory17ConditionVariable10timed_waitER4Lockl">
+<span id="_CPPv3N13shared_memory17ConditionVariable10timed_waitER4Lockl"></span><span id="_CPPv2N13shared_memory17ConditionVariable10timed_waitER4Lockl"></span><span id="shared_memory::ConditionVariable::timed_wait__LockR.l"></span><span class="target" id="classshared__memory_1_1_condition_variable_1af7b1ce584ff9ef9a0925f57cae8e6263"></span>bool <code class="sig-name descname">timed_wait</code><span class="sig-paren">(</span><a class="reference internal" href="classshared__memory_1_1_lock.html#_CPPv4N13shared_memory4LockE" title="shared_memory::Lock">Lock</a> &amp;<em>lock</em>, long <em>wait_nano_seconds</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13shared_memory17ConditionVariable10timed_waitER4Lockl" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>timed_wait wait a notify during a certain certain time and then wake up </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true: the condition variable has been notified, false otherwize </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">wait_duration</span></code>: in microsecond </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N13shared_memory17ConditionVariable4waitER4Lock">
+<span id="_CPPv3N13shared_memory17ConditionVariable4waitER4Lock"></span><span id="_CPPv2N13shared_memory17ConditionVariable4waitER4Lock"></span><span id="shared_memory::ConditionVariable::wait__LockR"></span><span class="target" id="classshared__memory_1_1_condition_variable_1a8746faccdf81b03dd36c5b405c9ab48d"></span>void <code class="sig-name descname">wait</code><span class="sig-paren">(</span><a class="reference internal" href="classshared__memory_1_1_lock.html#_CPPv4N13shared_memory4LockE" title="shared_memory::Lock">Lock</a> &amp;<em>lock</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13shared_memory17ConditionVariable4waitER4Lock" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>wait waits until another thread notifies this object </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Static Functions</p>
+<dl class="function">
+<dt id="_CPPv4N13shared_memory17ConditionVariable5cleanEKNSt6stringE">
+<span id="_CPPv3N13shared_memory17ConditionVariable5cleanEKNSt6stringE"></span><span id="_CPPv2N13shared_memory17ConditionVariable5cleanEKNSt6stringE"></span><span id="shared_memory::ConditionVariable::clean__ssC"></span><span class="target" id="classshared__memory_1_1_condition_variable_1adf6a90466c2bf96cbc08f3ba0246274e"></span>void <code class="sig-name descname">clean</code><span class="sig-paren">(</span><em class="property">const</em> std::string <em>object_id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13shared_memory17ConditionVariable5cleanEKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Private Members</p>
+<dl class="member">
+<dt id="_CPPv4N13shared_memory17ConditionVariable13condition_id_E">
+<span id="_CPPv3N13shared_memory17ConditionVariable13condition_id_E"></span><span id="_CPPv2N13shared_memory17ConditionVariable13condition_id_E"></span><span id="shared_memory::ConditionVariable::condition_id___ss"></span><span class="target" id="classshared__memory_1_1_condition_variable_1a496feeef1a7fec080435b68a79bc163d"></span>std::string <code class="sig-name descname">condition_id_</code><a class="headerlink" href="#_CPPv4N13shared_memory17ConditionVariable13condition_id_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>condition_id_ is the condition variable name in the shared memory </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N13shared_memory17ConditionVariable28clean_memory_on_destruction_E">
+<span id="_CPPv3N13shared_memory17ConditionVariable28clean_memory_on_destruction_E"></span><span id="_CPPv2N13shared_memory17ConditionVariable28clean_memory_on_destruction_E"></span><span id="shared_memory::ConditionVariable::clean_memory_on_destruction___b"></span><span class="target" id="classshared__memory_1_1_condition_variable_1a872a5c9305c0dff22ec085b8c8306a0d"></span>bool <code class="sig-name descname">clean_memory_on_destruction_</code><a class="headerlink" href="#_CPPv4N13shared_memory17ConditionVariable28clean_memory_on_destruction_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>if true (the default), clean the shared memory of the hosted mutex and condition. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N13shared_memory17ConditionVariable19condition_variable_E">
+<span id="_CPPv3N13shared_memory17ConditionVariable19condition_variable_E"></span><span id="_CPPv2N13shared_memory17ConditionVariable19condition_variable_E"></span><span id="shared_memory::ConditionVariable::condition_variable___SHMConditionP"></span><span class="target" id="classshared__memory_1_1_condition_variable_1a37c6e1a6ca44d30c2a29990e4460803b"></span><a class="reference internal" href="../file/condition__variable_8hpp.html#_CPPv4N13shared_memory12SHMConditionE" title="shared_memory::SHMCondition">SHMCondition</a> *<code class="sig-name descname">condition_variable_</code><a class="headerlink" href="#_CPPv4N13shared_memory17ConditionVariable19condition_variable_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>condition_variable_ is the boost condition variable that is used </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N13shared_memory17ConditionVariable9mutex_id_E">
+<span id="_CPPv3N13shared_memory17ConditionVariable9mutex_id_E"></span><span id="_CPPv2N13shared_memory17ConditionVariable9mutex_id_E"></span><span id="shared_memory::ConditionVariable::mutex_id___ss"></span><span class="target" id="classshared__memory_1_1_condition_variable_1ab8221877ff8551e608d5d4691d3679ae"></span>std::string <code class="sig-name descname">mutex_id_</code><a class="headerlink" href="#_CPPv4N13shared_memory17ConditionVariable9mutex_id_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>mutex_id_ is the mutex name in the shared memory </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="classshared__memory_1_1_exchange__manager__consumer.html" class="btn btn-neutral float-right" title="Class shared_memory::Exchange_manager_consumer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="classshared__memory_1_1_allocation__exception.html" class="btn btn-neutral float-left" title="Class shared_memory::Allocation_exception" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright (c) 2020, New York University and Max Planck Gesellschaft. License under the BSD 3-clause.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

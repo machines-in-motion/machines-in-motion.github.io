@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="exception-yaml-cpp_8cpp" kind="file" language="C++">
+    <compoundname>exception-yaml-cpp.cpp</compoundname>
+    <includes refid="exception-yaml-cpp_8hpp" local="no">dynamic_graph_manager/exception/exception-yaml-cpp.hpp</includes>
+    <includes local="no">stdarg.h</includes>
+    <includes local="no">cstdio</includes>
+    <incdepgraph>
+      <node id="2093">
+        <label>stdarg.h</label>
+      </node>
+      <node id="2091">
+        <label>string</label>
+      </node>
+      <node id="2092">
+        <label>exception</label>
+      </node>
+      <node id="2089">
+        <label>dynamic_graph_manager/exception/exception-abstract.hh</label>
+        <link refid="exception-abstract_8hh"/>
+        <childnode refid="2090" relation="include">
+        </childnode>
+        <childnode refid="2091" relation="include">
+        </childnode>
+        <childnode refid="2092" relation="include">
+        </childnode>
+      </node>
+      <node id="2088">
+        <label>dynamic_graph_manager/exception/exception-yaml-cpp.hpp</label>
+        <link refid="exception-yaml-cpp_8hpp"/>
+        <childnode refid="2089" relation="include">
+        </childnode>
+      </node>
+      <node id="2094">
+        <label>cstdio</label>
+      </node>
+      <node id="2090">
+        <label>iostream</label>
+      </node>
+      <node id="2087">
+        <label>src/exception/exception-yaml-cpp.cpp</label>
+        <link refid="exception-yaml-cpp.cpp"/>
+        <childnode refid="2088" relation="include">
+        </childnode>
+        <childnode refid="2093" relation="include">
+        </childnode>
+        <childnode refid="2094" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Maximilien Naveau (<ulink url="mailto:maximilien.naveau@gmail.com">maximilien.naveau@gmail.com</ulink>) </para></simplesect>
+<xrefsect id="license_1_license000053"><xreftitle>License</xreftitle><xrefdescription><para>License BSD-3-Clause </para></xrefdescription></xrefsect><simplesect kind="copyright"><para>Copyright (c) 2019, New York University and Max Planck Gesellschaft. </para></simplesect>
+<simplesect kind="date"><para>2019-05-22 </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="9"><highlight class="preprocessor">#include<sp/>&lt;<ref refid="exception-yaml-cpp_8hpp" kindref="compound">dynamic_graph_manager/exception/exception-yaml-cpp.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdarg.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdio&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacedynamic__graph" kindref="compound">dynamic_graph</ref>;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---<sp/>CLASS<sp/>-----------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>ExceptionYamlCpp::EXCEPTION_NAME<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Tools&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">ExceptionYamlCpp::</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">ExceptionYamlCpp<sp/>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ExceptionYamlCpp::ErrorCodeEnum&amp;<sp/>errcode,</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>msg<sp/>)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/>:<ref refid="classdynamic__graph_1_1ExceptionAbstract" kindref="compound">ExceptionAbstract</ref>(errcode,msg)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">ExceptionYamlCpp::</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">ExceptionYamlCpp<sp/>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ExceptionYamlCpp::ErrorCodeEnum&amp;<sp/>errcode,</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>msg,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>format,<sp/>...<sp/>)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/>:<ref refid="classdynamic__graph_1_1ExceptionAbstract" kindref="compound">ExceptionAbstract</ref>(errcode,msg)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/>va_list<sp/>args;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/>va_start(args,format);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>SIZE<sp/>=<sp/>256;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/>buffer[SIZE];</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/>vsnprintf(buffer,SIZE,format,args);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/>message<sp/>+=<sp/>buffer;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/>va_end(args);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/>Local<sp/>variables:</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/>c-basic-offset:<sp/>2</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/>End:</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/exception/exception-yaml-cpp.cpp"/>
+  </compounddef>
+</doxygen>

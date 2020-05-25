@@ -1,0 +1,117 @@
+\hypertarget{classreal__time__tools_1_1CheckpointTimer}{}\section{real\+\_\+time\+\_\+tools\+:\+:Checkpoint\+Timer$<$ N\+U\+M\+\_\+\+C\+H\+E\+C\+K\+P\+O\+I\+N\+TS, E\+N\+A\+B\+L\+ED $>$ Class Template Reference}
+\label{classreal__time__tools_1_1CheckpointTimer}\index{real\+\_\+time\+\_\+tools\+::\+Checkpoint\+Timer$<$ N\+U\+M\+\_\+\+C\+H\+E\+C\+K\+P\+O\+I\+N\+T\+S, E\+N\+A\+B\+L\+E\+D $>$@{real\+\_\+time\+\_\+tools\+::\+Checkpoint\+Timer$<$ N\+U\+M\+\_\+\+C\+H\+E\+C\+K\+P\+O\+I\+N\+T\+S, E\+N\+A\+B\+L\+E\+D $>$}}
+
+
+\hyperlink{classreal__time__tools_1_1Timer}{Timer} to measure code execution time with \char`\"{}checkpoints\char`\"{}.  
+
+
+
+
+{\ttfamily \#include $<$checkpoint\+\_\+timer.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classreal__time__tools_1_1CheckpointTimer_ad93a12cb74103528c8db4e7b1745eae6}{start} ()\hypertarget{classreal__time__tools_1_1CheckpointTimer_ad93a12cb74103528c8db4e7b1745eae6}{}\label{classreal__time__tools_1_1CheckpointTimer_ad93a12cb74103528c8db4e7b1745eae6}
+
+\begin{DoxyCompactList}\small\item\em Start timer iteration. \end{DoxyCompactList}\item 
+void \hyperlink{classreal__time__tools_1_1CheckpointTimer_a6e91b61b72c433a220b1bddb7a634bf5}{checkpoint} (const std\+::string \&checkpoint\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Set checkpoint for time measurement. \end{DoxyCompactList}\item 
+void \hyperlink{classreal__time__tools_1_1CheckpointTimer_acce8c21123fe6f450c8f22de575cfef8}{print\+\_\+statistics} () const \hypertarget{classreal__time__tools_1_1CheckpointTimer_acce8c21123fe6f450c8f22de575cfef8}{}\label{classreal__time__tools_1_1CheckpointTimer_acce8c21123fe6f450c8f22de575cfef8}
+
+\begin{DoxyCompactList}\small\item\em Print results of time measurements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::array$<$ \hyperlink{classreal__time__tools_1_1Timer}{real\+\_\+time\+\_\+tools\+::\+Timer}, N\+U\+M\+\_\+\+C\+H\+E\+C\+K\+P\+O\+I\+N\+TS+1 $>$ \hyperlink{classreal__time__tools_1_1CheckpointTimer_a0abbead69aaf780b649f6af01f50cc62}{timers\+\_\+}
+\begin{DoxyCompactList}\small\item\em Timers used for the different checkpoints. \end{DoxyCompactList}\item 
+std\+::array$<$ std\+::string, N\+U\+M\+\_\+\+C\+H\+E\+C\+K\+P\+O\+I\+N\+TS+1 $>$ \hyperlink{classreal__time__tools_1_1CheckpointTimer_afbb3abc9e62174d6046f6abb294a120f}{checkpoint\+\_\+names\+\_\+}\hypertarget{classreal__time__tools_1_1CheckpointTimer_afbb3abc9e62174d6046f6abb294a120f}{}\label{classreal__time__tools_1_1CheckpointTimer_afbb3abc9e62174d6046f6abb294a120f}
+
+\begin{DoxyCompactList}\small\item\em Names of the checkpoints. \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{classreal__time__tools_1_1CheckpointTimer_a07ae61ac85e755629625cc32416f2631}{current\+\_\+checkpoint\+\_\+} = 1\hypertarget{classreal__time__tools_1_1CheckpointTimer_a07ae61ac85e755629625cc32416f2631}{}\label{classreal__time__tools_1_1CheckpointTimer_a07ae61ac85e755629625cc32416f2631}
+
+\begin{DoxyCompactList}\small\item\em Index of the current checkpoint. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$size\+\_\+t N\+U\+M\+\_\+\+C\+H\+E\+C\+K\+P\+O\+I\+N\+TS, bool E\+N\+A\+B\+L\+ED = true$>$\\*
+class real\+\_\+time\+\_\+tools\+::\+Checkpoint\+Timer$<$ N\+U\+M\+\_\+\+C\+H\+E\+C\+K\+P\+O\+I\+N\+T\+S, E\+N\+A\+B\+L\+E\+D $>$}
+
+\hyperlink{classreal__time__tools_1_1Timer}{Timer} to measure code execution time with \char`\"{}checkpoints\char`\"{}. 
+
+This timer is meant to be used for measuring execution time of a loop. It measures time between calls of the {\ttfamily start} method, so by calling this at the beginning of the loop, you get the execution time of the full iteration. Further, you can define \char`\"{}checkpoints\char`\"{} within the loop to measure time of separate steps in the loop. Call the {\ttfamily checkpoint} method after the code that is associated with it. For each checkpoint, the time elapsed since the last checkpoint is measured ({\ttfamily start} counts as a checkpoint in this regard).
+
+Example\+: 
+\begin{DoxyCodeInclude}
+
+    \textcolor{comment}{// set second template argument to false to disable timer}
+    \hyperlink{classreal__time__tools_1_1CheckpointTimer}{real\_time\_tools::CheckpointTimer<3, true>} timer;
+
+    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 1000; i++)
+    \{
+        timer.\hyperlink{classreal__time__tools_1_1CheckpointTimer_ad93a12cb74103528c8db4e7b1745eae6}{start}();
+
+        \hyperlink{demo__checkpoint__timer_8cpp_a02fd73d861ef2e4aabb38c0c9ff82947}{init}();
+        timer.\hyperlink{classreal__time__tools_1_1CheckpointTimer_a6e91b61b72c433a220b1bddb7a634bf5}{checkpoint}(\textcolor{stringliteral}{"initialize"});
+
+        \hyperlink{demo__checkpoint__timer_8cpp_acb546a895e868f1a8fb9cb4b5a210f42}{do\_some\_stuff}();
+        timer.\hyperlink{classreal__time__tools_1_1CheckpointTimer_a6e91b61b72c433a220b1bddb7a634bf5}{checkpoint}(\textcolor{stringliteral}{"do some stuff"});
+
+        \hyperlink{demo__checkpoint__timer_8cpp_a609e6537df0c7eb15c1f5b4e02fbe0ed}{write\_log}();
+        timer.\hyperlink{classreal__time__tools_1_1CheckpointTimer_a6e91b61b72c433a220b1bddb7a634bf5}{checkpoint}(\textcolor{stringliteral}{"logging"});
+
+        \textcolor{comment}{// print the timing results every 100 iterations}
+        \textcolor{keywordflow}{if} (i % 100 == 0 && i > 0)
+        \{
+            timer.\hyperlink{classreal__time__tools_1_1CheckpointTimer_acce8c21123fe6f450c8f22de575cfef8}{print\_statistics}();
+        \}
+    \}
+
+\end{DoxyCodeInclude}
+ 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em N\+U\+M\+\_\+\+C\+H\+E\+C\+K\+P\+O\+I\+N\+TS} & Number of checkpoints. \\
+\hline
+{\em E\+N\+A\+B\+L\+ED} & Set to false, to disable timer. Method calls will have no effect (and should hopefully be optimized away by the compiler). \\
+\hline
+\end{DoxyTemplParams}
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{demo_checkpoint_timer_8cpp-example}{demo\+\_\+checkpoint\+\_\+timer.\+cpp}.\end{Desc}
+
+
+\subsection{Member Function Documentation}
+\index{real\+\_\+time\+\_\+tools\+::\+Checkpoint\+Timer@{real\+\_\+time\+\_\+tools\+::\+Checkpoint\+Timer}!checkpoint@{checkpoint}}
+\index{checkpoint@{checkpoint}!real\+\_\+time\+\_\+tools\+::\+Checkpoint\+Timer@{real\+\_\+time\+\_\+tools\+::\+Checkpoint\+Timer}}
+\subsubsection[{\texorpdfstring{checkpoint(const std\+::string \&checkpoint\+\_\+name)}{checkpoint(const std::string &checkpoint_name)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t N\+U\+M\+\_\+\+C\+H\+E\+C\+K\+P\+O\+I\+N\+TS, bool E\+N\+A\+B\+L\+ED$>$ void Checkpoint\+Timer\+::checkpoint (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{checkpoint\+\_\+name}
+\end{DoxyParamCaption}
+)}\hypertarget{classreal__time__tools_1_1CheckpointTimer_a6e91b61b72c433a220b1bddb7a634bf5}{}\label{classreal__time__tools_1_1CheckpointTimer_a6e91b61b72c433a220b1bddb7a634bf5}
+
+
+Set checkpoint for time measurement. 
+
+Measures time from the last call of \hyperlink{classreal__time__tools_1_1CheckpointTimer_ad93a12cb74103528c8db4e7b1745eae6}{start()} or \hyperlink{classreal__time__tools_1_1CheckpointTimer_a6e91b61b72c433a220b1bddb7a634bf5}{checkpoint()} until this call. The given name is used when printing the results.
+
+
+\begin{DoxyParams}{Parameters}
+{\em checkpoint\+\_\+name} & Name of the checkpoint (used for printing results) \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\index{real\+\_\+time\+\_\+tools\+::\+Checkpoint\+Timer@{real\+\_\+time\+\_\+tools\+::\+Checkpoint\+Timer}!timers\+\_\+@{timers\+\_\+}}
+\index{timers\+\_\+@{timers\+\_\+}!real\+\_\+time\+\_\+tools\+::\+Checkpoint\+Timer@{real\+\_\+time\+\_\+tools\+::\+Checkpoint\+Timer}}
+\subsubsection[{\texorpdfstring{timers\+\_\+}{timers_}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t N\+U\+M\+\_\+\+C\+H\+E\+C\+K\+P\+O\+I\+N\+TS, bool E\+N\+A\+B\+L\+ED = true$>$ std\+::array$<${\bf real\+\_\+time\+\_\+tools\+::\+Timer}, N\+U\+M\+\_\+\+C\+H\+E\+C\+K\+P\+O\+I\+N\+TS + 1$>$ {\bf real\+\_\+time\+\_\+tools\+::\+Checkpoint\+Timer}$<$ N\+U\+M\+\_\+\+C\+H\+E\+C\+K\+P\+O\+I\+N\+TS, E\+N\+A\+B\+L\+ED $>$\+::timers\+\_\+\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classreal__time__tools_1_1CheckpointTimer_a0abbead69aaf780b649f6af01f50cc62}{}\label{classreal__time__tools_1_1CheckpointTimer_a0abbead69aaf780b649f6af01f50cc62}
+
+
+Timers used for the different checkpoints. 
+
+Index 0 is used for the total duration. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/real\+\_\+time\+\_\+tools/\hyperlink{checkpoint__timer_8hpp}{checkpoint\+\_\+timer.\+hpp}\item 
+include/real\+\_\+time\+\_\+tools/\hyperlink{checkpoint__timer_8hxx}{checkpoint\+\_\+timer.\+hxx}\end{DoxyCompactItemize}

@@ -1,0 +1,185 @@
+\hypertarget{classshared__memory_1_1array}{}\section{shared\+\_\+memory\+:\+:array$<$ T, S\+I\+ZE $>$ Class Template Reference}
+\label{classshared__memory_1_1array}\index{shared\+\_\+memory\+::array$<$ T, S\+I\+Z\+E $>$@{shared\+\_\+memory\+::array$<$ T, S\+I\+Z\+E $>$}}
+
+
+Implement a shared array stored on a shared memory segment.  
+
+
+
+
+{\ttfamily \#include $<$array.\+hpp$>$}
+
+
+
+Inheritance diagram for shared\+\_\+memory\+:\+:array$<$ T, S\+I\+ZE $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classshared__memory_1_1array__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for shared\+\_\+memory\+:\+:array$<$ T, S\+I\+ZE $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classshared__memory_1_1array__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classshared__memory_1_1array_a95b5abd158cb04ab0644f5aa6df48b2b}{array} (std\+::string segment\+\_\+id, std\+::size\+\_\+t \hyperlink{classshared__memory_1_1array_afc0dd0c59873934b082e524adb6bf2d7}{size}, bool clear\+\_\+on\+\_\+destruction=true, bool multiprocess\+\_\+safe=true)
+\item 
+\hyperlink{classshared__memory_1_1array_a45cad350fdb0170c955c8c367a9e910d}{$\sim$array} ()\hypertarget{classshared__memory_1_1array_a45cad350fdb0170c955c8c367a9e910d}{}\label{classshared__memory_1_1array_a45cad350fdb0170c955c8c367a9e910d}
+
+\begin{DoxyCompactList}\small\item\em wipe the related shared memory segment if clear\+\_\+on\+\_\+destruction is true (true by default) \end{DoxyCompactList}\item 
+\hyperlink{classshared__memory_1_1array_acde1531706ba2ab6c05d7639bc0f6f56}{array} (const \hyperlink{classshared__memory_1_1array}{array}$<$ T, S\+I\+ZE $>$ \&other)\hypertarget{classshared__memory_1_1array_acde1531706ba2ab6c05d7639bc0f6f56}{}\label{classshared__memory_1_1array_acde1531706ba2ab6c05d7639bc0f6f56}
+
+\begin{DoxyCompactList}\small\item\em this array and other array will point to the same memory segment, and will have same values for clear\+\_\+on\+\_\+destruction and multiprocess\+\_\+safe \end{DoxyCompactList}\item 
+\hyperlink{classshared__memory_1_1array_af399f2f20d16dadf8381c61ea5ad42fd}{array} (\hyperlink{classshared__memory_1_1array}{array}$<$ T, S\+I\+ZE $>$ \&\&other) noexcept
+\begin{DoxyCompactList}\small\item\em This array will point to the share memory segment pointed at by other; and will have same value for multprocess\+\_\+safe and clear\+\_\+on\+\_\+destruction. \end{DoxyCompactList}\item 
+\hyperlink{classshared__memory_1_1array}{array}$<$ T, S\+I\+ZE $>$ \& \hyperlink{classshared__memory_1_1array_ad5b4b2841b2785b188a6371cb7f00f1f}{operator=} (\hyperlink{classshared__memory_1_1array}{array}$<$ T, S\+I\+ZE $>$ \&\&other) noexcept
+\begin{DoxyCompactList}\small\item\em This array will point to the share memory segment pointed at by other; and will have same value for multprocess\+\_\+safe and clear\+\_\+on\+\_\+destruction. \end{DoxyCompactList}\item 
+void \hyperlink{classshared__memory_1_1array_ac413bc76d199bb52a0f95faff7222f37}{set} (uint index, const T \&t)\hypertarget{classshared__memory_1_1array_ac413bc76d199bb52a0f95faff7222f37}{}\label{classshared__memory_1_1array_ac413bc76d199bb52a0f95faff7222f37}
+
+\begin{DoxyCompactList}\small\item\em set element t at index \end{DoxyCompactList}\item 
+void \hyperlink{classshared__memory_1_1array_ae581f4ffcf1e543032e0128be5da181d}{set} (uint index, const T $\ast$t)\hypertarget{classshared__memory_1_1array_ae581f4ffcf1e543032e0128be5da181d}{}\label{classshared__memory_1_1array_ae581f4ffcf1e543032e0128be5da181d}
+
+\begin{DoxyCompactList}\small\item\em set element t at index \end{DoxyCompactList}\item 
+void \hyperlink{classshared__memory_1_1array_ae16ed72c9590631e608de8bacf1368ba}{get} (uint index, T \&t)\hypertarget{classshared__memory_1_1array_ae16ed72c9590631e608de8bacf1368ba}{}\label{classshared__memory_1_1array_ae16ed72c9590631e608de8bacf1368ba}
+
+\begin{DoxyCompactList}\small\item\em read element at index into t \end{DoxyCompactList}\item 
+void \hyperlink{classshared__memory_1_1array_ad700d5874d92def07f77f4da7f31f980}{get} (uint index, T $\ast$t)\hypertarget{classshared__memory_1_1array_ad700d5874d92def07f77f4da7f31f980}{}\label{classshared__memory_1_1array_ad700d5874d92def07f77f4da7f31f980}
+
+\begin{DoxyCompactList}\small\item\em read element at index into t \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \hyperlink{classshared__memory_1_1array_afc0dd0c59873934b082e524adb6bf2d7}{size} () const \hypertarget{classshared__memory_1_1array_afc0dd0c59873934b082e524adb6bf2d7}{}\label{classshared__memory_1_1array_afc0dd0c59873934b082e524adb6bf2d7}
+
+\begin{DoxyCompactList}\small\item\em max number of elements in the array \end{DoxyCompactList}\item 
+void \hyperlink{classshared__memory_1_1array_a9e912e143886359921c04fdbba7f6cba}{print} ()\hypertarget{classshared__memory_1_1array_a9e912e143886359921c04fdbba7f6cba}{}\label{classshared__memory_1_1array_a9e912e143886359921c04fdbba7f6cba}
+
+\begin{DoxyCompactList}\small\item\em print in terminal info about array\textquotesingle{}s memory usage \end{DoxyCompactList}\item 
+void $\ast$ {\bfseries get\+\_\+raw} ()\hypertarget{classshared__memory_1_1array_a20e27fb6b9a18e252368c4f6118b3d27}{}\label{classshared__memory_1_1array_a20e27fb6b9a18e252368c4f6118b3d27}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries init} (F\+U\+N\+D\+A\+M\+E\+N\+T\+AL)\hypertarget{classshared__memory_1_1array_a41258d788855ccc8435efb2017bdd068}{}\label{classshared__memory_1_1array_a41258d788855ccc8435efb2017bdd068}
+
+\item 
+void {\bfseries set} (uint index, const T \&t, F\+U\+N\+D\+A\+M\+E\+N\+T\+AL)\hypertarget{classshared__memory_1_1array_ad7fa6301507f10efe97ce3ad40187d9f}{}\label{classshared__memory_1_1array_ad7fa6301507f10efe97ce3ad40187d9f}
+
+\item 
+void {\bfseries get} (uint index, T \&t, F\+U\+N\+D\+A\+M\+E\+N\+T\+AL)\hypertarget{classshared__memory_1_1array_a0a54a689331205da7338f7c5891a6ee5}{}\label{classshared__memory_1_1array_a0a54a689331205da7338f7c5891a6ee5}
+
+\item 
+void {\bfseries init} (F\+U\+N\+D\+A\+M\+E\+N\+T\+A\+L\+\_\+\+A\+R\+R\+AY)\hypertarget{classshared__memory_1_1array_ac0e57adf8e47afae3f8053c20c3e15f2}{}\label{classshared__memory_1_1array_ac0e57adf8e47afae3f8053c20c3e15f2}
+
+\item 
+void {\bfseries set} (uint index, const T \&t, F\+U\+N\+D\+A\+M\+E\+N\+T\+A\+L\+\_\+\+A\+R\+R\+AY)\hypertarget{classshared__memory_1_1array_a71bbc60da4a88fd51b3124cdb6cd1ae3}{}\label{classshared__memory_1_1array_a71bbc60da4a88fd51b3124cdb6cd1ae3}
+
+\item 
+void {\bfseries get} (uint index, T \&t, F\+U\+N\+D\+A\+M\+E\+N\+T\+A\+L\+\_\+\+A\+R\+R\+AY)\hypertarget{classshared__memory_1_1array_af12c8f76fc48b3ec1ff2c2c82d104837}{}\label{classshared__memory_1_1array_af12c8f76fc48b3ec1ff2c2c82d104837}
+
+\item 
+void {\bfseries init} (S\+E\+R\+I\+A\+L\+I\+Z\+A\+B\+LE)\hypertarget{classshared__memory_1_1array_a487be484bf27d17f8c7547a57ff995f9}{}\label{classshared__memory_1_1array_a487be484bf27d17f8c7547a57ff995f9}
+
+\item 
+void {\bfseries set} (uint index, const T \&t, S\+E\+R\+I\+A\+L\+I\+Z\+A\+B\+LE)\hypertarget{classshared__memory_1_1array_a951c9ca373e942f094910bea57953eb0}{}\label{classshared__memory_1_1array_a951c9ca373e942f094910bea57953eb0}
+
+\item 
+void {\bfseries get} (uint index, T \&t, S\+E\+R\+I\+A\+L\+I\+Z\+A\+B\+LE)\hypertarget{classshared__memory_1_1array_afb0025021b69b790c152c27ef441cd66}{}\label{classshared__memory_1_1array_afb0025021b69b790c152c27ef441cd66}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+boost\+::interprocess\+::managed\+\_\+shared\+\_\+memory {\bfseries segment\+\_\+manager\+\_\+}\hypertarget{classshared__memory_1_1array_a43c56477481ae684932b6a03b64d7b67}{}\label{classshared__memory_1_1array_a43c56477481ae684932b6a03b64d7b67}
+
+\item 
+std\+::string {\bfseries segment\+\_\+id\+\_\+}\hypertarget{classshared__memory_1_1array_a25a07e97c454f8fb122eb092ab29812c}{}\label{classshared__memory_1_1array_a25a07e97c454f8fb122eb092ab29812c}
+
+\item 
+std\+::size\+\_\+t {\bfseries size\+\_\+}\hypertarget{classshared__memory_1_1array_a1b47b48a2779e766a80403f47404876a}{}\label{classshared__memory_1_1array_a1b47b48a2779e766a80403f47404876a}
+
+\item 
+bool {\bfseries clear\+\_\+on\+\_\+destruction\+\_\+}\hypertarget{classshared__memory_1_1array_afb6fcb395ac52cb9eaaef2882b623d23}{}\label{classshared__memory_1_1array_afb6fcb395ac52cb9eaaef2882b623d23}
+
+\item 
+bool {\bfseries multiprocess\+\_\+safe\+\_\+}\hypertarget{classshared__memory_1_1array_a7051346ccb28372b2ea5587714113079}{}\label{classshared__memory_1_1array_a7051346ccb28372b2ea5587714113079}
+
+\item 
+\hyperlink{classshared__memory_1_1Mutex}{shared\+\_\+memory\+::\+Mutex} {\bfseries mutex\+\_\+}\hypertarget{classshared__memory_1_1array_afaf6604cf5e2c380f86679e1515e6674}{}\label{classshared__memory_1_1array_afaf6604cf5e2c380f86679e1515e6674}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T, int S\+I\+ZE = 0$>$\\*
+class shared\+\_\+memory\+::array$<$ T, S\+I\+Z\+E $>$}
+
+Implement a shared array stored on a shared memory segment. 
+
+Items hosted by the array may be of (1) fundamental type (e.\+g. int, double, char), (2) array of fundamental type (e.\+g. int\mbox{[}10\mbox{]}); or (3) instances of a class implementing a serializable function (see shared\+\_\+memory\+::serializer). 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{shared\+\_\+memory\+::array@{shared\+\_\+memory\+::array}!array@{array}}
+\index{array@{array}!shared\+\_\+memory\+::array@{shared\+\_\+memory\+::array}}
+\subsubsection[{\texorpdfstring{array(std\+::string segment\+\_\+id, std\+::size\+\_\+t size, bool clear\+\_\+on\+\_\+destruction=true, bool multiprocess\+\_\+safe=true)}{array(std::string segment_id, std::size_t size, bool clear_on_destruction=true, bool multiprocess_safe=true)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , int S\+I\+ZE$>$ {\bf shared\+\_\+memory\+::array}$<$ T, S\+I\+ZE $>$\+::{\bf array} (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{segment\+\_\+id, }
+\item[{std\+::size\+\_\+t}]{size, }
+\item[{bool}]{clear\+\_\+on\+\_\+destruction = {\ttfamily true}, }
+\item[{bool}]{multiprocess\+\_\+safe = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\hypertarget{classshared__memory_1_1array_a95b5abd158cb04ab0644f5aa6df48b2b}{}\label{classshared__memory_1_1array_a95b5abd158cb04ab0644f5aa6df48b2b}
+
+\begin{DoxyParams}{Parameters}
+{\em segment\+\_\+id} & should be the same for all array pointing to the same shared memory segment \\
+\hline
+{\em size} & \+: number of elements to be stored by the array \\
+\hline
+{\em clear\+\_\+on\+\_\+destruction} & if true, the shared memory segment will be wiped on destruction of the array. Note that any other array pointing to this segment may hang indefinitely as a result. If no arrays pointing to the shared memory segment delete the segment, then users are expected to call \hyperlink{namespaceshared__memory_a0371eb6089f446098adf2f9c106333dc}{shared\+\_\+memory\+::clear\+\_\+array}. Failing to do so may result in new array pointing to a new memory segment of the same id to hang indefinitely at construction. \\
+\hline
+{\em multiprocess\+\_\+safe} & if false, it is strongly adviced to protect accesses via a \hyperlink{classshared__memory_1_1Mutex}{shared\+\_\+memory\+::\+Mutex} \\
+\hline
+\end{DoxyParams}
+\index{shared\+\_\+memory\+::array@{shared\+\_\+memory\+::array}!array@{array}}
+\index{array@{array}!shared\+\_\+memory\+::array@{shared\+\_\+memory\+::array}}
+\subsubsection[{\texorpdfstring{array(array$<$ T, S\+I\+Z\+E $>$ \&\&other) noexcept}{array(array< T, SIZE > &&other) noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , int S\+I\+ZE$>$ {\bf shared\+\_\+memory\+::array}$<$ T, S\+I\+ZE $>$\+::{\bf array} (
+\begin{DoxyParamCaption}
+\item[{{\bf array}$<$ T, S\+I\+ZE $>$ \&\&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [noexcept]}}\hypertarget{classshared__memory_1_1array_af399f2f20d16dadf8381c61ea5ad42fd}{}\label{classshared__memory_1_1array_af399f2f20d16dadf8381c61ea5ad42fd}
+
+
+This array will point to the share memory segment pointed at by other; and will have same value for multprocess\+\_\+safe and clear\+\_\+on\+\_\+destruction. 
+
+Warning\+: even if other.\+clear\+\_\+on\+\_\+destruction is true, the segment memory will not be wiped on the destruction of other. The duty of deleting the shared memory is passed to the new instance, so to speak 
+
+\subsection{Member Function Documentation}
+\index{shared\+\_\+memory\+::array@{shared\+\_\+memory\+::array}!operator=@{operator=}}
+\index{operator=@{operator=}!shared\+\_\+memory\+::array@{shared\+\_\+memory\+::array}}
+\subsubsection[{\texorpdfstring{operator=(array$<$ T, S\+I\+Z\+E $>$ \&\&other) noexcept}{operator=(array< T, SIZE > &&other) noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , int S\+I\+ZE$>$ {\bf array}$<$ T, S\+I\+ZE $>$ \& array\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf array}$<$ T, S\+I\+ZE $>$ \&\&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [noexcept]}}\hypertarget{classshared__memory_1_1array_ad5b4b2841b2785b188a6371cb7f00f1f}{}\label{classshared__memory_1_1array_ad5b4b2841b2785b188a6371cb7f00f1f}
+
+
+This array will point to the share memory segment pointed at by other; and will have same value for multprocess\+\_\+safe and clear\+\_\+on\+\_\+destruction. 
+
+Warning\+: even if other.\+clear\+\_\+on\+\_\+destruction is true, the segment memory will not be wiped on the destruction of other. The duty of deleting the shared memory is passed to the new instance, so to speak 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/shared\+\_\+memory/array.\+hpp\item 
+include/shared\+\_\+memory/array.\+hxx\item 
+include/shared\+\_\+memory/array\+\_\+fundamental.\+hxx\item 
+include/shared\+\_\+memory/array\+\_\+fundamental\+\_\+array.\+hxx\item 
+include/shared\+\_\+memory/array\+\_\+serializable.\+hxx\end{DoxyCompactItemize}

@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="robot__pose__publisher_8py" kind="file" language="Python">
+    <compoundname>robot_pose_publisher.py</compoundname>
+    <innernamespace refid="namespaceros__nodes_1_1robot__pose__publisher">ros_nodes::robot_pose_publisher</innernamespace>
+    <innernamespace refid="namespacedynamic__graph__manager">dynamic_graph_manager</innernamespace>
+    <briefdescription>
+<para>Listens to TransformStamped messages and publish them to tf. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Maximilien Naveau (<ulink url="mailto:maximilien.naveau@gmail.com">maximilien.naveau@gmail.com</ulink>) </para></simplesect>
+<xrefsect id="license_1_license000038"><xreftitle>License</xreftitle><xrefdescription><para>License BSD-3-Clause </para></xrefdescription></xrefsect><simplesect kind="copyright"><para>Copyright (c) 2019, New York University and Max Planck Gesellschaft. </para></simplesect>
+<simplesect kind="date"><para>2019-05-22 </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">#!/usr/bin/env<sp/>python</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;&quot;&quot;@package<sp/>dynamic_graph_manager</highlight></codeline>
+<codeline lineno="4"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="5"><highlight class="stringliteral">@file<sp/>robot_pose_publisher.py</highlight></codeline>
+<codeline lineno="6"><highlight class="stringliteral">@author<sp/>Maximilien<sp/>Naveau<sp/>(maximilien.naveau@gmail.com)</highlight></codeline>
+<codeline lineno="7"><highlight class="stringliteral">@license<sp/>License<sp/>BSD-3-Clause</highlight></codeline>
+<codeline lineno="8"><highlight class="stringliteral">@copyright<sp/>Copyright<sp/>(c)<sp/>2019,<sp/>New<sp/>York<sp/>University<sp/>and<sp/>Max<sp/>Planck<sp/>Gesellschaft.</highlight></codeline>
+<codeline lineno="9"><highlight class="stringliteral">@date<sp/>2019-05-22</highlight></codeline>
+<codeline lineno="10"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="11"><highlight class="stringliteral">@brief<sp/>Listens<sp/>to<sp/>TransformStamped<sp/>messages<sp/>and<sp/>publish<sp/>them<sp/>to<sp/>tf</highlight></codeline>
+<codeline lineno="12"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="13"><highlight class="stringliteral">&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>rospy</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>tf</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>sensor_msgs.msg</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">frame<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">childFrame<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">#DEPRECATED.<sp/>Robot<sp/>Pose<sp/>is<sp/>already<sp/>being<sp/>published</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">pose_broadcaster(msg):</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>translation<sp/>=<sp/>msg.position[0:3];</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>rotation<sp/>=<sp/>tf.transformations.quaternion_from_euler(msg.position[3],<sp/>msg.position[4],<sp/>msg.position[5])</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>tfbr<sp/>=<sp/>tf.TransformBroadcaster()</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>tfbr.sendTransform(translation,<sp/>rotation,</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rospy.Time.now(),<sp/>childFrame,<sp/>frame)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&apos;__main__&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.init_node(</highlight><highlight class="stringliteral">&apos;robot_pose_publisher&apos;</highlight><highlight class="normal">,<sp/>anonymous=</highlight><highlight class="keyword">True</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>frame<sp/>=<sp/>rospy.get_param(</highlight><highlight class="stringliteral">&apos;~frame&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;odom&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>childFrame<sp/>=<sp/>rospy.get_param(</highlight><highlight class="stringliteral">&apos;~child_frame&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;base_link&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>topic<sp/>=<sp/>rospy.get_param(</highlight><highlight class="stringliteral">&apos;~topic&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;joint_states&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.Subscriber(topic,<sp/>sensor_msgs.msg.JointState,<sp/>pose_broadcaster)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.spin()</highlight></codeline>
+    </programlisting>
+    <location file="python/ros_nodes/robot_pose_publisher.py"/>
+  </compounddef>
+</doxygen>

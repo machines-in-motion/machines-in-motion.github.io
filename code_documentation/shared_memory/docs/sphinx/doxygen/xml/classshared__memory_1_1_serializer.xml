@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classshared__memory_1_1_serializer" kind="class" language="C++" prot="public">
+    <compoundname>shared_memory::Serializer</compoundname>
+    <includes refid="serializer_8hpp" local="no">serializer.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>class</type>
+        <declname>Serializable</declname>
+        <defname>Serializable</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classshared__memory_1_1_serializer_1ad1fb7ce2b9dfde8e609aa770a3f97e72" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string shared_memory::Serializer&lt; Serializable &gt;::data_</definition>
+        <argsstring></argsstring>
+        <name>data_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/serializer.hpp" line="55" column="1" bodyfile="/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/serializer.hpp" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classshared__memory_1_1_serializer_1a61ea01a0e5e28fc24c9274455050b1c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; shared_memory::Serializer&lt; Serializable &gt;::serialize</definition>
+        <argsstring>(const Serializable &amp;serializable)</argsstring>
+        <name>serialize</name>
+        <param>
+          <type>const <ref refid="class_serializable" kindref="compound">Serializable</ref> &amp;</type>
+          <declname>serializable</declname>
+        </param>
+        <briefdescription>
+<para>serialize an (almost) arbitrary instance to a string. </para>        </briefdescription>
+        <detaileddescription>
+<para>The method uses cereal internally and the instance must implement a serialize function. See for details: <ulink url="https://uscilab.github.io/cereal/">https://uscilab.github.io/cereal/</ulink> Supplementary requirements:<itemizedlist>
+<listitem><para><ref refid="class_serializable" kindref="compound">Serializable</ref> must also have a default constructor.</para></listitem><listitem><para>All instances of <ref refid="class_serializable" kindref="compound">Serializable</ref> must be of the same size. (e.g. vectors must be of fixed size) The generated and returned string is a private member of the <ref refid="classshared__memory_1_1_serializer" kindref="compound">Serializer</ref> instance. Successive calls to serialize overwrite this string. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to serialize to a string </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para></listitem></itemizedlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/serializer.hpp" line="36" column="1" bodyfile="/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/serializer.hxx" bodystart="5" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1_serializer_1a8f674c9b3a7c053403112d2fad4e09a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void shared_memory::Serializer&lt; Serializable &gt;::deserialize</definition>
+        <argsstring>(const std::string &amp;data, Serializable &amp;serializable)</argsstring>
+        <name>deserialize</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type><ref refid="class_serializable" kindref="compound">Serializable</ref> &amp;</type>
+          <declname>serializable</declname>
+        </param>
+        <briefdescription>
+<para>Restore the instance of serializable based on the string data, which should have been generated via the serialize function. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>the</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>serialized instance </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>of <ref refid="class_serializable" kindref="compound">Serializable</ref> to be restored </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/serializer.hpp" line="45" column="1" bodyfile="/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/serializer.hxx" bodystart="16" bodyend="22"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classshared__memory_1_1_serializer_1af5edd0af254d6061e8e18c0bbec10aa9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int shared_memory::Serializer&lt; Serializable &gt;::serializable_size</definition>
+        <argsstring>()</argsstring>
+        <name>serializable_size</name>
+        <briefdescription>
+<para>Returns the serialized size (i.e. </para>        </briefdescription>
+        <detaileddescription>
+<para>the size of the string) of an instance of <ref refid="class_serializable" kindref="compound">Serializable</ref> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/serializer.hpp" line="52" column="1" bodyfile="/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/serializer.hxx" bodystart="25" bodyend="31"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/serializer.hpp" line="19" column="1" bodyfile="/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/serializer.hpp" bodystart="18" bodyend="56"/>
+    <listofallmembers>
+      <member refid="classshared__memory_1_1_serializer_1ad1fb7ce2b9dfde8e609aa770a3f97e72" prot="private" virt="non-virtual"><scope>shared_memory::Serializer</scope><name>data_</name></member>
+      <member refid="classshared__memory_1_1_serializer_1a8f674c9b3a7c053403112d2fad4e09a9" prot="public" virt="non-virtual"><scope>shared_memory::Serializer</scope><name>deserialize</name></member>
+      <member refid="classshared__memory_1_1_serializer_1af5edd0af254d6061e8e18c0bbec10aa9" prot="public" virt="non-virtual"><scope>shared_memory::Serializer</scope><name>serializable_size</name></member>
+      <member refid="classshared__memory_1_1_serializer_1a61ea01a0e5e28fc24c9274455050b1c1" prot="public" virt="non-virtual"><scope>shared_memory::Serializer</scope><name>serialize</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

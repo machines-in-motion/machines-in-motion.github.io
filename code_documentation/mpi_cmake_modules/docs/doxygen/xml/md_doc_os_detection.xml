@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="md_doc_os_detection" kind="page">
+    <compoundname>md_doc_os_detection</compoundname>
+    <title>OS detection</title>
+    <detaileddescription>
+<para><heading level="2">Introduction</heading>
+</para><para>This module has for purpose to detect the kind of Operating System (OS) the build is executed in using the tool <computeroutput>uname -a</computeroutput>. It is supporting:</para><para><itemizedlist>
+<listitem><para><ulink url="https://ubuntu.com/">Ubuntu</ulink></para></listitem><listitem><para><ulink url="https://fr.wikipedia.org/wiki/Mac_OS">MacOs</ulink></para></listitem><listitem><para><ulink url="https://wiki.linuxfoundation.org/realtime/start">PREEMPT_RT</ulink></para></listitem><listitem><para><ulink url="https://gitlab.denx.de/Xenomai/xenomai/-/wikis/home">Xenomai</ulink></para></listitem></itemizedlist>
+</para><para>It defines the following C/C++ preprocessor macros:</para><para><itemizedlist>
+<listitem><para><computeroutput>XENOMAI</computeroutput> (if Xenomai is detected)</para></listitem><listitem><para><computeroutput>RT_PREEMPT</computeroutput> (if PREEMPT_RT OS is found)</para></listitem><listitem><para><computeroutput>MAC_OS</computeroutput> (if MacOS is detected)</para></listitem><listitem><para><computeroutput>NON_REAL_TIME</computeroutput> (if non-real-time OS is detected)</para></listitem></itemizedlist>
+</para><para>The <ulink url="https://machines-in-motion.github.io/code_documentation/real_time_tools/">real_time_tools</ulink> package depends heavily on this detection.</para><para><heading level="2">Usage</heading>
+</para><para>There is a macros called <computeroutput>define_os()</computeroutput> that is called by default if one depend on this pacakge, see <ref refid="md_readme" kindref="compound">readme.md</ref>. So basically there is nothing specific to be done to use this tool. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

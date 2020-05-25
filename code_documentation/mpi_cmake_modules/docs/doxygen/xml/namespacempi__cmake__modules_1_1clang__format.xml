@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespacempi__cmake__modules_1_1clang__format" kind="namespace" language="Python">
+    <compoundname>mpi_cmake_modules::clang_format</compoundname>
+    <innernamespace refid="namespacempi__cmake__modules_1_1clang__format_1_1py">mpi_cmake_modules::clang_format::py</innernamespace>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="clang__format_8py_1a69c93a1da52a27430c5c942c41070465" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>mpi_cmake_modules::clang_format.which</definition>
+        <argsstring></argsstring>
+        <name>which</name>
+        <initializer>= distutils.spawn.find_executable</initializer>
+        <briefdescription>
+<para>This ensure the compatibility Python2 vs Python3. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/mpi_cmake_modules/clang_format.py" line="19" column="1" bodyfile="python/mpi_cmake_modules/clang_format.py" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="clang__format_8py_1afe8dc8c8d15623fc93c48e51f5814787" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def mpi_cmake_modules.clang_format.find_clang_format</definition>
+        <argsstring>(name_list=[&apos;clang-format&apos;])</argsstring>
+        <name>find_clang_format</name>
+        <param>
+          <type>name_list</type>
+          <defname>name_list</defname>
+          <defval>[&apos;clang-format&apos;]</defval>
+        </param>
+        <briefdescription>
+<para>Find the full path to the clang-format executable. </para>        </briefdescription>
+        <detaileddescription>
+<para>Look by default for the <computeroutput>clang-format</computeroutput> executable in the PATH environment variable.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name_list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list(str) <computeroutput>--</computeroutput> Potential executable names which might differ according to the clang-format version availbale.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The full path to the clang-format executable. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/mpi_cmake_modules/clang_format.py" line="36" column="1" bodyfile="python/mpi_cmake_modules/clang_format.py" bodystart="36" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="clang__format_8py_1a9d5af1fa13452a51570bb28d245d5d79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def mpi_cmake_modules.clang_format.load_clang_format_config</definition>
+        <argsstring>()</argsstring>
+        <name>load_clang_format_config</name>
+        <briefdescription>
+<para>Look for the clang-formt parameter file in this package. </para>        </briefdescription>
+        <detaileddescription>
+<para>Look for the _clang-format file located in this package and convert it in a one line dictionnary string.</para><para><simplesect kind="return"><para>The _clang-format in a online dictionnary string. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/mpi_cmake_modules/clang_format.py" line="53" column="1" bodyfile="python/mpi_cmake_modules/clang_format.py" bodystart="53" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="clang__format_8py_1a9768c9300934448be2a773e8c8d2df0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def mpi_cmake_modules.clang_format.test_valid_file</definition>
+        <argsstring>(filename, extensions)</argsstring>
+        <name>test_valid_file</name>
+        <param>
+          <type>filename</type>
+          <defname>filename</defname>
+        </param>
+        <param>
+          <type>extensions</type>
+          <defname>extensions</defname>
+        </param>
+        <briefdescription>
+<para>Test if the input file exists and is of one of the provided extension. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>str <computeroutput>--</computeroutput> Path to the file to test. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>extensions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>iterable of accepted extensions (str)</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the file exits and ends with one of the extension. False otherwise. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/mpi_cmake_modules/clang_format.py" line="71" column="1" bodyfile="python/mpi_cmake_modules/clang_format.py" bodystart="71" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="clang__format_8py_1ad59764370ac726bc399da6336b6b64d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def mpi_cmake_modules.clang_format.get_absolute_path</definition>
+        <argsstring>(file_or_directory)</argsstring>
+        <name>get_absolute_path</name>
+        <param>
+          <type>file_or_directory</type>
+          <defname>file_or_directory</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/mpi_cmake_modules/clang_format.py" line="91" column="1" bodyfile="python/mpi_cmake_modules/clang_format.py" bodystart="91" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="clang__format_8py_1a45f75cf60b9373143390257a3ef49214" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def mpi_cmake_modules.clang_format.list_of_files_to_format</definition>
+        <argsstring>(files_or_directories, extensions)</argsstring>
+        <name>list_of_files_to_format</name>
+        <param>
+          <type>files_or_directories</type>
+          <defname>files_or_directories</defname>
+        </param>
+        <param>
+          <type>extensions</type>
+          <defname>extensions</defname>
+        </param>
+        <briefdescription>
+<para>Get the list of files to format exploring the input arguments. </para>        </briefdescription>
+        <detaileddescription>
+<para>Explore recursively the directories given in the input list and create a list of all files. Add to this list the files given in the input list. Sort out the files that are source-files or not and return the list of source files.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>files_or_directories</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list(str) <computeroutput>--</computeroutput> List of files or directories.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the file ends with one of the following extension <programlisting><codeline><highlight class="normal">(&quot;.h&quot;,<sp/>&quot;.c&quot;,<sp/>&quot;.hh&quot;,<sp/>&quot;.cc&quot;,<sp/>&quot;.hpp&quot;,<sp/>&quot;.cpp&quot;,<sp/>&quot;.hxx&quot;,<sp/>&quot;.cxx&quot;)</highlight></codeline>
+</programlisting> False otherwise. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/mpi_cmake_modules/clang_format.py" line="117" column="1" bodyfile="python/mpi_cmake_modules/clang_format.py" bodystart="117" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="clang__format_8py_1aa7bc2c584f93ba6d7345a544824a146d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def mpi_cmake_modules.clang_format.execute_clang_format</definition>
+        <argsstring>(clang_format_bin, clang_format_config, clang_format_arg)</argsstring>
+        <name>execute_clang_format</name>
+        <param>
+          <type>clang_format_bin</type>
+          <defname>clang_format_bin</defname>
+        </param>
+        <param>
+          <type>clang_format_config</type>
+          <defname>clang_format_config</defname>
+        </param>
+        <param>
+          <type>clang_format_arg</type>
+          <defname>clang_format_arg</defname>
+        </param>
+        <briefdescription>
+<para>Execute the formatting of C/C++ files using clang-format. </para>        </briefdescription>
+        <detaileddescription>
+<para>Get the path to the executable, and run it using the clang-format insput paramter on the list of files to format.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>clang_format_bin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list(str) <computeroutput>--</computeroutput> Path to the clang-format binary. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>clang_format_config</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list(str) <computeroutput>--</computeroutput> One line dictionnary string containing the clang-format parameters. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>clang_format_arg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list(str) <computeroutput>--</computeroutput> List of source files to parse. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/mpi_cmake_modules/clang_format.py" line="147" column="1" bodyfile="python/mpi_cmake_modules/clang_format.py" bodystart="148" bodyend="163"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="python/mpi_cmake_modules/clang_format.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

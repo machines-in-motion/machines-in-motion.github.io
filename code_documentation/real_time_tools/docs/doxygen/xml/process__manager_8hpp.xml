@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="process__manager_8hpp" kind="file" language="C++">
+    <compoundname>process_manager.hpp</compoundname>
+    <includes local="no">vector</includes>
+    <includedby refid="process__manager_8cpp" local="yes">src/process_manager.cpp</includedby>
+    <includedby refid="thread_8cpp" local="yes">src/thread.cpp</includedby>
+    <incdepgraph>
+      <node id="555">
+        <label>vector</label>
+      </node>
+      <node id="554">
+        <label>include/real_time_tools/process_manager.hpp</label>
+        <link refid="process_manager.hpp"/>
+        <childnode refid="555" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="557">
+        <label>src/process_manager.cpp</label>
+        <link refid="process__manager_8cpp"/>
+      </node>
+      <node id="558">
+        <label>src/thread.cpp</label>
+        <link refid="thread_8cpp"/>
+      </node>
+      <node id="556">
+        <label>include/real_time_tools/process_manager.hpp</label>
+        <link refid="process_manager.hpp"/>
+        <childnode refid="557" relation="include">
+        </childnode>
+        <childnode refid="558" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacereal__time__tools">real_time_tools</innernamespace>
+    <briefdescription>
+<para>Tools to fix the CPU to specific processor. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Maximilien Naveau (<ulink url="mailto:maximilien.naveau@gmail.com">maximilien.naveau@gmail.com</ulink>) </para></simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2019, New York University and Max Planck Gesellschaft. </para></simplesect>
+<simplesect kind="date"><para>2019-05-06 </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="10"><highlight class="preprocessor">#ifndef<sp/>PROCESS_MANAGER_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PROCESS_MANAGER_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/><sp/>XENOMAI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(NON_REAL_TIME)<sp/>||<sp/>defined(RT_PREEMPT)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#include<sp/>&lt;sched.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacereal__time__tools" kindref="compound">real_time_tools</ref><sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="process__manager_8hpp_1ae4959078e00ed85dd26b9a96dcd8fd3b" kindref="member">fix_current_process_to_cpu</ref>(std::vector&lt;int&gt;&amp;<sp/>cpu_affinities,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pid);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="process__manager_8hpp_1a6a8ceffef6761ee22e436a1151f020af" kindref="member">set_cpu_dma_latency</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>max_latency_us);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>PROCESS_MANAGER</highlight></codeline>
+    </programlisting>
+    <location file="include/real_time_tools/process_manager.hpp"/>
+  </compounddef>
+</doxygen>

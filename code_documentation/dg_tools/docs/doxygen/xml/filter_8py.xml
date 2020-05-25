@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="filter_8py" kind="file" language="Python">
+    <compoundname>filter.py</compoundname>
+    <innerclass refid="classpython_1_1dg__tools_1_1filter_1_1ButterWorthFilter" prot="public">python::dg_tools::filter::ButterWorthFilter</innerclass>
+    <innernamespace refid="namespacepython_1_1dg__tools_1_1filter">python::dg_tools::filter</innernamespace>
+    <briefdescription>
+<para>Filter entities factory. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>Copyright (c) 2017-2019, New York University and Max Planck Gesellschaft, License BSD-3-Clause </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">#!/usr/bin/env<sp/>python</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">#<sp/>@namespace<sp/>dg_tools.filter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;&quot;&quot;<sp/>Filter<sp/>entities<sp/>factory</highlight></codeline>
+<codeline lineno="5"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="6"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>@file</highlight></codeline>
+<codeline lineno="7"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>@copyright<sp/>Copyright<sp/>(c)<sp/>2017-2019,</highlight></codeline>
+<codeline lineno="8"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>New<sp/>York<sp/>University<sp/>and<sp/>Max<sp/>Planck<sp/>Gesellschaft,</highlight></codeline>
+<codeline lineno="9"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>License<sp/>BSD-3-Clause</highlight></codeline>
+<codeline lineno="10"><highlight class="stringliteral">&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Python<sp/>3<sp/>compatibility,<sp/>has<sp/>to<sp/>be<sp/>called<sp/>just<sp/>after<sp/>the<sp/>hashbang.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>__future__<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>print_function,<sp/>division</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>os</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>scipy.signal<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>butter</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>dynamic_graph.sot.core.filter_differentiator<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>FilterDifferentiator</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">ButterWorthFilter(object):</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;<sp/><sp/>Butterworth<sp/>filter<sp/>implementation<sp/>in<sp/>dynamic<sp/>graph.</highlight></codeline>
+<codeline lineno="21"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="22"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Computes<sp/>the<sp/>Butterworth<sp/>filter<sp/>coefficient<sp/>using<sp/>scipy<sp/>and<sp/>create<sp/>the</highlight></codeline>
+<codeline lineno="23"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>appropriate<sp/>dynamic<sp/>graph<sp/>filter.</highlight></codeline>
+<codeline lineno="24"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="25"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Attributes:</highlight></codeline>
+<codeline lineno="26"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>filter:<sp/>Dynamic<sp/>graph<sp/>entity<sp/>implementing<sp/>an<sp/>infinite<sp/>impedance<sp/>filter.</highlight></codeline>
+<codeline lineno="27" refid="classpython_1_1dg__tools_1_1filter_1_1ButterWorthFilter" refkind="compound"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="28"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classpython_1_1dg__tools_1_1filter_1_1ButterWorthFilter_1ac9534f4a0ab7b60766183e3351093054" kindref="member">__init__</ref>(self,<sp/>name=&quot;&quot;):</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;<sp/>Constructor</highlight></codeline>
+<codeline lineno="32"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="33"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Args:</highlight></codeline>
+<codeline lineno="34"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>name:</highlight></codeline>
+<codeline lineno="35"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classpython_1_1dg__tools_1_1filter_1_1ButterWorthFilter_1a3c84edcefe0f321c7f24a5169d95bc86" kindref="member">name</ref><sp/>=<sp/>name</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classpython_1_1dg__tools_1_1filter_1_1ButterWorthFilter_1aaa37fb9c14becc324528c1a5eb7a0a86" kindref="member">filter</ref><sp/>=<sp/>FilterDifferentiator(self.<ref refid="classpython_1_1dg__tools_1_1filter_1_1ButterWorthFilter_1a3c84edcefe0f321c7f24a5169d95bc86" kindref="member">name</ref>)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classpython_1_1dg__tools_1_1filter_1_1ButterWorthFilter_1a752671c3f15b39de6adf9cc0b3d44b33" kindref="member">sin</ref><sp/>=<sp/>self.filter.x</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classpython_1_1dg__tools_1_1filter_1_1ButterWorthFilter_1ad658ec88660f576c1883ebd797112c47" kindref="member">sout</ref><sp/>=<sp/>self.filter.x_filtered</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classpython_1_1dg__tools_1_1filter_1_1ButterWorthFilter_1a483e952c69af10e7c4c5d4b776c92c29" kindref="member">init</ref>(self,<sp/>size_of_input,<sp/>control_time_step,<sp/>percentage_nyquist_cutoff,</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>filter_order):</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;<sp/>Initialize<sp/>the<sp/>filter<sp/>using<sp/>scipy.</highlight></codeline>
+<codeline lineno="45"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="46"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Args:</highlight></codeline>
+<codeline lineno="47"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>size_of_input:</highlight></codeline>
+<codeline lineno="48"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>control_time_step:</highlight></codeline>
+<codeline lineno="49"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>percentage_nyquist_cutoff:<sp/>Range<sp/>of<sp/>(0.,<sp/>1.)</highlight></codeline>
+<codeline lineno="50"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>filter_order:</highlight></codeline>
+<codeline lineno="51"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>prefix:</highlight></codeline>
+<codeline lineno="52"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="53"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Copying<sp/>the<sp/>arguments<sp/>internally.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classpython_1_1dg__tools_1_1filter_1_1ButterWorthFilter_1aac00507043d3d42798c2d9cd82fc48c9" kindref="member">size_of_input</ref><sp/>=<sp/>size_of_input</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classpython_1_1dg__tools_1_1filter_1_1ButterWorthFilter_1a43f66675fb652ea597949603ffe6036f" kindref="member">control_time_step</ref><sp/>=<sp/>control_time_step</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classpython_1_1dg__tools_1_1filter_1_1ButterWorthFilter_1a678f80fb063d8985ebe597ef92965a59" kindref="member">percentage_nyquist_cutoff</ref><sp/>=<sp/>percentage_nyquist_cutoff</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classpython_1_1dg__tools_1_1filter_1_1ButterWorthFilter_1afcf4eb37f5e300fbb14fa9094c5f36a4" kindref="member">filter_order</ref><sp/>=<sp/>filter_order</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Filter<sp/>paramters.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classpython_1_1dg__tools_1_1filter_1_1ButterWorthFilter_1a5f449de18a557278442635e429d461a5" kindref="member">numerator</ref><sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classpython_1_1dg__tools_1_1filter_1_1ButterWorthFilter_1a6265fc8d2dd3a429f716f6a1035cbffd" kindref="member">denominator</ref><sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classpython_1_1dg__tools_1_1filter_1_1ButterWorthFilter_1ab35229fee7049c1b92444bab8783d62a" kindref="member">_compute_numerator_denominator</ref>()</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Initialize<sp/>the<sp/>entity.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.filter.init(control_time_step,<sp/>size_of_input,</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classpython_1_1dg__tools_1_1filter_1_1ButterWorthFilter_1a5f449de18a557278442635e429d461a5" kindref="member">numerator</ref>,<sp/>self.<ref refid="classpython_1_1dg__tools_1_1filter_1_1ButterWorthFilter_1a6265fc8d2dd3a429f716f6a1035cbffd" kindref="member">denominator</ref>)</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">update(self,<sp/>percentage_nyquist_cutoff,<sp/>filter_order=None):</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>filter_order<sp/></highlight><highlight class="keywordflow">is</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>filter_order<sp/>=<sp/>self.<ref refid="classpython_1_1dg__tools_1_1filter_1_1ButterWorthFilter_1afcf4eb37f5e300fbb14fa9094c5f36a4" kindref="member">filter_order</ref></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classpython_1_1dg__tools_1_1filter_1_1ButterWorthFilter_1a678f80fb063d8985ebe597ef92965a59" kindref="member">percentage_nyquist_cutoff</ref><sp/>=<sp/>percentage_nyquist_cutoff</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classpython_1_1dg__tools_1_1filter_1_1ButterWorthFilter_1afcf4eb37f5e300fbb14fa9094c5f36a4" kindref="member">filter_order</ref><sp/>=<sp/>filter_order</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classpython_1_1dg__tools_1_1filter_1_1ButterWorthFilter_1ab35229fee7049c1b92444bab8783d62a" kindref="member">_compute_numerator_denominator</ref>()</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.filter.switch_filter(self.<ref refid="classpython_1_1dg__tools_1_1filter_1_1ButterWorthFilter_1a5f449de18a557278442635e429d461a5" kindref="member">numerator</ref>,<sp/>self.<ref refid="classpython_1_1dg__tools_1_1filter_1_1ButterWorthFilter_1a6265fc8d2dd3a429f716f6a1035cbffd" kindref="member">denominator</ref>)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">_compute_numerator_denominator(self):</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classpython_1_1dg__tools_1_1filter_1_1ButterWorthFilter_1a5f449de18a557278442635e429d461a5" kindref="member">numerator</ref>,<sp/>self.<ref refid="classpython_1_1dg__tools_1_1filter_1_1ButterWorthFilter_1a6265fc8d2dd3a429f716f6a1035cbffd" kindref="member">denominator</ref><sp/>=<sp/>butter(</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classpython_1_1dg__tools_1_1filter_1_1ButterWorthFilter_1afcf4eb37f5e300fbb14fa9094c5f36a4" kindref="member">filter_order</ref>,<sp/>self.<ref refid="classpython_1_1dg__tools_1_1filter_1_1ButterWorthFilter_1a678f80fb063d8985ebe597ef92965a59" kindref="member">percentage_nyquist_cutoff</ref>,</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>btype=</highlight><highlight class="stringliteral">&apos;low&apos;</highlight><highlight class="normal">,<sp/>output=</highlight><highlight class="stringliteral">&apos;ba&apos;</highlight><highlight class="normal">)</highlight></codeline>
+    </programlisting>
+    <location file="python/dg_tools/filter.py"/>
+  </compounddef>
+</doxygen>

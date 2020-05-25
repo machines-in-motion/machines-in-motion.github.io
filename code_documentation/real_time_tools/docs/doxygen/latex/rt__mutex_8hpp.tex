@@ -1,0 +1,113 @@
+\hypertarget{rt__mutex_8hpp}{}\section{include/real\+\_\+time\+\_\+tools/rt\+\_\+mutex.hpp File Reference}
+\label{rt__mutex_8hpp}\index{include/real\+\_\+time\+\_\+tools/rt\+\_\+mutex.\+hpp@{include/real\+\_\+time\+\_\+tools/rt\+\_\+mutex.\+hpp}}
+
+
+Expose real time O\+Ss mutex through a common A\+PI.  
+
+
+{\ttfamily \#include $<$pthread.\+h$>$}\\*
+{\ttfamily \#include $<$sys/time.\+h$>$}\\*
+Include dependency graph for rt\+\_\+mutex.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{rt__mutex_8hpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef pthread\+\_\+mutex\+\_\+t \hyperlink{rt__mutex_8hpp_a645c5f8185139f4e3332271edb8690e5}{rt\+\_\+mutex}
+\begin{DoxyCompactList}\small\item\em Alias for the real time mutex. \end{DoxyCompactList}\item 
+typedef pthread\+\_\+cond\+\_\+t \hyperlink{rt__mutex_8hpp_a668d08f0241c505774e0fac47a16befe}{rt\+\_\+cond}
+\begin{DoxyCompactList}\small\item\em Alias for the real time condition variable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{rt__mutex_8hpp_a4d314f52e912dc6b62aae06083f657f0}{rt\+\_\+mutex\+\_\+init} (\hyperlink{rt__mutex_8hpp_a645c5f8185139f4e3332271edb8690e5}{rt\+\_\+mutex} $\ast$mutex)
+\begin{DoxyCompactList}\small\item\em Initialize the mutex. \end{DoxyCompactList}\item 
+static int \hyperlink{rt__mutex_8hpp_ac16c36f2796d1d2e1707ef29c2e59882}{rt\+\_\+mutex\+\_\+destroy} (\hyperlink{rt__mutex_8hpp_a645c5f8185139f4e3332271edb8690e5}{rt\+\_\+mutex} $\ast$mutex)
+\begin{DoxyCompactList}\small\item\em Destroy the mutex. \end{DoxyCompactList}\item 
+static int \hyperlink{rt__mutex_8hpp_aeb86d0934fa6ede664749a79b47e8a03}{rt\+\_\+mutex\+\_\+lock} (\hyperlink{rt__mutex_8hpp_a645c5f8185139f4e3332271edb8690e5}{rt\+\_\+mutex} $\ast$mutex)
+\begin{DoxyCompactList}\small\item\em Lock the mutex. \end{DoxyCompactList}\item 
+static int \hyperlink{rt__mutex_8hpp_abd0f53c90d881554715d2474beedf997}{rt\+\_\+mutex\+\_\+unlock} (\hyperlink{rt__mutex_8hpp_a645c5f8185139f4e3332271edb8690e5}{rt\+\_\+mutex} $\ast$mutex)
+\begin{DoxyCompactList}\small\item\em Unlock the mutex. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Expose real time O\+Ss mutex through a common A\+PI. 
+
+\begin{DoxyAuthor}{Author}
+Maximilien Naveau (\href{mailto:maximilien.naveau@gmail.com}{\tt maximilien.\+naveau@gmail.\+com}) license License B\+S\+D-\/3-\/\+Clause 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2019, New York University and Max Planck Gesellschaft. 
+\end{DoxyCopyright}
+\begin{DoxyDate}{Date}
+2019-\/05-\/22 
+\end{DoxyDate}
+
+
+\subsection{Typedef Documentation}
+\index{rt\+\_\+mutex.\+hpp@{rt\+\_\+mutex.\+hpp}!rt\+\_\+cond@{rt\+\_\+cond}}
+\index{rt\+\_\+cond@{rt\+\_\+cond}!rt\+\_\+mutex.\+hpp@{rt\+\_\+mutex.\+hpp}}
+\subsubsection[{\texorpdfstring{rt\+\_\+cond}{rt_cond}}]{\setlength{\rightskip}{0pt plus 5cm}typedef pthread\+\_\+cond\+\_\+t {\bf rt\+\_\+cond}}\hypertarget{rt__mutex_8hpp_a668d08f0241c505774e0fac47a16befe}{}\label{rt__mutex_8hpp_a668d08f0241c505774e0fac47a16befe}
+
+
+Alias for the real time condition variable. 
+
+\index{rt\+\_\+mutex.\+hpp@{rt\+\_\+mutex.\+hpp}!rt\+\_\+mutex@{rt\+\_\+mutex}}
+\index{rt\+\_\+mutex@{rt\+\_\+mutex}!rt\+\_\+mutex.\+hpp@{rt\+\_\+mutex.\+hpp}}
+\subsubsection[{\texorpdfstring{rt\+\_\+mutex}{rt_mutex}}]{\setlength{\rightskip}{0pt plus 5cm}typedef pthread\+\_\+mutex\+\_\+t {\bf rt\+\_\+mutex}}\hypertarget{rt__mutex_8hpp_a645c5f8185139f4e3332271edb8690e5}{}\label{rt__mutex_8hpp_a645c5f8185139f4e3332271edb8690e5}
+
+
+Alias for the real time mutex. 
+
+
+
+\subsection{Function Documentation}
+\index{rt\+\_\+mutex.\+hpp@{rt\+\_\+mutex.\+hpp}!rt\+\_\+mutex\+\_\+destroy@{rt\+\_\+mutex\+\_\+destroy}}
+\index{rt\+\_\+mutex\+\_\+destroy@{rt\+\_\+mutex\+\_\+destroy}!rt\+\_\+mutex.\+hpp@{rt\+\_\+mutex.\+hpp}}
+\subsubsection[{\texorpdfstring{rt\+\_\+mutex\+\_\+destroy(rt\+\_\+mutex $\ast$mutex)}{rt_mutex_destroy(rt_mutex *mutex)}}]{\setlength{\rightskip}{0pt plus 5cm}static int rt\+\_\+mutex\+\_\+destroy (
+\begin{DoxyParamCaption}
+\item[{{\bf rt\+\_\+mutex} $\ast$}]{mutex}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{rt__mutex_8hpp_ac16c36f2796d1d2e1707ef29c2e59882}{}\label{rt__mutex_8hpp_ac16c36f2796d1d2e1707ef29c2e59882}
+
+
+Destroy the mutex. 
+
+\index{rt\+\_\+mutex.\+hpp@{rt\+\_\+mutex.\+hpp}!rt\+\_\+mutex\+\_\+init@{rt\+\_\+mutex\+\_\+init}}
+\index{rt\+\_\+mutex\+\_\+init@{rt\+\_\+mutex\+\_\+init}!rt\+\_\+mutex.\+hpp@{rt\+\_\+mutex.\+hpp}}
+\subsubsection[{\texorpdfstring{rt\+\_\+mutex\+\_\+init(rt\+\_\+mutex $\ast$mutex)}{rt_mutex_init(rt_mutex *mutex)}}]{\setlength{\rightskip}{0pt plus 5cm}static int rt\+\_\+mutex\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{{\bf rt\+\_\+mutex} $\ast$}]{mutex}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{rt__mutex_8hpp_a4d314f52e912dc6b62aae06083f657f0}{}\label{rt__mutex_8hpp_a4d314f52e912dc6b62aae06083f657f0}
+
+
+Initialize the mutex. 
+
+\index{rt\+\_\+mutex.\+hpp@{rt\+\_\+mutex.\+hpp}!rt\+\_\+mutex\+\_\+lock@{rt\+\_\+mutex\+\_\+lock}}
+\index{rt\+\_\+mutex\+\_\+lock@{rt\+\_\+mutex\+\_\+lock}!rt\+\_\+mutex.\+hpp@{rt\+\_\+mutex.\+hpp}}
+\subsubsection[{\texorpdfstring{rt\+\_\+mutex\+\_\+lock(rt\+\_\+mutex $\ast$mutex)}{rt_mutex_lock(rt_mutex *mutex)}}]{\setlength{\rightskip}{0pt plus 5cm}static int rt\+\_\+mutex\+\_\+lock (
+\begin{DoxyParamCaption}
+\item[{{\bf rt\+\_\+mutex} $\ast$}]{mutex}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{rt__mutex_8hpp_aeb86d0934fa6ede664749a79b47e8a03}{}\label{rt__mutex_8hpp_aeb86d0934fa6ede664749a79b47e8a03}
+
+
+Lock the mutex. 
+
+\index{rt\+\_\+mutex.\+hpp@{rt\+\_\+mutex.\+hpp}!rt\+\_\+mutex\+\_\+unlock@{rt\+\_\+mutex\+\_\+unlock}}
+\index{rt\+\_\+mutex\+\_\+unlock@{rt\+\_\+mutex\+\_\+unlock}!rt\+\_\+mutex.\+hpp@{rt\+\_\+mutex.\+hpp}}
+\subsubsection[{\texorpdfstring{rt\+\_\+mutex\+\_\+unlock(rt\+\_\+mutex $\ast$mutex)}{rt_mutex_unlock(rt_mutex *mutex)}}]{\setlength{\rightskip}{0pt plus 5cm}static int rt\+\_\+mutex\+\_\+unlock (
+\begin{DoxyParamCaption}
+\item[{{\bf rt\+\_\+mutex} $\ast$}]{mutex}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{rt__mutex_8hpp_abd0f53c90d881554715d2474beedf997}{}\label{rt__mutex_8hpp_abd0f53c90d881554715d2474beedf997}
+
+
+Unlock the mutex. 
+

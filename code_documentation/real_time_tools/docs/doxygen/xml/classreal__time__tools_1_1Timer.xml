@@ -1,0 +1,604 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classreal__time__tools_1_1Timer" kind="class" language="C++" prot="public">
+    <compoundname>real_time_tools::Timer</compoundname>
+    <includes refid="timer_8hpp" local="no">timer.hpp</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classreal__time__tools_1_1Timer_1a19c7f3297d2762948843afaba92eade6" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double real_time_tools::Timer::tic_time_</definition>
+        <argsstring></argsstring>
+        <name>tic_time_</name>
+        <briefdescription>
+<para>tic_time_ time at which <ref refid="classreal__time__tools_1_1Timer_1a540f7f6925768c6f333b2fef4a914374" kindref="member">tic()</ref> was called </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/timer.hpp" line="151" column="1" bodyfile="include/real_time_tools/timer.hpp" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classreal__time__tools_1_1Timer_1a9b509f58fc1eef3f7ce4145f75c01fa9" prot="protected" static="no" mutable="no">
+        <type>std::deque&lt; double &gt;</type>
+        <definition>std::deque&lt;double&gt; real_time_tools::Timer::time_measurement_buffer_</definition>
+        <argsstring></argsstring>
+        <name>time_measurement_buffer_</name>
+        <briefdescription>
+<para>time_measurement_buffer_ this is a chained list of double </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/timer.hpp" line="156" column="1" bodyfile="include/real_time_tools/timer.hpp" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classreal__time__tools_1_1Timer_1a3967e7252cf6d9795e5b04c60763037d" prot="protected" static="no" mutable="no">
+        <type>long unsigned</type>
+        <definition>long unsigned real_time_tools::Timer::count_</definition>
+        <argsstring></argsstring>
+        <name>count_</name>
+        <briefdescription>
+<para>count_time_buffer_ is a counter that manages the time_measurement_buffer_ fill in. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/timer.hpp" line="162" column="1" bodyfile="include/real_time_tools/timer.hpp" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classreal__time__tools_1_1Timer_1ac0f102a03a84fdebd3803a0199e352a2" prot="protected" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned real_time_tools::Timer::memory_buffer_size_</definition>
+        <argsstring></argsstring>
+        <name>memory_buffer_size_</name>
+        <briefdescription>
+<para>memory_buffer_size_ is the max size of the memory buffer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/timer.hpp" line="167" column="1" bodyfile="include/real_time_tools/timer.hpp" bodystart="167" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classreal__time__tools_1_1Timer_1a212c2fff68b8098731ab59f14416ce01" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double real_time_tools::Timer::min_elapsed_time_</definition>
+        <argsstring></argsstring>
+        <name>min_elapsed_time_</name>
+        <briefdescription>
+<para>min_elapsed_time_ is the minimum measured elapsed time </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/timer.hpp" line="172" column="1" bodyfile="include/real_time_tools/timer.hpp" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classreal__time__tools_1_1Timer_1a6d794ee63c2eafb0399d55b433c27c43" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double real_time_tools::Timer::max_elapsed_time_</definition>
+        <argsstring></argsstring>
+        <name>max_elapsed_time_</name>
+        <briefdescription>
+<para>max_elapsed_time_ is the maximum measured elapsed time </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/timer.hpp" line="177" column="1" bodyfile="include/real_time_tools/timer.hpp" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classreal__time__tools_1_1Timer_1a058a28efa6f0fd3c4e332068e7db8574" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double real_time_tools::Timer::avg_elapsed_time_</definition>
+        <argsstring></argsstring>
+        <name>avg_elapsed_time_</name>
+        <briefdescription>
+<para>avg_elapsed_time_ is the average measured elapsed time </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/timer.hpp" line="182" column="1" bodyfile="include/real_time_tools/timer.hpp" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classreal__time__tools_1_1Timer_1a1d4e8ddf078ef1c544e2715a0420726a" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double real_time_tools::Timer::second_moment_elapsed_time_</definition>
+        <argsstring></argsstring>
+        <name>second_moment_elapsed_time_</name>
+        <briefdescription>
+<para>avg_elapsed_time_ is the second moment measured elapsed time </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/timer.hpp" line="188" column="1" bodyfile="include/real_time_tools/timer.hpp" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classreal__time__tools_1_1Timer_1aadcaf1f743a7d3d967b740ec04fc0607" prot="protected" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string real_time_tools::Timer::name_</definition>
+        <argsstring></argsstring>
+        <name>name_</name>
+        <briefdescription>
+<para>name_ of the timer object </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/timer.hpp" line="193" column="1" bodyfile="include/real_time_tools/timer.hpp" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classreal__time__tools_1_1Timer_1a572f7022db18de269ba08b31b05b4af7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>real_time_tools::Timer::Timer</definition>
+        <argsstring>()</argsstring>
+        <name>Timer</name>
+        <briefdescription>
+<para>timer constructor </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/timer.hpp" line="34" column="1" bodyfile="src/timer.cpp" bodystart="43" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classreal__time__tools_1_1Timer_1a540f7f6925768c6f333b2fef4a914374" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void real_time_tools::Timer::tic</definition>
+        <argsstring>()</argsstring>
+        <name>tic</name>
+        <briefdescription>
+<para>tic measures the time when it is called. </para>        </briefdescription>
+        <detaileddescription>
+<para>This is to be used with the tac method that will return the time elapsed between tic and tac. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/timer.hpp" line="40" column="1" bodyfile="src/timer.cpp" bodystart="59" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classreal__time__tools_1_1Timer_1a3d55794492714544c5c83aed23d8f1f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double real_time_tools::Timer::tac</definition>
+        <argsstring>()</argsstring>
+        <name>tac</name>
+        <briefdescription>
+<para>tac is to be used after tic has been called. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the duration in seconds between the call of <ref refid="classreal__time__tools_1_1Timer_1a540f7f6925768c6f333b2fef4a914374" kindref="member">tic()</ref> and the call of <ref refid="classreal__time__tools_1_1Timer_1a3d55794492714544c5c83aed23d8f1f9" kindref="member">tac()</ref>. if <ref refid="classreal__time__tools_1_1Timer_1a540f7f6925768c6f333b2fef4a914374" kindref="member">tic()</ref> has not been called previously this will return nan </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/timer.hpp" line="47" column="1" bodyfile="src/timer.cpp" bodystart="65" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classreal__time__tools_1_1Timer_1a310fc3b9165c3751a36ff92586f0facd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double real_time_tools::Timer::tac_tic</definition>
+        <argsstring>()</argsstring>
+        <name>tac_tic</name>
+        <briefdescription>
+<para>this is like a <ref refid="classreal__time__tools_1_1Timer_1a3d55794492714544c5c83aed23d8f1f9" kindref="member">tac()</ref> followed by a <ref refid="classreal__time__tools_1_1Timer_1a540f7f6925768c6f333b2fef4a914374" kindref="member">tic()</ref>, making sure the previous tac_time becomes the tic_time </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/timer.hpp" line="53" column="1" bodyfile="src/timer.cpp" bodystart="75" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classreal__time__tools_1_1Timer_1a14bd35142437b42533b1b478ce044c8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void real_time_tools::Timer::log_time_interval</definition>
+        <argsstring>(double time_interval)</argsstring>
+        <name>log_time_interval</name>
+        <param>
+          <type>double</type>
+          <declname>time_interval</declname>
+        </param>
+        <briefdescription>
+<para>Save the time interval measured. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>time_interval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/timer.hpp" line="60" column="1" bodyfile="src/timer.cpp" bodystart="88" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classreal__time__tools_1_1Timer_1a1a20b4d7dcb04af92769857396408e54" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void real_time_tools::Timer::dump_measurements</definition>
+        <argsstring>(std::string file_name) const </argsstring>
+        <name>dump_measurements</name>
+        <param>
+          <type>std::string</type>
+          <declname>file_name</declname>
+        </param>
+        <briefdescription>
+<para>IOSTREAM functions. </para>        </briefdescription>
+        <detaileddescription>
+<para>dump_tic_tac_measurements writes in a file the time elapsed between every tick <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>file_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the path to the file. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/timer.hpp" line="71" column="1" bodyfile="src/timer.cpp" bodystart="122" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="classreal__time__tools_1_1Timer_1a71a7ad376bbc8cf60cfb839fefe6f805" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void real_time_tools::Timer::print_statistics</definition>
+        <argsstring>() const </argsstring>
+        <name>print_statistics</name>
+        <briefdescription>
+<para>print_statistics display in real time the statistics of the time measurements acquiered so far. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/timer.hpp" line="77" column="1" bodyfile="src/timer.cpp" bodystart="140" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="classreal__time__tools_1_1Timer_1a0319fbdc56fd5046d701c8728b27e860" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void real_time_tools::Timer::set_memory_size</definition>
+        <argsstring>(const unsigned memory_buffer_size)</argsstring>
+        <name>set_memory_size</name>
+        <param>
+          <type>const unsigned</type>
+          <declname>memory_buffer_size</declname>
+        </param>
+        <briefdescription>
+<para>SETTERS. </para>        </briefdescription>
+        <detaileddescription>
+<para>set_memory_size sets the buffer size. It resets all value of the buffer to zero. !! WARNING non real time method. !! <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>memory_buffer_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the size use to reset the size of the </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/timer.hpp" line="89" column="1" bodyfile="include/real_time_tools/timer.hpp" bodystart="89" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="classreal__time__tools_1_1Timer_1a1005cc3c2d7e68ab6d97c8d3167c7f93" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void real_time_tools::Timer::set_name</definition>
+        <argsstring>(std::string name)</argsstring>
+        <name>set_name</name>
+        <param>
+          <type>std::string</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>set_name modify the name of the object for display purposes. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the new name of the object. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/timer.hpp" line="100" column="1" bodyfile="include/real_time_tools/timer.hpp" bodystart="100" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classreal__time__tools_1_1Timer_1a7ff2401f6c1e28993575f153430db8ef" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double real_time_tools::Timer::get_min_elapsed_sec</definition>
+        <argsstring>() const </argsstring>
+        <name>get_min_elapsed_sec</name>
+        <briefdescription>
+<para>GETTERS. </para>        </briefdescription>
+        <detaileddescription>
+<para>get_min_elapsed_sec <simplesect kind="return"><para>a copy of the minimum elapsed times </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/timer.hpp" line="113" column="1" bodyfile="include/real_time_tools/timer.hpp" bodystart="113" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="classreal__time__tools_1_1Timer_1a365c7dfdddf6c3f14b41bd65b01bc79a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double real_time_tools::Timer::get_max_elapsed_sec</definition>
+        <argsstring>() const </argsstring>
+        <name>get_max_elapsed_sec</name>
+        <briefdescription>
+<para>get_max_elapsed_sec </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a copy of the maximum elapsed times </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/timer.hpp" line="122" column="1" bodyfile="include/real_time_tools/timer.hpp" bodystart="122" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="classreal__time__tools_1_1Timer_1a0b5b997f0984a684a16c5e35e5ca07e7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double real_time_tools::Timer::get_avg_elapsed_sec</definition>
+        <argsstring>() const </argsstring>
+        <name>get_avg_elapsed_sec</name>
+        <briefdescription>
+<para>get_avg_elapsed_sec </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a copy of the average elapsed time </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/timer.hpp" line="131" column="1" bodyfile="include/real_time_tools/timer.hpp" bodystart="131" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="classreal__time__tools_1_1Timer_1a417d3213c6f315b9a27ad424410c7440" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double real_time_tools::Timer::get_std_dev_elapsed_sec</definition>
+        <argsstring>() const </argsstring>
+        <name>get_std_dev_elapsed_sec</name>
+        <briefdescription>
+<para>get_std_dev_elapsed_sec </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a copy of the standard deviation of the elapsed times </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/timer.hpp" line="140" column="1" bodyfile="include/real_time_tools/timer.hpp" bodystart="140" bodyend="144"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classreal__time__tools_1_1Timer_1aa1e7794aa57dfba12f7cc30c852ea08c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double real_time_tools::Timer::get_current_time_sec</definition>
+        <argsstring>()</argsstring>
+        <name>get_current_time_sec</name>
+        <briefdescription>
+<para>Some utilities. </para>        </briefdescription>
+        <detaileddescription>
+<para>get_current_time_sec gives the current time in double and in seconds <simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/timer.hpp" line="206" column="1" bodyfile="src/timer.cpp" bodystart="177" bodyend="188"/>
+      </memberdef>
+      <memberdef kind="function" id="classreal__time__tools_1_1Timer_1aa89f45d2228eb343418c71afb5eaf9b5" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>static double real_time_tools::Timer::get_current_time_ms</definition>
+        <argsstring>()</argsstring>
+        <name>get_current_time_ms</name>
+        <briefdescription>
+<para>get_current_time_ms gives the current time in double and in milli seconds </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/timer.hpp" line="213" column="1" bodyfile="include/real_time_tools/timer.hpp" bodystart="213" bodyend="216"/>
+      </memberdef>
+      <memberdef kind="function" id="classreal__time__tools_1_1Timer_1a705486df1486d737ac30a04ecf7e2b97" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int real_time_tools::Timer::sleep_microseconds</definition>
+        <argsstring>(int sleep_duration_us)</argsstring>
+        <name>sleep_microseconds</name>
+        <param>
+          <type>int</type>
+          <declname>sleep_duration_us</declname>
+        </param>
+        <briefdescription>
+<para>puts the current thread to sleep for the duration of &quot;sleep_duration_us&quot; micro-seconds. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sleep_time_us</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the sleeping duration asked in micro-seconds. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success, error code otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/timer.hpp" line="224" column="1" bodyfile="src/timer.cpp" bodystart="191" bodyend="201"/>
+      </memberdef>
+      <memberdef kind="function" id="classreal__time__tools_1_1Timer_1a0a0df8a3baef34e820203e5579afda38" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void real_time_tools::Timer::sleep_sec</definition>
+        <argsstring>(const double &amp;sleep_time_sec)</argsstring>
+        <name>sleep_sec</name>
+        <param>
+          <type>const double &amp;</type>
+          <declname>sleep_time_sec</declname>
+        </param>
+        <briefdescription>
+<para>sleep_sec puts the current thread to sleep for the duration of &quot;sleep_time_sec&quot; seconds. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sleep_time_sec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the sleeping duration asked in seconds. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/timer.hpp" line="231" column="1" bodyfile="src/timer.cpp" bodystart="203" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="classreal__time__tools_1_1Timer_1abb2ce808994282d63846e7fca544f818" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void real_time_tools::Timer::sleep_ms</definition>
+        <argsstring>(const double &amp;sleep_time_ms)</argsstring>
+        <name>sleep_ms</name>
+        <param>
+          <type>const double &amp;</type>
+          <declname>sleep_time_ms</declname>
+        </param>
+        <briefdescription>
+<para>sleep_ms puts the current thread to sleep for the duration of &quot;sleep_time_sec&quot; seconds. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sleep_time_ms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the sleeping duration asked in seconds. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/timer.hpp" line="238" column="1" bodyfile="include/real_time_tools/timer.hpp" bodystart="238" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="classreal__time__tools_1_1Timer_1a8de5eedf9fe5607d78a703cd22665137" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void real_time_tools::Timer::sleep_until_sec</definition>
+        <argsstring>(const double &amp;date_sec)</argsstring>
+        <name>sleep_until_sec</name>
+        <param>
+          <type>const double &amp;</type>
+          <declname>date_sec</declname>
+        </param>
+        <briefdescription>
+<para>sleep_until_sec puts the threads to sleep until the date &quot;date_sec&quot; is reached. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>date_sec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the date until when to sleep in seconds. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/timer.hpp" line="248" column="1" bodyfile="src/timer.cpp" bodystart="215" bodyend="224"/>
+      </memberdef>
+      <memberdef kind="function" id="classreal__time__tools_1_1Timer_1a0055b704a4e0b518269b0ab5fbed9278" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void real_time_tools::Timer::timespec_add_sec</definition>
+        <argsstring>(struct timespec &amp;date_spec, const double duration_sec)</argsstring>
+        <name>timespec_add_sec</name>
+        <param>
+          <type>struct timespec &amp;</type>
+          <declname>date_spec</declname>
+        </param>
+        <param>
+          <type>const double</type>
+          <declname>duration_sec</declname>
+        </param>
+        <briefdescription>
+<para>timespec_add_sec posix type of a date in time. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>date_spec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the date to be changed </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>duration_sec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the duration to be added to &quot;t&quot; in seconds </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/timer.hpp" line="256" column="1" bodyfile="src/timer.cpp" bodystart="157" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="function" id="classreal__time__tools_1_1Timer_1a7370c65fa7810c6bcbe1b2f33e21f2ff" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void real_time_tools::Timer::sec_to_timespec</definition>
+        <argsstring>(double date_sec, struct timespec &amp;date_spec)</argsstring>
+        <name>sec_to_timespec</name>
+        <param>
+          <type>double</type>
+          <declname>date_sec</declname>
+        </param>
+        <param>
+          <type>struct timespec &amp;</type>
+          <declname>date_spec</declname>
+        </param>
+        <briefdescription>
+<para>sec_to_timespec converts a double representing the time in seconds to a struct timespec. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">date_sec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the time in sec to be converted. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">date_spec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the converted structure. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/timer.hpp" line="265" column="1" bodyfile="src/timer.cpp" bodystart="166" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="classreal__time__tools_1_1Timer_1a6e5ef2fc811582b8ff4fe52775525e14" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string real_time_tools::Timer::get_current_date_str</definition>
+        <argsstring>()</argsstring>
+        <name>get_current_date_str</name>
+        <briefdescription>
+<para>get_current_date_str get the current date and format it in a string with &quot;year_month_day_hour_minute_sec&quot; </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/timer.hpp" line="274" column="1" bodyfile="src/timer.cpp" bodystart="28" bodyend="41"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The timer class is a simple time measurement class that measure between tic and tac and with a memory buffer of a certain size. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/real_time_tools/timer.hpp" line="29" column="1" bodyfile="include/real_time_tools/timer.hpp" bodystart="28" bodyend="276"/>
+    <listofallmembers>
+      <member refid="classreal__time__tools_1_1Timer_1a058a28efa6f0fd3c4e332068e7db8574" prot="protected" virt="non-virtual"><scope>real_time_tools::Timer</scope><name>avg_elapsed_time_</name></member>
+      <member refid="classreal__time__tools_1_1Timer_1a3967e7252cf6d9795e5b04c60763037d" prot="protected" virt="non-virtual"><scope>real_time_tools::Timer</scope><name>count_</name></member>
+      <member refid="classreal__time__tools_1_1Timer_1a1a20b4d7dcb04af92769857396408e54" prot="public" virt="non-virtual"><scope>real_time_tools::Timer</scope><name>dump_measurements</name></member>
+      <member refid="classreal__time__tools_1_1Timer_1a0b5b997f0984a684a16c5e35e5ca07e7" prot="public" virt="non-virtual"><scope>real_time_tools::Timer</scope><name>get_avg_elapsed_sec</name></member>
+      <member refid="classreal__time__tools_1_1Timer_1a6e5ef2fc811582b8ff4fe52775525e14" prot="public" virt="non-virtual"><scope>real_time_tools::Timer</scope><name>get_current_date_str</name></member>
+      <member refid="classreal__time__tools_1_1Timer_1aa89f45d2228eb343418c71afb5eaf9b5" prot="public" virt="non-virtual"><scope>real_time_tools::Timer</scope><name>get_current_time_ms</name></member>
+      <member refid="classreal__time__tools_1_1Timer_1aa1e7794aa57dfba12f7cc30c852ea08c" prot="public" virt="non-virtual"><scope>real_time_tools::Timer</scope><name>get_current_time_sec</name></member>
+      <member refid="classreal__time__tools_1_1Timer_1a365c7dfdddf6c3f14b41bd65b01bc79a" prot="public" virt="non-virtual"><scope>real_time_tools::Timer</scope><name>get_max_elapsed_sec</name></member>
+      <member refid="classreal__time__tools_1_1Timer_1a7ff2401f6c1e28993575f153430db8ef" prot="public" virt="non-virtual"><scope>real_time_tools::Timer</scope><name>get_min_elapsed_sec</name></member>
+      <member refid="classreal__time__tools_1_1Timer_1a417d3213c6f315b9a27ad424410c7440" prot="public" virt="non-virtual"><scope>real_time_tools::Timer</scope><name>get_std_dev_elapsed_sec</name></member>
+      <member refid="classreal__time__tools_1_1Timer_1a14bd35142437b42533b1b478ce044c8f" prot="public" virt="non-virtual"><scope>real_time_tools::Timer</scope><name>log_time_interval</name></member>
+      <member refid="classreal__time__tools_1_1Timer_1a6d794ee63c2eafb0399d55b433c27c43" prot="protected" virt="non-virtual"><scope>real_time_tools::Timer</scope><name>max_elapsed_time_</name></member>
+      <member refid="classreal__time__tools_1_1Timer_1ac0f102a03a84fdebd3803a0199e352a2" prot="protected" virt="non-virtual"><scope>real_time_tools::Timer</scope><name>memory_buffer_size_</name></member>
+      <member refid="classreal__time__tools_1_1Timer_1a212c2fff68b8098731ab59f14416ce01" prot="protected" virt="non-virtual"><scope>real_time_tools::Timer</scope><name>min_elapsed_time_</name></member>
+      <member refid="classreal__time__tools_1_1Timer_1aadcaf1f743a7d3d967b740ec04fc0607" prot="protected" virt="non-virtual"><scope>real_time_tools::Timer</scope><name>name_</name></member>
+      <member refid="classreal__time__tools_1_1Timer_1a71a7ad376bbc8cf60cfb839fefe6f805" prot="public" virt="non-virtual"><scope>real_time_tools::Timer</scope><name>print_statistics</name></member>
+      <member refid="classreal__time__tools_1_1Timer_1a7370c65fa7810c6bcbe1b2f33e21f2ff" prot="public" virt="non-virtual"><scope>real_time_tools::Timer</scope><name>sec_to_timespec</name></member>
+      <member refid="classreal__time__tools_1_1Timer_1a1d4e8ddf078ef1c544e2715a0420726a" prot="protected" virt="non-virtual"><scope>real_time_tools::Timer</scope><name>second_moment_elapsed_time_</name></member>
+      <member refid="classreal__time__tools_1_1Timer_1a0319fbdc56fd5046d701c8728b27e860" prot="public" virt="non-virtual"><scope>real_time_tools::Timer</scope><name>set_memory_size</name></member>
+      <member refid="classreal__time__tools_1_1Timer_1a1005cc3c2d7e68ab6d97c8d3167c7f93" prot="public" virt="non-virtual"><scope>real_time_tools::Timer</scope><name>set_name</name></member>
+      <member refid="classreal__time__tools_1_1Timer_1a705486df1486d737ac30a04ecf7e2b97" prot="public" virt="non-virtual"><scope>real_time_tools::Timer</scope><name>sleep_microseconds</name></member>
+      <member refid="classreal__time__tools_1_1Timer_1abb2ce808994282d63846e7fca544f818" prot="public" virt="non-virtual"><scope>real_time_tools::Timer</scope><name>sleep_ms</name></member>
+      <member refid="classreal__time__tools_1_1Timer_1a0a0df8a3baef34e820203e5579afda38" prot="public" virt="non-virtual"><scope>real_time_tools::Timer</scope><name>sleep_sec</name></member>
+      <member refid="classreal__time__tools_1_1Timer_1a8de5eedf9fe5607d78a703cd22665137" prot="public" virt="non-virtual"><scope>real_time_tools::Timer</scope><name>sleep_until_sec</name></member>
+      <member refid="classreal__time__tools_1_1Timer_1a3d55794492714544c5c83aed23d8f1f9" prot="public" virt="non-virtual"><scope>real_time_tools::Timer</scope><name>tac</name></member>
+      <member refid="classreal__time__tools_1_1Timer_1a310fc3b9165c3751a36ff92586f0facd" prot="public" virt="non-virtual"><scope>real_time_tools::Timer</scope><name>tac_tic</name></member>
+      <member refid="classreal__time__tools_1_1Timer_1a540f7f6925768c6f333b2fef4a914374" prot="public" virt="non-virtual"><scope>real_time_tools::Timer</scope><name>tic</name></member>
+      <member refid="classreal__time__tools_1_1Timer_1a19c7f3297d2762948843afaba92eade6" prot="protected" virt="non-virtual"><scope>real_time_tools::Timer</scope><name>tic_time_</name></member>
+      <member refid="classreal__time__tools_1_1Timer_1a9b509f58fc1eef3f7ce4145f75c01fa9" prot="protected" virt="non-virtual"><scope>real_time_tools::Timer</scope><name>time_measurement_buffer_</name></member>
+      <member refid="classreal__time__tools_1_1Timer_1a572f7022db18de269ba08b31b05b4af7" prot="public" virt="non-virtual"><scope>real_time_tools::Timer</scope><name>Timer</name></member>
+      <member refid="classreal__time__tools_1_1Timer_1a0055b704a4e0b518269b0ab5fbed9278" prot="public" virt="non-virtual"><scope>real_time_tools::Timer</scope><name>timespec_add_sec</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

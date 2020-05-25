@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="solo8_8cpp" kind="file" language="C++">
+    <compoundname>solo8.cpp</compoundname>
+    <includes refid="dgm__solo8_8hpp" local="yes">dg_blmc_robots/dgm_solo8.hpp</includes>
+    <incdepgraph>
+      <node id="168">
+        <label>blmc_robots/solo8.hpp</label>
+      </node>
+      <node id="167">
+        <label>dynamic_graph_manager/dynamic_graph_manager.hh</label>
+      </node>
+      <node id="165">
+        <label>src/robot_executable/solo8.cpp</label>
+        <link refid="solo8.cpp"/>
+        <childnode refid="166" relation="include">
+        </childnode>
+      </node>
+      <node id="169">
+        <label>dg_blmc_robots/JointCalibration.h</label>
+      </node>
+      <node id="170">
+        <label>yaml_cpp_catkin/yaml_cpp_fwd.hpp</label>
+      </node>
+      <node id="166">
+        <label>dg_blmc_robots/dgm_solo8.hpp</label>
+        <link refid="dgm__solo8_8hpp_source"/>
+        <childnode refid="167" relation="include">
+        </childnode>
+        <childnode refid="168" relation="include">
+        </childnode>
+        <childnode refid="169" relation="include">
+        </childnode>
+        <childnode refid="170" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="solo8_8cpp_1a81ce304348a420752ee080480d2b3095" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int, char *[])</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>char *</type>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/robot_executable/solo8.cpp" line="12" column="1" bodyfile="src/robot_executable/solo8.cpp" bodystart="12" bodyend="23"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="10"><highlight class="preprocessor">#include<sp/>&quot;dg_blmc_robots/dgm_solo8.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>[])<sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Loading<sp/>paramters<sp/>from<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>YAML_PARAMS</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/>YAML::Node<sp/>param<sp/>=<sp/>YAML::LoadFile(YAML_PARAMS);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><ref refid="classdg__blmc__robots_1_1DGMSolo8" kindref="compound">dg_blmc_robots::DGMSolo8</ref><sp/>dgm;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/>dgm.initialize(param);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/>dgm.run();</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Wait<sp/>for<sp/>shutdown,<sp/>press<sp/>CTRL+C<sp/>to<sp/>close.&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/>ros::waitForShutdown();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/robot_executable/solo8.cpp"/>
+  </compounddef>
+</doxygen>

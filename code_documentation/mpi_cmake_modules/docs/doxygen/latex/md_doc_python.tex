@@ -1,0 +1,29 @@
+\subsection*{Introduction}
+
+This module is very important as it provide tools to search for the Python libraries and includes depending on the required Python version. Plus some tools to create python bindings using boost python or pybind11.
+
+\subsection*{Usage}
+
+\subsubsection*{Search for Python}
+
+The simplest thing is here to find the default Python library\+: \begin{DoxyVerb}search_for_python()
+\end{DoxyVerb}
+
+
+This macros is influenced by {\ttfamily P\+Y\+T\+H\+O\+N\+\_\+\+E\+X\+E\+C\+U\+T\+A\+B\+LE} and {\ttfamily P\+Y\+T\+H\+O\+N\+\_\+\+L\+I\+B\+R\+A\+RY} which can be set for Python2 via the command\+: \begin{DoxyVerb}catkin build --cmake-args -DPYTHON_EXECUTABLE=`which python2` -DPYTHON_LIBRARY=`/usr/lib/x86_64-linux-gnu/libpython2.7.so`
+\end{DoxyVerb}
+
+
+or for Python3 via the command \begin{DoxyVerb}catkin build --cmake-args -DPYTHON_EXECUTABLE=`which python3` -DPYTHON_LIBRARY=`/usr/lib/x86_64-linux-gnu/libpython3.5m.so`
+\end{DoxyVerb}
+
+
+Please make sure the library exists at the defined place before executing the above commands.
+
+\subsubsection*{Search for Numpy}
+
+Numpy includes can be found via the following macro\+: \begin{DoxyVerb}search_for_numpy()
+\end{DoxyVerb}
+
+
+The macro {\ttfamily search\+\_\+for\+\_\+python()} must have been called before hand. 

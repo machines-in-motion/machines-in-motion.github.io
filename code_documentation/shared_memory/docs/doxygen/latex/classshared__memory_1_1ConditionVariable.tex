@@ -1,0 +1,69 @@
+\hypertarget{classshared__memory_1_1ConditionVariable}{}\section{shared\+\_\+memory\+:\+:Condition\+Variable Class Reference}
+\label{classshared__memory_1_1ConditionVariable}\index{shared\+\_\+memory\+::\+Condition\+Variable@{shared\+\_\+memory\+::\+Condition\+Variable}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classshared__memory_1_1ConditionVariable_ae4b6accfbe98b2e23f9e20789cea46f7}{Condition\+Variable} (const std\+::string object\+\_\+id, bool clean\+\_\+memory\+\_\+on\+\_\+destruction)\hypertarget{classshared__memory_1_1ConditionVariable_ae4b6accfbe98b2e23f9e20789cea46f7}{}\label{classshared__memory_1_1ConditionVariable_ae4b6accfbe98b2e23f9e20789cea46f7}
+
+\begin{DoxyCompactList}\small\item\em A condition variable shared over the memory The condition variable is cleaned from the memory on destruction if clean\+\_\+memory\+\_\+on\+\_\+destruction is set to true. \end{DoxyCompactList}\item 
+void \hyperlink{classshared__memory_1_1ConditionVariable_abc70cd1401f40e23ca4a6afb33f28bb5}{notify\+\_\+all} ()\hypertarget{classshared__memory_1_1ConditionVariable_abc70cd1401f40e23ca4a6afb33f28bb5}{}\label{classshared__memory_1_1ConditionVariable_abc70cd1401f40e23ca4a6afb33f28bb5}
+
+\begin{DoxyCompactList}\small\item\em notify\+\_\+all is notifying all condition variables with the same mutex \end{DoxyCompactList}\item 
+void \hyperlink{classshared__memory_1_1ConditionVariable_a8953b054a1074ab5ef0a9f9b35f58a42}{notify\+\_\+one} ()\hypertarget{classshared__memory_1_1ConditionVariable_a8953b054a1074ab5ef0a9f9b35f58a42}{}\label{classshared__memory_1_1ConditionVariable_a8953b054a1074ab5ef0a9f9b35f58a42}
+
+\begin{DoxyCompactList}\small\item\em notify\+\_\+one notifies one condition variable with the same mutex \end{DoxyCompactList}\item 
+bool \hyperlink{classshared__memory_1_1ConditionVariable_af7b1ce584ff9ef9a0925f57cae8e6263}{timed\+\_\+wait} (\hyperlink{classshared__memory_1_1Lock}{Lock} \&lock, long wait\+\_\+nano\+\_\+seconds)
+\begin{DoxyCompactList}\small\item\em timed\+\_\+wait wait a notify during a certain certain time and then wake up \end{DoxyCompactList}\item 
+void \hyperlink{classshared__memory_1_1ConditionVariable_a8746faccdf81b03dd36c5b405c9ab48d}{wait} (\hyperlink{classshared__memory_1_1Lock}{Lock} \&lock)\hypertarget{classshared__memory_1_1ConditionVariable_a8746faccdf81b03dd36c5b405c9ab48d}{}\label{classshared__memory_1_1ConditionVariable_a8746faccdf81b03dd36c5b405c9ab48d}
+
+\begin{DoxyCompactList}\small\item\em wait waits until another thread notifies this object \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bfseries clean} (const std\+::string object\+\_\+id)\hypertarget{classshared__memory_1_1ConditionVariable_adf6a90466c2bf96cbc08f3ba0246274e}{}\label{classshared__memory_1_1ConditionVariable_adf6a90466c2bf96cbc08f3ba0246274e}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{classshared__memory_1_1ConditionVariable_a496feeef1a7fec080435b68a79bc163d}{condition\+\_\+id\+\_\+}\hypertarget{classshared__memory_1_1ConditionVariable_a496feeef1a7fec080435b68a79bc163d}{}\label{classshared__memory_1_1ConditionVariable_a496feeef1a7fec080435b68a79bc163d}
+
+\begin{DoxyCompactList}\small\item\em condition\+\_\+id\+\_\+ is the condition variable name in the shared memory \end{DoxyCompactList}\item 
+bool \hyperlink{classshared__memory_1_1ConditionVariable_a872a5c9305c0dff22ec085b8c8306a0d}{clean\+\_\+memory\+\_\+on\+\_\+destruction\+\_\+}\hypertarget{classshared__memory_1_1ConditionVariable_a872a5c9305c0dff22ec085b8c8306a0d}{}\label{classshared__memory_1_1ConditionVariable_a872a5c9305c0dff22ec085b8c8306a0d}
+
+\begin{DoxyCompactList}\small\item\em if true (the default), clean the shared memory of the hosted mutex and condition. \end{DoxyCompactList}\item 
+S\+H\+M\+Condition $\ast$ \hyperlink{classshared__memory_1_1ConditionVariable_a37c6e1a6ca44d30c2a29990e4460803b}{condition\+\_\+variable\+\_\+}\hypertarget{classshared__memory_1_1ConditionVariable_a37c6e1a6ca44d30c2a29990e4460803b}{}\label{classshared__memory_1_1ConditionVariable_a37c6e1a6ca44d30c2a29990e4460803b}
+
+\begin{DoxyCompactList}\small\item\em condition\+\_\+variable\+\_\+ is the boost condition variable that is used \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classshared__memory_1_1ConditionVariable_ab8221877ff8551e608d5d4691d3679ae}{mutex\+\_\+id\+\_\+}\hypertarget{classshared__memory_1_1ConditionVariable_ab8221877ff8551e608d5d4691d3679ae}{}\label{classshared__memory_1_1ConditionVariable_ab8221877ff8551e608d5d4691d3679ae}
+
+\begin{DoxyCompactList}\small\item\em mutex\+\_\+id\+\_\+ is the mutex name in the shared memory \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{shared\+\_\+memory\+::\+Condition\+Variable@{shared\+\_\+memory\+::\+Condition\+Variable}!timed\+\_\+wait@{timed\+\_\+wait}}
+\index{timed\+\_\+wait@{timed\+\_\+wait}!shared\+\_\+memory\+::\+Condition\+Variable@{shared\+\_\+memory\+::\+Condition\+Variable}}
+\subsubsection[{\texorpdfstring{timed\+\_\+wait(\+Lock \&lock, long wait\+\_\+nano\+\_\+seconds)}{timed_wait(Lock &lock, long wait_nano_seconds)}}]{\setlength{\rightskip}{0pt plus 5cm}bool shared\+\_\+memory\+::\+Condition\+Variable\+::timed\+\_\+wait (
+\begin{DoxyParamCaption}
+\item[{{\bf Lock} \&}]{lock, }
+\item[{long}]{wait\+\_\+nano\+\_\+seconds}
+\end{DoxyParamCaption}
+)}\hypertarget{classshared__memory_1_1ConditionVariable_af7b1ce584ff9ef9a0925f57cae8e6263}{}\label{classshared__memory_1_1ConditionVariable_af7b1ce584ff9ef9a0925f57cae8e6263}
+
+
+timed\+\_\+wait wait a notify during a certain certain time and then wake up 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wait\+\_\+duration} & in microsecond \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true\+: the condition variable has been notified, false otherwize 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/shared\+\_\+memory/condition\+\_\+variable.\+hpp\item 
+src/condition\+\_\+variable.\+cpp\end{DoxyCompactItemize}

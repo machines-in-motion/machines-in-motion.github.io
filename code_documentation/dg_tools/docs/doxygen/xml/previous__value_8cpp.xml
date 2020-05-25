@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="previous__value_8cpp" kind="file" language="C++">
+    <compoundname>previous_value.cpp</compoundname>
+    <includes refid="previous__value_8hpp" local="yes">dg_tools/data/previous_value.hpp</includes>
+    <includes local="no">sot/core/debug.hh</includes>
+    <includes local="no">dynamic-graph/factory.h</includes>
+    <includes local="no">dynamic-graph/all-commands.h</includes>
+    <incdepgraph>
+      <node id="211">
+        <label>dynamic-graph/factory.h</label>
+      </node>
+      <node id="210">
+        <label>sot/core/debug.hh</label>
+      </node>
+      <node id="206">
+        <label>dynamic-graph/linear-algebra.h</label>
+      </node>
+      <node id="212">
+        <label>dynamic-graph/all-commands.h</label>
+      </node>
+      <node id="207">
+        <label>dynamic-graph/signal-time-dependent.h</label>
+      </node>
+      <node id="205">
+        <label>dg_tools/data/previous_value.hpp</label>
+        <link refid="previous__value_8hpp_source"/>
+        <childnode refid="206" relation="include">
+        </childnode>
+        <childnode refid="207" relation="include">
+        </childnode>
+        <childnode refid="208" relation="include">
+        </childnode>
+        <childnode refid="209" relation="include">
+        </childnode>
+      </node>
+      <node id="204">
+        <label>src/data/previous_value.cpp</label>
+        <link refid="previous_value.cpp"/>
+        <childnode refid="205" relation="include">
+        </childnode>
+        <childnode refid="210" relation="include">
+        </childnode>
+        <childnode refid="211" relation="include">
+        </childnode>
+        <childnode refid="212" relation="include">
+        </childnode>
+      </node>
+      <node id="208">
+        <label>dynamic-graph/signal-ptr.h</label>
+      </node>
+      <node id="209">
+        <label>dynamic-graph/entity.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="previous__value_8cpp_1a73f7232a877f468b448abacfec39effb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DYNAMICGRAPH_FACTORY_ENTITY_PLUGIN</definition>
+        <argsstring>(PreviousValue,&quot;PreviousValue&quot;)</argsstring>
+        <name>DYNAMICGRAPH_FACTORY_ENTITY_PLUGIN</name>
+        <param>
+          <type><ref refid="classdg__tools_1_1PreviousValue" kindref="compound">PreviousValue</ref></type>
+        </param>
+        <param>
+          <type>&quot;PreviousValue&quot;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/data/previous_value.cpp" line="17" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="6"><highlight class="preprocessor">#include<sp/>&quot;dg_tools/data/previous_value.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sot/core/debug.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dynamic-graph/factory.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dynamic-graph/all-commands.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacedg__tools" kindref="compound">dg_tools</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">DYNAMICGRAPH_FACTORY_ENTITY_PLUGIN(<ref refid="classdg__tools_1_1PreviousValue" kindref="compound">PreviousValue</ref>,<sp/></highlight><highlight class="stringliteral">&quot;PreviousValue&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal">PreviousValue::PreviousValue(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name<sp/>)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/>:Entity(name)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/>,size_(0)</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/>,is_initialized_(false)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/>,dataSIN(NULL,</highlight><highlight class="stringliteral">&quot;PreviousValue(&quot;</highlight><highlight class="normal">+name+</highlight><highlight class="stringliteral">&quot;)::input(vector)::sin&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/>,dataSOUT(<sp/>boost::bind(&amp;<ref refid="classdg__tools_1_1PreviousValue" kindref="compound">PreviousValue</ref>::getInput,this,_1,_2),</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dataSIN,</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;PreviousValue(&quot;</highlight><highlight class="normal">+name+</highlight><highlight class="stringliteral">&quot;)::output(vector)::sout&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/>,previousSOUT(<sp/>boost::bind(&amp;<ref refid="classdg__tools_1_1PreviousValue" kindref="compound">PreviousValue</ref>::getPrevious,this,_1,_2),</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dataSIN,</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;PreviousValue(&quot;</highlight><highlight class="normal">+name+</highlight><highlight class="stringliteral">&quot;)::output(vector)::sprev&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/>Entity::signalRegistration(dataSIN<sp/>&lt;&lt;<sp/>dataSOUT<sp/>&lt;&lt;<sp/>previousSOUT);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/>addCommand<sp/>(</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;init&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>dynamicgraph::command::makeCommandVoid1(</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>&amp;PreviousValue::init,</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>dynamicgraph::command::docCommandVoid1(</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Init<sp/>the<sp/>entity&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;int:<sp/>Dimension<sp/>of<sp/>the<sp/>stored<sp/>value.&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/>);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>PreviousValue::init(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>size)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/>internal_history_.resize(size);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/>internal_history_.fill(0.);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>PreviousValue::display(<sp/>std::ostream&amp;<sp/>os<sp/>)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="61"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;PreviousValue<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>getName();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/>os<sp/>&lt;&lt;</highlight><highlight class="stringliteral">&quot;<sp/>(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>internal_history_.size()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal">dg::Vector&amp;<sp/>PreviousValue::getInput(dg::Vector&amp;<sp/>output,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>time)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/>output<sp/>=<sp/>dataSIN(time);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/>assert(output.size()<sp/>==<sp/>internal_history_.size());</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/>internal_history_<sp/>=<sp/>output;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>output;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal">dg::Vector&amp;<sp/>PreviousValue::getPrevious(dg::Vector&amp;<sp/>previous,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>time)</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/>previous<sp/>=<sp/>internal_history_;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>internal_history_;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/data/previous_value.cpp"/>
+  </compounddef>
+</doxygen>

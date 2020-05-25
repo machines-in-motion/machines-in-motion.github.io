@@ -1,0 +1,93 @@
+\hypertarget{shared__memory_8hxx}{}\section{include/shared\+\_\+memory/shared\+\_\+memory.hxx File Reference}
+\label{shared__memory_8hxx}\index{include/shared\+\_\+memory/shared\+\_\+memory.\+hxx@{include/shared\+\_\+memory/shared\+\_\+memory.\+hxx}}
+
+
+This file implements the functions from \hyperlink{shared__memory_8hpp}{shared\+\_\+memory.\+hpp} that encapsulate the use of the shared memory using the boost\+::interprocess package. usage\+: see demos and unit tests and documentation.  
+
+
+{\ttfamily \#include $<$shared\+\_\+memory/shared\+\_\+memory.\+hpp$>$}\\*
+Include dependency graph for shared\+\_\+memory.\+hxx\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{shared__memory_8hxx__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{shared__memory_8hxx__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceshared__memory}{shared\+\_\+memory}
+\begin{DoxyCompactList}\small\item\em All templated types in this namespaces are elementary types\+: int, double, float, char$\ast$, ... \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::map$<$ std\+::string, std\+::unique\+\_\+ptr$<$ Shared\+Memory\+Segment $>$ $>$ \hyperlink{namespaceshared__memory_a9aeebdfb6185497cac7c093cf3d765c5}{shared\+\_\+memory\+::\+Segment\+Map}\hypertarget{namespaceshared__memory_a9aeebdfb6185497cac7c093cf3d765c5}{}\label{namespaceshared__memory_a9aeebdfb6185497cac7c093cf3d765c5}
+
+\begin{DoxyCompactList}\small\item\em Segment\+Map typedef is a simple short cut to the G\+L\+O\+B\+A\+L\+\_\+\+S\+H\+M\+\_\+\+S\+E\+G\+M\+E\+N\+TS type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Elem\+Type $>$ }\\bool \hyperlink{namespaceshared__memory_a7b43b29fa0aa6a5cad0ca47afdd03e83}{shared\+\_\+memory\+::delete\+\_\+object} (const std\+::string \&segment\+\_\+id, const std\+::string \&object\+\_\+id)
+\begin{DoxyCompactList}\small\item\em delete\+\_\+object deletes a particular object in the shared memory segment \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Elem\+Type $>$ }\\void \hyperlink{namespaceshared__memory_ace68bf582cfe50ba83a9cfc9b7aed3b2}{shared\+\_\+memory\+::set} (const std\+::string \&segment\+\_\+id, const std\+::string \&object\+\_\+id, const Elem\+Type \&set\+\_\+)
+\begin{DoxyCompactList}\small\item\em set instanciates or get pointer to any elementary types in the shared memory. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Elem\+Type $>$ }\\void \hyperlink{namespaceshared__memory_a7e37a0a2146d2cfeeccb63390a3d9132}{shared\+\_\+memory\+::set} (const std\+::string \&segment\+\_\+id, const std\+::string \&object\+\_\+id, const Elem\+Type $\ast$set\+\_\+, const std\+::size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em set instanciates or get pointer to a fixed sized array of the templated type \char`\"{}\+T\char`\"{} in the shared memory. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Vector\+Type , typename Elem\+Type $>$ }\\void {\bfseries shared\+\_\+memory\+::set} (const std\+::string \&segment\+\_\+id, const std\+::string \&object\+\_\+id, const Vector\+Type \&set\+\_\+)\hypertarget{namespaceshared__memory_a653947408c221da4e2c26439ba913f8d}{}\label{namespaceshared__memory_a653947408c221da4e2c26439ba913f8d}
+
+\item 
+{\footnotesize template$<$typename Elem\+Type $>$ }\\void \hyperlink{namespaceshared__memory_ac6521a6731fa97be21779b1d6c7589ee}{shared\+\_\+memory\+::set} (const std\+::string \&segment\+\_\+id, const std\+::string \&object\+\_\+id, const std\+::vector$<$ Elem\+Type $>$ \&set\+\_\+)
+\begin{DoxyCompactList}\small\item\em set instanciates or get pointer to a std\+::vector$<$\+Elem\+Type$>$ in the shared memory. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Elem\+Type $>$ }\\void \hyperlink{namespaceshared__memory_ac8364e5cde6c8a2f1abc2a59035f26a6}{shared\+\_\+memory\+::set} (const std\+::string \&segment\+\_\+id, const std\+::string \&object\+\_\+id, const Eigen\+::\+Matrix$<$ Elem\+Type, Eigen\+::\+Dynamic, 1 $>$ \&set\+\_\+)
+\begin{DoxyCompactList}\small\item\em set instanciates or get pointer to a Eigen\+::\+Matrix$<$\+Elem\+Type, Eigen\+::\+Dynamic, 1$>$ in the shared memory. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename First\+Type , typename Second\+Type $>$ }\\void \hyperlink{namespaceshared__memory_a657bb799483a19a96f61706b50aca1e7}{shared\+\_\+memory\+::set} (const std\+::string \&segment\+\_\+id, const std\+::string \&object\+\_\+id, const std\+::pair$<$ First\+Type, Second\+Type $>$ \&set\+\_\+)
+\begin{DoxyCompactList}\small\item\em set instanciates or get pointer to a std\+::pair$<$\+First\+Type, Second\+Type$>$ in the shared memory. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Key\+Type , typename Value\+Type $>$ }\\void \hyperlink{namespaceshared__memory_a562e79433e54463f39c9c276b8440f4b}{shared\+\_\+memory\+::set} (const std\+::string \&segment\+\_\+id, const std\+::string \&object\+\_\+id, const std\+::map$<$ Key\+Type, Value\+Type $>$ \&set\+\_\+)
+\begin{DoxyCompactList}\small\item\em set instanciates or get pointer to a std\+::vector$<$\+Elem\+Type$>$ or an Eigen\+::\+Matrix$<$\+Elem\+Type, any, any$>$ in the shared memory. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Elem\+Type $>$ }\\void \hyperlink{namespaceshared__memory_ad017562102dbe044db2de6c79c0669d3}{shared\+\_\+memory\+::get} (const std\+::string \&segment\+\_\+id, const std\+::string \&object\+\_\+id, Elem\+Type \&get\+\_\+)
+\begin{DoxyCompactList}\small\item\em get gets a pointer to any elementary types in the shared memory. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Elem\+Type $>$ }\\void \hyperlink{namespaceshared__memory_a6241b9143a2152b0c0beb784869373c7}{shared\+\_\+memory\+::get} (const std\+::string \&segment\+\_\+id, const std\+::string \&object\+\_\+id, Elem\+Type $\ast$get\+\_\+, const std\+::size\+\_\+t expected\+\_\+size)
+\begin{DoxyCompactList}\small\item\em get gets a pointer to a fixed sized array of the templated type \char`\"{}\+T\char`\"{} in the shared memory. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Elem\+Type $>$ }\\void \hyperlink{namespaceshared__memory_afd0ab66344562f5d927dea0d319a6a08}{shared\+\_\+memory\+::get} (const std\+::string \&segment\+\_\+id, const std\+::string \&object\+\_\+id, std\+::vector$<$ Elem\+Type $>$ \&get\+\_\+)
+\begin{DoxyCompactList}\small\item\em get gets a pointer to a std\+::vector$<$\+Elem\+Type$>$ in the shared memory. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Elem\+Type $>$ }\\void \hyperlink{namespaceshared__memory_a4e230e55e38089aee71cd6df93110174}{shared\+\_\+memory\+::get} (const std\+::string \&segment\+\_\+id, const std\+::string \&object\+\_\+id, Eigen\+::\+Matrix$<$ Elem\+Type, Eigen\+::\+Dynamic, 1 $>$ \&get\+\_\+)
+\begin{DoxyCompactList}\small\item\em get gets a pointer to a Eigen\+::\+Matrix$<$\+Elem\+Type, Eigen\+::\+Dynamic, 1$>$ in the shared memory. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename First\+Type , typename Second\+Type $>$ }\\void \hyperlink{namespaceshared__memory_a2579e9a10a16e0fbd006900c618addc8}{shared\+\_\+memory\+::get} (const std\+::string \&segment\+\_\+id, const std\+::string \&object\+\_\+id, std\+::pair$<$ First\+Type, Second\+Type $>$ \&get\+\_\+)
+\begin{DoxyCompactList}\small\item\em get instanciates or get pointer to a std\+::pair$<$\+First\+Type, Second\+Type$>$ in the shared memory. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Key\+Type , typename Value\+Type $>$ }\\void \hyperlink{namespaceshared__memory_add6604c2716e51cdcf17de2439251089}{shared\+\_\+memory\+::get} (const std\+::string \&segment\+\_\+id, const std\+::string \&object\+\_\+id, std\+::map$<$ Key\+Type, Value\+Type $>$ \&get\+\_\+)
+\begin{DoxyCompactList}\small\item\em get gets a pointer to a std\+::vector$<$\+Elem\+Type$>$ or an Eigen\+::\+Matrix$<$\+Elem\+Type, any, any$>$ in the shared memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries shared\+\_\+memory\+::\+V\+E\+R\+B\+O\+SE} = false\hypertarget{namespaceshared__memory_adb7d7158652e09188fea583e05949bb5}{}\label{namespaceshared__memory_adb7d7158652e09188fea583e05949bb5}
+
+\item 
+static Segment\+Map \hyperlink{namespaceshared__memory_ad1f78482aa062e165f37fd49e2e8f539}{shared\+\_\+memory\+::\+G\+L\+O\+B\+A\+L\+\_\+\+S\+H\+M\+\_\+\+S\+E\+G\+M\+E\+N\+TS}
+\begin{DoxyCompactList}\small\item\em G\+L\+O\+B\+A\+L\+\_\+\+S\+H\+A\+R\+E\+D\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+S\+E\+G\+M\+E\+NT is global variable that acts as a a shared memory manager. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file implements the functions from \hyperlink{shared__memory_8hpp}{shared\+\_\+memory.\+hpp} that encapsulate the use of the shared memory using the boost\+::interprocess package. usage\+: see demos and unit tests and documentation. 
+
+\begin{DoxyAuthor}{Author}
+Vincent Berenz 
+
+Maximilien Naveau (\href{mailto:maximilien.naveau@gmail.com}{\tt maximilien.\+naveau@gmail.\+com}) 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{License}
+\item[\hyperlink{license__license000029}{License}]License B\+S\+D-\/3-\/\+Clause \end{DoxyRefDesc}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2019, New York University and Max Planck Gesellschaft. 
+\end{DoxyCopyright}
+\begin{DoxyDate}{Date}
+2019-\/05-\/22 
+\end{DoxyDate}

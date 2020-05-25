@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dg__to__ros_8cpp" kind="file" language="C++">
+    <compoundname>dg_to_ros.cpp</compoundname>
+    <includes refid="dg__to__ros_8hh" local="yes">ros_entities/dg_to_ros.hh</includes>
+    <incdepgraph>
+      <node id="2161">
+        <label>Eigen/Geometry</label>
+      </node>
+      <node id="2147">
+        <label>boost/format.hpp</label>
+      </node>
+      <node id="2158">
+        <label>dynamic-graph/linear-algebra.h</label>
+      </node>
+      <node id="2152">
+        <label>geometry_msgs/Transform.h</label>
+      </node>
+      <node id="2162">
+        <label>Eigen/Core</label>
+      </node>
+      <node id="2151">
+        <label>dynamic_graph_manager/Vector.h</label>
+      </node>
+      <node id="2148">
+        <label>std_msgs/Float64.h</label>
+      </node>
+      <node id="2143">
+        <label>src/ros_entities/dg_to_ros.cpp</label>
+        <link refid="dg_to_ros.cpp"/>
+        <childnode refid="2144" relation="include">
+        </childnode>
+      </node>
+      <node id="2157">
+        <label>dynamic-graph/signal-time-dependent.h</label>
+      </node>
+      <node id="2149">
+        <label>std_msgs/UInt32.h</label>
+      </node>
+      <node id="2153">
+        <label>geometry_msgs/TransformStamped.h</label>
+      </node>
+      <node id="2154">
+        <label>geometry_msgs/Twist.h</label>
+      </node>
+      <node id="2145">
+        <label>vector</label>
+      </node>
+      <node id="2146">
+        <label>utility</label>
+      </node>
+      <node id="2144">
+        <label>ros_entities/dg_to_ros.hh</label>
+        <link refid="dg__to__ros_8hh"/>
+        <childnode refid="2145" relation="include">
+        </childnode>
+        <childnode refid="2146" relation="include">
+        </childnode>
+        <childnode refid="2147" relation="include">
+        </childnode>
+        <childnode refid="2148" relation="include">
+        </childnode>
+        <childnode refid="2149" relation="include">
+        </childnode>
+        <childnode refid="2150" relation="include">
+        </childnode>
+        <childnode refid="2151" relation="include">
+        </childnode>
+        <childnode refid="2152" relation="include">
+        </childnode>
+        <childnode refid="2153" relation="include">
+        </childnode>
+        <childnode refid="2154" relation="include">
+        </childnode>
+        <childnode refid="2155" relation="include">
+        </childnode>
+        <childnode refid="2156" relation="include">
+        </childnode>
+        <childnode refid="2157" relation="include">
+        </childnode>
+        <childnode refid="2158" relation="include">
+        </childnode>
+        <childnode refid="2159" relation="include">
+        </childnode>
+        <childnode refid="2160" relation="include">
+        </childnode>
+      </node>
+      <node id="2156">
+        <label>geometry_msgs/Vector3Stamped.h</label>
+      </node>
+      <node id="2160">
+        <label>ros_entities/matrix_geometry.hh</label>
+        <link refid="matrix__geometry_8hh"/>
+        <childnode refid="2161" relation="include">
+        </childnode>
+        <childnode refid="2162" relation="include">
+        </childnode>
+        <childnode refid="2158" relation="include">
+        </childnode>
+        <childnode refid="2163" relation="include">
+        </childnode>
+      </node>
+      <node id="2163">
+        <label>dynamic-graph/eigen-io.h</label>
+      </node>
+      <node id="2150">
+        <label>dynamic_graph_manager/Matrix.h</label>
+      </node>
+      <node id="2159">
+        <label>dynamic-graph/signal-ptr.h</label>
+      </node>
+      <node id="2155">
+        <label>geometry_msgs/TwistStamped.h</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespacedynamic__graph">dynamic_graph</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Maximilien Naveau (<ulink url="mailto:maximilien.naveau@gmail.com">maximilien.naveau@gmail.com</ulink>) </para></simplesect>
+<xrefsect id="license_1_license000056"><xreftitle>License</xreftitle><xrefdescription><para>License BSD-3-Clause </para></xrefdescription></xrefsect><simplesect kind="copyright"><para>Copyright (c) 2019, New York University and Max Planck Gesellschaft. </para></simplesect>
+<simplesect kind="date"><para>2019-05-22 </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="9"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dg__to__ros_8hh" kindref="compound">ros_entities/dg_to_ros.hh</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacedynamic__graph" kindref="compound">dynamic_graph</ref></highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>DgToRos&lt;double&gt;::signalTypeName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Double&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>DgToRos&lt;unsigned<sp/>int&gt;::signalTypeName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Unsigned&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>DgToRos&lt;Matrix&gt;::signalTypeName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Matrix&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>DgToRos&lt;Vector&gt;::signalTypeName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Vector&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>DgToRos&lt;specific::Vector3&gt;::signalTypeName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Vector3&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>DgToRos&lt;MatrixHomogeneous&gt;::signalTypeName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;MatrixHomo&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>DgToRos&lt;specific::Twist&gt;::signalTypeName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Twist&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>DgToRos</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/>&lt;std::pair&lt;specific::Vector3,<sp/>Vector&gt;<sp/>&gt;::signalTypeName</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Vector3Stamped&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>DgToRos</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/>&lt;std::pair&lt;MatrixHomogeneous,<sp/>Vector&gt;<sp/>&gt;::signalTypeName</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;MatrixHomo&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>DgToRos</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/>&lt;std::pair&lt;specific::Twist,<sp/>Vector&gt;<sp/>&gt;::signalTypeName</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Twist&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>end<sp/>of<sp/>namespace<sp/>dynamicgraph.</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/ros_entities/dg_to_ros.cpp"/>
+  </compounddef>
+</doxygen>

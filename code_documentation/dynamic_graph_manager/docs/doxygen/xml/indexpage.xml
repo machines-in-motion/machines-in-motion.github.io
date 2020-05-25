@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>Dynamic Graph Manager</title>
+    <innerpage refid="subpage_installation">2/ Installation Procedure</innerpage>
+    <innerpage refid="subpage_launch">3/ Start a Dynamic Graph Manager Executable</innerpage>
+    <innerpage refid="subpage_robot_properties">4/ Implementing a robot in dynamic graph manager</innerpage>
+    <innerpage refid="subpage_basic_control_graph">5/ Basic Control Graph</innerpage>
+    <innerpage refid="subpage_plot">5/ Oscilloscope / Plotting / Logging / Motor and control process timing</innerpage>
+    <innerpage refid="subpage_debugging">6/ Debugging the implementation</innerpage>
+    <innerpage refid="subpage_robot_simulation">7/ Interfacing with a robot simulator</innerpage>
+    <innerpage refid="subpage_robot_dashboard">8/ Robot dashboard</innerpage>
+    <innerpage refid="subpage_ci">9/ Continuous integration</innerpage>
+    <innerpage refid="subpage_demos">10/ Demos</innerpage>
+    <detaileddescription>
+<sect1 id="index_1intro_sec_general_introduction">
+<title>1/ General Introduction</title>
+<sect2 id="index_1intro_sec_introduction">
+<title>1.1/ Introduction</title>
+<para>The pupose of this pacakge is to provide a simple interface between the drivers of a robots and a controller based on the dynamic-graph LAAS-CNRS framework. This documentation page is therefore based on <ulink url="http://stack-of-tasks.github.io/documentation/e_api.html">http://stack-of-tasks.github.io/documentation/e_api.html</ulink>. Please visit this web site if you have code question about the LAAS packages. A talk that present this page is available here: <ulink url="http://replay.vidyo.tuebingen.mpg.de/replay/showRecordingExternal">http://replay.vidyo.tuebingen.mpg.de/replay/showRecordingExternal</ulink>. html?key=KEnam4DBoewz76u</para><para>If anything is not clear in this documentation please ask Maximilien Naveau or Vincent Berenz.</para></sect2>
+<sect2 id="index_1intro_sec_dg_general_knowledge">
+<title>1.2/ General knowledge about the dynamic graph</title>
+<sect3 id="index_1intro_subsec_graph">
+<title>1.2.1/ The dynamic-graph is ... a graph</title>
+<para><image type="html" name="robot_state_reference_from_slider.jpeg">Figure 1: Example of a graph based on https://git-amd.tuebingen.mpg.de/amd-clmc/dg_demos/blob/master/python/dg_demos/filter_graph.py.</image>
+ The above figure depicts a simple graph that takes as input a vector of 4 dimension containing 4 doubles (e.g. user inputs from some slider) and output a desired configuration for a quadruped robot. First step consist in filtering it and scale it to the desired reference. Then we define the hip joints to be the reference from the scaled_slider. The knee are a scaled version of the hip (knee_joint = hip_joint * (-2)). Then we concatenate the signals back to one simple vector which will be the reference state of fro a quadruped robot.</para><para>The idea of having a graph is that once a part of the graph works, it can be concatenated and can be seen as a simple node. The other powerful thing about graphs is that they can be conceptually easy to understand (not easy to use nor debug but everyone knows what a graph is ^^). The dynamic graph IS therefore a GRAPH, so it has inputs and outputs. Typically the inputs of the graph we will use are the robot sensors, and its outputs are the motor controls. Which boils down to the definition of a controller. For example, a simple graph would read the robot joint states and velocities and compute a PD controller resulting in a torque output. The concept is actually more general: A control graph is made up of no des , which consume and emit signals. For instance, it is also possible to implement a filter. Such a filter would consume the current robot state and perform a smoothing on the state measurements.</para><para>In the next section we will describe the vocabulary that is used with the dynamic-graph.</para></sect3>
+<sect3 id="index_1intro_subsec_vocabulary">
+<title>1.2.2/ A bit of vocabulary</title>
+<para><image type="html" name="vocabulary_graph.png">Figure 2: This simple graph shows the vocabulary associated with the dynamic graph.</image>
+ Figure 2 summarizes the different notions used in the dynamic graph. There definitions are the following:<itemizedlist>
+<listitem><para>Signals: These are arrows (see figure 1 and figure2)</para></listitem><listitem><para>Input signals: These are sockets for a node. These represent object where an output signal can be plugged in. Nodes defines only there own sockets during the setup time. output signals: These are signal emitting from a node. Nodes defines only there own output signals during the setup time.</para></listitem><listitem><para>Entity: An entity a node of the graph. Each node executes a bit of code. Control Graph: A structure of Entities and signals plugged together is a controller.</para></listitem><listitem><para>User command: A command is a non-real time punctual list of instructions. It is used to interact with entities and modify their inner states. Setup time: This is time during which the user sets up the graph. The graph <bold>IS NOT / MUST NOT BE</bold> running yet.</para></listitem><listitem><para>Plug: The fact of plugging an input signal with an output signal allow the user to define dynamically the flow of information in the graph.</para></listitem></itemizedlist>
+</para></sect3>
+<sect3 id="index_1intro_subsec_use">
+<title>1.2.3/ Typical use of the dynamic graph / Hardware communication</title>
+<para>The &quot;outside&quot; of the graph is typically considered as the robot hardware. An abstraction of this &quot;hardware&quot;, which can be virtually anything, is done by configuring the sensors and controls as signals. So in essence we create an entity that will access the hardware sensors and feed them to the graph as output signals and get back the controls as input signals. In order to configure automatically this entity we used a YAML file. We are thinking about a way to create this class from a YAML file, which would be more consistent because the urdf format is very standard.</para></sect3>
+</sect2>
+<sect2 id="index_1intro_sec_how_it_works">
+<title>1.3/ How does it works?</title>
+<sect3 id="index_1intro_subsec_pool_entities">
+<title>1.3.1/ The pool of entities</title>
+<para>The dynamic graph uses the concept of singletons (<ulink url="https://en.wikipedia.org/wiki/Singleton_pattern">https://en.wikipedia.org/wiki/Singleton_pattern</ulink>):</para><para><programlisting><codeline><highlight class="normal">Wikipedia<sp/>definition:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>software<sp/>engineering,<sp/>the<sp/>singleton<sp/>pattern<sp/>is<sp/>a<sp/>software</highlight></codeline>
+<codeline><highlight class="normal">design<sp/>pattern<sp/>that<sp/>restricts<sp/>the<sp/>instantiation<sp/>of<sp/>a<sp/>class<sp/>to<sp/>one</highlight></codeline>
+<codeline><highlight class="normal">&quot;single&quot;<sp/>instance.<sp/>This<sp/>is<sp/>useful<sp/>when<sp/>exactly<sp/>one<sp/>object<sp/>is</highlight></codeline>
+<codeline><highlight class="normal">needed<sp/>to<sp/>coordinate<sp/>actions<sp/>across<sp/>the<sp/>system.<sp/>The<sp/>term</highlight></codeline>
+<codeline><highlight class="normal">comes<sp/>from<sp/>the<sp/>mathematical<sp/>concept<sp/>of<sp/>a<sp/>singleton.</highlight></codeline>
+</programlisting></para><para>The concept of singleton is also useful to define a unique global variable with a specific API. Meaning that all pieces of the code can have access to the same object (a global variable), but are able to interact with it only with a specific API. The pool of entities is a singleton which manages the memory of all the entities. The pool defines each instances by an identifier (a string) and stores it.</para><para><programlisting><codeline><highlight class="normal">WARNING:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Which<sp/>is<sp/>why<sp/>one<sp/>cannot<sp/>create<sp/>2<sp/>entities<sp/>with<sp/>the<sp/>same<sp/>name.</highlight></codeline>
+</programlisting></para><para>The pool has therefore the capabilities of extracting the pointer to your instances and give it back to you if you lost this pointer.</para><para><programlisting><codeline><highlight class="normal">WARNING:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Therefore<sp/>all<sp/>instances<sp/>of<sp/>entities<sp/>can<sp/>be<sp/>considered<sp/>as<sp/>&quot;global<sp/>variables&quot;</highlight></codeline>
+</programlisting></para></sect3>
+<sect3 id="index_1intro_subsec_back_propagation">
+<title>1.3.2/ Back propagation of the signal call</title>
+<para><image type="html" name="robot_state_reference_from_slider_zoom.jpeg">Figure 3: Zoom of the end of the graph depicted in figure 1</image>
+ Consider the graph above (figure 3). In this graph the output signal of robot_des_state is not represented but in this particular case let us call it &quot;sout&quot; like &quot;signal out&quot;. In order to execute the complete graph in figure 1 one needs to call for an update of the final output signal. Meaning that one will call: <programlisting><codeline><highlight class="normal">robot_des_state.sout.recompute(current_time)</highlight></codeline>
+</programlisting> This will trigger a the evaluation of a callback method in the robot_des_ state entity if current_time&gt;last_recomputed_time. This time management allows you to change the period of reevaluation of each signals.</para><para>Let us now assume we triggered the evaluation of robot_des_state.sout with a big enough time "<bold>T</bold>" number so the callback function is evaluated. This callback function needs to acquire the value of <emphasis>robot_des_state.sin1</emphasis> and <emphasis>robot_des_state.sin2</emphasis> at time <bold>T</bold>. The fact that front_legs_state.sout is plugged to robot_des_state.sin1 imply that when robot_des_state.sin1 data is accessed front_legs_state. sout will be recomputed at time T to provide the data.</para><para><programlisting><codeline><highlight class="normal">INFORMATION:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Therefore<sp/>the<sp/>evaluation<sp/>of<sp/>one<sp/>output<sp/>signal<sp/>recursively</highlight></codeline>
+<codeline><highlight class="normal">trigger<sp/>the<sp/>&quot;Left<sp/>part<sp/>of<sp/>the<sp/>graph&quot;</highlight></codeline>
+</programlisting></para></sect3>
+<sect3 id="index_1intro_subsec_commands">
+<title>1.3.3/ The concept of a command</title>
+<para>So far the idea is that the last output signal provides the command to the robot which supposed to happen periodically. The purpose of a command is to manage asynchronous event. Typically a user command. For example on has implemented a filter like in figure 2. A user command will be helpful for 2 things:<orderedlist>
+<listitem><para>The user needs a specific initialization, like setting the size of the filter buffer (resize command in green in figure 2).</para></listitem><listitem><para>The user needs to punctually access internal values of an entity.</para></listitem></orderedlist>
+</para><para>In the first case the command will modify the inner structure of the entity. In the second case the command will just read the internal structure of the entity.</para></sect3>
+<sect3 id="index_1intro_subsec_python">
+<title>1.3.4/ C++ controller, but dynamic Python setup</title>
+<para>In dynamic graph (DG) the <bold>entities</bold> are implemented using <bold>C++</bold>. So the final graph which is the controller runs all in fast C++. This is the reason why we can run it in <bold> real time </bold> on <bold> real hardware </bold>. From these C++ <bold>entities</bold> , there is an automatic way to generate corresponding python classes. These classes are then instantiated in the python interpreter to construct the control graph.</para><para>So in summary one can implement <bold> fast complex controllers </bold> with elementary blocks and <bold> prototype it in Python </bold>.</para><para>The C++ API contains C Macros that allows you to <bold>define Commands very simply</bold>. Signals are <bold>automatically bounded</bold> in Python.</para></sect3>
+</sect2>
+<sect2 id="index_1intro_sec_dgm">
+<title>1.4/ The dynamic_graph_manager</title>
+<para><image type="html" name="dynamic_graph_manager_architecture.png">Figure 4: This picture depicts the interaction between all the component of the robot controller.</image>
+ A simple demo on how to implement such a DynamicGraphManager for one robot can be seen in the demo folder of the <ref refid="namespacedynamic__graph__manager" kindref="compound">dynamic_graph_manager</ref> package. In theses files there are examples on the creation of the DynamicGraphManager daughter class, as well as the hardware asynchronous commands and the communication with the hardware.</para><para>More details on how things are running and implemented comes in the following pages.</para></sect2>
+<sect2 id="index_1intro_sec_structure">
+<title>1.5/ Structure of the documentation</title>
+<para>The installation procedure for this package is available here: <ref refid="subpage_installation" kindref="compound">2/ Installation Procedure</ref></para><para>An example to launch can be found here: <ref refid="subpage_launch" kindref="compound">3/ Start a Dynamic Graph Manager Executable</ref></para><para>In general this package uses one yaml configuration file to define the robot properties. A good place to store such file is a robot_properties_[robot_name] pacakge. Such packages contain urdf models, meshes, configuration files, etc. And tutorial to create such package can be found here: <ref refid="subpage_robot_properties" kindref="compound">4/ Implementing a robot in dynamic graph manager</ref></para><para>This package uses the &quot;dynamic graph&quot; for the control. A simple example based on sot-core is available in here: <ref refid="subpage_basic_control_graph" kindref="compound">5/ Basic Control Graph</ref></para><para>This framework lives in the ROS eco-system. So it profits from the ROS community tools such as rqt_plot, rviz. In addition to these tools a plotting tools has been develop in order to evaluate data in a dynamic way. Exmaples of usage are available here: <ref refid="subpage_plot" kindref="compound">5/ Oscilloscope / Plotting / Logging / Motor and control process timing</ref></para><para>Debugging the current implementationa dn specifically the dynamic graph can be tedious because of the C++/Python interaction, the spawning of different processes, etc. Exmaples of debugging technics can be found here: <ref refid="subpage_debugging" kindref="compound">6/ Debugging the implementation</ref></para><para>In the following pages you will find how we interface the dynamic graph with a dynamical simulator: <ref refid="subpage_robot_simulation" kindref="compound">7/ Interfacing with a robot simulator</ref></para><para>As mention above this framework is part of the ROS eco-system. As such, the rqt framework is available. A specialization for the <ref refid="namespacedynamic__graph" kindref="compound">dynamic_graph</ref> is available as rqt_dynamic_graph. An example on how to create a robot dashboard using rqt is available here: <ref refid="subpage_robot_dashboard" kindref="compound">8/ Robot dashboard</ref></para><para>This page present the steps executed during the continuous integration build. <ref refid="subpage_ci" kindref="compound">9/ Continuous integration</ref></para><para>This page shows you how to run the demo in this package. <ref refid="subpage_demos" kindref="compound">10/ Demos</ref> </para></sect2>
+</sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

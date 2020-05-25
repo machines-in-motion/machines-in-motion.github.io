@@ -1,0 +1,218 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classdg__tools_1_1Upsampler" kind="class" language="C++" prot="public">
+    <compoundname>dg_tools::Upsampler</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Entity</basecompoundref>
+    <includes refid="upsampler_8hpp" local="no">upsampler.hpp</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classdg__tools_1_1Upsampler_1ae8457eb186d7a4366014c98513982c65" prot="public" static="yes" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string dg_tools::Upsampler::CLASS_NAME</definition>
+        <argsstring></argsstring>
+        <name>CLASS_NAME</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/dg_tools/data/upsampler.hpp" line="60" column="1" bodyfile="include/dg_tools/data/upsampler.hpp" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classdg__tools_1_1Upsampler_1a52151bf7e4b2c60e290f7954b73aa2d4" prot="public" static="no" mutable="no">
+        <type>dg::SignalPtr&lt; dg::Vector, int &gt;</type>
+        <definition>dg::SignalPtr&lt;dg::Vector,int&gt; dg_tools::Upsampler::data_inputSIN</definition>
+        <argsstring></argsstring>
+        <name>data_inputSIN</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/dg_tools/data/upsampler.hpp" line="63" column="1" bodyfile="include/dg_tools/data/upsampler.hpp" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdg__tools_1_1Upsampler_1ac24d33450123b89763b6f22ee8432df8" prot="public" static="no" mutable="no">
+        <type>dg::SignalTimeDependent&lt; dg::Vector, int &gt;</type>
+        <definition>dg::SignalTimeDependent&lt;dg::Vector,int&gt; dg_tools::Upsampler::data_outSOUT</definition>
+        <argsstring></argsstring>
+        <name>data_outSOUT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/dg_tools/data/upsampler.hpp" line="64" column="1" bodyfile="include/dg_tools/data/upsampler.hpp" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classdg__tools_1_1Upsampler_1a083755393f8f65c571ecfbcd14a268a2" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool dg_tools::Upsampler::is_initialized_</definition>
+        <argsstring></argsstring>
+        <name>is_initialized_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/dg_tools/data/upsampler.hpp" line="68" column="1" bodyfile="include/dg_tools/data/upsampler.hpp" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdg__tools_1_1Upsampler_1a398d113b1b385ee0f8d702c859511b64" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int dg_tools::Upsampler::upsampling_factor_</definition>
+        <argsstring></argsstring>
+        <name>upsampling_factor_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/dg_tools/data/upsampler.hpp" line="69" column="1" bodyfile="include/dg_tools/data/upsampler.hpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdg__tools_1_1Upsampler_1a78d524bb8e514007cdf75f1dbff67469" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int dg_tools::Upsampler::first_time_</definition>
+        <argsstring></argsstring>
+        <name>first_time_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/dg_tools/data/upsampler.hpp" line="70" column="1" bodyfile="include/dg_tools/data/upsampler.hpp" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdg__tools_1_1Upsampler_1aa54f6ee308bfae9dd26740927319fa4b" prot="private" static="no" mutable="no">
+        <type>dg::Vector</type>
+        <definition>dg::Vector dg_tools::Upsampler::last_input_</definition>
+        <argsstring></argsstring>
+        <name>last_input_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/dg_tools/data/upsampler.hpp" line="71" column="1" bodyfile="include/dg_tools/data/upsampler.hpp" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classdg__tools_1_1Upsampler_1a34ed837b2a5e74ac438b1dabddc694cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Upsampler::Upsampler</definition>
+        <argsstring>(const std::string &amp;name)</argsstring>
+        <name>Upsampler</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/dg_tools/data/upsampler.hpp" line="56" column="1" bodyfile="src/data/upsampler.cpp" bodystart="23" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classdg__tools_1_1Upsampler_1a5464f7f3d43870ffae21e6fc3ca14bb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Upsampler::init</definition>
+        <argsstring>(const int &amp;upsampling_factor)</argsstring>
+        <name>init</name>
+        <param>
+          <type>const int &amp;</type>
+          <declname>upsampling_factor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/dg_tools/data/upsampler.hpp" line="58" column="1" bodyfile="src/data/upsampler.cpp" bodystart="46" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classdg__tools_1_1Upsampler_1ac6a7577ec4ad2d1692c238b04655f644" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>const std::string &amp;</type>
+        <definition>virtual const std::string&amp; dg_tools::Upsampler::getClassName</definition>
+        <argsstring>(void) const </argsstring>
+        <name>getClassName</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/dg_tools/data/upsampler.hpp" line="61" column="1" bodyfile="include/dg_tools/data/upsampler.hpp" bodystart="61" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classdg__tools_1_1Upsampler_1a8136079012a13ec172f1084bc147a5b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>dg::Vector &amp;</type>
+        <definition>dg::Vector &amp; Upsampler::data_out_callback</definition>
+        <argsstring>(dg::Vector &amp;history, int time)</argsstring>
+        <name>data_out_callback</name>
+        <param>
+          <type>dg::Vector &amp;</type>
+          <declname>history</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/dg_tools/data/upsampler.hpp" line="66" column="1" bodyfile="src/data/upsampler.cpp" bodystart="56" bodyend="70"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Upsamples the input data by holding the last value for a number of timesteps. </para>    </briefdescription>
+    <detaileddescription>
+<para>Pulls the input signal only when the time signal is a multiplicative of the sampling factor. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="239">
+        <label>Entity</label>
+      </node>
+      <node id="238">
+        <label>dg_tools::Upsampler</label>
+        <link refid="classdg__tools_1_1Upsampler"/>
+        <childnode refid="239" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="241">
+        <label>Entity</label>
+      </node>
+      <node id="240">
+        <label>dg_tools::Upsampler</label>
+        <link refid="classdg__tools_1_1Upsampler"/>
+        <childnode refid="241" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/dg_tools/data/upsampler.hpp" line="53" column="1" bodyfile="include/dg_tools/data/upsampler.hpp" bodystart="52" bodyend="72"/>
+    <listofallmembers>
+      <member refid="classdg__tools_1_1Upsampler_1ae8457eb186d7a4366014c98513982c65" prot="public" virt="non-virtual"><scope>dg_tools::Upsampler</scope><name>CLASS_NAME</name></member>
+      <member refid="classdg__tools_1_1Upsampler_1a52151bf7e4b2c60e290f7954b73aa2d4" prot="public" virt="non-virtual"><scope>dg_tools::Upsampler</scope><name>data_inputSIN</name></member>
+      <member refid="classdg__tools_1_1Upsampler_1a8136079012a13ec172f1084bc147a5b7" prot="public" virt="non-virtual"><scope>dg_tools::Upsampler</scope><name>data_out_callback</name></member>
+      <member refid="classdg__tools_1_1Upsampler_1ac24d33450123b89763b6f22ee8432df8" prot="public" virt="non-virtual"><scope>dg_tools::Upsampler</scope><name>data_outSOUT</name></member>
+      <member refid="classdg__tools_1_1Upsampler_1a78d524bb8e514007cdf75f1dbff67469" prot="private" virt="non-virtual"><scope>dg_tools::Upsampler</scope><name>first_time_</name></member>
+      <member refid="classdg__tools_1_1Upsampler_1ac6a7577ec4ad2d1692c238b04655f644" prot="public" virt="virtual"><scope>dg_tools::Upsampler</scope><name>getClassName</name></member>
+      <member refid="classdg__tools_1_1Upsampler_1a5464f7f3d43870ffae21e6fc3ca14bb0" prot="public" virt="non-virtual"><scope>dg_tools::Upsampler</scope><name>init</name></member>
+      <member refid="classdg__tools_1_1Upsampler_1a083755393f8f65c571ecfbcd14a268a2" prot="private" virt="non-virtual"><scope>dg_tools::Upsampler</scope><name>is_initialized_</name></member>
+      <member refid="classdg__tools_1_1Upsampler_1aa54f6ee308bfae9dd26740927319fa4b" prot="private" virt="non-virtual"><scope>dg_tools::Upsampler</scope><name>last_input_</name></member>
+      <member refid="classdg__tools_1_1Upsampler_1a34ed837b2a5e74ac438b1dabddc694cb" prot="public" virt="non-virtual"><scope>dg_tools::Upsampler</scope><name>Upsampler</name></member>
+      <member refid="classdg__tools_1_1Upsampler_1a398d113b1b385ee0f8d702c859511b64" prot="private" virt="non-virtual"><scope>dg_tools::Upsampler</scope><name>upsampling_factor_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,89 @@
+\hypertarget{classdg__tools_1_1HistoryRecorder}{}\section{dg\+\_\+tools\+:\+:History\+Recorder Class Reference}
+\label{classdg__tools_1_1HistoryRecorder}\index{dg\+\_\+tools\+::\+History\+Recorder@{dg\+\_\+tools\+::\+History\+Recorder}}
+
+
+Records data over a fixed history and yields the data as truncated vector.  
+
+
+
+
+{\ttfamily \#include $<$history\+\_\+recorder.\+hpp$>$}
+
+
+
+Inheritance diagram for dg\+\_\+tools\+:\+:History\+Recorder\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classdg__tools_1_1HistoryRecorder__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for dg\+\_\+tools\+:\+:History\+Recorder\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classdg__tools_1_1HistoryRecorder__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries History\+Recorder} (const std\+::string \&name)\hypertarget{classdg__tools_1_1HistoryRecorder_a6721706c9e6a34f970ce7632193d62bd}{}\label{classdg__tools_1_1HistoryRecorder_a6721706c9e6a34f970ce7632193d62bd}
+
+\item 
+void {\bfseries init} (const int \&history\+\_\+length)\hypertarget{classdg__tools_1_1HistoryRecorder_a6343e775716b1a277f3b35a1ea0c0252}{}\label{classdg__tools_1_1HistoryRecorder_a6343e775716b1a277f3b35a1ea0c0252}
+
+\item 
+virtual void {\bfseries display} (std\+::ostream \&os) const \hypertarget{classdg__tools_1_1HistoryRecorder_af6f1a11dfc70d030eeb13dc0b8e292d7}{}\label{classdg__tools_1_1HistoryRecorder_af6f1a11dfc70d030eeb13dc0b8e292d7}
+
+\item 
+virtual const std\+::string \& {\bfseries get\+Class\+Name} (void) const \hypertarget{classdg__tools_1_1HistoryRecorder_a2cacf7271a0531080165f25f31641d51}{}\label{classdg__tools_1_1HistoryRecorder_a2cacf7271a0531080165f25f31641d51}
+
+\item 
+dg\+::\+Vector \& {\bfseries get\+History} (dg\+::\+Vector \&history, int time)\hypertarget{classdg__tools_1_1HistoryRecorder_a323b9c4f6486c03fb0914871c96aeab6}{}\label{classdg__tools_1_1HistoryRecorder_a323b9c4f6486c03fb0914871c96aeab6}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+dg\+::\+Signal\+Ptr$<$ dg\+::\+Vector, int $>$ {\bfseries data\+S\+IN}\hypertarget{classdg__tools_1_1HistoryRecorder_a8b1355d794b870d23284745069065e97}{}\label{classdg__tools_1_1HistoryRecorder_a8b1355d794b870d23284745069065e97}
+
+\item 
+dg\+::\+Signal\+Time\+Dependent$<$ dg\+::\+Vector, int $>$ {\bfseries history\+S\+O\+UT}\hypertarget{classdg__tools_1_1HistoryRecorder_ab095d5c703884e65d6232c0ca3a9ab15}{}\label{classdg__tools_1_1HistoryRecorder_ab095d5c703884e65d6232c0ca3a9ab15}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const std\+::string {\bfseries C\+L\+A\+S\+S\+\_\+\+N\+A\+ME}\hypertarget{classdg__tools_1_1HistoryRecorder_a490b6fb59e2fa5957466a4a78ca619dd}{}\label{classdg__tools_1_1HistoryRecorder_a490b6fb59e2fa5957466a4a78ca619dd}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries history\+\_\+length\+\_\+}\hypertarget{classdg__tools_1_1HistoryRecorder_a210504be4f47b6663905abf4ea371f0a}{}\label{classdg__tools_1_1HistoryRecorder_a210504be4f47b6663905abf4ea371f0a}
+
+\item 
+bool {\bfseries is\+\_\+initialized\+\_\+}\hypertarget{classdg__tools_1_1HistoryRecorder_ae328c1c110447c822ba44fd90d90ae96}{}\label{classdg__tools_1_1HistoryRecorder_ae328c1c110447c822ba44fd90d90ae96}
+
+\item 
+dg\+::\+Matrix {\bfseries internal\+\_\+history\+\_\+}\hypertarget{classdg__tools_1_1HistoryRecorder_af2c34bb0fd019ac233305c61eb506476}{}\label{classdg__tools_1_1HistoryRecorder_af2c34bb0fd019ac233305c61eb506476}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Records data over a fixed history and yields the data as truncated vector. 
+
+The newest entry is at the last position of the data array,
+
+history = \mbox{[}data\+\_\+\{t-\/n\}, data\+\_\+\{t-\/n+1\}, ..., data\+\_\+\{t-\/1\}, data\+\_\+\{t\}\mbox{]} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/dg\+\_\+tools/data/history\+\_\+recorder.\+hpp\item 
+src/data/history\+\_\+recorder.\+cpp\end{DoxyCompactItemize}
