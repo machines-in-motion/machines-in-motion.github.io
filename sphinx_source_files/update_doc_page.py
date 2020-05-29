@@ -28,8 +28,9 @@ def get_ros_install_share_path():
     if share_path.endswith(path.join("install", "share")) and path.isdir(share_path):
         return share_path
 
-    share_path = path.join(treep.files._find_root(share_path, True)[
-                           0], "workspace", "devel", "share")
+    root_path = treep.files._find_root(share_path, True)[0]
+    print("root_path = ", root_path)
+    share_path = path.join(root_path, "workspace", "devel", "share")
     if path.isdir(share_path):
         return share_path
 
@@ -42,7 +43,6 @@ def copy_doc_package(package_name, share_path):
     """
     Copy/Replace the documentation of the ros package in this repository.
     """
-    share_path = get_ros_install_share_path()
     local_doc = path.join("../code_documentation", package_name, "docs")
     local_doc_html = path.join(share_path, package_name, "docs")
 
@@ -215,8 +215,6 @@ def update_index_rst(exported_doc_list, exported_code_cov_list):
 
 
 if __name__ == "__main__":
-    print("ros_pack_list = ", rospkg.RosPack().list())
-
     # First we get the path to the catkin install share folder
     share_path = get_ros_install_share_path()
     print("The path to the installation folder")
