@@ -18,8 +18,10 @@ def get_ros_install_share_path():
     """
     ros_pack = rospkg.RosPack()
     potentially_cloned_package = ["mpi_cmake_modules"]
+    share_path = ""
+    ros_pack_list = ros_pack.list()
     for package in potentially_cloned_package:
-        if package in ros_pack.list():
+        if package in ros_pack_list:
             share_path = path.dirname(ros_pack.get_path(package))
             break
 
@@ -213,6 +215,8 @@ def update_index_rst(exported_doc_list, exported_code_cov_list):
 
 
 if __name__ == "__main__":
+    print("ros_pack_list = ", rospkg.RosPack().list())
+
     # First we get the path to the catkin install share folder
     share_path = get_ros_install_share_path()
     print("The path to the installation folder")
