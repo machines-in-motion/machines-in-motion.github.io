@@ -31,7 +31,7 @@ def get_ros_install_share_path():
     root_path = treep.files._find_root(share_path, True)[0]
     print("root_path = ", root_path)
     if not root_path:
-        share_path = path.abspath(path.curdir())
+        share_path = path.abspath(path.curdir)
     root_path = treep.files._find_root(share_path, True)[0]
     print("root_path = ", root_path)
     if not root_path:
