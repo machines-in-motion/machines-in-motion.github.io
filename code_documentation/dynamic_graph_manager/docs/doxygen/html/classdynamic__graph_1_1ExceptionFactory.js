@@ -15,6 +15,6 @@ var classdynamic__graph_1_1ExceptionFactory =
     [ "ExceptionFactory", "classdynamic__graph_1_1ExceptionFactory.html#a761ecdb7e256d8e08ef57d8a30aa0304", null ],
     [ "ExceptionFactory", "classdynamic__graph_1_1ExceptionFactory.html#a7cf2af98062079786409dc9a2dcfd85a", null ],
     [ "~ExceptionFactory", "classdynamic__graph_1_1ExceptionFactory.html#a2bc1c31e2e352160837df5e3dea7091e", null ],
-    [ "getExceptionName", "classdynamic__graph_1_1ExceptionFactory.html#ad7b2f2a7bf8dc47d3e5221e6c0b3a8ab", null ],
+    [ "getExceptionName", "classdynamic__graph_1_1ExceptionFactory.html#aa6445edd44eb90eeb3250c85fc5ffce4", null ],
     [ "EXCEPTION_NAME", "classdynamic__graph_1_1ExceptionFactory.html#a7fe66d9197d860bd55f3a9676fa489b1", null ]
 ];

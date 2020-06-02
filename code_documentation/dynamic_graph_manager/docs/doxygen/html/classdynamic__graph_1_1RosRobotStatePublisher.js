@@ -3,7 +3,7 @@ var classdynamic__graph_1_1RosRobotStatePublisher =
     [ "RosRobotStatePublisher", "classdynamic__graph_1_1RosRobotStatePublisher.html#a7dbda339acfbacd6c2f45e7aac4409be", null ],
     [ "~RosRobotStatePublisher", "classdynamic__graph_1_1RosRobotStatePublisher.html#a36dce009c7e4ab8a16220be91992bbb9", null ],
     [ "add", "classdynamic__graph_1_1RosRobotStatePublisher.html#a92094934e53306e73b6fc13d1de61b3d", null ],
-    [ "getClassName", "classdynamic__graph_1_1RosRobotStatePublisher.html#ad71cb08409f890ba45d6afd25e284341", null ],
+    [ "getClassName", "classdynamic__graph_1_1RosRobotStatePublisher.html#aa031a669a2c2784c50b558fd2e2b6da3", null ],
     [ "normalize_tf_msg_quaternion", "classdynamic__graph_1_1RosRobotStatePublisher.html#acb4e771801c5bc13c7a2b022c3dd6b9d", null ],
     [ "send_data", "classdynamic__graph_1_1RosRobotStatePublisher.html#a196621509ce1e5becada60a7093bcb3a", null ],
     [ "set_tf_msg_to_identity", "classdynamic__graph_1_1RosRobotStatePublisher.html#af3e0cfe13273ecd8c6e01b59bb6220e7", null ],

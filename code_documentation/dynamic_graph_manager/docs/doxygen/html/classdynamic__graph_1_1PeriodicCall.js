@@ -13,7 +13,7 @@ var classdynamic__graph_1_1PeriodicCall =
     [ "addSpecificCommands", "classdynamic__graph_1_1PeriodicCall.html#a51669d6bc8fa3fd4ccc386f2b9649d57", null ],
     [ "clear", "classdynamic__graph_1_1PeriodicCall.html#a008800cf257d3cf9f16d56d47a2a08a7", null ],
     [ "commandLine", "classdynamic__graph_1_1PeriodicCall.html#a042c2a1139e779cd308c9d95b51a8485", null ],
-    [ "display", "classdynamic__graph_1_1PeriodicCall.html#a68beb3c924539e1c2fec32f613f16fcc", null ],
+    [ "display", "classdynamic__graph_1_1PeriodicCall.html#a898d1809ddd0a820ee4e278a4b8fe47e", null ],
     [ "rmCmd", "classdynamic__graph_1_1PeriodicCall.html#a53295e7e1e701772d0adec765be0a2e3", null ],
     [ "rmSignal", "classdynamic__graph_1_1PeriodicCall.html#aabe9a2c9977e494feefa7a193a1ec69c", null ],
     [ "run", "classdynamic__graph_1_1PeriodicCall.html#a03b883cf9713378452c51601c0137285", null ],

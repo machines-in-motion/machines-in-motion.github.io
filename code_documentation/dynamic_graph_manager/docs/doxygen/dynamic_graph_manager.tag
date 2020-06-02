@@ -2,13 +2,13 @@
 <tagfile>
   <compound kind="file">
     <name>main.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/demos/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/demos/</path>
     <filename>main_8cpp</filename>
     <includes id="simple__dgm_8hpp" name="simple_dgm.hpp" local="yes" imported="no">simple_dgm.hpp</includes>
   </compound>
   <compound kind="file">
     <name>simple_dgm.hpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/demos/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/demos/</path>
     <filename>simple__dgm_8hpp</filename>
     <includes id="ros__init_8hh" name="ros_init.hh" local="yes" imported="no">dynamic_graph_manager/ros_init.hh</includes>
     <includes id="dynamic__graph__manager_8hh" name="dynamic_graph_manager.hh" local="yes" imported="no">dynamic_graph_manager/dynamic_graph_manager.hh</includes>
@@ -17,7 +17,7 @@
   </compound>
   <compound kind="file">
     <name>device.hh</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/include/dynamic_graph_manager/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/include/dynamic_graph_manager/</path>
     <filename>device_8hh</filename>
     <includes id="periodic-call_8hh" name="periodic-call.hh" local="no" imported="no">dynamic_graph_manager/periodic-call.hh</includes>
     <includes id="tools_8hh" name="tools.hh" local="no" imported="no">dynamic_graph_manager/tools.hh</includes>
@@ -26,7 +26,7 @@
   </compound>
   <compound kind="file">
     <name>device_simulator.hh</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/include/dynamic_graph_manager/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/include/dynamic_graph_manager/</path>
     <filename>device__simulator_8hh</filename>
     <includes id="device_8hh" name="device.hh" local="no" imported="no">dynamic_graph_manager/device.hh</includes>
     <class kind="class">dynamic_graph::DeviceSimulator</class>
@@ -34,7 +34,7 @@
   </compound>
   <compound kind="file">
     <name>dynamic_graph_manager.hh</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/include/dynamic_graph_manager/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/include/dynamic_graph_manager/</path>
     <filename>dynamic__graph__manager_8hh</filename>
     <includes id="ros__interpreter_8hh" name="ros_interpreter.hh" local="yes" imported="no">dynamic_graph_manager/ros_interpreter.hh</includes>
     <includes id="tools_8hh" name="tools.hh" local="yes" imported="no">dynamic_graph_manager/tools.hh</includes>
@@ -51,14 +51,14 @@
   </compound>
   <compound kind="file">
     <name>exception-abstract.hh</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/include/dynamic_graph_manager/exception/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/include/dynamic_graph_manager/exception/</path>
     <filename>exception-abstract_8hh</filename>
     <class kind="class">dynamic_graph::ExceptionAbstract</class>
     <namespace>dynamic_graph</namespace>
   </compound>
   <compound kind="file">
     <name>exception-dynamic.hh</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/include/dynamic_graph_manager/exception/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/include/dynamic_graph_manager/exception/</path>
     <filename>exception-dynamic_8hh</filename>
     <includes id="exception-abstract_8hh" name="exception-abstract.hh" local="no" imported="no">dynamic_graph_manager/exception/exception-abstract.hh</includes>
     <class kind="class">dynamic_graph::ExceptionDynamic</class>
@@ -66,7 +66,7 @@
   </compound>
   <compound kind="file">
     <name>exception-factory.hh</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/include/dynamic_graph_manager/exception/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/include/dynamic_graph_manager/exception/</path>
     <filename>exception-factory_8hh</filename>
     <includes id="exception-abstract_8hh" name="exception-abstract.hh" local="no" imported="no">dynamic_graph_manager/exception/exception-abstract.hh</includes>
     <class kind="class">dynamic_graph::ExceptionFactory</class>
@@ -74,7 +74,7 @@
   </compound>
   <compound kind="file">
     <name>exception-feature.hh</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/include/dynamic_graph_manager/exception/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/include/dynamic_graph_manager/exception/</path>
     <filename>exception-feature_8hh</filename>
     <includes id="exception-abstract_8hh" name="exception-abstract.hh" local="no" imported="no">dynamic_graph_manager/exception/exception-abstract.hh</includes>
     <class kind="class">dynamic_graph::ExceptionFeature</class>
@@ -82,7 +82,7 @@
   </compound>
   <compound kind="file">
     <name>exception-signal.hh</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/include/dynamic_graph_manager/exception/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/include/dynamic_graph_manager/exception/</path>
     <filename>exception-signal_8hh</filename>
     <includes id="exception-abstract_8hh" name="exception-abstract.hh" local="no" imported="no">dynamic_graph_manager/exception/exception-abstract.hh</includes>
     <class kind="class">dynamic_graph::ExceptionSignal</class>
@@ -90,7 +90,7 @@
   </compound>
   <compound kind="file">
     <name>exception-task.hh</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/include/dynamic_graph_manager/exception/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/include/dynamic_graph_manager/exception/</path>
     <filename>exception-task_8hh</filename>
     <includes id="exception-abstract_8hh" name="exception-abstract.hh" local="no" imported="no">dynamic_graph_manager/exception/exception-abstract.hh</includes>
     <class kind="class">dynamic_graph::ExceptionTask</class>
@@ -98,7 +98,7 @@
   </compound>
   <compound kind="file">
     <name>exception-tools.hh</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/include/dynamic_graph_manager/exception/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/include/dynamic_graph_manager/exception/</path>
     <filename>exception-tools_8hh</filename>
     <includes id="exception-abstract_8hh" name="exception-abstract.hh" local="no" imported="no">dynamic_graph_manager/exception/exception-abstract.hh</includes>
     <class kind="class">dynamic_graph::ExceptionTools</class>
@@ -106,7 +106,7 @@
   </compound>
   <compound kind="file">
     <name>exception-yaml-cpp.hpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/include/dynamic_graph_manager/exception/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/include/dynamic_graph_manager/exception/</path>
     <filename>exception-yaml-cpp_8hpp</filename>
     <includes id="exception-abstract_8hh" name="exception-abstract.hh" local="no" imported="no">dynamic_graph_manager/exception/exception-abstract.hh</includes>
     <class kind="class">dynamic_graph::ExceptionYamlCpp</class>
@@ -114,7 +114,7 @@
   </compound>
   <compound kind="file">
     <name>periodic-call.hh</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/include/dynamic_graph_manager/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/include/dynamic_graph_manager/</path>
     <filename>periodic-call_8hh</filename>
     <class kind="class">dynamic_graph::PeriodicCall</class>
     <class kind="struct">dynamic_graph::PeriodicCall::SignalToCall</class>
@@ -122,7 +122,7 @@
   </compound>
   <compound kind="file">
     <name>ros_init.hh</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/include/dynamic_graph_manager/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/include/dynamic_graph_manager/</path>
     <filename>ros__init_8hh</filename>
     <class kind="struct">dynamic_graph::GlobalRos</class>
     <namespace>dynamic_graph</namespace>
@@ -164,14 +164,14 @@
   </compound>
   <compound kind="file">
     <name>ros_interpreter.hh</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/include/dynamic_graph_manager/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/include/dynamic_graph_manager/</path>
     <filename>ros__interpreter_8hh</filename>
     <class kind="class">dynamic_graph::RosPythonInterpreter</class>
     <namespace>dynamic_graph</namespace>
   </compound>
   <compound kind="file">
     <name>tools.hh</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/include/dynamic_graph_manager/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/include/dynamic_graph_manager/</path>
     <filename>tools_8hh</filename>
     <namespace>dynamic_graph</namespace>
     <member kind="typedef">
@@ -191,7 +191,7 @@
   </compound>
   <compound kind="file">
     <name>converter.hh</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/include/ros_entities/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/include/ros_entities/</path>
     <filename>converter_8hh</filename>
     <includes id="dg__to__ros_8hh" name="dg_to_ros.hh" local="yes" imported="no">dg_to_ros.hh</includes>
     <namespace>dynamic_graph</namespace>
@@ -240,7 +240,7 @@
   </compound>
   <compound kind="file">
     <name>dg_to_ros.hh</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/include/ros_entities/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/include/ros_entities/</path>
     <filename>dg__to__ros_8hh</filename>
     <includes id="matrix__geometry_8hh" name="matrix_geometry.hh" local="no" imported="no">ros_entities/matrix_geometry.hh</includes>
     <class kind="class">dynamic_graph::specific::Vector3</class>
@@ -261,13 +261,13 @@
   </compound>
   <compound kind="file">
     <name>matrix_geometry.hh</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/include/ros_entities/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/include/ros_entities/</path>
     <filename>matrix__geometry_8hh</filename>
     <namespace>dynamic_graph</namespace>
   </compound>
   <compound kind="file">
     <name>ros_publish.hh</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/include/ros_entities/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/include/ros_entities/</path>
     <filename>ros__publish_8hh</filename>
     <includes id="converter_8hh" name="converter.hh" local="yes" imported="no">ros_entities/converter.hh</includes>
     <includes id="dg__to__ros_8hh" name="dg_to_ros.hh" local="yes" imported="no">ros_entities/dg_to_ros.hh</includes>
@@ -277,14 +277,14 @@
   </compound>
   <compound kind="file">
     <name>ros_publish.hxx</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/include/ros_entities/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/include/ros_entities/</path>
     <filename>ros__publish_8hxx</filename>
     <includes id="dg__to__ros_8hh" name="dg_to_ros.hh" local="yes" imported="no">dg_to_ros.hh</includes>
     <namespace>dynamic_graph</namespace>
   </compound>
   <compound kind="file">
     <name>ros_queued_subscribe.hh</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/include/ros_entities/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/include/ros_entities/</path>
     <filename>ros__queued__subscribe_8hh</filename>
     <includes id="matrix__geometry_8hh" name="matrix_geometry.hh" local="no" imported="no">ros_entities/matrix_geometry.hh</includes>
     <includes id="converter_8hh" name="converter.hh" local="no" imported="no">ros_entities/converter.hh</includes>
@@ -298,14 +298,14 @@
   </compound>
   <compound kind="file">
     <name>ros_queued_subscribe.hxx</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/include/ros_entities/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/include/ros_entities/</path>
     <filename>ros__queued__subscribe_8hxx</filename>
     <class kind="struct">dynamic_graph::internal::Add</class>
     <namespace>dynamic_graph</namespace>
   </compound>
   <compound kind="file">
     <name>ros_robot_state_publisher.hpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/include/ros_entities/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/include/ros_entities/</path>
     <filename>ros__robot__state__publisher_8hpp</filename>
     <class kind="struct">dynamic_graph::RosRobotStatePublisherInternal</class>
     <class kind="class">dynamic_graph::RosRobotStatePublisher</class>
@@ -358,7 +358,7 @@
   </compound>
   <compound kind="file">
     <name>ros_robot_state_publisher_mt.hpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/include/ros_entities/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/include/ros_entities/</path>
     <filename>ros__robot__state__publisher__mt_8hpp</filename>
     <class kind="struct">dynamic_graph::RosRobotStatePublisherMtInternal</class>
     <class kind="class">dynamic_graph::RosRobotStatePublisherMt</class>
@@ -376,7 +376,7 @@
   </compound>
   <compound kind="file">
     <name>ros_subscribe.hh</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/include/ros_entities/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/include/ros_entities/</path>
     <filename>ros__subscribe_8hh</filename>
     <includes id="matrix__geometry_8hh" name="matrix_geometry.hh" local="no" imported="no">ros_entities/matrix_geometry.hh</includes>
     <includes id="converter_8hh" name="converter.hh" local="yes" imported="no">converter.hh</includes>
@@ -388,7 +388,7 @@
   </compound>
   <compound kind="file">
     <name>ros_subscribe.hxx</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/include/ros_entities/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/include/ros_entities/</path>
     <filename>ros__subscribe_8hxx</filename>
     <includes id="ros__time_8hh" name="ros_time.hh" local="yes" imported="no">ros_time.hh</includes>
     <class kind="struct">dynamic_graph::internal::Add</class>
@@ -397,7 +397,7 @@
   </compound>
   <compound kind="file">
     <name>ros_tf_listener.hh</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/include/ros_entities/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/include/ros_entities/</path>
     <filename>ros__tf__listener_8hh</filename>
     <includes id="matrix__geometry_8hh" name="matrix_geometry.hh" local="no" imported="no">ros_entities/matrix_geometry.hh</includes>
     <class kind="struct">dynamic_graph::internal::TransformListenerData</class>
@@ -406,54 +406,54 @@
   </compound>
   <compound kind="file">
     <name>ros_time.hh</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/include/ros_entities/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/include/ros_entities/</path>
     <filename>ros__time_8hh</filename>
     <class kind="class">dynamic_graph::RosTime</class>
     <namespace>dynamic_graph</namespace>
   </compound>
   <compound kind="file">
     <name>prologue.py</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/python/dynamic_graph_manager/device/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/python/dynamic_graph_manager/device/</path>
     <filename>prologue_8py</filename>
     <namespace>dynamic_graph_manager</namespace>
   </compound>
   <compound kind="file">
     <name>robot.py</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/python/dynamic_graph_manager/device/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/python/dynamic_graph_manager/device/</path>
     <filename>robot_8py</filename>
     <class kind="class">robot::Robot</class>
     <namespace>dynamic_graph_manager</namespace>
   </compound>
   <compound kind="file">
     <name>ros.py</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/python/dynamic_graph_manager/ros/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/python/dynamic_graph_manager/ros/</path>
     <filename>ros_8py</filename>
     <class kind="class">ros::ros::Ros</class>
     <namespace>dynamic_graph_manager</namespace>
   </compound>
   <compound kind="file">
     <name>ros_client.py</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/python/dynamic_graph_manager/ros/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/python/dynamic_graph_manager/ros/</path>
     <filename>ros__client_8py</filename>
     <class kind="class">ros::ros_client::RosPythonInterpreter</class>
     <namespace>dynamic_graph_manager</namespace>
   </compound>
   <compound kind="file">
     <name>shell_client.py</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/python/dynamic_graph_manager/ros/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/python/dynamic_graph_manager/ros/</path>
     <filename>shell__client_8py</filename>
     <class kind="class">ros::shell_client::DynamicGraphInteractiveConsole</class>
     <namespace>dynamic_graph_manager</namespace>
   </compound>
   <compound kind="file">
     <name>robot_pose_publisher.py</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/python/ros_nodes/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/python/ros_nodes/</path>
     <filename>robot__pose__publisher_8py</filename>
     <namespace>dynamic_graph_manager</namespace>
   </compound>
   <compound kind="file">
     <name>run_command.py</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/python/ros_nodes/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/python/ros_nodes/</path>
     <filename>run__command_8py</filename>
     <class kind="class">ros_nodes::run_command::DynamicGraphInteractiveConsole</class>
     <namespace>dynamic_graph_manager</namespace>
@@ -474,13 +474,13 @@
   </compound>
   <compound kind="file">
     <name>setup.py</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/</path>
     <filename>setup_8py</filename>
     <namespace>dynamic_graph_manager</namespace>
   </compound>
   <compound kind="file">
     <name>device.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/src/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/src/</path>
     <filename>device_8cpp</filename>
     <includes id="device_8hh" name="device.hh" local="no" imported="no">dynamic_graph_manager/device.hh</includes>
     <member kind="function">
@@ -494,13 +494,13 @@
       <type></type>
       <name>DYNAMICGRAPH_FACTORY_ENTITY_PLUGIN</name>
       <anchorfile>device_8cpp.html</anchorfile>
-      <anchor>a94009a14081eac806149155d1f289f6d</anchor>
-      <arglist>(Device,&quot;Device&quot;)</arglist>
+      <anchor>acb2dfe024c01897a987997464d538b28</anchor>
+      <arglist>(Device, &quot;Device&quot;)</arglist>
     </member>
   </compound>
   <compound kind="file">
     <name>device_simulator.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/src/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/src/</path>
     <filename>device__simulator_8cpp</filename>
     <includes id="device__simulator_8hh" name="device_simulator.hh" local="no" imported="no">dynamic_graph_manager/device_simulator.hh</includes>
     <namespace>dynamic_graph</namespace>
@@ -508,13 +508,13 @@
       <type></type>
       <name>DYNAMICGRAPH_FACTORY_ENTITY_PLUGIN</name>
       <anchorfile>namespacedynamic__graph.html</anchorfile>
-      <anchor>a04797aa55f04bd1e07b64c0caa685c6b</anchor>
-      <arglist>(DeviceSimulator,&quot;DeviceSimulator&quot;)</arglist>
+      <anchor>ac2b17f51aa9541c0b023291d4090be56</anchor>
+      <arglist>(DeviceSimulator, &quot;DeviceSimulator&quot;)</arglist>
     </member>
   </compound>
   <compound kind="file">
     <name>dynamic_graph_manager.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/src/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/src/</path>
     <filename>dynamic__graph__manager_8cpp</filename>
     <includes id="ros__init_8hh" name="ros_init.hh" local="no" imported="no">dynamic_graph_manager/ros_init.hh</includes>
     <includes id="dynamic__graph__manager_8hh" name="dynamic_graph_manager.hh" local="no" imported="no">dynamic_graph_manager/dynamic_graph_manager.hh</includes>
@@ -522,77 +522,77 @@
   </compound>
   <compound kind="file">
     <name>exception-abstract.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/src/exception/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/src/exception/</path>
     <filename>exception-abstract_8cpp</filename>
     <includes id="exception-abstract_8hh" name="exception-abstract.hh" local="no" imported="no">dynamic_graph_manager/exception/exception-abstract.hh</includes>
     <namespace>dynamic_graph</namespace>
   </compound>
   <compound kind="file">
     <name>exception-dynamic.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/src/exception/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/src/exception/</path>
     <filename>exception-dynamic_8cpp</filename>
     <includes id="exception-dynamic_8hh" name="exception-dynamic.hh" local="no" imported="no">dynamic_graph_manager/exception/exception-dynamic.hh</includes>
   </compound>
   <compound kind="file">
     <name>exception-factory.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/src/exception/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/src/exception/</path>
     <filename>exception-factory_8cpp</filename>
     <includes id="exception-factory_8hh" name="exception-factory.hh" local="no" imported="no">dynamic_graph_manager/exception/exception-factory.hh</includes>
   </compound>
   <compound kind="file">
     <name>exception-feature.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/src/exception/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/src/exception/</path>
     <filename>exception-feature_8cpp</filename>
     <includes id="exception-feature_8hh" name="exception-feature.hh" local="no" imported="no">dynamic_graph_manager/exception/exception-feature.hh</includes>
   </compound>
   <compound kind="file">
     <name>exception-signal.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/src/exception/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/src/exception/</path>
     <filename>exception-signal_8cpp</filename>
     <includes id="exception-signal_8hh" name="exception-signal.hh" local="no" imported="no">dynamic_graph_manager/exception/exception-signal.hh</includes>
   </compound>
   <compound kind="file">
     <name>exception-task.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/src/exception/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/src/exception/</path>
     <filename>exception-task_8cpp</filename>
     <includes id="exception-task_8hh" name="exception-task.hh" local="no" imported="no">dynamic_graph_manager/exception/exception-task.hh</includes>
   </compound>
   <compound kind="file">
     <name>exception-tools.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/src/exception/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/src/exception/</path>
     <filename>exception-tools_8cpp</filename>
     <includes id="exception-tools_8hh" name="exception-tools.hh" local="no" imported="no">dynamic_graph_manager/exception/exception-tools.hh</includes>
   </compound>
   <compound kind="file">
     <name>exception-yaml-cpp.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/src/exception/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/src/exception/</path>
     <filename>exception-yaml-cpp_8cpp</filename>
     <includes id="exception-yaml-cpp_8hpp" name="exception-yaml-cpp.hpp" local="no" imported="no">dynamic_graph_manager/exception/exception-yaml-cpp.hpp</includes>
   </compound>
   <compound kind="file">
     <name>periodic-call.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/src/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/src/</path>
     <filename>periodic-call_8cpp</filename>
     <includes id="exception-tools_8hh" name="exception-tools.hh" local="no" imported="no">dynamic_graph_manager/exception/exception-tools.hh</includes>
     <includes id="periodic-call_8hh" name="periodic-call.hh" local="no" imported="no">dynamic_graph_manager/periodic-call.hh</includes>
   </compound>
   <compound kind="file">
     <name>converter.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/src/ros_entities/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/src/ros_entities/</path>
     <filename>converter_8cpp</filename>
     <includes id="converter_8hh" name="converter.hh" local="no" imported="no">ros_entities/converter.hh</includes>
     <namespace>dynamic_graph</namespace>
   </compound>
   <compound kind="file">
     <name>dg_to_ros.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/src/ros_entities/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/src/ros_entities/</path>
     <filename>dg__to__ros_8cpp</filename>
     <includes id="dg__to__ros_8hh" name="dg_to_ros.hh" local="yes" imported="no">ros_entities/dg_to_ros.hh</includes>
     <namespace>dynamic_graph</namespace>
   </compound>
   <compound kind="file">
     <name>ros_publish.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/src/ros_entities/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/src/ros_entities/</path>
     <filename>ros__publish_8cpp</filename>
     <includes id="ros__init_8hh" name="ros_init.hh" local="yes" imported="no">dynamic_graph_manager/ros_init.hh</includes>
     <includes id="dynamic__graph__manager_8hh" name="dynamic_graph_manager.hh" local="yes" imported="no">dynamic_graph_manager/dynamic_graph_manager.hh</includes>
@@ -601,7 +601,7 @@
   </compound>
   <compound kind="file">
     <name>ros_queued_subscribe.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/src/ros_entities/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/src/ros_entities/</path>
     <filename>ros__queued__subscribe_8cpp</filename>
     <includes id="ros__init_8hh" name="ros_init.hh" local="yes" imported="no">dynamic_graph_manager/ros_init.hh</includes>
     <includes id="dynamic__graph__manager_8hh" name="dynamic_graph_manager.hh" local="yes" imported="no">dynamic_graph_manager/dynamic_graph_manager.hh</includes>
@@ -610,7 +610,7 @@
   </compound>
   <compound kind="file">
     <name>ros_robot_state_publisher.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/src/ros_entities/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/src/ros_entities/</path>
     <filename>ros__robot__state__publisher_8cpp</filename>
     <includes id="ros__init_8hh" name="ros_init.hh" local="yes" imported="no">dynamic_graph_manager/ros_init.hh</includes>
     <includes id="dynamic__graph__manager_8hh" name="dynamic_graph_manager.hh" local="yes" imported="no">dynamic_graph_manager/dynamic_graph_manager.hh</includes>
@@ -623,7 +623,7 @@
   </compound>
   <compound kind="file">
     <name>ros_robot_state_publisher_mt.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/src/ros_entities/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/src/ros_entities/</path>
     <filename>ros__robot__state__publisher__mt_8cpp</filename>
     <includes id="ros__init_8hh" name="ros_init.hh" local="yes" imported="no">dynamic_graph_manager/ros_init.hh</includes>
     <includes id="dynamic__graph__manager_8hh" name="dynamic_graph_manager.hh" local="yes" imported="no">dynamic_graph_manager/dynamic_graph_manager.hh</includes>
@@ -636,7 +636,7 @@
   </compound>
   <compound kind="file">
     <name>ros_subscribe.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/src/ros_entities/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/src/ros_entities/</path>
     <filename>ros__subscribe_8cpp</filename>
     <includes id="ros__init_8hh" name="ros_init.hh" local="yes" imported="no">dynamic_graph_manager/ros_init.hh</includes>
     <includes id="dynamic__graph__manager_8hh" name="dynamic_graph_manager.hh" local="yes" imported="no">dynamic_graph_manager/dynamic_graph_manager.hh</includes>
@@ -645,7 +645,7 @@
   </compound>
   <compound kind="file">
     <name>ros_tf_listener.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/src/ros_entities/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/src/ros_entities/</path>
     <filename>ros__tf__listener_8cpp</filename>
     <includes id="ros__init_8hh" name="ros_init.hh" local="yes" imported="no">dynamic_graph_manager/ros_init.hh</includes>
     <includes id="ros__tf__listener_8hh" name="ros_tf_listener.hh" local="yes" imported="no">ros_entities/ros_tf_listener.hh</includes>
@@ -653,7 +653,7 @@
   </compound>
   <compound kind="file">
     <name>ros_time.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/src/ros_entities/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/src/ros_entities/</path>
     <filename>ros__time_8cpp</filename>
     <includes id="ros__time_8hh" name="ros_time.hh" local="yes" imported="no">ros_entities/ros_time.hh</includes>
     <includes id="converter_8hh" name="converter.hh" local="yes" imported="no">ros_entities/converter.hh</includes>
@@ -661,7 +661,7 @@
   </compound>
   <compound kind="file">
     <name>ros_init.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/src/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/src/</path>
     <filename>ros__init_8cpp</filename>
     <includes id="ros__init_8hh" name="ros_init.hh" local="no" imported="no">dynamic_graph_manager/ros_init.hh</includes>
     <namespace>dynamic_graph</namespace>
@@ -710,14 +710,14 @@
   </compound>
   <compound kind="file">
     <name>ros_interpreter.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/src/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/src/</path>
     <filename>ros__interpreter_8cpp</filename>
     <includes id="ros__interpreter_8hh" name="ros_interpreter.hh" local="no" imported="no">dynamic_graph_manager/ros_interpreter.hh</includes>
     <namespace>dynamic_graph</namespace>
   </compound>
   <compound kind="file">
     <name>tools.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/dg_control/dynamic_graph_manager/src/</path>
+    <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/src/</path>
     <filename>tools_8cpp</filename>
     <includes id="tools_8hh" name="tools.hh" local="no" imported="no">dynamic_graph_manager/tools.hh</includes>
     <namespace>dynamic_graph</namespace>
@@ -778,8 +778,8 @@
       <type>virtual const std::string &amp;</type>
       <name>getClassName</name>
       <anchorfile>classdynamic__graph_1_1Device.html</anchorfile>
-      <anchor>a2aa0523e36b0818e98ad8b12ce7ade6d</anchor>
-      <arglist>(void) const </arglist>
+      <anchor>af0e00dbc756e6191b2f5d6883187c92f</anchor>
+      <arglist>(void) const</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -1026,24 +1026,6 @@
     <filename>structdynamic__graph_1_1DgToRos_3_01Vector_01_4.html</filename>
   </compound>
   <compound kind="class">
-    <name>ros_nodes::run_command::DynamicGraphInteractiveConsole</name>
-    <filename>classros__nodes_1_1run__command_1_1DynamicGraphInteractiveConsole.html</filename>
-    <member kind="function">
-      <type>def</type>
-      <name>runcode</name>
-      <anchorfile>classros__nodes_1_1run__command_1_1DynamicGraphInteractiveConsole.html</anchorfile>
-      <anchor>a2ef2227d691887e3dd6675c0df5acc2c</anchor>
-      <arglist>(self, code)</arglist>
-    </member>
-    <member kind="function">
-      <type>def</type>
-      <name>runsource</name>
-      <anchorfile>classros__nodes_1_1run__command_1_1DynamicGraphInteractiveConsole.html</anchorfile>
-      <anchor>a20a3fd5163e9cd015837fde8e6cead02</anchor>
-      <arglist>(self, source, filename=&apos;&lt; input &gt;&apos;, symbol=&apos;single&apos;)</arglist>
-    </member>
-  </compound>
-  <compound kind="class">
     <name>ros::shell_client::DynamicGraphInteractiveConsole</name>
     <filename>classros_1_1shell__client_1_1DynamicGraphInteractiveConsole.html</filename>
     <member kind="function">
@@ -1058,6 +1040,24 @@
       <name>runsource</name>
       <anchorfile>classros_1_1shell__client_1_1DynamicGraphInteractiveConsole.html</anchorfile>
       <anchor>afe6b432e407d107434ccc105a99f7746</anchor>
+      <arglist>(self, source, filename=&apos;&lt; input &gt;&apos;, symbol=&apos;single&apos;)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ros_nodes::run_command::DynamicGraphInteractiveConsole</name>
+    <filename>classros__nodes_1_1run__command_1_1DynamicGraphInteractiveConsole.html</filename>
+    <member kind="function">
+      <type>def</type>
+      <name>runcode</name>
+      <anchorfile>classros__nodes_1_1run__command_1_1DynamicGraphInteractiveConsole.html</anchorfile>
+      <anchor>a2ef2227d691887e3dd6675c0df5acc2c</anchor>
+      <arglist>(self, code)</arglist>
+    </member>
+    <member kind="function">
+      <type>def</type>
+      <name>runsource</name>
+      <anchorfile>classros__nodes_1_1run__command_1_1DynamicGraphInteractiveConsole.html</anchorfile>
+      <anchor>a20a3fd5163e9cd015837fde8e6cead02</anchor>
       <arglist>(self, source, filename=&apos;&lt; input &gt;&apos;, symbol=&apos;single&apos;)</arglist>
     </member>
   </compound>
@@ -1847,6 +1847,31 @@
     <filename>classdynamic__graph_1_1RosPublish.html</filename>
   </compound>
   <compound kind="class">
+    <name>ros::ros_client::RosPythonInterpreter</name>
+    <filename>classros_1_1ros__client_1_1RosPythonInterpreter.html</filename>
+    <member kind="function">
+      <type>def</type>
+      <name>run_python_command</name>
+      <anchorfile>classros_1_1ros__client_1_1RosPythonInterpreter.html</anchorfile>
+      <anchor>ad1de2f9fb464e1f3f81dbac5396208f7</anchor>
+      <arglist>(self, code_string)</arglist>
+    </member>
+    <member kind="function">
+      <type>def</type>
+      <name>run_python_script</name>
+      <anchorfile>classros_1_1ros__client_1_1RosPythonInterpreter.html</anchorfile>
+      <anchor>a63e042101395102abd40958406bea3a2</anchor>
+      <arglist>(self, filename)</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>def</type>
+      <name>_atexit</name>
+      <anchorfile>classros_1_1ros__client_1_1RosPythonInterpreter.html</anchorfile>
+      <anchor>a817a0c056aeeba19895cb8c111c370df</anchor>
+      <arglist>(self)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>dynamic_graph::RosPythonInterpreter</name>
     <filename>classdynamic__graph_1_1RosPythonInterpreter.html</filename>
     <member kind="typedef">
@@ -1942,31 +1967,6 @@
     </member>
   </compound>
   <compound kind="class">
-    <name>ros::ros_client::RosPythonInterpreter</name>
-    <filename>classros_1_1ros__client_1_1RosPythonInterpreter.html</filename>
-    <member kind="function">
-      <type>def</type>
-      <name>run_python_command</name>
-      <anchorfile>classros_1_1ros__client_1_1RosPythonInterpreter.html</anchorfile>
-      <anchor>ad1de2f9fb464e1f3f81dbac5396208f7</anchor>
-      <arglist>(self, code_string)</arglist>
-    </member>
-    <member kind="function">
-      <type>def</type>
-      <name>run_python_script</name>
-      <anchorfile>classros_1_1ros__client_1_1RosPythonInterpreter.html</anchorfile>
-      <anchor>a63e042101395102abd40958406bea3a2</anchor>
-      <arglist>(self, filename)</arglist>
-    </member>
-    <member kind="function" protection="private">
-      <type>def</type>
-      <name>_atexit</name>
-      <anchorfile>classros_1_1ros__client_1_1RosPythonInterpreter.html</anchorfile>
-      <anchor>a817a0c056aeeba19895cb8c111c370df</anchor>
-      <arglist>(self)</arglist>
-    </member>
-  </compound>
-  <compound kind="class">
     <name>dynamic_graph::RosQueuedSubscribe</name>
     <filename>classdynamic__graph_1_1RosQueuedSubscribe.html</filename>
   </compound>
@@ -1998,8 +1998,8 @@
       <type>virtual const std::string &amp;</type>
       <name>getClassName</name>
       <anchorfile>classdynamic__graph_1_1RosRobotStatePublisher.html</anchorfile>
-      <anchor>ad71cb08409f890ba45d6afd25e284341</anchor>
-      <arglist>(void) const </arglist>
+      <anchor>aa031a669a2c2784c50b558fd2e2b6da3</anchor>
+      <arglist>(void) const</arglist>
     </member>
     <member kind="function" protection="private">
       <type>void</type>
@@ -2097,8 +2097,8 @@
       <type>virtual const std::string &amp;</type>
       <name>getClassName</name>
       <anchorfile>classdynamic__graph_1_1RosRobotStatePublisherMt.html</anchorfile>
-      <anchor>abf9c4c7acd9ad405340f35dd7431f118</anchor>
-      <arglist>(void) const </arglist>
+      <anchor>aaeaca4bd0fccded2cf35a5a766fa6af1</anchor>
+      <arglist>(void) const</arglist>
     </member>
     <member kind="function" protection="private">
       <type>void</type>
@@ -2160,10 +2160,6 @@
   <compound kind="struct">
     <name>dynamic_graph::RosRobotStatePublisherMtInternal</name>
     <filename>structdynamic__graph_1_1RosRobotStatePublisherMtInternal.html</filename>
-  </compound>
-  <compound kind="class">
-    <name>ros_nodes::run_command_backup::RosShell</name>
-    <filename>classros__nodes_1_1run__command__backup_1_1RosShell.html</filename>
   </compound>
   <compound kind="class">
     <name>dynamic_graph::RosSubscribe</name>
@@ -2415,8 +2411,8 @@
       <type></type>
       <name>DYNAMICGRAPH_FACTORY_ENTITY_PLUGIN</name>
       <anchorfile>namespacedynamic__graph.html</anchorfile>
-      <anchor>a04797aa55f04bd1e07b64c0caa685c6b</anchor>
-      <arglist>(DeviceSimulator,&quot;DeviceSimulator&quot;)</arglist>
+      <anchor>ac2b17f51aa9541c0b023291d4090be56</anchor>
+      <arglist>(DeviceSimulator, &quot;DeviceSimulator&quot;)</arglist>
     </member>
     <member kind="variable" static="yes">
       <type>static std::map&lt; std::string, std::unique_ptr&lt; GlobalRos &gt; &gt;</type>

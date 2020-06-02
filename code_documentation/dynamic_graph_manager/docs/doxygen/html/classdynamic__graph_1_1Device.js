@@ -5,7 +5,7 @@ var classdynamic__graph_1_1Device =
     [ "execute_graph", "classdynamic__graph_1_1Device.html#adb596e7acd67089bb4929cf577b3c6ff", null ],
     [ "execute_graph_deprecated", "classdynamic__graph_1_1Device.html#a126268314fea8fff802fc957cbf3e0d7", null ],
     [ "get_controls_to_map", "classdynamic__graph_1_1Device.html#a3291a91974c35f03719220e237512aa8", null ],
-    [ "getClassName", "classdynamic__graph_1_1Device.html#a2aa0523e36b0818e98ad8b12ce7ade6d", null ],
+    [ "getClassName", "classdynamic__graph_1_1Device.html#af0e00dbc756e6191b2f5d6883187c92f", null ],
     [ "initialize", "classdynamic__graph_1_1Device.html#af6edd01afac2838c4e336c76caa4338a", null ],
     [ "initialize_from_file", "classdynamic__graph_1_1Device.html#af71d151e69555e9530d770d3d90b7f3e", null ],
     [ "initialize_maps", "classdynamic__graph_1_1Device.html#ac4203f6753b2d534c0ade84fb52ac47e", null ],
