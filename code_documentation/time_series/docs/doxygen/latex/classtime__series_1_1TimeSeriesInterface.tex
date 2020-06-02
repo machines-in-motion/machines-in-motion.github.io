@@ -22,51 +22,54 @@ Inheritance diagram for time\+\_\+series\+:\+:Time\+Series\+Interface$<$ T $>$\+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual Index \hyperlink{classtime__series_1_1TimeSeriesInterface_a3f15f770cc9620d11ec1e7a123977cf3}{newest\+\_\+timeindex} ()=0\hypertarget{classtime__series_1_1TimeSeriesInterface_a3f15f770cc9620d11ec1e7a123977cf3}{}\label{classtime__series_1_1TimeSeriesInterface_a3f15f770cc9620d11ec1e7a123977cf3}
-
-\begin{DoxyCompactList}\small\item\em returns $ newest $. waits if the time\+\_\+series is empty. \end{DoxyCompactList}\item 
-virtual Index \hyperlink{classtime__series_1_1TimeSeriesInterface_a46cf7fc73adfcc400fbf40c22aa7268f}{count\+\_\+appended\+\_\+elements} ()=0\hypertarget{classtime__series_1_1TimeSeriesInterface_a46cf7fc73adfcc400fbf40c22aa7268f}{}\label{classtime__series_1_1TimeSeriesInterface_a46cf7fc73adfcc400fbf40c22aa7268f}
-
+\mbox{\Hypertarget{classtime__series_1_1TimeSeriesInterface_a19127d715b58f95c0e2581576fe80f18}\label{classtime__series_1_1TimeSeriesInterface_a19127d715b58f95c0e2581576fe80f18}} 
+virtual Index \hyperlink{classtime__series_1_1TimeSeriesInterface_a19127d715b58f95c0e2581576fe80f18}{newest\+\_\+timeindex} (bool wait=true)=0
+\begin{DoxyCompactList}\small\item\em returns $ newest $ index. If argument wait is true, waits if the time\+\_\+series is empty. If argument wait is false and the time series is empty, returns time\+\_\+series\+::\+E\+M\+P\+TY immediately. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtime__series_1_1TimeSeriesInterface_a46cf7fc73adfcc400fbf40c22aa7268f}\label{classtime__series_1_1TimeSeriesInterface_a46cf7fc73adfcc400fbf40c22aa7268f}} 
+virtual Index \hyperlink{classtime__series_1_1TimeSeriesInterface_a46cf7fc73adfcc400fbf40c22aa7268f}{count\+\_\+appended\+\_\+elements} ()=0
 \begin{DoxyCompactList}\small\item\em returns the number of element that has been contained in the queue, i.\+e. the number of elements that have been added from the start. \end{DoxyCompactList}\item 
-virtual Index \hyperlink{classtime__series_1_1TimeSeriesInterface_a96635723dc065cebb65d63de4f54b4a9}{oldest\+\_\+timeindex} ()=0\hypertarget{classtime__series_1_1TimeSeriesInterface_a96635723dc065cebb65d63de4f54b4a9}{}\label{classtime__series_1_1TimeSeriesInterface_a96635723dc065cebb65d63de4f54b4a9}
-
-\begin{DoxyCompactList}\small\item\em returns $ oldest $. waits if the time\+\_\+series is empty. \end{DoxyCompactList}\item 
-virtual T \hyperlink{classtime__series_1_1TimeSeriesInterface_ad3b66b6b5f0f763d440731c50e41b4cb}{newest\+\_\+element} ()=0\hypertarget{classtime__series_1_1TimeSeriesInterface_ad3b66b6b5f0f763d440731c50e41b4cb}{}\label{classtime__series_1_1TimeSeriesInterface_ad3b66b6b5f0f763d440731c50e41b4cb}
-
+\mbox{\Hypertarget{classtime__series_1_1TimeSeriesInterface_a3a68de9ecf8bfeb6c05ea89386537307}\label{classtime__series_1_1TimeSeriesInterface_a3a68de9ecf8bfeb6c05ea89386537307}} 
+virtual Index \hyperlink{classtime__series_1_1TimeSeriesInterface_a3a68de9ecf8bfeb6c05ea89386537307}{oldest\+\_\+timeindex} (bool wait=true)=0
+\begin{DoxyCompactList}\small\item\em returns $ oldest $. waits if the time\+\_\+series is empty. If argument wait is false and the time series is empty, returns time\+\_\+series\+::\+E\+M\+P\+TY immediately. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtime__series_1_1TimeSeriesInterface_ad3b66b6b5f0f763d440731c50e41b4cb}\label{classtime__series_1_1TimeSeriesInterface_ad3b66b6b5f0f763d440731c50e41b4cb}} 
+virtual T \hyperlink{classtime__series_1_1TimeSeriesInterface_ad3b66b6b5f0f763d440731c50e41b4cb}{newest\+\_\+element} ()=0
 \begin{DoxyCompactList}\small\item\em returns $ X_{newest} $. waits if the time\+\_\+series is empty. \end{DoxyCompactList}\item 
-virtual T \hyperlink{classtime__series_1_1TimeSeriesInterface_a3149f64961e08315eb06798d0f075333}{operator\mbox{[}$\,$\mbox{]}} (const Index \&timeindex)=0\hypertarget{classtime__series_1_1TimeSeriesInterface_a3149f64961e08315eb06798d0f075333}{}\label{classtime__series_1_1TimeSeriesInterface_a3149f64961e08315eb06798d0f075333}
-
+\mbox{\Hypertarget{classtime__series_1_1TimeSeriesInterface_a3149f64961e08315eb06798d0f075333}\label{classtime__series_1_1TimeSeriesInterface_a3149f64961e08315eb06798d0f075333}} 
+virtual T \hyperlink{classtime__series_1_1TimeSeriesInterface_a3149f64961e08315eb06798d0f075333}{operator\mbox{[}$\,$\mbox{]}} (const Index \&timeindex)=0
 \begin{DoxyCompactList}\small\item\em returns $ X_{timeindex} $. waits if the time\+\_\+series is empty or if $timeindex > newest $. \end{DoxyCompactList}\item 
-virtual Timestamp \hyperlink{classtime__series_1_1TimeSeriesInterface_aaeb745c8c13170a645b25170f0b035f1}{timestamp\+\_\+ms} (const Index \&timeindex)=0\hypertarget{classtime__series_1_1TimeSeriesInterface_aaeb745c8c13170a645b25170f0b035f1}{}\label{classtime__series_1_1TimeSeriesInterface_aaeb745c8c13170a645b25170f0b035f1}
-
+\mbox{\Hypertarget{classtime__series_1_1TimeSeriesInterface_aaeb745c8c13170a645b25170f0b035f1}\label{classtime__series_1_1TimeSeriesInterface_aaeb745c8c13170a645b25170f0b035f1}} 
+virtual Timestamp \hyperlink{classtime__series_1_1TimeSeriesInterface_aaeb745c8c13170a645b25170f0b035f1}{timestamp\+\_\+ms} (const Index \&timeindex)=0
 \begin{DoxyCompactList}\small\item\em returns the time in miliseconds when $ X_{timeindex} $ was appended. Waits if the time\+\_\+series is empty or if $timeindex > newest $. \end{DoxyCompactList}\item 
-virtual Timestamp \hyperlink{classtime__series_1_1TimeSeriesInterface_acfb468e6e1766fe4b566189d3b888e4d}{timestamp\+\_\+s} (const Index \&timeindex)=0\hypertarget{classtime__series_1_1TimeSeriesInterface_acfb468e6e1766fe4b566189d3b888e4d}{}\label{classtime__series_1_1TimeSeriesInterface_acfb468e6e1766fe4b566189d3b888e4d}
-
+\mbox{\Hypertarget{classtime__series_1_1TimeSeriesInterface_acfb468e6e1766fe4b566189d3b888e4d}\label{classtime__series_1_1TimeSeriesInterface_acfb468e6e1766fe4b566189d3b888e4d}} 
+virtual Timestamp \hyperlink{classtime__series_1_1TimeSeriesInterface_acfb468e6e1766fe4b566189d3b888e4d}{timestamp\+\_\+s} (const Index \&timeindex)=0
 \begin{DoxyCompactList}\small\item\em returns the time in seconds when $ X_{timeindex} $ was appended. Waits if the time\+\_\+series is empty or if $timeindex > newest $. \end{DoxyCompactList}\item 
-virtual bool \hyperlink{classtime__series_1_1TimeSeriesInterface_aa09c55259a1f34491b5ecdd1505ffdbf}{wait\+\_\+for\+\_\+timeindex} (const Index \&timeindex, const double \&max\+\_\+duration\+\_\+s=std\+::numeric\+\_\+limits$<$ double $>$\+::quiet\+\_\+\+NaN())=0\hypertarget{classtime__series_1_1TimeSeriesInterface_aa09c55259a1f34491b5ecdd1505ffdbf}{}\label{classtime__series_1_1TimeSeriesInterface_aa09c55259a1f34491b5ecdd1505ffdbf}
-
+\mbox{\Hypertarget{classtime__series_1_1TimeSeriesInterface_aa09c55259a1f34491b5ecdd1505ffdbf}\label{classtime__series_1_1TimeSeriesInterface_aa09c55259a1f34491b5ecdd1505ffdbf}} 
+virtual bool \hyperlink{classtime__series_1_1TimeSeriesInterface_aa09c55259a1f34491b5ecdd1505ffdbf}{wait\+\_\+for\+\_\+timeindex} (const Index \&timeindex, const double \&max\+\_\+duration\+\_\+s=std\+::numeric\+\_\+limits$<$ double $>$\+::quiet\+\_\+\+NaN())=0
 \begin{DoxyCompactList}\small\item\em Wait until the defined time index is reached. If the input time is below the oldest time index that have been registered read an exception is return. \end{DoxyCompactList}\item 
-virtual std\+::size\+\_\+t \hyperlink{classtime__series_1_1TimeSeriesInterface_a90f6ed15d82006dbc7ef7783d9f6ff7a}{length} ()=0\hypertarget{classtime__series_1_1TimeSeriesInterface_a90f6ed15d82006dbc7ef7783d9f6ff7a}{}\label{classtime__series_1_1TimeSeriesInterface_a90f6ed15d82006dbc7ef7783d9f6ff7a}
-
+\mbox{\Hypertarget{classtime__series_1_1TimeSeriesInterface_a90f6ed15d82006dbc7ef7783d9f6ff7a}\label{classtime__series_1_1TimeSeriesInterface_a90f6ed15d82006dbc7ef7783d9f6ff7a}} 
+virtual std\+::size\+\_\+t \hyperlink{classtime__series_1_1TimeSeriesInterface_a90f6ed15d82006dbc7ef7783d9f6ff7a}{length} ()=0
 \begin{DoxyCompactList}\small\item\em returns the length of the time\+\_\+series, i.\+e. $0$ if it is empty, otherwise $newest - oldest +1 $. \end{DoxyCompactList}\item 
 virtual std\+::size\+\_\+t \hyperlink{classtime__series_1_1TimeSeriesInterface_aded8927e82c060aa3367f17dfd59a8ec}{max\+\_\+length} ()=0
 \begin{DoxyCompactList}\small\item\em returns the maximum length of the time serie. \end{DoxyCompactList}\item 
-virtual bool \hyperlink{classtime__series_1_1TimeSeriesInterface_a2758b463ea41393a24ea37ccd0f5feb4}{has\+\_\+changed\+\_\+since\+\_\+tag} ()=0\hypertarget{classtime__series_1_1TimeSeriesInterface_a2758b463ea41393a24ea37ccd0f5feb4}{}\label{classtime__series_1_1TimeSeriesInterface_a2758b463ea41393a24ea37ccd0f5feb4}
-
+\mbox{\Hypertarget{classtime__series_1_1TimeSeriesInterface_a2758b463ea41393a24ea37ccd0f5feb4}\label{classtime__series_1_1TimeSeriesInterface_a2758b463ea41393a24ea37ccd0f5feb4}} 
+virtual bool \hyperlink{classtime__series_1_1TimeSeriesInterface_a2758b463ea41393a24ea37ccd0f5feb4}{has\+\_\+changed\+\_\+since\+\_\+tag} ()=0
 \begin{DoxyCompactList}\small\item\em returns boolean indicating whether new elements have been appended since the last time the \hyperlink{classtime__series_1_1TimeSeriesInterface_a34e881c9496901127baf1d907d7399ac}{tag()} function was called. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classtime__series_1_1TimeSeriesInterface_a34e881c9496901127baf1d907d7399ac}{tag} (const Index \&timeindex)=0\hypertarget{classtime__series_1_1TimeSeriesInterface_a34e881c9496901127baf1d907d7399ac}{}\label{classtime__series_1_1TimeSeriesInterface_a34e881c9496901127baf1d907d7399ac}
-
+\mbox{\Hypertarget{classtime__series_1_1TimeSeriesInterface_a34e881c9496901127baf1d907d7399ac}\label{classtime__series_1_1TimeSeriesInterface_a34e881c9496901127baf1d907d7399ac}} 
+virtual void \hyperlink{classtime__series_1_1TimeSeriesInterface_a34e881c9496901127baf1d907d7399ac}{tag} (const Index \&timeindex)=0
 \begin{DoxyCompactList}\small\item\em tags the current time\+\_\+series, can later be used to check whether new elements have been added \end{DoxyCompactList}\item 
-virtual Index \hyperlink{classtime__series_1_1TimeSeriesInterface_aa71ab509ac29c5da681aee9dbf65f2d8}{tagged\+\_\+timeindex} ()=0\hypertarget{classtime__series_1_1TimeSeriesInterface_aa71ab509ac29c5da681aee9dbf65f2d8}{}\label{classtime__series_1_1TimeSeriesInterface_aa71ab509ac29c5da681aee9dbf65f2d8}
-
+\mbox{\Hypertarget{classtime__series_1_1TimeSeriesInterface_aa71ab509ac29c5da681aee9dbf65f2d8}\label{classtime__series_1_1TimeSeriesInterface_aa71ab509ac29c5da681aee9dbf65f2d8}} 
+virtual Index \hyperlink{classtime__series_1_1TimeSeriesInterface_aa71ab509ac29c5da681aee9dbf65f2d8}{tagged\+\_\+timeindex} ()=0
 \begin{DoxyCompactList}\small\item\em returns the index at which the time series has been tagged. Returns the newest timeindex if the time series has never been tagged. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classtime__series_1_1TimeSeriesInterface_a0782c522287cf041fc253529b61041f9}{append} (const T \&element)=0\hypertarget{classtime__series_1_1TimeSeriesInterface_a0782c522287cf041fc253529b61041f9}{}\label{classtime__series_1_1TimeSeriesInterface_a0782c522287cf041fc253529b61041f9}
-
-\begin{DoxyCompactList}\small\item\em appends a new element to the time\+\_\+series, e.\+g. we go from $ X_{1:10} $ to $ X_{1:11} $ (where $ X_{11}=$ element). if the time\+\_\+series length is already equal to its max\+\_\+length, then the oldest element is discarded, e.\+g. for a max\+\_\+length = 10 we would go from $ X_{1:10} $ to $ X_{2:11} $. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\Hypertarget{classtime__series_1_1TimeSeriesInterface_a0782c522287cf041fc253529b61041f9}\label{classtime__series_1_1TimeSeriesInterface_a0782c522287cf041fc253529b61041f9}} 
+virtual void \hyperlink{classtime__series_1_1TimeSeriesInterface_a0782c522287cf041fc253529b61041f9}{append} (const T \&element)=0
+\begin{DoxyCompactList}\small\item\em appends a new element to the time\+\_\+series, e.\+g. we go from $ X_{1:10} $ to $ X_{1:11} $ (where $ X_{11}=$ element). if the time\+\_\+series length is already equal to its max\+\_\+length, then the oldest element is discarded, e.\+g. for a max\+\_\+length = 10 we would go from $ X_{1:10} $ to $ X_{2:11} $. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtime__series_1_1TimeSeriesInterface_a932e891f3f41781af4282ada18f05d31}\label{classtime__series_1_1TimeSeriesInterface_a932e891f3f41781af4282ada18f05d31}} 
+virtual bool \hyperlink{classtime__series_1_1TimeSeriesInterface_a932e891f3f41781af4282ada18f05d31}{is\+\_\+empty} ()=0
+\begin{DoxyCompactList}\small\item\em returns true if no element has ever been appended to the time series. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-\subsubsection*{template$<$typename T$>$\\*
+\subsubsection*{template$<$typename T$>$\newline
 class time\+\_\+series\+::\+Time\+Series\+Interface$<$ T $>$}
 
 Interface for time series. 
@@ -83,13 +86,13 @@ this object has the following properties\+:
 \end{DoxyItemize}
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{classtime__series_1_1TimeSeriesInterface_aded8927e82c060aa3367f17dfd59a8ec}\label{classtime__series_1_1TimeSeriesInterface_aded8927e82c060aa3367f17dfd59a8ec}} 
 \index{time\+\_\+series\+::\+Time\+Series\+Interface@{time\+\_\+series\+::\+Time\+Series\+Interface}!max\+\_\+length@{max\+\_\+length}}
 \index{max\+\_\+length@{max\+\_\+length}!time\+\_\+series\+::\+Time\+Series\+Interface@{time\+\_\+series\+::\+Time\+Series\+Interface}}
-\subsubsection[{\texorpdfstring{max\+\_\+length()=0}{max_length()=0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ virtual std\+::size\+\_\+t {\bf time\+\_\+series\+::\+Time\+Series\+Interface}$<$ T $>$\+::max\+\_\+length (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classtime__series_1_1TimeSeriesInterface_aded8927e82c060aa3367f17dfd59a8ec}{}\label{classtime__series_1_1TimeSeriesInterface_aded8927e82c060aa3367f17dfd59a8ec}
+\subsubsection{\texorpdfstring{max\+\_\+length()}{max\_length()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual std\+::size\+\_\+t \hyperlink{classtime__series_1_1TimeSeriesInterface}{time\+\_\+series\+::\+Time\+Series\+Interface}$<$ T $>$\+::max\+\_\+length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
 
 
 returns the maximum length of the time serie. 

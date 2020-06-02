@@ -20,7 +20,7 @@ var classshared__memory_1_1array =
     [ "set", "classshared__memory_1_1array.html#a951c9ca373e942f094910bea57953eb0", null ],
     [ "set", "classshared__memory_1_1array.html#ac413bc76d199bb52a0f95faff7222f37", null ],
     [ "set", "classshared__memory_1_1array.html#ae581f4ffcf1e543032e0128be5da181d", null ],
-    [ "size", "classshared__memory_1_1array.html#afc0dd0c59873934b082e524adb6bf2d7", null ],
+    [ "size", "classshared__memory_1_1array.html#ad6019f83449e4ea8d1bf4bd0d48c29b0", null ],
     [ "clear_on_destruction_", "classshared__memory_1_1array.html#afb6fcb395ac52cb9eaaef2882b623d23", null ],
     [ "multiprocess_safe_", "classshared__memory_1_1array.html#a7051346ccb28372b2ea5587714113079", null ],
     [ "mutex_", "classshared__memory_1_1array.html#afaf6604cf5e2c380f86679e1515e6674", null ],

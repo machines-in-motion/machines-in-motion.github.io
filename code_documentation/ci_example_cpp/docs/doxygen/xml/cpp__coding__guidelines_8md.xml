@@ -1,0 +1,275 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="cpp__coding__guidelines_8md" kind="file" language="Markdown">
+    <compoundname>cpp_coding_guidelines.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">2.<sp/>C++<sp/>Coding<sp/>Guidelines<sp/>{#coding_guidelines_1}</highlight></codeline>
+<codeline><highlight class="normal">=========================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>I.<sp/>Introduction</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">These<sp/>are<sp/>the<sp/>internal<sp/>C++<sp/>guidelines<sp/>for<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">[machines-in-motion](https://wp.nyu.edu/machinesinmotion/)<sp/>group.<sp/>The<sp/>same</highlight></codeline>
+<codeline><highlight class="normal">guidelines<sp/>are<sp/>used<sp/>in<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">[Open<sp/>Dynamic<sp/>Robot<sp/>Initiative](https://open-dynamic-robot-initiative.github.io/)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>following<sp/>rules<sp/>present<sp/>basic<sp/>guidelines<sp/>for<sp/>our<sp/>C++<sp/>code.</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>goal<sp/>is<sp/>to<sp/>have<sp/>code<sp/>that<sp/>is<sp/>formatted<sp/>in<sp/>a<sp/>consistent<sp/>and<sp/>easily<sp/>readable</highlight></codeline>
+<codeline><highlight class="normal">way<sp/>while<sp/>at<sp/>the<sp/>same<sp/>time<sp/>not<sp/>being<sp/>overly<sp/>complicated<sp/>by<sp/>specifying<sp/>every</highlight></codeline>
+<codeline><highlight class="normal">detail.<sp/>For<sp/>such<sp/>guidelines<sp/>to<sp/>be<sp/>practical,<sp/>newcomers<sp/>should<sp/>be<sp/>able<sp/>to<sp/>read</highlight></codeline>
+<codeline><highlight class="normal">them<sp/>within<sp/>a<sp/>few<sp/>minutes<sp/>and<sp/>be<sp/>able<sp/>to<sp/>memorize<sp/>them.<sp/>So<sp/>these<sp/>rules</highlight></codeline>
+<codeline><highlight class="normal">intentionally<sp/>do<sp/>not<sp/>cover<sp/>every<sp/>detail<sp/>but<sp/>rather<sp/>aim<sp/>at<sp/>specifying<sp/>only<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">big,<sp/>important<sp/>things.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>this<sp/>is<sp/>too<sp/>simple<sp/>for<sp/>you<sp/>and<sp/>you<sp/>want<sp/>more<sp/>rules,<sp/>you<sp/>are<sp/>encouraged<sp/>to</highlight></codeline>
+<codeline><highlight class="normal">read<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">[Google<sp/>C++<sp/>Style<sp/>Guide](https://google.github.io/styleguide/cppguide.html)<sp/>on</highlight></codeline>
+<codeline><highlight class="normal">which<sp/>these<sp/>rules<sp/>are<sp/>based.<sp/>Note,<sp/>however,</highlight></codeline>
+<codeline><highlight class="normal">that<sp/>we<sp/>have<sp/>a<sp/>few<sp/>small<sp/>deviations<sp/>from<sp/>the<sp/>Google<sp/>style.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">These<sp/>guidelines<sp/>may<sp/>evolve<sp/>in<sp/>time<sp/>so<sp/>it<sp/>is<sp/>first</highlight></codeline>
+<codeline><highlight class="normal">good<sp/>practice<sp/>to<sp/>check<sp/>them<sp/>upon<sp/>creation<sp/>of<sp/>a<sp/>new<sp/>package<sp/>or<sp/>code<sp/>refactoring.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>II.<sp/>Folder<sp/>Structure<sp/>and<sp/>File<sp/>Naming</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Header<sp/>files<sp/>should<sp/>be<sp/>in<sp/>a<sp/>folder:<sp/>`include/&lt;name_of_the_project&gt;/*`,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>e.g.<sp/>@code<sp/>`#include<sp/>&quot;ci_example_cpp/gains_configuration.hpp&quot;`<sp/>@endcode</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>File<sp/>extension<sp/>for<sp/>header<sp/>files:<sp/>`.hpp`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Source<sp/>files<sp/>should<sp/>be<sp/>in<sp/>a<sp/>folder<sp/>named<sp/>`src/`.<sp/>The<sp/>file<sp/>should<sp/>have<sp/>the</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>same<sp/>name<sp/>as<sp/>the<sp/>header<sp/>with<sp/>extension<sp/>`.cpp`.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>When<sp/>using<sp/>templates:<sp/><sp/>If<sp/>you<sp/>want<sp/>to<sp/>separate<sp/>declaration<sp/>and<sp/>definition,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>put<sp/>the<sp/>declaration<sp/>to<sp/>a<sp/>`.hpp`<sp/>header<sp/>file<sp/>as<sp/>usual<sp/>and<sp/>the<sp/>definition<sp/>to</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>a<sp/>file<sp/>with<sp/>extension<sp/>`.hxx`<sp/>in<sp/>the<sp/>same<sp/>directory<sp/>(which<sp/>is<sp/>included<sp/>at</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>the<sp/>bottom<sp/>of<sp/>the<sp/>`.hpp`<sp/>file).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Preferably<sp/>each<sp/>class<sp/>should<sp/>be<sp/>in<sp/>a<sp/>separate<sp/>file<sp/>with<sp/>name</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>*class_name_in_lower_case*.<sp/><sp/>However,<sp/>this<sp/>is<sp/>not<sp/>a<sp/>strict<sp/>rule,<sp/>if</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>several<sp/>smaller<sp/>classes<sp/>are<sp/>logically<sp/>closely<sp/>related,<sp/>they<sp/>may<sp/>go<sp/>to</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>the<sp/>same<sp/>file.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Executable<sp/>scripts<sp/>should<sp/>be<sp/>placed<sp/>in<sp/>the<sp/>`scripts/`<sp/>folder.<sp/>And<sp/>should<sp/>have</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>a<sp/>CMake<sp/>**install<sp/>rule**<sp/>that<sp/>makes<sp/>them<sp/>executable<sp/>upon<sp/>installation.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>The<sp/>C++/pybind11<sp/>code<sp/>for<sp/>wrapping<sp/>C++<sp/>code<sp/>to<sp/>Python<sp/>must<sp/>be<sp/>placed<sp/>in</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>`srcpy/`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>III.<sp/>Naming</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Give<sp/>as<sp/>descriptive<sp/>a<sp/>name<sp/>as<sp/>possible,<sp/>within<sp/>reason.<sp/>Do<sp/>not<sp/>worry<sp/>about<sp/>saving</highlight></codeline>
+<codeline><highlight class="normal">horizontal<sp/>space<sp/>as<sp/>it<sp/>is<sp/>far<sp/>more<sp/>important<sp/>to<sp/>make<sp/>your<sp/>code<sp/>immediately<sp/></highlight></codeline>
+<codeline><highlight class="normal">understandable<sp/>by<sp/>a<sp/>new<sp/>reader.<sp/>Do<sp/>not<sp/>use<sp/>abbreviations<sp/>that<sp/>are<sp/>ambiguous<sp/>or<sp/></highlight></codeline>
+<codeline><highlight class="normal">unfamiliar<sp/>to<sp/>readers<sp/>outside<sp/>your<sp/>project,<sp/>and<sp/>do<sp/>not<sp/>abbreviate<sp/>by<sp/>deleting<sp/></highlight></codeline>
+<codeline><highlight class="normal">letters<sp/>within<sp/>a<sp/>word.<sp/>Abbreviations<sp/>that<sp/>would<sp/>be<sp/>familiar<sp/>to<sp/>someone<sp/>outside<sp/></highlight></codeline>
+<codeline><highlight class="normal">your<sp/>project<sp/>with<sp/>relevant<sp/>domain<sp/>knowledge<sp/>are<sp/>OK.<sp/>As<sp/>a<sp/>rule<sp/>of<sp/>thumb,<sp/>an<sp/></highlight></codeline>
+<codeline><highlight class="normal">abbreviation<sp/>is<sp/>probably<sp/>OK<sp/>if<sp/>it&apos;s<sp/>listed<sp/>in<sp/>Wikipedia.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Formatting<sp/>of<sp/>names<sp/>should<sp/>be<sp/>as<sp/>follows:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>types<sp/>(classes,<sp/>structs,<sp/>...):<sp/>*FirstUpperCamelCase*</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>functions,<sp/>methods:<sp/>*lower_case_with_underscores*</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>variables:<sp/>*lower_case_with_underscores*</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>class<sp/>members:<sp/>*like_variables_but_with_trailing_underscore_*</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>constants:<sp/>*UPPER_CASE_WITH_UNDERSCORES*</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>global<sp/>variables:<sp/>Should<sp/>generally<sp/>be<sp/>avoided<sp/>but<sp/>if<sp/>needed,<sp/>prefix<sp/>them<sp/>with</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>g_,<sp/>i.e.<sp/>*g_variable_name*.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>IV.<sp/>Add<sp/>Units<sp/>to<sp/>Variable<sp/>Names</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Variables<sp/>that<sp/>hold<sp/>values<sp/>of<sp/>a<sp/>specific<sp/>unit<sp/>should<sp/>have<sp/>that<sp/>unit<sp/>appended<sp/>to</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>name.<sp/><sp/>For<sp/>example<sp/>if<sp/>a<sp/>variable<sp/>holds<sp/>the<sp/>velocity<sp/>of<sp/>a<sp/>motor<sp/>in<sp/>*krpm*<sp/>it</highlight></codeline>
+<codeline><highlight class="normal">should<sp/>be<sp/>called<sp/>`velocity_krpm`<sp/>instead<sp/>of<sp/>`just<sp/>velocity`.<sp/>Some<sp/>more<sp/>examples:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>duration_us<sp/>(use<sp/>&quot;u&quot;<sp/>instead<sp/>of<sp/>&quot;µ&quot;)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>voltage_mV</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>acceleration_mps2<sp/>(\f$<sp/>\frac{m}{s^2}<sp/>\f$)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>V.<sp/>C/C++<sp/>Formatting</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>V.1.<sp/>Line<sp/>Length</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Limit<sp/>the<sp/>length<sp/>of<sp/>lines<sp/>to<sp/>80<sp/>characters.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>may<sp/>seem<sp/>hard<sp/>to<sp/>follow<sp/>sometimes<sp/>but<sp/>makes<sp/>it<sp/>much<sp/>easier<sp/>to<sp/>view<sp/>two<sp/>or<sp/>even<sp/>three<sp/>files<sp/>next<sp/>to<sp/>each<sp/>other<sp/>(important<sp/>during<sp/>code<sp/>review<sp/>or<sp/>when<sp/>resolving<sp/>merge<sp/>conflicts).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>V.2.<sp/>Indentation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Use<sp/>spaces<sp/>instead<sp/>of<sp/>tabs.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>4<sp/>spaces<sp/>per<sp/>&quot;tab&quot;.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>V.3.<sp/>Position<sp/>of<sp/>braces</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Opening<sp/>brace<sp/>always<sp/>goes<sp/>to<sp/>the<sp/>next<sp/>line.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Always**<sp/>add<sp/>braces<sp/>for<sp/>single-line<sp/>if/loop/etc.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Example:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">~~~{.c}</highlight></codeline>
+<codeline><highlight class="normal">namespace<sp/>bar</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">class<sp/>Foo</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>my_function(const<sp/>Foo<sp/>&amp;foo,<sp/>int<sp/>*output_arg)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(condition)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>else<sp/>if<sp/>(other_condition)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>else</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>while<sp/>(condition)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">}<sp/>//<sp/>namespace</highlight></codeline>
+<codeline><highlight class="normal">~~~</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>V.3.<sp/>Spaces</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Add<sp/>single<sp/>spaces<sp/>between<sp/>if/for/etc.,<sp/>the<sp/>condition<sp/>and<sp/>the<sp/>brace.<sp/>add<sp/>spaces</highlight></codeline>
+<codeline><highlight class="normal">around<sp/>most<sp/>binary<sp/>operators.<sp/>Exception:<sp/>No<sp/>spaces<sp/>around<sp/>`::`,<sp/>`.`<sp/>and<sp/>`-&gt;`.</highlight></codeline>
+<codeline><highlight class="normal">Also<sp/>no<sp/>spaces<sp/>for<sp/>unary<sp/>operators<sp/>(`i++`,<sp/>`&amp;x`,<sp/>`*x`,<sp/>...).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Example:</highlight></codeline>
+<codeline><highlight class="normal">~~~{.c}</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>x<sp/>=<sp/>42;</highlight></codeline>
+<codeline><highlight class="normal">for<sp/>(int<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>x;<sp/>i++)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>y<sp/>=<sp/>i<sp/>*<sp/>x;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(y<sp/>==<sp/>foo.bar-&gt;baz)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">~~~</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>V.4.<sp/>Formatting<sp/>of<sp/>switch<sp/>blocks</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>See<sp/>the<sp/>following<sp/>example<sp/>for<sp/>proper<sp/>indentation<sp/>of<sp/>switch<sp/>blocks.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Always<sp/>add<sp/>a<sp/>default<sp/>case,<sp/>even<sp/>when<sp/>it<sp/>is<sp/>technically<sp/>not<sp/>needed.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>If<sp/>the<sp/>default<sp/>block<sp/>is<sp/>empty,<sp/>it<sp/>shall<sp/>contain<sp/>a<sp/>comment<sp/>to<sp/>indicate<sp/>that</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>this<sp/>is<sp/>intentional.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>The<sp/>default<sp/>case<sp/>shall<sp/>either<sp/>be<sp/>the<sp/>first<sp/>or<sp/>the<sp/>last<sp/>case,<sp/>preferably<sp/>the</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>last.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Non-empty<sp/>cases<sp/>shall<sp/>be<sp/>terminated<sp/>by<sp/>an<sp/>unconditional<sp/>break.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">~~~{.c}</highlight></codeline>
+<codeline><highlight class="normal">switch<sp/>(x)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>case<sp/>1:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>...</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;</highlight></codeline>
+<codeline><highlight class="normal"><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>case<sp/>2:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>...</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;</highlight></codeline>
+<codeline><highlight class="normal"><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>case<sp/>3:<sp/>//<sp/>multiple<sp/>cases<sp/>for<sp/>one<sp/>block<sp/>are<sp/>okay</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>case<sp/>4:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>...</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;</highlight></codeline>
+<codeline><highlight class="normal"><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>case<sp/>5:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>BAD.<sp/>A<sp/>non-empty<sp/>case<sp/>without<sp/>break<sp/>should<sp/>not<sp/>be</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>something();<sp/><sp/>//<sp/>used</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>case<sp/>6:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>more();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;</highlight></codeline>
+<codeline><highlight class="normal"><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>default:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>no<sp/>action<sp/>needed</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">~~~</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>V.5.<sp/>Clang-Format<sp/>Configuration</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>automatically<sp/>format<sp/>your<sp/>code<sp/>according<sp/>to<sp/>this<sp/>guidelines,<sp/>you<sp/>can<sp/>use</highlight></codeline>
+<codeline><highlight class="normal">clang-format<sp/>with<sp/>the<sp/>configuration</highlight></codeline>
+<codeline><highlight class="normal">[here](https://github.com/machines-in-motion/mpi_cmake_modules/blob/master/python/mpi_cmake_modules/_clang-format).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>VI.<sp/>C/C++<sp/>Coding<sp/>Guidelines</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>VI.1.<sp/>Pass<sp/>objects<sp/>by<sp/>const<sp/>reference</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>general,<sp/>non-primitive<sp/>data<sp/>types<sp/>should<sp/>be<sp/>passed<sp/>to<sp/>functions<sp/>by<sp/>const</highlight></codeline>
+<codeline><highlight class="normal">reference<sp/>instead<sp/>of<sp/>by<sp/>value.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">~~~{.c}</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>foobar(const<sp/>Foo<sp/>&amp;foo);<sp/><sp/>//<sp/>good</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>foobar(Foo<sp/>foo);<sp/><sp/>//<sp/>results<sp/>in<sp/>copy<sp/>of<sp/>`foo`.<sp/>Only<sp/>do<sp/>this<sp/>if<sp/>const</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>reference<sp/>is<sp/>not<sp/>possible<sp/>for<sp/>some<sp/>reason.</highlight></codeline>
+<codeline><highlight class="normal">~~~</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>VI.2.<sp/>@code<sp/>*#pragma<sp/>once*<sp/>@endcode<sp/>vs<sp/>Include<sp/>Guards</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Prefer<sp/>@code<sp/>*#pragma<sp/>once*<sp/>@endcode<sp/>over<sp/>include<sp/>guards.</highlight></codeline>
+<codeline><highlight class="normal">@code<sp/>*#pragma<sp/>once*<sp/>@endcode<sp/>is<sp/>not<sp/>part<sp/>of<sp/>the<sp/>official<sp/>standard<sp/>but<sp/>is<sp/>widely</highlight></codeline>
+<codeline><highlight class="normal">supported<sp/>by<sp/>compilers<sp/>and<sp/>much<sp/>simpler<sp/>to<sp/>maintain.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Note<sp/>that<sp/>there<sp/>are<sp/>some<sp/>border<sp/>cases<sp/>where<sp/>@code<sp/>*#pragma<sp/>once*<sp/>@endcode<sp/>is<sp/>causing<sp/>issues</highlight></codeline>
+<codeline><highlight class="normal">(e.g.<sp/>on<sp/>Windows<sp/>or<sp/>when<sp/>having<sp/>a<sp/>weird<sp/>build<sp/>setup<sp/>with<sp/>symlinks<sp/>or<sp/>copies<sp/>of</highlight></codeline>
+<codeline><highlight class="normal">files).<sp/>In<sp/>such<sp/>cases<sp/>use<sp/>traditional<sp/>include<sp/>guards.<sp/>Make<sp/>sure<sp/>they<sp/>have<sp/>unique</highlight></codeline>
+<codeline><highlight class="normal">names<sp/>by<sp/>composing<sp/>them<sp/>from<sp/>the<sp/>package<sp/>name<sp/>and<sp/>the<sp/>path/name<sp/>of<sp/>the<sp/>file</highlight></codeline>
+<codeline><highlight class="normal">(e.g.<sp/>MY_PACKAGE_PATH_TO_FILE_FILENAME_H).<sp/>Please<sp/>**do<sp/>not**<sp/>add<sp/>underscore<sp/>as</highlight></codeline>
+<codeline><highlight class="normal">prefix<sp/>nor<sp/>suffix<sp/>beccause<sp/>this<sp/>is<sp/>reserved<sp/>for<sp/>the<sp/>compiler<sp/>preproccesor</highlight></codeline>
+<codeline><highlight class="normal">variables.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>VI.3.<sp/>Keep<sp/>scopes<sp/>small</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Avoid<sp/>adding<sp/>anything<sp/>to<sp/>the<sp/>global<sp/>namespace<sp/>if<sp/>possible.<sp/>This<sp/>means</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Use<sp/>a<sp/>namespace<sp/>when<sp/>defining<sp/>extern<sp/>symbols.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Use<sp/>an<sp/>anonymous<sp/>namespace<sp/>or<sp/>static<sp/>for<sp/>symbols<sp/>that<sp/>are<sp/>only<sp/>used<sp/>internally.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Generally<sp/>define<sp/>symbols<sp/>in<sp/>the<sp/>smallest<sp/>possible<sp/>scope,<sp/>i.e.<sp/>if<sp/>a<sp/>variable<sp/>is<sp/></highlight></codeline>
+<codeline><highlight class="normal">only<sp/>used<sp/>inside<sp/>one<sp/>loop,<sp/>define<sp/>it<sp/>inside<sp/>this<sp/>loop<sp/>(however,<sp/>do<sp/>not<sp/>consider<sp/></highlight></codeline>
+<codeline><highlight class="normal">this<sp/>to<sp/>be<sp/>a<sp/>very<sp/>strict<sp/>rule,<sp/>deviate<sp/>from<sp/>it<sp/>where<sp/>it<sp/>seems<sp/>reasonable).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>VI.4.<sp/>Use<sp/>types<sp/>with<sp/>explicit<sp/>sizes</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>header<sp/>stdint<sp/>defines<sp/>primitive<sp/>types<sp/>with<sp/>explicit<sp/>sizes:</highlight></codeline>
+<codeline><highlight class="normal">*int32_t*,<sp/>*uint32_t*,<sp/>*int16_t*,<sp/>...</highlight></codeline>
+<codeline><highlight class="normal">They<sp/>should<sp/>be<sp/>preferred<sp/>over<sp/>the<sp/>build-in<sp/>types<sp/>int,<sp/>unsigned,<sp/>short,<sp/>...</highlight></codeline>
+<codeline><highlight class="normal">To<sp/>use<sp/>them<sp/>add<sp/>the<sp/>following<sp/>include:</highlight></codeline>
+<codeline><highlight class="normal">~~~{.c}</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;stdint&gt;</highlight></codeline>
+<codeline><highlight class="normal">~~~</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="doc/cpp_coding_guidelines.md"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespaceci__example__python_1_1pid" kind="namespace" language="Python">
+    <compoundname>ci_example_python::pid</compoundname>
+    <innerclass refid="classci__example__python_1_1pid_1_1ConfigFileConfiguration" prot="public">ci_example_python::pid::ConfigFileConfiguration</innerclass>
+    <innerclass refid="classci__example__python_1_1pid_1_1DefaultConfiguration" prot="public">ci_example_python::pid::DefaultConfiguration</innerclass>
+    <innerclass refid="classci__example__python_1_1pid_1_1PID" prot="public">ci_example_python::pid::PID</innerclass>
+    <innerclass refid="classci__example__python_1_1pid_1_1RosConfiguration" prot="public">ci_example_python::pid::RosConfiguration</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceci__example__python_1_1pid_1ae3cae0234e7c25f408cddd004494c5ca" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def ci_example_python.pid._read_yaml_config_file</definition>
+        <argsstring>(file_path)</argsstring>
+        <name>_read_yaml_config_file</name>
+        <param>
+          <type>file_path</type>
+          <defname>file_path</defname>
+        </param>
+        <briefdescription>
+<para>Parse a yaml file to get the <ref refid="classci__example__python_1_1pid_1_1PID" kindref="compound">PID</ref> gains. </para>        </briefdescription>
+        <detaileddescription>
+<para>Convenience function for reading pid configuration from yaml file.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>file_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>str <computeroutput>--</computeroutput> Path relative to the execution path or global path. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/ci_example_python/pid.py" line="142" column="1" bodyfile="python/ci_example_python/pid.py" bodystart="142" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceci__example__python_1_1pid_1a6fc811a84ce986b8315aabae71987cbf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def ci_example_python.pid.get_default_pid</definition>
+        <argsstring>()</argsstring>
+        <name>get_default_pid</name>
+        <briefdescription>
+<para>Factory for default <ref refid="classci__example__python_1_1pid_1_1PID" kindref="compound">PID</ref> controller. </para>        </briefdescription>
+        <detaileddescription>
+<para>See <ref refid="classci__example__python_1_1pid_1_1PID" kindref="compound">PID</ref> and see <ref refid="classci__example__python_1_1pid_1_1DefaultConfiguration" kindref="compound">DefaultConfiguration</ref>.</para><para><simplesect kind="return"><para><ref refid="classci__example__python_1_1pid_1_1PID" kindref="compound">PID</ref> <computeroutput>--</computeroutput> a new <ref refid="classci__example__python_1_1pid_1_1PID" kindref="compound">PID</ref> controller based on the <ref refid="classci__example__python_1_1pid_1_1DefaultConfiguration" kindref="compound">DefaultConfiguration</ref>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/ci_example_python/pid.py" line="171" column="1" bodyfile="python/ci_example_python/pid.py" bodystart="171" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceci__example__python_1_1pid_1ae1f8a5e73e269ede0bdd4d0daf2f265e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def ci_example_python.pid.get_ros_params_pid</definition>
+        <argsstring>(verbose=True)</argsstring>
+        <name>get_ros_params_pid</name>
+        <param>
+          <type>verbose</type>
+          <defname>verbose</defname>
+          <defval>True</defval>
+        </param>
+        <briefdescription>
+<para>Get a <ref refid="classci__example__python_1_1pid_1_1PID" kindref="compound">PID</ref> controller paramterized through ROS params. </para>        </briefdescription>
+        <detaileddescription>
+<para>Assumes roscore is running and suitable parameters have been written in the server.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>verbose</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bool <computeroutput>--</computeroutput> True: prints (stdout) the ros parameters it reads.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classci__example__python_1_1pid_1_1PID" kindref="compound">PID</ref> <computeroutput>--</computeroutput> A <ref refid="classci__example__python_1_1pid_1_1PID" kindref="compound">PID</ref> object based on gains read from the ROS parameter server. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/ci_example_python/pid.py" line="186" column="1" bodyfile="python/ci_example_python/pid.py" bodystart="186" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceci__example__python_1_1pid_1a18376955fadc78cf60e9836c120adc9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def ci_example_python.pid.get_config_file_pid</definition>
+        <argsstring>(config_file_path=None, verbose=True)</argsstring>
+        <name>get_config_file_pid</name>
+        <param>
+          <type>config_file_path</type>
+          <defname>config_file_path</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>verbose</type>
+          <defname>verbose</defname>
+          <defval>True</defval>
+        </param>
+        <briefdescription>
+<para>Reads a yaml file and return a corresponding <ref refid="classci__example__python_1_1pid_1_1PID" kindref="compound">PID</ref> controller. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>config_file_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>str <computeroutput>--</computeroutput> Path to configuration file relative to the script where this function is defined is specified in the <ref refid="classci__example__python_1_1pid_1_1ConfigFileConfiguration" kindref="compound">ConfigFileConfiguration</ref> object. If None, uses default config file (in config folder), else used specified path </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>verbose</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bool <computeroutput>--</computeroutput> If True, prints path to config file used to standard output</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classci__example__python_1_1pid_1_1PID" kindref="compound">PID</ref> <computeroutput>--</computeroutput> A <ref refid="classci__example__python_1_1pid_1_1PID" kindref="compound">PID</ref> based on gains read from default configuration file </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/ci_example_python/pid.py" line="227" column="1" bodyfile="python/ci_example_python/pid.py" bodystart="227" bodyend="246"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Brief description of the pid module. </para>    </briefdescription>
+    <detaileddescription>
+<para>More advanced description of this module, e.g. This module contains a 1D <ref refid="classci__example__python_1_1pid_1_1PID" kindref="compound">PID</ref> controller and utilities for managing the gains and the controller parameters. </para>    </detaileddescription>
+    <location file="python/ci_example_python/pid.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

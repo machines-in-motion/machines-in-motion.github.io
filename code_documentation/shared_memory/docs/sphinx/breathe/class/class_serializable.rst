@@ -1,4 +1,0 @@
-Class Serializable
-==================
-
-.. doxygenclass:: Serializable

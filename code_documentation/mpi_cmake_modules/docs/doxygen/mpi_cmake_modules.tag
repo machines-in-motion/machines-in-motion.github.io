@@ -2,12 +2,12 @@
 <tagfile>
   <compound kind="file">
     <name>__init__.py</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/mpi_cmake_modules/python/mpi_cmake_modules/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/mpi_cmake_modules/python/mpi_cmake_modules/</path>
     <filename>____init_____8py</filename>
   </compound>
   <compound kind="file">
     <name>clang_format.py</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/mpi_cmake_modules/python/mpi_cmake_modules/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/mpi_cmake_modules/python/mpi_cmake_modules/</path>
     <filename>clang__format_8py</filename>
     <namespace>mpi_cmake_modules::clang_format::py</namespace>
     <member kind="function">
@@ -55,7 +55,7 @@
   </compound>
   <compound kind="file">
     <name>yaml2oneline.py</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/mpi_cmake_modules/python/mpi_cmake_modules/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/mpi_cmake_modules/python/mpi_cmake_modules/</path>
     <filename>yaml2oneline_8py</filename>
     <namespace>mpi_cmake_modules::yaml2oneline</namespace>
     <member kind="function">
@@ -75,7 +75,7 @@
   </compound>
   <compound kind="file">
     <name>setup.py</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/mpi_cmake_modules/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/mpi_cmake_modules/</path>
     <filename>setup_8py</filename>
     <namespace>setup</namespace>
     <member kind="variable">

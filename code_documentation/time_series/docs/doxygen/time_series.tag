@@ -2,7 +2,7 @@
 <tagfile>
   <compound kind="file">
     <name>demo_multiprocess_read.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/time_series/demos/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/time_series/demos/</path>
     <filename>demo__multiprocess__read_8cpp</filename>
     <member kind="function">
       <type>void</type>
@@ -14,12 +14,12 @@
   </compound>
   <compound kind="file">
     <name>demo_multiprocess_write.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/time_series/demos/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/time_series/demos/</path>
     <filename>demo__multiprocess__write_8cpp</filename>
   </compound>
   <compound kind="file">
     <name>demo_time_series.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/time_series/demos/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/time_series/demos/</path>
     <filename>demo__time__series_8cpp</filename>
     <includes id="time__series_8hpp" name="time_series.hpp" local="yes" imported="no">time_series/time_series.hpp</includes>
     <member kind="function">
@@ -39,13 +39,13 @@
   </compound>
   <compound kind="file">
     <name>interface.hpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/time_series/include/time_series/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/time_series/include/time_series/</path>
     <filename>interface_8hpp</filename>
     <class kind="class">time_series::TimeSeriesInterface</class>
   </compound>
   <compound kind="file">
     <name>time_series.hpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/time_series/include/time_series/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/time_series/include/time_series/</path>
     <filename>time__series_8hpp</filename>
     <includes id="interface_8hpp" name="interface.hpp" local="yes" imported="no">time_series/interface.hpp</includes>
     <class kind="class">time_series::TimeSeries</class>
@@ -118,8 +118,8 @@
       <type>Index</type>
       <name>newest_timeindex</name>
       <anchorfile>classtime__series_1_1internal_1_1TimeSeriesBase.html</anchorfile>
-      <anchor>aac02c35ae67fad14a3567dd01565d058</anchor>
-      <arglist>()</arglist>
+      <anchor>ae0a1c969dce12c09454451eb74f01983</anchor>
+      <arglist>(bool wait=true)</arglist>
     </member>
     <member kind="function">
       <type>Index</type>
@@ -132,8 +132,8 @@
       <type>Index</type>
       <name>oldest_timeindex</name>
       <anchorfile>classtime__series_1_1internal_1_1TimeSeriesBase.html</anchorfile>
-      <anchor>ace0e19f7ce8e25e50cb704ba58a80d35</anchor>
-      <arglist>()</arglist>
+      <anchor>a4e6a5b253566c71972a9470bb33c7d8a</anchor>
+      <arglist>(bool wait=false)</arglist>
     </member>
     <member kind="function">
       <type>T</type>
@@ -211,6 +211,34 @@
       <anchorfile>classtime__series_1_1internal_1_1TimeSeriesBase.html</anchorfile>
       <anchor>a09293ae95cdc492e7de78729b0e0e398</anchor>
       <arglist>(const T &amp;element)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>is_empty</name>
+      <anchorfile>classtime__series_1_1internal_1_1TimeSeriesBase.html</anchorfile>
+      <anchor>acc3fa7fbde0873597358b70d41b7dbd2</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>monitor_signal</name>
+      <anchorfile>classtime__series_1_1internal_1_1TimeSeriesBase.html</anchorfile>
+      <anchor>adac95950208bcb190556db4b8b42cbf0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="private" static="yes">
+      <type>static void</type>
+      <name>throw_if_sigint_received</name>
+      <anchorfile>classtime__series_1_1internal_1_1TimeSeriesBase.html</anchorfile>
+      <anchor>a5033638ac101e5dde69400ff9dcd5fd3</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>std::atomic&lt; bool &gt;</type>
+      <name>is_destructor_called_</name>
+      <anchorfile>classtime__series_1_1internal_1_1TimeSeriesBase.html</anchorfile>
+      <anchor>af341bff555b4e5881ae8426b0e5e9b30</anchor>
+      <arglist></arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -221,8 +249,8 @@
       <type>Index</type>
       <name>newest_timeindex</name>
       <anchorfile>classtime__series_1_1internal_1_1TimeSeriesBase.html</anchorfile>
-      <anchor>aac02c35ae67fad14a3567dd01565d058</anchor>
-      <arglist>()</arglist>
+      <anchor>ae0a1c969dce12c09454451eb74f01983</anchor>
+      <arglist>(bool wait=true)</arglist>
     </member>
     <member kind="function">
       <type>Index</type>
@@ -235,8 +263,8 @@
       <type>Index</type>
       <name>oldest_timeindex</name>
       <anchorfile>classtime__series_1_1internal_1_1TimeSeriesBase.html</anchorfile>
-      <anchor>ace0e19f7ce8e25e50cb704ba58a80d35</anchor>
-      <arglist>()</arglist>
+      <anchor>a4e6a5b253566c71972a9470bb33c7d8a</anchor>
+      <arglist>(bool wait=false)</arglist>
     </member>
     <member kind="function">
       <type>T</type>
@@ -314,6 +342,34 @@
       <anchorfile>classtime__series_1_1internal_1_1TimeSeriesBase.html</anchorfile>
       <anchor>a09293ae95cdc492e7de78729b0e0e398</anchor>
       <arglist>(const T &amp;element)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>is_empty</name>
+      <anchorfile>classtime__series_1_1internal_1_1TimeSeriesBase.html</anchorfile>
+      <anchor>acc3fa7fbde0873597358b70d41b7dbd2</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>monitor_signal</name>
+      <anchorfile>classtime__series_1_1internal_1_1TimeSeriesBase.html</anchorfile>
+      <anchor>adac95950208bcb190556db4b8b42cbf0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="private" static="yes">
+      <type>static void</type>
+      <name>throw_if_sigint_received</name>
+      <anchorfile>classtime__series_1_1internal_1_1TimeSeriesBase.html</anchorfile>
+      <anchor>a5033638ac101e5dde69400ff9dcd5fd3</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>std::atomic&lt; bool &gt;</type>
+      <name>is_destructor_called_</name>
+      <anchorfile>classtime__series_1_1internal_1_1TimeSeriesBase.html</anchorfile>
+      <anchor>af341bff555b4e5881ae8426b0e5e9b30</anchor>
+      <arglist></arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -324,8 +380,8 @@
       <type>Index</type>
       <name>newest_timeindex</name>
       <anchorfile>classtime__series_1_1internal_1_1TimeSeriesBase.html</anchorfile>
-      <anchor>aac02c35ae67fad14a3567dd01565d058</anchor>
-      <arglist>()</arglist>
+      <anchor>ae0a1c969dce12c09454451eb74f01983</anchor>
+      <arglist>(bool wait=true)</arglist>
     </member>
     <member kind="function">
       <type>Index</type>
@@ -338,8 +394,8 @@
       <type>Index</type>
       <name>oldest_timeindex</name>
       <anchorfile>classtime__series_1_1internal_1_1TimeSeriesBase.html</anchorfile>
-      <anchor>ace0e19f7ce8e25e50cb704ba58a80d35</anchor>
-      <arglist>()</arglist>
+      <anchor>a4e6a5b253566c71972a9470bb33c7d8a</anchor>
+      <arglist>(bool wait=false)</arglist>
     </member>
     <member kind="function">
       <type>T</type>
@@ -418,6 +474,34 @@
       <anchor>a09293ae95cdc492e7de78729b0e0e398</anchor>
       <arglist>(const T &amp;element)</arglist>
     </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>is_empty</name>
+      <anchorfile>classtime__series_1_1internal_1_1TimeSeriesBase.html</anchorfile>
+      <anchor>acc3fa7fbde0873597358b70d41b7dbd2</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>monitor_signal</name>
+      <anchorfile>classtime__series_1_1internal_1_1TimeSeriesBase.html</anchorfile>
+      <anchor>adac95950208bcb190556db4b8b42cbf0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="private" static="yes">
+      <type>static void</type>
+      <name>throw_if_sigint_received</name>
+      <anchorfile>classtime__series_1_1internal_1_1TimeSeriesBase.html</anchorfile>
+      <anchor>a5033638ac101e5dde69400ff9dcd5fd3</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>std::atomic&lt; bool &gt;</type>
+      <name>is_destructor_called_</name>
+      <anchorfile>classtime__series_1_1internal_1_1TimeSeriesBase.html</anchorfile>
+      <anchor>af341bff555b4e5881ae8426b0e5e9b30</anchor>
+      <arglist></arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>time_series::TimeSeriesInterface</name>
@@ -427,8 +511,8 @@
       <type>virtual Index</type>
       <name>newest_timeindex</name>
       <anchorfile>classtime__series_1_1TimeSeriesInterface.html</anchorfile>
-      <anchor>a3f15f770cc9620d11ec1e7a123977cf3</anchor>
-      <arglist>()=0</arglist>
+      <anchor>a19127d715b58f95c0e2581576fe80f18</anchor>
+      <arglist>(bool wait=true)=0</arglist>
     </member>
     <member kind="function" virtualness="pure">
       <type>virtual Index</type>
@@ -441,8 +525,8 @@
       <type>virtual Index</type>
       <name>oldest_timeindex</name>
       <anchorfile>classtime__series_1_1TimeSeriesInterface.html</anchorfile>
-      <anchor>a96635723dc065cebb65d63de4f54b4a9</anchor>
-      <arglist>()=0</arglist>
+      <anchor>a3a68de9ecf8bfeb6c05ea89386537307</anchor>
+      <arglist>(bool wait=true)=0</arglist>
     </member>
     <member kind="function" virtualness="pure">
       <type>virtual T</type>
@@ -520,6 +604,13 @@
       <anchorfile>classtime__series_1_1TimeSeriesInterface.html</anchorfile>
       <anchor>a0782c522287cf041fc253529b61041f9</anchor>
       <arglist>(const T &amp;element)=0</arglist>
+    </member>
+    <member kind="function" virtualness="pure">
+      <type>virtual bool</type>
+      <name>is_empty</name>
+      <anchorfile>classtime__series_1_1TimeSeriesInterface.html</anchorfile>
+      <anchor>a932e891f3f41781af4282ada18f05d31</anchor>
+      <arglist>()=0</arglist>
     </member>
   </compound>
   <compound kind="class">

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="md_doc_flake8_plugins" kind="page">
+    <compoundname>md_doc_flake8_plugins</compoundname>
+    <title>List of flake8 Plugins for Popular Editors</title>
+    <detaileddescription>
+<para>Feel free to extend the list if you find a plugin for an editor not yet listed here or a better plugin for one that is already listed.</para><para>Note that you need to be careful to use flake8 for the correct Python version.</para><para><heading level="2">Visual Studio Code</heading>
+</para><para>VS Code already has built-in support for flake8 but it needs to be enabled in the configuration. See <ulink url="https://code.visualstudio.com/docs/python/linting">the official documentation</ulink> for instructions.</para><para><heading level="2">Vim</heading>
+</para><para><heading level="3">Syntastic</heading>
+</para><para><ulink url="https://github.com/vim-syntastic/syntastic">Syntastic</ulink> is a plugin for running external style checkers that can run flake8. <verbatim>let g:syntastic_python_checkers = [&apos;flake8&apos;]
+&quot; to ensure flake8 checks for python 3 code:
+let g:syntastic_python_flake8_exe = &apos;python3 -m flake8&apos;
+</verbatim></para><para><heading level="3">ALE</heading>
+</para><para><ulink url="https://github.com/dense-analysis/ale">ALE</ulink> is a plugin for running linters asynchronously. As it runs the linter in the background, it is preferable over Syntastic, however, it needs Vim version 8 or later or Neovim.</para><para>To ensure using flake for Python 3, use the following configuration: <verbatim>let g:ale_python_flake8_executable = &apos;python3&apos;
+let g:ale_python_flake8_options = &apos;-m flake8&apos;</verbatim> </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

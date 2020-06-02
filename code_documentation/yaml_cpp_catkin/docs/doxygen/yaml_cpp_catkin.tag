@@ -2,14 +2,14 @@
 <tagfile>
   <compound kind="file">
     <name>yaml_cpp_fwd.hpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/yaml_cpp_catkin/include/yaml_cpp_catkin/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/yaml_cpp_catkin/include/yaml_cpp_catkin/</path>
     <filename>yaml__cpp__fwd_8hpp</filename>
     <includes id="yaml__eigen_8h" name="yaml_eigen.h" local="yes" imported="no">yaml_cpp_catkin/yaml_eigen.h</includes>
     <includes id="yaml__tools_8hpp" name="yaml_tools.hpp" local="yes" imported="no">yaml_cpp_catkin/yaml_tools.hpp</includes>
   </compound>
   <compound kind="file">
     <name>yaml_eigen.h</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/yaml_cpp_catkin/include/yaml_cpp_catkin/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/yaml_cpp_catkin/include/yaml_cpp_catkin/</path>
     <filename>yaml__eigen_8h</filename>
     <class kind="struct">robot_math::MovableEigenVector</class>
     <class kind="struct">robot_math::MovableEigenMatrix</class>
@@ -21,7 +21,7 @@
   </compound>
   <compound kind="file">
     <name>yaml_tools.hpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/yaml_cpp_catkin/include/yaml_cpp_catkin/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/yaml_cpp_catkin/include/yaml_cpp_catkin/</path>
     <filename>yaml__tools_8hpp</filename>
     <includes id="yaml__eigen_8h" name="yaml_eigen.h" local="no" imported="no">yaml_cpp_catkin/yaml_eigen.h</includes>
     <member kind="function" static="yes">

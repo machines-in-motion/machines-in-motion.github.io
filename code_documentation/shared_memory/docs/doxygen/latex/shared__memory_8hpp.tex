@@ -5,21 +5,21 @@
 This file declares a class that is used for shared memory segment introspection (e.\+g. used and free memory)  
 
 
-{\ttfamily \#include $<$iostream$>$}\\*
-{\ttfamily \#include $<$map$>$}\\*
-{\ttfamily \#include $<$mutex$>$}\\*
-{\ttfamily \#include $<$string$>$}\\*
-{\ttfamily \#include $<$vector$>$}\\*
-{\ttfamily \#include $<$eigen3/\+Eigen/\+Core$>$}\\*
-{\ttfamily \#include $<$boost/interprocess/allocators/allocator.\+hpp$>$}\\*
-{\ttfamily \#include $<$boost/interprocess/containers/deque.\+hpp$>$}\\*
-{\ttfamily \#include $<$boost/interprocess/containers/string.\+hpp$>$}\\*
-{\ttfamily \#include $<$boost/interprocess/containers/vector.\+hpp$>$}\\*
-{\ttfamily \#include $<$boost/interprocess/managed\+\_\+shared\+\_\+memory.\+hpp$>$}\\*
-{\ttfamily \#include \char`\"{}shared\+\_\+memory/exceptions.\+h\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}shared\+\_\+memory/segment\+\_\+info.\+hpp\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}shared\+\_\+memory/serializer.\+hpp\char`\"{}}\\*
-{\ttfamily \#include $<$shared\+\_\+memory/shared\+\_\+memory.\+hxx$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$eigen3/\+Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$boost/interprocess/allocators/allocator.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/interprocess/containers/deque.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/interprocess/containers/string.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/interprocess/containers/vector.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/interprocess/managed\+\_\+shared\+\_\+memory.\+hpp$>$}\newline
+{\ttfamily \#include \char`\"{}shared\+\_\+memory/exceptions.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}shared\+\_\+memory/segment\+\_\+info.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}shared\+\_\+memory/serializer.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$shared\+\_\+memory/shared\+\_\+memory.\+hxx$>$}\newline
 Include dependency graph for shared\+\_\+memory.\+hpp\+:
 \nopagebreak
 \begin{figure}[H]
@@ -51,34 +51,34 @@ class \hyperlink{classshared__memory_1_1SharedMemorySegment}{shared\+\_\+memory\
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define {\bfseries S\+H\+A\+R\+E\+D\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+H\+PP}\hypertarget{shared__memory_8hpp_af8fac614ab43478ad2a38d973f7ead6a}{}\label{shared__memory_8hpp_af8fac614ab43478ad2a38d973f7ead6a}
-
+\mbox{\Hypertarget{shared__memory_8hpp_af8fac614ab43478ad2a38d973f7ead6a}\label{shared__memory_8hpp_af8fac614ab43478ad2a38d973f7ead6a}} 
+\#define {\bfseries S\+H\+A\+R\+E\+D\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+H\+PP}
 \item 
-\#define {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+H\+A\+R\+E\+D\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+S\+I\+ZE}~65536\hypertarget{shared__memory_8hpp_acd2f5089f8d2870e833cdc9f7af461ec}{}\label{shared__memory_8hpp_acd2f5089f8d2870e833cdc9f7af461ec}
-
+\mbox{\Hypertarget{shared__memory_8hpp_acd2f5089f8d2870e833cdc9f7af461ec}\label{shared__memory_8hpp_acd2f5089f8d2870e833cdc9f7af461ec}} 
+\#define {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+H\+A\+R\+E\+D\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+S\+I\+ZE}~65536
 \item 
-\#define {\bfseries M\+A\+P\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+K\+E\+Y\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR}~\textquotesingle{};\textquotesingle{}\hypertarget{shared__memory_8hpp_af899411657e43cb548bc58ef7d88bec9}{}\label{shared__memory_8hpp_af899411657e43cb548bc58ef7d88bec9}
-
+\mbox{\Hypertarget{shared__memory_8hpp_af899411657e43cb548bc58ef7d88bec9}\label{shared__memory_8hpp_af899411657e43cb548bc58ef7d88bec9}} 
+\#define {\bfseries M\+A\+P\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+K\+E\+Y\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR}~\textquotesingle{};\textquotesingle{}
 \end{DoxyCompactItemize}
 \subsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-typedef std\+::map$<$ std\+::string, std\+::pair$<$ void $\ast$, std\+::size\+\_\+t $>$ $>$ \hyperlink{namespaceshared__memory_ae50b2192256821112a69e47d5314b467}{shared\+\_\+memory\+::\+Shm\+Objects}\hypertarget{namespaceshared__memory_ae50b2192256821112a69e47d5314b467}{}\label{namespaceshared__memory_ae50b2192256821112a69e47d5314b467}
-
+\mbox{\Hypertarget{namespaceshared__memory_ae50b2192256821112a69e47d5314b467}\label{namespaceshared__memory_ae50b2192256821112a69e47d5314b467}} 
+typedef std\+::map$<$ std\+::string, std\+::pair$<$ void $\ast$, std\+::size\+\_\+t $>$ $>$ \hyperlink{namespaceshared__memory_ae50b2192256821112a69e47d5314b467}{shared\+\_\+memory\+::\+Shm\+Objects}
 \begin{DoxyCompactList}\small\item\em Shm\+Objects typedef is a simple renaming that ease the for loop writting. \end{DoxyCompactList}\item 
-typedef Shm\+Type\+Helper$<$ char $>$\+::Elem\+Type\+Allocator \hyperlink{namespaceshared__memory_a36a105df63154c883e86f4282f380647}{shared\+\_\+memory\+::\+Shm\+Char\+Allocator}\hypertarget{namespaceshared__memory_a36a105df63154c883e86f4282f380647}{}\label{namespaceshared__memory_a36a105df63154c883e86f4282f380647}
-
+\mbox{\Hypertarget{namespaceshared__memory_a36a105df63154c883e86f4282f380647}\label{namespaceshared__memory_a36a105df63154c883e86f4282f380647}} 
+typedef Shm\+Type\+Helper$<$ char $>$\+::Elem\+Type\+Allocator \hyperlink{namespaceshared__memory_a36a105df63154c883e86f4282f380647}{shared\+\_\+memory\+::\+Shm\+Char\+Allocator}
 \begin{DoxyCompactList}\small\item\em Create a char allocator to ease the creation of strings. \end{DoxyCompactList}\item 
-typedef std\+::basic\+\_\+string$<$ char, std\+::char\+\_\+traits$<$ char $>$, Shm\+Char\+Allocator $>$ \hyperlink{namespaceshared__memory_a07ee51d077030d33ba8408f5938569cc}{shared\+\_\+memory\+::\+Shm\+String}\hypertarget{namespaceshared__memory_a07ee51d077030d33ba8408f5938569cc}{}\label{namespaceshared__memory_a07ee51d077030d33ba8408f5938569cc}
-
+\mbox{\Hypertarget{namespaceshared__memory_a07ee51d077030d33ba8408f5938569cc}\label{namespaceshared__memory_a07ee51d077030d33ba8408f5938569cc}} 
+typedef std\+::basic\+\_\+string$<$ char, std\+::char\+\_\+traits$<$ char $>$, Shm\+Char\+Allocator $>$ \hyperlink{namespaceshared__memory_a07ee51d077030d33ba8408f5938569cc}{shared\+\_\+memory\+::\+Shm\+String}
 \begin{DoxyCompactList}\small\item\em Create a basic\+\_\+string type for the Shared Memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{namespaceshared__memory_ac8ef94dc78f444092f488f0143b155f2}{shared\+\_\+memory\+::set\+\_\+segment\+\_\+sizes} (uint multiplier\+\_\+1025)
 \begin{DoxyCompactList}\small\item\em sets the size of the segments that will be newly created via the set methods. \end{DoxyCompactList}\item 
-void \hyperlink{namespaceshared__memory_a841687861fcc9efe381ffbe84843ca33}{shared\+\_\+memory\+::set\+\_\+default\+\_\+segment\+\_\+sizes} ()\hypertarget{namespaceshared__memory_a841687861fcc9efe381ffbe84843ca33}{}\label{namespaceshared__memory_a841687861fcc9efe381ffbe84843ca33}
-
+\mbox{\Hypertarget{namespaceshared__memory_a841687861fcc9efe381ffbe84843ca33}\label{namespaceshared__memory_a841687861fcc9efe381ffbe84843ca33}} 
+void \hyperlink{namespaceshared__memory_a841687861fcc9efe381ffbe84843ca33}{shared\+\_\+memory\+::set\+\_\+default\+\_\+segment\+\_\+sizes} ()
 \begin{DoxyCompactList}\small\item\em set the size of segment newly created to the default size value of 65536 \end{DoxyCompactList}\item 
 Shared\+Memory\+Segment \& \hyperlink{namespaceshared__memory_a7c76ec22ab70d3b7487becd3ec9943bc}{shared\+\_\+memory\+::get\+\_\+segment} (const std\+::string \&segment\+\_\+id, const bool clear\+\_\+upon\+\_\+destruction=false)
 \begin{DoxyCompactList}\small\item\em get\+\_\+segment creates or give back a pointer to a \hyperlink{classshared__memory_1_1SharedMemorySegment}{Shared\+Memory\+Segment} object. \end{DoxyCompactList}\item 
@@ -88,8 +88,8 @@ bool \hyperlink{namespaceshared__memory_a82297c2b7b85c57c53578749c9bd6429}{share
 \begin{DoxyCompactList}\small\item\em returns true if a segment exists under this id \end{DoxyCompactList}\item 
 void \hyperlink{namespaceshared__memory_a60cbce63ae7fb64a2758b773f9006471}{shared\+\_\+memory\+::delete\+\_\+segment} (const std\+::string \&segment\+\_\+id)
 \begin{DoxyCompactList}\small\item\em delete\+\_\+segment deletes the segment of existing shared memory. \end{DoxyCompactList}\item 
-void \hyperlink{namespaceshared__memory_a1f88dd41dca9a23387090866213dbd85}{shared\+\_\+memory\+::delete\+\_\+all\+\_\+segment} ()\hypertarget{namespaceshared__memory_a1f88dd41dca9a23387090866213dbd85}{}\label{namespaceshared__memory_a1f88dd41dca9a23387090866213dbd85}
-
+\mbox{\Hypertarget{namespaceshared__memory_a1f88dd41dca9a23387090866213dbd85}\label{namespaceshared__memory_a1f88dd41dca9a23387090866213dbd85}} 
+void \hyperlink{namespaceshared__memory_a1f88dd41dca9a23387090866213dbd85}{shared\+\_\+memory\+::delete\+\_\+all\+\_\+segment} ()
 \begin{DoxyCompactList}\small\item\em delete\+\_\+all\+\_\+segment delete all mapping to the shared memory used during the current process \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Elem\+Type $>$ }\\bool \hyperlink{namespaceshared__memory_a7b43b29fa0aa6a5cad0ca47afdd03e83}{shared\+\_\+memory\+::delete\+\_\+object} (const std\+::string \&segment\+\_\+id, const std\+::string \&object\+\_\+id)
 \begin{DoxyCompactList}\small\item\em delete\+\_\+object deletes a particular object in the shared memory segment \end{DoxyCompactList}\item 

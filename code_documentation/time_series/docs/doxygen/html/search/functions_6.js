@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['oldest_5ftimeindex',['oldest_timeindex',['../classtime__series_1_1TimeSeriesInterface.html#a96635723dc065cebb65d63de4f54b4a9',1,'time_series::TimeSeriesInterface::oldest_timeindex()'],['../classtime__series_1_1internal_1_1TimeSeriesBase.html#ace0e19f7ce8e25e50cb704ba58a80d35',1,'time_series::internal::TimeSeriesBase::oldest_timeindex()']]],
-  ['operator_5b_5d',['operator[]',['../classtime__series_1_1TimeSeriesInterface.html#a3149f64961e08315eb06798d0f075333',1,'time_series::TimeSeriesInterface::operator[]()'],['../classtime__series_1_1internal_1_1TimeSeriesBase.html#aa7267458e4fadff7314037a4bd1d53bb',1,'time_series::internal::TimeSeriesBase::operator[]()']]]
+  ['newest_5felement',['newest_element',['../classtime__series_1_1TimeSeriesInterface.html#ad3b66b6b5f0f763d440731c50e41b4cb',1,'time_series::TimeSeriesInterface::newest_element()'],['../classtime__series_1_1internal_1_1TimeSeriesBase.html#a12bd405933d326fd8396fb2bc1267223',1,'time_series::internal::TimeSeriesBase::newest_element()']]],
+  ['newest_5ftimeindex',['newest_timeindex',['../classtime__series_1_1TimeSeriesInterface.html#a19127d715b58f95c0e2581576fe80f18',1,'time_series::TimeSeriesInterface::newest_timeindex()'],['../classtime__series_1_1internal_1_1TimeSeriesBase.html#ae0a1c969dce12c09454451eb74f01983',1,'time_series::internal::TimeSeriesBase::newest_timeindex()']]]
 ];
