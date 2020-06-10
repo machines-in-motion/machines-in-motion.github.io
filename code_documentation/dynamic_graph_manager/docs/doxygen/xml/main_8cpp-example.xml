@@ -6,18 +6,17 @@
 <para><programlisting><codeline></codeline>
 <codeline><highlight class="preprocessor">#include<sp/>&quot;<ref refid="simple__dgm_8hpp" kindref="compound">simple_dgm.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>[])<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>std::string<sp/>yaml_params_file<sp/>=<sp/>TEST_CONFIG_PATH<sp/>+</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string(</highlight><highlight class="stringliteral">&quot;simple_robot.yaml&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Loading<sp/>paramters<sp/>from<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>yaml_params_file</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>YAML::Node<sp/>param<sp/>=<sp/>YAML::LoadFile(yaml_params_file);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><ref refid="classdynamic__graph__manager_1_1SimpleDGM" kindref="compound">dynamic_graph_manager::SimpleDGM</ref><sp/>dgm;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>[])</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>yaml_params_file<sp/>=</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TEST_CONFIG_PATH<sp/>+<sp/>std::string(</highlight><highlight class="stringliteral">&quot;simple_robot.yaml&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Loading<sp/>paramters<sp/>from<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>yaml_params_file<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>YAML::Node<sp/>param<sp/>=<sp/>YAML::LoadFile(yaml_params_file);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classdynamic__graph__manager_1_1SimpleDGM" kindref="compound">dynamic_graph_manager::SimpleDGM</ref><sp/>dgm;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>dgm.<ref refid="classdynamic__graph_1_1DynamicGraphManager_1ac6859456bbdd4307cb880dc5e54131dd" kindref="member">initialize</ref>(param);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>dgm.<ref refid="classdynamic__graph_1_1DynamicGraphManager_1a93272fcbb3793dfc92422186022ecf72" kindref="member">run</ref>();</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>ros::waitForShutdown();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>dgm.<ref refid="classdynamic__graph_1_1DynamicGraphManager_1ac6859456bbdd4307cb880dc5e54131dd" kindref="member">initialize</ref>(param);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>dgm.<ref refid="classdynamic__graph_1_1DynamicGraphManager_1a93272fcbb3793dfc92422186022ecf72" kindref="member">run</ref>();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ros::waitForShutdown();</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting> </para>    </detaileddescription>
   </compounddef>

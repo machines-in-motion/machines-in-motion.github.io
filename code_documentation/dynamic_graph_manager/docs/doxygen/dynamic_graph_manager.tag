@@ -10,8 +10,8 @@
     <name>simple_dgm.hpp</name>
     <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/demos/</path>
     <filename>simple__dgm_8hpp</filename>
-    <includes id="ros__init_8hh" name="ros_init.hh" local="yes" imported="no">dynamic_graph_manager/ros_init.hh</includes>
     <includes id="dynamic__graph__manager_8hh" name="dynamic_graph_manager.hh" local="yes" imported="no">dynamic_graph_manager/dynamic_graph_manager.hh</includes>
+    <includes id="ros__init_8hh" name="ros_init.hh" local="yes" imported="no">dynamic_graph_manager/ros_init.hh</includes>
     <class kind="class">dynamic_graph_manager::SimpleDGM</class>
     <namespace>dynamic_graph_manager</namespace>
   </compound>
@@ -178,7 +178,7 @@
       <type>std::map&lt; std::string, dynamicgraph::Vector &gt;</type>
       <name>VectorDGMap</name>
       <anchorfile>namespacedynamic__graph.html</anchorfile>
-      <anchor>a51212ed7fa4ae81e7b362a27f09b7ab8</anchor>
+      <anchor>abd184187f3bc15df5e227d866529e4a7</anchor>
       <arglist></arglist>
     </member>
     <member kind="function">
@@ -286,9 +286,9 @@
     <name>ros_queued_subscribe.hh</name>
     <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/include/ros_entities/</path>
     <filename>ros__queued__subscribe_8hh</filename>
-    <includes id="matrix__geometry_8hh" name="matrix_geometry.hh" local="no" imported="no">ros_entities/matrix_geometry.hh</includes>
     <includes id="converter_8hh" name="converter.hh" local="no" imported="no">ros_entities/converter.hh</includes>
     <includes id="dg__to__ros_8hh" name="dg_to_ros.hh" local="no" imported="no">ros_entities/dg_to_ros.hh</includes>
+    <includes id="matrix__geometry_8hh" name="matrix_geometry.hh" local="no" imported="no">ros_entities/matrix_geometry.hh</includes>
     <includes id="ros__queued__subscribe_8hxx" name="ros_queued_subscribe.hxx" local="yes" imported="no">ros_queued_subscribe.hxx</includes>
     <class kind="struct">dynamic_graph::internal::Add</class>
     <class kind="struct">dynamic_graph::internal::BindedSignalBase</class>
@@ -594,8 +594,8 @@
     <name>ros_publish.cpp</name>
     <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/src/ros_entities/</path>
     <filename>ros__publish_8cpp</filename>
-    <includes id="ros__init_8hh" name="ros_init.hh" local="yes" imported="no">dynamic_graph_manager/ros_init.hh</includes>
     <includes id="dynamic__graph__manager_8hh" name="dynamic_graph_manager.hh" local="yes" imported="no">dynamic_graph_manager/dynamic_graph_manager.hh</includes>
+    <includes id="ros__init_8hh" name="ros_init.hh" local="yes" imported="no">dynamic_graph_manager/ros_init.hh</includes>
     <includes id="ros__publish_8hh" name="ros_publish.hh" local="yes" imported="no">ros_entities/ros_publish.hh</includes>
     <namespace>dynamic_graph</namespace>
   </compound>
@@ -603,8 +603,8 @@
     <name>ros_queued_subscribe.cpp</name>
     <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/src/ros_entities/</path>
     <filename>ros__queued__subscribe_8cpp</filename>
-    <includes id="ros__init_8hh" name="ros_init.hh" local="yes" imported="no">dynamic_graph_manager/ros_init.hh</includes>
     <includes id="dynamic__graph__manager_8hh" name="dynamic_graph_manager.hh" local="yes" imported="no">dynamic_graph_manager/dynamic_graph_manager.hh</includes>
+    <includes id="ros__init_8hh" name="ros_init.hh" local="yes" imported="no">dynamic_graph_manager/ros_init.hh</includes>
     <includes id="ros__queued__subscribe_8hh" name="ros_queued_subscribe.hh" local="yes" imported="no">ros_entities/ros_queued_subscribe.hh</includes>
     <namespace>dynamic_graph</namespace>
   </compound>
@@ -612,10 +612,10 @@
     <name>ros_robot_state_publisher.cpp</name>
     <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/src/ros_entities/</path>
     <filename>ros__robot__state__publisher_8cpp</filename>
-    <includes id="ros__init_8hh" name="ros_init.hh" local="yes" imported="no">dynamic_graph_manager/ros_init.hh</includes>
-    <includes id="dynamic__graph__manager_8hh" name="dynamic_graph_manager.hh" local="yes" imported="no">dynamic_graph_manager/dynamic_graph_manager.hh</includes>
-    <includes id="converter_8hh" name="converter.hh" local="yes" imported="no">ros_entities/converter.hh</includes>
     <includes id="ros__robot__state__publisher_8hpp" name="ros_robot_state_publisher.hpp" local="yes" imported="no">ros_entities/ros_robot_state_publisher.hpp</includes>
+    <includes id="dynamic__graph__manager_8hh" name="dynamic_graph_manager.hh" local="yes" imported="no">dynamic_graph_manager/dynamic_graph_manager.hh</includes>
+    <includes id="ros__init_8hh" name="ros_init.hh" local="yes" imported="no">dynamic_graph_manager/ros_init.hh</includes>
+    <includes id="converter_8hh" name="converter.hh" local="yes" imported="no">ros_entities/converter.hh</includes>
     <namespace>dynamic_graph</namespace>
     <namespace>dynamicgraph</namespace>
     <namespace>dynamicgraph::command</namespace>
@@ -625,10 +625,10 @@
     <name>ros_robot_state_publisher_mt.cpp</name>
     <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/src/ros_entities/</path>
     <filename>ros__robot__state__publisher__mt_8cpp</filename>
-    <includes id="ros__init_8hh" name="ros_init.hh" local="yes" imported="no">dynamic_graph_manager/ros_init.hh</includes>
-    <includes id="dynamic__graph__manager_8hh" name="dynamic_graph_manager.hh" local="yes" imported="no">dynamic_graph_manager/dynamic_graph_manager.hh</includes>
-    <includes id="converter_8hh" name="converter.hh" local="yes" imported="no">ros_entities/converter.hh</includes>
     <includes id="ros__robot__state__publisher__mt_8hpp" name="ros_robot_state_publisher_mt.hpp" local="yes" imported="no">ros_entities/ros_robot_state_publisher_mt.hpp</includes>
+    <includes id="dynamic__graph__manager_8hh" name="dynamic_graph_manager.hh" local="yes" imported="no">dynamic_graph_manager/dynamic_graph_manager.hh</includes>
+    <includes id="ros__init_8hh" name="ros_init.hh" local="yes" imported="no">dynamic_graph_manager/ros_init.hh</includes>
+    <includes id="converter_8hh" name="converter.hh" local="yes" imported="no">ros_entities/converter.hh</includes>
     <namespace>dynamic_graph</namespace>
     <namespace>dynamicgraph</namespace>
     <namespace>dynamicgraph::command</namespace>
@@ -638,8 +638,8 @@
     <name>ros_subscribe.cpp</name>
     <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/src/ros_entities/</path>
     <filename>ros__subscribe_8cpp</filename>
-    <includes id="ros__init_8hh" name="ros_init.hh" local="yes" imported="no">dynamic_graph_manager/ros_init.hh</includes>
     <includes id="dynamic__graph__manager_8hh" name="dynamic_graph_manager.hh" local="yes" imported="no">dynamic_graph_manager/dynamic_graph_manager.hh</includes>
+    <includes id="ros__init_8hh" name="ros_init.hh" local="yes" imported="no">dynamic_graph_manager/ros_init.hh</includes>
     <includes id="ros__subscribe_8hh" name="ros_subscribe.hh" local="yes" imported="no">ros_entities/ros_subscribe.hh</includes>
     <namespace>dynamic_graph</namespace>
   </compound>
@@ -647,16 +647,16 @@
     <name>ros_tf_listener.cpp</name>
     <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/src/ros_entities/</path>
     <filename>ros__tf__listener_8cpp</filename>
-    <includes id="ros__init_8hh" name="ros_init.hh" local="yes" imported="no">dynamic_graph_manager/ros_init.hh</includes>
     <includes id="ros__tf__listener_8hh" name="ros_tf_listener.hh" local="yes" imported="no">ros_entities/ros_tf_listener.hh</includes>
+    <includes id="ros__init_8hh" name="ros_init.hh" local="yes" imported="no">dynamic_graph_manager/ros_init.hh</includes>
     <namespace>dynamic_graph</namespace>
   </compound>
   <compound kind="file">
     <name>ros_time.cpp</name>
     <path>/workspace/software/workspace/src/catkin/dg_control/dynamic_graph_manager/src/ros_entities/</path>
     <filename>ros__time_8cpp</filename>
-    <includes id="ros__time_8hh" name="ros_time.hh" local="yes" imported="no">ros_entities/ros_time.hh</includes>
     <includes id="converter_8hh" name="converter.hh" local="yes" imported="no">ros_entities/converter.hh</includes>
+    <includes id="ros__time_8hh" name="ros_time.hh" local="yes" imported="no">ros_entities/ros_time.hh</includes>
     <namespace>dynamic_graph</namespace>
   </compound>
   <compound kind="file">
@@ -1878,14 +1878,14 @@
       <type>boost::function&lt; bool(dynamic_graph_manager::RunCommand::Request &amp;, dynamic_graph_manager::RunCommand::Response &amp;)&gt;</type>
       <name>run_python_command_callback_t</name>
       <anchorfile>classdynamic__graph_1_1RosPythonInterpreter.html</anchorfile>
-      <anchor>aa9fcb34973d84db722fa39803d11c00d</anchor>
+      <anchor>a4ae104e908148e26f0d9c46357ecaf89</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
       <type>boost::function&lt; bool(dynamic_graph_manager::RunPythonFile::Request &amp;, dynamic_graph_manager::RunPythonFile::Response &amp;)&gt;</type>
       <name>run_python_file_callback_t</name>
       <anchorfile>classdynamic__graph_1_1RosPythonInterpreter.html</anchorfile>
-      <anchor>a802128e670817aa48dd8db54830a7977</anchor>
+      <anchor>a7beecaa90bafc03798fd907da9690654</anchor>
       <arglist></arglist>
     </member>
     <member kind="function">
@@ -2313,7 +2313,7 @@
       <type>std::map&lt; std::string, dynamicgraph::Vector &gt;</type>
       <name>VectorDGMap</name>
       <anchorfile>namespacedynamic__graph.html</anchorfile>
-      <anchor>a51212ed7fa4ae81e7b362a27f09b7ab8</anchor>
+      <anchor>abd184187f3bc15df5e227d866529e4a7</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">

@@ -4,9 +4,9 @@
 {\ttfamily \#include \char`\"{}dg\+\_\+to\+\_\+ros.\+hh\char`\"{}}\newline
 {\ttfamily \#include $<$ros/time.\+h$>$}\newline
 {\ttfamily \#include $<$std\+\_\+msgs/\+Header.\+h$>$}\newline
-{\ttfamily \#include $<$boost/static\+\_\+assert.\+hpp$>$}\newline
 {\ttfamily \#include $<$boost/date\+\_\+time/date.\+hpp$>$}\newline
 {\ttfamily \#include $<$boost/date\+\_\+time/posix\+\_\+time/posix\+\_\+time.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/static\+\_\+assert.\+hpp$>$}\newline
 Include dependency graph for converter.\+hh\+:
 \nopagebreak
 \begin{figure}[H]
@@ -192,14 +192,14 @@ Copyright (c) 2019, New York University and Max Planck Gesellschaft.
 
 {\bfseries Value\+:}
 \begin{DoxyCode}
-\textcolor{keyword}{template} <>                             \(\backslash\)
-  inline \textcolor{keywordtype}{void} \hyperlink{namespacedynamic__graph_a38ff488b8b21c0b4f4d7f44572fa4ee5}{converter}                            \(\backslash\)
-  (DgToRos<T>::dg\_t& dst,                       \(\backslash\)
-   const boost::shared\_ptr<DgToRos<T>::ros\_t \textcolor{keyword}{const}>& src)       \(\backslash\)
-  \{                                 \(\backslash\)
-    converter<DgToRos<T>::dg\_t, DgToRos<T>::ros\_t> (dst, *src); \(\backslash\)
-  \}                                 \(\backslash\)
-  struct e\_n\_d\_\_w\_i\_t\_h\_\_s\_e\_m\_i\_c\_o\_l\_o\_n
+\textcolor{keyword}{template} <>                                                    \(\backslash\)
+    inline \textcolor{keywordtype}{void} \hyperlink{namespacedynamic__graph_a38ff488b8b21c0b4f4d7f44572fa4ee5}{converter}(                                         \(\backslash\)
+        DgToRos<T>::dg\_t& dst,                                     \(\backslash\)
+        \textcolor{keyword}{const} boost::shared\_ptr<DgToRos<T>::ros\_t \textcolor{keyword}{const}>& src)     \(\backslash\)
+    \{                                                              \(\backslash\)
+        converter<DgToRos<T>::dg\_t, DgToRos<T>::ros\_t>(dst, *src); \(\backslash\)
+    \}                                                              \(\backslash\)
+    struct e\_n\_d\_\_w\_i\_t\_h\_\_s\_e\_m\_i\_c\_o\_l\_o\_n
 \end{DoxyCode}
 
 
@@ -213,15 +213,17 @@ A converter for the underlying type is required. I.\+e. to convert a shared\+\_\
 
 {\bfseries Value\+:}
 \begin{DoxyCode}
-\textcolor{keyword}{template} <>                             \(\backslash\)
-  inline \textcolor{keywordtype}{void} \hyperlink{namespacedynamic__graph_a38ff488b8b21c0b4f4d7f44572fa4ee5}{converter}                            \(\backslash\)
-  (DgToRos<std::pair<T, Vector> >::dg\_t& dst,           \(\backslash\)
-   const DgToRos<std::pair<T, Vector> >::ros\_t& src)        \(\backslash\)
-  \{                                 \(\backslash\)
-    converter<DgToRos<T>::dg\_t, DgToRos<T>::ros\_t> (dst, src.ATTRIBUTE); \(\backslash\)
-    do \{ EXTRA \} \textcolor{keywordflow}{while} (0);                     \(\backslash\)
-  \}                                 \(\backslash\)
-  struct e\_n\_d\_\_w\_i\_t\_h\_\_s\_e\_m\_i\_c\_o\_l\_o\_n
+\textcolor{keyword}{template} <>                                                             \(\backslash\)
+    inline \textcolor{keywordtype}{void} \hyperlink{namespacedynamic__graph_a38ff488b8b21c0b4f4d7f44572fa4ee5}{converter}(DgToRos<std::pair<T, Vector> >::dg\_t& dst,        \(\backslash\)
+                          \textcolor{keyword}{const} DgToRos<std::pair<T, Vector> >::ros\_t& src) \(\backslash\)
+    \{                                                                       \(\backslash\)
+        converter<DgToRos<T>::dg\_t, DgToRos<T>::ros\_t>(dst, src.ATTRIBUTE); \(\backslash\)
+        do                                                                  \(\backslash\)
+        \{                                                                   \(\backslash\)
+            EXTRA                                                           \(\backslash\)
+        \} \textcolor{keywordflow}{while} (0);                                                        \(\backslash\)
+    \}                                                                       \(\backslash\)
+    struct e\_n\_d\_\_w\_i\_t\_h\_\_s\_e\_m\_i\_c\_o\_l\_o\_n
 \end{DoxyCode}
 
 
@@ -237,16 +239,19 @@ F\+I\+X\+ME\+: the timestamp is not yet forwarded to the dg signal. \mbox{\Hyper
 
 {\bfseries Value\+:}
 \begin{DoxyCode}
-\textcolor{keyword}{template} <>                             \(\backslash\)
-  inline \textcolor{keywordtype}{void} \hyperlink{namespacedynamic__graph_a38ff488b8b21c0b4f4d7f44572fa4ee5}{converter}                            \(\backslash\)
-  (DgToRos<std::pair<T, Vector> >::dg\_t& dst,           \(\backslash\)
-   const boost::shared\_ptr                      \(\backslash\)
-   <DgToRos<std::pair<T, Vector> >::ros\_t \textcolor{keyword}{const}>& src)      \(\backslash\)
-  \{                                 \(\backslash\)
-    converter<DgToRos<T>::dg\_t, DgToRos<T>::ros\_t> (dst, src->ATTRIBUTE); \(\backslash\)
-    do \{ EXTRA \} \textcolor{keywordflow}{while} (0);                     \(\backslash\)
-  \}                                 \(\backslash\)
-  struct e\_n\_d\_\_w\_i\_t\_h\_\_s\_e\_m\_i\_c\_o\_l\_o\_n
+\textcolor{keyword}{template} <>                                                               \(\backslash\)
+    inline \textcolor{keywordtype}{void} \hyperlink{namespacedynamic__graph_a38ff488b8b21c0b4f4d7f44572fa4ee5}{converter}(                                                    \(\backslash\)
+        DgToRos<std::pair<T, Vector> >::dg\_t& dst,                            \(\backslash\)
+        \textcolor{keyword}{const} boost::shared\_ptr<DgToRos<std::pair<T, Vector> >::ros\_t \textcolor{keyword}{const}>& \(\backslash\)
+            src)                                                              \(\backslash\)
+    \{                                                                         \(\backslash\)
+        converter<DgToRos<T>::dg\_t, DgToRos<T>::ros\_t>(dst, src->ATTRIBUTE);  \(\backslash\)
+        do                                                                    \(\backslash\)
+        \{                                                                     \(\backslash\)
+            EXTRA                                                             \(\backslash\)
+        \} \textcolor{keywordflow}{while} (0);                                                          \(\backslash\)
+    \}                                                                         \(\backslash\)
+    struct e\_n\_d\_\_w\_i\_t\_h\_\_s\_e\_m\_i\_c\_o\_l\_o\_n
 \end{DoxyCode}
 
 
@@ -262,16 +267,18 @@ F\+I\+X\+ME\+: the timestamp is not yet forwarded to the dg signal. \mbox{\Hyper
 
 {\bfseries Value\+:}
 \begin{DoxyCode}
-\textcolor{keyword}{template} <>                             \(\backslash\)
-  inline \textcolor{keywordtype}{void} \hyperlink{namespacedynamic__graph_a38ff488b8b21c0b4f4d7f44572fa4ee5}{converter}                            \(\backslash\)
-  (DgToRos<std::pair<T, Vector> >::ros\_t& dst,          \(\backslash\)
-   const DgToRos<std::pair<T, Vector> >::dg\_t& src)     \(\backslash\)
-  \{                                 \(\backslash\)
-    makeHeader(dst.header);                     \(\backslash\)
-    converter<DgToRos<T>::ros\_t, DgToRos<T>::dg\_t> (dst.ATTRIBUTE, src); \(\backslash\)
-    do \{ EXTRA \} \textcolor{keywordflow}{while} (0);                     \(\backslash\)
-  \}                                 \(\backslash\)
-  struct e\_n\_d\_\_w\_i\_t\_h\_\_s\_e\_m\_i\_c\_o\_l\_o\_n
+\textcolor{keyword}{template} <>                                                             \(\backslash\)
+    inline \textcolor{keywordtype}{void} \hyperlink{namespacedynamic__graph_a38ff488b8b21c0b4f4d7f44572fa4ee5}{converter}(DgToRos<std::pair<T, Vector> >::ros\_t& dst,       \(\backslash\)
+                          \textcolor{keyword}{const} DgToRos<std::pair<T, Vector> >::dg\_t& src)  \(\backslash\)
+    \{                                                                       \(\backslash\)
+        makeHeader(dst.header);                                             \(\backslash\)
+        converter<DgToRos<T>::ros\_t, DgToRos<T>::dg\_t>(dst.ATTRIBUTE, src); \(\backslash\)
+        do                                                                  \(\backslash\)
+        \{                                                                   \(\backslash\)
+            EXTRA                                                           \(\backslash\)
+        \} \textcolor{keywordflow}{while} (0);                                                        \(\backslash\)
+    \}                                                                       \(\backslash\)
+    struct e\_n\_d\_\_w\_i\_t\_h\_\_s\_e\_m\_i\_c\_o\_l\_o\_n
 \end{DoxyCode}
 
 
@@ -285,9 +292,8 @@ I.\+e. A data associated with its timestamp. \mbox{\Hypertarget{converter_8hh_a6
 
 {\bfseries Value\+:}
 \begin{DoxyCode}
-\textcolor{keyword}{template} <>                             \(\backslash\)
-  inline \hyperlink{namespacedynamic__graph_a38ff488b8b21c0b4f4d7f44572fa4ee5}{void                               \(\backslash\)}
-\hyperlink{namespacedynamic__graph_a38ff488b8b21c0b4f4d7f44572fa4ee5}{  converter} (DgToRos<T>::ros\_t& dst, \textcolor{keyword}{const} DgToRos<T>::dg\_t& src)
+\textcolor{keyword}{template} <>           \(\backslash\)
+    inline \textcolor{keywordtype}{void} \hyperlink{namespacedynamic__graph_a38ff488b8b21c0b4f4d7f44572fa4ee5}{converter}(DgToRos<T>::ros\_t& dst, \textcolor{keyword}{const} DgToRos<T>::dg\_t& src)
 \end{DoxyCode}
 \mbox{\Hypertarget{converter_8hh_a3d5ba09fc46eae47e88ee8707b6a050f}\label{converter_8hh_a3d5ba09fc46eae47e88ee8707b6a050f}} 
 \index{converter.\+hh@{converter.\+hh}!R\+O\+S\+\_\+\+T\+O\+\_\+\+D\+G\+\_\+\+I\+M\+PL@{R\+O\+S\+\_\+\+T\+O\+\_\+\+D\+G\+\_\+\+I\+M\+PL}}
@@ -297,7 +303,6 @@ I.\+e. A data associated with its timestamp. \mbox{\Hypertarget{converter_8hh_a6
 
 {\bfseries Value\+:}
 \begin{DoxyCode}
-\textcolor{keyword}{template} <>                             \(\backslash\)
-  inline \hyperlink{namespacedynamic__graph_a38ff488b8b21c0b4f4d7f44572fa4ee5}{void                               \(\backslash\)}
-\hyperlink{namespacedynamic__graph_a38ff488b8b21c0b4f4d7f44572fa4ee5}{  converter} (DgToRos<T>::dg\_t& dst, \textcolor{keyword}{const} DgToRos<T>::ros\_t& src)
+\textcolor{keyword}{template} <>           \(\backslash\)
+    inline \textcolor{keywordtype}{void} \hyperlink{namespacedynamic__graph_a38ff488b8b21c0b4f4d7f44572fa4ee5}{converter}(DgToRos<T>::dg\_t& dst, \textcolor{keyword}{const} DgToRos<T>::ros\_t& src)
 \end{DoxyCode}

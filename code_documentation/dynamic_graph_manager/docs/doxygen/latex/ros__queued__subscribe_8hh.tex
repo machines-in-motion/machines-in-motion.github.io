@@ -4,14 +4,14 @@
 {\ttfamily \#include $<$map$>$}\newline
 {\ttfamily \#include $<$boost/shared\+\_\+ptr.\+hpp$>$}\newline
 {\ttfamily \#include $<$boost/thread/mutex.\+hpp$>$}\newline
-{\ttfamily \#include $<$dynamic-\/graph/entity.\+h$>$}\newline
-{\ttfamily \#include $<$dynamic-\/graph/signal-\/time-\/dependent.\+h$>$}\newline
-{\ttfamily \#include $<$dynamic-\/graph/signal-\/ptr.\+h$>$}\newline
 {\ttfamily \#include $<$dynamic-\/graph/command.\+h$>$}\newline
+{\ttfamily \#include $<$dynamic-\/graph/entity.\+h$>$}\newline
+{\ttfamily \#include $<$dynamic-\/graph/signal-\/ptr.\+h$>$}\newline
+{\ttfamily \#include $<$dynamic-\/graph/signal-\/time-\/dependent.\+h$>$}\newline
 {\ttfamily \#include $<$ros/ros.\+h$>$}\newline
-{\ttfamily \#include $<$ros\+\_\+entities/matrix\+\_\+geometry.\+hh$>$}\newline
 {\ttfamily \#include $<$ros\+\_\+entities/converter.\+hh$>$}\newline
 {\ttfamily \#include $<$ros\+\_\+entities/dg\+\_\+to\+\_\+ros.\+hh$>$}\newline
+{\ttfamily \#include $<$ros\+\_\+entities/matrix\+\_\+geometry.\+hh$>$}\newline
 {\ttfamily \#include \char`\"{}ros\+\_\+queued\+\_\+subscribe.\+hxx\char`\"{}}\newline
 Include dependency graph for ros\+\_\+queued\+\_\+subscribe.\+hh\+:
 \nopagebreak
@@ -99,11 +99,10 @@ Copyright (c) 2019, New York University and Max Planck Gesellschaft.
 
 {\bfseries Value\+:}
 \begin{DoxyCode}
-\textcolor{keyword}{class }CMD : \textcolor{keyword}{public} Command          \(\backslash\)
-      \{                         \(\backslash\)
-      public:                       \(\backslash\)
-    CMD (RosQueuedSubscribe& entity,                \(\backslash\)
-         \textcolor{keyword}{const} std::string& docstring);     \(\backslash\)
-    virtual Value doExecute ();         \(\backslash\)
-      \}
+\textcolor{keyword}{class }CMD : \textcolor{keyword}{public} Command                                         \(\backslash\)
+    \{                                                                  \(\backslash\)
+    public:                                                            \(\backslash\)
+        CMD(RosQueuedSubscribe& entity, \textcolor{keyword}{const} std::string& docstring); \(\backslash\)
+        virtual Value doExecute();                                     \(\backslash\)
+    \}
 \end{DoxyCode}

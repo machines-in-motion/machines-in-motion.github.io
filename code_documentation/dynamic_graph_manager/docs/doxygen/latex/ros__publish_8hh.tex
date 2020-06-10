@@ -2,12 +2,12 @@
 \label{ros__publish_8hh}\index{include/ros\+\_\+entities/ros\+\_\+publish.\+hh@{include/ros\+\_\+entities/ros\+\_\+publish.\+hh}}
 {\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$boost/interprocess/sync/interprocess\+\_\+mutex.\+hpp$>$}\newline
 {\ttfamily \#include $<$boost/shared\+\_\+ptr.\+hpp$>$}\newline
 {\ttfamily \#include $<$boost/tuple/tuple.\+hpp$>$}\newline
-{\ttfamily \#include $<$boost/interprocess/sync/interprocess\+\_\+mutex.\+hpp$>$}\newline
+{\ttfamily \#include $<$dynamic-\/graph/command.\+h$>$}\newline
 {\ttfamily \#include $<$dynamic-\/graph/entity.\+h$>$}\newline
 {\ttfamily \#include $<$dynamic-\/graph/signal-\/time-\/dependent.\+h$>$}\newline
-{\ttfamily \#include $<$dynamic-\/graph/command.\+h$>$}\newline
 {\ttfamily \#include $<$ros/ros.\+h$>$}\newline
 {\ttfamily \#include $<$realtime\+\_\+tools/realtime\+\_\+publisher.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}ros\+\_\+entities/converter.\+hh\char`\"{}}\newline
@@ -84,11 +84,10 @@ Copyright (c) 2019, New York University and Max Planck Gesellschaft.
 
 {\bfseries Value\+:}
 \begin{DoxyCode}
-\textcolor{keyword}{class }CMD : \textcolor{keyword}{public} Command          \(\backslash\)
-      \{                         \(\backslash\)
-      public:                       \(\backslash\)
-    CMD (RosPublish& entity,                \(\backslash\)
-         \textcolor{keyword}{const} std::string& docstring);     \(\backslash\)
-    virtual Value doExecute ();         \(\backslash\)
-      \}
+\textcolor{keyword}{class }CMD : \textcolor{keyword}{public} Command                                 \(\backslash\)
+    \{                                                          \(\backslash\)
+    public:                                                    \(\backslash\)
+        CMD(RosPublish& entity, \textcolor{keyword}{const} std::string& docstring); \(\backslash\)
+        virtual Value doExecute();                             \(\backslash\)
+    \}
 \end{DoxyCode}

@@ -3,10 +3,10 @@
 {\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$map$>$}\newline
 {\ttfamily \#include $<$boost/shared\+\_\+ptr.\+hpp$>$}\newline
-{\ttfamily \#include $<$dynamic-\/graph/entity.\+h$>$}\newline
-{\ttfamily \#include $<$dynamic-\/graph/signal-\/time-\/dependent.\+h$>$}\newline
-{\ttfamily \#include $<$dynamic-\/graph/signal-\/ptr.\+h$>$}\newline
 {\ttfamily \#include $<$dynamic-\/graph/command.\+h$>$}\newline
+{\ttfamily \#include $<$dynamic-\/graph/entity.\+h$>$}\newline
+{\ttfamily \#include $<$dynamic-\/graph/signal-\/ptr.\+h$>$}\newline
+{\ttfamily \#include $<$dynamic-\/graph/signal-\/time-\/dependent.\+h$>$}\newline
 {\ttfamily \#include $<$ros\+\_\+entities/matrix\+\_\+geometry.\+hh$>$}\newline
 {\ttfamily \#include $<$ros/ros.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}converter.\+hh\char`\"{}}\newline
@@ -85,11 +85,10 @@ Copyright (c) 2019, New York University and Max Planck Gesellschaft.
 
 {\bfseries Value\+:}
 \begin{DoxyCode}
-\textcolor{keyword}{class }CMD : \textcolor{keyword}{public} Command          \(\backslash\)
-      \{                         \(\backslash\)
-      public:                       \(\backslash\)
-    CMD (RosSubscribe& entity,              \(\backslash\)
-         \textcolor{keyword}{const} std::string& docstring);     \(\backslash\)
-    virtual Value doExecute ();         \(\backslash\)
-      \}
+\textcolor{keyword}{class }CMD : \textcolor{keyword}{public} Command                                   \(\backslash\)
+    \{                                                            \(\backslash\)
+    public:                                                      \(\backslash\)
+        CMD(RosSubscribe& entity, \textcolor{keyword}{const} std::string& docstring); \(\backslash\)
+        virtual Value doExecute();                               \(\backslash\)
+    \}
 \end{DoxyCode}

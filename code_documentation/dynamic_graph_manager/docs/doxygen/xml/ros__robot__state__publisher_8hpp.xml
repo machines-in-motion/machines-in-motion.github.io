@@ -4,56 +4,50 @@
     <compoundname>ros_robot_state_publisher.hpp</compoundname>
     <includes local="no">deque</includes>
     <includes local="no">memory</includes>
-    <includes local="no">dynamic-graph/entity.h</includes>
-    <includes local="no">dynamic-graph/factory.h</includes>
     <includes local="no">dynamic-graph/all-commands.h</includes>
     <includes local="no">dynamic-graph/all-signals.h</includes>
+    <includes local="no">dynamic-graph/entity.h</includes>
+    <includes local="no">dynamic-graph/factory.h</includes>
     <includes local="no">dynamic-graph/linear-algebra.h</includes>
+    <includes local="no">realtime_tools/realtime_publisher.h</includes>
     <includes local="no">ros/ros.h</includes>
     <includes local="no">sensor_msgs/JointState.h</includes>
     <includes local="no">tf2_msgs/TFMessage.h</includes>
-    <includes local="no">realtime_tools/realtime_publisher.h</includes>
     <includedby refid="ros__robot__state__publisher_8cpp" local="yes">src/ros_entities/ros_robot_state_publisher.cpp</includedby>
     <incdepgraph>
-      <node id="535">
+      <node id="540">
         <label>dynamic-graph/factory.h</label>
       </node>
-      <node id="538">
+      <node id="541">
         <label>dynamic-graph/linear-algebra.h</label>
       </node>
-      <node id="536">
+      <node id="537">
         <label>dynamic-graph/all-commands.h</label>
       </node>
-      <node id="540">
+      <node id="544">
         <label>sensor_msgs/JointState.h</label>
       </node>
-      <node id="539">
+      <node id="543">
         <label>ros/ros.h</label>
       </node>
-      <node id="537">
+      <node id="538">
         <label>dynamic-graph/all-signals.h</label>
       </node>
-      <node id="541">
+      <node id="545">
         <label>tf2_msgs/TFMessage.h</label>
       </node>
-      <node id="532">
+      <node id="535">
         <label>deque</label>
       </node>
-      <node id="534">
+      <node id="539">
         <label>dynamic-graph/entity.h</label>
       </node>
       <node id="542">
         <label>realtime_tools/realtime_publisher.h</label>
       </node>
-      <node id="531">
+      <node id="534">
         <label>include/ros_entities/ros_robot_state_publisher.hpp</label>
         <link refid="ros__robot__state__publisher_8hpp"/>
-        <childnode refid="532" relation="include">
-        </childnode>
-        <childnode refid="533" relation="include">
-        </childnode>
-        <childnode refid="534" relation="include">
-        </childnode>
         <childnode refid="535" relation="include">
         </childnode>
         <childnode refid="536" relation="include">
@@ -70,20 +64,26 @@
         </childnode>
         <childnode refid="542" relation="include">
         </childnode>
+        <childnode refid="543" relation="include">
+        </childnode>
+        <childnode refid="544" relation="include">
+        </childnode>
+        <childnode refid="545" relation="include">
+        </childnode>
       </node>
-      <node id="533">
+      <node id="536">
         <label>memory</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="544">
+      <node id="547">
         <label>src/ros_entities/ros_robot_state_publisher.cpp</label>
         <link refid="ros__robot__state__publisher_8cpp"/>
       </node>
-      <node id="543">
+      <node id="546">
         <label>include/ros_entities/ros_robot_state_publisher.hpp</label>
         <link refid="ros__robot__state__publisher_8hpp"/>
-        <childnode refid="544" relation="include">
+        <childnode refid="547" relation="include">
         </childnode>
       </node>
     </invincdepgraph>
@@ -97,20 +97,20 @@
       <memberdef kind="define" id="ros__robot__state__publisher_8hpp_1a9201180ce4ec1ca81883161ab4506350" prot="public" static="no">
         <name>ROS_PUBLISH_MAKE_COMMAND</name>
         <param><defname>CMD</defname></param>
-        <initializer>class CMD : public Command                                     \
-  {                                                              \
-    public:                                                      \
-      CMD (<ref refid="classdynamic__graph_1_1RosRobotStatePublisher" kindref="compound">dynamic_graph::RosRobotStatePublisher</ref>&amp; entity,        \
-           const std::string&amp; docstring);                        \
-      virtual Value doExecute ();                                \
-  }</initializer>
+        <initializer>class CMD : public Command                             \
+    {                                                      \
+    public:                                                \
+        CMD(<ref refid="classdynamic__graph_1_1RosRobotStatePublisher" kindref="compound">dynamic_graph::RosRobotStatePublisher</ref>&amp; entity, \
+            const std::string&amp; docstring);                 \
+        virtual Value doExecute();                         \
+    }</initializer>
         <briefdescription>
 <para>Declare here a couple of python command used for the ros_state publisher. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/ros_entities/ros_robot_state_publisher.hpp" line="184" column="12" bodyfile="include/ros_entities/ros_robot_state_publisher.hpp" bodystart="184" bodyend="-1"/>
+        <location file="include/ros_entities/ros_robot_state_publisher.hpp" line="184" column="9" bodyfile="include/ros_entities/ros_robot_state_publisher.hpp" bodystart="184" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -122,85 +122,84 @@
 </para>    </detaileddescription>
     <programlisting>
 <codeline lineno="1"></codeline>
-<codeline lineno="9"><highlight class="preprocessor">#ifndef<sp/>ROS_ROBOT_STATE_PUBLISHER_HPP</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ROS_ROBOT_STATE_PUBLISHER_HPP</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;deque&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dynamic-graph/entity.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dynamic-graph/factory.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dynamic-graph/all-commands.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dynamic-graph/all-signals.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dynamic-graph/linear-algebra.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>include<sp/>&lt;ros/ros.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>include<sp/>&lt;sensor_msgs/JointState.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>include<sp/>&lt;tf2_msgs/TFMessage.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>include<sp/>&lt;realtime_tools/realtime_publisher.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacedynamic__graph" kindref="compound">dynamic_graph</ref></highlight></codeline>
-<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35" refid="namespacedynamic__graph_1a9d80c350c95e161319d7a6e629ecdc4b" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>dynamicgraph::SignalTimeDependent&lt;int,int&gt;<sp/><ref refid="namespacedynamic__graph_1a9d80c350c95e161319d7a6e629ecdc4b" kindref="member">SignalOUT</ref>;</highlight></codeline>
+<codeline lineno="10"><highlight class="preprocessor">#ifndef<sp/>ROS_ROBOT_STATE_PUBLISHER_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ROS_ROBOT_STATE_PUBLISHER_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;deque&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dynamic-graph/all-commands.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dynamic-graph/all-signals.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dynamic-graph/entity.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dynamic-graph/factory.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dynamic-graph/linear-algebra.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;realtime_tools/realtime_publisher.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ros/ros.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sensor_msgs/JointState.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tf2_msgs/TFMessage.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacedynamic__graph" kindref="compound">dynamic_graph</ref></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35" refid="namespacedynamic__graph_1a9d80c350c95e161319d7a6e629ecdc4b" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>dynamicgraph::SignalTimeDependent&lt;int,<sp/>int&gt;<sp/><ref refid="namespacedynamic__graph_1a9d80c350c95e161319d7a6e629ecdc4b" kindref="member">SignalOUT</ref>;</highlight></codeline>
 <codeline lineno="39" refid="namespacedynamic__graph_1ae1463c695a6915ea3f9ab4311beb527a" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>dynamicgraph::SignalPtr&lt;dynamicgraph::Vector,<sp/>int&gt;<sp/><ref refid="namespacedynamic__graph_1ae1463c695a6915ea3f9ab4311beb527a" kindref="member">SignalIN</ref>;</highlight></codeline>
-<codeline lineno="43" refid="namespacedynamic__graph_1adf7d40f2a8d1425af80c14f90e58e961" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>boost::function&lt;void<sp/>(int)&gt;<sp/><ref refid="namespacedynamic__graph_1adf7d40f2a8d1425af80c14f90e58e961" kindref="member">callback_t</ref>;</highlight></codeline>
+<codeline lineno="43" refid="namespacedynamic__graph_1adf7d40f2a8d1425af80c14f90e58e961" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>boost::function&lt;void(int)&gt;<sp/><ref refid="namespacedynamic__graph_1adf7d40f2a8d1425af80c14f90e58e961" kindref="member">callback_t</ref>;</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"></highlight></codeline>
-<codeline lineno="48"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>realtime_tools::RealtimePublisher&lt;tf2_msgs::TFMessage&gt;</highlight></codeline>
-<codeline lineno="49" refid="namespacedynamic__graph_1ac8d567b9a3d1ab846ba2efdc1ff1e120" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacedynamic__graph_1ac8d567b9a3d1ab846ba2efdc1ff1e120" kindref="member">TfRtPublisher</ref>;</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"></highlight></codeline>
-<codeline lineno="54"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>realtime_tools::RealtimePublisher<sp/>&lt;sensor_msgs::JointState&gt;<sp/></highlight></codeline>
-<codeline lineno="55" refid="namespacedynamic__graph_1ae9ad83c8174a9aa5bc1688df02b4ee95" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacedynamic__graph_1ae9ad83c8174a9aa5bc1688df02b4ee95" kindref="member">JointStateRtPublisher</ref>;</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"></highlight></codeline>
-<codeline lineno="57" refid="structdynamic__graph_1_1RosRobotStatePublisherInternal" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structdynamic__graph_1_1RosRobotStatePublisherInternal" kindref="compound">RosRobotStatePublisherInternal</ref></highlight></codeline>
-<codeline lineno="58"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/>std::shared_ptr&lt;TfRtPublisher&gt;<sp/>base_tf_publisher_;</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/>std::shared_ptr&lt;JointStateRtPublisher&gt;<sp/>joint_state_publisher_;</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/>std::shared_ptr&lt;SignalIN&gt;<sp/>robot_state_input_signal_;</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/>callback_t<sp/>callback_function_;</highlight></codeline>
-<codeline lineno="63"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"></highlight></codeline>
-<codeline lineno="68" refid="classdynamic__graph_1_1RosRobotStatePublisher" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classdynamic__graph_1_1RosRobotStatePublisher" kindref="compound">RosRobotStatePublisher</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>dynamicgraph::Entity</highlight></codeline>
-<codeline lineno="69"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/></highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><ref refid="classdynamic__graph_1_1RosRobotStatePublisher" kindref="compound">RosRobotStatePublisher</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name<sp/>);</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"></highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/>~<ref refid="classdynamic__graph_1_1RosRobotStatePublisher" kindref="compound">RosRobotStatePublisher</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>){}</highlight></codeline>
+<codeline lineno="48" refid="namespacedynamic__graph_1ac8d567b9a3d1ab846ba2efdc1ff1e120" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>realtime_tools::RealtimePublisher&lt;tf2_msgs::TFMessage&gt;<sp/><ref refid="namespacedynamic__graph_1ac8d567b9a3d1ab846ba2efdc1ff1e120" kindref="member">TfRtPublisher</ref>;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>realtime_tools::RealtimePublisher&lt;sensor_msgs::JointState&gt;</highlight></codeline>
+<codeline lineno="54" refid="namespacedynamic__graph_1ae9ad83c8174a9aa5bc1688df02b4ee95" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacedynamic__graph_1ae9ad83c8174a9aa5bc1688df02b4ee95" kindref="member">JointStateRtPublisher</ref>;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="structdynamic__graph_1_1RosRobotStatePublisherInternal" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structdynamic__graph_1_1RosRobotStatePublisherInternal" kindref="compound">RosRobotStatePublisherInternal</ref></highlight></codeline>
+<codeline lineno="57"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;TfRtPublisher&gt;<sp/>base_tf_publisher_;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;JointStateRtPublisher&gt;<sp/>joint_state_publisher_;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;SignalIN&gt;<sp/>robot_state_input_signal_;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>callback_t<sp/>callback_function_;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="classdynamic__graph_1_1RosRobotStatePublisher" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classdynamic__graph_1_1RosRobotStatePublisher" kindref="compound">RosRobotStatePublisher</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>dynamicgraph::Entity</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classdynamic__graph_1_1RosRobotStatePublisher" kindref="compound">RosRobotStatePublisher</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>~<ref refid="classdynamic__graph_1_1RosRobotStatePublisher" kindref="compound">RosRobotStatePublisher</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="75"><highlight class="normal"></highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>add(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>base_link_name,</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>joint_names,</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>tf_prefix,</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>signal_name,</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>joint_state_topic_name);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>add(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>base_link_name,</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>joint_names,</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>tf_prefix,</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>signal_name,</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>joint_state_topic_name);</highlight></codeline>
 <codeline lineno="89"><highlight class="normal"></highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>trigger(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>trigger(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="96"><highlight class="normal"></highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>send_data(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structdynamic__graph_1_1RosRobotStatePublisherInternal" kindref="compound">RosRobotStatePublisherInternal</ref>&amp;<sp/>publisher,</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>time);</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"></highlight></codeline>
-<codeline lineno="103"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="107" refid="classdynamic__graph_1_1RosRobotStatePublisher_1a3794be6383ba4bc9a7412218a755f524" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classdynamic__graph_1_1RosRobotStatePublisher_1a3794be6383ba4bc9a7412218a755f524" kindref="member">CLASS_NAME</ref>;</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"></highlight></codeline>
-<codeline lineno="114" refid="classdynamic__graph_1_1RosRobotStatePublisher_1aa031a669a2c2784c50b558fd2e2b6da3" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="classdynamic__graph_1_1RosRobotStatePublisher_1aa031a669a2c2784c50b558fd2e2b6da3" kindref="member">getClassName</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>CLASS_NAME;<sp/>}</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"></highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>set_tf_msg_to_identity(geometry_msgs::TransformStamped&amp;<sp/>msg);</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"></highlight></codeline>
-<codeline lineno="128"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>normalize_tf_msg_quaternion(geometry_msgs::TransformStamped&amp;<sp/>msg);</highlight></codeline>
-<codeline lineno="129"><highlight class="normal"></highlight></codeline>
-<codeline lineno="135" refid="classdynamic__graph_1_1RosRobotStatePublisher_1a175914c0624474d019cb1360fa9c14e4" refkind="member"><highlight class="normal"><sp/><sp/>SignalOUT<sp/><ref refid="classdynamic__graph_1_1RosRobotStatePublisher_1a175914c0624474d019cb1360fa9c14e4" kindref="member">trigger_signal_</ref>;</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"></highlight></codeline>
-<codeline lineno="141" refid="classdynamic__graph_1_1RosRobotStatePublisher_1a5b494e473d93118cb69320c01dfd772c" refkind="member"><highlight class="normal"><sp/><sp/>ros::NodeHandle&amp;<sp/><ref refid="classdynamic__graph_1_1RosRobotStatePublisher_1a5b494e473d93118cb69320c01dfd772c" kindref="member">ros_node_handle_</ref>;</highlight></codeline>
-<codeline lineno="142"><highlight class="normal"></highlight></codeline>
-<codeline lineno="148" refid="classdynamic__graph_1_1RosRobotStatePublisher_1a556fe3ed8d7c0786e0d6aad4cbb415db" refkind="member"><highlight class="normal"><sp/><sp/>std::map&lt;std::string,<sp/>RosRobotStatePublisherInternal&gt;<sp/><ref refid="classdynamic__graph_1_1RosRobotStatePublisher_1a556fe3ed8d7c0786e0d6aad4cbb415db" kindref="member">publishers_</ref>;</highlight></codeline>
-<codeline lineno="149"><highlight class="normal"></highlight></codeline>
-<codeline lineno="153" refid="classdynamic__graph_1_1RosRobotStatePublisher_1af638eb336998964161a89e4ce76821d1" refkind="member"><highlight class="normal"><sp/><sp/>ros::Duration<sp/><ref refid="classdynamic__graph_1_1RosRobotStatePublisher_1af638eb336998964161a89e4ce76821d1" kindref="member">rate_</ref>;</highlight></codeline>
-<codeline lineno="154"><highlight class="normal"></highlight></codeline>
-<codeline lineno="158" refid="classdynamic__graph_1_1RosRobotStatePublisher_1a000e917f448ac480bfc8b2559d41a4b5" refkind="member"><highlight class="normal"><sp/><sp/>ros::Time<sp/><ref refid="classdynamic__graph_1_1RosRobotStatePublisher_1a000e917f448ac480bfc8b2559d41a4b5" kindref="member">last_time_of_publication_</ref>;</highlight></codeline>
-<codeline lineno="159"><highlight class="normal"></highlight></codeline>
-<codeline lineno="160"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="161"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>dynamic_graph</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>send_data(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structdynamic__graph_1_1RosRobotStatePublisherInternal" kindref="compound">RosRobotStatePublisherInternal</ref>&amp;<sp/>publisher,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>time);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="106" refid="classdynamic__graph_1_1RosRobotStatePublisher_1a3794be6383ba4bc9a7412218a755f524" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classdynamic__graph_1_1RosRobotStatePublisher_1a3794be6383ba4bc9a7412218a755f524" kindref="member">CLASS_NAME</ref>;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="classdynamic__graph_1_1RosRobotStatePublisher_1aa031a669a2c2784c50b558fd2e2b6da3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="classdynamic__graph_1_1RosRobotStatePublisher_1aa031a669a2c2784c50b558fd2e2b6da3" kindref="member">getClassName</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="114"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>CLASS_NAME;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>set_tf_msg_to_identity(geometry_msgs::TransformStamped&amp;<sp/>msg);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>normalize_tf_msg_quaternion(geometry_msgs::TransformStamped&amp;<sp/>msg);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137" refid="classdynamic__graph_1_1RosRobotStatePublisher_1a175914c0624474d019cb1360fa9c14e4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SignalOUT<sp/><ref refid="classdynamic__graph_1_1RosRobotStatePublisher_1a175914c0624474d019cb1360fa9c14e4" kindref="member">trigger_signal_</ref>;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143" refid="classdynamic__graph_1_1RosRobotStatePublisher_1a5b494e473d93118cb69320c01dfd772c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>ros::NodeHandle&amp;<sp/><ref refid="classdynamic__graph_1_1RosRobotStatePublisher_1a5b494e473d93118cb69320c01dfd772c" kindref="member">ros_node_handle_</ref>;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150" refid="classdynamic__graph_1_1RosRobotStatePublisher_1a556fe3ed8d7c0786e0d6aad4cbb415db" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;std::string,<sp/>RosRobotStatePublisherInternal&gt;<sp/><ref refid="classdynamic__graph_1_1RosRobotStatePublisher_1a556fe3ed8d7c0786e0d6aad4cbb415db" kindref="member">publishers_</ref>;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155" refid="classdynamic__graph_1_1RosRobotStatePublisher_1af638eb336998964161a89e4ce76821d1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>ros::Duration<sp/><ref refid="classdynamic__graph_1_1RosRobotStatePublisher_1af638eb336998964161a89e4ce76821d1" kindref="member">rate_</ref>;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160" refid="classdynamic__graph_1_1RosRobotStatePublisher_1a000e917f448ac480bfc8b2559d41a4b5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>ros::Time<sp/><ref refid="classdynamic__graph_1_1RosRobotStatePublisher_1a000e917f448ac480bfc8b2559d41a4b5" kindref="member">last_time_of_publication_</ref>;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="162"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>dynamic_graph</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="163"><highlight class="normal"></highlight></codeline>
 <codeline lineno="164" refid="namespacedynamicgraph" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacedynamicgraph" kindref="compound">dynamicgraph</ref></highlight></codeline>
 <codeline lineno="165"><highlight class="normal">{</highlight></codeline>
@@ -208,29 +207,28 @@
 <codeline lineno="170"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="174" refid="namespacedynamicgraph_1_1command_1_1ros__state__publish" refkind="compound"><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">ros_state_publish</highlight></codeline>
 <codeline lineno="175"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="176"><highlight class="normal"><sp/><sp/>using<sp/>::dynamicgraph::command::Command;</highlight></codeline>
-<codeline lineno="177"><highlight class="normal"><sp/><sp/>using<sp/>::dynamicgraph::command::Value;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal">using<sp/>::dynamicgraph::command::Command;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal">using<sp/>::dynamicgraph::command::Value;</highlight></codeline>
 <codeline lineno="178"><highlight class="normal"></highlight></codeline>
-<codeline lineno="183"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Define<sp/>here<sp/>a<sp/>macro<sp/>that<sp/>automatically<sp/>generates<sp/>a<sp/>command</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="184" refid="ros__robot__state__publisher_8hpp_1a9201180ce4ec1ca81883161ab4506350" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#<sp/>define<sp/>ROS_PUBLISH_MAKE_COMMAND(CMD)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="185"><highlight class="preprocessor"><sp/><sp/>class<sp/>CMD<sp/>:<sp/>public<sp/>Command<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="186"><highlight class="preprocessor"><sp/><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="187"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>public:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="188"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>CMD<sp/>(dynamic_graph::RosRobotStatePublisher&amp;<sp/>entity,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="189"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/>std::string&amp;<sp/>docstring);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="190"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>virtual<sp/>Value<sp/>doExecute<sp/>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="191"><highlight class="preprocessor"><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="comment">//<sp/>Define<sp/>here<sp/>a<sp/>macro<sp/>that<sp/>automatically<sp/>generates<sp/>a<sp/>command</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184" refid="ros__robot__state__publisher_8hpp_1a9201180ce4ec1ca81883161ab4506350" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ROS_PUBLISH_MAKE_COMMAND(CMD)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="185"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>class<sp/>CMD<sp/>:<sp/>public<sp/>Command<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="186"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="187"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>public:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="188"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CMD(dynamic_graph::RosRobotStatePublisher&amp;<sp/>entity,<sp/>\</highlight></codeline>
+<codeline lineno="189"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/>std::string&amp;<sp/>docstring);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="190"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>virtual<sp/>Value<sp/>doExecute();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="191"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="192"><highlight class="normal"></highlight></codeline>
-<codeline lineno="193"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Generate<sp/>a<sp/>couple<sp/>of<sp/>command<sp/>classes</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="194"><highlight class="normal"><sp/><sp/><ref refid="ros__robot__state__publisher_8hpp_1a9201180ce4ec1ca81883161ab4506350" kindref="member">ROS_PUBLISH_MAKE_COMMAND</ref>(Add);</highlight></codeline>
-<codeline lineno="195"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Later<sp/>in<sp/>the<sp/>code<sp/>no<sp/>one<sp/>must<sp/>have<sp/>access<sp/>to<sp/>this<sp/>macro.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="196"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#undef<sp/>ROS_PUBLISH_MAKE_COMMAND</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="197"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>end<sp/>of<sp/>namespace<sp/>ros_state_publish</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="198"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>end<sp/>of<sp/>namespace<sp/>command</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="199"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>end<sp/>of<sp/>namespace<sp/>dynamicgraph</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Generate<sp/>a<sp/>couple<sp/>of<sp/>command<sp/>classes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><ref refid="ros__robot__state__publisher_8hpp_1a9201180ce4ec1ca81883161ab4506350" kindref="member">ROS_PUBLISH_MAKE_COMMAND</ref>(Add);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Later<sp/>in<sp/>the<sp/>code<sp/>no<sp/>one<sp/>must<sp/>have<sp/>access<sp/>to<sp/>this<sp/>macro.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>ROS_PUBLISH_MAKE_COMMAND</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>end<sp/>of<sp/>namespace<sp/>ros_state_publish</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>end<sp/>of<sp/>namespace<sp/>command</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>end<sp/>of<sp/>namespace<sp/>dynamicgraph</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="200"><highlight class="normal"></highlight></codeline>
-<codeline lineno="201"><highlight class="normal"></highlight></codeline>
-<codeline lineno="202"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>ROS_ROBOT_STATE_PUBLISHER_HPP</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>ROS_ROBOT_STATE_PUBLISHER_HPP</highlight></codeline>
     </programlisting>
     <location file="include/ros_entities/ros_robot_state_publisher.hpp"/>
   </compounddef>
