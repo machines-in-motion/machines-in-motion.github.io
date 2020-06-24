@@ -3,22 +3,18 @@
   <compounddef id="iostream_8cpp" kind="file" language="C++">
     <compoundname>iostream.cpp</compoundname>
     <includes local="no">sstream</includes>
-    <includes refid="timer_8hpp" local="yes">real_time_tools/timer.hpp</includes>
     <includes refid="iostream_8hpp" local="yes">real_time_tools/iostream.hpp</includes>
+    <includes refid="timer_8hpp" local="yes">real_time_tools/timer.hpp</includes>
     <incdepgraph>
-      <node id="351">
+      <node id="352">
         <label>cmath</label>
       </node>
-      <node id="349">
+      <node id="354">
         <label>string</label>
       </node>
-      <node id="347">
+      <node id="349">
         <label>real_time_tools/timer.hpp</label>
         <link refid="timer_8hpp"/>
-        <childnode refid="348" relation="include">
-        </childnode>
-        <childnode refid="349" relation="include">
-        </childnode>
         <childnode refid="350" relation="include">
         </childnode>
         <childnode refid="351" relation="include">
@@ -27,8 +23,12 @@
         </childnode>
         <childnode refid="353" relation="include">
         </childnode>
+        <childnode refid="354" relation="include">
+        </childnode>
+        <childnode refid="347" relation="include">
+        </childnode>
       </node>
-      <node id="352">
+      <node id="350">
         <label>unistd.h</label>
       </node>
       <node id="345">
@@ -38,25 +38,25 @@
         </childnode>
         <childnode refid="347" relation="include">
         </childnode>
-        <childnode refid="353" relation="include">
+        <childnode refid="349" relation="include">
         </childnode>
       </node>
-      <node id="354">
+      <node id="348">
         <label>boost/filesystem.hpp</label>
       </node>
       <node id="346">
         <label>sstream</label>
       </node>
-      <node id="350">
+      <node id="353">
         <label>deque</label>
       </node>
-      <node id="348">
+      <node id="351">
         <label>chrono</label>
       </node>
-      <node id="353">
+      <node id="347">
         <label>real_time_tools/iostream.hpp</label>
         <link refid="iostream_8hpp"/>
-        <childnode refid="354" relation="include">
+        <childnode refid="348" relation="include">
         </childnode>
       </node>
     </incdepgraph>
@@ -70,39 +70,39 @@
 </para>    </detaileddescription>
     <programlisting>
 <codeline lineno="1"></codeline>
-<codeline lineno="11"><highlight class="preprocessor">#include<sp/>&lt;sstream&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="timer_8hpp" kindref="compound">real_time_tools/timer.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="preprocessor">#include<sp/>&lt;sstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="iostream_8hpp" kindref="compound">real_time_tools/iostream.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacereal__time__tools" kindref="compound">real_time_tools</ref><sp/>{</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal">std::string<sp/><ref refid="iostream_8hpp_1a5146f16f97588edcc7dbe28641f4a1fd" kindref="member">get_log_dir</ref>(std::string<sp/>app_name)</highlight></codeline>
-<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/>std::string<sp/>log_dir;</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/>std::string<sp/>home_dir<sp/>=<sp/><ref refid="iostream_8hpp_1a21f87296dd11ab3784e7b793033a21ed" kindref="member">real_time_tools::get_home_dir</ref>();</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/>std::string<sp/>date_dir<sp/>=<sp/><ref refid="classreal__time__tools_1_1Timer_1a6e5ef2fc811582b8ff4fe52775525e14" kindref="member">real_time_tools::Timer::get_current_date_str</ref>()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;/&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/>log_dir<sp/>=<sp/>home_dir<sp/>+<sp/>app_name<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;/&quot;</highlight><highlight class="normal"><sp/>+<sp/>date_dir;</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><ref refid="iostream_8hpp_1a4ce01145e1d43fc6f54c3f654de5bd7d" kindref="member">real_time_tools::create_directory</ref>(home_dir<sp/>+<sp/>app_name);</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><ref refid="iostream_8hpp_1a4ce01145e1d43fc6f54c3f654de5bd7d" kindref="member">real_time_tools::create_directory</ref>(log_dir);</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>log_dir;</highlight></codeline>
-<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="iostream_8hpp_1a4ce01145e1d43fc6f54c3f654de5bd7d" kindref="member">create_directory</ref>(std::string<sp/>path)</highlight></codeline>
-<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>boost::filesystem::create_directory(path);</highlight></codeline>
-<codeline lineno="36"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"></highlight></codeline>
-<codeline lineno="38"><highlight class="normal">std::string<sp/><ref refid="iostream_8hpp_1a21f87296dd11ab3784e7b793033a21ed" kindref="member">get_home_dir</ref>()</highlight></codeline>
-<codeline lineno="39"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::string(getenv(</highlight><highlight class="stringliteral">&quot;HOME&quot;</highlight><highlight class="normal">))<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;/&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="normal">}<sp/></highlight><highlight class="comment">//namespace<sp/>real_time_tools</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="timer_8hpp" kindref="compound">real_time_tools/timer.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacereal__time__tools" kindref="compound">real_time_tools</ref></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">std::string<sp/><ref refid="iostream_8hpp_1a5146f16f97588edcc7dbe28641f4a1fd" kindref="member">get_log_dir</ref>(std::string<sp/>app_name)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>log_dir;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>home_dir<sp/>=<sp/><ref refid="iostream_8hpp_1a21f87296dd11ab3784e7b793033a21ed" kindref="member">real_time_tools::get_home_dir</ref>();</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>date_dir<sp/>=<sp/><ref refid="classreal__time__tools_1_1Timer_1a6e5ef2fc811582b8ff4fe52775525e14" kindref="member">real_time_tools::Timer::get_current_date_str</ref>()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;/&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>log_dir<sp/>=<sp/>home_dir<sp/>+<sp/>app_name<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;/&quot;</highlight><highlight class="normal"><sp/>+<sp/>date_dir;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="iostream_8hpp_1a4ce01145e1d43fc6f54c3f654de5bd7d" kindref="member">real_time_tools::create_directory</ref>(home_dir<sp/>+<sp/>app_name);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="iostream_8hpp_1a4ce01145e1d43fc6f54c3f654de5bd7d" kindref="member">real_time_tools::create_directory</ref>(log_dir);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>log_dir;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="iostream_8hpp_1a4ce01145e1d43fc6f54c3f654de5bd7d" kindref="member">create_directory</ref>(std::string<sp/>path)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>boost::filesystem::create_directory(path);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal">std::string<sp/><ref refid="iostream_8hpp_1a21f87296dd11ab3784e7b793033a21ed" kindref="member">get_home_dir</ref>()</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::string(getenv(</highlight><highlight class="stringliteral">&quot;HOME&quot;</highlight><highlight class="normal">))<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;/&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>real_time_tools</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="src/iostream.cpp"/>
   </compounddef>

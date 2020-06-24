@@ -17,55 +17,58 @@ The difference with the \hyperlink{demo__realtime__check_8cpp}{demo\+\_\+realtim
 
 THREAD\_FUNCTION\_RETURN\_TYPE \hyperlink{demo__realtime__strict__check_8cpp_a16919b2a4211953c87d405d40b432427}{thread\_function}(\textcolor{keywordtype}{void}*)
 \{
-  \textcolor{keywordtype}{double} freq = 1000.0; \textcolor{comment}{// 1kz}
-  \textcolor{keywordtype}{double} switch\_freq = 990;
-  \textcolor{keywordtype}{int} nb\_iteration = 1000;
+    \textcolor{keywordtype}{double} freq = 1000.0;  \textcolor{comment}{// 1kz}
+    \textcolor{keywordtype}{double} switch\_freq = 990;
+    \textcolor{keywordtype}{int} nb\_iteration = 1000;
 
-  \textcolor{keywordtype}{unsigned} period = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\textcolor{keyword}{>}(round((1.0/freq) * pow(10.0, 9.0)));
-  my\_clock::duration clock\_period(period);
-  \hyperlink{classreal__time__tools_1_1RealTimeCheck}{real\_time\_tools::RealTimeCheck} rc(freq,switch\_freq);
-  \textcolor{keywordtype}{int} a = 0;
-  my\_clock::time\_point start, \hyperlink{realtime__test_8cpp_aba399b0a6a6e3bd37af95bd04e8def6f}{stop}, mid;
-  my\_clock::duration sleep\_duration\_diff;
-  \textcolor{keyword}{struct }timespec sleep\_duration, out\_sleep;
+    \textcolor{keywordtype}{unsigned} period =
+        \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\textcolor{keyword}{>}(round((1.0 / freq) * pow(10.0, 9.0)));
+    my\_clock::duration clock\_period(period);
+    \hyperlink{classreal__time__tools_1_1RealTimeCheck}{real\_time\_tools::RealTimeCheck} rc(freq, switch\_freq);
+    \textcolor{keywordtype}{int} a = 0;
+    my\_clock::time\_point start, \hyperlink{realtime__test_8cpp_aba399b0a6a6e3bd37af95bd04e8def6f}{stop}, mid;
+    my\_clock::duration sleep\_duration\_diff;
+    \textcolor{keyword}{struct }timespec sleep\_duration, out\_sleep;
 
-  printf(\textcolor{stringliteral}{"reference period is %ld\(\backslash\)n"}, clock\_period.count());
+    printf(\textcolor{stringliteral}{"reference period is %ld\(\backslash\)n"}, clock\_period.count());
 
-  \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0 ; i<nb\_iteration ; ++i)\{
-    start = my\_clock::now();
+    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < nb\_iteration; ++i)
+    \{
+        start = my\_clock::now();
 
-    rc.\hyperlink{classreal__time__tools_1_1RealTimeCheck_a83fdf97352d36aa20e482d7dfae442d5}{tick}();
+        rc.\hyperlink{classreal__time__tools_1_1RealTimeCheck_a83fdf97352d36aa20e482d7dfae442d5}{tick}();
 
+        a++;
+        \textcolor{comment}{// printf("%d %d", sleep\_duration.tv\_nsec, out\_sleep.tv\_nsec);}
+        \textcolor{comment}{// printf("%ld ; %ld ; ", sleep\_duration.tv\_nsec,}
+        \textcolor{comment}{// sleep\_duration\_diff.count()); printf("sleeping time is %ld  \(\backslash\)n",}
+        \textcolor{comment}{// sleep\_duration.tv\_nsec);}
 
-    a++;
-    \textcolor{comment}{//printf("%d %d", sleep\_duration.tv\_nsec, out\_sleep.tv\_nsec);}
-    \textcolor{comment}{//printf("%ld ; %ld ; ", sleep\_duration.tv\_nsec, sleep\_duration\_diff.count());}
-    \textcolor{comment}{//printf("sleeping time is %ld  \(\backslash\)n", sleep\_duration.tv\_nsec);}
+        mid = my\_clock::now();
+        sleep\_duration.tv\_nsec =
+            (clock\_period - sleep\_duration\_diff - (mid - start)).count();
 
-    mid = my\_clock::now();
-    sleep\_duration.tv\_nsec = (clock\_period -
-                              sleep\_duration\_diff -
-                              (mid - start)).count();
+        nanosleep(&sleep\_duration, &out\_sleep);  \textcolor{comment}{// microseconds, so in Ghz}
 
-    nanosleep(&sleep\_duration, &out\_sleep); \textcolor{comment}{// microseconds, so in Ghz}
+        stop = my\_clock::now();
+        sleep\_duration\_diff = my\_clock::duration(
+            (\textcolor{keywordtype}{unsigned})((stop - mid) -
+                       my\_clock::duration(sleep\_duration.tv\_nsec))
+                .count());
+    \}
 
-    stop = my\_clock::now();
-    sleep\_duration\_diff = my\_clock::duration(
-          (\textcolor{keywordtype}{unsigned}) ((stop - mid) - my\_clock::duration(
-                        sleep\_duration.tv\_nsec)).count());
-  \}
+    printf(\textcolor{stringliteral}{"\(\backslash\)n"});
+    rc.\hyperlink{classreal__time__tools_1_1RealTimeCheck_a9c9c68da79843098085204095286a143}{print}();
+    printf(\textcolor{stringliteral}{"\(\backslash\)n"});
 
-  printf(\textcolor{stringliteral}{"\(\backslash\)n"});
-  rc.\hyperlink{classreal__time__tools_1_1RealTimeCheck_a9c9c68da79843098085204095286a143}{print}();
-  printf(\textcolor{stringliteral}{"\(\backslash\)n"});
-
-  \textcolor{keywordflow}{return} THREAD\_FUNCTION\_RETURN\_VALUE;
+    \textcolor{keywordflow}{return} THREAD\_FUNCTION\_RETURN\_VALUE;
 \}
 
-\textcolor{keywordtype}{int} \hyperlink{demo__realtime__strict__check_8cpp_a81ce304348a420752ee080480d2b3095}{main}(\textcolor{keywordtype}{int} , \textcolor{keywordtype}{char}* []) \{
-  \hyperlink{classreal__time__tools_1_1RealTimeThread}{real\_time\_tools::RealTimeThread} thread;
-  thread.\hyperlink{classreal__time__tools_1_1RealTimeThread_a232e3955fee6e80c3a7ded68f165414b}{create\_realtime\_thread}(\hyperlink{demo__realtime__strict__check_8cpp_a16919b2a4211953c87d405d40b432427}{thread\_function});
-  thread.\hyperlink{classreal__time__tools_1_1RealTimeThread_a2f455db9fd80b81e5e69cd22e8529979}{join}();
+\textcolor{keywordtype}{int} \hyperlink{demo__realtime__strict__check_8cpp_a81ce304348a420752ee080480d2b3095}{main}(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{char}* [])
+\{
+    \hyperlink{classreal__time__tools_1_1RealTimeThread}{real\_time\_tools::RealTimeThread} thread;
+    thread.\hyperlink{classreal__time__tools_1_1RealTimeThread_a232e3955fee6e80c3a7ded68f165414b}{create\_realtime\_thread}(\hyperlink{demo__realtime__strict__check_8cpp_a16919b2a4211953c87d405d40b432427}{thread\_function});
+    thread.\hyperlink{classreal__time__tools_1_1RealTimeThread_a2f455db9fd80b81e5e69cd22e8529979}{join}();
 \}
 
 \end{DoxyCodeInclude}

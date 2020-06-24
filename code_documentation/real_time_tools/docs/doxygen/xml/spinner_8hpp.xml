@@ -2,15 +2,15 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="spinner_8hpp" kind="file" language="C++">
     <compoundname>spinner.hpp</compoundname>
-    <includes local="no">chrono</includes>
     <includes local="no">unistd.h</includes>
+    <includes local="no">chrono</includes>
     <includedby refid="demo__spinner_8cpp" local="yes">demos/demo_spinner.cpp</includedby>
     <includedby refid="demo__timing_8cpp" local="yes">demos/demo_timing.cpp</includedby>
     <includedby refid="realtime__test_8cpp" local="yes">src/bin/realtime_test.cpp</includedby>
     <includedby refid="realtime__test__display_8cpp" local="yes">src/bin/realtime_test_display.cpp</includedby>
     <includedby refid="spinner_8cpp" local="no">src/spinner.cpp</includedby>
     <incdepgraph>
-      <node id="188">
+      <node id="187">
         <label>unistd.h</label>
       </node>
       <node id="186">
@@ -21,7 +21,7 @@
         <childnode refid="188" relation="include">
         </childnode>
       </node>
-      <node id="187">
+      <node id="188">
         <label>chrono</label>
       </node>
     </incdepgraph>
@@ -72,46 +72,45 @@
 </para>    </detaileddescription>
     <programlisting>
 <codeline lineno="1"></codeline>
-<codeline lineno="11"><highlight class="preprocessor">#ifndef<sp/>SPINNER_HPP</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SPINNER_HPP</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="preprocessor">#ifndef<sp/>SPINNER_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SPINNER_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacereal__time__tools" kindref="compound">real_time_tools</ref><sp/>{</highlight></codeline>
-<codeline lineno="21" refid="classreal__time__tools_1_1Spinner" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classreal__time__tools_1_1Spinner" kindref="compound">Spinner</ref><sp/>{</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/>public<sp/>:</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>create<sp/>a<sp/>spinner<sp/>for<sp/>the<sp/>desired<sp/>frequency</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1Spinner" kindref="compound">Spinner</ref>();</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="32" refid="classreal__time__tools_1_1Spinner_1ac945d6df02f33e75f499922d23838408" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1Spinner_1ac945d6df02f33e75f499922d23838408" kindref="member">set_period</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>period)</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1Spinner_1ab227dc08a387d25c5c72fd9dcb164272" kindref="member">period_sec_</ref><sp/>=<sp/>period;</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42" refid="classreal__time__tools_1_1Spinner_1afa4e24e5dbbbfa2e0d694ef2e3fa3bb8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1Spinner_1afa4e24e5dbbbfa2e0d694ef2e3fa3bb8" kindref="member">set_frequency</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>frequency)</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1Spinner_1ab227dc08a387d25c5c72fd9dcb164272" kindref="member">period_sec_</ref><sp/>=<sp/>1.0/frequency;</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1Spinner_1aadeb66828ba2635858876491f1ffac11" kindref="member">initialize</ref>();</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"></highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1Spinner_1aa07d4fa32ead44008daa73663508139d" kindref="member">spin</ref>();</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"></highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1Spinner_1a5a55ae6d3b5104b5f23e0f153851eb1d" kindref="member">predict_sleeping_time</ref>();</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"></highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacereal__time__tools" kindref="compound">real_time_tools</ref></highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23" refid="classreal__time__tools_1_1Spinner" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classreal__time__tools_1_1Spinner" kindref="compound">Spinner</ref></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>create<sp/>a<sp/>spinner<sp/>for<sp/>the<sp/>desired<sp/>frequency</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1Spinner" kindref="compound">Spinner</ref>();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="classreal__time__tools_1_1Spinner_1ac945d6df02f33e75f499922d23838408" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1Spinner_1ac945d6df02f33e75f499922d23838408" kindref="member">set_period</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>period)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1Spinner_1ab227dc08a387d25c5c72fd9dcb164272" kindref="member">period_sec_</ref><sp/>=<sp/>period;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="classreal__time__tools_1_1Spinner_1afa4e24e5dbbbfa2e0d694ef2e3fa3bb8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1Spinner_1afa4e24e5dbbbfa2e0d694ef2e3fa3bb8" kindref="member">set_frequency</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>frequency)</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1Spinner_1ab227dc08a387d25c5c72fd9dcb164272" kindref="member">period_sec_</ref><sp/>=<sp/>1.0<sp/>/<sp/>frequency;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1Spinner_1aadeb66828ba2635858876491f1ffac11" kindref="member">initialize</ref>();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1Spinner_1aa07d4fa32ead44008daa73663508139d" kindref="member">spin</ref>();</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1Spinner_1a5a55ae6d3b5104b5f23e0f153851eb1d" kindref="member">predict_sleeping_time</ref>();</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="69" refid="classreal__time__tools_1_1Spinner_1ab227dc08a387d25c5c72fd9dcb164272" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1Spinner_1ab227dc08a387d25c5c72fd9dcb164272" kindref="member">period_sec_</ref>;</highlight></codeline>
 <codeline lineno="70"><highlight class="normal"></highlight></codeline>
 <codeline lineno="74" refid="classreal__time__tools_1_1Spinner_1a1260eb9978b9840df1a21b18f4d6792d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1Spinner_1a1260eb9978b9840df1a21b18f4d6792d" kindref="member">next_date_sec_</ref>;</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"></highlight></codeline>
-<codeline lineno="77"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>real_time_tools</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="78"><highlight class="normal"></highlight></codeline>
-<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>SPINNER_HPP</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>SPINNER_HPP</highlight></codeline>
     </programlisting>
     <location file="include/real_time_tools/spinner.hpp"/>
   </compounddef>

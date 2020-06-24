@@ -5,7 +5,7 @@
     <includes refid="realtime__check_8hpp" local="yes">real_time_tools/realtime_check.hpp</includes>
     <includes local="no">fstream</includes>
     <incdepgraph>
-      <node id="373">
+      <node id="374">
         <label>limits</label>
       </node>
       <node id="370">
@@ -33,10 +33,10 @@
         <childnode refid="376" relation="include">
         </childnode>
       </node>
-      <node id="374">
+      <node id="371">
         <label>math.h</label>
       </node>
-      <node id="371">
+      <node id="373">
         <label>iostream</label>
       </node>
       <node id="375">
@@ -56,164 +56,177 @@
 </para>    </detaileddescription>
     <programlisting>
 <codeline lineno="1"></codeline>
-<codeline lineno="11"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="realtime__check_8hpp" kindref="compound">real_time_tools/realtime_check.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacereal__time__tools" kindref="compound">real_time_tools</ref><sp/>{</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a2f26472092432e628167f89a3a19e27e" kindref="member">RealTimeCheck::RealTimeCheck</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>target_frequency,</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>switch_frequency<sp/>){</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;target_frequency<sp/>=<sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a126c13a50d06703c515b35f87c3e867c" kindref="member">target_frequency</ref>;</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a21b5703a3c61b09955d94d06a3562667" kindref="member">started</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1ae2acb20d9f1e49cc35eb5505d63201aa" kindref="member">ticks</ref><sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1acc235579eeb245f043fd188790540fa9" kindref="member">switchs</ref><sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a3605c41d8c5c616879fa9af469860470" kindref="member">worse_frequency</ref><sp/>=<sp/>std::numeric_limits&lt;double&gt;::max();</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a935b4c6b8ebf569e6510d47376f8499f" kindref="member">current_frequency</ref><sp/>=<sp/>std::numeric_limits&lt;double&gt;::max();</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;switch_frequency<sp/>=<sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a235895032a789539a8ba957caac621ec" kindref="member">switch_frequency</ref>;</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a3ffb6de7e7c01a7248c2293e29b98011" kindref="member">average_frequency</ref><sp/>=<sp/>-1.0;</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a88f45e9151a5709812adddbb5dd142cc" kindref="member">RealTimeCheck::was_realtime_lost</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a21b5703a3c61b09955d94d06a3562667" kindref="member">started</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="12"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="realtime__check_8hpp" kindref="compound">real_time_tools/realtime_check.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacereal__time__tools" kindref="compound">real_time_tools</ref></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><ref refid="classreal__time__tools_1_1RealTimeCheck_1a2f26472092432e628167f89a3a19e27e" kindref="member">RealTimeCheck::RealTimeCheck</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>target_frequency,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>switch_frequency)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;target_frequency<sp/>=<sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a126c13a50d06703c515b35f87c3e867c" kindref="member">target_frequency</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a21b5703a3c61b09955d94d06a3562667" kindref="member">started</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1ae2acb20d9f1e49cc35eb5505d63201aa" kindref="member">ticks</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1acc235579eeb245f043fd188790540fa9" kindref="member">switchs</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a3605c41d8c5c616879fa9af469860470" kindref="member">worse_frequency</ref><sp/>=<sp/>std::numeric_limits&lt;double&gt;::max();</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a935b4c6b8ebf569e6510d47376f8499f" kindref="member">current_frequency</ref><sp/>=<sp/>std::numeric_limits&lt;double&gt;::max();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;switch_frequency<sp/>=<sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a235895032a789539a8ba957caac621ec" kindref="member">switch_frequency</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a3ffb6de7e7c01a7248c2293e29b98011" kindref="member">average_frequency</ref><sp/>=<sp/>-1.0;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a88f45e9151a5709812adddbb5dd142cc" kindref="member">RealTimeCheck::was_realtime_lost</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="30"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a21b5703a3c61b09955d94d06a3562667" kindref="member">started</ref>)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"></highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1acc235579eeb245f043fd188790540fa9" kindref="member">switchs</ref>&gt;0){</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1acc235579eeb245f043fd188790540fa9" kindref="member">switchs</ref><sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a83fdf97352d36aa20e482d7dfae442d5" kindref="member">RealTimeCheck::tick</ref>(){</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a83fdf97352d36aa20e482d7dfae442d5" kindref="member">RealTimeCheck::tick</ref>()</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>std::lock_guard&lt;std::mutex&gt;<sp/>guard(this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a3a7cc4ef87fac5e4052a3240aced88d1" kindref="member">mutex</ref>);</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
 <codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::high_resolution_clock::time_point<sp/>t<sp/>=</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::chrono::high_resolution_clock::now();</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1ae2acb20d9f1e49cc35eb5505d63201aa" kindref="member">ticks</ref><sp/>+=1;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1ae2acb20d9f1e49cc35eb5505d63201aa" kindref="member">ticks</ref><sp/>+=<sp/>1;</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1ae2acb20d9f1e49cc35eb5505d63201aa" kindref="member">ticks</ref>&gt;=std::numeric_limits&lt;uint&gt;::max()-1){</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a21b5703a3c61b09955d94d06a3562667" kindref="member">started</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"></highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a21b5703a3c61b09955d94d06a3562667" kindref="member">started</ref>){</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a969600ce8ecc4ec48bbf59e8d669749e" kindref="member">start_time</ref><sp/>=<sp/>t;</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a3e200c0376362dcc9a7db7d77a124931" kindref="member">last_tick</ref><sp/>=<sp/>t;</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a21b5703a3c61b09955d94d06a3562667" kindref="member">started</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"></highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>checking<sp/>if<sp/>current<sp/>frequency<sp/>(as<sp/>of<sp/>previous<sp/>tick)<sp/>is<sp/>fine</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1ae2acb20d9f1e49cc35eb5505d63201aa" kindref="member">ticks</ref><sp/>&gt;=<sp/>std::numeric_limits&lt;uint&gt;::max()<sp/>-<sp/>1)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a21b5703a3c61b09955d94d06a3562667" kindref="member">started</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a21b5703a3c61b09955d94d06a3562667" kindref="member">started</ref>)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a969600ce8ecc4ec48bbf59e8d669749e" kindref="member">start_time</ref><sp/>=<sp/>t;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a3e200c0376362dcc9a7db7d77a124931" kindref="member">last_tick</ref><sp/>=<sp/>t;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a21b5703a3c61b09955d94d06a3562667" kindref="member">started</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="66"><highlight class="normal"></highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>nanos=<sp/>std::chrono::duration_cast&lt;std::chrono::nanoseconds&gt;(t-this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a3e200c0376362dcc9a7db7d77a124931" kindref="member">last_tick</ref>).count();</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>one<sp/>=<sp/>1.0;</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"></highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a935b4c6b8ebf569e6510d47376f8499f" kindref="member">current_frequency</ref><sp/>=<sp/>one<sp/>/<sp/>(<sp/>pow(10.0,-9.0)<sp/>*<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(nanos)<sp/>);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>checking<sp/>if<sp/>current<sp/>frequency<sp/>(as<sp/>of<sp/>previous<sp/>tick)<sp/>is<sp/>fine</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>nanos<sp/>=<sp/>std::chrono::duration_cast&lt;std::chrono::nanoseconds&gt;(</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>t<sp/>-<sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a3e200c0376362dcc9a7db7d77a124931" kindref="member">last_tick</ref>)</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.count();</highlight></codeline>
 <codeline lineno="72"><highlight class="normal"></highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(current_frequency<sp/>&lt;<sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a235895032a789539a8ba957caac621ec" kindref="member">switch_frequency</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1acc235579eeb245f043fd188790540fa9" kindref="member">switchs</ref><sp/>+=<sp/>1;</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>one<sp/>=<sp/>1.0;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a935b4c6b8ebf569e6510d47376f8499f" kindref="member">current_frequency</ref><sp/>=<sp/>one<sp/>/<sp/>(pow(10.0,<sp/>-9.0)<sp/>*<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(nanos));</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"></highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(current_frequency<sp/>&lt;<sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a3605c41d8c5c616879fa9af469860470" kindref="member">worse_frequency</ref>){</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;worse_frequency<sp/>=<sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a935b4c6b8ebf569e6510d47376f8499f" kindref="member">current_frequency</ref>;</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"></highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>updating<sp/>global<sp/>frequency</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>nanos<sp/>=<sp/>std::chrono::duration_cast&lt;std::chrono::nanoseconds&gt;(t-this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a969600ce8ecc4ec48bbf59e8d669749e" kindref="member">start_time</ref>).count();</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a3ffb6de7e7c01a7248c2293e29b98011" kindref="member">average_frequency</ref><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1ae2acb20d9f1e49cc35eb5505d63201aa" kindref="member">ticks</ref>)<sp/>/<sp/>(<sp/>pow(10.0,-9.0)<sp/>*<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(nanos)<sp/>);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(current_frequency<sp/>&lt;<sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a235895032a789539a8ba957caac621ec" kindref="member">switch_frequency</ref>)</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1acc235579eeb245f043fd188790540fa9" kindref="member">switchs</ref><sp/>+=<sp/>1;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(current_frequency<sp/>&lt;<sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a3605c41d8c5c616879fa9af469860470" kindref="member">worse_frequency</ref>)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;worse_frequency<sp/>=<sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a935b4c6b8ebf569e6510d47376f8499f" kindref="member">current_frequency</ref>;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="86"><highlight class="normal"></highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>preparing<sp/>for<sp/>next<sp/>iteration</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>updating<sp/>global<sp/>frequency</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="88"><highlight class="normal"></highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a3e200c0376362dcc9a7db7d77a124931" kindref="member">last_tick</ref><sp/>=<sp/>t;</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"></highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>nanos<sp/>=<sp/>std::chrono::duration_cast&lt;std::chrono::nanoseconds&gt;(</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>t<sp/>-<sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a969600ce8ecc4ec48bbf59e8d669749e" kindref="member">start_time</ref>)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.count();</highlight></codeline>
 <codeline lineno="92"><highlight class="normal"></highlight></codeline>
-<codeline lineno="93"><highlight class="normal"></highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a375f76a8df6a08ea1755728391384302" kindref="member">RealTimeCheck::get_current_frequency</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="95"><highlight class="keyword"><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a935b4c6b8ebf569e6510d47376f8499f" kindref="member">current_frequency</ref>;</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight></codeline>
-<codeline lineno="99"><highlight class="normal"></highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a4d9614b08d2b4bf7162e14c473b7d491" kindref="member">RealTimeCheck::get_statistics</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>&amp;<ref refid="classreal__time__tools_1_1RealTimeCheck_1ae2acb20d9f1e49cc35eb5505d63201aa" kindref="member">ticks</ref>,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>&amp;<ref refid="classreal__time__tools_1_1RealTimeCheck_1acc235579eeb245f043fd188790540fa9" kindref="member">switchs</ref>,</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>&amp;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a126c13a50d06703c515b35f87c3e867c" kindref="member">target_frequency</ref>,</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>&amp;switch_frequency,</highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>&amp;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a3ffb6de7e7c01a7248c2293e29b98011" kindref="member">average_frequency</ref>,</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>&amp;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a935b4c6b8ebf569e6510d47376f8499f" kindref="member">current_frequency</ref>,</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>&amp;worse_frequency)<sp/>{</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"></highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>std::lock_guard&lt;std::mutex&gt;<sp/>guard(this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a3a7cc4ef87fac5e4052a3240aced88d1" kindref="member">mutex</ref>);</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a21b5703a3c61b09955d94d06a3562667" kindref="member">started</ref>){</highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"></highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>ticks<sp/>=<sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1ae2acb20d9f1e49cc35eb5505d63201aa" kindref="member">ticks</ref>;</highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>switchs<sp/>=<sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1acc235579eeb245f043fd188790540fa9" kindref="member">switchs</ref>;</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>average_frequency<sp/>=<sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a3ffb6de7e7c01a7248c2293e29b98011" kindref="member">average_frequency</ref>;</highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>worse_frequency<sp/>=<sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a3605c41d8c5c616879fa9af469860470" kindref="member">worse_frequency</ref>;</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>current_frequency<sp/>=<sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a935b4c6b8ebf569e6510d47376f8499f" kindref="member">current_frequency</ref>;</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>target_frequency<sp/>=<sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a126c13a50d06703c515b35f87c3e867c" kindref="member">target_frequency</ref>;</highlight></codeline>
-<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>switch_frequency<sp/>=<sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a235895032a789539a8ba957caac621ec" kindref="member">switch_frequency</ref>;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a3ffb6de7e7c01a7248c2293e29b98011" kindref="member">average_frequency</ref><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1ae2acb20d9f1e49cc35eb5505d63201aa" kindref="member">ticks</ref>)<sp/>/</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(pow(10.0,<sp/>-9.0)<sp/>*<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(nanos));</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>preparing<sp/>for<sp/>next<sp/>iteration</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a3e200c0376362dcc9a7db7d77a124931" kindref="member">last_tick</ref><sp/>=<sp/>t;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a375f76a8df6a08ea1755728391384302" kindref="member">RealTimeCheck::get_current_frequency</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="102"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a935b4c6b8ebf569e6510d47376f8499f" kindref="member">current_frequency</ref>;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a4d9614b08d2b4bf7162e14c473b7d491" kindref="member">RealTimeCheck::get_statistics</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>&amp;<ref refid="classreal__time__tools_1_1RealTimeCheck_1ae2acb20d9f1e49cc35eb5505d63201aa" kindref="member">ticks</ref>,</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>&amp;<ref refid="classreal__time__tools_1_1RealTimeCheck_1acc235579eeb245f043fd188790540fa9" kindref="member">switchs</ref>,</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>&amp;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a126c13a50d06703c515b35f87c3e867c" kindref="member">target_frequency</ref>,</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>&amp;switch_frequency,</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>&amp;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a3ffb6de7e7c01a7248c2293e29b98011" kindref="member">average_frequency</ref>,</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>&amp;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a935b4c6b8ebf569e6510d47376f8499f" kindref="member">current_frequency</ref>,</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>&amp;worse_frequency)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>std::lock_guard&lt;std::mutex&gt;<sp/>guard(this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a3a7cc4ef87fac5e4052a3240aced88d1" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a21b5703a3c61b09955d94d06a3562667" kindref="member">started</ref>)</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="120"><highlight class="normal"></highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"></highlight></codeline>
-<codeline lineno="123"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="124"><highlight class="normal"></highlight></codeline>
-<codeline lineno="125"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a2b891d59055829fab442ba4c382778e3" kindref="member">RealTimeCheck::get_average_frequency</ref>()</highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="127"><highlight class="normal"></highlight></codeline>
-<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>std::lock_guard&lt;std::mutex&gt;<sp/>guard(this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a3a7cc4ef87fac5e4052a3240aced88d1" kindref="member">mutex</ref>);</highlight></codeline>
-<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a21b5703a3c61b09955d94d06a3562667" kindref="member">started</ref>){</highlight></codeline>
-<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1.0;</highlight></codeline>
-<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="133"><highlight class="normal"></highlight></codeline>
-<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a3ffb6de7e7c01a7248c2293e29b98011" kindref="member">average_frequency</ref>;</highlight></codeline>
-<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="137"><highlight class="normal"></highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/></highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a9c9c68da79843098085204095286a143" kindref="member">RealTimeCheck::print</ref>(){</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>ticks<sp/>=<sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1ae2acb20d9f1e49cc35eb5505d63201aa" kindref="member">ticks</ref>;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>switchs<sp/>=<sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1acc235579eeb245f043fd188790540fa9" kindref="member">switchs</ref>;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>average_frequency<sp/>=<sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a3ffb6de7e7c01a7248c2293e29b98011" kindref="member">average_frequency</ref>;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>worse_frequency<sp/>=<sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a3605c41d8c5c616879fa9af469860470" kindref="member">worse_frequency</ref>;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>current_frequency<sp/>=<sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a935b4c6b8ebf569e6510d47376f8499f" kindref="member">current_frequency</ref>;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>target_frequency<sp/>=<sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a126c13a50d06703c515b35f87c3e867c" kindref="member">target_frequency</ref>;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>switch_frequency<sp/>=<sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a235895032a789539a8ba957caac621ec" kindref="member">switch_frequency</ref>;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a2b891d59055829fab442ba4c382778e3" kindref="member">RealTimeCheck::get_average_frequency</ref>()</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>std::lock_guard&lt;std::mutex&gt;<sp/>guard(this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a3a7cc4ef87fac5e4052a3240aced88d1" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a21b5703a3c61b09955d94d06a3562667" kindref="member">started</ref>)</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1.0;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="140"><highlight class="normal"></highlight></codeline>
-<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1ae2acb20d9f1e49cc35eb5505d63201aa" kindref="member">ticks</ref>,<ref refid="classreal__time__tools_1_1RealTimeCheck_1acc235579eeb245f043fd188790540fa9" kindref="member">switchs</ref>;</highlight></codeline>
-<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a3ffb6de7e7c01a7248c2293e29b98011" kindref="member">average_frequency</ref>;</highlight></codeline>
-<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a3605c41d8c5c616879fa9af469860470" kindref="member">worse_frequency</ref>;</highlight></codeline>
-<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a935b4c6b8ebf569e6510d47376f8499f" kindref="member">current_frequency</ref>;</highlight></codeline>
-<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a126c13a50d06703c515b35f87c3e867c" kindref="member">target_frequency</ref>;</highlight></codeline>
-<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a235895032a789539a8ba957caac621ec" kindref="member">switch_frequency</ref>;</highlight></codeline>
-<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>ret<sp/>=<sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a4d9614b08d2b4bf7162e14c473b7d491" kindref="member">get_statistics</ref>(ticks,switchs,<sp/>target_frequency,<sp/>switch_frequency,</highlight></codeline>
-<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>average_frequency,<sp/>current_frequency,</highlight></codeline>
-<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>worse_frequency);</highlight></codeline>
-<codeline lineno="151"><highlight class="normal"></highlight></codeline>
-<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!ret){</highlight></codeline>
-<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>get<sp/>results<sp/>from<sp/>realtime<sp/>check\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;nb<sp/>ticks:<sp/>%d\t&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;nb<sp/>switchs:<sp/>%d<sp/>(i.e<sp/>below<sp/>%f)\t&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;target_freq:<sp/>%f\t&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;average:<sp/>%f\t&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;current:<sp/>%f\t&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;worse:<sp/>%f\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ticks,<sp/>switchs,<sp/>switch_frequency,target_frequency,</highlight></codeline>
-<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>average_frequency,current_frequency,</highlight></codeline>
-<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>worse_frequency);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="classreal__time__tools_1_1RealTimeCheck_1a3ffb6de7e7c01a7248c2293e29b98011" kindref="member">average_frequency</ref>;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a9c9c68da79843098085204095286a143" kindref="member">RealTimeCheck::print</ref>()</highlight></codeline>
+<codeline lineno="145"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1ae2acb20d9f1e49cc35eb5505d63201aa" kindref="member">ticks</ref>,<sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1acc235579eeb245f043fd188790540fa9" kindref="member">switchs</ref>;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a3ffb6de7e7c01a7248c2293e29b98011" kindref="member">average_frequency</ref>;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a3605c41d8c5c616879fa9af469860470" kindref="member">worse_frequency</ref>;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a935b4c6b8ebf569e6510d47376f8499f" kindref="member">current_frequency</ref>;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a126c13a50d06703c515b35f87c3e867c" kindref="member">target_frequency</ref>;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a235895032a789539a8ba957caac621ec" kindref="member">switch_frequency</ref>;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>ret<sp/>=<sp/><ref refid="classreal__time__tools_1_1RealTimeCheck_1a4d9614b08d2b4bf7162e14c473b7d491" kindref="member">get_statistics</ref>(ticks,</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>switchs,</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>target_frequency,</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>switch_frequency,</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>average_frequency,</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>current_frequency,</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>worse_frequency);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!ret)</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>get<sp/>results<sp/>from<sp/>realtime<sp/>check\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="166"><highlight class="normal"></highlight></codeline>
-<codeline lineno="167"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="168"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;nb<sp/>ticks:<sp/>%d\t&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;nb<sp/>switchs:<sp/>%d<sp/>(i.e<sp/>below<sp/>%f)\t&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;target_freq:<sp/>%f\t&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;average:<sp/>%f\t&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;current:<sp/>%f\t&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;worse:<sp/>%f\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ticks,</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>switchs,</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>switch_frequency,</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>target_frequency,</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>average_frequency,</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>current_frequency,</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>worse_frequency);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="182"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>real_time_tools</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="src/realtime_check.cpp"/>
   </compounddef>

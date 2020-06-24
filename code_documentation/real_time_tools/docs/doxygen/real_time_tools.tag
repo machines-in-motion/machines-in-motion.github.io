@@ -39,9 +39,9 @@
     <name>demo_realtime_check.cpp</name>
     <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/demos/</path>
     <filename>demo__realtime__check_8cpp</filename>
-    <includes id="timer_8hpp" name="timer.hpp" local="yes" imported="no">real_time_tools/timer.hpp</includes>
     <includes id="realtime__check_8hpp" name="realtime_check.hpp" local="yes" imported="no">real_time_tools/realtime_check.hpp</includes>
     <includes id="thread_8hpp" name="thread.hpp" local="yes" imported="no">real_time_tools/thread.hpp</includes>
+    <includes id="timer_8hpp" name="timer.hpp" local="yes" imported="no">real_time_tools/timer.hpp</includes>
     <member kind="function">
       <type>THREAD_FUNCTION_RETURN_TYPE</type>
       <name>thread_function</name>
@@ -89,9 +89,9 @@
     <name>demo_spinner.cpp</name>
     <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/demos/</path>
     <filename>demo__spinner_8cpp</filename>
+    <includes id="realtime__check_8hpp" name="realtime_check.hpp" local="yes" imported="no">real_time_tools/realtime_check.hpp</includes>
     <includes id="spinner_8hpp" name="spinner.hpp" local="yes" imported="no">real_time_tools/spinner.hpp</includes>
     <includes id="thread_8hpp" name="thread.hpp" local="yes" imported="no">real_time_tools/thread.hpp</includes>
-    <includes id="realtime__check_8hpp" name="realtime_check.hpp" local="yes" imported="no">real_time_tools/realtime_check.hpp</includes>
     <member kind="function">
       <type>THREAD_FUNCTION_RETURN_TYPE</type>
       <name>thread_function</name>
@@ -118,9 +118,9 @@
     <name>demo_timing.cpp</name>
     <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/demos/</path>
     <filename>demo__timing_8cpp</filename>
+    <includes id="realtime__check_8hpp" name="realtime_check.hpp" local="yes" imported="no">real_time_tools/realtime_check.hpp</includes>
     <includes id="spinner_8hpp" name="spinner.hpp" local="yes" imported="no">real_time_tools/spinner.hpp</includes>
     <includes id="thread_8hpp" name="thread.hpp" local="yes" imported="no">real_time_tools/thread.hpp</includes>
-    <includes id="realtime__check_8hpp" name="realtime_check.hpp" local="yes" imported="no">real_time_tools/realtime_check.hpp</includes>
     <includes id="timer_8hpp" name="timer.hpp" local="yes" imported="no">real_time_tools/timer.hpp</includes>
     <member kind="function">
       <type>THREAD_FUNCTION_RETURN_TYPE</type>
@@ -469,8 +469,8 @@
     <name>iostream.cpp</name>
     <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/src/</path>
     <filename>iostream_8cpp</filename>
-    <includes id="timer_8hpp" name="timer.hpp" local="yes" imported="no">real_time_tools/timer.hpp</includes>
     <includes id="iostream_8hpp" name="iostream.hpp" local="yes" imported="no">real_time_tools/iostream.hpp</includes>
+    <includes id="timer_8hpp" name="timer.hpp" local="yes" imported="no">real_time_tools/timer.hpp</includes>
     <member kind="function">
       <type>std::string</type>
       <name>get_log_dir</name>
@@ -497,8 +497,8 @@
     <name>process_manager.cpp</name>
     <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/src/</path>
     <filename>process__manager_8cpp</filename>
-    <includes id="iostream_8hpp" name="iostream.hpp" local="yes" imported="no">real_time_tools/iostream.hpp</includes>
     <includes id="process__manager_8hpp" name="process_manager.hpp" local="yes" imported="no">real_time_tools/process_manager.hpp</includes>
+    <includes id="iostream_8hpp" name="iostream.hpp" local="yes" imported="no">real_time_tools/iostream.hpp</includes>
     <member kind="function">
       <type>bool</type>
       <name>fix_current_process_to_cpu</name>
@@ -524,8 +524,8 @@
     <name>spinner.cpp</name>
     <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/src/</path>
     <filename>spinner_8cpp</filename>
-    <includes id="timer_8hpp" name="timer.hpp" local="no" imported="no">real_time_tools/timer.hpp</includes>
     <includes id="spinner_8hpp" name="spinner.hpp" local="no" imported="no">real_time_tools/spinner.hpp</includes>
+    <includes id="timer_8hpp" name="timer.hpp" local="no" imported="no">real_time_tools/timer.hpp</includes>
   </compound>
   <compound kind="file">
     <name>thread.cpp</name>
@@ -1356,7 +1356,7 @@
       <type>Type&lt; INDEX &gt;</type>
       <name>get</name>
       <anchorfile>classreal__time__tools_1_1ThreadsafeObject.html</anchorfile>
-      <anchor>a866719911ad3b4b78c9abd1140862b7f</anchor>
+      <anchor>a1d0b19b1ddbeb9c4c2ea93551ce05841</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -1370,8 +1370,8 @@
       <type>void</type>
       <name>set</name>
       <anchorfile>classreal__time__tools_1_1ThreadsafeObject.html</anchorfile>
-      <anchor>af77c2b97547459cf1a1e73c72cecd2a9</anchor>
-      <arglist>(ThreadsafeObject&lt; Types ... &gt;::Type&lt; INDEX &gt; datum)</arglist>
+      <anchor>af476dc729bd9c02387d5fcf15e513448</anchor>
+      <arglist>(ThreadsafeObject&lt; Types... &gt;::Type&lt; INDEX &gt; datum)</arglist>
     </member>
     <member kind="variable" static="yes">
       <type>static const std::size_t</type>
@@ -1381,10 +1381,10 @@
       <arglist></arglist>
     </member>
     <member kind="variable" protection="private">
-      <type>std::shared_ptr&lt; std::tuple&lt; Types ... &gt; &gt;</type>
+      <type>std::shared_ptr&lt; std::tuple&lt; Types... &gt; &gt;</type>
       <name>data_</name>
       <anchorfile>classreal__time__tools_1_1ThreadsafeObject.html</anchorfile>
-      <anchor>a2e73d9d8db2fd54768adfd2f67df68fb</anchor>
+      <anchor>a16c0a205e6ca31f7017e56b40831a117</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="private">

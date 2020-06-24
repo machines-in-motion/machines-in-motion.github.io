@@ -8,149 +8,151 @@ One need to create a \hyperlink{classreal__time__tools_1_1UsbStream}{real\+\_\+t
 
 \begin{DoxyCodeInclude}
 
-\textcolor{preprocessor}{#include "real\_time\_tools/usb\_stream.hpp"}
 \textcolor{preprocessor}{#include "\hyperlink{timer_8hpp}{real\_time\_tools/timer.hpp}"}
+\textcolor{preprocessor}{#include "real\_time\_tools/usb\_stream.hpp"}
 
 \textcolor{keywordtype}{void} \hyperlink{demo__usb__stream__imu__3DM__GX3__25_8cpp_af411ef352aef0f8d040d8d60c49eac7a}{continuous\_mode\_on}(\hyperlink{classreal__time__tools_1_1UsbStream}{real\_time\_tools::UsbStream}& usb\_stream,
                         \textcolor{keywordtype}{bool} stream\_mode)
 \{
-  std::vector<uint8\_t> reply;
-  std::vector<uint8\_t> command;
+    std::vector<uint8\_t> reply;
+    std::vector<uint8\_t> command;
 
-  command.resize(4);
-  command[0] = 0xc4; \textcolor{comment}{// set continuous mode on}
-  command[1] = 0xc1; \textcolor{comment}{// user confirmation 1}
-  command[2] = 0x29; \textcolor{comment}{// user confirmation 2}
-  command[3] = 0xc2; \textcolor{comment}{// Acceleration and angular rate continuously broadcasted}
-  reply.resize(8, 0); \textcolor{comment}{// answer in 8 bits.}
+    command.resize(4);
+    command[0] = 0xc4;  \textcolor{comment}{// set continuous mode on}
+    command[1] = 0xc1;  \textcolor{comment}{// user confirmation 1}
+    command[2] = 0x29;  \textcolor{comment}{// user confirmation 2}
+    command[3] =
+        0xc2;  \textcolor{comment}{// Acceleration and angular rate continuously broadcasted}
+    reply.resize(8, 0);  \textcolor{comment}{// answer in 8 bits.}
 
-  rt\_printf(\textcolor{stringliteral}{"The IMU will blink fast\(\backslash\)n"});
-  \textcolor{keywordflow}{while}(! (reply[0] == 0xC4 && reply[1] == 0xc2) )
-  \{
-    usb\_stream.\hyperlink{classreal__time__tools_1_1UsbStream_aa9fdd0d43fbf0cddbffb65538af60321}{write\_device}(command);
-    usb\_stream.\hyperlink{classreal__time__tools_1_1UsbStream_a028f39fcd8c97c49aacf48fdaa8302c8}{read\_device}(reply, stream\_mode);
-  \}
-  rt\_printf(\textcolor{stringliteral}{"Device answer is: %s\(\backslash\)n"},
-            \hyperlink{classreal__time__tools_1_1UsbStream_ac98f3cad23dbc85f47405c3809a22198}{real\_time\_tools::UsbStream::msg\_debug\_string}(reply)
-      .c\_str());
-  rt\_printf(\textcolor{stringliteral}{"The IMU should blink fast\(\backslash\)n"});
+    rt\_printf(\textcolor{stringliteral}{"The IMU will blink fast\(\backslash\)n"});
+    \textcolor{keywordflow}{while} (!(reply[0] == 0xC4 && reply[1] == 0xc2))
+    \{
+        usb\_stream.\hyperlink{classreal__time__tools_1_1UsbStream_aa9fdd0d43fbf0cddbffb65538af60321}{write\_device}(command);
+        usb\_stream.\hyperlink{classreal__time__tools_1_1UsbStream_a028f39fcd8c97c49aacf48fdaa8302c8}{read\_device}(reply, stream\_mode);
+    \}
+    rt\_printf(\textcolor{stringliteral}{"Device answer is: %s\(\backslash\)n"},
+              \hyperlink{classreal__time__tools_1_1UsbStream_ac98f3cad23dbc85f47405c3809a22198}{real\_time\_tools::UsbStream::msg\_debug\_string}(
+      reply).c\_str());
+    rt\_printf(\textcolor{stringliteral}{"The IMU should blink fast\(\backslash\)n"});
 \}
 
 \textcolor{keywordtype}{bool} \hyperlink{demo__usb__stream__imu__3DM__GX3__25_8cpp_a8a096d7f567dad6d28f0fd870ba6bb43}{is\_continuous\_mode\_on}(\hyperlink{classreal__time__tools_1_1UsbStream}{real\_time\_tools::UsbStream}& 
       usb\_stream,
                            \textcolor{keywordtype}{bool} stream\_mode)
 \{
-  std::vector<uint8\_t> reply;
-  std::vector<uint8\_t> command;
+    std::vector<uint8\_t> reply;
+    std::vector<uint8\_t> command;
 
-  command.resize(4);
-  command[0] = 0xd4; \textcolor{comment}{// set continuous mode on}
-  command[1] = 0xa3; \textcolor{comment}{// user confirmation 1}
-  command[2] = 0x47; \textcolor{comment}{// user confirmation 2}
-  command[3] = 0; \textcolor{comment}{// request continuous mode}
-  reply.resize(4, 0); \textcolor{comment}{// answer in 8 bits.}
+    command.resize(4);
+    command[0] = 0xd4;   \textcolor{comment}{// set continuous mode on}
+    command[1] = 0xa3;   \textcolor{comment}{// user confirmation 1}
+    command[2] = 0x47;   \textcolor{comment}{// user confirmation 2}
+    command[3] = 0;      \textcolor{comment}{// request continuous mode}
+    reply.resize(4, 0);  \textcolor{comment}{// answer in 8 bits.}
 
-  \textcolor{keywordtype}{bool} success = usb\_stream.\hyperlink{classreal__time__tools_1_1UsbStream_aa9fdd0d43fbf0cddbffb65538af60321}{write\_device}(command);
-  success = success && usb\_stream.\hyperlink{classreal__time__tools_1_1UsbStream_a028f39fcd8c97c49aacf48fdaa8302c8}{read\_device}(reply, stream\_mode);
-  rt\_printf(\textcolor{stringliteral}{"is continuous mode reply: %s\(\backslash\)n"},
-            \hyperlink{classreal__time__tools_1_1UsbStream_ac98f3cad23dbc85f47405c3809a22198}{real\_time\_tools::UsbStream::msg\_debug\_string}(reply)
-      .c\_str());
-  \textcolor{keywordflow}{return} success && (reply[1] > 0) ;
+    \textcolor{keywordtype}{bool} success = usb\_stream.\hyperlink{classreal__time__tools_1_1UsbStream_aa9fdd0d43fbf0cddbffb65538af60321}{write\_device}(command);
+    success = success && usb\_stream.\hyperlink{classreal__time__tools_1_1UsbStream_a028f39fcd8c97c49aacf48fdaa8302c8}{read\_device}(reply, stream\_mode);
+    rt\_printf(\textcolor{stringliteral}{"is continuous mode reply: %s\(\backslash\)n"},
+              \hyperlink{classreal__time__tools_1_1UsbStream_ac98f3cad23dbc85f47405c3809a22198}{real\_time\_tools::UsbStream::msg\_debug\_string}(
+      reply).c\_str());
+    \textcolor{keywordflow}{return} success && (reply[1] > 0);
 \}
 
 \textcolor{keywordtype}{void} \hyperlink{demo__usb__stream__imu__3DM__GX3__25_8cpp_a1d00f7ae49ec05ecaf8ecd4d76129573}{continuous\_mode\_off}(\hyperlink{classreal__time__tools_1_1UsbStream}{real\_time\_tools::UsbStream}& 
       usb\_stream,
                          \textcolor{keywordtype}{bool} stream\_mode)
 \{
-  std::vector<uint8\_t> reply;
-  std::vector<uint8\_t> command;
+    std::vector<uint8\_t> reply;
+    std::vector<uint8\_t> command;
 
-  command.resize(4);
-  command[0] = 0xc4; \textcolor{comment}{// set continuous mode on}
-  command[1] = 0xc1; \textcolor{comment}{// user confirmation 1}
-  command[2] = 0x29; \textcolor{comment}{// user confirmation 2}
-  command[3] = 0x00; \textcolor{comment}{// Acceleration and angular rate continuously broadcasted}
-  reply.resize(8, 0xFF); \textcolor{comment}{// answer in 8 bits.}
+    command.resize(4);
+    command[0] = 0xc4;  \textcolor{comment}{// set continuous mode on}
+    command[1] = 0xc1;  \textcolor{comment}{// user confirmation 1}
+    command[2] = 0x29;  \textcolor{comment}{// user confirmation 2}
+    command[3] =
+        0x00;  \textcolor{comment}{// Acceleration and angular rate continuously broadcasted}
+    reply.resize(8, 0xFF);  \textcolor{comment}{// answer in 8 bits.}
 
-  rt\_printf(\textcolor{stringliteral}{"The IMU will blink slowly\(\backslash\)n"});
-  \textcolor{keywordflow}{while}(! (reply[0] == 0xC4 && reply[1] == 0x00) )
-  \{
+    rt\_printf(\textcolor{stringliteral}{"The IMU will blink slowly\(\backslash\)n"});
+    \textcolor{keywordflow}{while} (!(reply[0] == 0xC4 && reply[1] == 0x00))
+    \{
+        usb\_stream.\hyperlink{classreal__time__tools_1_1UsbStream_aa9fdd0d43fbf0cddbffb65538af60321}{write\_device}(command);
+        usb\_stream.\hyperlink{classreal__time__tools_1_1UsbStream_a028f39fcd8c97c49aacf48fdaa8302c8}{read\_device}(reply, stream\_mode);
+    \}
+    rt\_printf(\textcolor{stringliteral}{"Device answer is: %s\(\backslash\)n"},
+              \hyperlink{classreal__time__tools_1_1UsbStream_ac98f3cad23dbc85f47405c3809a22198}{real\_time\_tools::UsbStream::msg\_debug\_string}(
+      reply).c\_str());
+    rt\_printf(\textcolor{stringliteral}{"The IMU should blink slowly\(\backslash\)n"});
+\}
+
+\textcolor{keywordtype}{void} \hyperlink{demo__usb__stream__imu__3DM__GX3__25_8cpp_af04ed9328c659fc57f91d74cdeedda72}{reset}(\hyperlink{classreal__time__tools_1_1UsbStream}{real\_time\_tools::UsbStream}& usb\_stream, \textcolor{keywordtype}{bool} stream\_mode)
+\{
+    std::vector<uint8\_t> reply;
+    std::vector<uint8\_t> command;
+
+    command.resize(3);
+    command[0] = 0xfe;   \textcolor{comment}{// reset device}
+    command[1] = 0x9e;   \textcolor{comment}{// user confirmation 1}
+    command[2] = 0x3a;   \textcolor{comment}{// user confirmation 2}
+    reply.resize(0, 0);  \textcolor{comment}{// answer in 8 bits.}
+
+    rt\_printf(\textcolor{stringliteral}{"The IMU is resetting\(\backslash\)n"});
     usb\_stream.\hyperlink{classreal__time__tools_1_1UsbStream_aa9fdd0d43fbf0cddbffb65538af60321}{write\_device}(command);
     usb\_stream.\hyperlink{classreal__time__tools_1_1UsbStream_a028f39fcd8c97c49aacf48fdaa8302c8}{read\_device}(reply, stream\_mode);
-  \}
-  rt\_printf(\textcolor{stringliteral}{"Device answer is: %s\(\backslash\)n"},
-            \hyperlink{classreal__time__tools_1_1UsbStream_ac98f3cad23dbc85f47405c3809a22198}{real\_time\_tools::UsbStream::msg\_debug\_string}(reply)
-      .c\_str());
-  rt\_printf(\textcolor{stringliteral}{"The IMU should blink slowly\(\backslash\)n"});
+    rt\_printf(\textcolor{stringliteral}{"Device answer is: %s\(\backslash\)n"},
+              \hyperlink{classreal__time__tools_1_1UsbStream_ac98f3cad23dbc85f47405c3809a22198}{real\_time\_tools::UsbStream::msg\_debug\_string}(
+      reply).c\_str());
+    rt\_printf(\textcolor{stringliteral}{"The IMU is reset\(\backslash\)n"});
+    \hyperlink{classreal__time__tools_1_1Timer_a0a0df8a3baef34e820203e5579afda38}{real\_time\_tools::Timer::sleep\_sec}(10);
 \}
 
-\textcolor{keywordtype}{void} \hyperlink{demo__usb__stream__imu__3DM__GX3__25_8cpp_af04ed9328c659fc57f91d74cdeedda72}{reset}(\hyperlink{classreal__time__tools_1_1UsbStream}{real\_time\_tools::UsbStream}& usb\_stream,
-           \textcolor{keywordtype}{bool} stream\_mode)
+\textcolor{keywordtype}{int} \hyperlink{demo__usb__stream__imu__3DM__GX3__25_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char}** argv)
 \{
-  std::vector<uint8\_t> reply;
-  std::vector<uint8\_t> command;
+    \textcolor{keywordflow}{if} (argc != 2)
+    \{
+        printf(\textcolor{stringliteral}{"usage: demo\_device\_stream <device>\(\backslash\)ne.g. %s /dev/tty0\(\backslash\)n"},
+               argv[0]);
+        \textcolor{keywordflow}{return} -1;
+    \}
 
-  command.resize(3);
-  command[0] = 0xfe; \textcolor{comment}{// reset device}
-  command[1] = 0x9e; \textcolor{comment}{// user confirmation 1}
-  command[2] = 0x3a; \textcolor{comment}{// user confirmation 2}
-  reply.resize(0, 0); \textcolor{comment}{// answer in 8 bits.}
+    \textcolor{comment}{// Let us acquire the device path from the application arguments}
+    std::string device = std::string(argv[1]);
 
-  rt\_printf(\textcolor{stringliteral}{"The IMU is resetting\(\backslash\)n"});
-  usb\_stream.\hyperlink{classreal__time__tools_1_1UsbStream_aa9fdd0d43fbf0cddbffb65538af60321}{write\_device}(command);
-  usb\_stream.\hyperlink{classreal__time__tools_1_1UsbStream_a028f39fcd8c97c49aacf48fdaa8302c8}{read\_device}(reply, stream\_mode);
-  rt\_printf(\textcolor{stringliteral}{"Device answer is: %s\(\backslash\)n"},
-            \hyperlink{classreal__time__tools_1_1UsbStream_ac98f3cad23dbc85f47405c3809a22198}{real\_time\_tools::UsbStream::msg\_debug\_string}(reply)
-      .c\_str());
-  rt\_printf(\textcolor{stringliteral}{"The IMU is reset\(\backslash\)n"});
-  \hyperlink{classreal__time__tools_1_1Timer_a0a0df8a3baef34e820203e5579afda38}{real\_time\_tools::Timer::sleep\_sec}(10);
+    \hyperlink{classreal__time__tools_1_1UsbStream}{real\_time\_tools::UsbStream} usb\_stream;
 
-\}
+    \textcolor{keywordflow}{if} (!usb\_stream.\hyperlink{classreal__time__tools_1_1UsbStream_a1f6915c42d9742ced10e99d2edf7d8b1}{open\_device}(device))
+    \{
+        \textcolor{keywordflow}{return} -1;
+    \}
 
-\textcolor{keywordtype}{int} \hyperlink{demo__usb__stream__imu__3DM__GX3__25_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char}** argv)\{
-  \textcolor{keywordflow}{if} (argc != 2)\{
-    printf(\textcolor{stringliteral}{"usage: demo\_device\_stream <device>\(\backslash\)ne.g. %s /dev/tty0\(\backslash\)n"}, argv[0]);
-    \textcolor{keywordflow}{return} -1;
-  \}
+    \hyperlink{classreal__time__tools_1_1PortConfig}{real\_time\_tools::PortConfig} port\_config;
+    port\_config.\hyperlink{classreal__time__tools_1_1PortConfig_ad89a20459faf7718a63ea8c00ddc5e34}{rts\_cts\_enabled\_} = \textcolor{keyword}{false};
+    port\_config.\hyperlink{classreal__time__tools_1_1PortConfig_afdc811c6c73ada4b21dab246bf086506}{parity\_} = \textcolor{keyword}{false};
+    port\_config.\hyperlink{classreal__time__tools_1_1PortConfig_a3303d793237edbfa0b3c28f3f01c3837}{stop\_bits\_} = real\_time\_tools::PortConfig::StopBits::one;
+    port\_config.\hyperlink{classreal__time__tools_1_1PortConfig_a6c1dbeb3cf3c772c9c1b4df71b8befd6}{prepare\_size\_definition\_} = \textcolor{keyword}{false};
+    port\_config.\hyperlink{classreal__time__tools_1_1PortConfig_af80f9991e3811392385208a9baf9c6fd}{data\_bits\_} = real\_time\_tools::PortConfig::cs8;
+    port\_config.\hyperlink{classreal__time__tools_1_1PortConfig_aa0be2d74f3ac70e9f43d36fc0c70901a}{baude\_rate\_} = 115200;
+    usb\_stream.\hyperlink{classreal__time__tools_1_1UsbStream_adb0c41dc7a9603022a0a1e19c9ab8292}{set\_port\_config}(port\_config);
+    usb\_stream.\hyperlink{classreal__time__tools_1_1UsbStream_a1c61741541acfca7ecf6deaf0b8ad1fc}{set\_poll\_mode\_timeout}(0.1);
 
-  \textcolor{comment}{// Let us acquire the device path from the application arguments}
-  std::string device = std::string(argv[1]);
+    \textcolor{comment}{// stream mode of the usb port}
+    \textcolor{keywordtype}{bool} stream\_mode = \textcolor{keyword}{false};
 
-  \hyperlink{classreal__time__tools_1_1UsbStream}{real\_time\_tools::UsbStream} usb\_stream;
+    \hyperlink{classreal__time__tools_1_1Timer_a0a0df8a3baef34e820203e5579afda38}{real\_time\_tools::Timer::sleep\_sec}(1);
 
-  \textcolor{keywordflow}{if}(!usb\_stream.\hyperlink{classreal__time__tools_1_1UsbStream_a1f6915c42d9742ced10e99d2edf7d8b1}{open\_device}(device))
-  \{
-    \textcolor{keywordflow}{return} -1;
-  \}
+    \hyperlink{demo__usb__stream__imu__3DM__GX3__25_8cpp_af411ef352aef0f8d040d8d60c49eac7a}{continuous\_mode\_on}(usb\_stream, stream\_mode);
+    \hyperlink{classreal__time__tools_1_1Timer_a0a0df8a3baef34e820203e5579afda38}{real\_time\_tools::Timer::sleep\_sec}(5);
 
-  \hyperlink{classreal__time__tools_1_1PortConfig}{real\_time\_tools::PortConfig} port\_config;
-  port\_config.\hyperlink{classreal__time__tools_1_1PortConfig_ad89a20459faf7718a63ea8c00ddc5e34}{rts\_cts\_enabled\_} = \textcolor{keyword}{false};
-  port\_config.\hyperlink{classreal__time__tools_1_1PortConfig_afdc811c6c73ada4b21dab246bf086506}{parity\_} = \textcolor{keyword}{false};
-  port\_config.\hyperlink{classreal__time__tools_1_1PortConfig_a3303d793237edbfa0b3c28f3f01c3837}{stop\_bits\_} = real\_time\_tools::PortConfig::StopBits::one;
-  port\_config.\hyperlink{classreal__time__tools_1_1PortConfig_a6c1dbeb3cf3c772c9c1b4df71b8befd6}{prepare\_size\_definition\_} = \textcolor{keyword}{false};
-  port\_config.\hyperlink{classreal__time__tools_1_1PortConfig_af80f9991e3811392385208a9baf9c6fd}{data\_bits\_} = real\_time\_tools::PortConfig::cs8;
-  port\_config.\hyperlink{classreal__time__tools_1_1PortConfig_aa0be2d74f3ac70e9f43d36fc0c70901a}{baude\_rate\_} = 115200;
-  usb\_stream.\hyperlink{classreal__time__tools_1_1UsbStream_adb0c41dc7a9603022a0a1e19c9ab8292}{set\_port\_config}(port\_config);
-  usb\_stream.\hyperlink{classreal__time__tools_1_1UsbStream_a1c61741541acfca7ecf6deaf0b8ad1fc}{set\_poll\_mode\_timeout}(0.1);
+    usb\_stream.\hyperlink{classreal__time__tools_1_1UsbStream_a0bc5fb5783f1833341d55b9b013be6c6}{flush}();
+    \hyperlink{demo__usb__stream__imu__3DM__GX3__25_8cpp_a1d00f7ae49ec05ecaf8ecd4d76129573}{continuous\_mode\_off}(usb\_stream, stream\_mode);
+    usb\_stream.\hyperlink{classreal__time__tools_1_1UsbStream_a0bc5fb5783f1833341d55b9b013be6c6}{flush}();
 
-  \textcolor{comment}{// stream mode of the usb port}
-  \textcolor{keywordtype}{bool} stream\_mode = \textcolor{keyword}{false};
+    rt\_printf(\textcolor{stringliteral}{"Close port\(\backslash\)n"});
+    usb\_stream.\hyperlink{classreal__time__tools_1_1UsbStream_acea75055bb37f2a7f351300dbaf28d9e}{close\_device}();
 
-  \hyperlink{classreal__time__tools_1_1Timer_a0a0df8a3baef34e820203e5579afda38}{real\_time\_tools::Timer::sleep\_sec}(1);
-
-  \hyperlink{demo__usb__stream__imu__3DM__GX3__25_8cpp_af411ef352aef0f8d040d8d60c49eac7a}{continuous\_mode\_on}(usb\_stream, stream\_mode);
-  \hyperlink{classreal__time__tools_1_1Timer_a0a0df8a3baef34e820203e5579afda38}{real\_time\_tools::Timer::sleep\_sec}(5);
-  
-
-  usb\_stream.\hyperlink{classreal__time__tools_1_1UsbStream_a0bc5fb5783f1833341d55b9b013be6c6}{flush}();
-  \hyperlink{demo__usb__stream__imu__3DM__GX3__25_8cpp_a1d00f7ae49ec05ecaf8ecd4d76129573}{continuous\_mode\_off}(usb\_stream,stream\_mode);
-  usb\_stream.\hyperlink{classreal__time__tools_1_1UsbStream_a0bc5fb5783f1833341d55b9b013be6c6}{flush}();
-
-  rt\_printf(\textcolor{stringliteral}{"Close port\(\backslash\)n"});
-  usb\_stream.\hyperlink{classreal__time__tools_1_1UsbStream_acea75055bb37f2a7f351300dbaf28d9e}{close\_device}();
-
-  rt\_printf(\textcolor{stringliteral}{"Stop program\(\backslash\)n"});
-  \textcolor{keywordflow}{return} 0;
+    rt\_printf(\textcolor{stringliteral}{"Stop program\(\backslash\)n"});
+    \textcolor{keywordflow}{return} 0;
 \}
 
 \end{DoxyCodeInclude}
