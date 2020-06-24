@@ -1,0 +1,46 @@
+\hypertarget{demo_pid_8cpp-example}{}\section{demo\+\_\+pid.\+cpp}
+Create the default P\+ID controller and compute the control once. This illustrates in the simplest way the use of the P\+ID class A\+PI.
+
+
+\begin{DoxyCodeInclude}
+
+\textcolor{preprocessor}{#include "\hyperlink{pid_8hpp}{ci\_example\_cpp/pid.hpp}"} 
+
+\textcolor{keywordtype}{void} \hyperlink{demo__pid_8cpp_aa5343637e5c7a19c19aae1beed976ab6}{run\_demo}()\{
+
+  \textcolor{comment}{// PID controller with default gains values}
+  \hyperlink{classci__example__cpp_1_1PID}{ci\_example\_cpp::PID}& controller = 
+      \hyperlink{pid_8hpp_ae98dfa6f474e368f3d1865d65406ec1f}{ci\_example\_cpp::get\_default\_pid}();
+  
+  \textcolor{comment}{// example of force computation}
+  \textcolor{keywordtype}{double} current\_position=1;
+  \textcolor{keywordtype}{double} current\_velocity=1;
+  \textcolor{keywordtype}{double} delta\_time=0.01;
+  \textcolor{keywordtype}{double} target\_position=2;
+  \textcolor{keywordtype}{double} force = controller.\hyperlink{classci__example__cpp_1_1PID_a75a4ccf0455e48e84af23e1d28b0337d}{compute}(current\_position,
+                    current\_velocity,
+                    target\_position,
+                    delta\_time);
+  std::cout<< \textcolor{stringliteral}{"computed force: "} << force << std::endl;
+
+  \textcolor{comment}{// resetting integral of the controller}
+  \textcolor{comment}{// (useless here because we do not reuse it)}
+  controller.\hyperlink{classci__example__cpp_1_1PID_a65d98fccd38cc385debc3d15670caf0e}{reset\_integral}();
+  
+\}
+
+
+\textcolor{keywordtype}{int} \hyperlink{demo__pid_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}()\{
+  
+  \textcolor{keywordflow}{try} \{
+    \hyperlink{demo__pid_8cpp_aa5343637e5c7a19c19aae1beed976ab6}{run\_demo}();
+  \} \textcolor{keywordflow}{catch}(\textcolor{keyword}{const} std::exception& e)\{
+    std::cout << \textcolor{stringliteral}{"demo failed !\(\backslash\)nerror message:\(\backslash\)n"} << e.what() << std::endl;
+    \textcolor{keywordflow}{return} 1; \textcolor{comment}{// informs continuous integration that this demo did not run successfully}
+  \}
+
+  \textcolor{keywordflow}{return} 0; \textcolor{comment}{// informs continuous integration that this demo did run successfully}
+
+\}
+\end{DoxyCodeInclude}
+ 

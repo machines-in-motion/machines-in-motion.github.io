@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="demo_ros_pid_8py-example" kind="example">
+    <compoundname>demo_ros_pid.py</compoundname>
+    <detaileddescription>
+<para>In order to run this demos the <computeroutput>ci_example_python/python/ci_example_python</computeroutput> path needs to be added in the <computeroutput>PYTHONPATH</computeroutput>. This is done after:<itemizedlist>
+<listitem><para>1. &quot;catkin_make&quot; is called from the root of the catkin workspace</para></listitem><listitem><para>2. &quot;source ./devel/setup.bash&quot; is called from the root of the catkin workspace</para></listitem><listitem><para>3. roscore is called in an additional terminal</para></listitem><listitem><para>4. Finally run <computeroutput>rosrun <ref refid="namespaceci__example__python" kindref="compound">ci_example_python</ref> <ref refid="demo__ros__pid_8py" kindref="compound">demo_ros_pid.py</ref></computeroutput></para></listitem></itemizedlist>
+</para><para>Notice the use of the double ## for the comments. This allow Doxygen to parse you code and for you to explain in details the content of the demo. <programlisting><codeline><highlight class="comment">#!/usr/bin/env<sp/>python</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="stringliteral">&quot;&quot;&quot;<sp/>@namespace<sp/>Demos<sp/>of<sp/>the<sp/>ci_example_python.pid.PID<sp/>controller<sp/>using<sp/>ROS<sp/>param.</highlight></codeline>
+<codeline><highlight class="stringliteral"></highlight></codeline>
+<codeline><highlight class="stringliteral">@file<sp/>demo_ros_pid.py</highlight></codeline>
+<codeline><highlight class="stringliteral">@copyright<sp/>Copyright<sp/>(c)<sp/>2017-2019,</highlight></codeline>
+<codeline><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>New<sp/>York<sp/>University<sp/>and<sp/>Max<sp/>Planck<sp/>Gesellschaft,</highlight></codeline>
+<codeline><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>License<sp/>BSD-3-Clause</highlight></codeline>
+<codeline><highlight class="stringliteral"></highlight></codeline>
+<codeline><highlight class="stringliteral">@example<sp/>demo_ros_pid.py</highlight></codeline>
+<codeline><highlight class="stringliteral">In<sp/>order<sp/>to<sp/>run<sp/>this<sp/>demos<sp/>the<sp/>`ci_example_python/python/ci_example_python`<sp/>path</highlight></codeline>
+<codeline><highlight class="stringliteral">needs<sp/>to<sp/>be<sp/>added<sp/>in<sp/>the<sp/>`PYTHONPATH`.<sp/>This<sp/>is<sp/>done<sp/>after:</highlight></codeline>
+<codeline><highlight class="stringliteral">-<sp/>1.<sp/>&quot;catkin_make&quot;<sp/>is<sp/>called<sp/>from<sp/>the<sp/>root<sp/>of<sp/>the<sp/>catkin<sp/>workspace</highlight></codeline>
+<codeline><highlight class="stringliteral">-<sp/>2.<sp/>&quot;source<sp/>./devel/setup.bash&quot;<sp/>is<sp/>called<sp/>from<sp/>the<sp/>root<sp/>of<sp/>the<sp/>catkin<sp/>workspace</highlight></codeline>
+<codeline><highlight class="stringliteral">-<sp/>3.<sp/>roscore<sp/>is<sp/>called<sp/>in<sp/>an<sp/>additional<sp/>terminal</highlight></codeline>
+<codeline><highlight class="stringliteral">-<sp/>4.<sp/>Finally<sp/>run<sp/>`rosrun<sp/>ci_example_python<sp/>demo_ros_pid.py`</highlight></codeline>
+<codeline><highlight class="stringliteral"></highlight></codeline>
+<codeline><highlight class="stringliteral">Notice<sp/>the<sp/>use<sp/>of<sp/>the<sp/>double<sp/>##<sp/>for<sp/>the<sp/>comments.<sp/>This<sp/>allow<sp/>Doxygen</highlight></codeline>
+<codeline><highlight class="stringliteral">to<sp/>parse<sp/>you<sp/>code<sp/>and<sp/>for<sp/>you<sp/>to<sp/>explain<sp/>in<sp/>details<sp/>the<sp/>content<sp/>of<sp/>the<sp/>demo.</highlight></codeline>
+<codeline><highlight class="stringliteral">&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">#<sp/>Python<sp/>3<sp/>compatibility,<sp/>has<sp/>to<sp/>be<sp/>called<sp/>just<sp/>after<sp/>the<sp/>hashbang.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>__future__<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>print_function,<sp/>division</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>rospy</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/><ref refid="namespaceci__example__python_1_1pid" kindref="compound">ci_example_python.pid</ref><sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>get_ros_params_pid</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;__main__&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>here<sp/>we<sp/>set<sp/>the<sp/>parameters<sp/>to<sp/>ROS.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.set_param(</highlight><highlight class="stringliteral">&apos;kp&apos;</highlight><highlight class="normal">,<sp/>1.0)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.set_param(</highlight><highlight class="stringliteral">&apos;kd&apos;</highlight><highlight class="normal">,<sp/>1.0)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.set_param(</highlight><highlight class="stringliteral">&apos;ki&apos;</highlight><highlight class="normal">,<sp/>1.0)</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>current_position<sp/>=<sp/>1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>current_velocity<sp/>=<sp/>0.1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>position_target<sp/>=<sp/>0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>delta_time<sp/>=<sp/>0.001</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">print</highlight><highlight class="normal"><sp/>(</highlight><highlight class="stringliteral">&quot;pid<sp/>using<sp/>ros<sp/>parameter<sp/>server&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pid<sp/>=<sp/><ref refid="namespaceci__example__python_1_1pid_1ae1f8a5e73e269ede0bdd4d0daf2f265e" kindref="member">get_ros_params_pid</ref>()</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">print</highlight><highlight class="normal"><sp/>(pid)</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>control<sp/>=<sp/>pid.compute(current_position,current_velocity,position_target,delta_time)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">print</highlight><highlight class="normal"><sp/>(</highlight><highlight class="stringliteral">&quot;control:<sp/>&quot;</highlight><highlight class="normal">,control)</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

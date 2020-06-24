@@ -9,6 +9,6 @@ var classdynamic__graph_1_1ExceptionTools =
     [ "ExceptionTools", "classdynamic__graph_1_1ExceptionTools.html#a215023b7c5fd241bf6493e0025172b22", null ],
     [ "ExceptionTools", "classdynamic__graph_1_1ExceptionTools.html#afdd3f8be1a238814b6d676ed72e7bfb6", null ],
     [ "~ExceptionTools", "classdynamic__graph_1_1ExceptionTools.html#ab01b499bdfd8bee831fd819f8e6fb9f8", null ],
-    [ "getExceptionName", "classdynamic__graph_1_1ExceptionTools.html#ac49cd8336bd09fdff9425b43b1bf1f12", null ],
+    [ "getExceptionName", "classdynamic__graph_1_1ExceptionTools.html#a7963a6526507f53fdb03d370cb6b3238", null ],
     [ "EXCEPTION_NAME", "classdynamic__graph_1_1ExceptionTools.html#a80e1cf0e61c8a570e9dfc65be97efc0c", null ]
 ];

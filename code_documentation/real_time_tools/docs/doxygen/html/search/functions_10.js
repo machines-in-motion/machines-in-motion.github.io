@@ -11,6 +11,6 @@ var searchData=
   ['tick',['tick',['../classreal__time__tools_1_1RealTimeCheck.html#a83fdf97352d36aa20e482d7dfae442d5',1,'real_time_tools::RealTimeCheck']]],
   ['timer',['Timer',['../classreal__time__tools_1_1Timer.html#a572f7022db18de269ba08b31b05b4af7',1,'real_time_tools::Timer']]],
   ['timespec_5fadd_5fsec',['timespec_add_sec',['../classreal__time__tools_1_1Timer.html#a0055b704a4e0b518269b0ab5fbed9278',1,'real_time_tools::Timer']]],
-  ['timestamp_5fms',['timestamp_ms',['../classreal__time__tools_1_1ThreadsafeTimeseries.html#a2014a6970029b85598d8d4b08b501832',1,'real_time_tools::ThreadsafeTimeseries']]],
-  ['timestamp_5fs',['timestamp_s',['../classreal__time__tools_1_1ThreadsafeTimeseries.html#adec397db4b4568f6b3369105122cc919',1,'real_time_tools::ThreadsafeTimeseries']]]
+  ['timestamp_5fms',['timestamp_ms',['../classreal__time__tools_1_1ThreadsafeTimeseries.html#a621ca3e515dabe112f27fddefe4b3dda',1,'real_time_tools::ThreadsafeTimeseries']]],
+  ['timestamp_5fs',['timestamp_s',['../classreal__time__tools_1_1ThreadsafeTimeseries.html#ad0d658592471f37c5dfca22765d1b6e7',1,'real_time_tools::ThreadsafeTimeseries']]]
 ];

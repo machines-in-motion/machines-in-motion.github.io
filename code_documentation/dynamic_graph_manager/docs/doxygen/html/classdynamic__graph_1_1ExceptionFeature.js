@@ -8,6 +8,6 @@ var classdynamic__graph_1_1ExceptionFeature =
     [ "ExceptionFeature", "classdynamic__graph_1_1ExceptionFeature.html#a76a3b0adc5f5881b8b3609ddf989f24a", null ],
     [ "ExceptionFeature", "classdynamic__graph_1_1ExceptionFeature.html#a88a704700091fa451ee9bc6db1ad793e", null ],
     [ "~ExceptionFeature", "classdynamic__graph_1_1ExceptionFeature.html#a235a9814a73790c1b54b9e0626913dea", null ],
-    [ "getExceptionName", "classdynamic__graph_1_1ExceptionFeature.html#aec48d79033199babc16d37048f61aba4", null ],
+    [ "getExceptionName", "classdynamic__graph_1_1ExceptionFeature.html#a22989c5bbe6eefecef6988cd56dab002", null ],
     [ "EXCEPTION_NAME", "classdynamic__graph_1_1ExceptionFeature.html#a977865e1bf4940aed64bf434ec72bf18", null ]
 ];

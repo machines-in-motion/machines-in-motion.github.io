@@ -1,98 +1,104 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="simple_dgm_8hpp-example" kind="example">
     <compoundname>simple_dgm.hpp</compoundname>
     <detaileddescription>
 <para>The correponding hardware python client is seen here: <programlisting><codeline></codeline>
-<codeline><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ros__init_8hh" kindref="compound">dynamic_graph_manager/ros_init.hh</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="preprocessor">#include<sp/>&quot;dynamic_graph_manager/TestUserCmdBool.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dynamic__graph__manager_8hh" kindref="compound">dynamic_graph_manager/dynamic_graph_manager.hh</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;dynamic_graph_manager/TestUserCmdBool.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ros__init_8hh" kindref="compound">dynamic_graph_manager/ros_init.hh</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacedynamic__graph__manager" kindref="compound">dynamic_graph_manager</ref>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacedynamic__graph__manager" kindref="compound">dynamic_graph_manager</ref></highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="keyword">class<sp/></highlight><highlight class="normal">SimpleDGM<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classdynamic__graph_1_1DynamicGraphManager" kindref="compound">dynamic_graph::DynamicGraphManager</ref></highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><ref refid="classdynamic__graph__manager_1_1SimpleDGM_1abb548458a154ee8e9ae63a32f1191ef6" kindref="member">SimpleDGM</ref>():<sp/><ref refid="namespacedynamic__graph" kindref="compound">dynamic_graph</ref>::<ref refid="classdynamic__graph_1_1DynamicGraphManager_1afd98424082e5a1f878e6c7cb08a62c4a" kindref="member">DynamicGraphManager</ref>(){</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>boolean_set_by_user_cmd_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><ref refid="classdynamic__graph__manager_1_1SimpleDGM_1a250f18b97619c72446074662626423d4" kindref="member">~SimpleDGM</ref>(){}</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classdynamic__graph__manager_1_1SimpleDGM_1a5d771fc5a9ae6dd524a658d50fbee5d3" kindref="member">initialize_hardware_communication_process</ref>()</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>get<sp/>the<sp/>hardware<sp/>communication<sp/>ros<sp/>node<sp/>handle</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ros::NodeHandle&amp;<sp/>ros_node_handle<sp/>=<sp/><ref refid="namespacedynamic__graph_1ab01ece41a91a029cf335e28548cdfc06" kindref="member">dynamic_graph::ros_init</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamic__graph_1_1DynamicGraphManager_1a415f24927dbe9dfd0ee4a6462428bd48" kindref="member">dynamic_graph::DynamicGraphManager::hw_com_ros_node_name_</ref>);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classdynamic__graph_1_1DynamicGraphManager_1a0fb35bc44f331db3570c09b75b49cd15" kindref="member">ros_user_commands_</ref>.push_back(ros_node_handle.advertiseService(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;set_a_boolean&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="classdynamic__graph__manager_1_1SimpleDGM_1adb40055a916691d326bc6466eab9680b" kindref="member">SimpleDGM::user_command_callback</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">));</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classdynamic__graph__manager_1_1SimpleDGM_1aa92cd33a31c934835252f834bab7b9f4" kindref="member">get_sensors_to_map</ref>(<ref refid="namespacedynamic__graph_1a51212ed7fa4ae81e7b362a27f09b7ab8" kindref="member">dynamic_graph::VectorDGMap</ref>&amp;<sp/>map)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>map[</highlight><highlight class="stringliteral">&quot;encoders&quot;</highlight><highlight class="normal">].setRandom();</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>map[</highlight><highlight class="stringliteral">&quot;imu_accelerometer&quot;</highlight><highlight class="normal">].setRandom();</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>map[</highlight><highlight class="stringliteral">&quot;imu_gyroscope&quot;</highlight><highlight class="normal">].setRandom();</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>map[</highlight><highlight class="stringliteral">&quot;imu&quot;</highlight><highlight class="normal">].setRandom();</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classdynamic__graph__manager_1_1SimpleDGM_1ad38ccd35cc0c409a0aaefa8565634109" kindref="member">set_motor_controls_from_map</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespacedynamic__graph_1a51212ed7fa4ae81e7b362a27f09b7ab8" kindref="member">dynamic_graph::VectorDGMap</ref>&amp;<sp/>map)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>desired_torques_<sp/>=<sp/>map.at(</highlight><highlight class="stringliteral">&quot;torques&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>desired_positions_<sp/>=<sp/>map.at(</highlight><highlight class="stringliteral">&quot;positions&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classdynamic__graph__manager_1_1SimpleDGM_1a08793eb7410b2820e00e028688d890a9" kindref="member">get_has_user_command_been_executed</ref>()</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Here<sp/>we<sp/>nee<sp/>to<sp/>protect<sp/>the<sp/>access<sp/>to<sp/>this<sp/>ressource<sp/>as<sp/>it<sp/>may<sp/>conflict</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>with<sp/>different<sp/>thread.<sp/>Please<sp/>use<sp/>cond_var_<sp/>to<sp/>make<sp/>sure<sp/>everything</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>is<sp/>access<sp/>on<sp/>its<sp/>due<sp/>time.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>ret<sp/>=<sp/>boolean_set_by_user_cmd_;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classdynamic__graph__manager_1_1SimpleDGM_1adb40055a916691d326bc6466eab9680b" kindref="member">user_command_callback</ref>(dynamic_graph_manager::TestUserCmdBool::Request&amp;<sp/>req,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dynamic_graph_manager::TestUserCmdBool::Response&amp;<sp/>res)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>parse<sp/>and<sp/>register<sp/>the<sp/>command<sp/>for<sp/>further<sp/>call.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classdynamic__graph_1_1DynamicGraphManager_1a72146c4ddd173869a512e9f174ad48df" kindref="member">add_user_command</ref>(std::bind(&amp;<ref refid="classdynamic__graph__manager_1_1SimpleDGM_1a6ba8314169c29c722cdcea810798f08d" kindref="member">SimpleDGM::user_command</ref>,<sp/></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>req.input_boolean));</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>return<sp/>whatever<sp/>the<sp/>user<sp/>want</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>res.sanity_check<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>service<sp/>has<sp/>been<sp/>executed<sp/>properly</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classdynamic__graph__manager_1_1SimpleDGM_1a5fe81f9feb5d982761d7a427aa31e7b4" kindref="member">is_in_safety_mode</ref>()</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>here<sp/>define<sp/>a<sp/>check<sp/>for<sp/>robot<sp/>specific<sp/>stuff.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>check<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>check<sp/>||<sp/>DynamicGraphManager::is_in_safety_mode();</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classdynamic__graph__manager_1_1SimpleDGM_1a37b28e687ce4e724770f5c9f23da4d4f" kindref="member">compute_safety_controls</ref>()</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>fill<sp/>all<sp/>controls<sp/>with<sp/>zero...<sp/>Check<sp/>your<sp/>robot<sp/>to<sp/>imagine<sp/>what<sp/>would<sp/>be</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>safer<sp/>in<sp/>this<sp/>case.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(dynamic_graph::VectorDGMap::iterator<sp/>ctrl<sp/>=<sp/><ref refid="classdynamic__graph_1_1DynamicGraphManager_1a03eabd2f08990a1dcc1caa652b701020" kindref="member">motor_controls_map_</ref>.begin()<sp/>;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ctrl<sp/>!=<sp/><ref refid="classdynamic__graph_1_1DynamicGraphManager_1a03eabd2f08990a1dcc1caa652b701020" kindref="member">motor_controls_map_</ref>.end()<sp/>;<sp/>++ctrl)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classdynamic__graph__manager_1_1SimpleDGM_1abb548458a154ee8e9ae63a32f1191ef6" kindref="member">SimpleDGM</ref>()<sp/>:<sp/><ref refid="namespacedynamic__graph" kindref="compound">dynamic_graph</ref>::<ref refid="classdynamic__graph_1_1DynamicGraphManager_1afd98424082e5a1f878e6c7cb08a62c4a" kindref="member">DynamicGraphManager</ref>()</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ctrl-&gt;second.fill(0.0);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boolean_set_by_user_cmd_<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classdynamic__graph__manager_1_1SimpleDGM_1a250f18b97619c72446074662626423d4" kindref="member">~SimpleDGM</ref>()</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classdynamic__graph__manager_1_1SimpleDGM_1a5d771fc5a9ae6dd524a658d50fbee5d3" kindref="member">initialize_hardware_communication_process</ref>()</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>get<sp/>the<sp/>hardware<sp/>communication<sp/>ros<sp/>node<sp/>handle</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ros::NodeHandle&amp;<sp/>ros_node_handle<sp/>=<sp/><ref refid="namespacedynamic__graph_1ab01ece41a91a029cf335e28548cdfc06" kindref="member">dynamic_graph::ros_init</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamic__graph_1_1DynamicGraphManager_1a415f24927dbe9dfd0ee4a6462428bd48" kindref="member">dynamic_graph::DynamicGraphManager::hw_com_ros_node_name_</ref>);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamic__graph_1_1DynamicGraphManager_1a0fb35bc44f331db3570c09b75b49cd15" kindref="member">ros_user_commands_</ref>.push_back(ros_node_handle.advertiseService(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;set_a_boolean&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="classdynamic__graph__manager_1_1SimpleDGM_1adb40055a916691d326bc6466eab9680b" kindref="member">SimpleDGM::user_command_callback</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classdynamic__graph__manager_1_1SimpleDGM_1aa92cd33a31c934835252f834bab7b9f4" kindref="member">get_sensors_to_map</ref>(<ref refid="namespacedynamic__graph_1abd184187f3bc15df5e227d866529e4a7" kindref="member">dynamic_graph::VectorDGMap</ref>&amp;<sp/>map)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>map[</highlight><highlight class="stringliteral">&quot;encoders&quot;</highlight><highlight class="normal">].setRandom();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>map[</highlight><highlight class="stringliteral">&quot;imu_accelerometer&quot;</highlight><highlight class="normal">].setRandom();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>map[</highlight><highlight class="stringliteral">&quot;imu_gyroscope&quot;</highlight><highlight class="normal">].setRandom();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>map[</highlight><highlight class="stringliteral">&quot;imu&quot;</highlight><highlight class="normal">].setRandom();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classdynamic__graph__manager_1_1SimpleDGM_1ad38ccd35cc0c409a0aaefa8565634109" kindref="member">set_motor_controls_from_map</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespacedynamic__graph_1abd184187f3bc15df5e227d866529e4a7" kindref="member">dynamic_graph::VectorDGMap</ref>&amp;<sp/>map)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>desired_torques_<sp/>=<sp/>map.at(</highlight><highlight class="stringliteral">&quot;torques&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>desired_positions_<sp/>=<sp/>map.at(</highlight><highlight class="stringliteral">&quot;positions&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classdynamic__graph__manager_1_1SimpleDGM_1a08793eb7410b2820e00e028688d890a9" kindref="member">get_has_user_command_been_executed</ref>()</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Here<sp/>we<sp/>nee<sp/>to<sp/>protect<sp/>the<sp/>access<sp/>to<sp/>this<sp/>ressource<sp/>as<sp/>it<sp/>may</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>conflict<sp/>with<sp/>different<sp/>thread.<sp/>Please<sp/>use<sp/>cond_var_<sp/>to<sp/>make<sp/>sure</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>everything<sp/>is<sp/>access<sp/>on<sp/>its<sp/>due<sp/>time.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>ret<sp/>=<sp/>boolean_set_by_user_cmd_;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classdynamic__graph__manager_1_1SimpleDGM_1adb40055a916691d326bc6466eab9680b" kindref="member">user_command_callback</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dynamic_graph_manager::TestUserCmdBool::Request&amp;<sp/>req,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dynamic_graph_manager::TestUserCmdBool::Response&amp;<sp/>res)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>parse<sp/>and<sp/>register<sp/>the<sp/>command<sp/>for<sp/>further<sp/>call.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamic__graph_1_1DynamicGraphManager_1a72146c4ddd173869a512e9f174ad48df" kindref="member">add_user_command</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::bind(&amp;<ref refid="classdynamic__graph__manager_1_1SimpleDGM_1a6ba8314169c29c722cdcea810798f08d" kindref="member">SimpleDGM::user_command</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>req.input_boolean));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>return<sp/>whatever<sp/>the<sp/>user<sp/>want</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res.sanity_check<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>service<sp/>has<sp/>been<sp/>executed<sp/>properly</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classdynamic__graph__manager_1_1SimpleDGM_1a5fe81f9feb5d982761d7a427aa31e7b4" kindref="member">is_in_safety_mode</ref>()</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>here<sp/>define<sp/>a<sp/>check<sp/>for<sp/>robot<sp/>specific<sp/>stuff.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>check<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>check<sp/>||<sp/>DynamicGraphManager::is_in_safety_mode();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classdynamic__graph__manager_1_1SimpleDGM_1a37b28e687ce4e724770f5c9f23da4d4f" kindref="member">compute_safety_controls</ref>()</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>fill<sp/>all<sp/>controls<sp/>with<sp/>zero...<sp/>Check<sp/>your<sp/>robot<sp/>to<sp/>imagine<sp/>what<sp/>would</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>be<sp/>safer<sp/>in<sp/>this<sp/>case.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(dynamic_graph::VectorDGMap::iterator<sp/>ctrl<sp/>=</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamic__graph_1_1DynamicGraphManager_1a03eabd2f08990a1dcc1caa652b701020" kindref="member">motor_controls_map_</ref>.begin();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ctrl<sp/>!=<sp/><ref refid="classdynamic__graph_1_1DynamicGraphManager_1a03eabd2f08990a1dcc1caa652b701020" kindref="member">motor_controls_map_</ref>.end();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++ctrl)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ctrl-&gt;second.fill(0.0);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classdynamic__graph__manager_1_1SimpleDGM_1a6ba8314169c29c722cdcea810798f08d" kindref="member">user_command</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>user_input)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>do<sp/>something<sp/>with<sp/>the<sp/>internal<sp/>state<sp/>or<sp/>with<sp/>the<sp/>hardware</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>boolean_set_by_user_cmd_<sp/>=<sp/>user_input;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>some<sp/>internal<sp/>hardware<sp/>class<sp/>or<sp/>obect.<sp/>Here<sp/>just<sp/>a<sp/>simple<sp/>boolean<sp/>for</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>unit<sp/>testing</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>std::atomic_bool<sp/>boolean_set_by_user_cmd_;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classdynamic__graph__manager_1_1SimpleDGM_1a6ba8314169c29c722cdcea810798f08d" kindref="member">user_command</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>user_input)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>do<sp/>something<sp/>with<sp/>the<sp/>internal<sp/>state<sp/>or<sp/>with<sp/>the<sp/>hardware</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boolean_set_by_user_cmd_<sp/>=<sp/>user_input;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>some<sp/>internal<sp/>hardware<sp/>class<sp/>or<sp/>obect.<sp/>Here<sp/>just<sp/>a<sp/>simple<sp/>boolean<sp/>for</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>unit<sp/>testing</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::atomic_bool<sp/>boolean_set_by_user_cmd_;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Control</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>dynamicgraph::Vector<sp/>desired_torques_,<sp/>desired_positions_;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Control</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>dynamicgraph::Vector<sp/>desired_torques_,<sp/>desired_positions_;</highlight></codeline>
 <codeline><highlight class="normal">};</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">}<sp/></highlight><highlight class="comment">//namespace</highlight></codeline>
+<codeline><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>dynamic_graph_manager</highlight></codeline>
 </programlisting> </para>    </detaileddescription>
   </compounddef>
 </doxygen>

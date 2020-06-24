@@ -2,7 +2,7 @@
 <tagfile>
   <compound kind="file">
     <name>demo_checkpoint_timer.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/real_time_tools/demos/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/demos/</path>
     <filename>demo__checkpoint__timer_8cpp</filename>
     <includes id="checkpoint__timer_8hpp" name="checkpoint_timer.hpp" local="no" imported="no">real_time_tools/checkpoint_timer.hpp</includes>
     <includes id="timer_8hpp" name="timer.hpp" local="no" imported="no">real_time_tools/timer.hpp</includes>
@@ -37,7 +37,7 @@
   </compound>
   <compound kind="file">
     <name>demo_realtime_check.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/real_time_tools/demos/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/demos/</path>
     <filename>demo__realtime__check_8cpp</filename>
     <includes id="timer_8hpp" name="timer.hpp" local="yes" imported="no">real_time_tools/timer.hpp</includes>
     <includes id="realtime__check_8hpp" name="realtime_check.hpp" local="yes" imported="no">real_time_tools/realtime_check.hpp</includes>
@@ -59,7 +59,7 @@
   </compound>
   <compound kind="file">
     <name>demo_realtime_strict_check.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/real_time_tools/demos/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/demos/</path>
     <filename>demo__realtime__strict__check_8cpp</filename>
     <includes id="realtime__check_8hpp" name="realtime_check.hpp" local="yes" imported="no">real_time_tools/realtime_check.hpp</includes>
     <includes id="thread_8hpp" name="thread.hpp" local="yes" imported="no">real_time_tools/thread.hpp</includes>
@@ -87,7 +87,7 @@
   </compound>
   <compound kind="file">
     <name>demo_spinner.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/real_time_tools/demos/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/demos/</path>
     <filename>demo__spinner_8cpp</filename>
     <includes id="spinner_8hpp" name="spinner.hpp" local="yes" imported="no">real_time_tools/spinner.hpp</includes>
     <includes id="thread_8hpp" name="thread.hpp" local="yes" imported="no">real_time_tools/thread.hpp</includes>
@@ -109,14 +109,14 @@
   </compound>
   <compound kind="file">
     <name>demo_thread.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/real_time_tools/demos/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/demos/</path>
     <filename>demo__thread_8cpp</filename>
     <includes id="thread_8hpp" name="thread.hpp" local="yes" imported="no">real_time_tools/thread.hpp</includes>
     <includes id="timer_8hpp" name="timer.hpp" local="yes" imported="no">real_time_tools/timer.hpp</includes>
   </compound>
   <compound kind="file">
     <name>demo_timing.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/real_time_tools/demos/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/demos/</path>
     <filename>demo__timing_8cpp</filename>
     <includes id="spinner_8hpp" name="spinner.hpp" local="yes" imported="no">real_time_tools/spinner.hpp</includes>
     <includes id="thread_8hpp" name="thread.hpp" local="yes" imported="no">real_time_tools/thread.hpp</includes>
@@ -139,7 +139,7 @@
   </compound>
   <compound kind="file">
     <name>demo_usb_stream_imu_3DM_GX3_25.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/real_time_tools/demos/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/demos/</path>
     <filename>demo__usb__stream__imu__3DM__GX3__25_8cpp</filename>
     <includes id="timer_8hpp" name="timer.hpp" local="yes" imported="no">real_time_tools/timer.hpp</includes>
     <member kind="function">
@@ -180,7 +180,7 @@
   </compound>
   <compound kind="file">
     <name>checkpoint_timer.hpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/real_time_tools/include/real_time_tools/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/include/real_time_tools/</path>
     <filename>checkpoint__timer_8hpp</filename>
     <includes id="timer_8hpp" name="timer.hpp" local="yes" imported="no">timer.hpp</includes>
     <includes id="checkpoint__timer_8hxx" name="checkpoint_timer.hxx" local="yes" imported="no">checkpoint_timer.hxx</includes>
@@ -188,19 +188,19 @@
   </compound>
   <compound kind="file">
     <name>checkpoint_timer.hxx</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/real_time_tools/include/real_time_tools/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/include/real_time_tools/</path>
     <filename>checkpoint__timer_8hxx</filename>
   </compound>
   <compound kind="file">
     <name>frequency_manager.hpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/real_time_tools/include/real_time_tools/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/include/real_time_tools/</path>
     <filename>frequency__manager_8hpp</filename>
     <includes id="timer_8hpp" name="timer.hpp" local="yes" imported="no">real_time_tools/timer.hpp</includes>
     <class kind="class">real_time_tools::FrequencyManager</class>
   </compound>
   <compound kind="file">
     <name>iostream.hpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/real_time_tools/include/real_time_tools/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/include/real_time_tools/</path>
     <filename>iostream_8hpp</filename>
     <member kind="function">
       <type>std::string</type>
@@ -226,7 +226,7 @@
   </compound>
   <compound kind="file">
     <name>mutex.hpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/real_time_tools/include/real_time_tools/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/include/real_time_tools/</path>
     <filename>mutex_8hpp</filename>
     <class kind="class">real_time_tools::RealTimeMutex</class>
     <member kind="typedef">
@@ -246,7 +246,7 @@
   </compound>
   <compound kind="file">
     <name>process_manager.hpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/real_time_tools/include/real_time_tools/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/include/real_time_tools/</path>
     <filename>process__manager_8hpp</filename>
     <member kind="function">
       <type>bool</type>
@@ -265,13 +265,13 @@
   </compound>
   <compound kind="file">
     <name>realtime_check.hpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/real_time_tools/include/real_time_tools/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/include/real_time_tools/</path>
     <filename>realtime__check_8hpp</filename>
     <class kind="class">real_time_tools::RealTimeCheck</class>
   </compound>
   <compound kind="file">
     <name>rt_mutex.hpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/real_time_tools/include/real_time_tools/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/include/real_time_tools/</path>
     <filename>rt__mutex_8hpp</filename>
     <member kind="typedef">
       <type>pthread_mutex_t</type>
@@ -318,20 +318,20 @@
   </compound>
   <compound kind="file">
     <name>spinner.hpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/real_time_tools/include/real_time_tools/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/include/real_time_tools/</path>
     <filename>spinner_8hpp</filename>
     <class kind="class">real_time_tools::Spinner</class>
   </compound>
   <compound kind="file">
     <name>thread.hpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/real_time_tools/include/real_time_tools/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/include/real_time_tools/</path>
     <filename>thread_8hpp</filename>
     <class kind="class">real_time_tools::RealTimeThreadParameters</class>
     <class kind="class">real_time_tools::RealTimeThread</class>
   </compound>
   <compound kind="file">
     <name>threadsafe_object.hpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/real_time_tools/include/real_time_tools/threadsafe/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/include/real_time_tools/threadsafe/</path>
     <filename>threadsafe__object_8hpp</filename>
     <includes id="timer_8hpp" name="timer.hpp" local="yes" imported="no">real_time_tools/timer.hpp</includes>
     <includes id="threadsafe__object_8hxx" name="threadsafe_object.hxx" local="yes" imported="no">real_time_tools/threadsafe/threadsafe_object.hxx</includes>
@@ -341,13 +341,13 @@
   </compound>
   <compound kind="file">
     <name>threadsafe_object.hxx</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/real_time_tools/include/real_time_tools/threadsafe/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/include/real_time_tools/threadsafe/</path>
     <filename>threadsafe__object_8hxx</filename>
     <includes id="timer_8hpp" name="timer.hpp" local="yes" imported="no">real_time_tools/timer.hpp</includes>
   </compound>
   <compound kind="file">
     <name>threadsafe_timeseries.hpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/real_time_tools/include/real_time_tools/threadsafe/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/include/real_time_tools/threadsafe/</path>
     <filename>threadsafe__timeseries_8hpp</filename>
     <includes id="timer_8hpp" name="timer.hpp" local="yes" imported="no">real_time_tools/timer.hpp</includes>
     <includes id="threadsafe__timeseries_8hxx" name="threadsafe_timeseries.hxx" local="yes" imported="no">real_time_tools/threadsafe/threadsafe_timeseries.hxx</includes>
@@ -355,25 +355,25 @@
   </compound>
   <compound kind="file">
     <name>threadsafe_timeseries.hxx</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/real_time_tools/include/real_time_tools/threadsafe/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/include/real_time_tools/threadsafe/</path>
     <filename>threadsafe__timeseries_8hxx</filename>
     <includes id="threadsafe__timeseries_8hpp" name="threadsafe_timeseries.hpp" local="yes" imported="no">real_time_tools/threadsafe/threadsafe_timeseries.hpp</includes>
   </compound>
   <compound kind="file">
     <name>timer.hpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/real_time_tools/include/real_time_tools/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/include/real_time_tools/</path>
     <filename>timer_8hpp</filename>
     <includes id="iostream_8hpp" name="iostream.hpp" local="yes" imported="no">real_time_tools/iostream.hpp</includes>
     <class kind="class">real_time_tools::Timer</class>
   </compound>
   <compound kind="file">
     <name>compute_statistics.py</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/real_time_tools/src/bin/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/src/bin/</path>
     <filename>compute__statistics_8py</filename>
   </compound>
   <compound kind="file">
     <name>realtime_test.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/real_time_tools/src/bin/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/src/bin/</path>
     <filename>realtime__test_8cpp</filename>
     <includes id="realtime__check_8hpp" name="realtime_check.hpp" local="yes" imported="no">real_time_tools/realtime_check.hpp</includes>
     <includes id="spinner_8hpp" name="spinner.hpp" local="yes" imported="no">real_time_tools/spinner.hpp</includes>
@@ -440,7 +440,7 @@
   </compound>
   <compound kind="file">
     <name>realtime_test_display.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/real_time_tools/src/bin/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/src/bin/</path>
     <filename>realtime__test__display_8cpp</filename>
     <includes id="spinner_8hpp" name="spinner.hpp" local="yes" imported="no">real_time_tools/spinner.hpp</includes>
     <member kind="function">
@@ -467,7 +467,7 @@
   </compound>
   <compound kind="file">
     <name>iostream.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/real_time_tools/src/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/src/</path>
     <filename>iostream_8cpp</filename>
     <includes id="timer_8hpp" name="timer.hpp" local="yes" imported="no">real_time_tools/timer.hpp</includes>
     <includes id="iostream_8hpp" name="iostream.hpp" local="yes" imported="no">real_time_tools/iostream.hpp</includes>
@@ -495,7 +495,7 @@
   </compound>
   <compound kind="file">
     <name>process_manager.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/real_time_tools/src/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/src/</path>
     <filename>process__manager_8cpp</filename>
     <includes id="iostream_8hpp" name="iostream.hpp" local="yes" imported="no">real_time_tools/iostream.hpp</includes>
     <includes id="process__manager_8hpp" name="process_manager.hpp" local="yes" imported="no">real_time_tools/process_manager.hpp</includes>
@@ -516,27 +516,27 @@
   </compound>
   <compound kind="file">
     <name>realtime_check.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/real_time_tools/src/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/src/</path>
     <filename>realtime__check_8cpp</filename>
     <includes id="realtime__check_8hpp" name="realtime_check.hpp" local="yes" imported="no">real_time_tools/realtime_check.hpp</includes>
   </compound>
   <compound kind="file">
     <name>spinner.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/real_time_tools/src/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/src/</path>
     <filename>spinner_8cpp</filename>
     <includes id="timer_8hpp" name="timer.hpp" local="no" imported="no">real_time_tools/timer.hpp</includes>
     <includes id="spinner_8hpp" name="spinner.hpp" local="no" imported="no">real_time_tools/spinner.hpp</includes>
   </compound>
   <compound kind="file">
     <name>thread.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/real_time_tools/src/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/src/</path>
     <filename>thread_8cpp</filename>
     <includes id="thread_8hpp" name="thread.hpp" local="yes" imported="no">real_time_tools/thread.hpp</includes>
     <includes id="process__manager_8hpp" name="process_manager.hpp" local="yes" imported="no">real_time_tools/process_manager.hpp</includes>
   </compound>
   <compound kind="file">
     <name>timer.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/real_time_tools/src/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/real_time_tools/src/</path>
     <filename>timer_8cpp</filename>
     <includes id="iostream_8hpp" name="iostream.hpp" local="no" imported="no">real_time_tools/iostream.hpp</includes>
     <includes id="timer_8hpp" name="timer.hpp" local="no" imported="no">real_time_tools/timer.hpp</includes>
@@ -571,8 +571,8 @@
       <type>void</type>
       <name>print_statistics</name>
       <anchorfile>classreal__time__tools_1_1CheckpointTimer.html</anchorfile>
-      <anchor>acce8c21123fe6f450c8f22de575cfef8</anchor>
-      <arglist>() const </arglist>
+      <anchor>a73e001fa40a76ce5fd917a2dfcd09555</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="variable" protection="private">
       <type>std::array&lt; real_time_tools::Timer, NUM_CHECKPOINTS+1 &gt;</type>
@@ -792,8 +792,8 @@
       <type>bool</type>
       <name>was_realtime_lost</name>
       <anchorfile>classreal__time__tools_1_1RealTimeCheck.html</anchorfile>
-      <anchor>af4fcff0b49162ff802192c2e4832568a</anchor>
-      <arglist>() const </arglist>
+      <anchor>a88f45e9151a5709812adddbb5dd142cc</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -813,8 +813,8 @@
       <type>double</type>
       <name>get_current_frequency</name>
       <anchorfile>classreal__time__tools_1_1RealTimeCheck.html</anchorfile>
-      <anchor>a1cd5c3fb05a46970361064348c57197d</anchor>
-      <arglist>() const </arglist>
+      <anchor>a375f76a8df6a08ea1755728391384302</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -1104,22 +1104,22 @@
       <type>void</type>
       <name>wait_for_update</name>
       <anchorfile>classreal__time__tools_1_1SingletypeThreadsafeObject.html</anchorfile>
-      <anchor>ace9ae42bea412eadcd251097089c30cc</anchor>
-      <arglist>(const size_t &amp;index) const </arglist>
+      <anchor>ac105db0216c21d2bf7cb0f2465857aeb</anchor>
+      <arglist>(const size_t &amp;index) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>wait_for_update</name>
       <anchorfile>classreal__time__tools_1_1SingletypeThreadsafeObject.html</anchorfile>
-      <anchor>a222e0fbdabcdccd95e9d66663e849a58</anchor>
-      <arglist>(const std::string &amp;name) const </arglist>
+      <anchor>ab97c9e8f26f6a9a3c67bd59842bad4b2</anchor>
+      <arglist>(const std::string &amp;name) const</arglist>
     </member>
     <member kind="function">
       <type>size_t</type>
       <name>wait_for_update</name>
       <anchorfile>classreal__time__tools_1_1SingletypeThreadsafeObject.html</anchorfile>
-      <anchor>ad86f983aa4366695415ca3816002a3fd</anchor>
-      <arglist>() const </arglist>
+      <anchor>a4d77aeca1b3789cc97f49ff2dd4c6562</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>size_t</type>
@@ -1132,22 +1132,22 @@
       <type>Type</type>
       <name>get</name>
       <anchorfile>classreal__time__tools_1_1SingletypeThreadsafeObject.html</anchorfile>
-      <anchor>adb4e58f3057002b931e570374cb8604e</anchor>
-      <arglist>(const size_t &amp;index=0) const </arglist>
+      <anchor>adcad6fcb86463b85ce7e18260b20712e</anchor>
+      <arglist>(const size_t &amp;index=0) const</arglist>
     </member>
     <member kind="function">
       <type>Type</type>
       <name>get</name>
       <anchorfile>classreal__time__tools_1_1SingletypeThreadsafeObject.html</anchorfile>
-      <anchor>a72ed3358cc661ea9d5681ee359aed2e4</anchor>
-      <arglist>(const std::string &amp;name) const </arglist>
+      <anchor>a5b30ba4b12d1d28d23b01dec4ae3c918</anchor>
+      <arglist>(const std::string &amp;name) const</arglist>
     </member>
     <member kind="function">
       <type>Type</type>
       <name>get</name>
       <anchorfile>classreal__time__tools_1_1SingletypeThreadsafeObject.html</anchorfile>
-      <anchor>a08d539478b86e0243de5fe2fa1680c06</anchor>
-      <arglist>() const </arglist>
+      <anchor>a7c56d14b8e1526cf6f16bce644f09849</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -1281,15 +1281,15 @@
       <type>virtual Type</type>
       <name>get_next</name>
       <anchorfile>classreal__time__tools_1_1ThreadsafeHistoryInterface.html</anchorfile>
-      <anchor>added71aaeb7d083fc12289814da69d1c</anchor>
-      <arglist>(size_t id) const </arglist>
+      <anchor>af9541280de2b560e833b826befb0545d</anchor>
+      <arglist>(size_t id) const</arglist>
     </member>
     <member kind="function" protection="private" virtualness="virtual">
       <type>virtual Type</type>
       <name>get_newest</name>
       <anchorfile>classreal__time__tools_1_1ThreadsafeHistoryInterface.html</anchorfile>
-      <anchor>a8a10fa5abcb83d54fa33339e8800db6c</anchor>
-      <arglist>() const </arglist>
+      <anchor>a4a3264f37257d8cd48e4d6975ffdf9d7</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function" protection="private" virtualness="pure">
       <type>virtual size_t</type>
@@ -1318,10 +1318,10 @@
     <filename>classreal__time__tools_1_1ThreadsafeObject.html</filename>
     <templarg>Types</templarg>
     <member kind="typedef">
-      <type>typename std::tuple_element&lt; INDEX, std::tuple&lt; Types... &gt;&gt;::type</type>
+      <type>typename std::tuple_element&lt; INDEX, std::tuple&lt; Types... &gt; &gt;::type</type>
       <name>Type</name>
       <anchorfile>classreal__time__tools_1_1ThreadsafeObject.html</anchorfile>
-      <anchor>aa40f755aebba0692a345e2b807d781ed</anchor>
+      <anchor>afcbd77df1964d4fe606f1e776f1ff9b8</anchor>
       <arglist></arglist>
     </member>
     <member kind="function">
@@ -1335,29 +1335,29 @@
       <type>void</type>
       <name>wait_for_update</name>
       <anchorfile>classreal__time__tools_1_1ThreadsafeObject.html</anchorfile>
-      <anchor>a83fbbd7ec1e88f3e58d9644c561d10d4</anchor>
-      <arglist>(unsigned index) const </arglist>
+      <anchor>a85d7f9175a08a3440f9bb783fd4aa264</anchor>
+      <arglist>(unsigned index) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>wait_for_update</name>
       <anchorfile>classreal__time__tools_1_1ThreadsafeObject.html</anchorfile>
-      <anchor>aa072c55b6b539550a53d21f60464d058</anchor>
-      <arglist>() const </arglist>
+      <anchor>a2b1cc6a7d2691e8266130701975fd1f1</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>size_t</type>
       <name>wait_for_update</name>
       <anchorfile>classreal__time__tools_1_1ThreadsafeObject.html</anchorfile>
-      <anchor>add7d192b535970c0b27371e505a2ff96</anchor>
-      <arglist>() const </arglist>
+      <anchor>a16807abf31871861f2fc3e228ecda18f</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>Type&lt; INDEX &gt;</type>
       <name>get</name>
       <anchorfile>classreal__time__tools_1_1ThreadsafeObject.html</anchorfile>
-      <anchor>ad04e1268e2988a199e785dca817b937a</anchor>
-      <arglist>() const </arglist>
+      <anchor>a866719911ad3b4b78c9abd1140862b7f</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -1370,8 +1370,8 @@
       <type>void</type>
       <name>set</name>
       <anchorfile>classreal__time__tools_1_1ThreadsafeObject.html</anchorfile>
-      <anchor>af476dc729bd9c02387d5fcf15e513448</anchor>
-      <arglist>(ThreadsafeObject&lt; Types... &gt;::Type&lt; INDEX &gt; datum)</arglist>
+      <anchor>af77c2b97547459cf1a1e73c72cecd2a9</anchor>
+      <arglist>(ThreadsafeObject&lt; Types ... &gt;::Type&lt; INDEX &gt; datum)</arglist>
     </member>
     <member kind="variable" static="yes">
       <type>static const std::size_t</type>
@@ -1381,7 +1381,7 @@
       <arglist></arglist>
     </member>
     <member kind="variable" protection="private">
-      <type>std::shared_ptr&lt; std::tuple&lt; Types... &gt; &gt;</type>
+      <type>std::shared_ptr&lt; std::tuple&lt; Types ... &gt; &gt;</type>
       <name>data_</name>
       <anchorfile>classreal__time__tools_1_1ThreadsafeObject.html</anchorfile>
       <anchor>a2e73d9d8db2fd54768adfd2f67df68fb</anchor>
@@ -1452,78 +1452,78 @@
       <type>virtual Index</type>
       <name>newest_timeindex</name>
       <anchorfile>classreal__time__tools_1_1ThreadsafeTimeseries.html</anchorfile>
-      <anchor>a6e453d4c31109908fc074dddf8cfa0f4</anchor>
-      <arglist>() const </arglist>
+      <anchor>a9d5495ecc8739d8f65056113ba915a8e</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual Index</type>
       <name>count_appended_elements</name>
       <anchorfile>classreal__time__tools_1_1ThreadsafeTimeseries.html</anchorfile>
-      <anchor>afcf05dc48b7cf190b7aeb11e0352cbd6</anchor>
-      <arglist>() const </arglist>
+      <anchor>adc27cfb168cd917301413a9342431f2a</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual Index</type>
       <name>oldest_timeindex</name>
       <anchorfile>classreal__time__tools_1_1ThreadsafeTimeseries.html</anchorfile>
-      <anchor>af3f4bbdf3f588f6936c8d1f5777dbf6e</anchor>
-      <arglist>() const </arglist>
+      <anchor>a028364ef9654e90a3177dccabaafa098</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual Type</type>
       <name>newest_element</name>
       <anchorfile>classreal__time__tools_1_1ThreadsafeTimeseries.html</anchorfile>
-      <anchor>a287dbff07cc90e36a41dde73466314a9</anchor>
-      <arglist>() const </arglist>
+      <anchor>a6c55830c23d7b4c1080d560b4ad57def</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual Type</type>
       <name>operator[]</name>
       <anchorfile>classreal__time__tools_1_1ThreadsafeTimeseries.html</anchorfile>
-      <anchor>aeaeb6428ee3190538a8e82b525ec0f87</anchor>
-      <arglist>(const Index &amp;timeindex) const </arglist>
+      <anchor>af4219a1cbd483b9a0c8aac3537db090d</anchor>
+      <arglist>(const Index &amp;timeindex) const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual Timestamp</type>
       <name>timestamp_ms</name>
       <anchorfile>classreal__time__tools_1_1ThreadsafeTimeseries.html</anchorfile>
-      <anchor>a2014a6970029b85598d8d4b08b501832</anchor>
-      <arglist>(const Index &amp;timeindex) const </arglist>
+      <anchor>a621ca3e515dabe112f27fddefe4b3dda</anchor>
+      <arglist>(const Index &amp;timeindex) const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual Timestamp</type>
       <name>timestamp_s</name>
       <anchorfile>classreal__time__tools_1_1ThreadsafeTimeseries.html</anchorfile>
-      <anchor>adec397db4b4568f6b3369105122cc919</anchor>
-      <arglist>(const Index &amp;timeindex) const </arglist>
+      <anchor>ad0d658592471f37c5dfca22765d1b6e7</anchor>
+      <arglist>(const Index &amp;timeindex) const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual bool</type>
       <name>wait_for_timeindex</name>
       <anchorfile>classreal__time__tools_1_1ThreadsafeTimeseries.html</anchorfile>
-      <anchor>ac6cee8cdf659da4a25de6a269648cf4e</anchor>
-      <arglist>(const Index &amp;timeindex, const double &amp;max_duration_s=std::numeric_limits&lt; double &gt;::quiet_NaN()) const </arglist>
+      <anchor>ae7e9f19aae9a415788adca06e20d84b3</anchor>
+      <arglist>(const Index &amp;timeindex, const double &amp;max_duration_s=std::numeric_limits&lt; double &gt;::quiet_NaN()) const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual size_t</type>
       <name>length</name>
       <anchorfile>classreal__time__tools_1_1ThreadsafeTimeseries.html</anchorfile>
-      <anchor>a7ed15c2faf8b304f8f6ef97e9cd31020</anchor>
-      <arglist>() const </arglist>
+      <anchor>a5bc74b365f6fab7b9131caf5bb2c15dd</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual size_t</type>
       <name>max_length</name>
       <anchorfile>classreal__time__tools_1_1ThreadsafeTimeseries.html</anchorfile>
-      <anchor>a4d1fd7d17f1c896a81ea62923591dbc4</anchor>
-      <arglist>() const </arglist>
+      <anchor>a14a749296f8728f9fa344e0bc63d6926</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual bool</type>
       <name>has_changed_since_tag</name>
       <anchorfile>classreal__time__tools_1_1ThreadsafeTimeseries.html</anchorfile>
-      <anchor>ab9adfbafe82cd0dae68d1ba3607f5ecb</anchor>
-      <arglist>() const </arglist>
+      <anchor>a77705f3c87496efac4ae066dc2601ba0</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
@@ -1631,15 +1631,15 @@
       <type>void</type>
       <name>dump_measurements</name>
       <anchorfile>classreal__time__tools_1_1Timer.html</anchorfile>
-      <anchor>a1a20b4d7dcb04af92769857396408e54</anchor>
-      <arglist>(std::string file_name) const </arglist>
+      <anchor>a05347a5971441d46b1293f8ed9361b0f</anchor>
+      <arglist>(std::string file_name) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>print_statistics</name>
       <anchorfile>classreal__time__tools_1_1Timer.html</anchorfile>
-      <anchor>a71a7ad376bbc8cf60cfb839fefe6f805</anchor>
-      <arglist>() const </arglist>
+      <anchor>a16635bb883c6f71772093a89cbe3130a</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -1659,29 +1659,29 @@
       <type>double</type>
       <name>get_min_elapsed_sec</name>
       <anchorfile>classreal__time__tools_1_1Timer.html</anchorfile>
-      <anchor>a7ff2401f6c1e28993575f153430db8ef</anchor>
-      <arglist>() const </arglist>
+      <anchor>a167d5aa0ce706bc317999db70ff0f7cd</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>double</type>
       <name>get_max_elapsed_sec</name>
       <anchorfile>classreal__time__tools_1_1Timer.html</anchorfile>
-      <anchor>a365c7dfdddf6c3f14b41bd65b01bc79a</anchor>
-      <arglist>() const </arglist>
+      <anchor>a18563032c4730c75cefba43e69d5aaa9</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>double</type>
       <name>get_avg_elapsed_sec</name>
       <anchorfile>classreal__time__tools_1_1Timer.html</anchorfile>
-      <anchor>a0b5b997f0984a684a16c5e35e5ca07e7</anchor>
-      <arglist>() const </arglist>
+      <anchor>ac1be39401be7768a17cbe8388329f2fc</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>double</type>
       <name>get_std_dev_elapsed_sec</name>
       <anchorfile>classreal__time__tools_1_1Timer.html</anchorfile>
-      <anchor>a417d3213c6f315b9a27ad424410c7440</anchor>
-      <arglist>() const </arglist>
+      <anchor>abc6382e906ae6f90582e0f7026e9dd76</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static double</type>

@@ -1,0 +1,152 @@
+\hypertarget{classci__example__cpp_1_1RosParameters__configuration}{}\section{ci\+\_\+example\+\_\+cpp\+:\+:Ros\+Parameters\+\_\+configuration Class Reference}
+\label{classci__example__cpp_1_1RosParameters__configuration}\index{ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration}}
+
+
+Read gains configuration from the ros parameter server.  
+
+
+
+
+{\ttfamily \#include $<$rosparameters\+\_\+configuration.\+hpp$>$}
+
+
+
+Inheritance diagram for ci\+\_\+example\+\_\+cpp\+:\+:Ros\+Parameters\+\_\+configuration\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classci__example__cpp_1_1RosParameters__configuration__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ci\+\_\+example\+\_\+cpp\+:\+:Ros\+Parameters\+\_\+configuration\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classci__example__cpp_1_1RosParameters__configuration__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classci__example__cpp_1_1RosParameters__configuration_aca978c1389d0f672f9cf2e9a68b131c3}{Ros\+Parameters\+\_\+configuration} ()
+\begin{DoxyCompactList}\small\item\em Attempt to get the gains from the parameter server (\char`\"{}gains\+\_\+kp\char`\"{},\char`\"{}gains\+\_\+kd\char`\"{},\char`\"{}gains\+\_\+ki\char`\"{} parameters) If roscore is running, calls to this constructor will be blocking until all the gains are read or roscore is turned off. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classci__example__cpp_1_1RosParameters__configuration_a49ccc6c0db59063f1475f08dce23ee5d}\label{classci__example__cpp_1_1RosParameters__configuration_a49ccc6c0db59063f1475f08dce23ee5d}} 
+double \hyperlink{classci__example__cpp_1_1RosParameters__configuration_a49ccc6c0db59063f1475f08dce23ee5d}{get\+\_\+kp} () const
+\begin{DoxyCompactList}\small\item\em Get the proportinal gain. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classci__example__cpp_1_1RosParameters__configuration_a90eb8bc0d9b4b663cde21fe07d44847e}\label{classci__example__cpp_1_1RosParameters__configuration_a90eb8bc0d9b4b663cde21fe07d44847e}} 
+double \hyperlink{classci__example__cpp_1_1RosParameters__configuration_a90eb8bc0d9b4b663cde21fe07d44847e}{get\+\_\+kd} () const
+\begin{DoxyCompactList}\small\item\em Get the derivative gain. \end{DoxyCompactList}\item 
+double \hyperlink{classci__example__cpp_1_1RosParameters__configuration_a01be945f19c9fc4734f28460a335e731}{get\+\_\+ki} () const
+\item 
+bool \hyperlink{classci__example__cpp_1_1RosParameters__configuration_afcf30b3c93eb3d215d8dfb852eaaae52}{has\+\_\+error} () const
+\item 
+std\+::string \hyperlink{classci__example__cpp_1_1RosParameters__configuration_aa6c44530007d18df221b22b84abcedea}{get\+\_\+error} () const
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classci__example__cpp_1_1RosParameters__configuration_a4b8d047f6493863c6878df5209331761}{kp\+\_\+}
+\item 
+double \hyperlink{classci__example__cpp_1_1RosParameters__configuration_a51b4e5cc8e72a0ab808bf71cee50d16c}{kd\+\_\+}
+\item 
+double \hyperlink{classci__example__cpp_1_1RosParameters__configuration_a777808b0fd55a891351ca0054773c374}{ki\+\_\+}
+\item 
+std\+::string \hyperlink{classci__example__cpp_1_1RosParameters__configuration_ab0f1e9eb6d5bf3bd9fca4940961ba678}{error\+\_\+message\+\_\+}
+\item 
+bool \hyperlink{classci__example__cpp_1_1RosParameters__configuration_a77545cc772174c2a4c321396081222de}{error\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Read gains configuration from the ros parameter server. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classci__example__cpp_1_1RosParameters__configuration_aca978c1389d0f672f9cf2e9a68b131c3}\label{classci__example__cpp_1_1RosParameters__configuration_aca978c1389d0f672f9cf2e9a68b131c3}} 
+\index{ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration}!Ros\+Parameters\+\_\+configuration@{Ros\+Parameters\+\_\+configuration}}
+\index{Ros\+Parameters\+\_\+configuration@{Ros\+Parameters\+\_\+configuration}!ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration}}
+\subsubsection{\texorpdfstring{Ros\+Parameters\+\_\+configuration()}{RosParameters\_configuration()}}
+{\footnotesize\ttfamily ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration\+::\+Ros\+Parameters\+\_\+configuration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Attempt to get the gains from the parameter server (\char`\"{}gains\+\_\+kp\char`\"{},\char`\"{}gains\+\_\+kd\char`\"{},\char`\"{}gains\+\_\+ki\char`\"{} parameters) If roscore is running, calls to this constructor will be blocking until all the gains are read or roscore is turned off. 
+
+If roscore is turned off before gains are read, \hyperlink{classci__example__cpp_1_1RosParameters__configuration_afcf30b3c93eb3d215d8dfb852eaaae52}{has\+\_\+error()} will return true \begin{DoxySeeAlso}{See also}
+\hyperlink{classci__example__cpp_1_1RosParameters__configuration_afcf30b3c93eb3d215d8dfb852eaaae52}{has\+\_\+error()} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classci__example__cpp_1_1RosParameters__configuration_aa6c44530007d18df221b22b84abcedea}\label{classci__example__cpp_1_1RosParameters__configuration_aa6c44530007d18df221b22b84abcedea}} 
+\index{ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration}!get\+\_\+error@{get\+\_\+error}}
+\index{get\+\_\+error@{get\+\_\+error}!ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration}}
+\subsubsection{\texorpdfstring{get\+\_\+error()}{get\_error()}}
+{\footnotesize\ttfamily std\+::string ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration\+::get\+\_\+error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the error messages 
+
+Implements \hyperlink{classci__example__cpp_1_1Gains__configuration_a886100ef46082d1b9f8ee169318dc554}{ci\+\_\+example\+\_\+cpp\+::\+Gains\+\_\+configuration}.
+
+\mbox{\Hypertarget{classci__example__cpp_1_1RosParameters__configuration_a01be945f19c9fc4734f28460a335e731}\label{classci__example__cpp_1_1RosParameters__configuration_a01be945f19c9fc4734f28460a335e731}} 
+\index{ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration}!get\+\_\+ki@{get\+\_\+ki}}
+\index{get\+\_\+ki@{get\+\_\+ki}!ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration}}
+\subsubsection{\texorpdfstring{get\+\_\+ki()}{get\_ki()}}
+{\footnotesize\ttfamily double ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration\+::get\+\_\+ki (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+get the integral gain 
+
+Implements \hyperlink{classci__example__cpp_1_1Gains__configuration_a1ac03c97e04ebfbb3c29122e13b0ec0e}{ci\+\_\+example\+\_\+cpp\+::\+Gains\+\_\+configuration}.
+
+\mbox{\Hypertarget{classci__example__cpp_1_1RosParameters__configuration_afcf30b3c93eb3d215d8dfb852eaaae52}\label{classci__example__cpp_1_1RosParameters__configuration_afcf30b3c93eb3d215d8dfb852eaaae52}} 
+\index{ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration}!has\+\_\+error@{has\+\_\+error}}
+\index{has\+\_\+error@{has\+\_\+error}!ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration}}
+\subsubsection{\texorpdfstring{has\+\_\+error()}{has\_error()}}
+{\footnotesize\ttfamily bool ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration\+::has\+\_\+error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Check if there are internal errors 
+
+Implements \hyperlink{classci__example__cpp_1_1Gains__configuration_ae075925f60288519f8a4fcb477453a66}{ci\+\_\+example\+\_\+cpp\+::\+Gains\+\_\+configuration}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classci__example__cpp_1_1RosParameters__configuration_a77545cc772174c2a4c321396081222de}\label{classci__example__cpp_1_1RosParameters__configuration_a77545cc772174c2a4c321396081222de}} 
+\index{ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration}!error\+\_\+@{error\+\_\+}}
+\index{error\+\_\+@{error\+\_\+}!ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration}}
+\subsubsection{\texorpdfstring{error\+\_\+}{error\_}}
+{\footnotesize\ttfamily bool ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration\+::error\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+True is an error occured. \mbox{\Hypertarget{classci__example__cpp_1_1RosParameters__configuration_ab0f1e9eb6d5bf3bd9fca4940961ba678}\label{classci__example__cpp_1_1RosParameters__configuration_ab0f1e9eb6d5bf3bd9fca4940961ba678}} 
+\index{ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration}!error\+\_\+message\+\_\+@{error\+\_\+message\+\_\+}}
+\index{error\+\_\+message\+\_\+@{error\+\_\+message\+\_\+}!ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration}}
+\subsubsection{\texorpdfstring{error\+\_\+message\+\_\+}{error\_message\_}}
+{\footnotesize\ttfamily std\+::string ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration\+::error\+\_\+message\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+Internal error message. \mbox{\Hypertarget{classci__example__cpp_1_1RosParameters__configuration_a51b4e5cc8e72a0ab808bf71cee50d16c}\label{classci__example__cpp_1_1RosParameters__configuration_a51b4e5cc8e72a0ab808bf71cee50d16c}} 
+\index{ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration}!kd\+\_\+@{kd\+\_\+}}
+\index{kd\+\_\+@{kd\+\_\+}!ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration}}
+\subsubsection{\texorpdfstring{kd\+\_\+}{kd\_}}
+{\footnotesize\ttfamily double ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration\+::kd\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+Derivative gain. \mbox{\Hypertarget{classci__example__cpp_1_1RosParameters__configuration_a777808b0fd55a891351ca0054773c374}\label{classci__example__cpp_1_1RosParameters__configuration_a777808b0fd55a891351ca0054773c374}} 
+\index{ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration}!ki\+\_\+@{ki\+\_\+}}
+\index{ki\+\_\+@{ki\+\_\+}!ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration}}
+\subsubsection{\texorpdfstring{ki\+\_\+}{ki\_}}
+{\footnotesize\ttfamily double ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration\+::ki\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+Integral gain. \mbox{\Hypertarget{classci__example__cpp_1_1RosParameters__configuration_a4b8d047f6493863c6878df5209331761}\label{classci__example__cpp_1_1RosParameters__configuration_a4b8d047f6493863c6878df5209331761}} 
+\index{ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration}!kp\+\_\+@{kp\+\_\+}}
+\index{kp\+\_\+@{kp\+\_\+}!ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration}}
+\subsubsection{\texorpdfstring{kp\+\_\+}{kp\_}}
+{\footnotesize\ttfamily double ci\+\_\+example\+\_\+cpp\+::\+Ros\+Parameters\+\_\+configuration\+::kp\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+Proportinal gain. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/ci\+\_\+example\+\_\+cpp/\hyperlink{rosparameters__configuration_8hpp}{rosparameters\+\_\+configuration.\+hpp}\item 
+src/\hyperlink{rosparameters__configuration_8cpp}{rosparameters\+\_\+configuration.\+cpp}\end{DoxyCompactItemize}

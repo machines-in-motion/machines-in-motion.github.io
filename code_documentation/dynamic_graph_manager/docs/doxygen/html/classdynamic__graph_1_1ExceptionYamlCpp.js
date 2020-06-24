@@ -12,6 +12,6 @@ var classdynamic__graph_1_1ExceptionYamlCpp =
     [ "ExceptionYamlCpp", "classdynamic__graph_1_1ExceptionYamlCpp.html#ae6dc871402ab15a7af2181d3b2e5bc5e", null ],
     [ "ExceptionYamlCpp", "classdynamic__graph_1_1ExceptionYamlCpp.html#a823359f3d24ad6930042d4d5c2443988", null ],
     [ "~ExceptionYamlCpp", "classdynamic__graph_1_1ExceptionYamlCpp.html#aed0be8021bf658a8d741ab8f561b5da0", null ],
-    [ "getExceptionName", "classdynamic__graph_1_1ExceptionYamlCpp.html#a2798dc770d78aba251dfa2fa33d05269", null ],
+    [ "getExceptionName", "classdynamic__graph_1_1ExceptionYamlCpp.html#aa0d7f34b8b246a8d23ce1eda5d79b80c", null ],
     [ "EXCEPTION_NAME", "classdynamic__graph_1_1ExceptionYamlCpp.html#a7d19bc2c6d36d26bd878795ea00bc63f", null ]
 ];

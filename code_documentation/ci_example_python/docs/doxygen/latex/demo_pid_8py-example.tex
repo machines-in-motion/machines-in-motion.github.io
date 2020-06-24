@@ -1,0 +1,107 @@
+\hypertarget{demo_pid_8py-example}{}\section{demo\+\_\+pid.\+py}
+In order to run this demos the {\ttfamily ci\+\_\+example\+\_\+python/python/ci\+\_\+example\+\_\+python} path needs to be added in the {\ttfamily P\+Y\+T\+H\+O\+N\+P\+A\+TH}. This is done after\+:
+\begin{DoxyItemize}
+\item 1. Building the workspace by executing {\ttfamily catkin\+\_\+make} from the root of the catkin workspace.
+\item 2. \char`\"{}source ./devel/setup.\+bash\char`\"{} is called from the root of the catkin workspace.
+\item 3. Run the demo by either\+:
+\begin{DoxyItemize}
+\item 3.\+1. {\ttfamily rosrun \hyperlink{namespaceci__example__python}{ci\+\_\+example\+\_\+python} \hyperlink{demo__pid_8py}{demo\+\_\+pid.\+py}}
+\item 3.\+3. {\ttfamily cd /path/to/ci\+\_\+example\+\_\+python/} ; {\ttfamily ./demos/demo\+\_\+pid.py}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Notice the use of the double \#\# for the comments. This allow Doxygen to parse you code and for you to explain in details the content of the demo.
+
+
+\begin{DoxyCodeInclude}
+1 \textcolor{comment}{#!/usr/bin/env python}
+2 
+3 \textcolor{stringliteral}{""" @namespace Demos of the ci\_example\_python.pid.PID controller.}
+4 \textcolor{stringliteral}{}
+5 \textcolor{stringliteral}{@file demo\_pid.py}
+6 \textcolor{stringliteral}{@copyright Copyright (c) 2017-2019,}
+7 \textcolor{stringliteral}{           New York University and Max Planck Gesellschaft,}
+8 \textcolor{stringliteral}{           License BSD-3-Clause}
+9 \textcolor{stringliteral}{}
+10 \textcolor{stringliteral}{@example demo\_pid.py}
+11 \textcolor{stringliteral}{In order to run this demos the `ci\_example\_python/python/ci\_example\_python` path}
+12 \textcolor{stringliteral}{needs to be added in the `PYTHONPATH`. This is done after:}
+13 \textcolor{stringliteral}{- 1. Building the workspace by executing `catkin\_make` from the root of the}
+14 \textcolor{stringliteral}{     catkin workspace.}
+15 \textcolor{stringliteral}{- 2. "source ./devel/setup.bash" is called from the root of the catkin}
+16 \textcolor{stringliteral}{     workspace.}
+17 \textcolor{stringliteral}{- 3. Run the demo by either:}
+18 \textcolor{stringliteral}{    - 3.1. `rosrun ci\_example\_python demo\_pid.py`}
+19 \textcolor{stringliteral}{    - 3.3. `cd /path/to/ci\_example\_python/` ; `./demos/demo\_pid.py`}
+20 \textcolor{stringliteral}{}
+21 \textcolor{stringliteral}{Notice the use of the double ## for the comments. This allow Doxygen}
+22 \textcolor{stringliteral}{to parse you code and for you to explain in details the content of the demo.}
+23 \textcolor{stringliteral}{"""}
+24 
+25 
+26 \textcolor{comment}{# Python 3 compatibility, has to be called just after the hashbang.}
+27 \textcolor{keyword}{from} \_\_future\_\_ \textcolor{keyword}{import} print\_function, division
+28 \textcolor{keyword}{from} \hyperlink{namespaceci__example__python_1_1pid}{ci\_example\_python.pid} \textcolor{keyword}{import} PID, get\_default\_pid, get\_config\_file\_pid
+29 
+30 
+31 \textcolor{keywordflow}{if} \_\_name\_\_ == \textcolor{stringliteral}{"\_\_main\_\_"}:
+32     
+33     
+34     current\_position = 1
+35     
+36     current\_velocity = 0.1
+37     
+38     position\_target = 0
+39     
+40     delta\_time = 0.001
+41 
+42     \textcolor{comment}{# basic example of PID usage}
+43     print(\textcolor{stringliteral}{"basic pid usage:"})
+44     
+45     \textcolor{keyword}{class }Configuration:
+46         \textcolor{stringliteral}{""" This a small shell that contains the PID gains.}
+47 \textcolor{stringliteral}{        It mocks the load of a yaml files.}
+48 \textcolor{stringliteral}{        Attributes:}
+49 \textcolor{stringliteral}{            kp: Proportional gain.}
+50 \textcolor{stringliteral}{            kd: Derivative gain.}
+51 \textcolor{stringliteral}{            ki: Integral gain.}
+52 \textcolor{stringliteral}{        """}
+53         
+54         \textcolor{keyword}{def }\_\_init\_\_(self, kp, kd, ki):
+55             \textcolor{stringliteral}{"""  Create the 3 gains}
+56 \textcolor{stringliteral}{            Args:}
+57 \textcolor{stringliteral}{                kp: Proportional gain.}
+58 \textcolor{stringliteral}{                kd: Derivative gain.}
+59 \textcolor{stringliteral}{                ki: Integral gain.}
+60 \textcolor{stringliteral}{            """}
+61             self.kp = kp
+62             self.kd = kd
+63             self.ki = ki
+64 
+65     
+66     config = Configuration(1,1,1)
+67 
+68     
+69     pid = PID(config)
+70     print(pid)
+71     
+72     force = pid.compute(current\_position,current\_velocity,position\_target,delta\_time)
+73     print(\textcolor{stringliteral}{"force:"},force)
+74 
+75     
+76     \textcolor{keywordflow}{print} (\textcolor{stringliteral}{"pid using default gains:"})
+77     pid = \hyperlink{namespaceci__example__python_1_1pid_a6fc811a84ce986b8315aabae71987cbf}{get\_default\_pid}()
+78     \textcolor{keywordflow}{print} (pid)
+79 
+80     force = pid.compute(current\_position,current\_velocity,position\_target,delta\_time)
+81     \textcolor{keywordflow}{print} (\textcolor{stringliteral}{"force:"},force)
+82 
+83     \textcolor{comment}{# Example of creation of the PID using config files read from config file.}
+84     \textcolor{keywordflow}{print} (\textcolor{stringliteral}{"pid using gains read from config file:"})
+85     pid = \hyperlink{namespaceci__example__python_1_1pid_a18376955fadc78cf60e9836c120adc9a}{get\_config\_file\_pid}(verbose=\textcolor{keyword}{True})
+86     \textcolor{keywordflow}{print} (pid)
+87 
+88     force = pid.compute(current\_position,current\_velocity,position\_target,delta\_time)
+89     \textcolor{keywordflow}{print} (\textcolor{stringliteral}{"force:"},force)
+\end{DoxyCodeInclude}
+ 

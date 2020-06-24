@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="rosparameters__configuration_8cpp" kind="file" language="C++">
+    <compoundname>rosparameters_configuration.cpp</compoundname>
+    <includes refid="rosparameters__configuration_8hpp" local="yes">ci_example_cpp/rosparameters_configuration.hpp</includes>
+    <incdepgraph>
+      <node id="116">
+        <label>ci_example_cpp/gains_configuration.hpp</label>
+        <link refid="gains__configuration_8hpp"/>
+        <childnode refid="117" relation="include">
+        </childnode>
+        <childnode refid="118" relation="include">
+        </childnode>
+      </node>
+      <node id="113">
+        <label>ci_example_cpp/rosparameters_configuration.hpp</label>
+        <link refid="rosparameters__configuration_8hpp"/>
+        <childnode refid="114" relation="include">
+        </childnode>
+        <childnode refid="115" relation="include">
+        </childnode>
+        <childnode refid="116" relation="include">
+        </childnode>
+      </node>
+      <node id="115">
+        <label>ros/master.h</label>
+      </node>
+      <node id="117">
+        <label>string</label>
+      </node>
+      <node id="112">
+        <label>src/rosparameters_configuration.cpp</label>
+        <link refid="rosparameters__configuration_8cpp"/>
+        <childnode refid="113" relation="include">
+        </childnode>
+      </node>
+      <node id="114">
+        <label>ros/ros.h</label>
+      </node>
+      <node id="118">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceci__example__cpp">ci_example_cpp</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Vincent Berenz </para></simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2019, New York University and Max Planck Gesellschaft, License BSD-3-Clause </para></simplesect>
+<simplesect kind="date"><para>2019-12-09 </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="8"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="rosparameters__configuration_8hpp" kindref="compound">ci_example_cpp/rosparameters_configuration.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceci__example__cpp" kindref="compound">ci_example_cpp</ref><sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>get_parameter(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ros::NodeHandle<sp/>&amp;nh,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;parameter,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>&amp;get_value){</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>ros::Rate<sp/>wait(10);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>success<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(ros::ok()){</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>success<sp/>=<sp/>nh.getParam(parameter,get_value);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(success)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>wait.sleep();</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><ref refid="classci__example__cpp_1_1RosParameters__configuration_1aca978c1389d0f672f9cf2e9a68b131c3" kindref="member">RosParameters_configuration::RosParameters_configuration</ref>(){</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classci__example__cpp_1_1RosParameters__configuration_1a77545cc772174c2a4c321396081222de" kindref="member">error_</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classci__example__cpp_1_1RosParameters__configuration_1ab0f1e9eb6d5bf3bd9fca4940961ba678" kindref="member">error_message_</ref>=</highlight><highlight class="stringliteral">&quot;no<sp/>error&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>ros::NodeHandle<sp/>nh;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/>parameters<sp/>=<sp/>{ROSPARAM_KP,ROSPARAM_KD,ROSPARAM_KI};</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;double*&gt;<sp/>gains<sp/>=<sp/>{&amp;(this-&gt;<ref refid="classci__example__cpp_1_1RosParameters__configuration_1a4b8d047f6493863c6878df5209331761" kindref="member">kp_</ref>),&amp;(this-&gt;<ref refid="classci__example__cpp_1_1RosParameters__configuration_1a51b4e5cc8e72a0ab808bf71cee50d16c" kindref="member">kd_</ref>),&amp;(this-&gt;<ref refid="classci__example__cpp_1_1RosParameters__configuration_1a777808b0fd55a891351ca0054773c374" kindref="member">ki_</ref>)};</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;i&lt;parameters.size();i++){</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>success<sp/>=<sp/>get_parameter(nh,parameters[i],*(gains[i]));</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!success)<sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classci__example__cpp_1_1RosParameters__configuration_1a77545cc772174c2a4c321396081222de" kindref="member">error_</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classci__example__cpp_1_1RosParameters__configuration_1ab0f1e9eb6d5bf3bd9fca4940961ba678" kindref="member">error_message_</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;roscore<sp/>shut<sp/>down<sp/>before<sp/>parameter<sp/>&quot;</highlight><highlight class="normal">+parameters[i]+</highlight><highlight class="stringliteral">&quot;<sp/>could<sp/>be<sp/>read&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classci__example__cpp_1_1RosParameters__configuration_1a49ccc6c0db59063f1475f08dce23ee5d" kindref="member">RosParameters_configuration::get_kp</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="classci__example__cpp_1_1RosParameters__configuration_1a4b8d047f6493863c6878df5209331761" kindref="member">kp_</ref>;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classci__example__cpp_1_1RosParameters__configuration_1a90eb8bc0d9b4b663cde21fe07d44847e" kindref="member">RosParameters_configuration::get_kd</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="classci__example__cpp_1_1RosParameters__configuration_1a51b4e5cc8e72a0ab808bf71cee50d16c" kindref="member">kd_</ref>;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classci__example__cpp_1_1RosParameters__configuration_1a01be945f19c9fc4734f28460a335e731" kindref="member">RosParameters_configuration::get_ki</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="classci__example__cpp_1_1RosParameters__configuration_1a777808b0fd55a891351ca0054773c374" kindref="member">ki_</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classci__example__cpp_1_1RosParameters__configuration_1afcf30b3c93eb3d215d8dfb852eaaae52" kindref="member">RosParameters_configuration::has_error</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="classci__example__cpp_1_1RosParameters__configuration_1a77545cc772174c2a4c321396081222de" kindref="member">error_</ref>;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/>std::string<sp/><ref refid="classci__example__cpp_1_1RosParameters__configuration_1aa6c44530007d18df221b22b84abcedea" kindref="member">RosParameters_configuration::get_error</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="classci__example__cpp_1_1RosParameters__configuration_1ab0f1e9eb6d5bf3bd9fca4940961ba678" kindref="member">error_message_</ref>;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/rosparameters_configuration.cpp"/>
+  </compounddef>
+</doxygen>

@@ -11,5 +11,5 @@ var searchData=
   ['set_5fsegment_5fsizes',['set_segment_sizes',['../namespaceshared__memory.html#ac8ef94dc78f444092f488f0143b155f2',1,'shared_memory']]],
   ['set_5fverbose',['set_verbose',['../namespaceshared__memory.html#afe26d531f043f59bb36ea7816b8a40bf',1,'shared_memory']]],
   ['sharedmemorysegment',['SharedMemorySegment',['../classshared__memory_1_1SharedMemorySegment.html#ae984411227bd175e684f90c9c28c976c',1,'shared_memory::SharedMemorySegment']]],
-  ['size',['size',['../classshared__memory_1_1array.html#afc0dd0c59873934b082e524adb6bf2d7',1,'shared_memory::array']]]
+  ['size',['size',['../classshared__memory_1_1array.html#ad6019f83449e4ea8d1bf4bd0d48c29b0',1,'shared_memory::array']]]
 ];

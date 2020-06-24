@@ -2,56 +2,56 @@
 <tagfile>
   <compound kind="file">
     <name>clean_shared_memory.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/benchmarks/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/benchmarks/</path>
     <filename>clean__shared__memory_8cpp</filename>
     <includes id="benchmark__common_8hh" name="benchmark_common.hh" local="yes" imported="no">shared_memory/benchmarks/benchmark_common.hh</includes>
   </compound>
   <compound kind="file">
     <name>main.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/benchmarks/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/benchmarks/</path>
     <filename>main_8cpp</filename>
   </compound>
   <compound kind="file">
     <name>stress_get_api.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/benchmarks/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/benchmarks/</path>
     <filename>stress__get__api_8cpp</filename>
     <includes id="benchmark__common_8hh" name="benchmark_common.hh" local="no" imported="no">shared_memory/benchmarks/benchmark_common.hh</includes>
     <includes id="shared__memory_8hpp" name="shared_memory.hpp" local="yes" imported="no">shared_memory/shared_memory.hpp</includes>
   </compound>
   <compound kind="file">
     <name>stress_get_raw_boost_efficient.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/benchmarks/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/benchmarks/</path>
     <filename>stress__get__raw__boost__efficient_8cpp</filename>
     <includes id="benchmark__common_8hh" name="benchmark_common.hh" local="yes" imported="no">shared_memory/benchmarks/benchmark_common.hh</includes>
   </compound>
   <compound kind="file">
     <name>stress_get_raw_boost_inefficient.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/benchmarks/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/benchmarks/</path>
     <filename>stress__get__raw__boost__inefficient_8cpp</filename>
     <includes id="benchmark__common_8hh" name="benchmark_common.hh" local="yes" imported="no">shared_memory/benchmarks/benchmark_common.hh</includes>
   </compound>
   <compound kind="file">
     <name>stress_set_api.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/benchmarks/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/benchmarks/</path>
     <filename>stress__set__api_8cpp</filename>
     <includes id="benchmark__common_8hh" name="benchmark_common.hh" local="yes" imported="no">shared_memory/benchmarks/benchmark_common.hh</includes>
     <includes id="shared__memory_8hpp" name="shared_memory.hpp" local="yes" imported="no">shared_memory/shared_memory.hpp</includes>
   </compound>
   <compound kind="file">
     <name>stress_set_raw_boost_efficient.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/benchmarks/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/benchmarks/</path>
     <filename>stress__set__raw__boost__efficient_8cpp</filename>
     <includes id="benchmark__common_8hh" name="benchmark_common.hh" local="yes" imported="no">shared_memory/benchmarks/benchmark_common.hh</includes>
   </compound>
   <compound kind="file">
     <name>stress_set_raw_boost_inefficient.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/benchmarks/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/benchmarks/</path>
     <filename>stress__set__raw__boost__inefficient_8cpp</filename>
     <includes id="benchmark__common_8hh" name="benchmark_common.hh" local="yes" imported="no">shared_memory/benchmarks/benchmark_common.hh</includes>
   </compound>
   <compound kind="file">
     <name>demo_read_array.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/demos/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/demos/</path>
     <filename>demo__read__array_8cpp</filename>
     <member kind="function">
       <type>void</type>
@@ -63,7 +63,7 @@
   </compound>
   <compound kind="file">
     <name>demo_write_array.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/demos/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/demos/</path>
     <filename>demo__write__array_8cpp</filename>
     <member kind="function">
       <type>void</type>
@@ -75,14 +75,14 @@
   </compound>
   <compound kind="file">
     <name>exchange_manager_consumer.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/demos/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/demos/</path>
     <filename>exchange__manager__consumer_8cpp</filename>
     <includes id="exchange__manager__consumer_8hpp" name="exchange_manager_consumer.hpp" local="yes" imported="no">shared_memory/exchange_manager_consumer.hpp</includes>
     <includes id="four__int__values_8hpp" name="four_int_values.hpp" local="yes" imported="no">shared_memory/demos/four_int_values.hpp</includes>
   </compound>
   <compound kind="file">
     <name>exchange_manager_demo.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/demos/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/demos/</path>
     <filename>exchange__manager__demo_8cpp</filename>
     <includes id="four__int__values_8hpp" name="four_int_values.hpp" local="yes" imported="no">shared_memory/demos/four_int_values.hpp</includes>
     <includes id="exchange__manager__consumer_8hpp" name="exchange_manager_consumer.hpp" local="yes" imported="no">shared_memory/exchange_manager_consumer.hpp</includes>
@@ -90,7 +90,7 @@
   </compound>
   <compound kind="file">
     <name>exchange_manager_producer.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/demos/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/demos/</path>
     <filename>exchange__manager__producer_8cpp</filename>
     <includes id="exchange__manager__producer_8hpp" name="exchange_manager_producer.hpp" local="yes" imported="no">shared_memory/exchange_manager_producer.hpp</includes>
     <includes id="four__int__values_8hpp" name="four_int_values.hpp" local="yes" imported="no">shared_memory/demos/four_int_values.hpp</includes>
@@ -98,44 +98,44 @@
   </compound>
   <compound kind="file">
     <name>four_int_values.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/demos/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/demos/</path>
     <filename>four__int__values_8cpp</filename>
     <includes id="four__int__values_8hpp" name="four_int_values.hpp" local="yes" imported="no">shared_memory/demos/four_int_values.hpp</includes>
     <namespace>shared_memory</namespace>
   </compound>
   <compound kind="file">
     <name>get_data.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/demos/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/demos/</path>
     <filename>get__data_8cpp</filename>
     <includes id="shared__memory_8hpp" name="shared_memory.hpp" local="yes" imported="no">shared_memory/shared_memory.hpp</includes>
   </compound>
   <compound kind="file">
     <name>set_data.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/demos/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/demos/</path>
     <filename>set__data_8cpp</filename>
     <includes id="shared__memory_8hpp" name="shared_memory.hpp" local="yes" imported="no">shared_memory/shared_memory.hpp</includes>
   </compound>
   <compound kind="file">
     <name>std_string_vector.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/demos/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/demos/</path>
     <filename>std__string__vector_8cpp</filename>
   </compound>
   <compound kind="file">
     <name>benchmark_common.hh</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/benchmarks/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/benchmarks/</path>
     <filename>benchmark__common_8hh</filename>
     <class kind="struct">MeasureTime</class>
   </compound>
   <compound kind="file">
     <name>four_int_values.hpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/demos/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/demos/</path>
     <filename>four__int__values_8hpp</filename>
     <class kind="class">shared_memory::Four_int_values</class>
     <namespace>shared_memory</namespace>
   </compound>
   <compound kind="file">
     <name>exceptions.h</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/</path>
     <filename>exceptions_8h</filename>
     <class kind="class">shared_memory::Allocation_exception</class>
     <class kind="class">shared_memory::Memory_overflow_exception</class>
@@ -146,7 +146,7 @@
   </compound>
   <compound kind="file">
     <name>exchange_manager_consumer.hpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/</path>
     <filename>exchange__manager__consumer_8hpp</filename>
     <includes id="exchange__manager__memory_8hpp" name="exchange_manager_memory.hpp" local="yes" imported="no">shared_memory/internal/exchange_manager_memory.hpp</includes>
     <class kind="class">shared_memory::Exchange_manager_consumer</class>
@@ -154,7 +154,7 @@
   </compound>
   <compound kind="file">
     <name>exchange_manager_producer.hpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/</path>
     <filename>exchange__manager__producer_8hpp</filename>
     <includes id="exchange__manager__memory_8hpp" name="exchange_manager_memory.hpp" local="yes" imported="no">shared_memory/internal/exchange_manager_memory.hpp</includes>
     <class kind="class">shared_memory::Exchange_manager_producer</class>
@@ -162,7 +162,7 @@
   </compound>
   <compound kind="file">
     <name>exchange_manager_memory.hpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/internal/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/internal/</path>
     <filename>exchange__manager__memory_8hpp</filename>
     <includes id="shared__memory_8hpp" name="shared_memory.hpp" local="yes" imported="no">shared_memory/shared_memory.hpp</includes>
     <class kind="class">shared_memory::internal::Serialized_read</class>
@@ -172,7 +172,7 @@
   </compound>
   <compound kind="file">
     <name>serializable_exchange.hpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/</path>
     <filename>serializable__exchange_8hpp</filename>
     <includes id="shared__memory_8hpp" name="shared_memory.hpp" local="yes" imported="no">shared_memory/shared_memory.hpp</includes>
     <includes id="serializable__exchange_8hxx" name="serializable_exchange.hxx" local="yes" imported="no">serializable_exchange.hxx</includes>
@@ -181,12 +181,12 @@
   </compound>
   <compound kind="file">
     <name>serializable_exchange.hxx</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/</path>
     <filename>serializable__exchange_8hxx</filename>
   </compound>
   <compound kind="file">
     <name>shared_memory.hpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/</path>
     <filename>shared__memory_8hpp</filename>
     <includes id="exceptions_8h" name="exceptions.h" local="yes" imported="no">shared_memory/exceptions.h</includes>
     <includes id="shared__memory_8hxx" name="shared_memory.hxx" local="no" imported="no">shared_memory/shared_memory.hxx</includes>
@@ -406,7 +406,7 @@
   </compound>
   <compound kind="file">
     <name>shared_memory.hxx</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/</path>
     <filename>shared__memory_8hxx</filename>
     <includes id="shared__memory_8hpp" name="shared_memory.hpp" local="no" imported="no">shared_memory/shared_memory.hpp</includes>
     <namespace>shared_memory</namespace>
@@ -518,14 +518,14 @@
   </compound>
   <compound kind="file">
     <name>exceptions.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/src/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/src/</path>
     <filename>exceptions_8cpp</filename>
     <includes id="exceptions_8h" name="exceptions.h" local="yes" imported="no">shared_memory/exceptions.h</includes>
     <namespace>shared_memory</namespace>
   </compound>
   <compound kind="file">
     <name>shared_memory.cpp</name>
-    <path>/home/mnaveau/devel/workspace/src/catkin/core_robotics/shared_memory/src/</path>
+    <path>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/src/</path>
     <filename>shared__memory_8cpp</filename>
     <includes id="shared__memory_8hpp" name="shared_memory.hpp" local="yes" imported="no">shared_memory/shared_memory.hpp</includes>
     <namespace>shared_memory</namespace>
@@ -691,8 +691,8 @@
       <type>std::size_t</type>
       <name>size</name>
       <anchorfile>classshared__memory_1_1array.html</anchorfile>
-      <anchor>afc0dd0c59873934b082e524adb6bf2d7</anchor>
-      <arglist>() const </arglist>
+      <anchor>ad6019f83449e4ea8d1bf4bd0d48c29b0</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -719,8 +719,8 @@
     <filename>classshared__memory_1_1internal_1_1array__members.html</filename>
   </compound>
   <compound kind="class">
-    <name>shared_memory::internal::array_members&lt; T, SIZE, typename std::enable_if&lt; std::is_fundamental&lt; T &gt;::value &amp;&amp;SIZE!=0 &gt;::type &gt;</name>
-    <filename>classshared__memory_1_1internal_1_1array__members_3_01T_00_01SIZE_00_01typename_01std_1_1enable_de9984c52d14535c26d7a424fbd87fe2.html</filename>
+    <name>shared_memory::internal::array_members&lt; T, SIZE, typename std::enable_if&lt; std::is_fundamental&lt; T &gt;::value &amp;&amp;SIZE !=0 &gt;::type &gt;</name>
+    <filename>classshared__memory_1_1internal_1_1array__members_3_01T_00_01SIZE_00_01typename_01std_1_1enable_8ab74519d0175245a44202cbdf761091.html</filename>
     <templarg></templarg>
     <templarg>SIZE</templarg>
   </compound>
@@ -1133,43 +1133,43 @@
       <type>uint</type>
       <name>get_size</name>
       <anchorfile>classshared__memory_1_1SegmentInfo.html</anchorfile>
-      <anchor>a0ab35167b7075c39adc5493511104b09</anchor>
-      <arglist>() const </arglist>
+      <anchor>a10bc7f1530dcc602d12e42ddc222cdbe</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>uint</type>
       <name>get_free_memory</name>
       <anchorfile>classshared__memory_1_1SegmentInfo.html</anchorfile>
-      <anchor>aa91bb7d043ff723bc134fd4bcf38f718</anchor>
-      <arglist>() const </arglist>
+      <anchor>a07049110a3ef9a082147b57b51111a7a</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>uint</type>
       <name>get_used_memory</name>
       <anchorfile>classshared__memory_1_1SegmentInfo.html</anchorfile>
-      <anchor>a4c9c901d3220009dfb73fec4b0592a64</anchor>
-      <arglist>() const </arglist>
+      <anchor>a165763fcbc24aa2b39beb837678e2c4f</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>has_issues</name>
       <anchorfile>classshared__memory_1_1SegmentInfo.html</anchorfile>
-      <anchor>ace1754181cbe2be66e2eaebac7342795</anchor>
-      <arglist>() const </arglist>
+      <anchor>abd146588f1eba17af6d53d351bc3e02d</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>uint</type>
       <name>nb_objects</name>
       <anchorfile>classshared__memory_1_1SegmentInfo.html</anchorfile>
-      <anchor>aa1ecf75582e0df02205ad80c2797bc94</anchor>
-      <arglist>() const </arglist>
+      <anchor>a0476820df56c71f90620324a41ee75e0</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>print</name>
       <anchorfile>classshared__memory_1_1SegmentInfo.html</anchorfile>
-      <anchor>a821eb6fc85451b03ea862e4cf5d6890c</anchor>
-      <arglist>() const </arglist>
+      <anchor>abdd9baf28cb58a647668dcafa48ba28e</anchor>
+      <arglist>() const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -1667,8 +1667,8 @@
     </member>
   </compound>
   <compound kind="page">
-    <name>md_readme</name>
-    <title>readme</title>
-    <filename>md_readme</filename>
+    <name>md_README</name>
+    <title>README</title>
+    <filename>md_README</filename>
   </compound>
 </tagfile>

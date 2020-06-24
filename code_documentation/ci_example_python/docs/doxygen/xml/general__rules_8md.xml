@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="general__rules_8md" kind="file" language="Markdown">
+    <compoundname>general_rules.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">1.<sp/>General<sp/>rules<sp/>applied<sp/>in<sp/>the<sp/>code<sp/>base<sp/>{#coding_guidelines_0}</highlight></codeline>
+<codeline><highlight class="normal">=========================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>I.<sp/>Introduction</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">These<sp/>are<sp/>general<sp/>rules<sp/>independent<sp/>of<sp/>the<sp/>coding<sp/><sp/>language.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>II.<sp/>Catkin<sp/>Package<sp/>and<sp/>Repository<sp/>Naming</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Name:<sp/>lower_cases_with_underscore.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>One<sp/>repository<sp/>per<sp/>catkin<sp/>package.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Same<sp/>name<sp/>for<sp/>package<sp/>and<sp/>repository.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>III.<sp/>Versioning</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Use<sp/>semantic<sp/>versioning<sp/>when<sp/>versioning<sp/>packages.<sp/>Short<sp/>summary:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Given<sp/>a<sp/>version<sp/>number<sp/>MAJOR.MINOR.PATCH,<sp/>increment<sp/>the:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MAJOR<sp/>version<sp/>when<sp/>you<sp/>make<sp/>incompatible<sp/>API<sp/>changes,</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MINOR<sp/>version<sp/>when<sp/>you<sp/>add<sp/>functionality<sp/>in<sp/>a<sp/>backwards-compatible<sp/>manner,<sp/>and</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>PATCH<sp/>version<sp/>when<sp/>you<sp/>make<sp/>backwards-compatible<sp/>bug<sp/>fixes.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Regarding<sp/>formatting<sp/>of<sp/>pre-releases<sp/>(alpha,<sp/>beta,<sp/>rc,<sp/>...)<sp/>consider<sp/>PEP440,</highlight></codeline>
+<codeline><highlight class="normal">especially<sp/>when<sp/>versioning<sp/>Python<sp/>packages<sp/>(note<sp/>that<sp/>there<sp/>is<sp/>no<sp/>general</highlight></codeline>
+<codeline><highlight class="normal">conflict<sp/>with<sp/>semantic<sp/>versioning,<sp/>only<sp/>the<sp/>format<sp/>is<sp/>a<sp/>bit<sp/>different).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>IV.<sp/>Contribution<sp/>Guidelines</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>IV.1.<sp/>Code<sp/>revision:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>ensure<sp/>some<sp/>level<sp/>of<sp/>code<sp/>quality,<sp/>all<sp/>modifications<sp/>have<sp/>to<sp/>be<sp/>reviewed</highlight></codeline>
+<codeline><highlight class="normal">before<sp/>they<sp/>can<sp/>be<sp/>merged.<sp/>This<sp/>is<sp/>done<sp/>via<sp/>merge<sp/>requests<sp/>in<sp/>GitLab</highlight></codeline>
+<codeline><highlight class="normal">(on<sp/>GitHub<sp/>it<sp/>is<sp/>called<sp/>pull<sp/>request<sp/>but<sp/>the<sp/>concept<sp/>is<sp/>the<sp/>same).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>procedure<sp/>for<sp/>adding<sp/>a<sp/>change<sp/>is<sp/>as<sp/>follows:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>When<sp/>creating<sp/>branches,<sp/>use<sp/>your<sp/>name<sp/>as<sp/>a<sp/>namespace,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>e.g.<sp/>*rickdeckard/my_branch*.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>This<sp/>is<sp/>to<sp/>avoid<sp/>confusion<sp/>with<sp/>branches<sp/>of<sp/>other<sp/>people<sp/>and<sp/>to<sp/>indicate<sp/>who</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>is<sp/>responsible<sp/>for<sp/>that<sp/>branch.<sp/>It<sp/>is<sp/>not<sp/>allowed<sp/>to<sp/>push<sp/>branches<sp/>without</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>such<sp/>namespace.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Test<sp/>all<sp/>your<sp/>changes<sp/>and<sp/>update<sp/>documentation.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>When<sp/>finished,<sp/>create<sp/>a<sp/>merge<sp/>request<sp/>to<sp/>the<sp/>master<sp/>branch<sp/>of<sp/>the<sp/>main</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>repository.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Add<sp/>one<sp/>or<sp/>more<sp/>of<sp/>the<sp/>maintainers<sp/>as<sp/>reviewers.<sp/>The<sp/>reviewers<sp/>will<sp/>review<sp/>and</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>maybe<sp/>request<sp/>changes.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Merging<sp/>is<sp/>done<sp/>by<sp/>the<sp/>contributor<sp/>but<sp/>is<sp/>only<sp/>allowed<sp/>after<sp/>all<sp/>reviewers</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>approved.<sp/>If<sp/>the<sp/>merge<sp/>will<sp/>affect<sp/>other<sp/>people<sp/>(e.g.<sp/>by<sp/>breaking<sp/>the<sp/>API),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>make<sp/>sure<sp/>to<sp/>inform<sp/>them,<sp/>e.g.<sp/>via<sp/>a<sp/>Mail<sp/>on<sp/>an<sp/>appropriate<sp/>mailing<sp/>list.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>After<sp/>a<sp/>merge<sp/>request<sp/>is<sp/>merged,<sp/>the<sp/>feature<sp/>branch<sp/>shall<sp/>be<sp/>deleted.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Never<sp/>push<sp/>directly<sp/>to<sp/>master<sp/>or<sp/>other<sp/>top-level<sp/>branches.<sp/>Never<sp/>force-push<sp/>to<sp/></highlight></codeline>
+<codeline><highlight class="normal">any<sp/>branch<sp/>that<sp/>others<sp/>are<sp/>using<sp/>as<sp/>well.<sp/>All<sp/>your<sp/>development<sp/>should<sp/>happen<sp/>in</highlight></codeline>
+<codeline><highlight class="normal">branches<sp/>inside<sp/>your<sp/>namespace.<sp/>To<sp/>keep<sp/>the<sp/>number<sp/>of<sp/>branches<sp/>on<sp/>the<sp/>repository</highlight></codeline>
+<codeline><highlight class="normal">low,<sp/>make<sp/>sure<sp/>to<sp/>delete<sp/>branches<sp/>that<sp/>are<sp/>not<sp/>needed<sp/>anymore.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>top-level<sp/>namespace<sp/>of<sp/>the<sp/>repository<sp/>should<sp/>only<sp/>contain<sp/>a<sp/>master<sp/>branch</highlight></codeline>
+<codeline><highlight class="normal">and<sp/>maybe<sp/>a<sp/>few<sp/>branches<sp/>for<sp/>specific<sp/>versions.<sp/>Those<sp/>branches<sp/>should<sp/>be</highlight></codeline>
+<codeline><highlight class="normal">protected<sp/>so<sp/>that<sp/>direct<sp/>pushing<sp/>is<sp/>not<sp/>possible<sp/>(everything<sp/>has<sp/>to<sp/>go<sp/>through</highlight></codeline>
+<codeline><highlight class="normal">merge<sp/>requests).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>IV.2.<sp/>Some<sp/>rules<sp/>for<sp/>the<sp/>contributors:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>To<sp/>make<sp/>life<sp/>easier<sp/>for<sp/>the<sp/>reviewers<sp/>and<sp/>to<sp/>get<sp/>your<sp/>changes<sp/>merged<sp/>quickly</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>(thus<sp/>reducing<sp/>the<sp/>risk<sp/>of<sp/>merge<sp/>conflicts),<sp/>try<sp/>to<sp/>keep<sp/>merge<sp/>requests</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>rather<sp/>small.<sp/>This<sp/>means<sp/>that,<sp/>where<sp/>possible,<sp/>a<sp/>bigger<sp/>task<sp/>should<sp/>be<sp/>split</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>into<sp/>smaller<sp/>sub-tasks<sp/>that<sp/>can<sp/>be<sp/>merged<sp/>one<sp/>after<sp/>another<sp/>instead<sp/>of</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>putting<sp/>everything<sp/>in<sp/>one<sp/>huge<sp/>merge<sp/>request.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>When<sp/>synchronising<sp/>your<sp/>feature<sp/>branch<sp/>with<sp/>upstream,<sp/>you<sp/>may<sp/>want<sp/>to<sp/>prefer</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>git<sp/>rebase<sp/>over<sp/>git<sp/>merge<sp/>to<sp/>keep<sp/>the<sp/>history<sp/>of<sp/>you<sp/>branch<sp/>clean.<sp/>However,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>when<sp/>there<sp/>are<sp/>complicated<sp/>merge<sp/>conflicts,<sp/>it<sp/>can<sp/>be<sp/>much<sp/>less<sp/>painful<sp/>to</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>use<sp/>merge,<sp/>which<sp/>is<sp/>okay<sp/>in<sp/>this<sp/>case.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>On<sp/>your<sp/>own<sp/>branches,<sp/>you<sp/>can<sp/>do<sp/>whatever<sp/>you<sp/>want,<sp/>i.e.<sp/>it<sp/>is<sp/>usually<sp/>okay<sp/>to</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>force<sp/>push<sp/>there<sp/>(and<sp/>even<sp/>necessary<sp/>when<sp/>you<sp/>rebase).<sp/>However,<sp/>when</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>applying<sp/>changes<sp/>requested<sp/>by<sp/>a<sp/>reviewer,<sp/>please<sp/>do<sp/>not<sp/>amend<sp/>or<sp/>squash<sp/>them</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>into<sp/>older<sp/>commits<sp/>but<sp/>add<sp/>them<sp/>as<sp/>new<sp/>commits.<sp/>This<sp/>makes<sp/>it<sp/>easier<sp/>for<sp/>the</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>reviewer<sp/>to<sp/>see<sp/>what<sp/>changed.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Do<sp/>not<sp/>add<sp/>functional<sp/>changes<sp/>and<sp/>major<sp/>reformatting<sp/>in<sp/>the<sp/>same<sp/>commit<sp/>as</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>this<sp/>makes<sp/>review<sp/>of<sp/>the<sp/>functional<sp/>changes<sp/>very<sp/>difficult.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Do<sp/>add<sp/>unit<sp/>tests<sp/>for<sp/>new<sp/>features</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Do<sp/>create<sp/>new<sp/>demos<sp/>or<sp/>update<sp/>existing<sp/>demos<sp/>to<sp/>make<sp/>it<sp/>easier<sp/>how<sp/>to<sp/>use</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>the<sp/>updated<sp/>API</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>IV.3.<sp/>Some<sp/>rules<sp/>for<sp/>the<sp/>reviewers:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>To<sp/>make<sp/>life<sp/>easier<sp/>for<sp/>the<sp/>contributors,<sp/>try<sp/>to<sp/>provide<sp/>reviews<sp/>in<sp/>a<sp/>timely</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>manner.<sp/>The<sp/>contributor<sp/>may<sp/>be<sp/>blocked<sp/>in<sp/>continuing<sp/>their<sp/>work<sp/>while<sp/>the</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>merge<sp/>request<sp/>is<sp/>under<sp/>review.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>When<sp/>reviewing,<sp/>check<sp/>the<sp/>following<sp/>things:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Is<sp/>the<sp/>style<sp/>guide<sp/>followed?</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Are<sp/>new<sp/>features/changes<sp/>properly<sp/>documented?</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>And<sp/>of<sp/>course:<sp/>Do<sp/>the<sp/>changes<sp/>look<sp/>reasonable<sp/>and<sp/>correct?</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>The<sp/>one<sp/>who<sp/>merges<sp/>should<sp/>directly<sp/>delete<sp/>the<sp/>feature<sp/>branch<sp/>afterwards.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>V.<sp/>Documentation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>V.1<sp/>In-code<sp/>documentation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">All<sp/>code<sp/>**shall**<sp/>be<sp/>documented<sp/>in-source<sp/>using<sp/>Doxygen.</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>means<sp/>that<sp/>every<sp/>function,<sp/>class,<sp/>struct,<sp/>global<sp/>variable,<sp/>etc,</highlight></codeline>
+<codeline><highlight class="normal">needs<sp/>to<sp/>have<sp/>a<sp/>docstring<sp/>containing<sp/>some<sp/>documentation<sp/>in:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[Google](https://google.github.io/styleguide/pyguide.html?showone=Comments#Comments)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>format<sp/>for<sp/>Python,</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[Doxygen](http://www.doxygen.nl/manual/index.html)<sp/>format<sp/>for<sp/>C/C++.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>the<sp/>definition<sp/>and<sp/>declaration<sp/>are<sp/>separated<sp/>(C/C++),<sp/>Doxygen<sp/>should<sp/>be<sp/>in</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>header,<sp/>not<sp/>the<sp/>cpp<sp/>file.<sp/>**Please<sp/>do<sp/>not<sp/>duplicate!**.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>are<sp/>using<sp/>catkin,<sp/>the<sp/>package<sp/>should<sp/>include<sp/>the<sp/>mpi_cmake_modules</highlight></codeline>
+<codeline><highlight class="normal">package<sp/>and<sp/>in<sp/>the<sp/>CMakeLists.txt<sp/>file<sp/>call<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">`build_doxygen_documentation()`<sp/>or<sp/>the<sp/>`default_mpi_cmake_modules()`(future)</highlight></codeline>
+<codeline><highlight class="normal">macros.</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>documentation<sp/>can<sp/>then<sp/>be<sp/>build<sp/>via<sp/>catkin_make<sp/>-DBUILD_DOCUMENTATION=ON.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Make<sp/>the<sp/>documentation<sp/>as<sp/>compact<sp/>as<sp/>possible.<sp/>Avoid<sp/>boilerplate<sp/>formulations</highlight></codeline>
+<codeline><highlight class="normal">that<sp/>do<sp/>not<sp/>add<sp/>useful<sp/>information,<sp/>e.g.<sp/>instead<sp/>of</highlight></codeline>
+<codeline><highlight class="normal">&quot;This<sp/>function<sp/>returns<sp/>foobar&quot;<sp/>simply<sp/>write<sp/>&quot;Returns<sp/>foobar&quot;.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Also<sp/>add<sp/>regular<sp/>comments<sp/>to<sp/>the<sp/>code<sp/>whenever<sp/>you<sp/>feel<sp/>that<sp/>they<sp/>would<sp/>help<sp/>a</highlight></codeline>
+<codeline><highlight class="normal">future<sp/>reader<sp/>to<sp/>more<sp/>easily<sp/>understand<sp/>what<sp/>that<sp/>code<sp/>is<sp/>doing.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>V.2<sp/>Unit-tests<sp/>and<sp/>demos</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Please<sp/>do<sp/>**NOT**<sp/>neglect<sp/>the<sp/>power<sp/>of<sp/>the<sp/>continuous<sp/>intergation<sp/>and<sp/>a<sp/>nice</highlight></codeline>
+<codeline><highlight class="normal">written<sp/>demos<sp/>in<sp/>terms<sp/>of<sp/>Documentation.<sp/>So<sp/>**please**<sp/>take<sp/>the<sp/>time<sp/>to:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>write<sp/>some<sp/>unit-tests.<sp/>See<sp/>how<sp/>to<sp/>write<sp/>a<sp/>unit-tests<sp/>from<sp/>the<sp/>tests<sp/>folder<sp/>in</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>this<sp/>package.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>write<sp/>demo<sp/>executables<sp/>to<sp/>make<sp/>the<sp/>external<sp/>user<sp/>understand<sp/>how<sp/>your</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>API<sp/>should<sp/>be<sp/>used.</highlight></codeline>
+    </programlisting>
+    <location file="doc/general_rules.md"/>
+  </compounddef>
+</doxygen>

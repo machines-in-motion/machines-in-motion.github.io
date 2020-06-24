@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="demo_pid_load_from_file_8cpp-example" kind="example">
+    <compoundname>demo_pid_load_from_file.cpp</compoundname>
+    <detaileddescription>
+<para>Load the PID gains from a yaml file and create a PID controller from them.This illustrates how to safely use the API when yaml file parsing is wanted. <programlisting><codeline></codeline>
+<codeline><highlight class="preprocessor">#include<sp/>&quot;<ref refid="pid_8hpp" kindref="compound">ci_example_cpp/pid.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="file__configuration_8hpp" kindref="compound">ci_example_cpp/file_configuration.hpp</ref>&quot;</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdexcept&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="demo__pid_8cpp_1aa5343637e5c7a19c19aae1beed976ab6" kindref="member">run_demo</ref>(){</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>displaying<sp/>what<sp/>this<sp/>demo<sp/>is<sp/>about<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;This<sp/>demo<sp/>shows<sp/>how<sp/>to<sp/>create<sp/>an<sp/>executable<sp/>run<sp/>by<sp/>the<sp/>continuous<sp/>integration\n&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;which<sp/>depends<sp/>on<sp/>a<sp/>configuration<sp/>file.<sp/>In<sp/>the<sp/>solution<sp/>showed<sp/>here,<sp/>the<sp/>absolute<sp/>path\n&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;to<sp/>the<sp/>configuration<sp/>file<sp/>is<sp/>set<sp/>during<sp/>pre-compilation.<sp/>See<sp/>code<sp/>in<sp/>/demos/demo_pid_load_from_file.cpp\n&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;for<sp/>details\n\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>reading<sp/>gains<sp/>(kp,kd,ki)<sp/>from<sp/>yaml<sp/>config<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>(look<sp/>at<sp/>the<sp/>CMakeLists.txt<sp/>to<sp/>see<sp/>why<sp/>TEST_PID_GAINS_YAML_FILE_PATH<sp/>is<sp/>replaced<sp/>by<sp/>correct<sp/>abs<sp/>path<sp/><sp/>during<sp/>compilation)</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>std::string<sp/>config_file_path<sp/>=<sp/>TEST_PID_GAINS_YAML_FILE_PATH;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Gains_configuration<sp/>is<sp/>the<sp/>base<sp/>class<sp/>for<sp/>all<sp/>configuration,<sp/>including</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>one<sp/>read<sp/>from<sp/>yaml<sp/>file,<sp/>as<sp/>done<sp/>here.<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><ref refid="classci__example__cpp_1_1File__configuration" kindref="compound">ci_example_cpp::File_configuration</ref><sp/>gains<sp/>=<sp/><ref refid="classci__example__cpp_1_1File__configuration" kindref="compound">ci_example_cpp::File_configuration</ref>(config_file_path);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>printing<sp/>to<sp/>standard<sp/>output<sp/>the<sp/>gains</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;gains<sp/>read<sp/>from<sp/>configuration<sp/>file:&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><ref refid="gains__configuration_8hpp_1a2400ff05e31dee6aced75d9c230b9fe5" kindref="member">ci_example_cpp::print_configuration</ref>(gains);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>checking<sp/>reading<sp/>the<sp/>config<sp/>file<sp/>when<sp/>fine</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>not,<sp/>throwing<sp/>corresponding<sp/>error</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gains.<ref refid="classci__example__cpp_1_1File__configuration_1aa3cae137be3b59e61d13c2a9b1ec8b6a" kindref="member">has_error</ref>()){</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(gains.<ref refid="classci__example__cpp_1_1File__configuration_1aaf67f7d61d467563a4dce8aa69306a6a" kindref="member">get_error</ref>());</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>creating<sp/>and<sp/>running<sp/>the<sp/>controller<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>PID<sp/>controller<sp/>creation</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><ref refid="classci__example__cpp_1_1PID" kindref="compound">ci_example_cpp::PID</ref><sp/>controller(gains);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>example<sp/>of<sp/>force<sp/>computation</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>current_position=1;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>current_velocity=1;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>delta_time=0.01;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>target_position=2;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>force<sp/>=<sp/>controller.<ref refid="classci__example__cpp_1_1PID_1a75a4ccf0455e48e84af23e1d28b0337d" kindref="member">compute</ref>(current_position,current_velocity,target_position,delta_time);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>std::cout&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;computed<sp/>force:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>force<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>resetting<sp/>integral<sp/>of<sp/>the<sp/>controller</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>controller.<ref refid="classci__example__cpp_1_1PID_1a65d98fccd38cc385debc3d15670caf0e" kindref="member">reset_integral</ref>();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="demo__pid_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>(){</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="demo__pid_8cpp_1aa5343637e5c7a19c19aae1beed976ab6" kindref="member">run_demo</ref>();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::runtime_error&amp;<sp/>e){</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;demo<sp/>failed<sp/>!\nerror<sp/>message:\n&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>e.what()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;<sp/></highlight><highlight class="comment">//<sp/>informs<sp/>continuous<sp/>integration<sp/>that<sp/>this<sp/>demo<sp/>did<sp/>not<sp/>run<sp/>successfully</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;<sp/></highlight><highlight class="comment">//<sp/>informs<sp/>continuous<sp/>integration<sp/>that<sp/>this<sp/>demo<sp/>did<sp/>run<sp/>successfully</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+  </compounddef>
+</doxygen>
