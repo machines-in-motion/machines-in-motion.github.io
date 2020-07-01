@@ -48,6 +48,7 @@ def copy_doc_package(package_name, share_path):
     """
     Copy/Replace the documentation of the ros package in this repository.
     """
+    local_doc_delete = path.join("../code_documentation", package_name)
     local_doc = path.join("../code_documentation", package_name, "docs")
     local_doc_html = path.join(share_path, package_name, "docs")
 
@@ -57,8 +58,8 @@ def copy_doc_package(package_name, share_path):
                "]. Nothing to be done")
         return
 
-    if path.isdir(local_doc):
-        shutil.rmtree(local_doc)
+    if path.isdir(local_doc_delete):
+        shutil.rmtree(local_doc_delete)
 
     shutil.copytree(local_doc_html, local_doc)
     return
