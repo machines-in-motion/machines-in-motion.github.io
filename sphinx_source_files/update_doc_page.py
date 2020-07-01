@@ -25,13 +25,16 @@ def get_ros_install_share_path():
             share_path = path.dirname(ros_pack.get_path(package))
             break
 
-    if share_path.endswith(path.join("install", "share")) and path.isdir(share_path):
-        return share_path
-
     root_path = treep.files._find_root(share_path, False)[0]
+
     if not root_path:
         share_path = path.abspath(path.curdir)
-    root_path = treep.files._find_root(share_path, False)[0]
+        root_path = treep.files._find_root(share_path, False)[0]
+    
+    if not root_path:
+        share_path = path.abspath(path.curdir)
+        root_path = treep.files._find_root(share_path, True)[0]
+
     if not root_path:
         raise Exception('The ROS install/share folder has not been found.\n'
                     'treep could not find it\'s root folder')
