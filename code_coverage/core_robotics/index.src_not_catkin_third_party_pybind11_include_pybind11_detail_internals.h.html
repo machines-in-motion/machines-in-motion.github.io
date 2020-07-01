@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2020-06-30 12:02:50</td>
+            <td class="headerValue">2020-07-01 16:12:51</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">0</td>
@@ -2227,516 +2227,537 @@
     <tr>
     <td align="right" class="lineno"><pre>276</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>        PyEval_InitThreads();</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>277</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>        PyThreadState *tstate = PyThreadState_Get();</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>        #if PY_VERSION_HEX &lt; 0x03090000</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>278</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>        #if PY_VERSION_HEX >= 0x03070000</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>                PyEval_InitThreads();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>279</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>            internals_ptr->tstate = PyThread_tss_alloc();</pre></td>
+    <td align="left" class="src "><pre>        #endif</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>280</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>            if (!internals_ptr->tstate || PyThread_tss_create(internals_ptr->tstate))</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        PyThreadState *tstate = PyThreadState_Get();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>281</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>                pybind11_fail("get_internals: could not successfully initialize the TSS key!");</pre></td>
+    <td align="left" class="src "><pre>        #if PY_VERSION_HEX >= 0x03070000</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>282</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>            PyThread_tss_set(internals_ptr->tstate, tstate);</pre></td>
+    <td align="left" class="src "><pre>            internals_ptr->tstate = PyThread_tss_alloc();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>283</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>        #else</pre></td>
+    <td align="left" class="src "><pre>            if (!internals_ptr->tstate || PyThread_tss_create(internals_ptr->tstate))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>284</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>            internals_ptr->tstate = PyThread_create_key();</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>                pybind11_fail("get_internals: could not successfully initialize the TSS key!");</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>285</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>            if (internals_ptr->tstate == -1)</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>            PyThread_tss_set(internals_ptr->tstate, tstate);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>286</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>                pybind11_fail("get_internals: could not successfully initialize the TLS key!");</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>        #else</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>287</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>            PyThread_set_key_value(internals_ptr->tstate, tstate);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>            internals_ptr->tstate = PyThread_create_key();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>288</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>        #endif</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>            if (internals_ptr->tstate == -1)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>289</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>        internals_ptr->istate = tstate->interp;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>                pybind11_fail("get_internals: could not successfully initialize the TLS key!");</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>290</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#endif</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>            PyThread_set_key_value(internals_ptr->tstate, tstate);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>291</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>        builtins[id] = capsule(internals_pp);</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>        #endif</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>292</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>        internals_ptr->registered_exception_translators.push_front(&amp;translate_exception);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        internals_ptr->istate = tstate->interp;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>293</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>        internals_ptr->static_property_type = make_static_property_type();</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>294</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>        internals_ptr->default_metaclass = make_default_metaclass();</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        builtins[id] = capsule(internals_pp);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>295</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>        internals_ptr->instance_base = make_object_base_type(internals_ptr->default_metaclass);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        internals_ptr->registered_exception_translators.push_front(&amp;translate_exception);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>296</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    }</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        internals_ptr->static_property_type = make_static_property_type();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>297</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    return **internals_pp;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        internals_ptr->default_metaclass = make_default_metaclass();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>298</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        internals_ptr->instance_base = make_object_base_type(internals_ptr->default_metaclass);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>299</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>    }</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>300</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    return **internals_pp;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>301</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>302</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>303</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>/// Works like `internals.registered_types_cpp`, but for module-local registered types:</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>301</pre></td>
+    <td align="right" class="lineno"><pre>304</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>inline type_map&lt;type_info *> &amp;registered_local_types_cpp() {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>302</pre></td>
+    <td align="right" class="lineno"><pre>305</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>    static type_map&lt;type_info *> locals{};</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>303</pre></td>
+    <td align="right" class="lineno"><pre>306</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>    return locals;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>304</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>305</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>306</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>/// Constructs a std::string with the given arguments, stores it in `internals`, and returns its</pre></td>
-    </tr>
-
-    <tr>
     <td align="right" class="lineno"><pre>307</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>/// `c_str()`.  Such strings objects have a long storage duration -- the internal strings are only</pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>308</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>/// cleared when the program exits or after interpreter shutdown (when embedding), and so are</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>309</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>/// suitable for c-style strings needed by Python internals (such as PyTypeObject's tp_name).</pre></td>
+    <td align="left" class="src "><pre>/// Constructs a std::string with the given arguments, stores it in `internals`, and returns its</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>310</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>template &lt;typename... Args></pre></td>
+    <td align="left" class="src "><pre>/// `c_str()`.  Such strings objects have a long storage duration -- the internal strings are only</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>311</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>const char *c_str(Args &amp;&amp;...args) {</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>/// cleared when the program exits or after interpreter shutdown (when embedding), and so are</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>312</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    auto &amp;strings = get_internals().static_strings;</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>/// suitable for c-style strings needed by Python internals (such as PyTypeObject's tp_name).</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>313</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    strings.emplace_front(std::forward&lt;Args>(args)...);</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>template &lt;typename... Args></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>314</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    return strings.front().c_str();</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>const char *c_str(Args &amp;&amp;...args) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>315</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    auto &amp;strings = get_internals().static_strings;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>316</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    strings.emplace_front(std::forward&lt;Args>(args)...);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>317</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>NAMESPACE_END(detail)</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    return strings.front().c_str();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>318</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>319</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>/// Returns a named pointer that is shared among all extension modules (using the same</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>320</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>/// pybind11 version) running in the current interpreter. Names starting with underscores</pre></td>
+    <td align="left" class="src "><pre>NAMESPACE_END(detail)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>321</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>/// are reserved for internal usage. Returns `nullptr` if no matching entry was found.</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>322</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>inline PYBIND11_NOINLINE void *get_shared_data(const std::string &amp;name) {</pre></td>
+    <td align="left" class="src "><pre>/// Returns a named pointer that is shared among all extension modules (using the same</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>323</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    auto &amp;internals = detail::get_internals();</pre></td>
+    <td align="left" class="src "><pre>/// pybind11 version) running in the current interpreter. Names starting with underscores</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>324</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    auto it = internals.shared_data.find(name);</pre></td>
+    <td align="left" class="src "><pre>/// are reserved for internal usage. Returns `nullptr` if no matching entry was found.</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>325</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    return it != internals.shared_data.end() ? it->second : nullptr;</pre></td>
+    <td align="left" class="src "><pre>inline PYBIND11_NOINLINE void *get_shared_data(const std::string &amp;name) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>326</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="left" class="src "><pre>    auto &amp;internals = detail::get_internals();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>327</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>    auto it = internals.shared_data.find(name);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>328</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>/// Set the shared data that can be later recovered by `get_shared_data()`.</pre></td>
+    <td align="left" class="src "><pre>    return it != internals.shared_data.end() ? it->second : nullptr;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>329</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>inline PYBIND11_NOINLINE void *set_shared_data(const std::string &amp;name, void *data) {</pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>330</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    detail::get_internals().shared_data[name] = data;</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>331</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    return data;</pre></td>
+    <td align="left" class="src "><pre>/// Set the shared data that can be later recovered by `get_shared_data()`.</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>332</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="left" class="src "><pre>inline PYBIND11_NOINLINE void *set_shared_data(const std::string &amp;name, void *data) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>333</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>    detail::get_internals().shared_data[name] = data;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>334</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>/// Returns a typed reference to a shared data entry (by using `get_shared_data()`) if</pre></td>
+    <td align="left" class="src "><pre>    return data;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>335</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>/// such entry exists. Otherwise, a new object of default-constructible type `T` is</pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>336</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>/// added to the shared data under the given name and a reference to it is returned.</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>337</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>template&lt;typename T></pre></td>
+    <td align="left" class="src "><pre>/// Returns a typed reference to a shared data entry (by using `get_shared_data()`) if</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>338</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>T &amp;get_or_create_shared_data(const std::string &amp;name) {</pre></td>
+    <td align="left" class="src "><pre>/// such entry exists. Otherwise, a new object of default-constructible type `T` is</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>339</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    auto &amp;internals = detail::get_internals();</pre></td>
+    <td align="left" class="src "><pre>/// added to the shared data under the given name and a reference to it is returned.</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>340</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    auto it = internals.shared_data.find(name);</pre></td>
+    <td align="left" class="src "><pre>template&lt;typename T></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>341</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    T *ptr = (T *) (it != internals.shared_data.end() ? it->second : nullptr);</pre></td>
+    <td align="left" class="src "><pre>T &amp;get_or_create_shared_data(const std::string &amp;name) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>342</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    if (!ptr) {</pre></td>
+    <td align="left" class="src "><pre>    auto &amp;internals = detail::get_internals();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>343</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>        ptr = new T();</pre></td>
+    <td align="left" class="src "><pre>    auto it = internals.shared_data.find(name);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>344</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>        internals.shared_data[name] = ptr;</pre></td>
+    <td align="left" class="src "><pre>    T *ptr = (T *) (it != internals.shared_data.end() ? it->second : nullptr);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>345</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    }</pre></td>
+    <td align="left" class="src "><pre>    if (!ptr) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>346</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    return *ptr;</pre></td>
+    <td align="left" class="src "><pre>        ptr = new T();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>347</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="left" class="src "><pre>        internals.shared_data[name] = ptr;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>348</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>    }</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>349</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    return *ptr;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>350</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>351</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>352</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>NAMESPACE_END(PYBIND11_NAMESPACE)</pre></td>
