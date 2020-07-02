@@ -1,0 +1,308 @@
+\hypertarget{converter_8hh}{}\section{include/ros\+\_\+entities/converter.hh File Reference}
+\label{converter_8hh}\index{include/ros\+\_\+entities/converter.\+hh@{include/ros\+\_\+entities/converter.\+hh}}
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include \char`\"{}dg\+\_\+to\+\_\+ros.\+hh\char`\"{}}\newline
+{\ttfamily \#include $<$ros/time.\+h$>$}\newline
+{\ttfamily \#include $<$std\+\_\+msgs/\+Header.\+h$>$}\newline
+{\ttfamily \#include $<$boost/date\+\_\+time/date.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/date\+\_\+time/posix\+\_\+time/posix\+\_\+time.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/static\+\_\+assert.\+hpp$>$}\newline
+Include dependency graph for converter.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{converter_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{converter_8hh__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacedynamic__graph}{dynamic\+\_\+graph}
+\begin{DoxyCompactList}\small\item\em this is this package namespace in order to avoid naming conflict \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries D\+G\+\_\+\+T\+O\+\_\+\+R\+O\+S\+\_\+\+I\+M\+PL}(T)
+\item 
+\#define {\bfseries R\+O\+S\+\_\+\+T\+O\+\_\+\+D\+G\+\_\+\+I\+M\+PL}(T)
+\item 
+\#define \hyperlink{converter_8hh_ae02c25236f7cecbfbdbf9cc9239cb785}{D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+T\+O\+\_\+\+R\+O\+S\+\_\+\+M\+A\+K\+E\+\_\+\+S\+T\+A\+M\+P\+E\+D\+\_\+\+I\+M\+PL}(T,  A\+T\+T\+R\+I\+B\+U\+TE,  E\+X\+T\+RA)
+\begin{DoxyCompactList}\small\item\em This macro generates a converter for a stamped type from dynamic-\/graph to R\+OS. \end{DoxyCompactList}\item 
+\#define \hyperlink{converter_8hh_a9de018e745b4235be09aaab744557770}{D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+M\+A\+K\+E\+\_\+\+S\+H\+P\+T\+R\+\_\+\+I\+M\+PL}(T)
+\begin{DoxyCompactList}\small\item\em This macro generates a converter for a shared pointer on a R\+OS type to a dynamic-\/graph type. \end{DoxyCompactList}\item 
+\#define \hyperlink{converter_8hh_a9ecac683e8b5794b8717b7d2d18c8b22}{D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+M\+A\+K\+E\+\_\+\+S\+T\+A\+M\+P\+E\+D\+\_\+\+I\+M\+PL}(T,  A\+T\+T\+R\+I\+B\+U\+TE,  E\+X\+T\+RA)
+\begin{DoxyCompactList}\small\item\em This macro generates a converter for a stamped type. \end{DoxyCompactList}\item 
+\#define \hyperlink{converter_8hh_a2c8d741da8bc5978c852fb7b71ec26e7}{D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+M\+A\+K\+E\+\_\+\+S\+T\+A\+M\+P\+E\+D\+\_\+\+S\+H\+P\+T\+R\+\_\+\+I\+M\+PL}(T,  A\+T\+T\+R\+I\+B\+U\+TE,  E\+X\+T\+RA)
+\begin{DoxyCompactList}\small\item\em This macro generates a converter for a shared pointer on a stamped type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_a51b66113dc1d4eee03abd7779479cc69}\label{namespacedynamic__graph_a51b66113dc1d4eee03abd7779479cc69}} 
+typedef boost\+::posix\+\_\+time\+::ptime {\bfseries dynamic\+\_\+graph\+::ptime}
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_a6b06a10863ed1b2411191a895621dbb0}\label{namespacedynamic__graph_a6b06a10863ed1b2411191a895621dbb0}} 
+typedef boost\+::posix\+\_\+time\+::seconds {\bfseries dynamic\+\_\+graph\+::seconds}
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_a4244ef24ba8efe2112a5535fd562e8b4}\label{namespacedynamic__graph_a4244ef24ba8efe2112a5535fd562e8b4}} 
+typedef boost\+::posix\+\_\+time\+::microseconds {\bfseries dynamic\+\_\+graph\+::microseconds}
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_a4be0df79b9608a71968778c85d4a5f25}\label{namespacedynamic__graph_a4be0df79b9608a71968778c85d4a5f25}} 
+typedef boost\+::posix\+\_\+time\+::time\+\_\+duration {\bfseries dynamic\+\_\+graph\+::time\+\_\+duration}
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_a1a7a95fd96c4e7f1b829260880f14d91}\label{namespacedynamic__graph_a1a7a95fd96c4e7f1b829260880f14d91}} 
+typedef boost\+::gregorian\+::date {\bfseries dynamic\+\_\+graph\+::date}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_a7932709c47f2977a4478bd6f035ee12b}\label{namespacedynamic__graph_a7932709c47f2977a4478bd6f035ee12b}} 
+void {\bfseries dynamic\+\_\+graph\+::make\+Header} (std\+\_\+msgs\+::\+Header \&header)
+\item 
+{\footnotesize template$<$typename D , typename S $>$ }\\void \hyperlink{namespacedynamic__graph_aa00932c9efb8a607efd6997386d78680}{dynamic\+\_\+graph\+::converter} (D \&dst, const S \&src)
+\begin{DoxyCompactList}\small\item\em Handle R\+OS $<$-\/$>$ dynamic-\/graph conversion. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacedynamic__graph_a22ff0d85472d1b606719f789a73224c3}\label{namespacedynamic__graph_a22ff0d85472d1b606719f789a73224c3}} 
+{\bfseries dynamic\+\_\+graph\+::\+D\+G\+\_\+\+T\+O\+\_\+\+R\+O\+S\+\_\+\+I\+M\+PL} (double)
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_a8487bee8650edee2dabb3c21662f411f}\label{namespacedynamic__graph_a8487bee8650edee2dabb3c21662f411f}} 
+{\bfseries dynamic\+\_\+graph\+::\+R\+O\+S\+\_\+\+T\+O\+\_\+\+D\+G\+\_\+\+I\+M\+PL} (double)
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_a894a6396a849e5a251f807e42f160c28}\label{namespacedynamic__graph_a894a6396a849e5a251f807e42f160c28}} 
+{\bfseries dynamic\+\_\+graph\+::\+D\+G\+\_\+\+T\+O\+\_\+\+R\+O\+S\+\_\+\+I\+M\+PL} (unsigned int)
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_afd65ab6689e1cc46f28c0c6e365f0ff6}\label{namespacedynamic__graph_afd65ab6689e1cc46f28c0c6e365f0ff6}} 
+{\bfseries dynamic\+\_\+graph\+::\+R\+O\+S\+\_\+\+T\+O\+\_\+\+D\+G\+\_\+\+I\+M\+PL} (unsigned int)
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_ac2a5616ba0bc2168c574b16fb4512b1c}\label{namespacedynamic__graph_ac2a5616ba0bc2168c574b16fb4512b1c}} 
+{\bfseries dynamic\+\_\+graph\+::\+D\+G\+\_\+\+T\+O\+\_\+\+R\+O\+S\+\_\+\+I\+M\+PL} (Vector)
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_a3b3e6a25a7275cd7636166190a574df2}\label{namespacedynamic__graph_a3b3e6a25a7275cd7636166190a574df2}} 
+{\bfseries dynamic\+\_\+graph\+::\+R\+O\+S\+\_\+\+T\+O\+\_\+\+D\+G\+\_\+\+I\+M\+PL} (Vector)
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_a75ba177999020268d8c9b0547ff9b8b8}\label{namespacedynamic__graph_a75ba177999020268d8c9b0547ff9b8b8}} 
+{\bfseries dynamic\+\_\+graph\+::\+D\+G\+\_\+\+T\+O\+\_\+\+R\+O\+S\+\_\+\+I\+M\+PL} (specific\+::\+Vector3)
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_aa9c6f9a640a7b012b0795531f14c4a95}\label{namespacedynamic__graph_aa9c6f9a640a7b012b0795531f14c4a95}} 
+{\bfseries dynamic\+\_\+graph\+::\+R\+O\+S\+\_\+\+T\+O\+\_\+\+D\+G\+\_\+\+I\+M\+PL} (specific\+::\+Vector3)
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_aa521c4cd3ca35d865a96061743a8b42a}\label{namespacedynamic__graph_aa521c4cd3ca35d865a96061743a8b42a}} 
+{\bfseries dynamic\+\_\+graph\+::\+D\+G\+\_\+\+T\+O\+\_\+\+R\+O\+S\+\_\+\+I\+M\+PL} (Matrix)
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_aacf7e86396ce37e356b72a4dd06d4dcd}\label{namespacedynamic__graph_aacf7e86396ce37e356b72a4dd06d4dcd}} 
+{\bfseries dynamic\+\_\+graph\+::\+R\+O\+S\+\_\+\+T\+O\+\_\+\+D\+G\+\_\+\+I\+M\+PL} (Matrix)
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_a79b178480de5cd5c8af027c859d6b7e1}\label{namespacedynamic__graph_a79b178480de5cd5c8af027c859d6b7e1}} 
+{\bfseries dynamic\+\_\+graph\+::\+D\+G\+\_\+\+T\+O\+\_\+\+R\+O\+S\+\_\+\+I\+M\+PL} (Matrix\+Homogeneous)
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_a8935e81a8c4ea89b2d6349343d0f276c}\label{namespacedynamic__graph_a8935e81a8c4ea89b2d6349343d0f276c}} 
+{\bfseries dynamic\+\_\+graph\+::\+R\+O\+S\+\_\+\+T\+O\+\_\+\+D\+G\+\_\+\+I\+M\+PL} (Matrix\+Homogeneous)
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_a31a9095c3881b6bee15e84197900b8cd}\label{namespacedynamic__graph_a31a9095c3881b6bee15e84197900b8cd}} 
+{\bfseries dynamic\+\_\+graph\+::\+D\+G\+\_\+\+T\+O\+\_\+\+R\+O\+S\+\_\+\+I\+M\+PL} (specific\+::\+Twist)
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_ada45ff2abeb0b52a629bd8ece8a27886}\label{namespacedynamic__graph_ada45ff2abeb0b52a629bd8ece8a27886}} 
+{\bfseries dynamic\+\_\+graph\+::\+R\+O\+S\+\_\+\+T\+O\+\_\+\+D\+G\+\_\+\+I\+M\+PL} (specific\+::\+Twist)
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_a9f06698a083bc347b17f16107c5289e9}\label{namespacedynamic__graph_a9f06698a083bc347b17f16107c5289e9}} 
+{\bfseries dynamic\+\_\+graph\+::\+D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+T\+O\+\_\+\+R\+O\+S\+\_\+\+M\+A\+K\+E\+\_\+\+S\+T\+A\+M\+P\+E\+D\+\_\+\+I\+M\+PL} (specific\+::\+Vector3, vector, ;)
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_a612d5b355619bf2e6aaa3be10d400882}\label{namespacedynamic__graph_a612d5b355619bf2e6aaa3be10d400882}} 
+{\bfseries dynamic\+\_\+graph\+::\+D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+T\+O\+\_\+\+R\+O\+S\+\_\+\+M\+A\+K\+E\+\_\+\+S\+T\+A\+M\+P\+E\+D\+\_\+\+I\+M\+PL} (Matrix\+Homogeneous, transform, dst.\+child\+\_\+frame\+\_\+id=\char`\"{}\char`\"{};)
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_a7057c2853072917bd1ff399eccc66bb1}\label{namespacedynamic__graph_a7057c2853072917bd1ff399eccc66bb1}} 
+{\bfseries dynamic\+\_\+graph\+::\+D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+T\+O\+\_\+\+R\+O\+S\+\_\+\+M\+A\+K\+E\+\_\+\+S\+T\+A\+M\+P\+E\+D\+\_\+\+I\+M\+PL} (specific\+::\+Twist, twist, ;)
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_ae22a330aece4dccbed6a8e24ac897223}\label{namespacedynamic__graph_ae22a330aece4dccbed6a8e24ac897223}} 
+{\bfseries dynamic\+\_\+graph\+::\+D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+M\+A\+K\+E\+\_\+\+S\+H\+P\+T\+R\+\_\+\+I\+M\+PL} (double)
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_a6f98ec6c1978860a339800f794b86c6a}\label{namespacedynamic__graph_a6f98ec6c1978860a339800f794b86c6a}} 
+{\bfseries dynamic\+\_\+graph\+::\+D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+M\+A\+K\+E\+\_\+\+S\+H\+P\+T\+R\+\_\+\+I\+M\+PL} (unsigned int)
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_a75a4142b33cde4c86e2bc4b7b410be5a}\label{namespacedynamic__graph_a75a4142b33cde4c86e2bc4b7b410be5a}} 
+{\bfseries dynamic\+\_\+graph\+::\+D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+M\+A\+K\+E\+\_\+\+S\+H\+P\+T\+R\+\_\+\+I\+M\+PL} (Vector)
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_a325010454ba7c2835ab21badc5fd1938}\label{namespacedynamic__graph_a325010454ba7c2835ab21badc5fd1938}} 
+{\bfseries dynamic\+\_\+graph\+::\+D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+M\+A\+K\+E\+\_\+\+S\+H\+P\+T\+R\+\_\+\+I\+M\+PL} (specific\+::\+Vector3)
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_a9f8a93a86c41c53460cbe62b1838a12f}\label{namespacedynamic__graph_a9f8a93a86c41c53460cbe62b1838a12f}} 
+{\bfseries dynamic\+\_\+graph\+::\+D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+M\+A\+K\+E\+\_\+\+S\+H\+P\+T\+R\+\_\+\+I\+M\+PL} (Matrix)
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_a15169d3d19abe3ecd077c806664016f2}\label{namespacedynamic__graph_a15169d3d19abe3ecd077c806664016f2}} 
+{\bfseries dynamic\+\_\+graph\+::\+D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+M\+A\+K\+E\+\_\+\+S\+H\+P\+T\+R\+\_\+\+I\+M\+PL} (Matrix\+Homogeneous)
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_a7a18758dda76357a81bb50eeef37a4a7}\label{namespacedynamic__graph_a7a18758dda76357a81bb50eeef37a4a7}} 
+{\bfseries dynamic\+\_\+graph\+::\+D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+M\+A\+K\+E\+\_\+\+S\+H\+P\+T\+R\+\_\+\+I\+M\+PL} (specific\+::\+Twist)
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_a9ca03447cc73ee1896bd12ada5bb2648}\label{namespacedynamic__graph_a9ca03447cc73ee1896bd12ada5bb2648}} 
+{\bfseries dynamic\+\_\+graph\+::\+D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+M\+A\+K\+E\+\_\+\+S\+T\+A\+M\+P\+E\+D\+\_\+\+I\+M\+PL} (specific\+::\+Vector3, vector, ;)
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_a47d608ba5fa44fed65981f7de3dc5280}\label{namespacedynamic__graph_a47d608ba5fa44fed65981f7de3dc5280}} 
+{\bfseries dynamic\+\_\+graph\+::\+D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+M\+A\+K\+E\+\_\+\+S\+T\+A\+M\+P\+E\+D\+\_\+\+I\+M\+PL} (Matrix\+Homogeneous, transform, ;)
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_a23c50654f469e1907e043efe96958be7}\label{namespacedynamic__graph_a23c50654f469e1907e043efe96958be7}} 
+{\bfseries dynamic\+\_\+graph\+::\+D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+M\+A\+K\+E\+\_\+\+S\+T\+A\+M\+P\+E\+D\+\_\+\+I\+M\+PL} (specific\+::\+Twist, twist, ;)
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_a8555401941f21f8647d7315ab05cf3d6}\label{namespacedynamic__graph_a8555401941f21f8647d7315ab05cf3d6}} 
+{\bfseries dynamic\+\_\+graph\+::\+D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+M\+A\+K\+E\+\_\+\+S\+T\+A\+M\+P\+E\+D\+\_\+\+S\+H\+P\+T\+R\+\_\+\+I\+M\+PL} (specific\+::\+Vector3, vector, ;)
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_a23bd5389346b9cb0e93d0190cf26c76d}\label{namespacedynamic__graph_a23bd5389346b9cb0e93d0190cf26c76d}} 
+{\bfseries dynamic\+\_\+graph\+::\+D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+M\+A\+K\+E\+\_\+\+S\+T\+A\+M\+P\+E\+D\+\_\+\+S\+H\+P\+T\+R\+\_\+\+I\+M\+PL} (Matrix\+Homogeneous, transform, ;)
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_ae6414b4a98bb0c734689178f32f4af48}\label{namespacedynamic__graph_ae6414b4a98bb0c734689178f32f4af48}} 
+{\bfseries dynamic\+\_\+graph\+::\+D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+M\+A\+K\+E\+\_\+\+S\+T\+A\+M\+P\+E\+D\+\_\+\+S\+H\+P\+T\+R\+\_\+\+I\+M\+PL} (specific\+::\+Twist, twist, ;)
+\item 
+{\footnotesize template$<$typename U , typename V $>$ }\\void \hyperlink{namespacedynamic__graph_a38ff488b8b21c0b4f4d7f44572fa4ee5}{dynamic\+\_\+graph\+::converter} (U \&dst, V \&src)
+\begin{DoxyCompactList}\small\item\em If an impossible/unimplemented conversion is required, fail. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacedynamic__graph_ae79d27ce6f0c5bc0788a4fb4bd33f363}\label{namespacedynamic__graph_ae79d27ce6f0c5bc0788a4fb4bd33f363}} 
+boost\+::posix\+\_\+time\+::ptime {\bfseries dynamic\+\_\+graph\+::ros\+Time\+To\+Ptime} (const ros\+::\+Time \&ros\+Time)
+\item 
+\mbox{\Hypertarget{namespacedynamic__graph_a3d2b2b3f2e9363d80c0abb64c4408e66}\label{namespacedynamic__graph_a3d2b2b3f2e9363d80c0abb64c4408e66}} 
+ros\+::\+Time {\bfseries dynamic\+\_\+graph\+::p\+Time\+To\+Rostime} (const boost\+::posix\+\_\+time\+::ptime \&time)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Maximilien Naveau (\href{mailto:maximilien.naveau@gmail.com}{\tt maximilien.\+naveau@gmail.\+com}) 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{License}
+\item[\hyperlink{license__license000018}{License}]License B\+S\+D-\/3-\/\+Clause \end{DoxyRefDesc}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2019, New York University and Max Planck Gesellschaft. 
+\end{DoxyCopyright}
+\begin{DoxyDate}{Date}
+2019-\/05-\/22 
+\end{DoxyDate}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{converter_8hh_a9de018e745b4235be09aaab744557770}\label{converter_8hh_a9de018e745b4235be09aaab744557770}} 
+\index{converter.\+hh@{converter.\+hh}!D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+M\+A\+K\+E\+\_\+\+S\+H\+P\+T\+R\+\_\+\+I\+M\+PL@{D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+M\+A\+K\+E\+\_\+\+S\+H\+P\+T\+R\+\_\+\+I\+M\+PL}}
+\index{D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+M\+A\+K\+E\+\_\+\+S\+H\+P\+T\+R\+\_\+\+I\+M\+PL@{D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+M\+A\+K\+E\+\_\+\+S\+H\+P\+T\+R\+\_\+\+I\+M\+PL}!converter.\+hh@{converter.\+hh}}
+\subsubsection{\texorpdfstring{D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+M\+A\+K\+E\+\_\+\+S\+H\+P\+T\+R\+\_\+\+I\+M\+PL}{DG\_BRIDGE\_MAKE\_SHPTR\_IMPL}}
+{\footnotesize\ttfamily \#define D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+M\+A\+K\+E\+\_\+\+S\+H\+P\+T\+R\+\_\+\+I\+M\+PL(\begin{DoxyParamCaption}\item[{}]{T }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keyword}{template} <>                                                    \(\backslash\)
+    inline \textcolor{keywordtype}{void} \hyperlink{namespacedynamic__graph_a38ff488b8b21c0b4f4d7f44572fa4ee5}{converter}(                                         \(\backslash\)
+        DgToRos<T>::dg\_t& dst,                                     \(\backslash\)
+        \textcolor{keyword}{const} boost::shared\_ptr<DgToRos<T>::ros\_t \textcolor{keyword}{const}>& src)     \(\backslash\)
+    \{                                                              \(\backslash\)
+        converter<DgToRos<T>::dg\_t, DgToRos<T>::ros\_t>(dst, *src); \(\backslash\)
+    \}                                                              \(\backslash\)
+    struct e\_n\_d\_\_w\_i\_t\_h\_\_s\_e\_m\_i\_c\_o\_l\_o\_n
+\end{DoxyCode}
+
+
+This macro generates a converter for a shared pointer on a R\+OS type to a dynamic-\/graph type. 
+
+A converter for the underlying type is required. I.\+e. to convert a shared\+\_\+ptr$<$\+T$>$ to T\textquotesingle{}, a converter from T to T\textquotesingle{} is required. \mbox{\Hypertarget{converter_8hh_a9ecac683e8b5794b8717b7d2d18c8b22}\label{converter_8hh_a9ecac683e8b5794b8717b7d2d18c8b22}} 
+\index{converter.\+hh@{converter.\+hh}!D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+M\+A\+K\+E\+\_\+\+S\+T\+A\+M\+P\+E\+D\+\_\+\+I\+M\+PL@{D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+M\+A\+K\+E\+\_\+\+S\+T\+A\+M\+P\+E\+D\+\_\+\+I\+M\+PL}}
+\index{D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+M\+A\+K\+E\+\_\+\+S\+T\+A\+M\+P\+E\+D\+\_\+\+I\+M\+PL@{D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+M\+A\+K\+E\+\_\+\+S\+T\+A\+M\+P\+E\+D\+\_\+\+I\+M\+PL}!converter.\+hh@{converter.\+hh}}
+\subsubsection{\texorpdfstring{D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+M\+A\+K\+E\+\_\+\+S\+T\+A\+M\+P\+E\+D\+\_\+\+I\+M\+PL}{DG\_BRIDGE\_MAKE\_STAMPED\_IMPL}}
+{\footnotesize\ttfamily \#define D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+M\+A\+K\+E\+\_\+\+S\+T\+A\+M\+P\+E\+D\+\_\+\+I\+M\+PL(\begin{DoxyParamCaption}\item[{}]{T,  }\item[{}]{A\+T\+T\+R\+I\+B\+U\+TE,  }\item[{}]{E\+X\+T\+RA }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keyword}{template} <>                                                             \(\backslash\)
+    inline \textcolor{keywordtype}{void} \hyperlink{namespacedynamic__graph_a38ff488b8b21c0b4f4d7f44572fa4ee5}{converter}(DgToRos<std::pair<T, Vector> >::dg\_t& dst,        \(\backslash\)
+                          \textcolor{keyword}{const} DgToRos<std::pair<T, Vector> >::ros\_t& src) \(\backslash\)
+    \{                                                                       \(\backslash\)
+        converter<DgToRos<T>::dg\_t, DgToRos<T>::ros\_t>(dst, src.ATTRIBUTE); \(\backslash\)
+        do                                                                  \(\backslash\)
+        \{                                                                   \(\backslash\)
+            EXTRA                                                           \(\backslash\)
+        \} \textcolor{keywordflow}{while} (0);                                                        \(\backslash\)
+    \}                                                                       \(\backslash\)
+    struct e\_n\_d\_\_w\_i\_t\_h\_\_s\_e\_m\_i\_c\_o\_l\_o\_n
+\end{DoxyCode}
+
+
+This macro generates a converter for a stamped type. 
+
+I.\+e. A data associated with its timestamp.
+
+F\+I\+X\+ME\+: the timestamp is not yet forwarded to the dg signal. \mbox{\Hypertarget{converter_8hh_a2c8d741da8bc5978c852fb7b71ec26e7}\label{converter_8hh_a2c8d741da8bc5978c852fb7b71ec26e7}} 
+\index{converter.\+hh@{converter.\+hh}!D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+M\+A\+K\+E\+\_\+\+S\+T\+A\+M\+P\+E\+D\+\_\+\+S\+H\+P\+T\+R\+\_\+\+I\+M\+PL@{D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+M\+A\+K\+E\+\_\+\+S\+T\+A\+M\+P\+E\+D\+\_\+\+S\+H\+P\+T\+R\+\_\+\+I\+M\+PL}}
+\index{D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+M\+A\+K\+E\+\_\+\+S\+T\+A\+M\+P\+E\+D\+\_\+\+S\+H\+P\+T\+R\+\_\+\+I\+M\+PL@{D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+M\+A\+K\+E\+\_\+\+S\+T\+A\+M\+P\+E\+D\+\_\+\+S\+H\+P\+T\+R\+\_\+\+I\+M\+PL}!converter.\+hh@{converter.\+hh}}
+\subsubsection{\texorpdfstring{D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+M\+A\+K\+E\+\_\+\+S\+T\+A\+M\+P\+E\+D\+\_\+\+S\+H\+P\+T\+R\+\_\+\+I\+M\+PL}{DG\_BRIDGE\_MAKE\_STAMPED\_SHPTR\_IMPL}}
+{\footnotesize\ttfamily \#define D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+M\+A\+K\+E\+\_\+\+S\+T\+A\+M\+P\+E\+D\+\_\+\+S\+H\+P\+T\+R\+\_\+\+I\+M\+PL(\begin{DoxyParamCaption}\item[{}]{T,  }\item[{}]{A\+T\+T\+R\+I\+B\+U\+TE,  }\item[{}]{E\+X\+T\+RA }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keyword}{template} <>                                                               \(\backslash\)
+    inline \textcolor{keywordtype}{void} \hyperlink{namespacedynamic__graph_a38ff488b8b21c0b4f4d7f44572fa4ee5}{converter}(                                                    \(\backslash\)
+        DgToRos<std::pair<T, Vector> >::dg\_t& dst,                            \(\backslash\)
+        \textcolor{keyword}{const} boost::shared\_ptr<DgToRos<std::pair<T, Vector> >::ros\_t \textcolor{keyword}{const}>& \(\backslash\)
+            src)                                                              \(\backslash\)
+    \{                                                                         \(\backslash\)
+        converter<DgToRos<T>::dg\_t, DgToRos<T>::ros\_t>(dst, src->ATTRIBUTE);  \(\backslash\)
+        do                                                                    \(\backslash\)
+        \{                                                                     \(\backslash\)
+            EXTRA                                                             \(\backslash\)
+        \} \textcolor{keywordflow}{while} (0);                                                          \(\backslash\)
+    \}                                                                         \(\backslash\)
+    struct e\_n\_d\_\_w\_i\_t\_h\_\_s\_e\_m\_i\_c\_o\_l\_o\_n
+\end{DoxyCode}
+
+
+This macro generates a converter for a shared pointer on a stamped type. 
+
+I.\+e. A data associated with its timestamp.
+
+F\+I\+X\+ME\+: the timestamp is not yet forwarded to the dg signal. \mbox{\Hypertarget{converter_8hh_ae02c25236f7cecbfbdbf9cc9239cb785}\label{converter_8hh_ae02c25236f7cecbfbdbf9cc9239cb785}} 
+\index{converter.\+hh@{converter.\+hh}!D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+T\+O\+\_\+\+R\+O\+S\+\_\+\+M\+A\+K\+E\+\_\+\+S\+T\+A\+M\+P\+E\+D\+\_\+\+I\+M\+PL@{D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+T\+O\+\_\+\+R\+O\+S\+\_\+\+M\+A\+K\+E\+\_\+\+S\+T\+A\+M\+P\+E\+D\+\_\+\+I\+M\+PL}}
+\index{D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+T\+O\+\_\+\+R\+O\+S\+\_\+\+M\+A\+K\+E\+\_\+\+S\+T\+A\+M\+P\+E\+D\+\_\+\+I\+M\+PL@{D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+T\+O\+\_\+\+R\+O\+S\+\_\+\+M\+A\+K\+E\+\_\+\+S\+T\+A\+M\+P\+E\+D\+\_\+\+I\+M\+PL}!converter.\+hh@{converter.\+hh}}
+\subsubsection{\texorpdfstring{D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+T\+O\+\_\+\+R\+O\+S\+\_\+\+M\+A\+K\+E\+\_\+\+S\+T\+A\+M\+P\+E\+D\+\_\+\+I\+M\+PL}{DG\_BRIDGE\_TO\_ROS\_MAKE\_STAMPED\_IMPL}}
+{\footnotesize\ttfamily \#define D\+G\+\_\+\+B\+R\+I\+D\+G\+E\+\_\+\+T\+O\+\_\+\+R\+O\+S\+\_\+\+M\+A\+K\+E\+\_\+\+S\+T\+A\+M\+P\+E\+D\+\_\+\+I\+M\+PL(\begin{DoxyParamCaption}\item[{}]{T,  }\item[{}]{A\+T\+T\+R\+I\+B\+U\+TE,  }\item[{}]{E\+X\+T\+RA }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keyword}{template} <>                                                             \(\backslash\)
+    inline \textcolor{keywordtype}{void} \hyperlink{namespacedynamic__graph_a38ff488b8b21c0b4f4d7f44572fa4ee5}{converter}(DgToRos<std::pair<T, Vector> >::ros\_t& dst,       \(\backslash\)
+                          \textcolor{keyword}{const} DgToRos<std::pair<T, Vector> >::dg\_t& src)  \(\backslash\)
+    \{                                                                       \(\backslash\)
+        makeHeader(dst.header);                                             \(\backslash\)
+        converter<DgToRos<T>::ros\_t, DgToRos<T>::dg\_t>(dst.ATTRIBUTE, src); \(\backslash\)
+        do                                                                  \(\backslash\)
+        \{                                                                   \(\backslash\)
+            EXTRA                                                           \(\backslash\)
+        \} \textcolor{keywordflow}{while} (0);                                                        \(\backslash\)
+    \}                                                                       \(\backslash\)
+    struct e\_n\_d\_\_w\_i\_t\_h\_\_s\_e\_m\_i\_c\_o\_l\_o\_n
+\end{DoxyCode}
+
+
+This macro generates a converter for a stamped type from dynamic-\/graph to R\+OS. 
+
+I.\+e. A data associated with its timestamp. \mbox{\Hypertarget{converter_8hh_a63952ae235f5309d5e1dbb91136763ef}\label{converter_8hh_a63952ae235f5309d5e1dbb91136763ef}} 
+\index{converter.\+hh@{converter.\+hh}!D\+G\+\_\+\+T\+O\+\_\+\+R\+O\+S\+\_\+\+I\+M\+PL@{D\+G\+\_\+\+T\+O\+\_\+\+R\+O\+S\+\_\+\+I\+M\+PL}}
+\index{D\+G\+\_\+\+T\+O\+\_\+\+R\+O\+S\+\_\+\+I\+M\+PL@{D\+G\+\_\+\+T\+O\+\_\+\+R\+O\+S\+\_\+\+I\+M\+PL}!converter.\+hh@{converter.\+hh}}
+\subsubsection{\texorpdfstring{D\+G\+\_\+\+T\+O\+\_\+\+R\+O\+S\+\_\+\+I\+M\+PL}{DG\_TO\_ROS\_IMPL}}
+{\footnotesize\ttfamily \#define D\+G\+\_\+\+T\+O\+\_\+\+R\+O\+S\+\_\+\+I\+M\+PL(\begin{DoxyParamCaption}\item[{}]{T }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keyword}{template} <>           \(\backslash\)
+    inline \textcolor{keywordtype}{void} \hyperlink{namespacedynamic__graph_a38ff488b8b21c0b4f4d7f44572fa4ee5}{converter}(DgToRos<T>::ros\_t& dst, \textcolor{keyword}{const} DgToRos<T>::dg\_t& src)
+\end{DoxyCode}
+\mbox{\Hypertarget{converter_8hh_a3d5ba09fc46eae47e88ee8707b6a050f}\label{converter_8hh_a3d5ba09fc46eae47e88ee8707b6a050f}} 
+\index{converter.\+hh@{converter.\+hh}!R\+O\+S\+\_\+\+T\+O\+\_\+\+D\+G\+\_\+\+I\+M\+PL@{R\+O\+S\+\_\+\+T\+O\+\_\+\+D\+G\+\_\+\+I\+M\+PL}}
+\index{R\+O\+S\+\_\+\+T\+O\+\_\+\+D\+G\+\_\+\+I\+M\+PL@{R\+O\+S\+\_\+\+T\+O\+\_\+\+D\+G\+\_\+\+I\+M\+PL}!converter.\+hh@{converter.\+hh}}
+\subsubsection{\texorpdfstring{R\+O\+S\+\_\+\+T\+O\+\_\+\+D\+G\+\_\+\+I\+M\+PL}{ROS\_TO\_DG\_IMPL}}
+{\footnotesize\ttfamily \#define R\+O\+S\+\_\+\+T\+O\+\_\+\+D\+G\+\_\+\+I\+M\+PL(\begin{DoxyParamCaption}\item[{}]{T }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keyword}{template} <>           \(\backslash\)
+    inline \textcolor{keywordtype}{void} \hyperlink{namespacedynamic__graph_a38ff488b8b21c0b4f4d7f44572fa4ee5}{converter}(DgToRos<T>::dg\_t& dst, \textcolor{keyword}{const} DgToRos<T>::ros\_t& src)
+\end{DoxyCode}

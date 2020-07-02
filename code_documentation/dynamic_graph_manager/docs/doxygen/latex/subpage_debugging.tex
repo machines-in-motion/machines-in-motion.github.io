@@ -1,0 +1,49 @@
+\hypertarget{subpage_debugging_debug_sec_entity_impl}{}\section{6.\+1/ Debugging Entity / Controller implementations}\label{subpage_debugging_debug_sec_entity_impl}
+There are few ways to debug the controller before running anything on the real robot\+:
+\begin{DoxyEnumerate}
+\item {\bfseries  Creating a simulation device using the robot yaml file (Recommended) }
+\begin{DoxyEnumerate}
+\item Create a robot device using the yaml file of the robot (found in robot\+\_\+properties/robot\+\_\+name/config/robot\+\_\+name.\+yaml)
+\item initialize your control graph and set up your control graph with all its entities.
+\item run a loop executing the graph to verify the output from the controller.
+\item An example of this implementation is available here \+: \href{https://git-amd.tuebingen.mpg.de/amd-clmc/dg_blmc_robots/blob/master/demos/quadruped/quad_simu.py}{\tt https\+://git-\/amd.\+tuebingen.\+mpg.\+de/amd-\/clmc/dg\+\_\+blmc\+\_\+robots/blob/master/demos/quadruped/quad\+\_\+simu.\+py}
+\begin{DoxyEnumerate}
+\item Copy the robot init part before your control graph and change the name to the robot being used (initializes the robot device.)
+\item copy the robot simulation part after your control graph and modify the code to make it suitable for the robot.\+yaml. (change number of joint, etc...)
+\item run the python file along with roscore to debug.
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}
+\item {\bfseries  Using Pybullet } (available for quadruped and Teststand)
+\begin{DoxyEnumerate}
+\item example simulations for teststand are available here \+: \href{https://git-amd.tuebingen.mpg.de/amd-clmc/dg_blmc_robots/tree/master/demos/teststand/simulations}{\tt https\+://git-\/amd.\+tuebingen.\+mpg.\+de/amd-\/clmc/dg\+\_\+blmc\+\_\+robots/tree/master/demos/teststand/simulations}
+\item example simulations for quadruped are available here \+: \href{https://git-amd.tuebingen.mpg.de/amd-clmc/dg_blmc_robots/tree/master/demos/quadruped/simulations}{\tt https\+://git-\/amd.\+tuebingen.\+mpg.\+de/amd-\/clmc/dg\+\_\+blmc\+\_\+robots/tree/master/demos/quadruped/simulations}
+\end{DoxyEnumerate}
+\item {\bfseries  Create the entity alone in python and feed it with constant vectors }
+\end{DoxyEnumerate}\hypertarget{subpage_debugging_debug_sec_dgm}{}\section{6.\+2/ Debugging Dynamic Graph Manager}\label{subpage_debugging_debug_sec_dgm}
+To debug the low-\/level of dynamic graph manager, use G\+DB. 
+\begin{DoxyCode}
+INFORMATION:
+
+To avoid SIGINT to \textcolor{keyword}{get} caught by GDB, execute the line handle SIGINT nostop pass on the GDB command line.
+\end{DoxyCode}
+
+
+{\bfseries  When to use G\+DB } \+:
+\begin{DoxyEnumerate}
+\item Segmentation faults
+\item python terminal displays following \+: (This is seen in the terminal in which the python script is run) 
+\begin{DoxyCode}
+Connection to remote server lost. Reconnecting...
+Retrying previous command...
+Connection to remote server lost. Reconnecting...
+\end{DoxyCode}
+
+\end{DoxyEnumerate}
+
+{\bfseries  G\+DB for Python }\+:
+
+To debug python files using gdb use the following command\+: 
+\begin{DoxyCode}
+gdb -ex r --args python <programname>.py <arguments>
+\end{DoxyCode}
+ 

@@ -1,0 +1,105 @@
+\hypertarget{simple_dgm_8hpp-example}{}\section{simple\+\_\+dgm.\+hpp}
+The correponding hardware python client is seen here\+:
+
+
+\begin{DoxyCodeInclude}
+
+\textcolor{preprocessor}{#include "dynamic\_graph\_manager/TestUserCmdBool.h"}
+\textcolor{preprocessor}{#include "\hyperlink{dynamic__graph__manager_8hh}{dynamic\_graph\_manager/dynamic\_graph\_manager.hh}"}
+\textcolor{preprocessor}{#include "\hyperlink{ros__init_8hh}{dynamic\_graph\_manager/ros\_init.hh}"}
+
+\textcolor{keyword}{namespace }\hyperlink{namespacedynamic__graph__manager}{dynamic\_graph\_manager}
+\{
+\textcolor{keyword}{class }SimpleDGM : \textcolor{keyword}{public} \hyperlink{classdynamic__graph_1_1DynamicGraphManager}{dynamic\_graph::DynamicGraphManager}
+\{
+\textcolor{keyword}{public}:
+    \hyperlink{classdynamic__graph__manager_1_1SimpleDGM_abb548458a154ee8e9ae63a32f1191ef6}{SimpleDGM}() : \hyperlink{classdynamic__graph_1_1DynamicGraphManager}{dynamic\_graph::DynamicGraphManager}()
+    \{
+        boolean\_set\_by\_user\_cmd\_ = \textcolor{keyword}{false};
+    \}
+    \hyperlink{classdynamic__graph__manager_1_1SimpleDGM_a250f18b97619c72446074662626423d4}{~SimpleDGM}()
+    \{
+    \}
+    \textcolor{keywordtype}{void} \hyperlink{classdynamic__graph__manager_1_1SimpleDGM_a5d771fc5a9ae6dd524a658d50fbee5d3}{initialize\_hardware\_communication\_process}()
+    \{
+        \textcolor{comment}{// get the hardware communication ros node handle}
+        ros::NodeHandle& ros\_node\_handle = \hyperlink{namespacedynamic__graph_ab01ece41a91a029cf335e28548cdfc06}{dynamic\_graph::ros\_init}(
+            \hyperlink{classdynamic__graph_1_1DynamicGraphManager_a415f24927dbe9dfd0ee4a6462428bd48}{dynamic\_graph::DynamicGraphManager::hw\_com\_ros\_node\_name\_}
+      );
+        \hyperlink{classdynamic__graph_1_1DynamicGraphManager_a0fb35bc44f331db3570c09b75b49cd15}{ros\_user\_commands\_}.push\_back(ros\_node\_handle.advertiseService(
+            \textcolor{stringliteral}{"set\_a\_boolean"}, &\hyperlink{classdynamic__graph__manager_1_1SimpleDGM_adb40055a916691d326bc6466eab9680b}{SimpleDGM::user\_command\_callback}, \textcolor{keyword}{this}));
+    \}
+    \textcolor{keywordtype}{void} \hyperlink{classdynamic__graph__manager_1_1SimpleDGM_aa92cd33a31c934835252f834bab7b9f4}{get\_sensors\_to\_map}(\hyperlink{namespacedynamic__graph_abd184187f3bc15df5e227d866529e4a7}{dynamic\_graph::VectorDGMap}& map)
+    \{
+        map[\textcolor{stringliteral}{"encoders"}].setRandom();
+        map[\textcolor{stringliteral}{"imu\_accelerometer"}].setRandom();
+        map[\textcolor{stringliteral}{"imu\_gyroscope"}].setRandom();
+        map[\textcolor{stringliteral}{"imu"}].setRandom();
+    \}
+    \textcolor{keywordtype}{void} \hyperlink{classdynamic__graph__manager_1_1SimpleDGM_ad38ccd35cc0c409a0aaefa8565634109}{set\_motor\_controls\_from\_map}(\textcolor{keyword}{const} 
+      \hyperlink{namespacedynamic__graph_abd184187f3bc15df5e227d866529e4a7}{dynamic\_graph::VectorDGMap}& map)
+    \{
+        desired\_torques\_ = map.at(\textcolor{stringliteral}{"torques"});
+        desired\_positions\_ = map.at(\textcolor{stringliteral}{"positions"});
+    \}
+
+    \textcolor{keywordtype}{bool} \hyperlink{classdynamic__graph__manager_1_1SimpleDGM_a08793eb7410b2820e00e028688d890a9}{get\_has\_user\_command\_been\_executed}()
+    \{
+        \textcolor{comment}{// Here we nee to protect the access to this ressource as it may}
+        \textcolor{comment}{// conflict with different thread. Please use cond\_var\_ to make sure}
+        \textcolor{comment}{// everything is access on its due time.}
+        \textcolor{keywordtype}{bool} ret = boolean\_set\_by\_user\_cmd\_;
+        \textcolor{keywordflow}{return} ret;
+    \}
+
+    \textcolor{keywordtype}{bool} \hyperlink{classdynamic__graph__manager_1_1SimpleDGM_adb40055a916691d326bc6466eab9680b}{user\_command\_callback}(
+        dynamic\_graph\_manager::TestUserCmdBool::Request& req,
+        dynamic\_graph\_manager::TestUserCmdBool::Response& res)
+    \{
+        \textcolor{comment}{// parse and register the command for further call.}
+        \hyperlink{classdynamic__graph_1_1DynamicGraphManager_a72146c4ddd173869a512e9f174ad48df}{add\_user\_command}(
+            std::bind(&\hyperlink{classdynamic__graph__manager_1_1SimpleDGM_a6ba8314169c29c722cdcea810798f08d}{SimpleDGM::user\_command}, \textcolor{keyword}{this}, req.input\_boolean));
+        \textcolor{comment}{// return whatever the user want}
+        res.sanity\_check = \textcolor{keyword}{true};
+
+        \textcolor{comment}{// the service has been executed properly}
+        \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+    \}
+
+    \textcolor{keywordtype}{bool} \hyperlink{classdynamic__graph__manager_1_1SimpleDGM_a5fe81f9feb5d982761d7a427aa31e7b4}{is\_in\_safety\_mode}()
+    \{
+        \textcolor{comment}{// here define a check for robot specific stuff.}
+        \textcolor{keywordtype}{bool} check = \textcolor{keyword}{true};
+        \textcolor{keywordflow}{return} check || DynamicGraphManager::is\_in\_safety\_mode();
+    \}
+
+    \textcolor{keywordtype}{void} \hyperlink{classdynamic__graph__manager_1_1SimpleDGM_a37b28e687ce4e724770f5c9f23da4d4f}{compute\_safety\_controls}()
+    \{
+        \textcolor{comment}{// fill all controls with zero... Check your robot to imagine what would}
+        \textcolor{comment}{// be safer in this case.}
+        \textcolor{keywordflow}{for} (dynamic\_graph::VectorDGMap::iterator ctrl =
+                 \hyperlink{classdynamic__graph_1_1DynamicGraphManager_a03eabd2f08990a1dcc1caa652b701020}{motor\_controls\_map\_}.begin();
+             ctrl != \hyperlink{classdynamic__graph_1_1DynamicGraphManager_a03eabd2f08990a1dcc1caa652b701020}{motor\_controls\_map\_}.end();
+             ++ctrl)
+        \{
+            ctrl->second.fill(0.0);
+        \}
+    \}
+
+\textcolor{keyword}{private}:
+    \textcolor{keywordtype}{void} \hyperlink{classdynamic__graph__manager_1_1SimpleDGM_a6ba8314169c29c722cdcea810798f08d}{user\_command}(\textcolor{keywordtype}{bool} user\_input)
+    \{
+        \textcolor{comment}{// do something with the internal state or with the hardware}
+        boolean\_set\_by\_user\_cmd\_ = user\_input;
+    \}
+    \textcolor{comment}{// some internal hardware class or obect. Here just a simple boolean for}
+    \textcolor{comment}{// unit testing}
+    std::atomic\_bool boolean\_set\_by\_user\_cmd\_;
+
+    \textcolor{comment}{// Control}
+    dynamicgraph::Vector desired\_torques\_, desired\_positions\_;
+\};
+
+\}  \textcolor{comment}{// namespace dynamic\_graph\_manager}
+\end{DoxyCodeInclude}
+ 
