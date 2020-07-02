@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="coding_guidelines_1" kind="page">
+    <compoundname>coding_guidelines_1</compoundname>
+    <title>2. Python Coding Guidelines</title>
+    <detaileddescription>
+<para><heading level="2">I. Introduction</heading>
+</para><para>These are the internal <bold>Python</bold> guidelines for the <ulink url="https://wp.nyu.edu/machinesinmotion/">machines-in-motion</ulink> group. The same guidelines are used in the <ulink url="https://open-dynamic-robot-initiative.github.io/">Open Dynamic Robot Initiative</ulink></para><para>The following rules present basic guidelines for our <bold>Python</bold> code.</para><para>These guidelines may evolve in time so it is first good practice to check them upon creation of a new package or code refactoring.</para><para><heading level="2">II. Folder Structure and File Naming</heading>
+</para><para><itemizedlist>
+<listitem><para>Only <emphasis>one</emphasis> <bold>Python</bold> package per git repository, and it must be located in <computeroutput>python/&lt;catkin_package_name&gt;/</computeroutput>.</para></listitem><listitem><para>Executable scripts should be placed in the <computeroutput>scripts/</computeroutput> folder. And should have a CMake <bold>install rule</bold> that makes them executable upon installation.</para></listitem></itemizedlist>
+</para><para><heading level="2">II. Python Coding Guidelines</heading>
+</para><para><itemizedlist>
+<listitem><para>Regarding the style, follow <ulink url="https://www.python.org/dev/peps/pep-0008/">PEP 8</ulink>.</para></listitem><listitem><para>Use <ulink url="https://flake8.pycqa.org">flake8</ulink> and fix all issues it shows. This will ensure compliance with PEP 8 and also point out some critical issues like usage of undefined variables. It is recommended to install a plugin to automatically run flake8 in your favourite editor. See [List of flake8 Plugins for Popular Editors](flake8_plugins).</para></listitem><listitem><para>To automatically format you code, you may use <ulink url="https://black.readthedocs.io">black</ulink>. When doing this, add <computeroutput>--line-length 79</computeroutput> to not violate PEP 8. Note, however, that black requires Pytyon 3.6, which may not be available for everyone. Therefore its usage is not mandatory.</para></listitem></itemizedlist>
+</para><para><heading level="2">III. Python Version</heading>
+</para><para><bold>Use Python 3.</bold></para><para>In case it is not possible to avoid <bold>Python 2</bold> for some reason, add the following import at the top of your files to make it easier to port the code to <bold>Python 3</bold> in the future and to avoid confusion about unexpected integer division: <verbatim># Python 3 compatibility. It has to be the first import.
+from __future__ import print_function, division</verbatim> </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

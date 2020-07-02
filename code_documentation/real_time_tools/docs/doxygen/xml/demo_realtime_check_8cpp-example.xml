@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="demo_realtime_check_8cpp-example" kind="example">
+    <compoundname>demo_realtime_check.cpp</compoundname>
+    <detaileddescription>
+<para>This demos has for purpose to present the class <ref refid="classreal__time__tools_1_1RealTimeCheck" kindref="compound">real_time_tools::RealTimeCheck</ref>. This class measures the frequency of a loop and compares it with a threshold frequency. As demonstrated below, the class takes as input the desired frequency and the threshold frequency.</para><para>In order to enable the measurement of the your loop one need to call the <ref refid="classreal__time__tools_1_1RealTimeCheck_1a83fdf97352d36aa20e482d7dfae442d5" kindref="member">real_time_tools::RealTimeCheck::tick()</ref> function.</para><para>Finally the statistical results can be displayed via the <ref refid="classreal__time__tools_1_1RealTimeCheck_1a9c9c68da79843098085204095286a143" kindref="member">real_time_tools::RealTimeCheck::print()</ref> methods. <programlisting><codeline></codeline>
+<codeline><highlight class="preprocessor">#include<sp/>&quot;<ref refid="realtime__check_8hpp" kindref="compound">real_time_tools/realtime_check.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="thread_8hpp" kindref="compound">real_time_tools/thread.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="timer_8hpp" kindref="compound">real_time_tools/timer.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">THREAD_FUNCTION_RETURN_TYPE<sp/><ref refid="demo__realtime__check_8cpp_1a16919b2a4211953c87d405d40b432427" kindref="member">thread_function</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>freq<sp/>=<sp/>1000.0;<sp/><sp/></highlight><highlight class="comment">//<sp/>1kz</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>switch_freq<sp/>=<sp/>990;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1RealTimeCheck" kindref="compound">real_time_tools::RealTimeCheck</ref><sp/>rc(freq,<sp/>switch_freq);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nb_iteration<sp/>=<sp/>10000;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;sleeping<sp/>time<sp/>is<sp/>%f<sp/>seconds&quot;</highlight><highlight class="normal">,<sp/>1.0<sp/>/<sp/>freq);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>nb_iteration;<sp/>++i)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rc.tick();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a++;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1Timer_1a0a0df8a3baef34e820203e5579afda38" kindref="member">real_time_tools::Timer::sleep_sec</ref>(1.0<sp/>/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>freq);<sp/><sp/></highlight><highlight class="comment">//<sp/>microseconds,<sp/>so<sp/>in<sp/>Ghz</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>rc.print();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>THREAD_FUNCTION_RETURN_VALUE;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="demo__checkpoint__timer_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>[])</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1RealTimeThread" kindref="compound">real_time_tools::RealTimeThread</ref><sp/>thread;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>thread.<ref refid="classreal__time__tools_1_1RealTimeThread_1a232e3955fee6e80c3a7ded68f165414b" kindref="member">create_realtime_thread</ref>(<ref refid="demo__realtime__check_8cpp_1a16919b2a4211953c87d405d40b432427" kindref="member">thread_function</ref>);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>thread.<ref refid="classreal__time__tools_1_1RealTimeThread_1a2f455db9fd80b81e5e69cd22e8529979" kindref="member">join</ref>();</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

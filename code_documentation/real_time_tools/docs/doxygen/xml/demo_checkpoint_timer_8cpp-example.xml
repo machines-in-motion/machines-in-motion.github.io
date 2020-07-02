@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="demo_checkpoint_timer_8cpp-example" kind="example">
+    <compoundname>demo_checkpoint_timer.cpp</compoundname>
+    <detaileddescription>
+<para>Demo on how to use the CheckpointTimer.Note that when the statistics are printed like this, the printing is included in the time measurement of the total loop duration. <programlisting><codeline></codeline>
+<codeline><highlight class="preprocessor">#include<sp/>&lt;<ref refid="checkpoint__timer_8hpp" kindref="compound">real_time_tools/checkpoint_timer.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="timer_8hpp" kindref="compound">real_time_tools/timer.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="demo__checkpoint__timer_8cpp_1a02fd73d861ef2e4aabb38c0c9ff82947" kindref="member">init</ref>()</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1Timer_1abb2ce808994282d63846e7fca544f818" kindref="member">real_time_tools::Timer::sleep_ms</ref>(3);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="demo__checkpoint__timer_8cpp_1acb546a895e868f1a8fb9cb4b5a210f42" kindref="member">do_some_stuff</ref>()</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1Timer_1abb2ce808994282d63846e7fca544f818" kindref="member">real_time_tools::Timer::sleep_ms</ref>(20);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="demo__checkpoint__timer_8cpp_1a609e6537df0c7eb15c1f5b4e02fbe0ed" kindref="member">write_log</ref>()</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1Timer_1abb2ce808994282d63846e7fca544f818" kindref="member">real_time_tools::Timer::sleep_ms</ref>(6);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="demo__checkpoint__timer_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>()</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>set<sp/>second<sp/>template<sp/>argument<sp/>to<sp/>false<sp/>to<sp/>disable<sp/>timer</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classreal__time__tools_1_1CheckpointTimer" kindref="compound">real_time_tools::CheckpointTimer&lt;3, true&gt;</ref><sp/>timer;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>1000;<sp/>i++)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>timer.<ref refid="classreal__time__tools_1_1CheckpointTimer_1ad93a12cb74103528c8db4e7b1745eae6" kindref="member">start</ref>();</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="demo__checkpoint__timer_8cpp_1a02fd73d861ef2e4aabb38c0c9ff82947" kindref="member">init</ref>();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>timer.<ref refid="classreal__time__tools_1_1CheckpointTimer_1a6e91b61b72c433a220b1bddb7a634bf5" kindref="member">checkpoint</ref>(</highlight><highlight class="stringliteral">&quot;initialize&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="demo__checkpoint__timer_8cpp_1acb546a895e868f1a8fb9cb4b5a210f42" kindref="member">do_some_stuff</ref>();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>timer.<ref refid="classreal__time__tools_1_1CheckpointTimer_1a6e91b61b72c433a220b1bddb7a634bf5" kindref="member">checkpoint</ref>(</highlight><highlight class="stringliteral">&quot;do<sp/>some<sp/>stuff&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="demo__checkpoint__timer_8cpp_1a609e6537df0c7eb15c1f5b4e02fbe0ed" kindref="member">write_log</ref>();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>timer.<ref refid="classreal__time__tools_1_1CheckpointTimer_1a6e91b61b72c433a220b1bddb7a634bf5" kindref="member">checkpoint</ref>(</highlight><highlight class="stringliteral">&quot;logging&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>print<sp/>the<sp/>timing<sp/>results<sp/>every<sp/>100<sp/>iterations</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>%<sp/>100<sp/>==<sp/>0<sp/>&amp;&amp;<sp/>i<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>timer.<ref refid="classreal__time__tools_1_1CheckpointTimer_1a73e001fa40a76ce5fd917a2dfcd09555" kindref="member">print_statistics</ref>();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="pkg__config_8md" kind="file" language="Markdown">
+    <compoundname>pkg_config.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">PKG<sp/>Config</highlight></codeline>
+<codeline><highlight class="normal">==========</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Introduction</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>CMake<sp/>module<sp/>is<sp/>based<sp/>on<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">[pkg-config](https://linux.die.net/man/1/pkg-config)<sp/>module.</highlight></codeline>
+<codeline><highlight class="normal">And<sp/>a<sp/>compatibility<sp/>with<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">[Catkin<sp/>CMake<sp/>module](http://wiki.ros.org/catkin/CMakeLists.txt).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>tool<sp/>is<sp/>done<sp/>for<sp/>finding<sp/>non-catkin<sp/>depencies<sp/>using<sp/>a<sp/>cross<sp/>platform<sp/>and</highlight></codeline>
+<codeline><highlight class="normal">efficient<sp/>tool.<sp/>PKG-config<sp/>is<sp/>based<sp/>on<sp/>`.pc`<sp/>files<sp/>containing<sp/>the<sp/>dependencies</highlight></codeline>
+<codeline><highlight class="normal">informations.<sp/>For<sp/>PKG-config<sp/>to<sp/>work<sp/>one<sp/>need<sp/>to<sp/>properly<sp/>setup<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">`PKG_CONFIG_PATH`<sp/>to<sp/>the<sp/>path<sp/>of<sp/>the<sp/>`.pc`<sp/>files<sp/>locations.<sp/>Typically</highlight></codeline>
+<codeline><highlight class="normal">`lib/pkgconfig`<sp/>in<sp/>the<sp/>install<sp/>folders.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Usage</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Basic<sp/>usage</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>basic<sp/>usage<sp/>of<sp/>this<sp/>is<sp/>like<sp/>the<sp/>following:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>Look<sp/>for<sp/>the<sp/>dependency</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ADD_OPTIONAL_DEPENDENCY(&lt;dependency<sp/>name<sp/>1&gt;)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ADD_REQUIRED_DEPENDENCY(&lt;dependency<sp/>name<sp/>2&gt;)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>Use<sp/>the<sp/>dependency<sp/>on<sp/>a<sp/>CMake<sp/>target:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>PKG_CONFIG_USE_DEPENDENCY(target<sp/>&lt;dependency<sp/>name<sp/>1&gt;)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>PKG_CONFIG_USE_DEPENDENCY(target<sp/>&lt;dependency<sp/>name<sp/>2&gt;)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Usage<sp/>in<sp/>combination<sp/>with<sp/>catkin</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>usage<sp/>inside<sp/>a<sp/>catkin<sp/>package<sp/>allows<sp/>us<sp/>to<sp/>skip<sp/>the<sp/>second<sp/>part:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>Look<sp/>for<sp/>the<sp/>dependency<sp/>and<sp/>feed<sp/>the<sp/>catkin<sp/>variables<sp/>with<sp/>the<sp/>relevant</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>information</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>CATKIN_ADD_OPTIONAL_DEPENDENCY(&lt;dependency<sp/>name<sp/>1&gt;)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>CATKIN_ADD_REQUIRED_DEPENDENCY(&lt;dependency<sp/>name<sp/>2&gt;)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>use<sp/>the<sp/>dependencies<sp/>using<sp/>catkin<sp/>variables</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>TARGET_LINK_LIBRARIES(&lt;target&gt;<sp/>${catkin_LIBRARIES})</highlight></codeline>
+    </programlisting>
+    <location file="doc/pkg_config.md"/>
+  </compounddef>
+</doxygen>

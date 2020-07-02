@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classshared__memory_1_1ConditionVariable" kind="class" language="C++" prot="public">
+    <compoundname>shared_memory::ConditionVariable</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classshared__memory_1_1ConditionVariable_1a496feeef1a7fec080435b68a79bc163d" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string shared_memory::ConditionVariable::condition_id_</definition>
+        <argsstring></argsstring>
+        <name>condition_id_</name>
+        <briefdescription>
+<para>condition_id_ is the condition variable name in the shared memory </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/condition_variable.hpp" line="59" column="1" bodyfile="include/shared_memory/condition_variable.hpp" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classshared__memory_1_1ConditionVariable_1a872a5c9305c0dff22ec085b8c8306a0d" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool shared_memory::ConditionVariable::clean_memory_on_destruction_</definition>
+        <argsstring></argsstring>
+        <name>clean_memory_on_destruction_</name>
+        <briefdescription>
+<para>if true (the default), clean the shared memory of the hosted mutex and condition. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/condition_variable.hpp" line="65" column="1" bodyfile="include/shared_memory/condition_variable.hpp" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classshared__memory_1_1ConditionVariable_1a37c6e1a6ca44d30c2a29990e4460803b" prot="private" static="no" mutable="no">
+        <type>SHMCondition *</type>
+        <definition>SHMCondition* shared_memory::ConditionVariable::condition_variable_</definition>
+        <argsstring></argsstring>
+        <name>condition_variable_</name>
+        <briefdescription>
+<para>condition_variable_ is the boost condition variable that is used </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/condition_variable.hpp" line="70" column="1" bodyfile="include/shared_memory/condition_variable.hpp" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classshared__memory_1_1ConditionVariable_1ab8221877ff8551e608d5d4691d3679ae" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string shared_memory::ConditionVariable::mutex_id_</definition>
+        <argsstring></argsstring>
+        <name>mutex_id_</name>
+        <briefdescription>
+<para>mutex_id_ is the mutex name in the shared memory </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/condition_variable.hpp" line="75" column="1" bodyfile="include/shared_memory/condition_variable.hpp" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classshared__memory_1_1ConditionVariable_1ae4b6accfbe98b2e23f9e20789cea46f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>shared_memory::ConditionVariable::ConditionVariable</definition>
+        <argsstring>(const std::string object_id, bool clean_memory_on_destruction)</argsstring>
+        <name>ConditionVariable</name>
+        <param>
+          <type>const std::string</type>
+          <declname>object_id</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>clean_memory_on_destruction</declname>
+        </param>
+        <briefdescription>
+<para>A condition variable shared over the memory The condition variable is cleaned from the memory on destruction if clean_memory_on_destruction is set to true. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/condition_variable.hpp" line="23" column="1" bodyfile="src/condition_variable.cpp" bodystart="5" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1ConditionVariable_1a84ccb3bcc9255cd145d30b3a91db4e2b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>shared_memory::ConditionVariable::~ConditionVariable</definition>
+        <argsstring>()</argsstring>
+        <name>~ConditionVariable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/condition_variable.hpp" line="26" column="1" bodyfile="src/condition_variable.cpp" bodystart="18" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1ConditionVariable_1abc70cd1401f40e23ca4a6afb33f28bb5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void shared_memory::ConditionVariable::notify_all</definition>
+        <argsstring>()</argsstring>
+        <name>notify_all</name>
+        <briefdescription>
+<para>notify_all is notifying all condition variables with the same mutex </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/condition_variable.hpp" line="32" column="1" bodyfile="src/condition_variable.cpp" bodystart="32" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1ConditionVariable_1a8953b054a1074ab5ef0a9f9b35f58a42" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void shared_memory::ConditionVariable::notify_one</definition>
+        <argsstring>()</argsstring>
+        <name>notify_one</name>
+        <briefdescription>
+<para>notify_one notifies one condition variable with the same mutex </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/condition_variable.hpp" line="37" column="1" bodyfile="src/condition_variable.cpp" bodystart="37" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1ConditionVariable_1af7b1ce584ff9ef9a0925f57cae8e6263" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool shared_memory::ConditionVariable::timed_wait</definition>
+        <argsstring>(Lock &amp;lock, long wait_nano_seconds)</argsstring>
+        <name>timed_wait</name>
+        <param>
+          <type><ref refid="classshared__memory_1_1Lock" kindref="compound">Lock</ref> &amp;</type>
+          <declname>lock</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>wait_nano_seconds</declname>
+        </param>
+        <briefdescription>
+<para>timed_wait wait a notify during a certain certain time and then wake up </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>wait_duration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>in microsecond </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true: the condition variable has been notified, false otherwize </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/condition_variable.hpp" line="45" column="1" bodyfile="src/condition_variable.cpp" bodystart="48" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1ConditionVariable_1a8746faccdf81b03dd36c5b405c9ab48d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void shared_memory::ConditionVariable::wait</definition>
+        <argsstring>(Lock &amp;lock)</argsstring>
+        <name>wait</name>
+        <param>
+          <type><ref refid="classshared__memory_1_1Lock" kindref="compound">Lock</ref> &amp;</type>
+          <declname>lock</declname>
+        </param>
+        <briefdescription>
+<para>wait waits until another thread notifies this object </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/condition_variable.hpp" line="50" column="1" bodyfile="src/condition_variable.cpp" bodystart="42" bodyend="46"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classshared__memory_1_1ConditionVariable_1adf6a90466c2bf96cbc08f3ba0246274e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void shared_memory::ConditionVariable::clean</definition>
+        <argsstring>(const std::string object_id)</argsstring>
+        <name>clean</name>
+        <param>
+          <type>const std::string</type>
+          <declname>object_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/condition_variable.hpp" line="53" column="1" bodyfile="src/condition_variable.cpp" bodystart="27" bodyend="30"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/shared_memory/condition_variable.hpp" line="15" column="1" bodyfile="include/shared_memory/condition_variable.hpp" bodystart="14" bodyend="76"/>
+    <listofallmembers>
+      <member refid="classshared__memory_1_1ConditionVariable_1adf6a90466c2bf96cbc08f3ba0246274e" prot="public" virt="non-virtual"><scope>shared_memory::ConditionVariable</scope><name>clean</name></member>
+      <member refid="classshared__memory_1_1ConditionVariable_1a872a5c9305c0dff22ec085b8c8306a0d" prot="private" virt="non-virtual"><scope>shared_memory::ConditionVariable</scope><name>clean_memory_on_destruction_</name></member>
+      <member refid="classshared__memory_1_1ConditionVariable_1a496feeef1a7fec080435b68a79bc163d" prot="private" virt="non-virtual"><scope>shared_memory::ConditionVariable</scope><name>condition_id_</name></member>
+      <member refid="classshared__memory_1_1ConditionVariable_1a37c6e1a6ca44d30c2a29990e4460803b" prot="private" virt="non-virtual"><scope>shared_memory::ConditionVariable</scope><name>condition_variable_</name></member>
+      <member refid="classshared__memory_1_1ConditionVariable_1ae4b6accfbe98b2e23f9e20789cea46f7" prot="public" virt="non-virtual"><scope>shared_memory::ConditionVariable</scope><name>ConditionVariable</name></member>
+      <member refid="classshared__memory_1_1ConditionVariable_1ab8221877ff8551e608d5d4691d3679ae" prot="private" virt="non-virtual"><scope>shared_memory::ConditionVariable</scope><name>mutex_id_</name></member>
+      <member refid="classshared__memory_1_1ConditionVariable_1abc70cd1401f40e23ca4a6afb33f28bb5" prot="public" virt="non-virtual"><scope>shared_memory::ConditionVariable</scope><name>notify_all</name></member>
+      <member refid="classshared__memory_1_1ConditionVariable_1a8953b054a1074ab5ef0a9f9b35f58a42" prot="public" virt="non-virtual"><scope>shared_memory::ConditionVariable</scope><name>notify_one</name></member>
+      <member refid="classshared__memory_1_1ConditionVariable_1af7b1ce584ff9ef9a0925f57cae8e6263" prot="public" virt="non-virtual"><scope>shared_memory::ConditionVariable</scope><name>timed_wait</name></member>
+      <member refid="classshared__memory_1_1ConditionVariable_1a8746faccdf81b03dd36c5b405c9ab48d" prot="public" virt="non-virtual"><scope>shared_memory::ConditionVariable</scope><name>wait</name></member>
+      <member refid="classshared__memory_1_1ConditionVariable_1a84ccb3bcc9255cd145d30b3a91db4e2b" prot="public" virt="non-virtual"><scope>shared_memory::ConditionVariable</scope><name>~ConditionVariable</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

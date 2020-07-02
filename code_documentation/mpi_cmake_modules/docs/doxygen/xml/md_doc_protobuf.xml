@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="md_doc_protobuf" kind="page">
+    <compoundname>md_doc_protobuf</compoundname>
+    <title>Protobuf</title>
+    <detaileddescription>
+<para><heading level="2">Introduction</heading>
+</para><para>We define here a couple of useful macros to ease the management of the <ulink url="https://developers.google.com/protocol-buffers/">Protobuf</ulink> message code generation.</para><para><heading level="2">Usage</heading>
+</para><para>This CMake module provide 2 macros that both work in collaboration with Catkin. Both macros will provide the generated C++ message source files. In addition to this one can generate the Python files by setting the following CMake variable: <verbatim>set(PROTOBUF_COMPILE_PYTHON ON)
+</verbatim></para><para>These files will be installed in the correct Python directory.</para><para><heading level="3">Generic macro</heading>
+</para><para>The first macro is a generic purpose macro which can be used in any project. <verbatim>protobuf_catkin_generate_cpp(src_path srcs hdrs)
+</verbatim></para><para>This macro takes the path to the folder in which you stored you <computeroutput>*.proto</computeroutput> files. This path is relative to your project path.</para><para>This macro then fills in the <computeroutput>SRCS</computeroutput> and <computeroutput>HDRS</computeroutput> variables with the generated C++ sources generated from the protobuf generator.</para><para>One then need to build this files by hand by creating a library.</para><para><heading level="3">Specific project architecture macro</heading>
+</para><para>This macro expect that you have put the <computeroutput>*.proto</computeroutput> files in the <computeroutput>protobuf</computeroutput> folder located in your project root <computeroutput>PROJECT_PATH/protobuf/</computeroutput>. Then calling: <verbatim>protobuf_catkin_generate_lib(my_protobuff_messages)
+</verbatim></para><para>Will create the CMake target <computeroutput>my_protobuff_messages</computeroutput> which you can depend on: <verbatim>target_link_libraries(my_target my_protobuff_messages)</verbatim> </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

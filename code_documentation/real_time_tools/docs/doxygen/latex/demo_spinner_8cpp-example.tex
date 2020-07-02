@@ -1,0 +1,46 @@
+\hypertarget{demo_spinner_8cpp-example}{}\section{demo\+\_\+spinner.\+cpp}
+This demos has for purpose to present the class real\+\_\+time\+\_\+tools\+::\+Spinner.\+This class allows you to time a loop with a simple A\+PI.
+
+One need to create a spinner and set the current spinning frequency. Two method are available for this\+: \hyperlink{classreal__time__tools_1_1Spinner_afa4e24e5dbbbfa2e0d694ef2e3fa3bb8}{real\+\_\+time\+\_\+tools\+::\+Spinner\+::set\+\_\+frequency()} or \hyperlink{classreal__time__tools_1_1Spinner_ac945d6df02f33e75f499922d23838408}{real\+\_\+time\+\_\+tools\+::\+Spinner\+::set\+\_\+period()}..
+
+Once this is set one just needs to call \hyperlink{classreal__time__tools_1_1Spinner_aa07d4fa32ead44008daa73663508139d}{real\+\_\+time\+\_\+tools\+::\+Spinner\+::spin()} and the thread will sleep just the amount of time needed in order for the loop to cadenced properly.
+
+
+\begin{DoxyCodeInclude}
+
+\textcolor{preprocessor}{#include "\hyperlink{realtime__check_8hpp}{real\_time\_tools/realtime\_check.hpp}"}
+\textcolor{preprocessor}{#include "\hyperlink{spinner_8hpp}{real\_time\_tools/spinner.hpp}"}
+\textcolor{preprocessor}{#include "\hyperlink{thread_8hpp}{real\_time\_tools/thread.hpp}"}
+
+THREAD\_FUNCTION\_RETURN\_TYPE \hyperlink{demo__spinner_8cpp_a16919b2a4211953c87d405d40b432427}{thread\_function}(\textcolor{keywordtype}{void}*)
+\{
+    \textcolor{keywordtype}{double} frequency = 300.0;
+    \textcolor{keywordtype}{double} switch\_frequency = 290;
+
+    \hyperlink{classreal__time__tools_1_1RealTimeCheck}{real\_time\_tools::RealTimeCheck} realtime\_check(frequency, switch\_frequency
+      );
+    \hyperlink{classreal__time__tools_1_1Spinner}{real\_time\_tools::Spinner} spinner;
+    spinner.\hyperlink{classreal__time__tools_1_1Spinner_afa4e24e5dbbbfa2e0d694ef2e3fa3bb8}{set\_frequency}(frequency);
+
+    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 500; i++)
+    \{
+        realtime\_check.\hyperlink{classreal__time__tools_1_1RealTimeCheck_a83fdf97352d36aa20e482d7dfae442d5}{tick}();
+        spinner.\hyperlink{classreal__time__tools_1_1Spinner_aa07d4fa32ead44008daa73663508139d}{spin}();
+    \}
+
+    std::cout << \textcolor{stringliteral}{"\(\backslash\)n"};
+    realtime\_check.\hyperlink{classreal__time__tools_1_1RealTimeCheck_a9c9c68da79843098085204095286a143}{print}();
+    std::cout << \textcolor{stringliteral}{"\(\backslash\)n"};
+
+    \textcolor{keywordflow}{return} THREAD\_FUNCTION\_RETURN\_VALUE;
+\}
+
+\textcolor{keywordtype}{int} \hyperlink{demo__spinner_8cpp_a81ce304348a420752ee080480d2b3095}{main}(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{char}* [])
+\{
+    \hyperlink{classreal__time__tools_1_1RealTimeThread}{real\_time\_tools::RealTimeThread} thread;
+    thread.\hyperlink{classreal__time__tools_1_1RealTimeThread_a232e3955fee6e80c3a7ded68f165414b}{create\_realtime\_thread}(\hyperlink{demo__spinner_8cpp_a16919b2a4211953c87d405d40b432427}{thread\_function});
+    thread.\hyperlink{classreal__time__tools_1_1RealTimeThread_a2f455db9fd80b81e5e69cd22e8529979}{join}();
+\}
+
+\end{DoxyCodeInclude}
+ 

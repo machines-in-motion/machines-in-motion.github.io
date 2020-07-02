@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="protobuf_8md" kind="file" language="Markdown">
+    <compoundname>protobuf.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">Protobuf</highlight></codeline>
+<codeline><highlight class="normal">========</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Introduction</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">We<sp/>define<sp/>here<sp/>a<sp/>couple<sp/>of<sp/>useful<sp/>macros<sp/>to<sp/>ease<sp/>the<sp/>management<sp/>of<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">[Protobuf](https://developers.google.com/protocol-buffers/)</highlight></codeline>
+<codeline><highlight class="normal">message<sp/>code<sp/>generation.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Usage</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>CMake<sp/>module<sp/>provide<sp/>2<sp/>macros<sp/>that<sp/>both<sp/>work<sp/>in<sp/>collaboration<sp/>with</highlight></codeline>
+<codeline><highlight class="normal">Catkin.</highlight></codeline>
+<codeline><highlight class="normal">Both<sp/>macros<sp/>will<sp/>provide<sp/>the<sp/>generated<sp/>C++<sp/>message<sp/>source<sp/>files.<sp/>In<sp/>addition</highlight></codeline>
+<codeline><highlight class="normal">to<sp/>this<sp/>one<sp/>can<sp/>generate<sp/>the<sp/>Python<sp/>files<sp/>by<sp/>setting<sp/>the<sp/>following<sp/>CMake</highlight></codeline>
+<codeline><highlight class="normal">variable:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>set(PROTOBUF_COMPILE_PYTHON<sp/>ON)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">These<sp/>files<sp/>will<sp/>be<sp/>installed<sp/>in<sp/>the<sp/>correct<sp/>Python<sp/>directory.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Generic<sp/>macro</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>first<sp/>macro<sp/>is<sp/>a<sp/>generic<sp/>purpose<sp/>macro<sp/>which<sp/>can<sp/>be<sp/>used<sp/>in<sp/>any<sp/>project.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>protobuf_catkin_generate_cpp(src_path<sp/>srcs<sp/>hdrs)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>macro<sp/>takes<sp/>the<sp/>path<sp/>to<sp/>the<sp/>folder<sp/>in<sp/>which<sp/>you<sp/>stored<sp/>you<sp/>`*.proto`<sp/>files.</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>path<sp/>is<sp/>relative<sp/>to<sp/>your<sp/>project<sp/>path.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>macro<sp/>then<sp/>fills<sp/>in<sp/>the<sp/>`SRCS`<sp/>and<sp/>`HDRS`<sp/>variables<sp/>with<sp/>the<sp/>generated</highlight></codeline>
+<codeline><highlight class="normal">C++<sp/>sources<sp/>generated<sp/>from<sp/>the<sp/>protobuf<sp/>generator.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">One<sp/>then<sp/>need<sp/>to<sp/>build<sp/>this<sp/>files<sp/>by<sp/>hand<sp/>by<sp/>creating<sp/>a<sp/>library.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Specific<sp/>project<sp/>architecture<sp/>macro</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>macro<sp/>expect<sp/>that<sp/>you<sp/>have<sp/>put<sp/>the<sp/>`*.proto`<sp/>files<sp/>in<sp/>the<sp/>`protobuf`<sp/>folder</highlight></codeline>
+<codeline><highlight class="normal">located<sp/>in<sp/>your<sp/>project<sp/>root<sp/>`PROJECT_PATH/protobuf/`.</highlight></codeline>
+<codeline><highlight class="normal">Then<sp/>calling:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>protobuf_catkin_generate_lib(my_protobuff_messages)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Will<sp/>create<sp/>the<sp/>CMake<sp/>target<sp/>`my_protobuff_messages`<sp/>which<sp/>you<sp/>can<sp/>depend<sp/>on:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>target_link_libraries(my_target<sp/>my_protobuff_messages)</highlight></codeline>
+    </programlisting>
+    <location file="doc/protobuf.md"/>
+  </compounddef>
+</doxygen>

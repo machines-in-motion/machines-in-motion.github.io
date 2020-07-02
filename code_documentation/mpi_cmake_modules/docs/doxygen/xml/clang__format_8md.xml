@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="clang__format_8md" kind="file" language="Markdown">
+    <compoundname>clang_format.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">Clang<sp/>Format</highlight></codeline>
+<codeline><highlight class="normal">============</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Introduction</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>package<sp/>provide<sp/>some<sp/>tools<sp/>in<sp/>order</highlight></codeline>
+<codeline><highlight class="normal">to<sp/>format<sp/>the<sp/>C/C++<sp/>code<sp/>using<sp/>clang-format<sp/>and<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">[machines-in-motions](https://machines-in-motion.github.io/code_documentation/ci_example_cpp/coding_guidelines_1.html)</highlight></codeline>
+<codeline><highlight class="normal">specific<sp/>set<sp/>of<sp/>rules.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Executable</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>order<sp/>to<sp/>use<sp/>it<sp/>one<sp/>need<sp/>to<sp/>source<sp/>the<sp/>workspace<sp/>environment:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>source<sp/>workspace/devel/setup.bash</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">And<sp/>to<sp/>run<sp/>the<sp/>following<sp/>command:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>rosrun<sp/>mpi_cmake_modules<sp/>clang_format<sp/>list_of_files<sp/>list_of_folders</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">`list_of_files`<sp/>and<sp/>`list_of_folders`<sp/>can<sp/>be<sp/>either<sp/>relative<sp/>paths<sp/>or<sp/>absolute<sp/>paths.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>those<sp/>not<sp/>willing<sp/>to<sp/>use<sp/>rosrun<sp/>the<sp/>executable<sp/>is<sp/>located<sp/>in</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mpi_cmake_modules/scripts/clang_format</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">So<sp/>one<sp/>can<sp/>simply<sp/>get<sp/>the<sp/>full<sp/>path<sp/>of<sp/>the<sp/>executable<sp/>in<sp/>order<sp/>to<sp/>use<sp/>it.</highlight></codeline>
+<codeline><highlight class="normal">A<sp/>cleaner<sp/>way<sp/>would<sp/>be<sp/>to<sp/>properly<sp/>install<sp/>the<sp/>executable<sp/>script.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>executable<sp/>will<sp/>create<sp/>the<sp/>list<sp/>of<sp/>all<sp/>files<sp/>to<sp/>be<sp/>formatted<sp/>by<sp/>checking<sp/>all</highlight></codeline>
+<codeline><highlight class="normal">arguments<sp/>(which<sp/>order<sp/>does<sp/>not<sp/>matter).<sp/>And<sp/>perform<sp/>the<sp/>following<sp/>tests:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>If<sp/>you<sp/>provided<sp/>a<sp/>file<sp/>it<sp/>will<sp/>keep<sp/>it<sp/>if:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>it<sp/>exists<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>it<sp/>is<sp/>a<sp/>source<sp/>files</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>If<sp/>you<sp/>provided<sp/>a<sp/>folder<sp/>it<sp/>will<sp/>search<sp/>recursively<sp/>all<sp/>the<sp/>files<sp/>and</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>perform<sp/>the<sp/>above<sp/>checks.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Once<sp/>the<sp/>list<sp/>is<sp/>created<sp/>the<sp/>tool<sp/>format<sp/>each<sp/>selected<sp/>files.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>CMake<sp/>macro</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>package<sp/>also<sp/>provide<sp/>a<sp/>CMake<sp/>macro<sp/>allowing<sp/>you<sp/>to<sp/>perform<sp/>automatically</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>formatting<sp/>upon<sp/>build.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>macro<sp/>to<sp/>add<sp/>is<sp/>located<sp/>in<sp/>the<sp/>`mpi_cmake_modules/cmake/clang-format.cmake`</highlight></codeline>
+<codeline><highlight class="normal">and<sp/>is<sp/>called</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>format_code()</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">By<sp/>default<sp/>it<sp/>does<sp/>nothing.<sp/>In<sp/>order<sp/>to<sp/>activate<sp/>it<sp/>you<sp/>need<sp/>to<sp/>add<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">folowwing<sp/>CMake<sp/>argument:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>catkin<sp/>build<sp/>mpi_cmake_modules<sp/>--cmake-args<sp/>-DFORMAT_CODE=ON</highlight></codeline>
+    </programlisting>
+    <location file="doc/clang_format.md"/>
+  </compounddef>
+</doxygen>

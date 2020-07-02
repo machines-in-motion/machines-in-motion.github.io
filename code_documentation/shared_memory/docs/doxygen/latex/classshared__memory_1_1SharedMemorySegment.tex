@@ -1,0 +1,266 @@
+\hypertarget{classshared__memory_1_1SharedMemorySegment}{}\section{shared\+\_\+memory\+:\+:Shared\+Memory\+Segment Class Reference}
+\label{classshared__memory_1_1SharedMemorySegment}\index{shared\+\_\+memory\+::\+Shared\+Memory\+Segment@{shared\+\_\+memory\+::\+Shared\+Memory\+Segment}}
+
+
+The \hyperlink{classshared__memory_1_1SharedMemorySegment}{Shared\+Memory\+Segment} contains the pointers of the shared objects in on shared memrory segment.  
+
+
+
+
+{\ttfamily \#include $<$shared\+\_\+memory.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classshared__memory_1_1SharedMemorySegment_ae984411227bd175e684f90c9c28c976c}\label{classshared__memory_1_1SharedMemorySegment_ae984411227bd175e684f90c9c28c976c}} 
+\hyperlink{classshared__memory_1_1SharedMemorySegment_ae984411227bd175e684f90c9c28c976c}{Shared\+Memory\+Segment} (std\+::string segment\+\_\+id, bool clear\+\_\+upon\+\_\+destruction)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classshared__memory_1_1SharedMemorySegment}{Shared\+Memory\+Segment} constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classshared__memory_1_1SharedMemorySegment_a9f02fd9f35950df5f6ce7ceaba5fbb53}\label{classshared__memory_1_1SharedMemorySegment_a9f02fd9f35950df5f6ce7ceaba5fbb53}} 
+\hyperlink{classshared__memory_1_1SharedMemorySegment_a9f02fd9f35950df5f6ce7ceaba5fbb53}{$\sim$\+Shared\+Memory\+Segment} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classshared__memory_1_1SharedMemorySegment}{Shared\+Memory\+Segment} destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classshared__memory_1_1SharedMemorySegment_a0224739cd729dfb249c3d7882463e5eb}\label{classshared__memory_1_1SharedMemorySegment_a0224739cd729dfb249c3d7882463e5eb}} 
+void \hyperlink{classshared__memory_1_1SharedMemorySegment_a0224739cd729dfb249c3d7882463e5eb}{clear\+\_\+memory} ()
+\begin{DoxyCompactList}\small\item\em clear\+\_\+memory free the shared memory \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Elem\+Type $>$ }\\void \hyperlink{classshared__memory_1_1SharedMemorySegment_ad73b5160f713c9a78e67c4b8590d8729}{get\+\_\+object} (const std\+::string \&object\+\_\+id, std\+::pair$<$ Elem\+Type $\ast$, std\+::size\+\_\+t $>$ \&get\+\_\+)
+\begin{DoxyCompactList}\small\item\em get\+\_\+object registers the object in the current struc and in the shared memory once only. \end{DoxyCompactList}\item 
+void \hyperlink{classshared__memory_1_1SharedMemorySegment_a17aa3bfe778e05b543415b1e5137a26b}{get\+\_\+object} (const std\+::string \&object\+\_\+id, std\+::string \&get\+\_\+)
+\begin{DoxyCompactList}\small\item\em get\+\_\+object registers the object in the current struc and in the shared memory once only. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Elem\+Type $>$ }\\void \hyperlink{classshared__memory_1_1SharedMemorySegment_a16e6213d7dd1984799bbd8fbe14225dc}{set\+\_\+object} (const std\+::string \&object\+\_\+id, const std\+::pair$<$ const Elem\+Type $\ast$, std\+::size\+\_\+t $>$ \&set\+\_\+)
+\begin{DoxyCompactList}\small\item\em set\+\_\+object registers the object in the current struc and in the shared memory once only. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Elem\+Type $>$ }\\bool \hyperlink{classshared__memory_1_1SharedMemorySegment_a6987e8225fd20dbab12e5bb3f5305b75}{register\+\_\+object} (const std\+::string \&object\+\_\+id, const std\+::pair$<$ Elem\+Type $\ast$, std\+::size\+\_\+t $>$ \&obj\+\_\+)
+\begin{DoxyCompactList}\small\item\em register\+\_\+object registers the object in the segment uniquely. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Elem\+Type $>$ }\\bool \hyperlink{classshared__memory_1_1SharedMemorySegment_a830fee375b183642b999f6a64240f280}{register\+\_\+object\+\_\+read\+\_\+only} (const std\+::string \&object\+\_\+id)
+\begin{DoxyCompactList}\small\item\em register\+\_\+object\+\_\+read\+\_\+only registers the object in the segment uniquely. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Elem\+Type $>$ }\\void \hyperlink{classshared__memory_1_1SharedMemorySegment_abc658e54589c81e89b147f0b3fbd67b8}{delete\+\_\+object} (const std\+::string \&object\+\_\+id)
+\begin{DoxyCompactList}\small\item\em delete\+\_\+object delete and object from the shared memory. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classshared__memory_1_1SharedMemorySegment_ac8bbbc98968a8a2b3fe35c50e0768d8f}\label{classshared__memory_1_1SharedMemorySegment_ac8bbbc98968a8a2b3fe35c50e0768d8f}} 
+void \hyperlink{classshared__memory_1_1SharedMemorySegment_ac8bbbc98968a8a2b3fe35c50e0768d8f}{create\+\_\+mutex} ()
+\begin{DoxyCompactList}\small\item\em create\+\_\+mutex small factory that allow to make sure that the mutex is created. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classshared__memory_1_1SharedMemorySegment_a64d69c4965cd448040bc20e4f9009abc}\label{classshared__memory_1_1SharedMemorySegment_a64d69c4965cd448040bc20e4f9009abc}} 
+void \hyperlink{classshared__memory_1_1SharedMemorySegment_a64d69c4965cd448040bc20e4f9009abc}{destroy\+\_\+mutex} ()
+\begin{DoxyCompactList}\small\item\em destroy\+\_\+mutex small destructor of the mutext to make sure that it is unlock at critical time. \end{DoxyCompactList}\item 
+bool \hyperlink{classshared__memory_1_1SharedMemorySegment_ae7a86bba2f8158917b48c0bd3a7bdf9b}{is\+\_\+object\+\_\+registered} (const std\+::string \&object\+\_\+id)
+\begin{DoxyCompactList}\small\item\em is\+\_\+object\+\_\+registered used to check if the object has been registered or not. \end{DoxyCompactList}\item 
+void \hyperlink{classshared__memory_1_1SharedMemorySegment_ae2eb51704f44076db6ce79054e9d2572}{set\+\_\+clear\+\_\+upon\+\_\+destruction} (const bool clear\+\_\+upon\+\_\+destruction)
+\begin{DoxyCompactList}\small\item\em set\+\_\+clear\+\_\+upon\+\_\+destruction is a standard setter \end{DoxyCompactList}\item 
+const std\+::string \& \hyperlink{classshared__memory_1_1SharedMemorySegment_ab7f1f01a94d4e45ed907be9bcdb71a24}{get\+\_\+segment\+\_\+id} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+segment\+\_\+id is a standard getter \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classshared__memory_1_1SharedMemorySegment_aa742cf04463a94a51239b96de2da6947}\label{classshared__memory_1_1SharedMemorySegment_aa742cf04463a94a51239b96de2da6947}} 
+\hyperlink{classshared__memory_1_1SegmentInfo}{Segment\+Info} \hyperlink{classshared__memory_1_1SharedMemorySegment_aa742cf04463a94a51239b96de2da6947}{get\+\_\+info} ()
+\begin{DoxyCompactList}\small\item\em performs introspection on the segment and return related information \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classshared__memory_1_1SharedMemorySegment_a9e72fec52b3c76b9c2b0809b40b4e11d}\label{classshared__memory_1_1SharedMemorySegment_a9e72fec52b3c76b9c2b0809b40b4e11d}} 
+boost\+::interprocess\+::interprocess\+\_\+mutex $\ast$ \hyperlink{classshared__memory_1_1SharedMemorySegment_a9e72fec52b3c76b9c2b0809b40b4e11d}{mutex\+\_\+}
+\begin{DoxyCompactList}\small\item\em mutex\+\_\+ this mutex secure A\+LL the shared memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classshared__memory_1_1SharedMemorySegment_af775c0982687b6e9bc9856b21aa1e009}\label{classshared__memory_1_1SharedMemorySegment_af775c0982687b6e9bc9856b21aa1e009}} 
+boost\+::interprocess\+::managed\+\_\+shared\+\_\+memory \hyperlink{classshared__memory_1_1SharedMemorySegment_af775c0982687b6e9bc9856b21aa1e009}{segment\+\_\+manager\+\_\+}
+\begin{DoxyCompactList}\small\item\em shm\+\_\+segment is the boost object that manages the shared memory segment \end{DoxyCompactList}\item 
+\hyperlink{namespaceshared__memory_ae50b2192256821112a69e47d5314b467}{Shm\+Objects} \hyperlink{classshared__memory_1_1SharedMemorySegment_a8c4d0eb6f2a620bf7e5b22a57c07380b}{objects\+\_\+}
+\begin{DoxyCompactList}\small\item\em objects\+\_\+ are all the data stored in the segment. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classshared__memory_1_1SharedMemorySegment_a08408dc6b860388eb3b08e493f0188d9}\label{classshared__memory_1_1SharedMemorySegment_a08408dc6b860388eb3b08e493f0188d9}} 
+std\+::string \hyperlink{classshared__memory_1_1SharedMemorySegment_a08408dc6b860388eb3b08e493f0188d9}{segment\+\_\+id\+\_\+}
+\begin{DoxyCompactList}\small\item\em segment\+\_\+id\+\_\+ is the name of the segment inside the shared memory \end{DoxyCompactList}\item 
+bool \hyperlink{classshared__memory_1_1SharedMemorySegment_af50ac70dca284926b15803f86958b220}{clear\+\_\+upon\+\_\+destruction\+\_\+}
+\begin{DoxyCompactList}\small\item\em clear\+\_\+upon\+\_\+destruction\+\_\+ flag decides if the segment should be cleared upon destruction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classshared__memory_1_1SharedMemorySegment}{Shared\+Memory\+Segment} contains the pointers of the shared objects in on shared memrory segment. 
+
+We use unamed mutext (interprocess\+\_\+mutex) and unamed condition variables (interprocess\+\_\+condition) to be able to instanciate them with classic pointers 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classshared__memory_1_1SharedMemorySegment_abc658e54589c81e89b147f0b3fbd67b8}\label{classshared__memory_1_1SharedMemorySegment_abc658e54589c81e89b147f0b3fbd67b8}} 
+\index{shared\+\_\+memory\+::\+Shared\+Memory\+Segment@{shared\+\_\+memory\+::\+Shared\+Memory\+Segment}!delete\+\_\+object@{delete\+\_\+object}}
+\index{delete\+\_\+object@{delete\+\_\+object}!shared\+\_\+memory\+::\+Shared\+Memory\+Segment@{shared\+\_\+memory\+::\+Shared\+Memory\+Segment}}
+\subsubsection{\texorpdfstring{delete\+\_\+object()}{delete\_object()}}
+{\footnotesize\ttfamily template$<$typename Elem\+Type $>$ \\
+void shared\+\_\+memory\+::\+Shared\+Memory\+Segment\+::delete\+\_\+object (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{object\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+delete\+\_\+object delete and object from the shared memory. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em object\+\_\+id} & the name of the object in the shared memory. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classshared__memory_1_1SharedMemorySegment_ad73b5160f713c9a78e67c4b8590d8729}\label{classshared__memory_1_1SharedMemorySegment_ad73b5160f713c9a78e67c4b8590d8729}} 
+\index{shared\+\_\+memory\+::\+Shared\+Memory\+Segment@{shared\+\_\+memory\+::\+Shared\+Memory\+Segment}!get\+\_\+object@{get\+\_\+object}}
+\index{get\+\_\+object@{get\+\_\+object}!shared\+\_\+memory\+::\+Shared\+Memory\+Segment@{shared\+\_\+memory\+::\+Shared\+Memory\+Segment}}
+\subsubsection{\texorpdfstring{get\+\_\+object()}{get\_object()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Elem\+Type $>$ \\
+void shared\+\_\+memory\+::\+Shared\+Memory\+Segment\+::get\+\_\+object (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{object\+\_\+id,  }\item[{std\+::pair$<$ Elem\+Type $\ast$, std\+::size\+\_\+t $>$ \&}]{get\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+get\+\_\+object registers the object in the current struc and in the shared memory once only. 
+
+And returns the pointer to the object and its size. The size will be 1 for simple type and could greater to one for arrays. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em object\+\_\+id} & the name of the object in the shared memory. \\
+\hline
+\mbox{\tt in}  & {\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classshared__memory_1_1SharedMemorySegment_a17aa3bfe778e05b543415b1e5137a26b}\label{classshared__memory_1_1SharedMemorySegment_a17aa3bfe778e05b543415b1e5137a26b}} 
+\index{shared\+\_\+memory\+::\+Shared\+Memory\+Segment@{shared\+\_\+memory\+::\+Shared\+Memory\+Segment}!get\+\_\+object@{get\+\_\+object}}
+\index{get\+\_\+object@{get\+\_\+object}!shared\+\_\+memory\+::\+Shared\+Memory\+Segment@{shared\+\_\+memory\+::\+Shared\+Memory\+Segment}}
+\subsubsection{\texorpdfstring{get\+\_\+object()}{get\_object()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void shared\+\_\+memory\+::\+Shared\+Memory\+Segment\+::get\+\_\+object (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{object\+\_\+id,  }\item[{std\+::string \&}]{get\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+get\+\_\+object registers the object in the current struc and in the shared memory once only. 
+
+And returns the pointer to the object and its size. The size will be 1 for simple type and could greater to one for arrays. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em object\+\_\+id} & the name of the object in the shared memory. \\
+\hline
+\mbox{\tt in}  & {\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classshared__memory_1_1SharedMemorySegment_ab7f1f01a94d4e45ed907be9bcdb71a24}\label{classshared__memory_1_1SharedMemorySegment_ab7f1f01a94d4e45ed907be9bcdb71a24}} 
+\index{shared\+\_\+memory\+::\+Shared\+Memory\+Segment@{shared\+\_\+memory\+::\+Shared\+Memory\+Segment}!get\+\_\+segment\+\_\+id@{get\+\_\+segment\+\_\+id}}
+\index{get\+\_\+segment\+\_\+id@{get\+\_\+segment\+\_\+id}!shared\+\_\+memory\+::\+Shared\+Memory\+Segment@{shared\+\_\+memory\+::\+Shared\+Memory\+Segment}}
+\subsubsection{\texorpdfstring{get\+\_\+segment\+\_\+id()}{get\_segment\_id()}}
+{\footnotesize\ttfamily const std\+::string\& shared\+\_\+memory\+::\+Shared\+Memory\+Segment\+::get\+\_\+segment\+\_\+id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+segment\+\_\+id is a standard getter 
+
+\begin{DoxyReturn}{Returns}
+the segment name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classshared__memory_1_1SharedMemorySegment_ae7a86bba2f8158917b48c0bd3a7bdf9b}\label{classshared__memory_1_1SharedMemorySegment_ae7a86bba2f8158917b48c0bd3a7bdf9b}} 
+\index{shared\+\_\+memory\+::\+Shared\+Memory\+Segment@{shared\+\_\+memory\+::\+Shared\+Memory\+Segment}!is\+\_\+object\+\_\+registered@{is\+\_\+object\+\_\+registered}}
+\index{is\+\_\+object\+\_\+registered@{is\+\_\+object\+\_\+registered}!shared\+\_\+memory\+::\+Shared\+Memory\+Segment@{shared\+\_\+memory\+::\+Shared\+Memory\+Segment}}
+\subsubsection{\texorpdfstring{is\+\_\+object\+\_\+registered()}{is\_object\_registered()}}
+{\footnotesize\ttfamily bool shared\+\_\+memory\+::\+Shared\+Memory\+Segment\+::is\+\_\+object\+\_\+registered (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{object\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+is\+\_\+object\+\_\+registered used to check if the object has been registered or not. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em object\+\_\+id} & the name of the object in the shared memory. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if it has been registered 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classshared__memory_1_1SharedMemorySegment_a6987e8225fd20dbab12e5bb3f5305b75}\label{classshared__memory_1_1SharedMemorySegment_a6987e8225fd20dbab12e5bb3f5305b75}} 
+\index{shared\+\_\+memory\+::\+Shared\+Memory\+Segment@{shared\+\_\+memory\+::\+Shared\+Memory\+Segment}!register\+\_\+object@{register\+\_\+object}}
+\index{register\+\_\+object@{register\+\_\+object}!shared\+\_\+memory\+::\+Shared\+Memory\+Segment@{shared\+\_\+memory\+::\+Shared\+Memory\+Segment}}
+\subsubsection{\texorpdfstring{register\+\_\+object()}{register\_object()}}
+{\footnotesize\ttfamily template$<$typename Elem\+Type $>$ \\
+bool shared\+\_\+memory\+::\+Shared\+Memory\+Segment\+::register\+\_\+object (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{object\+\_\+id,  }\item[{const std\+::pair$<$ Elem\+Type $\ast$, std\+::size\+\_\+t $>$ \&}]{obj\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+register\+\_\+object registers the object in the segment uniquely. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object\+\_\+id} & is the name of the object to register. \\
+\hline
+{\em obj\+\_\+} & is the object to be registered. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true of a new object has been registered 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classshared__memory_1_1SharedMemorySegment_a830fee375b183642b999f6a64240f280}\label{classshared__memory_1_1SharedMemorySegment_a830fee375b183642b999f6a64240f280}} 
+\index{shared\+\_\+memory\+::\+Shared\+Memory\+Segment@{shared\+\_\+memory\+::\+Shared\+Memory\+Segment}!register\+\_\+object\+\_\+read\+\_\+only@{register\+\_\+object\+\_\+read\+\_\+only}}
+\index{register\+\_\+object\+\_\+read\+\_\+only@{register\+\_\+object\+\_\+read\+\_\+only}!shared\+\_\+memory\+::\+Shared\+Memory\+Segment@{shared\+\_\+memory\+::\+Shared\+Memory\+Segment}}
+\subsubsection{\texorpdfstring{register\+\_\+object\+\_\+read\+\_\+only()}{register\_object\_read\_only()}}
+{\footnotesize\ttfamily template$<$typename Elem\+Type $>$ \\
+bool shared\+\_\+memory\+::\+Shared\+Memory\+Segment\+::register\+\_\+object\+\_\+read\+\_\+only (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{object\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+register\+\_\+object\+\_\+read\+\_\+only registers the object in the segment uniquely. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object\+\_\+id} & is the name of the object to register \\
+\hline
+{\em obj\+\_\+} & is the object to be registered \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true of a new object has been registered 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classshared__memory_1_1SharedMemorySegment_ae2eb51704f44076db6ce79054e9d2572}\label{classshared__memory_1_1SharedMemorySegment_ae2eb51704f44076db6ce79054e9d2572}} 
+\index{shared\+\_\+memory\+::\+Shared\+Memory\+Segment@{shared\+\_\+memory\+::\+Shared\+Memory\+Segment}!set\+\_\+clear\+\_\+upon\+\_\+destruction@{set\+\_\+clear\+\_\+upon\+\_\+destruction}}
+\index{set\+\_\+clear\+\_\+upon\+\_\+destruction@{set\+\_\+clear\+\_\+upon\+\_\+destruction}!shared\+\_\+memory\+::\+Shared\+Memory\+Segment@{shared\+\_\+memory\+::\+Shared\+Memory\+Segment}}
+\subsubsection{\texorpdfstring{set\+\_\+clear\+\_\+upon\+\_\+destruction()}{set\_clear\_upon\_destruction()}}
+{\footnotesize\ttfamily void shared\+\_\+memory\+::\+Shared\+Memory\+Segment\+::set\+\_\+clear\+\_\+upon\+\_\+destruction (\begin{DoxyParamCaption}\item[{const bool}]{clear\+\_\+upon\+\_\+destruction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set\+\_\+clear\+\_\+upon\+\_\+destruction is a standard setter 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em clear\+\_\+upon\+\_\+destruction} & is the value to set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classshared__memory_1_1SharedMemorySegment_a16e6213d7dd1984799bbd8fbe14225dc}\label{classshared__memory_1_1SharedMemorySegment_a16e6213d7dd1984799bbd8fbe14225dc}} 
+\index{shared\+\_\+memory\+::\+Shared\+Memory\+Segment@{shared\+\_\+memory\+::\+Shared\+Memory\+Segment}!set\+\_\+object@{set\+\_\+object}}
+\index{set\+\_\+object@{set\+\_\+object}!shared\+\_\+memory\+::\+Shared\+Memory\+Segment@{shared\+\_\+memory\+::\+Shared\+Memory\+Segment}}
+\subsubsection{\texorpdfstring{set\+\_\+object()}{set\_object()}}
+{\footnotesize\ttfamily template$<$typename Elem\+Type $>$ \\
+void shared\+\_\+memory\+::\+Shared\+Memory\+Segment\+::set\+\_\+object (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{object\+\_\+id,  }\item[{const std\+::pair$<$ const Elem\+Type $\ast$, std\+::size\+\_\+t $>$ \&}]{set\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+set\+\_\+object registers the object in the current struc and in the shared memory once only. 
+
+And returns the pointer to the object and its size. The size will be 1 for simple type and could greater to one for arrays. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em object\+\_\+id} & the name of the object in the shared memory. \\
+\hline
+\mbox{\tt in}  & {\em set\+\_\+} & the reference to the fetched object. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classshared__memory_1_1SharedMemorySegment_af50ac70dca284926b15803f86958b220}\label{classshared__memory_1_1SharedMemorySegment_af50ac70dca284926b15803f86958b220}} 
+\index{shared\+\_\+memory\+::\+Shared\+Memory\+Segment@{shared\+\_\+memory\+::\+Shared\+Memory\+Segment}!clear\+\_\+upon\+\_\+destruction\+\_\+@{clear\+\_\+upon\+\_\+destruction\+\_\+}}
+\index{clear\+\_\+upon\+\_\+destruction\+\_\+@{clear\+\_\+upon\+\_\+destruction\+\_\+}!shared\+\_\+memory\+::\+Shared\+Memory\+Segment@{shared\+\_\+memory\+::\+Shared\+Memory\+Segment}}
+\subsubsection{\texorpdfstring{clear\+\_\+upon\+\_\+destruction\+\_\+}{clear\_upon\_destruction\_}}
+{\footnotesize\ttfamily bool shared\+\_\+memory\+::\+Shared\+Memory\+Segment\+::clear\+\_\+upon\+\_\+destruction\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+clear\+\_\+upon\+\_\+destruction\+\_\+ flag decides if the segment should be cleared upon destruction. 
+
+Usage\+: typically only one process should set this flag to true. \mbox{\Hypertarget{classshared__memory_1_1SharedMemorySegment_a8c4d0eb6f2a620bf7e5b22a57c07380b}\label{classshared__memory_1_1SharedMemorySegment_a8c4d0eb6f2a620bf7e5b22a57c07380b}} 
+\index{shared\+\_\+memory\+::\+Shared\+Memory\+Segment@{shared\+\_\+memory\+::\+Shared\+Memory\+Segment}!objects\+\_\+@{objects\+\_\+}}
+\index{objects\+\_\+@{objects\+\_\+}!shared\+\_\+memory\+::\+Shared\+Memory\+Segment@{shared\+\_\+memory\+::\+Shared\+Memory\+Segment}}
+\subsubsection{\texorpdfstring{objects\+\_\+}{objects\_}}
+{\footnotesize\ttfamily \hyperlink{namespaceshared__memory_ae50b2192256821112a69e47d5314b467}{Shm\+Objects} shared\+\_\+memory\+::\+Shared\+Memory\+Segment\+::objects\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+objects\+\_\+ are all the data stored in the segment. 
+
+W\+A\+R\+N\+I\+NG here we use void$\ast$ so the use of the set and get functions is the R\+E\+S\+P\+O\+N\+S\+A\+B\+I\+L\+I\+TY of the user.
+
+The user is to use the S\+A\+ME type when calling set and get using the shared memory 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/shared\+\_\+memory/\hyperlink{shared__memory_8hpp}{shared\+\_\+memory.\+hpp}\item 
+include/shared\+\_\+memory/\hyperlink{shared__memory_8hxx}{shared\+\_\+memory.\+hxx}\item 
+src/\hyperlink{shared__memory_8cpp}{shared\+\_\+memory.\+cpp}\end{DoxyCompactItemize}

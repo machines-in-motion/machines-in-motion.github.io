@@ -1,0 +1,109 @@
+\hypertarget{realtime__test_8cpp}{}\section{src/bin/realtime\+\_\+test.cpp File Reference}
+\label{realtime__test_8cpp}\index{src/bin/realtime\+\_\+test.\+cpp@{src/bin/realtime\+\_\+test.\+cpp}}
+
+
+Program\+: test the real time capabilities of a machine.  
+
+
+{\ttfamily \#include \char`\"{}real\+\_\+time\+\_\+tools/realtime\+\_\+test.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$atomic$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include \char`\"{}real\+\_\+time\+\_\+tools/realtime\+\_\+check.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}real\+\_\+time\+\_\+tools/spinner.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}real\+\_\+time\+\_\+tools/thread.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}shared\+\_\+memory/shared\+\_\+memory.\+hpp\char`\"{}}\newline
+Include dependency graph for realtime\+\_\+test.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{realtime__test_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classConfiguration}{Configuration}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classConfiguration}{Configuration} of the test thread. \end{DoxyCompactList}\item 
+class \hyperlink{classComputation}{Computation}
+\begin{DoxyCompactList}\small\item\em Abstract interface for some different thread computation. \end{DoxyCompactList}\item 
+class \hyperlink{classMatrix__computation__no__eigen}{Matrix\+\_\+computation\+\_\+no\+\_\+eigen}
+\begin{DoxyCompactList}\small\item\em Some specific computation based on matrix multiplication. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{realtime__test_8cpp_a54b1343eb90254009bd964c44996761b}\label{realtime__test_8cpp_a54b1343eb90254009bd964c44996761b}} 
+void $\ast$ \hyperlink{realtime__test_8cpp_a54b1343eb90254009bd964c44996761b}{thread\+\_\+function} (void $\ast$v)
+\begin{DoxyCompactList}\small\item\em This is the real time thread that perform the check and the computations. \end{DoxyCompactList}\item 
+void \hyperlink{realtime__test_8cpp_ae5ad5cbeccaedc03a48d3c7eaa803e79}{print\+\_\+usage} ()
+\begin{DoxyCompactList}\small\item\em Display the usage in case of a miss-\/use. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{realtime__test_8cpp_acbd189ad2c6253bfe6cd5a3a2e20d117}\label{realtime__test_8cpp_acbd189ad2c6253bfe6cd5a3a2e20d117}} 
+bool \hyperlink{realtime__test_8cpp_acbd189ad2c6253bfe6cd5a3a2e20d117}{set\+\_\+config} (int nb\+\_\+args, char $\ast$$\ast$args, \hyperlink{classConfiguration}{Configuration} \&config)
+\begin{DoxyCompactList}\small\item\em parse the input argument and configure which conputation should be done \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{realtime__test_8cpp_ae7878b49a48dc0ca3bcb00390121cf5f}\label{realtime__test_8cpp_ae7878b49a48dc0ca3bcb00390121cf5f}} 
+void \hyperlink{realtime__test_8cpp_ae7878b49a48dc0ca3bcb00390121cf5f}{clean\+\_\+memory} ()
+\begin{DoxyCompactList}\small\item\em Delete the shared memeory. \end{DoxyCompactList}\item 
+void \hyperlink{realtime__test_8cpp_aba399b0a6a6e3bd37af95bd04e8def6f}{stop} (int)
+\begin{DoxyCompactList}\small\item\em stop the current thread. \end{DoxyCompactList}\item 
+int \hyperlink{realtime__test_8cpp_af4978f2751bdb780c0a97d67d65dd405}{main} (int nb\+\_\+args, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em This program evaulate the quality of the frequency tracking by a real time thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{realtime__test_8cpp_aa25458bfbc45f5dca35aa414759acafd}\label{realtime__test_8cpp_aa25458bfbc45f5dca35aa414759acafd}} 
+static int \hyperlink{realtime__test_8cpp_aa25458bfbc45f5dca35aa414759acafd}{M\+A\+T\+R\+I\+X\+\_\+\+C\+O\+M\+P\+U\+T\+A\+T\+I\+O\+N\+\_\+\+N\+O\+\_\+\+E\+I\+G\+E\+N\+\_\+64} = 1
+\begin{DoxyCompactList}\small\item\em valid modes, creating subclasses of \hyperlink{classComputation}{Computation} to add new ones (see below) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{realtime__test_8cpp_a5a5fc9f109f74c744e4e8739c6cae510}\label{realtime__test_8cpp_a5a5fc9f109f74c744e4e8739c6cae510}} 
+std\+::atomic$<$ bool $>$ \hyperlink{realtime__test_8cpp_a5a5fc9f109f74c744e4e8739c6cae510}{R\+U\+N\+N\+I\+NG}
+\begin{DoxyCompactList}\small\item\em Is the thread running? \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Program\+: test the real time capabilities of a machine. 
+
+\begin{DoxyAuthor}{Author}
+Maximilien Naveau (\href{mailto:maximilien.naveau@gmail.com}{\tt maximilien.\+naveau@gmail.\+com}) license License B\+S\+D-\/3-\/\+Clause 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2019, New York University and Max Planck Gesellschaft. 
+\end{DoxyCopyright}
+\begin{DoxyDate}{Date}
+2019-\/05-\/22 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{realtime__test_8cpp_af4978f2751bdb780c0a97d67d65dd405}\label{realtime__test_8cpp_af4978f2751bdb780c0a97d67d65dd405}} 
+\index{realtime\+\_\+test.\+cpp@{realtime\+\_\+test.\+cpp}!main@{main}}
+\index{main@{main}!realtime\+\_\+test.\+cpp@{realtime\+\_\+test.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{nb\+\_\+args,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+This program evaulate the quality of the frequency tracking by a real time thread. 
+
+\mbox{\Hypertarget{realtime__test_8cpp_ae5ad5cbeccaedc03a48d3c7eaa803e79}\label{realtime__test_8cpp_ae5ad5cbeccaedc03a48d3c7eaa803e79}} 
+\index{realtime\+\_\+test.\+cpp@{realtime\+\_\+test.\+cpp}!print\+\_\+usage@{print\+\_\+usage}}
+\index{print\+\_\+usage@{print\+\_\+usage}!realtime\+\_\+test.\+cpp@{realtime\+\_\+test.\+cpp}}
+\subsubsection{\texorpdfstring{print\+\_\+usage()}{print\_usage()}}
+{\footnotesize\ttfamily void print\+\_\+usage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Display the usage in case of a miss-\/use. 
+
+\mbox{\Hypertarget{realtime__test_8cpp_aba399b0a6a6e3bd37af95bd04e8def6f}\label{realtime__test_8cpp_aba399b0a6a6e3bd37af95bd04e8def6f}} 
+\index{realtime\+\_\+test.\+cpp@{realtime\+\_\+test.\+cpp}!stop@{stop}}
+\index{stop@{stop}!realtime\+\_\+test.\+cpp@{realtime\+\_\+test.\+cpp}}
+\subsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void stop (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+stop the current thread. 
+
+This method is called throw a \char`\"{}ctrl+c\char`\"{} \begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{demo_realtime_strict_check_8cpp-example}{demo\+\_\+realtime\+\_\+strict\+\_\+check.\+cpp}.\end{Desc}

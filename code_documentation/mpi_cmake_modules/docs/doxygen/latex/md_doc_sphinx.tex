@@ -1,0 +1,200 @@
+\subsection*{1. Introduction}
+
+This module manages the build of the documentation. The input files are C++, Python, and Markdown. In order to process this we use a couple of off-\/the-\/shelf softwares (see the list below).
+
+
+\begin{DoxyItemize}
+\item Doxygen the C++ api documentation parser,
+\item Breathe a sphinx extension that parse the doxygen xml output into restructured text files,
+\item recommonmark a sphinx extension parsing markdown files.
+\item sphinx-\/apidoc the Python api documentation parser,
+\item Sphinx the documentation renderer,
+\end{DoxyItemize}
+
+If anything seems fuzzy (it is a rather long and tedious pipeline), please let me know via posting an issue \href{https://github.com/machines-in-motion/mpi_cmake_modules/issues}{\tt here}.
+
+\subsection*{2. Advanced explanation on the tools}
+
+In order to build the documentation we need to setup the following tools\+:
+\begin{DoxyItemize}
+\item \href{http://www.doxygen.nl/}{\tt Doxygen} the C++ api documentation parser,
+\item \href{https://breathe.readthedocs.io/en/latest/}{\tt Breathe} a sphinx extension that parse the doxygen xml output into restructured text files,
+\item \href{https://recommonmark.readthedocs.io/en/latest/}{\tt recommonmark} a sphinx extension parsing markdown files.
+\item \href{http://www.sphinx-doc.org/en/master/man/sphinx-apidoc.html}{\tt sphinx-\/apidoc} the Python api documentation parser,
+\item \href{http://www.sphinx-doc.org/en/master/}{\tt Sphinx} the documentation renderer,
+\end{DoxyItemize}
+
+\subsubsection*{2.\+1 Doxygen}
+
+In order to execute to generate the C++ A\+PI documentation we use the Doxygen tool. We wrote a {\ttfamily Doxyfile}, used to parameter Doxyygen, to notably\+:
+
+
+\begin{DoxyItemize}
+\item Output the files in the {\ttfamily \+\_\+build/docs/doxygen} folder with the {\ttfamily O\+U\+T\+P\+U\+T\+\_\+\+D\+I\+R\+E\+C\+T\+O\+RY} parameter.
+\item Generate a list of xml files containing the A\+PI documentation setting the {\ttfamily G\+E\+N\+E\+R\+A\+T\+E\+\_\+\+X\+ML} to {\ttfamily Y\+ES}.
+\end{DoxyItemize}
+
+The Makefile looks at the {\ttfamily Doxyfile} in {\ttfamily doc\+\_\+config\+\_\+files/doxygen/} and C\+Make configure the {\ttfamily Doxyfile.\+in} from {\ttfamily cmake/doxygen/}.
+
+\subsubsection*{2.\+2 Breathe}
+
+This tool is a module of sphinx that parse the Doxygen xml output. Breathe provide two import tools\+:
+
+
+\begin{DoxyItemize}
+\item An A\+PI that allow you to reference to the object from the Doxygen xml output.
+\item An executable {\ttfamily breathe-\/apidoc} that generates automatically the C++ A\+PI into Re\+Structed files.
+\end{DoxyItemize}
+
+In order to use it we need to add a couple of line in the {\ttfamily conf.\+py} used by Sphinx\+:
+
+
+\begin{DoxyCode}
+extensions = [
+    # ... other stuff
+    'breathe', # to define the C++ api
+    # ... other stuff
+]
+\end{DoxyCode}
+
+
+We also need to add the following variable that determine the behavior of Breathe\+:
+
+
+\begin{DoxyCode}
+# breath project names and paths. Here project is the name of the repos and the path is the path to the
+       Doxygen output.
+breathe\_projects = \{ project: "../doxygen/xml" \}
+# Default project used for all Doxygen output (we use only one here).
+breathe\_default\_project = project
+# By default we ask all informations to be displayed.
+breathe\_default\_members = ('members', 'private-members', 'undoc-members')
+\end{DoxyCode}
+
+
+Once the {\ttfamily conf.\+py} is setup we execute {\ttfamily breath-\/apidoc} on the Doxygen xml output\+: \begin{DoxyVerb}breathe-apidoc -o $(BREATHE_OUT) $(BREATHE_IN) $(BREATHE_OPTION)
+\end{DoxyVerb}
+
+
+with\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily B\+R\+E\+A\+T\+H\+E\+\_\+\+O\+UT} the output path ({\ttfamily \+\_\+build/docs/sphinx/breathe/}),
+\item {\ttfamily B\+R\+E\+A\+T\+H\+E\+\_\+\+IN} the path to the Doxygen xml output ({\ttfamily \+\_\+build/docs/doxygen/xml/}),
+\item and {\ttfamily B\+R\+E\+A\+T\+H\+E\+\_\+\+O\+P\+T\+I\+ON} some output formatting option, here empty.
+\end{DoxyItemize}
+
+This breathe-\/apidoc will generate the list of all classes, namespace and files in a different Re\+Structured\+Text ({\ttfamily .rst}) files. We will use them to generate the final layout of the documentation.
+
+\subsubsection*{2.\+3 recommonmark}
+
+We want to have an easy and intuitive way of writing extra documentation from the code. Hence our choice to use {\ttfamily Markdown} and {\ttfamily Restructured} text. Both file types are parse by sphinx and converted to html. The sphinx module {\ttfamily recommonmark} is here to convert the Markdown properly.
+
+In the header of the {\ttfamily conf.\+py} used by sphinx we need to include\+: \begin{DoxyVerb}# AutoStructify for math in markdown
+import recommonmark 
+from recommonmark.transform import AutoStructify
+\end{DoxyVerb}
+
+
+We add it to the {\ttfamily extensions} variable in the same file\+:
+
+
+\begin{DoxyCode}
+extensions = [
+    # ... other stuff
+    'recommonmark', # markdown support
+    # ... other stuff
+]
+\end{DoxyCode}
+
+
+Then we tell Sphinx to read the .md extension files in the {\ttfamily conf.\+py}\+:
+
+
+\begin{DoxyCode}
+# The suffix(es) of source filenames.
+source\_suffix = ['.rst', '.md']
+\end{DoxyCode}
+
+
+And last in order to get math support in the mardown using\+: \begin{DoxyVerb}```math
+    a = \theta
+```
+\end{DoxyVerb}
+
+
+We need to add the following at the end of the {\ttfamily conf.\+py}\+:
+
+
+\begin{DoxyCode}
+# some tools for markdown parsing
+def setup(app):
+app.add\_config\_value('recommonmark\_config', \{
+        'auto\_toc\_tree\_section': 'Contents',
+        'enable\_math':True,
+        'enable\_inline\_math':True,
+        'enable\_eval\_rst':True,
+        \}, True)
+app.add\_transform(AutoStructify)
+\end{DoxyCode}
+
+
+\subsubsection*{2.\+4 sphinx-\/apidoc}
+
+This tool allow the generation of a Python module A\+PI documentation extracting the doc string from the code. We need to add to the P\+Y\+T\+H\+O\+N\+P\+A\+TH the path to the Python module in the {\ttfamily conf.\+py}\+:
+
+
+\begin{DoxyCode}
+sys.path.insert(0, os.path.abspath("path/to/the/python/module"))
+\end{DoxyCode}
+
+
+add the according Sphinx extensions\+:
+
+
+\begin{DoxyCode}
+extensions = [
+    # ... other
+    'sphinx.ext.autodoc',
+    'sphinx.ext.doctest',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.todo',
+    'sphinx.ext.coverage',
+    'sphinx.ext.mathjax',
+    'sphinx.ext.ifconfig',
+    'sphinx.ext.viewcode',
+    'sphinx.ext.githubpages',
+    # ... other
+]
+\end{DoxyCode}
+
+
+And then build the A\+PI documentation by\+: \begin{DoxyVerb}sphinx_apidoc -o $(SPHINX_BUILD_OUT) path/to/the/python/module
+\end{DoxyVerb}
+
+
+Where {\ttfamily S\+P\+H\+I\+N\+X\+\_\+\+B\+U\+I\+L\+D\+\_\+\+O\+UT} is the output path.
+
+\subsubsection*{2.\+5 sphinx-\/build}
+
+The final layout is managed here and build using {\ttfamily shpinx-\/build}. The tricky thing with {\ttfamily sphinx-\/build} is that everything included needs to be in the working directory. Therefore in the build directory we set the output of {\ttfamily breathe-\/apidoc} and {\ttfamily shpinx-\/apidoc} to {\ttfamily \+\_\+build/docs/sphinx}. And inside the same folder we create a symlink that points to the source {\ttfamily doc/} folder.
+
+Therefore in order\+:
+
+
+\begin{DoxyItemize}
+\item The {\ttfamily index.\+rst} includes the C++ A\+PI main {\ttfamily .rst} files from Breath.
+\item Then it includes the {\ttfamily modules.\+rst} file from {\ttfamily sphinx-\/apidoc}
+\item And then is adds all files inside {\ttfamily doc/}, which, again, points toward the source {\ttfamily doc/} directory.
+\end{DoxyItemize}
+
+The command to execute is the following\+: \begin{DoxyVerb}sphinx-build -M html _build/docs/sphinx _build/docs/sphinx
+\end{DoxyVerb}
+
+
+This will generate the documentation website in {\ttfamily \+\_\+build/docs/sphinx/html/} Thefore {\ttfamily firefox \+\_\+build/docs/sphinx/html/index.\+html} opens the documentation
+
+\subsection*{3. Feedback on all this}
+
+If anything seems fuzzy (it is a rather long and tedious pipeline), please let me know via posting an issue \href{https://github.com/machines-in-motion/mpi_cmake_modules/issues}{\tt here}. 

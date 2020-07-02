@@ -1,0 +1,244 @@
+\hypertarget{classci__example__cpp_1_1File__configuration}{}\section{ci\+\_\+example\+\_\+cpp\+:\+:File\+\_\+configuration Class Reference}
+\label{classci__example__cpp_1_1File__configuration}\index{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration}}
+
+
+Reading configuration from yaml file.  
+
+
+
+
+{\ttfamily \#include $<$file\+\_\+configuration.\+hpp$>$}
+
+
+
+Inheritance diagram for ci\+\_\+example\+\_\+cpp\+:\+:File\+\_\+configuration\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classci__example__cpp_1_1File__configuration__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ci\+\_\+example\+\_\+cpp\+:\+:File\+\_\+configuration\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classci__example__cpp_1_1File__configuration__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classci__example__cpp_1_1File__configuration_a9eb17de315392f3f755a327af4beb5d7}{File\+\_\+configuration} (std\+::string yaml\+\_\+file)
+\begin{DoxyCompactList}\small\item\em Returns error encountered when reading configuration. \end{DoxyCompactList}\item 
+double \hyperlink{classci__example__cpp_1_1File__configuration_a5d051da802569c36feeab2b1fbf9a09a}{get\+\_\+kp} () const
+\begin{DoxyCompactList}\small\item\em Get the proportional gain. \end{DoxyCompactList}\item 
+double \hyperlink{classci__example__cpp_1_1File__configuration_a14b1e36766d55ee0132a78fbc41f8096}{get\+\_\+kd} () const
+\begin{DoxyCompactList}\small\item\em Get the derivative gain. \end{DoxyCompactList}\item 
+double \hyperlink{classci__example__cpp_1_1File__configuration_a6e338977105cbcf8b822892d1feb9006}{get\+\_\+ki} () const
+\begin{DoxyCompactList}\small\item\em Get the integral gain. \end{DoxyCompactList}\item 
+bool \hyperlink{classci__example__cpp_1_1File__configuration_aa3cae137be3b59e61d13c2a9b1ec8b6a}{has\+\_\+error} () const
+\begin{DoxyCompactList}\small\item\em Enquire if an error was encountered while reading the configuration. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classci__example__cpp_1_1File__configuration_aaf67f7d61d467563a4dce8aa69306a6a}{get\+\_\+error} () const
+\begin{DoxyCompactList}\small\item\em returns error encountered when reading configuration \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classci__example__cpp_1_1File__configuration_a919075c40e92692f39cb26d99d6c40a9}{kp\+\_\+}
+\begin{DoxyCompactList}\small\item\em Proportinal gain. \end{DoxyCompactList}\item 
+double \hyperlink{classci__example__cpp_1_1File__configuration_aabec4cb5a29a53e469be722cf2f47fbf}{kd\+\_\+}
+\begin{DoxyCompactList}\small\item\em Derivative gain. \end{DoxyCompactList}\item 
+double \hyperlink{classci__example__cpp_1_1File__configuration_ae819105d7a538cb7f604824a10f8b814}{ki\+\_\+}
+\begin{DoxyCompactList}\small\item\em Integral gain. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classci__example__cpp_1_1File__configuration_aabc2359549686784a62fae2130f1aae7}{error\+\_\+message\+\_\+}
+\begin{DoxyCompactList}\small\item\em Internal error message. \end{DoxyCompactList}\item 
+bool \hyperlink{classci__example__cpp_1_1File__configuration_a838d95dfb9f01ea950cd67f4c7320eff}{error\+\_\+}
+\begin{DoxyCompactList}\small\item\em True if an error occured. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Reading configuration from yaml file. \begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{demo_pid_load_from_file_8cpp-example}{demo\+\_\+pid\+\_\+load\+\_\+from\+\_\+file.\+cpp}.\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classci__example__cpp_1_1File__configuration_a9eb17de315392f3f755a327af4beb5d7}\label{classci__example__cpp_1_1File__configuration_a9eb17de315392f3f755a327af4beb5d7}} 
+\index{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration}!File\+\_\+configuration@{File\+\_\+configuration}}
+\index{File\+\_\+configuration@{File\+\_\+configuration}!ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration}}
+\subsubsection{\texorpdfstring{File\+\_\+configuration()}{File\_configuration()}}
+{\footnotesize\ttfamily ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration\+::\+File\+\_\+configuration (\begin{DoxyParamCaption}\item[{std\+::string}]{yaml\+\_\+file }\end{DoxyParamCaption})}
+
+
+
+Returns error encountered when reading configuration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em yaml\+\_\+file} & absolute path to configuration yaml file. The file is expected to have parameters \char`\"{}kp\char`\"{}, \char`\"{}kd\char`\"{} and \char`\"{}ki\char`\"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classci__example__cpp_1_1File__configuration_aa3cae137be3b59e61d13c2a9b1ec8b6a}{has\+\_\+error()} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classci__example__cpp_1_1File__configuration_aaf67f7d61d467563a4dce8aa69306a6a}\label{classci__example__cpp_1_1File__configuration_aaf67f7d61d467563a4dce8aa69306a6a}} 
+\index{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration}!get\+\_\+error@{get\+\_\+error}}
+\index{get\+\_\+error@{get\+\_\+error}!ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration}}
+\subsubsection{\texorpdfstring{get\+\_\+error()}{get\_error()}}
+{\footnotesize\ttfamily std\+::string ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration\+::get\+\_\+error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+returns error encountered when reading configuration 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classci__example__cpp_1_1File__configuration_aa3cae137be3b59e61d13c2a9b1ec8b6a}{has\+\_\+error()} 
+\end{DoxySeeAlso}
+
+
+Implements \hyperlink{classci__example__cpp_1_1Gains__configuration_a886100ef46082d1b9f8ee169318dc554}{ci\+\_\+example\+\_\+cpp\+::\+Gains\+\_\+configuration}.
+
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{demo_pid_load_from_file_8cpp-example}{demo\+\_\+pid\+\_\+load\+\_\+from\+\_\+file.\+cpp}.\end{Desc}
+\mbox{\Hypertarget{classci__example__cpp_1_1File__configuration_a14b1e36766d55ee0132a78fbc41f8096}\label{classci__example__cpp_1_1File__configuration_a14b1e36766d55ee0132a78fbc41f8096}} 
+\index{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration}!get\+\_\+kd@{get\+\_\+kd}}
+\index{get\+\_\+kd@{get\+\_\+kd}!ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration}}
+\subsubsection{\texorpdfstring{get\+\_\+kd()}{get\_kd()}}
+{\footnotesize\ttfamily double ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration\+::get\+\_\+kd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the derivative gain. 
+
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classci__example__cpp_1_1Gains__configuration_a4bc25c0a8283f36366b888feaf15efa9}{ci\+\_\+example\+\_\+cpp\+::\+Gains\+\_\+configuration}.
+
+\mbox{\Hypertarget{classci__example__cpp_1_1File__configuration_a6e338977105cbcf8b822892d1feb9006}\label{classci__example__cpp_1_1File__configuration_a6e338977105cbcf8b822892d1feb9006}} 
+\index{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration}!get\+\_\+ki@{get\+\_\+ki}}
+\index{get\+\_\+ki@{get\+\_\+ki}!ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration}}
+\subsubsection{\texorpdfstring{get\+\_\+ki()}{get\_ki()}}
+{\footnotesize\ttfamily double ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration\+::get\+\_\+ki (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the integral gain. 
+
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classci__example__cpp_1_1Gains__configuration_a1ac03c97e04ebfbb3c29122e13b0ec0e}{ci\+\_\+example\+\_\+cpp\+::\+Gains\+\_\+configuration}.
+
+\mbox{\Hypertarget{classci__example__cpp_1_1File__configuration_a5d051da802569c36feeab2b1fbf9a09a}\label{classci__example__cpp_1_1File__configuration_a5d051da802569c36feeab2b1fbf9a09a}} 
+\index{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration}!get\+\_\+kp@{get\+\_\+kp}}
+\index{get\+\_\+kp@{get\+\_\+kp}!ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration}}
+\subsubsection{\texorpdfstring{get\+\_\+kp()}{get\_kp()}}
+{\footnotesize\ttfamily double ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration\+::get\+\_\+kp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the proportional gain. 
+
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classci__example__cpp_1_1Gains__configuration_add5ce511c797cd688e12cee09d8ec0b8}{ci\+\_\+example\+\_\+cpp\+::\+Gains\+\_\+configuration}.
+
+\mbox{\Hypertarget{classci__example__cpp_1_1File__configuration_aa3cae137be3b59e61d13c2a9b1ec8b6a}\label{classci__example__cpp_1_1File__configuration_aa3cae137be3b59e61d13c2a9b1ec8b6a}} 
+\index{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration}!has\+\_\+error@{has\+\_\+error}}
+\index{has\+\_\+error@{has\+\_\+error}!ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration}}
+\subsubsection{\texorpdfstring{has\+\_\+error()}{has\_error()}}
+{\footnotesize\ttfamily bool ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration\+::has\+\_\+error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Enquire if an error was encountered while reading the configuration. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classci__example__cpp_1_1File__configuration_aaf67f7d61d467563a4dce8aa69306a6a}{get\+\_\+error()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+true if an error has been encountered 
+
+false otherwise 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classci__example__cpp_1_1Gains__configuration_ae075925f60288519f8a4fcb477453a66}{ci\+\_\+example\+\_\+cpp\+::\+Gains\+\_\+configuration}.
+
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{demo_pid_load_from_file_8cpp-example}{demo\+\_\+pid\+\_\+load\+\_\+from\+\_\+file.\+cpp}.\end{Desc}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classci__example__cpp_1_1File__configuration_a838d95dfb9f01ea950cd67f4c7320eff}\label{classci__example__cpp_1_1File__configuration_a838d95dfb9f01ea950cd67f4c7320eff}} 
+\index{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration}!error\+\_\+@{error\+\_\+}}
+\index{error\+\_\+@{error\+\_\+}!ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration}}
+\subsubsection{\texorpdfstring{error\+\_\+}{error\_}}
+{\footnotesize\ttfamily bool ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration\+::error\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+True if an error occured. 
+
+\mbox{\Hypertarget{classci__example__cpp_1_1File__configuration_aabc2359549686784a62fae2130f1aae7}\label{classci__example__cpp_1_1File__configuration_aabc2359549686784a62fae2130f1aae7}} 
+\index{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration}!error\+\_\+message\+\_\+@{error\+\_\+message\+\_\+}}
+\index{error\+\_\+message\+\_\+@{error\+\_\+message\+\_\+}!ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration}}
+\subsubsection{\texorpdfstring{error\+\_\+message\+\_\+}{error\_message\_}}
+{\footnotesize\ttfamily std\+::string ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration\+::error\+\_\+message\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Internal error message. 
+
+\mbox{\Hypertarget{classci__example__cpp_1_1File__configuration_aabec4cb5a29a53e469be722cf2f47fbf}\label{classci__example__cpp_1_1File__configuration_aabec4cb5a29a53e469be722cf2f47fbf}} 
+\index{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration}!kd\+\_\+@{kd\+\_\+}}
+\index{kd\+\_\+@{kd\+\_\+}!ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration}}
+\subsubsection{\texorpdfstring{kd\+\_\+}{kd\_}}
+{\footnotesize\ttfamily double ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration\+::kd\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Derivative gain. 
+
+\mbox{\Hypertarget{classci__example__cpp_1_1File__configuration_ae819105d7a538cb7f604824a10f8b814}\label{classci__example__cpp_1_1File__configuration_ae819105d7a538cb7f604824a10f8b814}} 
+\index{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration}!ki\+\_\+@{ki\+\_\+}}
+\index{ki\+\_\+@{ki\+\_\+}!ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration}}
+\subsubsection{\texorpdfstring{ki\+\_\+}{ki\_}}
+{\footnotesize\ttfamily double ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration\+::ki\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Integral gain. 
+
+\mbox{\Hypertarget{classci__example__cpp_1_1File__configuration_a919075c40e92692f39cb26d99d6c40a9}\label{classci__example__cpp_1_1File__configuration_a919075c40e92692f39cb26d99d6c40a9}} 
+\index{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration}!kp\+\_\+@{kp\+\_\+}}
+\index{kp\+\_\+@{kp\+\_\+}!ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration@{ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration}}
+\subsubsection{\texorpdfstring{kp\+\_\+}{kp\_}}
+{\footnotesize\ttfamily double ci\+\_\+example\+\_\+cpp\+::\+File\+\_\+configuration\+::kp\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Proportinal gain. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/ci\+\_\+example\+\_\+cpp/\hyperlink{file__configuration_8hpp}{file\+\_\+configuration.\+hpp}\item 
+src/\hyperlink{file__configuration_8cpp}{file\+\_\+configuration.\+cpp}\end{DoxyCompactItemize}

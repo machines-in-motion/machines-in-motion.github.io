@@ -1,0 +1,233 @@
+\subsection*{I. Introduction}
+
+These are the internal C++ guidelines for the \href{https://wp.nyu.edu/machinesinmotion/}{\tt machines-\/in-\/motion} group. The same guidelines are used in the \href{https://open-dynamic-robot-initiative.github.io/}{\tt Open Dynamic Robot Initiative}
+
+The following rules present basic guidelines for our C++ code. The goal is to have code that is formatted in a consistent and easily readable way while at the same time not being overly complicated by specifying every detail. For such guidelines to be practical, newcomers should be able to read them within a few minutes and be able to memorize them. So these rules intentionally do not cover every detail but rather aim at specifying only the big, important things.
+
+If this is too simple for you and you want more rules, you are encouraged to read the \href{https://google.github.io/styleguide/cppguide.html}{\tt Google C++ Style Guide} on which these rules are based. Note, however, that we have a few small deviations from the Google style.
+
+These guidelines may evolve in time so it is first good practice to check them upon creation of a new package or code refactoring.
+
+\subsection*{II. Folder Structure and File Naming}
+
+
+\begin{DoxyItemize}
+\item Header files should be in a folder\+: {\ttfamily include/$<$name\+\_\+of\+\_\+the\+\_\+project$>$/$\ast$}, e.\+g.
+\begin{DoxyCode}
+`#include "ci\_example\_cpp/gains\_configuration.hpp"` 
+\end{DoxyCode}
+
+\item File extension for header files\+: {\ttfamily .hpp}
+\item Source files should be in a folder named {\ttfamily src/}. The file should have the same name as the header with extension {\ttfamily .cpp}.
+\item When using templates\+: If you want to separate declaration and definition, put the declaration to a {\ttfamily .hpp} header file as usual and the definition to a file with extension {\ttfamily .hxx} in the same directory (which is included at the bottom of the {\ttfamily .hpp} file).
+\item Preferably each class should be in a separate file with name {\itshape class\+\_\+name\+\_\+in\+\_\+lower\+\_\+case}. However, this is not a strict rule, if several smaller classes are logically closely related, they may go to the same file.
+\item Executable scripts should be placed in the {\ttfamily scripts/} folder. And should have a C\+Make {\bfseries install rule} that makes them executable upon installation.
+\item The C++/pybind11 code for wrapping C++ code to Python must be placed in {\ttfamily srcpy/}
+\end{DoxyItemize}
+
+\subsection*{I\+II. Naming}
+
+Give as descriptive a name as possible, within reason. Do not worry about saving horizontal space as it is far more important to make your code immediately understandable by a new reader. Do not use abbreviations that are ambiguous or unfamiliar to readers outside your project, and do not abbreviate by deleting letters within a word. Abbreviations that would be familiar to someone outside your project with relevant domain knowledge are OK. As a rule of thumb, an abbreviation is probably OK if it\textquotesingle{}s listed in Wikipedia.
+
+Formatting of names should be as follows\+:
+
+
+\begin{DoxyItemize}
+\item types (classes, structs, ...)\+: {\itshape First\+Upper\+Camel\+Case}
+\item functions, methods\+: {\itshape lower\+\_\+case\+\_\+with\+\_\+underscores}
+\item variables\+: {\itshape lower\+\_\+case\+\_\+with\+\_\+underscores}
+\item class members\+: {\itshape like\+\_\+variables\+\_\+but\+\_\+with\+\_\+trailing\+\_\+underscore\+\_\+}
+\item constants\+: {\itshape U\+P\+P\+E\+R\+\_\+\+C\+A\+S\+E\+\_\+\+W\+I\+T\+H\+\_\+\+U\+N\+D\+E\+R\+S\+C\+O\+R\+ES}
+\item global variables\+: Should generally be avoided but if needed, prefix them with g\+\_\+, i.\+e. {\itshape g\+\_\+variable\+\_\+name}.
+\end{DoxyItemize}
+
+\subsection*{IV. Add Units to Variable Names}
+
+Variables that hold values of a specific unit should have that unit appended to the name. For example if a variable holds the velocity of a motor in {\itshape krpm} it should be called {\ttfamily velocity\+\_\+krpm} instead of {\ttfamily just velocity}. Some more examples\+:
+
+
+\begin{DoxyItemize}
+\item duration\+\_\+us (use \char`\"{}u\char`\"{} instead of \char`\"{}µ\char`\"{})
+\item voltage\+\_\+mV
+\item acceleration\+\_\+mps2 ( $ \frac{m}{s^2} $)
+\end{DoxyItemize}
+
+\subsection*{V. C/\+C++ Formatting}
+
+\subsubsection*{V.\+1. Line Length}
+
+Limit the length of lines to 80 characters.
+
+This may seem hard to follow sometimes but makes it much easier to view two or even three files next to each other (important during code review or when resolving merge conflicts).
+
+\subsubsection*{V.\+2. Indentation}
+
+
+\begin{DoxyItemize}
+\item Use spaces instead of tabs.
+\item 4 spaces per \char`\"{}tab\char`\"{}.
+\end{DoxyItemize}
+
+\subsubsection*{V.\+3. Position of braces}
+
+
+\begin{DoxyItemize}
+\item Opening brace always goes to the next line.
+\item {\bfseries Always} add braces for single-\/line if/loop/etc.
+\end{DoxyItemize}
+
+Example\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{namespace }bar
+\{
+
+\textcolor{keyword}{class }Foo
+\{
+    \textcolor{keywordtype}{void} my\_function(\textcolor{keyword}{const} Foo &foo, \textcolor{keywordtype}{int} *output\_arg)
+    \{
+        \textcolor{keywordflow}{if} (condition)
+        \{
+            ...
+        \}
+        \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (other\_condition)
+        \{
+            ...
+        \}
+        \textcolor{keywordflow}{else}
+        \{
+            ...
+        \}
+
+        \textcolor{keywordflow}{while} (condition)
+        \{
+            ...
+        \}
+    \}
+\}
+
+\} \textcolor{comment}{// namespace}
+\end{DoxyCode}
+
+
+\subsubsection*{V.\+3. Spaces}
+
+Add single spaces between if/for/etc., the condition and the brace. add spaces around most binary operators. Exception\+: No spaces around {\ttfamily \+:\+:}, {\ttfamily .} and {\ttfamily -\/$>$}. Also no spaces for unary operators ({\ttfamily i++}, {\ttfamily \&x}, {\ttfamily $\ast$x}, ...).
+
+Example\+: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} x = 42;
+\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < x; i++)
+\{
+    \textcolor{keywordtype}{int} y = i * x;
+    \textcolor{keywordflow}{if} (y == foo.bar->baz)
+    \{
+        ...
+    \}
+\}
+\end{DoxyCode}
+
+
+\subsubsection*{V.\+4. Formatting of switch blocks}
+
+
+\begin{DoxyItemize}
+\item See the following example for proper indentation of switch blocks.
+\item Always add a default case, even when it is technically not needed.
+\begin{DoxyItemize}
+\item If the default block is empty, it shall contain a comment to indicate that this is intentional.
+\item The default case shall either be the first or the last case, preferably the last.
+\end{DoxyItemize}
+\item Non-\/empty cases shall be terminated by an unconditional break.
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+\textcolor{keywordflow}{switch} (x)
+\{
+    \textcolor{keywordflow}{case} 1:
+        \textcolor{comment}{// ...}
+        \textcolor{keywordflow}{break};
+
+    \textcolor{keywordflow}{case} 2:
+        \textcolor{comment}{// ...}
+        \textcolor{keywordflow}{break};
+
+    \textcolor{keywordflow}{case} 3: \textcolor{comment}{// multiple cases for one block are okay}
+    \textcolor{keywordflow}{case} 4:
+        \textcolor{comment}{// ...}
+        \textcolor{keywordflow}{break};
+
+    \textcolor{keywordflow}{case} 5:           \textcolor{comment}{// BAD. A non-empty case without break should not be}
+        something();  \textcolor{comment}{// used}
+    \textcolor{keywordflow}{case} 6:
+        more();
+        \textcolor{keywordflow}{break};
+
+    \textcolor{keywordflow}{default}:
+        \textcolor{comment}{// no action needed}
+        \textcolor{keywordflow}{break};
+\}
+\end{DoxyCode}
+
+
+\subsubsection*{V.\+5. Clang-\/\+Format Configuration}
+
+To automatically format your code according to this guidelines, you can use clang-\/format with the configuration \href{https://github.com/machines-in-motion/mpi_cmake_modules/blob/master/python/mpi_cmake_modules/_clang-format}{\tt here}.
+
+\subsection*{VI. C/\+C++ Coding Guidelines}
+
+\subsubsection*{V\+I.\+1. Pass objects by const reference}
+
+In general, non-\/primitive data types should be passed to functions by const reference instead of by value.
+
+
+\begin{DoxyCode}
+\textcolor{keywordtype}{void} foobar(\textcolor{keyword}{const} Foo &foo);  \textcolor{comment}{// good}
+\textcolor{keywordtype}{void} foobar(Foo foo);  \textcolor{comment}{// results in copy of `foo`. Only do this if const}
+                       \textcolor{comment}{// reference is not possible for some reason.}
+\end{DoxyCode}
+
+
+\#\#\# V\+I.\+2.
+\begin{DoxyCode}
+*#pragma once* 
+\end{DoxyCode}
+ vs Include Guards
+
+Prefer
+\begin{DoxyCode}
+*#pragma once* 
+\end{DoxyCode}
+ over include guards. 
+\begin{DoxyCode}
+*#pragma once* 
+\end{DoxyCode}
+ is not part of the official standard but is widely supported by compilers and much simpler to maintain.
+
+Note that there are some border cases where
+\begin{DoxyCode}
+*#pragma once* 
+\end{DoxyCode}
+ is causing issues (e.\+g. on Windows or when having a weird build setup with symlinks or copies of files). In such cases use traditional include guards. Make sure they have unique names by composing them from the package name and the path/name of the file (e.\+g. M\+Y\+\_\+\+P\+A\+C\+K\+A\+G\+E\+\_\+\+P\+A\+T\+H\+\_\+\+T\+O\+\_\+\+F\+I\+L\+E\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+H). Please {\bfseries do not} add underscore as prefix nor suffix beccause this is reserved for the compiler preproccesor variables.
+
+\subsubsection*{V\+I.\+3. Keep scopes small}
+
+Avoid adding anything to the global namespace if possible. This means
+
+
+\begin{DoxyItemize}
+\item Use a namespace when defining extern symbols.
+\item Use an anonymous namespace or static for symbols that are only used internally.
+\end{DoxyItemize}
+
+Generally define symbols in the smallest possible scope, i.\+e. if a variable is only used inside one loop, define it inside this loop (however, do not consider this to be a very strict rule, deviate from it where it seems reasonable).
+
+\subsubsection*{V\+I.\+4. Use types with explicit sizes}
+
+The header stdint defines primitive types with explicit sizes\+: {\itshape int32\+\_\+t}, {\itshape uint32\+\_\+t}, {\itshape int16\+\_\+t}, ... They should be preferred over the build-\/in types int, unsigned, short, ... To use them add the following include\+: 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <stdint>}
+\end{DoxyCode}
+ 

@@ -1,0 +1,36 @@
+\subsubsection*{Introduction}
+
+This package {\ttfamily mpi\+\_\+cmake\+\_\+modules} defines a list of usefull cmake macros. It can be used by simply depending on it using catkin. The documentation can be seen \href{https://machines-in-motion.github.io/}{\tt here}
+
+\subsubsection*{Getting started}
+
+In order to use the C\+Make macros contained in this package one need to depend on it in the following way\+: \begin{DoxyVerb}find_package(catkin REQUIRED COMPONENTS ${CATKIN_PKGS}) mpi_cmake_modules)
+\end{DoxyVerb}
+
+
+And add the following line in your {\ttfamily package.\+xml}
+
+
+\begin{DoxyCode}
+<\textcolor{keywordtype}{depend}>\textcolor{keyword}{mpi\_cmake\_modules}</\textcolor{keywordtype}{depend}>
+\end{DoxyCode}
+
+
+Remarque\+: This will perform by default\+:
+\begin{DoxyItemize}
+\item the {\ttfamily define\+\_\+os()} macro defined in cmake/os\+\_\+detection.\+cmake
+\item the {\ttfamily setup\+\_\+xenomai()} macro defined in the cmake/xenomai.\+cmake if the OS Xenomai is detected.
+\end{DoxyItemize}
+
+\subsubsection*{License}
+
+B\+SD 3-\/\+Clause
+
+\subsubsection*{Authors}
+
+
+\begin{DoxyItemize}
+\item Vincent Berenz (\href{mailto:vberenz@tue.mpg.de}{\tt vberenz@tue.\+mpg.\+de})
+\item Maximilien Naveau (\href{mailto:mnaveau@tue.mpg.de}{\tt mnaveau@tue.\+mpg.\+de})
+\item Felix Widmaier (\href{mailto:fwidmaier@tue.mpg.de}{\tt fwidmaier@tue.\+mpg.\+de}) 
+\end{DoxyItemize}

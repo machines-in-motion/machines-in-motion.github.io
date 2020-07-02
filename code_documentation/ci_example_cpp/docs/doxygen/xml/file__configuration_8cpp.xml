@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="file__configuration_8cpp" kind="file" language="C++">
+    <compoundname>file_configuration.cpp</compoundname>
+    <includes refid="file__configuration_8hpp" local="yes">ci_example_cpp/file_configuration.hpp</includes>
+    <incdepgraph>
+      <node id="94">
+        <label>ci_example_cpp/gains_configuration.hpp</label>
+        <link refid="gains__configuration_8hpp"/>
+        <childnode refid="95" relation="include">
+        </childnode>
+        <childnode refid="96" relation="include">
+        </childnode>
+      </node>
+      <node id="91">
+        <label>src/file_configuration.cpp</label>
+        <link refid="file__configuration_8cpp"/>
+        <childnode refid="92" relation="include">
+        </childnode>
+      </node>
+      <node id="95">
+        <label>string</label>
+      </node>
+      <node id="93">
+        <label>yaml-cpp/yaml.h</label>
+      </node>
+      <node id="92">
+        <label>ci_example_cpp/file_configuration.hpp</label>
+        <link refid="file__configuration_8hpp"/>
+        <childnode refid="93" relation="include">
+        </childnode>
+        <childnode refid="94" relation="include">
+        </childnode>
+      </node>
+      <node id="96">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceci__example__cpp">ci_example_cpp</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Vincent Berenz </para></simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2019, New York University and Max Planck Gesellschaft, License BSD-3-Clause </para></simplesect>
+<simplesect kind="date"><para>2019-12-09 </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="8"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="file__configuration_8hpp" kindref="compound">ci_example_cpp/file_configuration.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceci__example__cpp" kindref="compound">ci_example_cpp</ref><sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><ref refid="classci__example__cpp_1_1File__configuration_1a9eb17de315392f3f755a327af4beb5d7" kindref="member">File_configuration::File_configuration</ref>(std::string<sp/>yaml_file){</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>YAML::Node<sp/>node<sp/>=<sp/>YAML::LoadFile(yaml_file);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classci__example__cpp_1_1File__configuration_1a919075c40e92692f39cb26d99d6c40a9" kindref="member">kp_</ref><sp/>=<sp/>node[</highlight><highlight class="stringliteral">&quot;kp&quot;</highlight><highlight class="normal">].as&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">&gt;();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classci__example__cpp_1_1File__configuration_1aabec4cb5a29a53e469be722cf2f47fbf" kindref="member">kd_</ref><sp/>=<sp/>node[</highlight><highlight class="stringliteral">&quot;kd&quot;</highlight><highlight class="normal">].as&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">&gt;();</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classci__example__cpp_1_1File__configuration_1ae819105d7a538cb7f604824a10f8b814" kindref="member">ki_</ref><sp/>=<sp/>node[</highlight><highlight class="stringliteral">&quot;ki&quot;</highlight><highlight class="normal">].as&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">&gt;();</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classci__example__cpp_1_1File__configuration_1a838d95dfb9f01ea950cd67f4c7320eff" kindref="member">error_</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal">(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><sp/>std::exception&amp;<sp/>e<sp/>){</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classci__example__cpp_1_1File__configuration_1a838d95dfb9f01ea950cd67f4c7320eff" kindref="member">error_</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classci__example__cpp_1_1File__configuration_1aabc2359549686784a62fae2130f1aae7" kindref="member">error_message_</ref><sp/>=<sp/>e.what();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classci__example__cpp_1_1File__configuration_1a5d051da802569c36feeab2b1fbf9a09a" kindref="member">File_configuration::get_kp</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="classci__example__cpp_1_1File__configuration_1a919075c40e92692f39cb26d99d6c40a9" kindref="member">kp_</ref>;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classci__example__cpp_1_1File__configuration_1a14b1e36766d55ee0132a78fbc41f8096" kindref="member">File_configuration::get_kd</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="classci__example__cpp_1_1File__configuration_1aabec4cb5a29a53e469be722cf2f47fbf" kindref="member">kd_</ref>;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classci__example__cpp_1_1File__configuration_1a6e338977105cbcf8b822892d1feb9006" kindref="member">File_configuration::get_ki</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="classci__example__cpp_1_1File__configuration_1ae819105d7a538cb7f604824a10f8b814" kindref="member">ki_</ref>;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classci__example__cpp_1_1File__configuration_1aa3cae137be3b59e61d13c2a9b1ec8b6a" kindref="member">File_configuration::has_error</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="classci__example__cpp_1_1File__configuration_1a838d95dfb9f01ea950cd67f4c7320eff" kindref="member">error_</ref>;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/>std::string<sp/><ref refid="classci__example__cpp_1_1File__configuration_1aaf67f7d61d467563a4dce8aa69306a6a" kindref="member">File_configuration::get_error</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="classci__example__cpp_1_1File__configuration_1aabc2359549686784a62fae2130f1aae7" kindref="member">error_message_</ref>;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/file_configuration.cpp"/>
+  </compounddef>
+</doxygen>

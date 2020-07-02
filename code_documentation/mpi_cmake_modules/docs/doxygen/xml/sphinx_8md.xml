@@ -1,0 +1,221 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="sphinx_8md" kind="file" language="Markdown">
+    <compoundname>sphinx.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">Sphinx</highlight></codeline>
+<codeline><highlight class="normal">======</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>1.<sp/>Introduction</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>module<sp/>manages<sp/>the<sp/>build<sp/>of<sp/>the<sp/>documentation.<sp/>The<sp/>input<sp/>files<sp/>are<sp/>C++,</highlight></codeline>
+<codeline><highlight class="normal">Python,<sp/>and<sp/>Markdown.<sp/>In<sp/>order<sp/>to<sp/>process<sp/>this<sp/>we<sp/>use<sp/>a<sp/>couple<sp/>of</highlight></codeline>
+<codeline><highlight class="normal">off-the-shelf<sp/>softwares<sp/>(see<sp/>the<sp/>list<sp/>below).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>Doxygen<sp/>the<sp/>C++<sp/>api<sp/>documentation<sp/>parser,</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Breathe<sp/>a<sp/>sphinx<sp/>extension<sp/>that<sp/>parse<sp/>the<sp/>doxygen<sp/>xml<sp/>output<sp/>into<sp/>restructured<sp/>text<sp/>files,</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>recommonmark<sp/>a<sp/>sphinx<sp/>extension<sp/>parsing<sp/>markdown<sp/>files.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>sphinx-apidoc<sp/>the<sp/>Python<sp/>api<sp/>documentation<sp/>parser,</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Sphinx<sp/>the<sp/>documentation<sp/>renderer,</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>anything<sp/>seems<sp/>fuzzy<sp/>(it<sp/>is<sp/>a<sp/>rather<sp/>long<sp/>and<sp/>tedious<sp/>pipeline),</highlight></codeline>
+<codeline><highlight class="normal">please<sp/>let<sp/>me<sp/>know<sp/>via<sp/>posting<sp/>an<sp/>issue</highlight></codeline>
+<codeline><highlight class="normal">[here](https://github.com/machines-in-motion/mpi_cmake_modules/issues).</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>2.<sp/>Advanced<sp/>explanation<sp/>on<sp/>the<sp/>tools</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>order<sp/>to<sp/>build<sp/>the<sp/>documentation<sp/>we<sp/>need<sp/>to<sp/>setup<sp/>the<sp/>following<sp/>tools:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[Doxygen](http://www.doxygen.nl/)<sp/>the<sp/>C++<sp/>api<sp/>documentation<sp/>parser,</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[Breathe](https://breathe.readthedocs.io/en/latest/)<sp/>a<sp/>sphinx<sp/>extension<sp/>that</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>parse<sp/>the<sp/>doxygen<sp/>xml<sp/>output<sp/>into<sp/>restructured<sp/>text<sp/>files,</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[recommonmark](https://recommonmark.readthedocs.io/en/latest/)<sp/>a<sp/>sphinx</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>extension<sp/>parsing<sp/>markdown<sp/>files.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[sphinx-apidoc](http://www.sphinx-doc.org/en/master/man/sphinx-apidoc.html)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>the<sp/>Python<sp/>api<sp/>documentation<sp/>parser,</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[Sphinx](http://www.sphinx-doc.org/en/master/)<sp/>the<sp/>documentation<sp/>renderer,</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>2.1<sp/>Doxygen</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>order<sp/>to<sp/>execute<sp/>to<sp/>generate<sp/>the<sp/>C++<sp/>API<sp/>documentation<sp/>we<sp/>use<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">Doxygen<sp/>tool.</highlight></codeline>
+<codeline><highlight class="normal">We<sp/>wrote<sp/>a<sp/>`Doxyfile`,<sp/>used<sp/>to<sp/>parameter<sp/>Doxyygen,<sp/>to<sp/>notably:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Output<sp/>the<sp/>files<sp/>in<sp/>the<sp/>`_build/docs/doxygen`<sp/>folder<sp/>with<sp/>the</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>`OUTPUT_DIRECTORY`<sp/>parameter.<sp/></highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Generate<sp/>a<sp/>list<sp/>of<sp/>xml<sp/>files<sp/>containing<sp/>the<sp/>API<sp/>documentation<sp/>setting</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>`GENERATE_XML`<sp/>to<sp/>`YES`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>Makefile<sp/>looks<sp/>at<sp/>the<sp/>`Doxyfile`<sp/>in<sp/>`doc_config_files/doxygen/`<sp/>and<sp/></highlight></codeline>
+<codeline><highlight class="normal">CMake<sp/>configure<sp/>the<sp/>`Doxyfile.in`<sp/>from<sp/>`cmake/doxygen/`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>2.2<sp/>Breathe</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>tool<sp/>is<sp/>a<sp/>module<sp/>of<sp/>sphinx<sp/>that<sp/>parse<sp/>the<sp/>Doxygen<sp/>xml<sp/>output.</highlight></codeline>
+<codeline><highlight class="normal">Breathe<sp/>provide<sp/>two<sp/>import<sp/>tools:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>An<sp/>API<sp/>that<sp/>allow<sp/>you<sp/>to<sp/>reference<sp/>to<sp/>the<sp/>object<sp/>from<sp/>the<sp/>Doxygen<sp/>xml</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>output.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>An<sp/>executable<sp/>`breathe-apidoc`<sp/>that<sp/>generates<sp/>automatically<sp/>the<sp/>C++<sp/>API</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>into<sp/>ReStructed<sp/>files.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>order<sp/>to<sp/>use<sp/>it<sp/>we<sp/>need<sp/>to<sp/>add<sp/>a<sp/>couple<sp/>of<sp/>line<sp/>in<sp/>the<sp/>`conf.py`</highlight></codeline>
+<codeline><highlight class="normal">used<sp/>by<sp/>Sphinx:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">~~~python</highlight></codeline>
+<codeline><highlight class="normal">extensions<sp/>=<sp/>[</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>...<sp/>other<sp/>stuff</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&apos;breathe&apos;,<sp/>#<sp/>to<sp/>define<sp/>the<sp/>C++<sp/>api</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>...<sp/>other<sp/>stuff</highlight></codeline>
+<codeline><highlight class="normal">]</highlight></codeline>
+<codeline><highlight class="normal">~~~</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">We<sp/>also<sp/>need<sp/>to<sp/>add<sp/>the<sp/>following<sp/>variable<sp/>that<sp/>determine<sp/>the<sp/>behavior<sp/>of</highlight></codeline>
+<codeline><highlight class="normal">Breathe:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">~~~python</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>breath<sp/>project<sp/>names<sp/>and<sp/>paths.<sp/>Here<sp/>project<sp/>is<sp/>the<sp/>name<sp/>of<sp/>the<sp/>repos<sp/>and<sp/>the<sp/>path<sp/>is<sp/>the<sp/>path<sp/>to<sp/>the<sp/>Doxygen<sp/>output.</highlight></codeline>
+<codeline><highlight class="normal">breathe_projects<sp/>=<sp/>{<sp/>project:<sp/>&quot;../doxygen/xml&quot;<sp/>}</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Default<sp/>project<sp/>used<sp/>for<sp/>all<sp/>Doxygen<sp/>output<sp/>(we<sp/>use<sp/>only<sp/>one<sp/>here).</highlight></codeline>
+<codeline><highlight class="normal">breathe_default_project<sp/>=<sp/>project</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>By<sp/>default<sp/>we<sp/>ask<sp/>all<sp/>informations<sp/>to<sp/>be<sp/>displayed.</highlight></codeline>
+<codeline><highlight class="normal">breathe_default_members<sp/>=<sp/>(&apos;members&apos;,<sp/>&apos;private-members&apos;,<sp/>&apos;undoc-members&apos;)</highlight></codeline>
+<codeline><highlight class="normal">~~~</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Once<sp/>the<sp/>`conf.py`<sp/>is<sp/>setup<sp/>we<sp/>execute<sp/>`breath-apidoc`<sp/>on<sp/>the<sp/>Doxygen</highlight></codeline>
+<codeline><highlight class="normal">xml<sp/>output:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>breathe-apidoc<sp/>-o<sp/>$(BREATHE_OUT)<sp/>$(BREATHE_IN)<sp/>$(BREATHE_OPTION)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">with:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>`BREATHE_OUT`<sp/>the<sp/>output<sp/>path<sp/>(`_build/docs/sphinx/breathe/`),</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`BREATHE_IN`<sp/>the<sp/>path<sp/>to<sp/>the<sp/>Doxygen<sp/>xml<sp/>output<sp/>(`_build/docs/doxygen/xml/`),</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>and<sp/>`BREATHE_OPTION`<sp/>some<sp/>output<sp/>formatting<sp/>option,<sp/>here<sp/>empty.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>breathe-apidoc<sp/>will<sp/>generate<sp/>the<sp/>list<sp/>of<sp/>all<sp/>classes,<sp/>namespace<sp/>and</highlight></codeline>
+<codeline><highlight class="normal">files<sp/>in<sp/>a<sp/>different<sp/>ReStructuredText<sp/>(`.rst`)<sp/>files.</highlight></codeline>
+<codeline><highlight class="normal">We<sp/>will<sp/>use<sp/>them<sp/>to<sp/>generate<sp/>the<sp/>final<sp/>layout<sp/>of<sp/>the<sp/>documentation.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>2.3<sp/>recommonmark</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">We<sp/>want<sp/>to<sp/>have<sp/>an<sp/>easy<sp/>and<sp/>intuitive<sp/>way<sp/>of<sp/>writing<sp/>extra<sp/>documentation</highlight></codeline>
+<codeline><highlight class="normal">from<sp/>the<sp/>code.<sp/>Hence<sp/>our<sp/>choice<sp/>to<sp/>use<sp/>`Markdown`<sp/>and<sp/>`Restructured`<sp/>text.</highlight></codeline>
+<codeline><highlight class="normal">Both<sp/>file<sp/>types<sp/>are<sp/>parse<sp/>by<sp/>sphinx<sp/>and<sp/>converted<sp/>to<sp/>html.</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>sphinx<sp/>module<sp/>`recommonmark`<sp/>is<sp/>here<sp/>to<sp/>convert<sp/>the<sp/>Markdown<sp/>properly.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>the<sp/>header<sp/>of<sp/>the<sp/>`conf.py`<sp/>used<sp/>by<sp/>sphinx<sp/>we<sp/>need<sp/>to<sp/>include:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>AutoStructify<sp/>for<sp/>math<sp/>in<sp/>markdown</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>import<sp/>recommonmark<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>from<sp/>recommonmark.transform<sp/>import<sp/>AutoStructify</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">We<sp/>add<sp/>it<sp/>to<sp/>the<sp/>`extensions`<sp/>variable<sp/>in<sp/>the<sp/>same<sp/>file:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">~~~python</highlight></codeline>
+<codeline><highlight class="normal">extensions<sp/>=<sp/>[</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>...<sp/>other<sp/>stuff</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&apos;recommonmark&apos;,<sp/>#<sp/>markdown<sp/>support</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>...<sp/>other<sp/>stuff</highlight></codeline>
+<codeline><highlight class="normal">]</highlight></codeline>
+<codeline><highlight class="normal">~~~</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Then<sp/>we<sp/>tell<sp/>Sphinx<sp/>to<sp/>read<sp/>the<sp/>.md<sp/>extension<sp/>files<sp/>in<sp/>the<sp/>`conf.py`:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">~~~python</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>The<sp/>suffix(es)<sp/>of<sp/>source<sp/>filenames.</highlight></codeline>
+<codeline><highlight class="normal">source_suffix<sp/>=<sp/>[&apos;.rst&apos;,<sp/>&apos;.md&apos;]</highlight></codeline>
+<codeline><highlight class="normal">~~~</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">And<sp/>last<sp/>in<sp/>order<sp/>to<sp/>get<sp/>math<sp/>support<sp/>in<sp/>the<sp/>mardown<sp/>using:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>```math</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a<sp/>=<sp/>\theta</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">We<sp/>need<sp/>to<sp/>add<sp/>the<sp/>following<sp/>at<sp/>the<sp/>end<sp/>of<sp/>the<sp/>`conf.py`:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">~~~python</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>some<sp/>tools<sp/>for<sp/>markdown<sp/>parsing</highlight></codeline>
+<codeline><highlight class="normal">def<sp/>setup(app):</highlight></codeline>
+<codeline><highlight class="normal">app.add_config_value(&apos;recommonmark_config&apos;,<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&apos;auto_toc_tree_section&apos;:<sp/>&apos;Contents&apos;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&apos;enable_math&apos;:True,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&apos;enable_inline_math&apos;:True,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&apos;enable_eval_rst&apos;:True,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>},<sp/>True)</highlight></codeline>
+<codeline><highlight class="normal">app.add_transform(AutoStructify)</highlight></codeline>
+<codeline><highlight class="normal">~~~</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>2.4<sp/>sphinx-apidoc</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>tool<sp/>allow<sp/>the<sp/>generation<sp/>of<sp/>a<sp/>Python<sp/>module<sp/>API<sp/>documentation<sp/></highlight></codeline>
+<codeline><highlight class="normal">extracting<sp/>the<sp/>doc<sp/>string<sp/>from<sp/>the<sp/>code.</highlight></codeline>
+<codeline><highlight class="normal">We<sp/>need<sp/>to<sp/>add<sp/>to<sp/>the<sp/>PYTHONPATH<sp/>the<sp/>path<sp/>to<sp/>the<sp/>Python<sp/>module<sp/>in<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">`conf.py`:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">~~~python</highlight></codeline>
+<codeline><highlight class="normal">sys.path.insert(0,<sp/>os.path.abspath(&quot;path/to/the/python/module&quot;))</highlight></codeline>
+<codeline><highlight class="normal">~~~</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">add<sp/>the<sp/>according<sp/>Sphinx<sp/>extensions:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">~~~python</highlight></codeline>
+<codeline><highlight class="normal">extensions<sp/>=<sp/>[</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>...<sp/>other</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&apos;sphinx.ext.autodoc&apos;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&apos;sphinx.ext.doctest&apos;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&apos;sphinx.ext.intersphinx&apos;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&apos;sphinx.ext.todo&apos;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&apos;sphinx.ext.coverage&apos;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&apos;sphinx.ext.mathjax&apos;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&apos;sphinx.ext.ifconfig&apos;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&apos;sphinx.ext.viewcode&apos;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&apos;sphinx.ext.githubpages&apos;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>...<sp/>other</highlight></codeline>
+<codeline><highlight class="normal">]</highlight></codeline>
+<codeline><highlight class="normal">~~~</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">And<sp/>then<sp/>build<sp/>the<sp/>API<sp/>documentation<sp/>by:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sphinx_apidoc<sp/>-o<sp/>$(SPHINX_BUILD_OUT)<sp/>path/to/the/python/module</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Where<sp/>`SPHINX_BUILD_OUT`<sp/>is<sp/>the<sp/>output<sp/>path.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>2.5<sp/>sphinx-build</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>final<sp/>layout<sp/>is<sp/>managed<sp/>here<sp/>and<sp/>build<sp/>using<sp/>`shpinx-build`.<sp/>The<sp/>tricky</highlight></codeline>
+<codeline><highlight class="normal">thing<sp/>with<sp/>`sphinx-build`<sp/>is<sp/>that<sp/>everything<sp/>included<sp/>needs<sp/>to<sp/>be<sp/>in<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">working<sp/>directory.<sp/>Therefore<sp/>in<sp/>the<sp/>build<sp/>directory<sp/>we<sp/>set<sp/>the<sp/>output<sp/>of</highlight></codeline>
+<codeline><highlight class="normal">`breathe-apidoc`<sp/>and<sp/>`shpinx-apidoc`<sp/>to<sp/>`_build/docs/sphinx`.</highlight></codeline>
+<codeline><highlight class="normal">And<sp/>inside<sp/>the<sp/>same<sp/>folder<sp/>we<sp/>create<sp/>a<sp/>symlink<sp/>that<sp/>points<sp/>to<sp/>the<sp/>source</highlight></codeline>
+<codeline><highlight class="normal">`doc/`<sp/>folder.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Therefore<sp/>in<sp/>order:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>The<sp/>`index.rst`<sp/>includes<sp/>the<sp/>C++<sp/>API<sp/>main<sp/>`.rst`<sp/>files<sp/>from<sp/>Breath.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Then<sp/>it<sp/>includes<sp/>the<sp/>`modules.rst`<sp/>file<sp/>from<sp/>`sphinx-apidoc`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>And<sp/>then<sp/>is<sp/>adds<sp/>all<sp/>files<sp/>inside<sp/>`doc/`,<sp/>which,<sp/>again,<sp/>points<sp/>toward<sp/>the</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>source<sp/>`doc/`<sp/>directory.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>command<sp/>to<sp/>execute<sp/>is<sp/>the<sp/>following:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sphinx-build<sp/>-M<sp/>html<sp/>_build/docs/sphinx<sp/>_build/docs/sphinx</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>will<sp/>generate<sp/>the<sp/>documentation<sp/>website<sp/>in<sp/>`_build/docs/sphinx/html/`</highlight></codeline>
+<codeline><highlight class="normal">Thefore<sp/>`firefox<sp/>_build/docs/sphinx/html/index.html`<sp/>opens<sp/>the<sp/></highlight></codeline>
+<codeline><highlight class="normal">documentation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>3.<sp/>Feedback<sp/>on<sp/>all<sp/>this</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>anything<sp/>seems<sp/>fuzzy<sp/>(it<sp/>is<sp/>a<sp/>rather<sp/>long<sp/>and<sp/>tedious<sp/>pipeline),<sp/>please</highlight></codeline>
+<codeline><highlight class="normal">let<sp/>me<sp/>know<sp/>via<sp/>posting<sp/>an<sp/>issue</highlight></codeline>
+<codeline><highlight class="normal">[here](https://github.com/machines-in-motion/mpi_cmake_modules/issues).</highlight></codeline>
+    </programlisting>
+    <location file="doc/sphinx.md"/>
+  </compounddef>
+</doxygen>

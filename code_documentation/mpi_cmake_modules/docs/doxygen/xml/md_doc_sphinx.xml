@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="md_doc_sphinx" kind="page">
+    <compoundname>md_doc_sphinx</compoundname>
+    <title>Sphinx</title>
+    <detaileddescription>
+<para><heading level="2">1. Introduction</heading>
+</para><para>This module manages the build of the documentation. The input files are C++, Python, and Markdown. In order to process this we use a couple of off-the-shelf softwares (see the list below).</para><para><itemizedlist>
+<listitem><para>Doxygen the C++ api documentation parser,</para></listitem><listitem><para>Breathe a sphinx extension that parse the doxygen xml output into restructured text files,</para></listitem><listitem><para>recommonmark a sphinx extension parsing markdown files.</para></listitem><listitem><para>sphinx-apidoc the Python api documentation parser,</para></listitem><listitem><para>Sphinx the documentation renderer,</para></listitem></itemizedlist>
+</para><para>If anything seems fuzzy (it is a rather long and tedious pipeline), please let me know via posting an issue <ulink url="https://github.com/machines-in-motion/mpi_cmake_modules/issues">here</ulink>.</para><para><heading level="2">2. Advanced explanation on the tools</heading>
+</para><para>In order to build the documentation we need to setup the following tools:<itemizedlist>
+<listitem><para><ulink url="http://www.doxygen.nl/">Doxygen</ulink> the C++ api documentation parser,</para></listitem><listitem><para><ulink url="https://breathe.readthedocs.io/en/latest/">Breathe</ulink> a sphinx extension that parse the doxygen xml output into restructured text files,</para></listitem><listitem><para><ulink url="https://recommonmark.readthedocs.io/en/latest/">recommonmark</ulink> a sphinx extension parsing markdown files.</para></listitem><listitem><para><ulink url="http://www.sphinx-doc.org/en/master/man/sphinx-apidoc.html">sphinx-apidoc</ulink> the Python api documentation parser,</para></listitem><listitem><para><ulink url="http://www.sphinx-doc.org/en/master/">Sphinx</ulink> the documentation renderer,</para></listitem></itemizedlist>
+</para><para><heading level="3">2.1 Doxygen</heading>
+</para><para>In order to execute to generate the C++ API documentation we use the Doxygen tool. We wrote a <computeroutput>Doxyfile</computeroutput>, used to parameter Doxyygen, to notably:</para><para><itemizedlist>
+<listitem><para>Output the files in the <computeroutput>_build/docs/doxygen</computeroutput> folder with the <computeroutput>OUTPUT_DIRECTORY</computeroutput> parameter.</para></listitem><listitem><para>Generate a list of xml files containing the API documentation setting the <computeroutput>GENERATE_XML</computeroutput> to <computeroutput>YES</computeroutput>.</para></listitem></itemizedlist>
+</para><para>The Makefile looks at the <computeroutput>Doxyfile</computeroutput> in <computeroutput>doc_config_files/doxygen/</computeroutput> and CMake configure the <computeroutput>Doxyfile.in</computeroutput> from <computeroutput>cmake/doxygen/</computeroutput>.</para><para><heading level="3">2.2 Breathe</heading>
+</para><para>This tool is a module of sphinx that parse the Doxygen xml output. Breathe provide two import tools:</para><para><itemizedlist>
+<listitem><para>An API that allow you to reference to the object from the Doxygen xml output.</para></listitem><listitem><para>An executable <computeroutput>breathe-apidoc</computeroutput> that generates automatically the C++ API into ReStructed files.</para></listitem></itemizedlist>
+</para><para>In order to use it we need to add a couple of line in the <computeroutput>conf.py</computeroutput> used by Sphinx:</para><para><programlisting><codeline><highlight class="normal">extensions<sp/>=<sp/>[</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>...<sp/>other<sp/>stuff</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&apos;breathe&apos;,<sp/>#<sp/>to<sp/>define<sp/>the<sp/>C++<sp/>api</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>...<sp/>other<sp/>stuff</highlight></codeline>
+<codeline><highlight class="normal">]</highlight></codeline>
+</programlisting></para><para>We also need to add the following variable that determine the behavior of Breathe:</para><para><programlisting><codeline><highlight class="normal">#<sp/>breath<sp/>project<sp/>names<sp/>and<sp/>paths.<sp/>Here<sp/>project<sp/>is<sp/>the<sp/>name<sp/>of<sp/>the<sp/>repos<sp/>and<sp/>the<sp/>path<sp/>is<sp/>the<sp/>path<sp/>to<sp/>the<sp/>Doxygen<sp/>output.</highlight></codeline>
+<codeline><highlight class="normal">breathe_projects<sp/>=<sp/>{<sp/>project:<sp/>&quot;../doxygen/xml&quot;<sp/>}</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Default<sp/>project<sp/>used<sp/>for<sp/>all<sp/>Doxygen<sp/>output<sp/>(we<sp/>use<sp/>only<sp/>one<sp/>here).</highlight></codeline>
+<codeline><highlight class="normal">breathe_default_project<sp/>=<sp/>project</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>By<sp/>default<sp/>we<sp/>ask<sp/>all<sp/>informations<sp/>to<sp/>be<sp/>displayed.</highlight></codeline>
+<codeline><highlight class="normal">breathe_default_members<sp/>=<sp/>(&apos;members&apos;,<sp/>&apos;private-members&apos;,<sp/>&apos;undoc-members&apos;)</highlight></codeline>
+</programlisting></para><para>Once the <computeroutput>conf.py</computeroutput> is setup we execute <computeroutput>breath-apidoc</computeroutput> on the Doxygen xml output: <verbatim>breathe-apidoc -o $(BREATHE_OUT) $(BREATHE_IN) $(BREATHE_OPTION)
+</verbatim></para><para>with:</para><para><itemizedlist>
+<listitem><para><computeroutput>BREATHE_OUT</computeroutput> the output path (<computeroutput>_build/docs/sphinx/breathe/</computeroutput>),</para></listitem><listitem><para><computeroutput>BREATHE_IN</computeroutput> the path to the Doxygen xml output (<computeroutput>_build/docs/doxygen/xml/</computeroutput>),</para></listitem><listitem><para>and <computeroutput>BREATHE_OPTION</computeroutput> some output formatting option, here empty.</para></listitem></itemizedlist>
+</para><para>This breathe-apidoc will generate the list of all classes, namespace and files in a different ReStructuredText (<computeroutput>.rst</computeroutput>) files. We will use them to generate the final layout of the documentation.</para><para><heading level="3">2.3 recommonmark</heading>
+</para><para>We want to have an easy and intuitive way of writing extra documentation from the code. Hence our choice to use <computeroutput>Markdown</computeroutput> and <computeroutput>Restructured</computeroutput> text. Both file types are parse by sphinx and converted to html. The sphinx module <computeroutput>recommonmark</computeroutput> is here to convert the Markdown properly.</para><para>In the header of the <computeroutput>conf.py</computeroutput> used by sphinx we need to include: <verbatim># AutoStructify for math in markdown
+import recommonmark 
+from recommonmark.transform import AutoStructify
+</verbatim></para><para>We add it to the <computeroutput>extensions</computeroutput> variable in the same file:</para><para><programlisting><codeline><highlight class="normal">extensions<sp/>=<sp/>[</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>...<sp/>other<sp/>stuff</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&apos;recommonmark&apos;,<sp/>#<sp/>markdown<sp/>support</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>...<sp/>other<sp/>stuff</highlight></codeline>
+<codeline><highlight class="normal">]</highlight></codeline>
+</programlisting></para><para>Then we tell Sphinx to read the .md extension files in the <computeroutput>conf.py</computeroutput>:</para><para><programlisting><codeline><highlight class="normal">#<sp/>The<sp/>suffix(es)<sp/>of<sp/>source<sp/>filenames.</highlight></codeline>
+<codeline><highlight class="normal">source_suffix<sp/>=<sp/>[&apos;.rst&apos;,<sp/>&apos;.md&apos;]</highlight></codeline>
+</programlisting></para><para>And last in order to get math support in the mardown using: <verbatim>```math
+    a = \theta
+```
+</verbatim></para><para>We need to add the following at the end of the <computeroutput>conf.py</computeroutput>:</para><para><programlisting><codeline><highlight class="normal">#<sp/>some<sp/>tools<sp/>for<sp/>markdown<sp/>parsing</highlight></codeline>
+<codeline><highlight class="normal">def<sp/>setup(app):</highlight></codeline>
+<codeline><highlight class="normal">app.add_config_value(&apos;recommonmark_config&apos;,<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&apos;auto_toc_tree_section&apos;:<sp/>&apos;Contents&apos;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&apos;enable_math&apos;:True,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&apos;enable_inline_math&apos;:True,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&apos;enable_eval_rst&apos;:True,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>},<sp/>True)</highlight></codeline>
+<codeline><highlight class="normal">app.add_transform(AutoStructify)</highlight></codeline>
+</programlisting></para><para><heading level="3">2.4 sphinx-apidoc</heading>
+</para><para>This tool allow the generation of a Python module API documentation extracting the doc string from the code. We need to add to the PYTHONPATH the path to the Python module in the <computeroutput>conf.py</computeroutput>:</para><para><programlisting><codeline><highlight class="normal">sys.path.insert(0,<sp/>os.path.abspath(&quot;path/to/the/python/module&quot;))</highlight></codeline>
+</programlisting></para><para>add the according Sphinx extensions:</para><para><programlisting><codeline><highlight class="normal">extensions<sp/>=<sp/>[</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>...<sp/>other</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&apos;sphinx.ext.autodoc&apos;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&apos;sphinx.ext.doctest&apos;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&apos;sphinx.ext.intersphinx&apos;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&apos;sphinx.ext.todo&apos;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&apos;sphinx.ext.coverage&apos;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&apos;sphinx.ext.mathjax&apos;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&apos;sphinx.ext.ifconfig&apos;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&apos;sphinx.ext.viewcode&apos;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&apos;sphinx.ext.githubpages&apos;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>...<sp/>other</highlight></codeline>
+<codeline><highlight class="normal">]</highlight></codeline>
+</programlisting></para><para>And then build the API documentation by: <verbatim>sphinx_apidoc -o $(SPHINX_BUILD_OUT) path/to/the/python/module
+</verbatim></para><para>Where <computeroutput>SPHINX_BUILD_OUT</computeroutput> is the output path.</para><para><heading level="3">2.5 sphinx-build</heading>
+</para><para>The final layout is managed here and build using <computeroutput>shpinx-build</computeroutput>. The tricky thing with <computeroutput>sphinx-build</computeroutput> is that everything included needs to be in the working directory. Therefore in the build directory we set the output of <computeroutput>breathe-apidoc</computeroutput> and <computeroutput>shpinx-apidoc</computeroutput> to <computeroutput>_build/docs/sphinx</computeroutput>. And inside the same folder we create a symlink that points to the source <computeroutput>doc/</computeroutput> folder.</para><para>Therefore in order:</para><para><itemizedlist>
+<listitem><para>The <computeroutput>index.rst</computeroutput> includes the C++ API main <computeroutput>.rst</computeroutput> files from Breath.</para></listitem><listitem><para>Then it includes the <computeroutput>modules.rst</computeroutput> file from <computeroutput>sphinx-apidoc</computeroutput></para></listitem><listitem><para>And then is adds all files inside <computeroutput>doc/</computeroutput>, which, again, points toward the source <computeroutput>doc/</computeroutput> directory.</para></listitem></itemizedlist>
+</para><para>The command to execute is the following: <verbatim>sphinx-build -M html _build/docs/sphinx _build/docs/sphinx
+</verbatim></para><para>This will generate the documentation website in <computeroutput>_build/docs/sphinx/html/</computeroutput> Thefore <computeroutput>firefox _build/docs/sphinx/html/index.html</computeroutput> opens the documentation</para><para><heading level="2">3. Feedback on all this</heading>
+</para><para>If anything seems fuzzy (it is a rather long and tedious pipeline), please let me know via posting an issue <ulink url="https://github.com/machines-in-motion/mpi_cmake_modules/issues">here</ulink>. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

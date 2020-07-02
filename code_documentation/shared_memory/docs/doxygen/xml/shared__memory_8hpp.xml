@@ -1,0 +1,642 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="shared__memory_8hpp" kind="file" language="C++">
+    <compoundname>shared_memory.hpp</compoundname>
+    <includes local="no">iostream</includes>
+    <includes local="no">map</includes>
+    <includes local="no">mutex</includes>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">eigen3/Eigen/Core</includes>
+    <includes local="no">boost/interprocess/allocators/allocator.hpp</includes>
+    <includes local="no">boost/interprocess/containers/deque.hpp</includes>
+    <includes local="no">boost/interprocess/containers/string.hpp</includes>
+    <includes local="no">boost/interprocess/containers/vector.hpp</includes>
+    <includes local="no">boost/interprocess/managed_shared_memory.hpp</includes>
+    <includes refid="exceptions_8h" local="yes">shared_memory/exceptions.h</includes>
+    <includes refid="segment__info_8hpp" local="yes">shared_memory/segment_info.hpp</includes>
+    <includes refid="serializer_8hpp" local="yes">shared_memory/serializer.hpp</includes>
+    <includes refid="shared__memory_8hxx" local="no">shared_memory/shared_memory.hxx</includes>
+    <includedby refid="stress__get__api_8cpp" local="yes">benchmarks/stress_get_api.cpp</includedby>
+    <includedby refid="stress__set__api_8cpp" local="yes">benchmarks/stress_set_api.cpp</includedby>
+    <includedby refid="demo__eigen_8cpp" local="yes">demos/demo_eigen.cpp</includedby>
+    <includedby refid="demo__verbose_8cpp" local="yes">demos/demo_verbose.cpp</includedby>
+    <includedby refid="get__data_8cpp" local="yes">demos/get_data.cpp</includedby>
+    <includedby refid="locked__cond__var__ping_8cpp" local="yes">demos/locked_cond_var_ping.cpp</includedby>
+    <includedby refid="locked__cond__var__pong_8cpp" local="yes">demos/locked_cond_var_pong.cpp</includedby>
+    <includedby refid="serialization_8cpp" local="yes">demos/serialization.cpp</includedby>
+    <includedby refid="set__data_8cpp" local="yes">demos/set_data.cpp</includedby>
+    <includedby refid="array_8hpp" local="yes">include/shared_memory/array.hpp</includedby>
+    <includedby refid="exchange__manager__memory_8hpp" local="yes">include/shared_memory/internal/exchange_manager_memory.hpp</includedby>
+    <includedby refid="locked__condition__variable_8hpp" local="yes">include/shared_memory/locked_condition_variable.hpp</includedby>
+    <includedby refid="mutex_8hpp" local="no">include/shared_memory/mutex.hpp</includedby>
+    <includedby refid="serializable__exchange_8hpp" local="yes">include/shared_memory/serializable_exchange.hpp</includedby>
+    <includedby refid="shared__memory_8hxx" local="no">include/shared_memory/shared_memory.hxx</includedby>
+    <includedby refid="shared__memory_8cpp" local="yes">src/shared_memory.cpp</includedby>
+    <incdepgraph>
+      <node id="1241">
+        <label>shared_memory/serializer.hxx</label>
+        <link refid="serializer_8hxx_source"/>
+      </node>
+      <node id="1237">
+        <label>cereal/archives/binary.hpp</label>
+      </node>
+      <node id="1232">
+        <label>shared_memory/exceptions.h</label>
+        <link refid="exceptions_8h"/>
+        <childnode refid="1233" relation="include">
+        </childnode>
+        <childnode refid="1221" relation="include">
+        </childnode>
+        <childnode refid="1234" relation="include">
+        </childnode>
+        <childnode refid="1224" relation="include">
+        </childnode>
+      </node>
+      <node id="1236">
+        <label>shared_memory/serializer.hpp</label>
+        <link refid="serializer_8hpp_source"/>
+        <childnode refid="1237" relation="include">
+        </childnode>
+        <childnode refid="1238" relation="include">
+        </childnode>
+        <childnode refid="1239" relation="include">
+        </childnode>
+        <childnode refid="1234" relation="include">
+        </childnode>
+        <childnode refid="1240" relation="include">
+        </childnode>
+        <childnode refid="1241" relation="include">
+        </childnode>
+      </node>
+      <node id="1220">
+        <label>include/shared_memory/shared_memory.hpp</label>
+        <link refid="shared__memory_8hpp"/>
+        <childnode refid="1221" relation="include">
+        </childnode>
+        <childnode refid="1222" relation="include">
+        </childnode>
+        <childnode refid="1223" relation="include">
+        </childnode>
+        <childnode refid="1224" relation="include">
+        </childnode>
+        <childnode refid="1225" relation="include">
+        </childnode>
+        <childnode refid="1226" relation="include">
+        </childnode>
+        <childnode refid="1227" relation="include">
+        </childnode>
+        <childnode refid="1228" relation="include">
+        </childnode>
+        <childnode refid="1229" relation="include">
+        </childnode>
+        <childnode refid="1230" relation="include">
+        </childnode>
+        <childnode refid="1231" relation="include">
+        </childnode>
+        <childnode refid="1232" relation="include">
+        </childnode>
+        <childnode refid="1235" relation="include">
+        </childnode>
+        <childnode refid="1236" relation="include">
+        </childnode>
+        <childnode refid="1242" relation="include">
+        </childnode>
+      </node>
+      <node id="1229">
+        <label>boost/interprocess/containers/string.hpp</label>
+      </node>
+      <node id="1224">
+        <label>string</label>
+      </node>
+      <node id="1222">
+        <label>map</label>
+      </node>
+      <node id="1233">
+        <label>exception</label>
+      </node>
+      <node id="1242">
+        <label>shared_memory/shared_memory.hxx</label>
+        <link refid="shared__memory_8hxx"/>
+        <childnode refid="1220" relation="include">
+        </childnode>
+      </node>
+      <node id="1230">
+        <label>boost/interprocess/containers/vector.hpp</label>
+      </node>
+      <node id="1225">
+        <label>vector</label>
+      </node>
+      <node id="1228">
+        <label>boost/interprocess/containers/deque.hpp</label>
+      </node>
+      <node id="1240">
+        <label>utility</label>
+      </node>
+      <node id="1234">
+        <label>sstream</label>
+      </node>
+      <node id="1227">
+        <label>boost/interprocess/allocators/allocator.hpp</label>
+      </node>
+      <node id="1221">
+        <label>iostream</label>
+      </node>
+      <node id="1235">
+        <label>shared_memory/segment_info.hpp</label>
+        <link refid="segment__info_8hpp_source"/>
+        <childnode refid="1231" relation="include">
+        </childnode>
+        <childnode refid="1221" relation="include">
+        </childnode>
+      </node>
+      <node id="1223">
+        <label>mutex</label>
+      </node>
+      <node id="1226">
+        <label>eigen3/Eigen/Core</label>
+      </node>
+      <node id="1238">
+        <label>cereal/types/array.hpp</label>
+      </node>
+      <node id="1231">
+        <label>boost/interprocess/managed_shared_memory.hpp</label>
+      </node>
+      <node id="1239">
+        <label>cereal/types/vector.hpp</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1250">
+        <label>demos/demo_write_array.cpp</label>
+        <link refid="demo__write__array_8cpp"/>
+      </node>
+      <node id="1256">
+        <label>include/shared_memory/exchange_manager_producer.hpp</label>
+        <link refid="exchange__manager__producer_8hpp"/>
+        <childnode refid="1254" relation="include">
+        </childnode>
+        <childnode refid="1255" relation="include">
+        </childnode>
+      </node>
+      <node id="1248">
+        <label>include/shared_memory/array.hpp</label>
+        <link refid="array_8hpp_source"/>
+        <childnode refid="1249" relation="include">
+        </childnode>
+        <childnode refid="1250" relation="include">
+        </childnode>
+      </node>
+      <node id="1263">
+        <label>src/shared_memory.cpp</label>
+        <link refid="shared__memory_8cpp"/>
+      </node>
+      <node id="1252">
+        <label>include/shared_memory/exchange_manager_consumer.hpp</label>
+        <link refid="exchange__manager__consumer_8hpp"/>
+        <childnode refid="1253" relation="include">
+        </childnode>
+        <childnode refid="1254" relation="include">
+        </childnode>
+        <childnode refid="1255" relation="include">
+        </childnode>
+      </node>
+      <node id="1257">
+        <label>include/shared_memory/locked_condition_variable.hpp</label>
+        <link refid="locked__condition__variable_8hpp_source"/>
+      </node>
+      <node id="1243">
+        <label>include/shared_memory/shared_memory.hpp</label>
+        <link refid="shared__memory_8hpp"/>
+        <childnode refid="1244" relation="include">
+        </childnode>
+        <childnode refid="1245" relation="include">
+        </childnode>
+        <childnode refid="1246" relation="include">
+        </childnode>
+        <childnode refid="1247" relation="include">
+        </childnode>
+        <childnode refid="1248" relation="include">
+        </childnode>
+        <childnode refid="1251" relation="include">
+        </childnode>
+        <childnode refid="1257" relation="include">
+        </childnode>
+        <childnode refid="1258" relation="include">
+        </childnode>
+        <childnode refid="1261" relation="include">
+        </childnode>
+        <childnode refid="1262" relation="include">
+        </childnode>
+        <childnode refid="1263" relation="include">
+        </childnode>
+      </node>
+      <node id="1247">
+        <label>demos/set_data.cpp</label>
+        <link refid="set__data_8cpp"/>
+      </node>
+      <node id="1251">
+        <label>include/shared_memory/internal/exchange_manager_memory.hpp</label>
+        <link refid="exchange__manager__memory_8hpp"/>
+        <childnode refid="1252" relation="include">
+        </childnode>
+        <childnode refid="1256" relation="include">
+        </childnode>
+      </node>
+      <node id="1245">
+        <label>benchmarks/stress_set_api.cpp</label>
+        <link refid="stress__set__api_8cpp"/>
+      </node>
+      <node id="1258">
+        <label>include/shared_memory/mutex.hpp</label>
+        <link refid="mutex_8hpp_source"/>
+        <childnode refid="1248" relation="include">
+        </childnode>
+        <childnode refid="1251" relation="include">
+        </childnode>
+        <childnode refid="1259" relation="include">
+        </childnode>
+        <childnode refid="1257" relation="include">
+        </childnode>
+      </node>
+      <node id="1249">
+        <label>demos/demo_read_array.cpp</label>
+        <link refid="demo__read__array_8cpp"/>
+      </node>
+      <node id="1262">
+        <label>include/shared_memory/shared_memory.hxx</label>
+        <link refid="shared__memory_8hxx"/>
+        <childnode refid="1243" relation="include">
+        </childnode>
+      </node>
+      <node id="1253">
+        <label>demos/exchange_manager_consumer.cpp</label>
+        <link refid="exchange__manager__consumer_8cpp"/>
+      </node>
+      <node id="1254">
+        <label>demos/exchange_manager_demo.cpp</label>
+        <link refid="exchange__manager__demo_8cpp"/>
+      </node>
+      <node id="1255">
+        <label>demos/exchange_manager_producer.cpp</label>
+        <link refid="exchange__manager__producer_8cpp"/>
+      </node>
+      <node id="1260">
+        <label>include/shared_memory/condition_variable.hpp</label>
+        <link refid="condition__variable_8hpp_source"/>
+      </node>
+      <node id="1244">
+        <label>benchmarks/stress_get_api.cpp</label>
+        <link refid="stress__get__api_8cpp"/>
+      </node>
+      <node id="1261">
+        <label>include/shared_memory/serializable_exchange.hpp</label>
+        <link refid="serializable__exchange_8hpp"/>
+      </node>
+      <node id="1246">
+        <label>demos/get_data.cpp</label>
+        <link refid="get__data_8cpp"/>
+      </node>
+      <node id="1259">
+        <label>include/shared_memory/lock.hpp</label>
+        <link refid="lock_8hpp_source"/>
+        <childnode refid="1260" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structshared__memory_1_1ShmTypeHelper" prot="public">shared_memory::ShmTypeHelper</innerclass>
+    <innerclass refid="classshared__memory_1_1SharedMemorySegment" prot="public">shared_memory::SharedMemorySegment</innerclass>
+    <innernamespace refid="namespaceshared__memory">shared_memory</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="shared__memory_8hpp_1af8fac614ab43478ad2a38d973f7ead6a" prot="public" static="no">
+        <name>SHARED_MEMORY_HPP</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/shared_memory.hpp" line="18" column="9" bodyfile="include/shared_memory/shared_memory.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="shared__memory_8hpp_1acd2f5089f8d2870e833cdc9f7af461ec" prot="public" static="no">
+        <name>DEFAULT_SHARED_MEMORY_SIZE</name>
+        <initializer>65536</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/shared_memory.hpp" line="38" column="9" bodyfile="include/shared_memory/shared_memory.hpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="shared__memory_8hpp_1af899411657e43cb548bc58ef7d88bec9" prot="public" static="no">
+        <name>MAP_STRING_KEY_SEPARATOR</name>
+        <initializer>&apos;;&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/shared_memory.hpp" line="39" column="9" bodyfile="include/shared_memory/shared_memory.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file declares a class that is used for shared memory segment introspection (e.g. used and free memory) </para>    </briefdescription>
+    <detaileddescription>
+<para>This file declares some function that encapsulate the use of the shared memory using the boost::interprocess package. usage: see demos and unit tests and documentation.</para><para><simplesect kind="author"><para>Vincent Berenz </para></simplesect>
+<simplesect kind="author"><para>Maximilien Naveau (<ulink url="mailto:maximilien.naveau@gmail.com">maximilien.naveau@gmail.com</ulink>) </para></simplesect>
+<xrefsect id="license_1_license000024"><xreftitle>License</xreftitle><xrefdescription><para>License BSD-3-Clause </para></xrefdescription></xrefsect><simplesect kind="copyright"><para>Copyright (c) 2019, New York University and Max Planck Gesellschaft. </para></simplesect>
+<simplesect kind="date"><para>2019-05-22</para></simplesect>
+<simplesect kind="author"><para>Vincent Berenz </para></simplesect>
+<simplesect kind="author"><para>Maximilien Naveau (<ulink url="mailto:maximilien.naveau@gmail.com">maximilien.naveau@gmail.com</ulink>) </para></simplesect>
+<xrefsect id="license_1_license000028"><xreftitle>License</xreftitle><xrefdescription><para>License BSD-3-Clause </para></xrefdescription></xrefsect><simplesect kind="copyright"><para>Copyright (c) 2019, New York University and Max Planck Gesellschaft. </para></simplesect>
+<simplesect kind="date"><para>2019-05-22 </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="15"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SHARED_MEMORY_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SHARED_MEMORY_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;eigen3/Eigen/Core&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/interprocess/allocators/allocator.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/interprocess/containers/deque.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/interprocess/containers/string.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/interprocess/containers/vector.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/interprocess/managed_shared_memory.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="exceptions_8h" kindref="compound">shared_memory/exceptions.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;shared_memory/segment_info.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;shared_memory/serializer.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DEFAULT_SHARED_MEMORY_SIZE<sp/>65536</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAP_STRING_KEY_SEPARATOR<sp/>&apos;;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="comment">//<sp/>cool<sp/>doc:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">//<sp/>https://theboostcpplibraries.com/boost.interprocess-managed-shared-memory</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">//<sp/>https://www.boost.org/doc/libs/1_63_0/doc/html/interprocess/quick_guide.html</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceshared__memory" kindref="compound">shared_memory</ref></highlight></codeline>
+<codeline lineno="50"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="62"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceshared__memory_1ac8ef94dc78f444092f488f0143b155f2" kindref="member">set_segment_sizes</ref>(uint<sp/>multiplier_1025);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceshared__memory_1a841687861fcc9efe381ffbe84843ca33" kindref="member">set_default_segment_sizes</ref>();</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="comment">/***********************</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>*<sp/>Typdef<sp/>declarations<sp/>*</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/>***********************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="namespaceshared__memory_1ae50b2192256821112a69e47d5314b467" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::map&lt;std::string,<sp/>std::pair&lt;void*,<sp/>std::size_t&gt;&gt;<sp/><ref refid="namespaceshared__memory_1ae50b2192256821112a69e47d5314b467" kindref="member">ShmObjects</ref>;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>ElemType&gt;</highlight></codeline>
+<codeline lineno="85" refid="structshared__memory_1_1ShmTypeHelper" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structshared__memory_1_1ShmTypeHelper" kindref="compound">ShmTypeHelper</ref></highlight></codeline>
+<codeline lineno="86"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>boost::interprocess::allocator&lt;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ElemType,</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::interprocess::managed_shared_memory::segment_manager&gt;</highlight></codeline>
+<codeline lineno="94" refid="structshared__memory_1_1ShmTypeHelper_1a8f19a7da45c3208eade1e5943588e5da" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structshared__memory_1_1ShmTypeHelper_1a8f19a7da45c3208eade1e5943588e5da" kindref="member">ElemTypeAllocator</ref>;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>boost::container::deque&lt;ElemType,</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structshared__memory_1_1ShmTypeHelper_1a8f19a7da45c3208eade1e5943588e5da" kindref="member">ShmTypeHelper&lt;ElemType&gt;::ElemTypeAllocator</ref>&gt;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ShmDeque;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>boost::container::vector&lt;ElemType,</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structshared__memory_1_1ShmTypeHelper_1a8f19a7da45c3208eade1e5943588e5da" kindref="member">ShmTypeHelper&lt;ElemType&gt;::ElemTypeAllocator</ref>&gt;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ShmVector;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="namespaceshared__memory_1a36a105df63154c883e86f4282f380647" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="structshared__memory_1_1ShmTypeHelper_1a8f19a7da45c3208eade1e5943588e5da" kindref="member">ShmTypeHelper&lt;char&gt;::ElemTypeAllocator</ref><sp/><ref refid="namespaceshared__memory_1a36a105df63154c883e86f4282f380647" kindref="member">ShmCharAllocator</ref>;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::basic_string&lt;char,<sp/>std::char_traits&lt;char&gt;,<sp/>ShmCharAllocator&gt;</highlight></codeline>
+<codeline lineno="114" refid="namespaceshared__memory_1a07ee51d077030d33ba8408f5938569cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceshared__memory_1a07ee51d077030d33ba8408f5938569cc" kindref="member">ShmString</ref>;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="comment">/************************************************</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/>*<sp/>Declaration<sp/>of<sp/>the<sp/>SharedMemorySegment<sp/>class<sp/>*</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/>************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128" refid="classshared__memory_1_1SharedMemorySegment" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classshared__memory_1_1SharedMemorySegment" kindref="compound">SharedMemorySegment</ref></highlight></codeline>
+<codeline lineno="129"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classshared__memory_1_1SharedMemorySegment" kindref="compound">SharedMemorySegment</ref>(std::string<sp/>segment_id,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>clear_upon_destruction);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139" refid="classshared__memory_1_1SharedMemorySegment_1a9f02fd9f35950df5f6ce7ceaba5fbb53" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classshared__memory_1_1SharedMemorySegment_1a9f02fd9f35950df5f6ce7ceaba5fbb53" kindref="member">~SharedMemorySegment</ref>()</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>clear_memory();</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>ElemType&gt;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>get_object(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>object_id,</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::pair&lt;ElemType*,<sp/>std::size_t&gt;&amp;<sp/>get_);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>get_object(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>object_id,<sp/>std::string&amp;<sp/>get_);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>ElemType&gt;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>set_object(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>object_id,</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::pair&lt;const<sp/>ElemType*,<sp/>std::size_t&gt;&amp;<sp/>set_);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>ElemType&gt;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>register_object(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>object_id,</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::pair&lt;ElemType*,<sp/>std::size_t&gt;&amp;<sp/>obj_);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>ElemType&gt;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>register_object_read_only(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>object_id);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>ElemType&gt;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceshared__memory_1a7b43b29fa0aa6a5cad0ca47afdd03e83" kindref="member">delete_object</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>object_id);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212" refid="classshared__memory_1_1SharedMemorySegment_1a9e72fec52b3c76b9c2b0809b40b4e11d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::interprocess::interprocess_mutex*<sp/><ref refid="classshared__memory_1_1SharedMemorySegment_1a9e72fec52b3c76b9c2b0809b40b4e11d" kindref="member">mutex_</ref>;</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>boost::interprocess::named_mutex<sp/>named_mtx_;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219" refid="classshared__memory_1_1SharedMemorySegment_1ac8bbbc98968a8a2b3fe35c50e0768d8f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classshared__memory_1_1SharedMemorySegment_1ac8bbbc98968a8a2b3fe35c50e0768d8f" kindref="member">create_mutex</ref>()</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mutex_<sp/>=</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>segment_manager_</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.find_or_construct&lt;boost::interprocess::interprocess_mutex&gt;(</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;mutex_&quot;</highlight><highlight class="normal">)();</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231" refid="classshared__memory_1_1SharedMemorySegment_1a64d69c4965cd448040bc20e4f9009abc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classshared__memory_1_1SharedMemorySegment_1a64d69c4965cd448040bc20e4f9009abc" kindref="member">destroy_mutex</ref>()</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>segment_manager_.destroy&lt;boost::interprocess::interprocess_mutex&gt;(</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;mutex_&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mutex_<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244" refid="classshared__memory_1_1SharedMemorySegment_1ae7a86bba2f8158917b48c0bd3a7bdf9b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classshared__memory_1_1SharedMemorySegment_1ae7a86bba2f8158917b48c0bd3a7bdf9b" kindref="member">is_object_registered</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>object_id)</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!(objects_.count(object_id)<sp/>==<sp/>0<sp/>||</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objects_[object_id].first<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="254" refid="classshared__memory_1_1SharedMemorySegment_1ae2eb51704f44076db6ce79054e9d2572" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classshared__memory_1_1SharedMemorySegment_1ae2eb51704f44076db6ce79054e9d2572" kindref="member">set_clear_upon_destruction</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>clear_upon_destruction)</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>clear_upon_destruction_<sp/>=<sp/>clear_upon_destruction;</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263" refid="classshared__memory_1_1SharedMemorySegment_1ab7f1f01a94d4e45ed907be9bcdb71a24" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="classshared__memory_1_1SharedMemorySegment_1ab7f1f01a94d4e45ed907be9bcdb71a24" kindref="member">get_segment_id</ref>()</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>segment_id_;</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>dev<sp/>notes:<sp/>boost<sp/>api<sp/>does<sp/>not<sp/>allow<sp/>for<sp/>this<sp/>method</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>to<sp/>be<sp/>const</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="274" refid="classshared__memory_1_1SharedMemorySegment_1aa742cf04463a94a51239b96de2da6947" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classshared__memory_1_1SegmentInfo" kindref="compound">SegmentInfo</ref><sp/><ref refid="classshared__memory_1_1SharedMemorySegment_1aa742cf04463a94a51239b96de2da6947" kindref="member">get_info</ref>()</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classshared__memory_1_1SegmentInfo" kindref="compound">SegmentInfo</ref><sp/>si(segment_manager_);</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>si;</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="285" refid="classshared__memory_1_1SharedMemorySegment_1af775c0982687b6e9bc9856b21aa1e009" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::interprocess::managed_shared_memory<sp/><ref refid="classshared__memory_1_1SharedMemorySegment_1af775c0982687b6e9bc9856b21aa1e009" kindref="member">segment_manager_</ref>;</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight></codeline>
+<codeline lineno="295" refid="classshared__memory_1_1SharedMemorySegment_1a8c4d0eb6f2a620bf7e5b22a57c07380b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>ShmObjects<sp/><ref refid="classshared__memory_1_1SharedMemorySegment_1a8c4d0eb6f2a620bf7e5b22a57c07380b" kindref="member">objects_</ref>;</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300" refid="classshared__memory_1_1SharedMemorySegment_1a08408dc6b860388eb3b08e493f0188d9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classshared__memory_1_1SharedMemorySegment_1a08408dc6b860388eb3b08e493f0188d9" kindref="member">segment_id_</ref>;</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"></highlight></codeline>
+<codeline lineno="308" refid="classshared__memory_1_1SharedMemorySegment_1af50ac70dca284926b15803f86958b220" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classshared__memory_1_1SharedMemorySegment_1af50ac70dca284926b15803f86958b220" kindref="member">clear_upon_destruction_</ref>;</highlight></codeline>
+<codeline lineno="309"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight><highlight class="comment">/**************************************************</highlight></codeline>
+<codeline lineno="312"><highlight class="comment"><sp/>*<sp/>Declaration<sp/>of<sp/>all<sp/>segment<sp/>management<sp/>function<sp/>*</highlight></codeline>
+<codeline lineno="313"><highlight class="comment"><sp/>**************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><ref refid="classshared__memory_1_1SharedMemorySegment" kindref="compound">SharedMemorySegment</ref>&amp;<sp/><ref refid="namespaceshared__memory_1a7c76ec22ab70d3b7487becd3ec9943bc" kindref="member">get_segment</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>segment_id,</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>clear_upon_destruction<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"></highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><ref refid="classshared__memory_1_1SegmentInfo" kindref="compound">SegmentInfo</ref><sp/><ref refid="namespaceshared__memory_1a70f7613a247615e323cab083934c803e" kindref="member">get_segment_info</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>segment_id,</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>clear_upon_destruction<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight></codeline>
+<codeline lineno="335"><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceshared__memory_1a82297c2b7b85c57c53578749c9bd6429" kindref="member">segment_exists</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>segment_id);</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceshared__memory_1a60cbce63ae7fb64a2758b773f9006471" kindref="member">delete_segment</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>segment_id);</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"></highlight></codeline>
+<codeline lineno="349"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceshared__memory_1a1f88dd41dca9a23387090866213dbd85" kindref="member">delete_all_segment</ref>();</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"></highlight></codeline>
+<codeline lineno="357"><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>ElemType&gt;</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceshared__memory_1a7b43b29fa0aa6a5cad0ca47afdd03e83" kindref="member">delete_object</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>segment_id,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>object_id);</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"></highlight></codeline>
+<codeline lineno="365"><highlight class="normal">boost::interprocess::interprocess_mutex&amp;<sp/><ref refid="namespaceshared__memory_1aed33c9701140a1c43e40f182a380199b" kindref="member">get_segment_mutex</ref>(</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>segment_id);</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"></highlight></codeline>
+<codeline lineno="372"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceshared__memory_1aa8583540879db53fc80b31410b5eec68" kindref="member">clear_shared_memory</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>segment_id);</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"></highlight></codeline>
+<codeline lineno="374"><highlight class="normal"></highlight><highlight class="comment">/************************************</highlight></codeline>
+<codeline lineno="375"><highlight class="comment"><sp/>*<sp/>Declaration<sp/>of<sp/>all<sp/>set<sp/>functions<sp/>*</highlight></codeline>
+<codeline lineno="376"><highlight class="comment"><sp/>************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="377"><highlight class="normal"></highlight></codeline>
+<codeline lineno="389"><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>ElemType&gt;</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">set</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>segment_id,</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>object_id,</highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ElemType&amp;<sp/>set_);</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"></highlight></codeline>
+<codeline lineno="407"><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>ElemType&gt;</highlight></codeline>
+<codeline lineno="408"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">set</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>segment_id,</highlight></codeline>
+<codeline lineno="409"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>object_id,</highlight></codeline>
+<codeline lineno="410"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ElemType*<sp/>set_,</highlight></codeline>
+<codeline lineno="411"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::size_t<sp/>size);</highlight></codeline>
+<codeline lineno="412"><highlight class="normal"></highlight></codeline>
+<codeline lineno="423"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">set</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>segment_id,</highlight></codeline>
+<codeline lineno="424"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>object_id,</highlight></codeline>
+<codeline lineno="425"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>set_);</highlight></codeline>
+<codeline lineno="426"><highlight class="normal"></highlight></codeline>
+<codeline lineno="439"><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>ElemType&gt;</highlight></codeline>
+<codeline lineno="440"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">set</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>segment_id,</highlight></codeline>
+<codeline lineno="441"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>object_id,</highlight></codeline>
+<codeline lineno="442"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;ElemType&gt;&amp;<sp/>set_);</highlight></codeline>
+<codeline lineno="443"><highlight class="normal"></highlight></codeline>
+<codeline lineno="456"><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>ElemType&gt;</highlight></codeline>
+<codeline lineno="457"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">set</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>segment_id,</highlight></codeline>
+<codeline lineno="458"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>object_id,</highlight></codeline>
+<codeline lineno="459"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Matrix&lt;ElemType,<sp/>Eigen::Dynamic,<sp/>1&gt;&amp;<sp/>set_);</highlight></codeline>
+<codeline lineno="460"><highlight class="normal"></highlight></codeline>
+<codeline lineno="473"><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>FirstType,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>SecondType&gt;</highlight></codeline>
+<codeline lineno="474"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">set</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>segment_id,</highlight></codeline>
+<codeline lineno="475"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>object_id,</highlight></codeline>
+<codeline lineno="476"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::pair&lt;FirstType,<sp/>SecondType&gt;&amp;<sp/>set_);</highlight></codeline>
+<codeline lineno="477"><highlight class="normal"></highlight></codeline>
+<codeline lineno="490"><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>KeyType,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>ValueType&gt;</highlight></codeline>
+<codeline lineno="491"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">set</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>segment_id,</highlight></codeline>
+<codeline lineno="492"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>object_id,</highlight></codeline>
+<codeline lineno="493"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::map&lt;KeyType,<sp/>ValueType&gt;&amp;<sp/>set_);</highlight></codeline>
+<codeline lineno="494"><highlight class="normal"></highlight></codeline>
+<codeline lineno="495"><highlight class="normal"></highlight><highlight class="comment">/************************************</highlight></codeline>
+<codeline lineno="496"><highlight class="comment"><sp/>*<sp/>Declaration<sp/>of<sp/>all<sp/>get<sp/>functions<sp/>*</highlight></codeline>
+<codeline lineno="497"><highlight class="comment"><sp/>************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="498"><highlight class="normal"></highlight></codeline>
+<codeline lineno="510"><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>ElemType&gt;</highlight></codeline>
+<codeline lineno="511"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">get</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>segment_id,</highlight></codeline>
+<codeline lineno="512"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>object_id,</highlight></codeline>
+<codeline lineno="513"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ElemType&amp;<sp/>get_);</highlight></codeline>
+<codeline lineno="514"><highlight class="normal"></highlight></codeline>
+<codeline lineno="528"><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>ElemType&gt;</highlight></codeline>
+<codeline lineno="529"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">get</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>segment_id,</highlight></codeline>
+<codeline lineno="530"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>object_id,</highlight></codeline>
+<codeline lineno="531"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ElemType*<sp/>get_,</highlight></codeline>
+<codeline lineno="532"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::size_t<sp/>expected_size);</highlight></codeline>
+<codeline lineno="533"><highlight class="normal"></highlight></codeline>
+<codeline lineno="544"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">get</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>segment_id,</highlight></codeline>
+<codeline lineno="545"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>object_id,</highlight></codeline>
+<codeline lineno="546"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string&amp;<sp/>get_);</highlight></codeline>
+<codeline lineno="547"><highlight class="normal"></highlight></codeline>
+<codeline lineno="560"><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>ElemType&gt;</highlight></codeline>
+<codeline lineno="561"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">get</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>segment_id,</highlight></codeline>
+<codeline lineno="562"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>object_id,</highlight></codeline>
+<codeline lineno="563"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;ElemType&gt;&amp;<sp/>get_);</highlight></codeline>
+<codeline lineno="564"><highlight class="normal"></highlight></codeline>
+<codeline lineno="577"><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>ElemType&gt;</highlight></codeline>
+<codeline lineno="578"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">get</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>segment_id,</highlight></codeline>
+<codeline lineno="579"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>object_id,</highlight></codeline>
+<codeline lineno="580"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::Matrix&lt;ElemType,<sp/>Eigen::Dynamic,<sp/>1&gt;&amp;<sp/>get_);</highlight></codeline>
+<codeline lineno="581"><highlight class="normal"></highlight></codeline>
+<codeline lineno="594"><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>FirstType,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>SecondType&gt;</highlight></codeline>
+<codeline lineno="595"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">get</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>segment_id,</highlight></codeline>
+<codeline lineno="596"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>object_id,</highlight></codeline>
+<codeline lineno="597"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::pair&lt;FirstType,<sp/>SecondType&gt;&amp;<sp/>get_);</highlight></codeline>
+<codeline lineno="598"><highlight class="normal"></highlight></codeline>
+<codeline lineno="611"><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>KeyType,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>ValueType&gt;</highlight></codeline>
+<codeline lineno="612"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">get</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>segment_id,</highlight></codeline>
+<codeline lineno="613"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>object_id,</highlight></codeline>
+<codeline lineno="614"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::map&lt;KeyType,<sp/>ValueType&gt;&amp;<sp/>get_);</highlight></codeline>
+<codeline lineno="615"><highlight class="normal"></highlight></codeline>
+<codeline lineno="625"><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Serializable&gt;</highlight></codeline>
+<codeline lineno="626" refid="namespaceshared__memory_1a003005dc269ebf79f08523dc0f8d1ed0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceshared__memory_1a003005dc269ebf79f08523dc0f8d1ed0" kindref="member">serialize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>segment,</highlight></codeline>
+<codeline lineno="627"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="628"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classSerializable" kindref="compound">Serializable</ref>&amp;<sp/>serializable)</highlight></codeline>
+<codeline lineno="629"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="630"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classshared__memory_1_1Serializer" kindref="compound">Serializer&lt;Serializable&gt;</ref><sp/>serializer;</highlight></codeline>
+<codeline lineno="631"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>data<sp/>=<sp/>serializer.<ref refid="classshared__memory_1_1Serializer_1a61ea01a0e5e28fc24c9274455050b1c1" kindref="member">serialize</ref>(serializable);</highlight></codeline>
+<codeline lineno="632"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceshared__memory_1ace68bf582cfe50ba83a9cfc9b7aed3b2" kindref="member">shared_memory::set</ref>(segment,<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal">,<sp/>data);</highlight></codeline>
+<codeline lineno="633"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="634"><highlight class="normal"></highlight></codeline>
+<codeline lineno="645"><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Serializable&gt;</highlight></codeline>
+<codeline lineno="646" refid="namespaceshared__memory_1a33e39adccccefb603e2dafc7ea8733e8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceshared__memory_1a33e39adccccefb603e2dafc7ea8733e8" kindref="member">deserialize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>segment,</highlight></codeline>
+<codeline lineno="647"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="648"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSerializable" kindref="compound">Serializable</ref>&amp;<sp/>serializable)</highlight></codeline>
+<codeline lineno="649"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="650"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classshared__memory_1_1Serializer" kindref="compound">Serializer&lt;Serializable&gt;</ref><sp/>serializer;</highlight></codeline>
+<codeline lineno="651"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::string<sp/>data;</highlight></codeline>
+<codeline lineno="652"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceshared__memory_1ad017562102dbe044db2de6c79c0669d3" kindref="member">shared_memory::get</ref>(segment,<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal">,<sp/>data);</highlight></codeline>
+<codeline lineno="653"><highlight class="normal"><sp/><sp/><sp/><sp/>serializer.<ref refid="classshared__memory_1_1Serializer_1a8f674c9b3a7c053403112d2fad4e09a9" kindref="member">deserialize</ref>(data,<sp/>serializable);</highlight></codeline>
+<codeline lineno="654"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="655"><highlight class="normal"></highlight></codeline>
+<codeline lineno="662"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceshared__memory_1afe26d531f043f59bb36ea7816b8a40bf" kindref="member">set_verbose</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>mode);</highlight></codeline>
+<codeline lineno="663"><highlight class="normal"></highlight></codeline>
+<codeline lineno="664"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>shared_memory</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="665"><highlight class="normal"></highlight></codeline>
+<codeline lineno="666"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="shared__memory_8hxx" kindref="compound">shared_memory/shared_memory.hxx</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="667"><highlight class="normal"></highlight></codeline>
+<codeline lineno="668"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>SHARED_MEMORY_HPP</highlight></codeline>
+    </programlisting>
+    <location file="include/shared_memory/shared_memory.hpp"/>
+  </compounddef>
+</doxygen>

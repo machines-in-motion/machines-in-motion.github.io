@@ -1,0 +1,655 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classshared__memory_1_1internal_1_1Exchange__manager__memory" kind="class" language="C++" prot="public">
+    <compoundname>shared_memory::internal::Exchange_manager_memory</compoundname>
+    <templateparamlist>
+      <param>
+        <type>class <ref refid="classSerializable" kindref="compound">Serializable</ref></type>
+      </param>
+      <param>
+        <type>int</type>
+        <declname>QUEUE_SIZE</declname>
+        <defname>QUEUE_SIZE</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a111ddeef03bfb038bcbc170c28878c08" prot="public" static="no">
+        <name>Status</name>
+        <enumvalue id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a111ddeef03bfb038bcbc170c28878c08ac60720cbbc2fc2421b210ed6da63eb4a" prot="public">
+          <name>RESET</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a111ddeef03bfb038bcbc170c28878c08a437ddb419cf9c1a6399e3a98eae3db51" prot="public">
+          <name>WAITING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a111ddeef03bfb038bcbc170c28878c08ad7cbdf97bec755c256d0777f729fa0b1" prot="public">
+          <name>RUNNING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="89" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="88" bodyend="93"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1acd7500dc11fa85fdff1c62b3bfec9bb5" prot="private" static="no">
+        <type>boost::lockfree::queue&lt; char, boost::lockfree::fixed_sized&lt; true &gt;, boost::lockfree::capacity&lt; QUEUE_SIZE &gt; &gt;</type>
+        <definition>typedef boost::lockfree::queue&lt;char, boost::lockfree::fixed_sized&lt;true&gt;, boost::lockfree::capacity&lt;QUEUE_SIZE&gt; &gt; shared_memory::internal::Exchange_manager_memory&lt; Serializable, QUEUE_SIZE &gt;::producer_queue</definition>
+        <argsstring></argsstring>
+        <name>producer_queue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="81" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1acfdce096249f1dd920c42d65176ba587" prot="private" static="no">
+        <type>boost::lockfree::queue&lt; int, boost::lockfree::fixed_sized&lt; true &gt;, boost::lockfree::capacity&lt; QUEUE_SIZE &gt; &gt;</type>
+        <definition>typedef boost::lockfree::queue&lt;int, boost::lockfree::fixed_sized&lt;true&gt;, boost::lockfree::capacity&lt;QUEUE_SIZE&gt; &gt; shared_memory::internal::Exchange_manager_memory&lt; Serializable, QUEUE_SIZE &gt;::consumer_queue</definition>
+        <argsstring></argsstring>
+        <name>consumer_queue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="85" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a954428f2d2e9f7b29cd4201bfb7fa51c" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int shared_memory::internal::Exchange_manager_memory&lt; Serializable, QUEUE_SIZE &gt;::nb_char_read_</definition>
+        <argsstring></argsstring>
+        <name>nb_char_read_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="128" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a5669c5ec75442d54fd5e004a464233da" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int shared_memory::internal::Exchange_manager_memory&lt; Serializable, QUEUE_SIZE &gt;::nb_char_written_</definition>
+        <argsstring></argsstring>
+        <name>nb_char_written_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="129" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a8d9578755fec571f772caec5908fdd38" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string shared_memory::internal::Exchange_manager_memory&lt; Serializable, QUEUE_SIZE &gt;::segment_id_</definition>
+        <argsstring></argsstring>
+        <name>segment_id_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="136" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1ab8c8000af66737cdc65a4a5b6c62cbd8" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string shared_memory::internal::Exchange_manager_memory&lt; Serializable, QUEUE_SIZE &gt;::object_id_producer_</definition>
+        <argsstring></argsstring>
+        <name>object_id_producer_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="137" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1ae438583144066ca87b4e1d12065b6e83" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string shared_memory::internal::Exchange_manager_memory&lt; Serializable, QUEUE_SIZE &gt;::object_id_consumer_</definition>
+        <argsstring></argsstring>
+        <name>object_id_consumer_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="138" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1aa01b4baeff59e90eb679b1fbf3099a02" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string shared_memory::internal::Exchange_manager_memory&lt; Serializable, QUEUE_SIZE &gt;::object_id_status_</definition>
+        <argsstring></argsstring>
+        <name>object_id_status_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="139" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a91205f52e14b9e843f3ba07b9c3d4d14" prot="public" static="no" mutable="no">
+        <type>bip::managed_shared_memory</type>
+        <definition>bip::managed_shared_memory shared_memory::internal::Exchange_manager_memory&lt; Serializable, QUEUE_SIZE &gt;::segment_</definition>
+        <argsstring></argsstring>
+        <name>segment_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="140" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1ab333730dadc8519f23608e77c0974928" prot="public" static="no" mutable="no">
+        <type>producer_queue *</type>
+        <definition>producer_queue* shared_memory::internal::Exchange_manager_memory&lt; Serializable, QUEUE_SIZE &gt;::produced_</definition>
+        <argsstring></argsstring>
+        <name>produced_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="141" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a2f3336a1a2a55972e4b1c61a81449fcb" prot="public" static="no" mutable="no">
+        <type>std::deque&lt; int &gt;</type>
+        <definition>std::deque&lt;int&gt; shared_memory::internal::Exchange_manager_memory&lt; Serializable, QUEUE_SIZE &gt;::consumed_buffer_</definition>
+        <argsstring></argsstring>
+        <name>consumed_buffer_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="142" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a859c731d30b829de85eb92ac9866ae36" prot="public" static="no" mutable="no">
+        <type>consumer_queue *</type>
+        <definition>consumer_queue* shared_memory::internal::Exchange_manager_memory&lt; Serializable, QUEUE_SIZE &gt;::consumed_</definition>
+        <argsstring></argsstring>
+        <name>consumed_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="143" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a32794be03e7f992a26fcad1f550a5b33" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* shared_memory::internal::Exchange_manager_memory&lt; Serializable, QUEUE_SIZE &gt;::values_</definition>
+        <argsstring></argsstring>
+        <name>values_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="144" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a44d72a699c2a76b2ef127f02ee37d26b" prot="public" static="no" mutable="no">
+        <type><ref refid="classshared__memory_1_1Mutex" kindref="compound">shared_memory::Mutex</ref></type>
+        <definition>shared_memory::Mutex shared_memory::internal::Exchange_manager_memory&lt; Serializable, QUEUE_SIZE &gt;::locker_</definition>
+        <argsstring></argsstring>
+        <name>locker_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="145" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a3a5127e519eec82ec2a4181eee4ddab5" prot="public" static="no" mutable="no">
+        <type><ref refid="classshared__memory_1_1internal_1_1Serialized__read" kindref="compound">Serialized_read</ref>&lt; <ref refid="classSerializable" kindref="compound">Serializable</ref> &gt;</type>
+        <definition>Serialized_read&lt;Serializable&gt; shared_memory::internal::Exchange_manager_memory&lt; Serializable, QUEUE_SIZE &gt;::serialized_read_</definition>
+        <argsstring></argsstring>
+        <name>serialized_read_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="146" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a1999cdf0f4f438e448bec0ef86a153b3" prot="public" static="no" mutable="no">
+        <type><ref refid="classshared__memory_1_1internal_1_1Serialized__write" kindref="compound">Serialized_write</ref>&lt; <ref refid="classSerializable" kindref="compound">Serializable</ref> &gt;</type>
+        <definition>Serialized_write&lt;Serializable&gt; shared_memory::internal::Exchange_manager_memory&lt; Serializable, QUEUE_SIZE &gt;::serialized_write_</definition>
+        <argsstring></argsstring>
+        <name>serialized_write_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="147" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1af2d9740e5a2c4498a3d234175c515f26" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int shared_memory::internal::Exchange_manager_memory&lt; Serializable, QUEUE_SIZE &gt;::serializable_size_</definition>
+        <argsstring></argsstring>
+        <name>serializable_size_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="148" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a4bb976aa1b16314bf4181035bb746869" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Exchange_manager_memory::Exchange_manager_memory</definition>
+        <argsstring>(std::string segment_id, std::string object_id)</argsstring>
+        <name>Exchange_manager_memory</name>
+        <param>
+          <type>std::string</type>
+          <declname>segment_id</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>object_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="96" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="120" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a021d123a58b5e0f47906f7550ebb9016" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Exchange_manager_memory::~Exchange_manager_memory</definition>
+        <argsstring>()</argsstring>
+        <name>~Exchange_manager_memory</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="97" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="180" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1aa0efbb57f5fafc8faa52f112b4db705e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Exchange_manager_memory::read_serialized</definition>
+        <argsstring>(Serializable &amp;serializable)</argsstring>
+        <name>read_serialized</name>
+        <param>
+          <type><ref refid="classSerializable" kindref="compound">Serializable</ref> &amp;</type>
+          <declname>serializable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="99" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="245" bodyend="266"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a4b5fddf9270c80e4fbcb041947b4142c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Exchange_manager_memory::write_serialized</definition>
+        <argsstring>(const Serializable &amp;serializable)</argsstring>
+        <name>write_serialized</name>
+        <param>
+          <type>const <ref refid="classSerializable" kindref="compound">Serializable</ref> &amp;</type>
+          <declname>serializable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="100" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="279" bodyend="304"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a89d6cea01eca5ba87bff929e6bc7049f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Exchange_manager_memory::write_serialized_id</definition>
+        <argsstring>(int id)</argsstring>
+        <name>write_serialized_id</name>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="101" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="327" bodyend="344"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1ae9babbca9b477db799c6bbfe3aab425b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Exchange_manager_memory::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="102" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="269" bodyend="276"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a166fd53fb2da0da38801138ff1119e4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Exchange_manager_memory::get_consumed_ids</definition>
+        <argsstring>(std::deque&lt; int &gt; &amp;get_ids)</argsstring>
+        <name>get_consumed_ids</name>
+        <param>
+          <type>std::deque&lt; int &gt; &amp;</type>
+          <declname>get_ids</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="103" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="347" bodyend="362"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a9294652f5d187c25308fc185107405ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Exchange_manager_memory::set_status</definition>
+        <argsstring>(Status status)</argsstring>
+        <name>set_status</name>
+        <param>
+          <type>Status</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="105" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="187" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a5c012017aedf7a85fce4f05e62a33ff5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Exchange_manager_memory::get_status</definition>
+        <argsstring>(Status &amp;status)</argsstring>
+        <name>get_status</name>
+        <param>
+          <type>Status &amp;</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="106" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="196" bodyend="206"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a328cc8181f3ad7e4b4f06c736e1c1d5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Exchange_manager_memory::purge_feedbacks</definition>
+        <argsstring>()</argsstring>
+        <name>purge_feedbacks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="108" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="307" bodyend="324"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1aa38a21be32f34e170e4f69824cd797a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Exchange_manager_memory::clean</definition>
+        <argsstring>()</argsstring>
+        <name>clean</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="110" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="209" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1adae77aef8f3669914535f35085be8192" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Exchange_manager_memory::lock</definition>
+        <argsstring>()</argsstring>
+        <name>lock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="112" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="217" bodyend="220"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1aa8723a5ac8aa9cd763ea7c5c18a89cf9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Exchange_manager_memory::unlock</definition>
+        <argsstring>()</argsstring>
+        <name>unlock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="113" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="223" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1ab06368350c662a6973426e4704d7832c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Exchange_manager_memory::consumer_queue_empty</definition>
+        <argsstring>() const</argsstring>
+        <name>consumer_queue_empty</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="115" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="384" bodyend="388"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a525e12ddfa2429a5f0d8c4e390fe14ff" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Exchange_manager_memory::producer_queue_empty</definition>
+        <argsstring>() const</argsstring>
+        <name>producer_queue_empty</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="116" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="391" bodyend="395"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a8d1197e044147a47f162c28e82ebf18a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Exchange_manager_memory::weird_purge</definition>
+        <argsstring>()</argsstring>
+        <name>weird_purge</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="118" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="151" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a871ca7c6476c78d1887e271b3f2bea62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Exchange_manager_memory::reset_char_count</definition>
+        <argsstring>()</argsstring>
+        <name>reset_char_count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="123" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="365" bodyend="369"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1ad30f6606b230c0fe4b4d3ec73da96a6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Exchange_manager_memory::nb_char_written</definition>
+        <argsstring>()</argsstring>
+        <name>nb_char_written</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="124" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="372" bodyend="375"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a76284109b7af9a05bf763154ba36391e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Exchange_manager_memory::nb_char_read</definition>
+        <argsstring>()</argsstring>
+        <name>nb_char_read</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="125" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="378" bodyend="381"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a080eaca6885c4760620fd1df11907b66" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Exchange_manager_memory::clean_mutex</definition>
+        <argsstring>(std::string segment_id)</argsstring>
+        <name>clean_mutex</name>
+        <param>
+          <type>std::string</type>
+          <declname>segment_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="132" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="229" bodyend="234"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1internal_1_1Exchange__manager__memory_1ab87f3b0b0511bebd1f084ca088044e5f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Exchange_manager_memory::clean_memory</definition>
+        <argsstring>(std::string segment_id)</argsstring>
+        <name>clean_memory</name>
+        <param>
+          <type>std::string</type>
+          <declname>segment_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="133" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="237" bodyend="242"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="25">
+        <label>shared_memory::Mutex</label>
+        <link refid="classshared__memory_1_1Mutex"/>
+      </node>
+      <node id="24">
+        <label>shared_memory::internal::Exchange_manager_memory&lt; Serializable, QUEUE_SIZE &gt;</label>
+        <link refid="classshared__memory_1_1internal_1_1Exchange__manager__memory"/>
+        <childnode refid="25" relation="usage">
+          <edgelabel>locker_</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/shared_memory/internal/exchange_manager_memory.hpp" line="77" column="1" bodyfile="include/shared_memory/internal/exchange_manager_memory.hpp" bodystart="76" bodyend="149"/>
+    <listofallmembers>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1aa38a21be32f34e170e4f69824cd797a6" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>clean</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1ab87f3b0b0511bebd1f084ca088044e5f" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>clean_memory</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a080eaca6885c4760620fd1df11907b66" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>clean_mutex</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1ae9babbca9b477db799c6bbfe3aab425b" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>clear</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a859c731d30b829de85eb92ac9866ae36" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>consumed_</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a2f3336a1a2a55972e4b1c61a81449fcb" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>consumed_buffer_</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1acfdce096249f1dd920c42d65176ba587" prot="private" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>consumer_queue</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1ab06368350c662a6973426e4704d7832c" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>consumer_queue_empty</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a4bb976aa1b16314bf4181035bb746869" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>Exchange_manager_memory</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a166fd53fb2da0da38801138ff1119e4c" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>get_consumed_ids</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a5c012017aedf7a85fce4f05e62a33ff5" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>get_status</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1adae77aef8f3669914535f35085be8192" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>lock</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a44d72a699c2a76b2ef127f02ee37d26b" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>locker_</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a76284109b7af9a05bf763154ba36391e" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>nb_char_read</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a954428f2d2e9f7b29cd4201bfb7fa51c" prot="private" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>nb_char_read_</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1ad30f6606b230c0fe4b4d3ec73da96a6c" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>nb_char_written</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a5669c5ec75442d54fd5e004a464233da" prot="private" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>nb_char_written_</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1ae438583144066ca87b4e1d12065b6e83" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>object_id_consumer_</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1ab8c8000af66737cdc65a4a5b6c62cbd8" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>object_id_producer_</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1aa01b4baeff59e90eb679b1fbf3099a02" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>object_id_status_</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1ab333730dadc8519f23608e77c0974928" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>produced_</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1acd7500dc11fa85fdff1c62b3bfec9bb5" prot="private" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>producer_queue</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a525e12ddfa2429a5f0d8c4e390fe14ff" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>producer_queue_empty</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a328cc8181f3ad7e4b4f06c736e1c1d5c" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>purge_feedbacks</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1aa0efbb57f5fafc8faa52f112b4db705e" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>read_serialized</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a111ddeef03bfb038bcbc170c28878c08ac60720cbbc2fc2421b210ed6da63eb4a" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>RESET</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a871ca7c6476c78d1887e271b3f2bea62" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>reset_char_count</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a111ddeef03bfb038bcbc170c28878c08ad7cbdf97bec755c256d0777f729fa0b1" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>RUNNING</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a91205f52e14b9e843f3ba07b9c3d4d14" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>segment_</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a8d9578755fec571f772caec5908fdd38" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>segment_id_</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1af2d9740e5a2c4498a3d234175c515f26" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>serializable_size_</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a3a5127e519eec82ec2a4181eee4ddab5" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>serialized_read_</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a1999cdf0f4f438e448bec0ef86a153b3" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>serialized_write_</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a9294652f5d187c25308fc185107405ce" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>set_status</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a111ddeef03bfb038bcbc170c28878c08" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>Status</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1aa8723a5ac8aa9cd763ea7c5c18a89cf9" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>unlock</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a32794be03e7f992a26fcad1f550a5b33" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>values_</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a111ddeef03bfb038bcbc170c28878c08a437ddb419cf9c1a6399e3a98eae3db51" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>WAITING</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a8d1197e044147a47f162c28e82ebf18a" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>weird_purge</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a4b5fddf9270c80e4fbcb041947b4142c" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>write_serialized</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a89d6cea01eca5ba87bff929e6bc7049f" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>write_serialized_id</name></member>
+      <member refid="classshared__memory_1_1internal_1_1Exchange__manager__memory_1a021d123a58b5e0f47906f7550ebb9016" prot="public" virt="non-virtual"><scope>shared_memory::internal::Exchange_manager_memory</scope><name>~Exchange_manager_memory</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

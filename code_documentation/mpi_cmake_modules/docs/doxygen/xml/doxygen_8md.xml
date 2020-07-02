@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="doxygen_8md" kind="file" language="Markdown">
+    <compoundname>doxygen.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">Doxygen</highlight></codeline>
+<codeline><highlight class="normal">=======</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Introduction</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>the<sp/>machines-in-motion<sp/>group<sp/>we<sp/>use<sp/>doxygen<sp/>in<sp/>order<sp/>to<sp/>build<sp/>all</highlight></codeline>
+<codeline><highlight class="normal">documentations<sp/>from<sp/>C/C++<sp/>and<sp/>Python<sp/>code.</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>main<sp/>idea<sp/>is<sp/>that<sp/>we<sp/>can<sp/>have<sp/>a<sp/>unifyed<sp/>way<sp/>to<sp/>generate<sp/>the<sp/>documentation.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Usage</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>order<sp/>to<sp/>use<sp/>this<sp/>macro<sp/>one<sp/>obviously<sp/>needs<sp/>to<sp/>depend<sp/>on<sp/>this<sp/>package<sp/>through</highlight></codeline>
+<codeline><highlight class="normal">a<sp/>`find_package`<sp/>or<sp/>using<sp/>`catkin`<sp/>components.</highlight></codeline>
+<codeline><highlight class="normal">Once<sp/>the<sp/>dependency<sp/>is<sp/>found<sp/>the<sp/>following<sp/>macro<sp/>needs<sp/>to<sp/>be<sp/>added<sp/>to<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">CMakelists.txt:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>build_doxygen_documentation()</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>macro<sp/>is<sp/>idle<sp/>by<sp/>default.<sp/>To<sp/>activate<sp/>it<sp/>one<sp/>need<sp/>to<sp/>pass<sp/>the<sp/>following</highlight></codeline>
+<codeline><highlight class="normal">CMake<sp/>argument:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>catkin<sp/>build<sp/>--cmake-args<sp/>-DGENERATE_DOCUMENTATION=ON</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>macro<sp/>will<sp/>generate<sp/>a<sp/>specific<sp/>target<sp/>using<sp/>the<sp/>name<sp/>of<sp/>the<sp/>project<sp/>for</highlight></codeline>
+<codeline><highlight class="normal">unicity.<sp/>The<sp/>documentation<sp/>is<sp/>located<sp/>in:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>workspace/devel/share/&lt;project<sp/>name&gt;/doc/html/</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>order<sp/>to<sp/>visual<sp/>the<sp/>built<sp/>documentation<sp/>with<sp/>firefox<sp/>please<sp/>run:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>firefox<sp/>workspace/devel/share/&lt;project<sp/>name&gt;/doc/html/index.html</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Writting<sp/>a<sp/>documentation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>order<sp/>to<sp/>write<sp/>a<sp/>decent<sp/>documentation<sp/>one<sp/>need<sp/>to<sp/>make<sp/>sure<sp/>that<sp/>Doxygen</highlight></codeline>
+<codeline><highlight class="normal">do<sp/>not<sp/>output<sp/>warnings.<sp/>A<sp/>warning<sp/>from<sp/>DOxygen<sp/>proves<sp/>that<sp/>a<sp/>code<sp/>item<sp/>is<sp/>not</highlight></codeline>
+<codeline><highlight class="normal">documentated.<sp/>See<sp/>the<sp/></highlight></codeline>
+<codeline><highlight class="normal">[C++<sp/>coding<sp/>guidelines](https://machines-in-motion.github.io/code_documentation/ci_example_cpp/coding_guidelines_1.html)</highlight></codeline>
+<codeline><highlight class="normal">,<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">[Python<sp/>coding<sp/>guidelines](https://machines-in-motion.github.io/code_documentation/ci_example_python/coding_guidelines_1.html)</highlight></codeline>
+<codeline><highlight class="normal">and<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">[General<sp/>coding<sp/>guidelines](https://machines-in-motion.github.io/code_documentation/ci_example_cpp/coding_guidelines_0.html)</highlight></codeline>
+<codeline><highlight class="normal">For<sp/>more<sp/>information<sp/>on<sp/>how<sp/>our<sp/>code<sp/>style<sp/>and<sp/>the<sp/>good<sp/>code<sp/>practice.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>documentation<sp/>of<sp/>your<sp/>code<sp/>is<sp/>combined<sp/>with<sp/>several<sp/>main<sp/>items:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>First,<sp/>one<sp/>need<sp/>to<sp/>add<sp/>the<sp/>docstring<sp/>of<sp/>the<sp/>language.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Second,<sp/>one<sp/>need<sp/>to<sp/>provide<sp/>unittests,<sp/>these<sp/>usually<sp/>are<sp/>good<sp/>basis<sp/>for<sp/>an</highlight></codeline>
+<codeline><highlight class="normal">external<sp/>user<sp/>to<sp/>understand<sp/>the<sp/>API.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Third,<sp/>one<sp/>need<sp/>to<sp/>provide<sp/>demos<sp/>of<sp/>the<sp/>API<sp/>defining<sp/>the<sp/>usual<sp/>use<sp/>case<sp/>of<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">code.<sp/>These<sp/>code<sp/>must<sp/>contain<sp/>doc-strings<sp/>containing<sp/>the<sp/>key<sp/>word,<sp/>e.g.<sp/>with</highlight></codeline>
+<codeline><highlight class="normal">C/C++:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>```C++</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/**<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>\@example<sp/>&lt;file<sp/>name&gt;<sp/>This<sp/>example<sp/>provide<sp/>an<sp/>exmaple<sp/>on<sp/>how<sp/>to<sp/>use<sp/>...</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Remarque:<sp/>remove<sp/>the<sp/>`\`<sp/>before<sp/>the<sp/>`@`.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Finally<sp/>whenever<sp/>you<sp/>feel<sp/>like<sp/>documenting<sp/>more<sp/>extensively<sp/>something<sp/>and</highlight></codeline>
+<codeline><highlight class="normal">adding<sp/>graph,<sp/>image,<sp/>extensive<sp/>text<sp/>explanatin,<sp/>link,<sp/>etc,<sp/>it<sp/>is<sp/>way<sp/>more</highlight></codeline>
+<codeline><highlight class="normal">convenitent<sp/>to<sp/>use<sp/>markdown.<sp/>Therefore<sp/>one<sp/>need<sp/>to<sp/>provide<sp/>a<sp/>`doc/`<sp/>folder</highlight></codeline>
+<codeline><highlight class="normal">containing<sp/>the<sp/>additionnal<sp/>documentation.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>more<sp/>detail<sp/>on<sp/>how<sp/>to<sp/>use<sp/>doxygen<sp/>here<sp/>is<sp/>a<sp/>list<sp/>of<sp/>extremely<sp/>useful<sp/>links:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[List<sp/>of<sp/>doxygen<sp/>commands](http://doxygen.nl/manual/commands.html)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[Doxygen<sp/>markdown<sp/>support](http://doxygen.nl/manual/markdown.html#markdown_dox)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Implementation<sp/>details</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>`Doxyfile.in`<sp/>place<sp/>in<sp/>this<sp/>repository&apos;s<sp/>`resources`<sp/>folder<sp/>is<sp/>reponsible</highlight></codeline>
+<codeline><highlight class="normal">for<sp/>the<sp/>parsing<sp/>paramters<sp/>and<sp/>shape<sp/>of<sp/>the<sp/>documentation.<sp/>The<sp/>idea<sp/>here<sp/>is<sp/>that</highlight></codeline>
+<codeline><highlight class="normal">upon<sp/>build<sp/>Doxygen<sp/>will<sp/>go<sp/>recursively<sp/>through<sp/>all<sp/>the<sp/>current<sp/>project<sp/>files</highlight></codeline>
+<codeline><highlight class="normal">looking<sp/>for<sp/>the<sp/>C/C++/Python/Markdown<sp/>files<sp/>and<sp/>generate<sp/>the<sp/>documentation</highlight></codeline>
+<codeline><highlight class="normal">automatically.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>subtility<sp/>about<sp/>python<sp/>is<sp/>that<sp/>we<sp/>use<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">[doxypypy](https://github.com/Feneric/doxypypy)<sp/>package<sp/>in<sp/>order<sp/>to<sp/>convert<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">Google<sp/>docstring<sp/>in<sp/>the<sp/>python<sp/>code<sp/>into<sp/>Doxygen<sp/>recognizable<sp/>docstrings.</highlight></codeline>
+<codeline><highlight class="normal">So<sp/>one<sp/>need<sp/>to<sp/>install<sp/>this<sp/>dependency<sp/>using<sp/>pip<sp/>for<sp/>example.</highlight></codeline>
+    </programlisting>
+    <location file="doc/doxygen.md"/>
+  </compounddef>
+</doxygen>

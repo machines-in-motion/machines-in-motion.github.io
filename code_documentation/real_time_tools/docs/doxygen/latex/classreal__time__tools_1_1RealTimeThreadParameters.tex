@@ -1,0 +1,96 @@
+\hypertarget{classreal__time__tools_1_1RealTimeThreadParameters}{}\section{real\+\_\+time\+\_\+tools\+:\+:Real\+Time\+Thread\+Parameters Class Reference}
+\label{classreal__time__tools_1_1RealTimeThreadParameters}\index{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Thread\+Parameters@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Thread\+Parameters}}
+
+
+This class is a data structure allowing the user to share configurations among threads.  
+
+
+
+
+{\ttfamily \#include $<$thread.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classreal__time__tools_1_1RealTimeThreadParameters_a3c23c4f6a5b8ac991072e247f536fcd8}\label{classreal__time__tools_1_1RealTimeThreadParameters_a3c23c4f6a5b8ac991072e247f536fcd8}} 
+\hyperlink{classreal__time__tools_1_1RealTimeThreadParameters_a3c23c4f6a5b8ac991072e247f536fcd8}{Real\+Time\+Thread\+Parameters} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classreal__time__tools_1_1RealTimeThreadParameters}{Real\+Time\+Thread\+Parameters} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classreal__time__tools_1_1RealTimeThreadParameters_a9b6720cd9e0da2ad81e22e337a76d7ea}\label{classreal__time__tools_1_1RealTimeThreadParameters_a9b6720cd9e0da2ad81e22e337a76d7ea}} 
+\hyperlink{classreal__time__tools_1_1RealTimeThreadParameters_a9b6720cd9e0da2ad81e22e337a76d7ea}{$\sim$\+Real\+Time\+Thread\+Parameters} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \hyperlink{classreal__time__tools_1_1RealTimeThreadParameters}{Real\+Time\+Thread\+Parameters} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classreal__time__tools_1_1RealTimeThreadParameters_a9db02f30ad6b4d6cfa3ca49dbd63e0f4}\label{classreal__time__tools_1_1RealTimeThreadParameters_a9db02f30ad6b4d6cfa3ca49dbd63e0f4}} 
+std\+::string \hyperlink{classreal__time__tools_1_1RealTimeThreadParameters_a9db02f30ad6b4d6cfa3ca49dbd63e0f4}{keyword\+\_\+}
+\begin{DoxyCompactList}\small\item\em Used in xenomai to define the thread id. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classreal__time__tools_1_1RealTimeThreadParameters_aa373ac14aa6feca83382b8aefdf27409}\label{classreal__time__tools_1_1RealTimeThreadParameters_aa373ac14aa6feca83382b8aefdf27409}} 
+int \hyperlink{classreal__time__tools_1_1RealTimeThreadParameters_aa373ac14aa6feca83382b8aefdf27409}{priority\+\_\+}
+\begin{DoxyCompactList}\small\item\em Defines the thread priority from 0 to 100. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classreal__time__tools_1_1RealTimeThreadParameters_ac31bba1a59fa600c2c0e4737a79807c4}\label{classreal__time__tools_1_1RealTimeThreadParameters_ac31bba1a59fa600c2c0e4737a79807c4}} 
+int \hyperlink{classreal__time__tools_1_1RealTimeThreadParameters_ac31bba1a59fa600c2c0e4737a79807c4}{stack\+\_\+size\+\_\+}
+\begin{DoxyCompactList}\small\item\em Define the stack size. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \hyperlink{classreal__time__tools_1_1RealTimeThreadParameters_ac6879cacfd97ddf46ad46b94a79a9696}{cpu\+\_\+id\+\_\+}
+\begin{DoxyCompactList}\small\item\em Define the cpu affinity. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classreal__time__tools_1_1RealTimeThreadParameters_a5a6b8b14d0e82962ae6e68d34086ffed}\label{classreal__time__tools_1_1RealTimeThreadParameters_a5a6b8b14d0e82962ae6e68d34086ffed}} 
+int \hyperlink{classreal__time__tools_1_1RealTimeThreadParameters_a5a6b8b14d0e82962ae6e68d34086ffed}{dedicated\+\_\+cpu\+\_\+id\+\_\+}
+\begin{DoxyCompactList}\small\item\em indicate on which cpu the thread will run (xenomai only) \end{DoxyCompactList}\item 
+int \hyperlink{classreal__time__tools_1_1RealTimeThreadParameters_a50e8eae41f8284867f073aa802d9afa2}{delay\+\_\+ns\+\_\+}
+\item 
+bool \hyperlink{classreal__time__tools_1_1RealTimeThreadParameters_a134856e17552d3f31a093f3a1f5d1639}{block\+\_\+memory\+\_\+}
+\begin{DoxyCompactList}\small\item\em Defines if the thread should block the memory in a \char`\"{}page\char`\"{} or if several pages can be use. \end{DoxyCompactList}\item 
+int \hyperlink{classreal__time__tools_1_1RealTimeThreadParameters_afc9891b44025aab8b383e91d907d41b0}{cpu\+\_\+dma\+\_\+latency\+\_\+}
+\begin{DoxyCompactList}\small\item\em Maximum desired latency of the C\+PU in microseconds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is a data structure allowing the user to share configurations among threads. 
+
+These parameter allows you to generate real threads in xenomai and rt\+\_\+preempt. The same code is compatible with Mac and ubuntu but will run non-\/real time threads.
+
+warning \+: initial version, copy pasted from \+: \href{https://wiki.linuxfoundation.org/realtime/documentation/howto/applications/application_base}{\tt https\+://wiki.\+linuxfoundation.\+org/realtime/documentation/howto/applications/application\+\_\+base} I did not study things now, so this likely needs improvement (alternative\+: \href{https://rt.wiki.kernel.org/index.php/Threaded_RT-application_with_memory_locking_and_stack_handling_example}{\tt https\+://rt.\+wiki.\+kernel.\+org/index.\+php/\+Threaded\+\_\+\+R\+T-\/application\+\_\+with\+\_\+memory\+\_\+locking\+\_\+and\+\_\+stack\+\_\+handling\+\_\+example}) note\+: if failed as mlockall, run executable with sudo or be part of the real\+\_\+time group or xenomai group. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classreal__time__tools_1_1RealTimeThreadParameters_a134856e17552d3f31a093f3a1f5d1639}\label{classreal__time__tools_1_1RealTimeThreadParameters_a134856e17552d3f31a093f3a1f5d1639}} 
+\index{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Thread\+Parameters@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Thread\+Parameters}!block\+\_\+memory\+\_\+@{block\+\_\+memory\+\_\+}}
+\index{block\+\_\+memory\+\_\+@{block\+\_\+memory\+\_\+}!real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Thread\+Parameters@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Thread\+Parameters}}
+\subsubsection{\texorpdfstring{block\+\_\+memory\+\_\+}{block\_memory\_}}
+{\footnotesize\ttfamily bool real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Thread\+Parameters\+::block\+\_\+memory\+\_\+}
+
+
+
+Defines if the thread should block the memory in a \char`\"{}page\char`\"{} or if several pages can be use. 
+
+Switching memory page is time consumming and a non real time operation. \mbox{\Hypertarget{classreal__time__tools_1_1RealTimeThreadParameters_afc9891b44025aab8b383e91d907d41b0}\label{classreal__time__tools_1_1RealTimeThreadParameters_afc9891b44025aab8b383e91d907d41b0}} 
+\index{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Thread\+Parameters@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Thread\+Parameters}!cpu\+\_\+dma\+\_\+latency\+\_\+@{cpu\+\_\+dma\+\_\+latency\+\_\+}}
+\index{cpu\+\_\+dma\+\_\+latency\+\_\+@{cpu\+\_\+dma\+\_\+latency\+\_\+}!real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Thread\+Parameters@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Thread\+Parameters}}
+\subsubsection{\texorpdfstring{cpu\+\_\+dma\+\_\+latency\+\_\+}{cpu\_dma\_latency\_}}
+{\footnotesize\ttfamily int real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Thread\+Parameters\+::cpu\+\_\+dma\+\_\+latency\+\_\+}
+
+
+
+Maximum desired latency of the C\+PU in microseconds. 
+
+Set to 0 to get best real-\/time performance. Set to any negative value if you do not want the thread to change the C\+PU latency. \mbox{\Hypertarget{classreal__time__tools_1_1RealTimeThreadParameters_ac6879cacfd97ddf46ad46b94a79a9696}\label{classreal__time__tools_1_1RealTimeThreadParameters_ac6879cacfd97ddf46ad46b94a79a9696}} 
+\index{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Thread\+Parameters@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Thread\+Parameters}!cpu\+\_\+id\+\_\+@{cpu\+\_\+id\+\_\+}}
+\index{cpu\+\_\+id\+\_\+@{cpu\+\_\+id\+\_\+}!real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Thread\+Parameters@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Thread\+Parameters}}
+\subsubsection{\texorpdfstring{cpu\+\_\+id\+\_\+}{cpu\_id\_}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Thread\+Parameters\+::cpu\+\_\+id\+\_\+}
+
+
+
+Define the cpu affinity. 
+
+Which means on which cpu(s) the thread is going to run \mbox{\Hypertarget{classreal__time__tools_1_1RealTimeThreadParameters_a50e8eae41f8284867f073aa802d9afa2}\label{classreal__time__tools_1_1RealTimeThreadParameters_a50e8eae41f8284867f073aa802d9afa2}} 
+\index{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Thread\+Parameters@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Thread\+Parameters}!delay\+\_\+ns\+\_\+@{delay\+\_\+ns\+\_\+}}
+\index{delay\+\_\+ns\+\_\+@{delay\+\_\+ns\+\_\+}!real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Thread\+Parameters@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Thread\+Parameters}}
+\subsubsection{\texorpdfstring{delay\+\_\+ns\+\_\+}{delay\_ns\_}}
+{\footnotesize\ttfamily int real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Thread\+Parameters\+::delay\+\_\+ns\+\_\+}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000001}{Todo}]Unknow Xenomai parameter \end{DoxyRefDesc}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/real\+\_\+time\+\_\+tools/\hyperlink{thread_8hpp}{thread.\+hpp}\end{DoxyCompactItemize}

@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="demo__ros__pid_8py" kind="file" language="Python">
+    <compoundname>demo_ros_pid.py</compoundname>
+    <innernamespace refid="namespacedemo__ros__pid">demo_ros_pid</innernamespace>
+    <innernamespace refid="namespaceDemos">Demos</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>Copyright (c) 2017-2019, New York University and Max Planck Gesellschaft, License BSD-3-Clause </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">#!/usr/bin/env<sp/>python</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;&quot;&quot;<sp/>@namespace<sp/>Demos<sp/>of<sp/>the<sp/>ci_example_python.pid.PID<sp/>controller<sp/>using<sp/>ROS<sp/>param.</highlight></codeline>
+<codeline lineno="5"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="6"><highlight class="stringliteral">@file<sp/>demo_ros_pid.py</highlight></codeline>
+<codeline lineno="7"><highlight class="stringliteral">@copyright<sp/>Copyright<sp/>(c)<sp/>2017-2019,</highlight></codeline>
+<codeline lineno="8"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>New<sp/>York<sp/>University<sp/>and<sp/>Max<sp/>Planck<sp/>Gesellschaft,</highlight></codeline>
+<codeline lineno="9"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>License<sp/>BSD-3-Clause</highlight></codeline>
+<codeline lineno="10"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="11"><highlight class="stringliteral">@example<sp/>demo_ros_pid.py</highlight></codeline>
+<codeline lineno="12"><highlight class="stringliteral">In<sp/>order<sp/>to<sp/>run<sp/>this<sp/>demos<sp/>the<sp/>`ci_example_python/python/ci_example_python`<sp/>path</highlight></codeline>
+<codeline lineno="13"><highlight class="stringliteral">needs<sp/>to<sp/>be<sp/>added<sp/>in<sp/>the<sp/>`PYTHONPATH`.<sp/>This<sp/>is<sp/>done<sp/>after:</highlight></codeline>
+<codeline lineno="14"><highlight class="stringliteral">-<sp/>1.<sp/>&quot;catkin_make&quot;<sp/>is<sp/>called<sp/>from<sp/>the<sp/>root<sp/>of<sp/>the<sp/>catkin<sp/>workspace</highlight></codeline>
+<codeline lineno="15"><highlight class="stringliteral">-<sp/>2.<sp/>&quot;source<sp/>./devel/setup.bash&quot;<sp/>is<sp/>called<sp/>from<sp/>the<sp/>root<sp/>of<sp/>the<sp/>catkin<sp/>workspace</highlight></codeline>
+<codeline lineno="16"><highlight class="stringliteral">-<sp/>3.<sp/>roscore<sp/>is<sp/>called<sp/>in<sp/>an<sp/>additional<sp/>terminal</highlight></codeline>
+<codeline lineno="17"><highlight class="stringliteral">-<sp/>4.<sp/>Finally<sp/>run<sp/>`rosrun<sp/>ci_example_python<sp/>demo_ros_pid.py`</highlight></codeline>
+<codeline lineno="18"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="19"><highlight class="stringliteral">Notice<sp/>the<sp/>use<sp/>of<sp/>the<sp/>double<sp/>##<sp/>for<sp/>the<sp/>comments.<sp/>This<sp/>allow<sp/>Doxygen</highlight></codeline>
+<codeline lineno="20"><highlight class="stringliteral">to<sp/>parse<sp/>you<sp/>code<sp/>and<sp/>for<sp/>you<sp/>to<sp/>explain<sp/>in<sp/>details<sp/>the<sp/>content<sp/>of<sp/>the<sp/>demo.</highlight></codeline>
+<codeline lineno="21"><highlight class="stringliteral">&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Python<sp/>3<sp/>compatibility,<sp/>has<sp/>to<sp/>be<sp/>called<sp/>just<sp/>after<sp/>the<sp/>hashbang.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>__future__<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>print_function,<sp/>division</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>rospy</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/><ref refid="namespaceci__example__python_1_1pid" kindref="compound">ci_example_python.pid</ref><sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>get_ros_params_pid</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;__main__&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>here<sp/>we<sp/>set<sp/>the<sp/>parameters<sp/>to<sp/>ROS.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.set_param(</highlight><highlight class="stringliteral">&apos;kp&apos;</highlight><highlight class="normal">,<sp/>1.0)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.set_param(</highlight><highlight class="stringliteral">&apos;kd&apos;</highlight><highlight class="normal">,<sp/>1.0)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.set_param(</highlight><highlight class="stringliteral">&apos;ki&apos;</highlight><highlight class="normal">,<sp/>1.0)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>current_position<sp/>=<sp/>1</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>current_velocity<sp/>=<sp/>0.1</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>position_target<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>delta_time<sp/>=<sp/>0.001</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">print</highlight><highlight class="normal"><sp/>(</highlight><highlight class="stringliteral">&quot;pid<sp/>using<sp/>ros<sp/>parameter<sp/>server&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>pid<sp/>=<sp/><ref refid="namespaceci__example__python_1_1pid_1ae1f8a5e73e269ede0bdd4d0daf2f265e" kindref="member">get_ros_params_pid</ref>()</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">print</highlight><highlight class="normal"><sp/>(pid)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>control<sp/>=<sp/>pid.compute(current_position,current_velocity,position_target,delta_time)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">print</highlight><highlight class="normal"><sp/>(</highlight><highlight class="stringliteral">&quot;control:<sp/>&quot;</highlight><highlight class="normal">,control)</highlight></codeline>
+    </programlisting>
+    <location file="demos/demo_ros_pid.py"/>
+  </compounddef>
+</doxygen>

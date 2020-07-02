@@ -1,0 +1,329 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classshared__memory_1_1LockedConditionVariable" kind="class" language="C++" prot="public">
+    <compoundname>shared_memory::LockedConditionVariable</compoundname>
+    <includes refid="locked__condition__variable_8hpp" local="no">locked_condition_variable.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classshared__memory_1_1LockedConditionVariable_1a07d7d718e33cc2e833cf9bb22fe8fada" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string shared_memory::LockedConditionVariable::mutex_id_</definition>
+        <argsstring></argsstring>
+        <name>mutex_id_</name>
+        <briefdescription>
+<para>mutex_id_ is the mutex name in the shared memory </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/locked_condition_variable.hpp" line="108" column="1" bodyfile="include/shared_memory/locked_condition_variable.hpp" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classshared__memory_1_1LockedConditionVariable_1a7cf01915f9d1a8795f4e69345cd1e1e4" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string shared_memory::LockedConditionVariable::condition_id_</definition>
+        <argsstring></argsstring>
+        <name>condition_id_</name>
+        <briefdescription>
+<para>condition_id_ is the condition variable name in the shared memory </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/locked_condition_variable.hpp" line="113" column="1" bodyfile="include/shared_memory/locked_condition_variable.hpp" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classshared__memory_1_1LockedConditionVariable_1ae6a197846be3bd4ccf4899754778f16b" prot="private" static="no" mutable="no">
+        <type>boost::interprocess::managed_shared_memory</type>
+        <definition>boost::interprocess::managed_shared_memory shared_memory::LockedConditionVariable::segment_manager_</definition>
+        <argsstring></argsstring>
+        <name>segment_manager_</name>
+        <briefdescription>
+<para>shm_segment is the boost object that manages the shared memory segment </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/locked_condition_variable.hpp" line="119" column="1" bodyfile="include/shared_memory/locked_condition_variable.hpp" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classshared__memory_1_1LockedConditionVariable_1a757abc2190906a0773667b42be6e4e66" prot="public" static="no" mutable="no">
+        <type>SHMMutex</type>
+        <definition>SHMMutex shared_memory::LockedConditionVariable::mutex_</definition>
+        <argsstring></argsstring>
+        <name>mutex_</name>
+        <briefdescription>
+<para>mutex_ is the mutex associated to the condition variable </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/locked_condition_variable.hpp" line="125" column="1" bodyfile="include/shared_memory/locked_condition_variable.hpp" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classshared__memory_1_1LockedConditionVariable_1a8bc7fb73332304b406335e38ba4cdd1b" prot="public" static="no" mutable="no">
+        <type>SHMCondition *</type>
+        <definition>SHMCondition* shared_memory::LockedConditionVariable::condition_variable_</definition>
+        <argsstring></argsstring>
+        <name>condition_variable_</name>
+        <briefdescription>
+<para>condition_variable_ is the boost condition variable that is used </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/locked_condition_variable.hpp" line="130" column="1" bodyfile="include/shared_memory/locked_condition_variable.hpp" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classshared__memory_1_1LockedConditionVariable_1a5509b431f2d459d92bfcc1b2d60651d1" prot="public" static="no" mutable="no">
+        <type>std::unique_ptr&lt; SHMScopeLock &gt;</type>
+        <definition>std::unique_ptr&lt;SHMScopeLock&gt; shared_memory::LockedConditionVariable::lock_</definition>
+        <argsstring></argsstring>
+        <name>lock_</name>
+        <briefdescription>
+<para>lock_ is a object that protects the codes with a mutex, see the boost documentation about &quot;boost::interprocess::scoped_lock&quot; </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/locked_condition_variable.hpp" line="136" column="1" bodyfile="include/shared_memory/locked_condition_variable.hpp" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classshared__memory_1_1LockedConditionVariable_1abe0963bc5746d19350e816ad42ff47b1" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool shared_memory::LockedConditionVariable::clean_memory_on_destruction_</definition>
+        <argsstring></argsstring>
+        <name>clean_memory_on_destruction_</name>
+        <briefdescription>
+<para>if true (the default), clean the shared memory of the hosted mutex and condition. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/locked_condition_variable.hpp" line="142" column="1" bodyfile="include/shared_memory/locked_condition_variable.hpp" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classshared__memory_1_1LockedConditionVariable_1a648057022bbf8a7b5221e1170b1e099c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>shared_memory::LockedConditionVariable::LockedConditionVariable</definition>
+        <argsstring>(const std::string object_id, bool clean_memory_on_destruction=true)</argsstring>
+        <name>LockedConditionVariable</name>
+        <param>
+          <type>const std::string</type>
+          <declname>object_id</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>clean_memory_on_destruction</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>A condition variable shared over the memory The condition variable is cleaned from the memory on destruction if clean_memory_on_destruction is set to true. </para>        </briefdescription>
+        <detaileddescription>
+<para>Contrary to <ref refid="classshared__memory_1_1ConditionVariable" kindref="compound">shared_memory::ConditionVariable</ref>, instances of this class manages their mutex and lock internally, with the consequence the mutex can be locked and unlocked exclusively through other instances of <ref refid="classshared__memory_1_1LockedConditionVariable" kindref="compound">LockedConditionVariable</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/locked_condition_variable.hpp" line="40" column="1" bodyfile="src/locked_condition_variable.cpp" bodystart="5" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1LockedConditionVariable_1a136d1208323f22f2567d70d01f670f66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>shared_memory::LockedConditionVariable::~LockedConditionVariable</definition>
+        <argsstring>()</argsstring>
+        <name>~LockedConditionVariable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/locked_condition_variable.hpp" line="43" column="1" bodyfile="src/locked_condition_variable.cpp" bodystart="16" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1LockedConditionVariable_1a31633f2243b988dc0a8bd3d4637dc216" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void shared_memory::LockedConditionVariable::notify_all</definition>
+        <argsstring>()</argsstring>
+        <name>notify_all</name>
+        <briefdescription>
+<para>notify_all is notifying all condition variables with the same mutex </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/locked_condition_variable.hpp" line="49" column="1" bodyfile="src/locked_condition_variable.cpp" bodystart="35" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1LockedConditionVariable_1a532a1332fe184e668a49fa002db5be08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void shared_memory::LockedConditionVariable::notify_one</definition>
+        <argsstring>()</argsstring>
+        <name>notify_one</name>
+        <briefdescription>
+<para>notify_one notifies one condition variable with the same mutex </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/locked_condition_variable.hpp" line="54" column="1" bodyfile="src/locked_condition_variable.cpp" bodystart="40" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1LockedConditionVariable_1a9eb84ab5d570a0c5a81f6eaeb4c4dd50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void shared_memory::LockedConditionVariable::wait</definition>
+        <argsstring>()</argsstring>
+        <name>wait</name>
+        <briefdescription>
+<para>wait waits until another thread notifies this object </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/locked_condition_variable.hpp" line="59" column="1" bodyfile="src/locked_condition_variable.cpp" bodystart="45" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1LockedConditionVariable_1a0d4ab218fc51fcce34146f2adca408d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool shared_memory::LockedConditionVariable::timed_wait</definition>
+        <argsstring>(long wait_nano_seconds)</argsstring>
+        <name>timed_wait</name>
+        <param>
+          <type>long</type>
+          <declname>wait_nano_seconds</declname>
+        </param>
+        <briefdescription>
+<para>timed_wait wait a notify during a certain certain time and then wake up </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>wait_duration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>in microsecond </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true: the condition variable has been notified, false otherwize </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/locked_condition_variable.hpp" line="67" column="1" bodyfile="src/locked_condition_variable.cpp" bodystart="60" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1LockedConditionVariable_1a86b42b23b94593bca5b12b9d792d1275" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool shared_memory::LockedConditionVariable::try_lock</definition>
+        <argsstring>()</argsstring>
+        <name>try_lock</name>
+        <briefdescription>
+<para>try_lock Tries to acquire the lock without waiting. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if manages to acquire the lock, false otherwise. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/locked_condition_variable.hpp" line="74" column="1" bodyfile="src/locked_condition_variable.cpp" bodystart="78" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1LockedConditionVariable_1a5d28bb5942fc5bc4886014d6b9b26885" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void shared_memory::LockedConditionVariable::unlock</definition>
+        <argsstring>()</argsstring>
+        <name>unlock</name>
+        <briefdescription>
+<para>unlock Unlocks the lock. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/locked_condition_variable.hpp" line="80" column="1" bodyfile="src/locked_condition_variable.cpp" bodystart="94" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1LockedConditionVariable_1a30e3825249516387276801f8d2e68a8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool shared_memory::LockedConditionVariable::owns</definition>
+        <argsstring>()</argsstring>
+        <name>owns</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/locked_condition_variable.hpp" line="82" column="1" bodyfile="src/locked_condition_variable.cpp" bodystart="109" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1LockedConditionVariable_1a1eef63f7e3e898c3734923c987383ffe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void shared_memory::LockedConditionVariable::lock_scope</definition>
+        <argsstring>()</argsstring>
+        <name>lock_scope</name>
+        <briefdescription>
+<para>lock_scope this function is used to lock the part of the code that needs protection. </para>        </briefdescription>
+        <detaileddescription>
+<para>It locks the mutex until unlock_scope is used </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/locked_condition_variable.hpp" line="88" column="1" bodyfile="src/locked_condition_variable.cpp" bodystart="125" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="classshared__memory_1_1LockedConditionVariable_1adf3a50665011b3b92b80369bbbc6d4a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void shared_memory::LockedConditionVariable::unlock_scope</definition>
+        <argsstring>()</argsstring>
+        <name>unlock_scope</name>
+        <briefdescription>
+<para>unlock_scope this function unlock the mutex so remove the protection of the code </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/locked_condition_variable.hpp" line="94" column="1" bodyfile="src/locked_condition_variable.cpp" bodystart="130" bodyend="133"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classshared__memory_1_1LockedConditionVariable_1aa3bca5020f84c8e0a90a2dad3e6521e5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void shared_memory::LockedConditionVariable::clean</definition>
+        <argsstring>(const std::string segment_id)</argsstring>
+        <name>clean</name>
+        <param>
+          <type>const std::string</type>
+          <declname>segment_id</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classshared__memory_1_1LockedConditionVariable" kindref="compound">LockedConditionVariable</ref> clean their shared memory on destruction. </para>        </briefdescription>
+        <detaileddescription>
+<para>But the destructor may have failed to be called if for some reason the program crashed. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/shared_memory/locked_condition_variable.hpp" line="102" column="1" bodyfile="src/locked_condition_variable.cpp" bodystart="30" bodyend="33"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The <ref refid="classshared__memory_1_1LockedConditionVariable" kindref="compound">LockedConditionVariable</ref> class is here as a anonymous layer on top of the boost intersprocess condition variable labrary. </para>    </briefdescription>
+    <detaileddescription>
+<para>It creates a condition variable in a shared memory automatically. </para>    </detaileddescription>
+    <location file="include/shared_memory/locked_condition_variable.hpp" line="29" column="1" bodyfile="include/shared_memory/locked_condition_variable.hpp" bodystart="28" bodyend="143"/>
+    <listofallmembers>
+      <member refid="classshared__memory_1_1LockedConditionVariable_1aa3bca5020f84c8e0a90a2dad3e6521e5" prot="public" virt="non-virtual"><scope>shared_memory::LockedConditionVariable</scope><name>clean</name></member>
+      <member refid="classshared__memory_1_1LockedConditionVariable_1abe0963bc5746d19350e816ad42ff47b1" prot="public" virt="non-virtual"><scope>shared_memory::LockedConditionVariable</scope><name>clean_memory_on_destruction_</name></member>
+      <member refid="classshared__memory_1_1LockedConditionVariable_1a7cf01915f9d1a8795f4e69345cd1e1e4" prot="private" virt="non-virtual"><scope>shared_memory::LockedConditionVariable</scope><name>condition_id_</name></member>
+      <member refid="classshared__memory_1_1LockedConditionVariable_1a8bc7fb73332304b406335e38ba4cdd1b" prot="public" virt="non-virtual"><scope>shared_memory::LockedConditionVariable</scope><name>condition_variable_</name></member>
+      <member refid="classshared__memory_1_1LockedConditionVariable_1a5509b431f2d459d92bfcc1b2d60651d1" prot="public" virt="non-virtual"><scope>shared_memory::LockedConditionVariable</scope><name>lock_</name></member>
+      <member refid="classshared__memory_1_1LockedConditionVariable_1a1eef63f7e3e898c3734923c987383ffe" prot="public" virt="non-virtual"><scope>shared_memory::LockedConditionVariable</scope><name>lock_scope</name></member>
+      <member refid="classshared__memory_1_1LockedConditionVariable_1a648057022bbf8a7b5221e1170b1e099c" prot="public" virt="non-virtual"><scope>shared_memory::LockedConditionVariable</scope><name>LockedConditionVariable</name></member>
+      <member refid="classshared__memory_1_1LockedConditionVariable_1a757abc2190906a0773667b42be6e4e66" prot="public" virt="non-virtual"><scope>shared_memory::LockedConditionVariable</scope><name>mutex_</name></member>
+      <member refid="classshared__memory_1_1LockedConditionVariable_1a07d7d718e33cc2e833cf9bb22fe8fada" prot="private" virt="non-virtual"><scope>shared_memory::LockedConditionVariable</scope><name>mutex_id_</name></member>
+      <member refid="classshared__memory_1_1LockedConditionVariable_1a31633f2243b988dc0a8bd3d4637dc216" prot="public" virt="non-virtual"><scope>shared_memory::LockedConditionVariable</scope><name>notify_all</name></member>
+      <member refid="classshared__memory_1_1LockedConditionVariable_1a532a1332fe184e668a49fa002db5be08" prot="public" virt="non-virtual"><scope>shared_memory::LockedConditionVariable</scope><name>notify_one</name></member>
+      <member refid="classshared__memory_1_1LockedConditionVariable_1a30e3825249516387276801f8d2e68a8e" prot="public" virt="non-virtual"><scope>shared_memory::LockedConditionVariable</scope><name>owns</name></member>
+      <member refid="classshared__memory_1_1LockedConditionVariable_1ae6a197846be3bd4ccf4899754778f16b" prot="private" virt="non-virtual"><scope>shared_memory::LockedConditionVariable</scope><name>segment_manager_</name></member>
+      <member refid="classshared__memory_1_1LockedConditionVariable_1a0d4ab218fc51fcce34146f2adca408d7" prot="public" virt="non-virtual"><scope>shared_memory::LockedConditionVariable</scope><name>timed_wait</name></member>
+      <member refid="classshared__memory_1_1LockedConditionVariable_1a86b42b23b94593bca5b12b9d792d1275" prot="public" virt="non-virtual"><scope>shared_memory::LockedConditionVariable</scope><name>try_lock</name></member>
+      <member refid="classshared__memory_1_1LockedConditionVariable_1a5d28bb5942fc5bc4886014d6b9b26885" prot="public" virt="non-virtual"><scope>shared_memory::LockedConditionVariable</scope><name>unlock</name></member>
+      <member refid="classshared__memory_1_1LockedConditionVariable_1adf3a50665011b3b92b80369bbbc6d4a4" prot="public" virt="non-virtual"><scope>shared_memory::LockedConditionVariable</scope><name>unlock_scope</name></member>
+      <member refid="classshared__memory_1_1LockedConditionVariable_1a9eb84ab5d570a0c5a81f6eaeb4c4dd50" prot="public" virt="non-virtual"><scope>shared_memory::LockedConditionVariable</scope><name>wait</name></member>
+      <member refid="classshared__memory_1_1LockedConditionVariable_1a136d1208323f22f2567d70d01f670f66" prot="public" virt="non-virtual"><scope>shared_memory::LockedConditionVariable</scope><name>~LockedConditionVariable</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

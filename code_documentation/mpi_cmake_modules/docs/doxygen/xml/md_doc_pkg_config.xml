@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="md_doc_pkg_config" kind="page">
+    <compoundname>md_doc_pkg_config</compoundname>
+    <title>PKG Config</title>
+    <detaileddescription>
+<para><heading level="2">Introduction</heading>
+</para><para>This CMake module is based on the <ulink url="https://linux.die.net/man/1/pkg-config">pkg-config</ulink> module. And a compatibility with the <ulink url="http://wiki.ros.org/catkin/CMakeLists.txt">Catkin CMake module</ulink>.</para><para>This tool is done for finding non-catkin depencies using a cross platform and efficient tool. PKG-config is based on <computeroutput>.pc</computeroutput> files containing the dependencies informations. For PKG-config to work one need to properly setup the <computeroutput>PKG_CONFIG_PATH</computeroutput> to the path of the <computeroutput>.pc</computeroutput> files locations. Typically <computeroutput>lib/pkgconfig</computeroutput> in the install folders.</para><para><heading level="2">Usage</heading>
+</para><para><heading level="3">Basic usage</heading>
+</para><para>The basic usage of this is like the following: <verbatim># Look for the dependency
+ADD_OPTIONAL_DEPENDENCY(&lt;dependency name 1&gt;)
+ADD_REQUIRED_DEPENDENCY(&lt;dependency name 2&gt;)
+
+# Use the dependency on a CMake target:
+PKG_CONFIG_USE_DEPENDENCY(target &lt;dependency name 1&gt;)
+PKG_CONFIG_USE_DEPENDENCY(target &lt;dependency name 2&gt;)
+</verbatim></para><para><heading level="3">Usage in combination with catkin</heading>
+</para><para>The usage inside a catkin package allows us to skip the second part: <verbatim># Look for the dependency and feed the catkin variables with the relevant
+# information
+CATKIN_ADD_OPTIONAL_DEPENDENCY(&lt;dependency name 1&gt;)
+CATKIN_ADD_REQUIRED_DEPENDENCY(&lt;dependency name 2&gt;)
+
+# use the dependencies using catkin variables
+TARGET_LINK_LIBRARIES(&lt;target&gt; ${catkin_LIBRARIES})</verbatim> </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

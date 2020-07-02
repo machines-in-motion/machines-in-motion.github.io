@@ -1,0 +1,481 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>&lt;no title&gt; &mdash; mpi_cmake_modules 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> mpi_cmake_modules
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to mpi_cmake_modules’s documentation!</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../general_documentation.html">General Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">mpi_cmake_modules</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cmake_doc.html">CMake API</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">mpi_cmake_modules</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>&lt;no title&gt;</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/cmake/protobuf-catkin.cmake.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p>#.rst:
+#=============================================================================
+# Copyright 2009 Kitware, Inc.
+# Copyright 2009-2011 Philip Lowman &lt;<a class="reference external" href="mailto:philip&#37;&#52;&#48;yhbt&#46;com">philip<span>&#64;</span>yhbt<span>&#46;</span>com</a>&gt;
+# Copyright 2008 Esben Mose Hansen, Ange Optimization ApS
+#
+# Distributed under the OSI-approved BSD License (the “License”);
+# see accompanying file Copyright.txt for details.
+#
+# This software is distributed WITHOUT ANY WARRANTY; without even the
+# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the License for more information.
+#=============================================================================
+# (To distribute this file outside of CMake, substitute the full
+#  License text for the above reference.)
+#
+# This file has been changed by:
+#
+# Maximilien Naveau (New York University and Max Planck Gesellschaft)</p>
+<p>#.rst:
+# .. cmake:command:: _find_protobuf_compiler
+#
+#   This function looks for the “protoc” executable, which is the protobuf message
+#   compiler.
+#
+function(_find_protobuf_compiler)</p>
+<blockquote>
+<div><p>find_package(Protobuf REQUIRED)</p>
+<p># get first directory that points into devel space of protobuf catkin workspace
+list (GET protobuf_catkin_INCLUDE_DIRS 0 first_protobuf_catkin_include_dir)</p>
+<dl>
+<dt>set(PROTOBUF_COMPILER_CANDIDATES</dt><dd><p># only works from same workspace
+# (DEVEL_PREFIX evaluates to workspace that is built,</p>
+<blockquote>
+<div><p># not workspace where protobuf_catkin is)</p>
+</div></blockquote>
+<p>“${CATKIN_DEVEL_PREFIX}/bin/protoc”
+# Try to find the apt-get install protobuf compiler
+“/usr/bin/protoc”
+# Try to find the ROS installed protobuf compiler
+“/opt/ros/$ENV{ROS_DISTRO}/bin/protoc”
+# if protoc is needed from another merged workspace,
+# use path that leads to package workspace
+“${first_protobuf_catkin_include_dir}/../bin/protoc”</p>
+</dd>
+</dl>
+<p>)</p>
+<dl>
+<dt>foreach(candidate ${PROTOBUF_COMPILER_CANDIDATES})</dt><dd><dl class="simple">
+<dt>if(EXISTS ${candidate})</dt><dd><p>message(STATUS “Found protobuf compiler: ${candidate}”)
+set(PROTOBUF_COMPILER ${candidate} PARENT_SCOPE)
+return()</p>
+</dd>
+</dl>
+<p>endif()</p>
+</dd>
+</dl>
+<p>endforeach()
+message(FATAL_ERROR “Couldn’t find protobuf compiler. Please ensure that protobuf_catkin is properly installed. Checked the following paths: ${PROTOBUF_COMPILER_CANDIDATES}”)</p>
+</div></blockquote>
+<p>endfunction()</p>
+<p>#.rst:
+# .. cmake:command:: PROTOBUF_CATKIN_GENERATE_CPP
+#
+#   :param SRC_PATH in: source path of the <em>.proto</em> files
+#   :param SRCS out: list of the <em>.c</em> generated files.
+#   :param HDRS out: list of the <em>.h</em> generated files.
+#
+#   This function execute the compilation of each protobuf file in the
+#   <code class="docutils literal notranslate"><span class="pre">BASE_PATH</span></code> folder.
+#   Usage::
+#
+#       set(SRC_PATH “protobuf”)
+#       PROTO_DEFNS paths are supposed relative to SRC_PATH
+#       set(PROTO_DEFNS path-to-my-protos-in-${SRC_PATH}/my-proto.proto)
+#       PROTOBUF_CATKIN_GENERATE_CPP2(${SRC_PATH} PROTO_SRCS PROTO_HDRS ${PROTO_DEFNS})
+#
+function(PROTOBUF_CATKIN_GENERATE_CPP SRC_PATH SRCS HDRS)</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if(NOT ARGN)</dt><dd><p>message(SEND_ERROR “Error: PROTOBUF_CATKIN_GENERATE_CPP2() called without any proto files”)
+return()</p>
+</dd>
+</dl>
+<p>endif(NOT ARGN)</p>
+<p>list(APPEND _protobuf_include_path -I=${CMAKE_CURRENT_SOURCE_DIR}/${SRC_PATH})</p>
+<p>set(${SRCS})
+set(${HDRS})</p>
+<p># Folder where the proto sources are generated in. This should resolve to
+# “build/project_name/compiled_proto”.
+set(COMPILED_PROTO_FOLDER “${CMAKE_CURRENT_BINARY_DIR}/compiled_proto”)
+file(MAKE_DIRECTORY ${COMPILED_PROTO_FOLDER})</p>
+<p># Folder where the generated headers are installed to. This should resolve to
+# “devel/include”.
+set(PROTO_GENERATED_HEADERS_INSTALL_DIR</p>
+<blockquote>
+<div><p>${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_INCLUDE_DESTINATION}/${PROJECT_NAME})</p>
+</div></blockquote>
+<p>file(MAKE_DIRECTORY ${PROTO_GENERATED_HEADERS_INSTALL_DIR})</p>
+<p># Folder where the proto files are placed, so that they can be used in other
+# proto definitions. This should resolve to “devel/share/proto”.
+set(PROTO_SHARE_SUB_FOLDER “protobuf_messages”)
+set(PROTO_FILE_INSTALL_DIR</p>
+<blockquote>
+<div><p>${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_SHARE_DESTINATION}/${PROTO_SHARE_SUB_FOLDER})</p>
+</div></blockquote>
+<p>file(MAKE_DIRECTORY ${PROTO_FILE_INSTALL_DIR})</p>
+<dl class="simple">
+<dt>set(include_candidates</dt><dd><p>“${PROTO_FILE_INSTALL_DIR}”
+“${CMAKE_INSTALL_PREFIX}/${CATKIN_GLOBAL_SHARE_DESTINATION}/${PROTO_SHARE_SUB_FOLDER}”
+“/opt/ros/$ENV{ROS_DISTRO}/${CATKIN_GLOBAL_SHARE_DESTINATION}/${PROTO_SHARE_SUB_FOLDER}”</p>
+</dd>
+</dl>
+<p>)
+foreach(include_candidate ${include_candidates})</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if(EXISTS “${include_candidate}”)</dt><dd><p>list(APPEND _protobuf_include_path “-I=${include_candidate}”)</p>
+</dd>
+</dl>
+<p>endif()</p>
+</div></blockquote>
+<p>endforeach()</p>
+<p>set(PYTHON_PROTOC_ARG_VALUE “”)
+set(PYTHON_PROTOC_ARG_FLAGS “”)
+set(PROTOC_PYTHON_COMMENT “”)
+if(${PROTOBUF_COMPILE_PYTHON})</p>
+<blockquote>
+<div><p># Setting the protoc arguments to include compilation of Python files.
+set(PYTHON_PROTOC_ARG_FLAG “–python_out”)
+set(PYTHON_PROTOC_ARG_VALUE ${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_PYTHON_DESTINATION})
+set(PROTOC_PYTHON_COMMENT ” and Python”)</p>
+</div></blockquote>
+<p>endif()</p>
+<p>_find_protobuf_compiler()
+foreach(FIL ${ARGN})</p>
+<blockquote>
+<div><p>get_filename_component(ABS_FIL ${SRC_PATH}/${FIL} ABSOLUTE)
+get_filename_component(FIL_WE ${FIL} NAME_WE)
+get_filename_component(FIL_REL_DIR ${FIL} DIRECTORY)</p>
+<p># FIL_REL_DIR contains the path to the proto file, starting inside
+# SRC_PATH. E.g., for base path “proto” and file
+# “proto/project/definitions.proto”, FIL_REL_DIR would be “project”.
+if(${FIL_REL_DIR})</p>
+<blockquote>
+<div><p>string(REGEX REPLACE “${SRC_PATH}/?” “” FIL_REL_DIR ${FIL_REL_DIR})</p>
+</div></blockquote>
+<p>endif()</p>
+<p># Variable for the protobuf share folder (e.g., ../devel/share/proto/project-name)
+set(PROTO_SHARE_FOLDER ${PROTO_FILE_INSTALL_DIR}/${FIL_REL_DIR})
+file(MAKE_DIRECTORY ${PROTO_SHARE_FOLDER})</p>
+<p># The protoc output folder for C++ .h/.cc files.
+set(OUTPUT_FOLDER ${COMPILED_PROTO_FOLDER}/${FIL_REL_DIR})
+set(OUTPUT_FOLDER_BASE ${COMPILED_PROTO_FOLDER})
+file(MAKE_DIRECTORY ${OUTPUT_FOLDER})
+set(OUTPUT_BASE_FILE_NAME “${OUTPUT_FOLDER}/${FIL_WE}”)</p>
+<p>list(APPEND ${SRCS} “${OUTPUT_BASE_FILE_NAME}.pb.cc”)
+list(APPEND ${HDRS} “${OUTPUT_BASE_FILE_NAME}.pb.h”)</p>
+<dl class="simple">
+<dt>set(protobuf_command_args –cpp_out=${OUTPUT_FOLDER}</dt><dd><p>${PYTHON_PROTOC_ARG_FLAG}
+${PYTHON_PROTOC_ARG_VALUE}
+${_protobuf_include_path} ${ABS_FIL})</p>
+</dd>
+</dl>
+<p>message(STATUS “Going to execute: ${PROTOBUF_COMPILER} ${protobuf_command_args}”)
+add_custom_command(</p>
+<blockquote>
+<div><dl class="simple">
+<dt>OUTPUT “${OUTPUT_BASE_FILE_NAME}.pb.cc”</dt><dd><p>“${OUTPUT_BASE_FILE_NAME}.pb.h”
+“${PROTO_GENERATED_HEADERS_INSTALL_DIR}/${FIL_WE}.pb.h”
+“${PROTO_SHARE_FOLDER}/${FIL_WE}.proto”</p>
+</dd>
+</dl>
+<p>COMMAND  “${PROTOBUF_COMPILER}”
+ARGS ${protobuf_command_args}
+COMMAND ${CMAKE_COMMAND} -E copy</p>
+<blockquote>
+<div><p>“${OUTPUT_BASE_FILE_NAME}.pb.h”
+“${PROTO_GENERATED_HEADERS_INSTALL_DIR}/${FIL_REL_DIR}/${FIL_WE}.pb.h”</p>
+</div></blockquote>
+<dl class="simple">
+<dt>COMMAND ${CMAKE_COMMAND} -E copy</dt><dd><p>${ABS_FIL}
+“${PROTO_SHARE_FOLDER}/${FIL_WE}.proto”</p>
+</dd>
+</dl>
+<p>DEPENDS ${ABS_FIL}
+COMMENT “Running C++${PROTOC_PYTHON_COMMENT} protocol buffer compiler on ${FIL}.”
+VERBATIM)
+install(</p>
+<blockquote>
+<div><p>FILES ${ABS_FIL}
+DESTINATION ${CATKIN_GLOBAL_SHARE_DESTINATION}/${PROTO_SHARE_SUB_FOLDER}/${FIL_REL_DIR}</p>
+</div></blockquote>
+<p>)</p>
+</div></blockquote>
+</div></blockquote>
+<p>endforeach()</p>
+<p>set_source_files_properties(${${SRCS}} ${${HDRS}} PROPERTIES GENERATED TRUE)
+set(${SRCS} ${${SRCS}} PARENT_SCOPE)
+set(${HDRS} ${${HDRS}} PARENT_SCOPE)</p>
+<p>include_directories(${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_INCLUDE_DESTINATION})
+install(FILES ${${HDRS}}</p>
+<blockquote>
+<div><p>DESTINATION ${CATKIN_GLOBAL_INCLUDE_DESTINATION}/${FIL_REL_DIR})</p>
+</div></blockquote>
+<dl>
+<dt>if(${PROTOBUF_COMPILE_PYTHON})</dt><dd><p># The path of the Python package under devel/lib/python../dist-packages/{project_name}.
+set(PYTHON_PACKAGE_PATH ${CATKIN_DEVEL_PREFIX}/${CATKIN_PACKAGE_PYTHON_DESTINATION})
+file(MAKE_DIRECTORY ${PYTHON_PACKAGE_PATH})
+# The filepath of the Python package init file.
+set(PYTHON_INIT_FILEPATH “${PYTHON_PACKAGE_PATH}/__init__.py”)
+if(NOT EXISTS ${PYTHON_INIT_FILEPATH})</p>
+<blockquote>
+<div><dl class="simple">
+<dt>add_custom_target(create_empty_init ALL</dt><dd><p>COMMAND ${CMAKE_COMMAND} -E touch ${PYTHON_INIT_FILEPATH}
+COMMENT “Created empty __init__.py.”
+VERBATIM)</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>endif()
+install(DIRECTORY ${PYTHON_PACKAGE_PATH}</p>
+<blockquote>
+<div><p>DESTINATION ${CATKIN_GLOBAL_PYTHON_DESTINATION})</p>
+</div></blockquote>
+</dd>
+</dl>
+<p>endif()</p>
+</div></blockquote>
+<p>endfunction()</p>
+<p>#.rst:
+# .. cmake:command:: PROTOBUF_CATKIN_GENERATE_LIB(protobuf_cmake_target)
+#
+#    Use <span class="target" id="index-0-command:protobuf_catkin_generate_cpp"></span><a class="reference internal" href="../cmake_doc.html#command:protobuf_catkin_generate_cpp" title="protobuf_catkin_generate_cpp"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">PROTOBUF_CATKIN_GENERATE_CPP()</span></code></a> in order to generate the
+#    protobuf C++ source files from the protobuf files located in the local
+#    <em>protobuff/</em> folder. It then creates a cmake target building the library
+#    including the generated files.
+#
+function(PROTOBUF_CATKIN_GENERATE_LIB protobuf_cmake_target)</p>
+<blockquote>
+<div><p># protbuf source dir
+set(source_path protobuf)
+# Protobuf files
+file(GLOB protobuf_file_names</p>
+<blockquote>
+<div><p>RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}/${source_path}
+${CMAKE_CURRENT_SOURCE_DIR}/${source_path}/<a href="#id1"><span class="problematic" id="id2">*</span></a>.proto</p>
+</div></blockquote>
+<p>)</p>
+<dl class="simple">
+<dt>PROTOBUF_CATKIN_GENERATE_CPP(${source_path} proto_srcs proto_headers</dt><dd><p>${protobuf_file_names})</p>
+</dd>
+</dl>
+<p>add_library(${PROJECT_NAME}_protobuf_messages ${proto_srcs})
+target_link_libraries(${PROJECT_NAME}_protobuf_messages ${PROTOBUF_LIBRARY})</p>
+<p>set(${protobuf_cmake_target} ${PROJECT_NAME}_protobuf_messages PARENT_SCOPE)</p>
+</div></blockquote>
+<p>endfunction()</p>
+<p># By default have PROTOBUF_GENERATE_CPP macro pass -I to protoc
+# for each directory where a proto file is referenced.
+if(NOT DEFINED PROTOBUF_GENERATE_CPP_APPEND_PATH)</p>
+<blockquote>
+<div><p>set(PROTOBUF_GENERATE_CPP_APPEND_PATH TRUE)</p>
+</div></blockquote>
+<p>endif()</p>
+<p># Ensure that devel/include is part of the include directories. This is
+# necessary as otherwise sometimes that folder is not added to the include dirs
+# which means that the compiler cannot find the generated proto header from
+# other packages.
+include_directories(${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_INCLUDE_DESTINATION})</p>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright Copyright (c) 2020, See license.txt file or the license section.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

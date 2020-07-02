@@ -1,0 +1,44 @@
+\subsection*{Introduction}
+
+This package provide some tools in order to format the C/\+C++ code using clang-\/format and the \href{https://machines-in-motion.github.io/code_documentation/ci_example_cpp/coding_guidelines_1.html}{\tt machines-\/in-\/motions} specific set of rules.
+
+\subsection*{Executable}
+
+In order to use it one need to source the workspace environment\+: \begin{DoxyVerb}source workspace/devel/setup.bash
+\end{DoxyVerb}
+
+
+And to run the following command\+: \begin{DoxyVerb}rosrun mpi_cmake_modules clang_format list_of_files list_of_folders
+\end{DoxyVerb}
+
+
+{\ttfamily list\+\_\+of\+\_\+files} and {\ttfamily list\+\_\+of\+\_\+folders} can be either relative paths or absolute paths.
+
+For those not willing to use rosrun the executable is located in \begin{DoxyVerb}mpi_cmake_modules/scripts/clang_format
+\end{DoxyVerb}
+
+
+So one can simply get the full path of the executable in order to use it. A cleaner way would be to properly install the executable script.
+
+The executable will create the list of all files to be formatted by checking all arguments (which order does not matter). And perform the following tests\+:
+\begin{DoxyItemize}
+\item If you provided a file it will keep it if\+:
+\begin{DoxyItemize}
+\item it exists \&
+\item it is a source files
+\end{DoxyItemize}
+\item If you provided a folder it will search recursively all the files and perform the above checks.
+\end{DoxyItemize}
+
+Once the list is created the tool format each selected files.
+
+\subsection*{C\+Make macro}
+
+This package also provide a C\+Make macro allowing you to perform automatically the formatting upon build.
+
+The macro to add is located in the {\ttfamily mpi\+\_\+cmake\+\_\+modules/cmake/clang-\/format.\+cmake} and is called \begin{DoxyVerb}format_code()
+\end{DoxyVerb}
+
+
+By default it does nothing. In order to activate it you need to add the folowwing C\+Make argument\+: \begin{DoxyVerb}catkin build mpi_cmake_modules --cmake-args -DFORMAT_CODE=ON \end{DoxyVerb}
+ 

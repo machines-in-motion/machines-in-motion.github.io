@@ -1,0 +1,84 @@
+\hypertarget{classreal__time__tools_1_1Spinner}{}\section{real\+\_\+time\+\_\+tools\+:\+:Spinner Class Reference}
+\label{classreal__time__tools_1_1Spinner}\index{real\+\_\+time\+\_\+tools\+::\+Spinner@{real\+\_\+time\+\_\+tools\+::\+Spinner}}
+
+
+Class to have threads / loops running at a desired frequency.  
+
+
+
+
+{\ttfamily \#include $<$spinner.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classreal__time__tools_1_1Spinner_ac945d6df02f33e75f499922d23838408}{set\+\_\+period} (double period)
+\begin{DoxyCompactList}\small\item\em set\+\_\+period sets the period of the loop in !!seconds!! \end{DoxyCompactList}\item 
+void \hyperlink{classreal__time__tools_1_1Spinner_afa4e24e5dbbbfa2e0d694ef2e3fa3bb8}{set\+\_\+frequency} (double frequency)
+\begin{DoxyCompactList}\small\item\em Set the frequency of the loop \mbox{[}Hz\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classreal__time__tools_1_1Spinner_aadeb66828ba2635858876491f1ffac11}\label{classreal__time__tools_1_1Spinner_aadeb66828ba2635858876491f1ffac11}} 
+void \hyperlink{classreal__time__tools_1_1Spinner_aadeb66828ba2635858876491f1ffac11}{initialize} ()
+\begin{DoxyCompactList}\small\item\em To be called at the beginning of the loop if the spinner is not created just before. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classreal__time__tools_1_1Spinner_aa07d4fa32ead44008daa73663508139d}\label{classreal__time__tools_1_1Spinner_aa07d4fa32ead44008daa73663508139d}} 
+void \hyperlink{classreal__time__tools_1_1Spinner_aa07d4fa32ead44008daa73663508139d}{spin} ()
+\begin{DoxyCompactList}\small\item\em spin waits for the time such that successive calls to spin will result in spin being called at the desired frequency \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classreal__time__tools_1_1Spinner_a5a55ae6d3b5104b5f23e0f153851eb1d}\label{classreal__time__tools_1_1Spinner_a5a55ae6d3b5104b5f23e0f153851eb1d}} 
+double \hyperlink{classreal__time__tools_1_1Spinner_a5a55ae6d3b5104b5f23e0f153851eb1d}{predict\+\_\+sleeping\+\_\+time} ()
+\begin{DoxyCompactList}\small\item\em Predict the time the current thread is going to sleep. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classreal__time__tools_1_1Spinner_ab227dc08a387d25c5c72fd9dcb164272}\label{classreal__time__tools_1_1Spinner_ab227dc08a387d25c5c72fd9dcb164272}} 
+double \hyperlink{classreal__time__tools_1_1Spinner_ab227dc08a387d25c5c72fd9dcb164272}{period\+\_\+sec\+\_\+}
+\begin{DoxyCompactList}\small\item\em period\+\_\+sec\+\_\+ is the period of the loop in seconds \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classreal__time__tools_1_1Spinner_a1260eb9978b9840df1a21b18f4d6792d}\label{classreal__time__tools_1_1Spinner_a1260eb9978b9840df1a21b18f4d6792d}} 
+double \hyperlink{classreal__time__tools_1_1Spinner_a1260eb9978b9840df1a21b18f4d6792d}{next\+\_\+date\+\_\+sec\+\_\+}
+\begin{DoxyCompactList}\small\item\em next\+\_\+date\+\_\+sec\+\_\+ is the date when the loop needs to wake up. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to have threads / loops running at a desired frequency. \begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{demo_spinner_8cpp-example}{demo\+\_\+spinner.\+cpp}, and \hyperlink{demo_timing_8cpp-example}{demo\+\_\+timing.\+cpp}.\end{Desc}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classreal__time__tools_1_1Spinner_afa4e24e5dbbbfa2e0d694ef2e3fa3bb8}\label{classreal__time__tools_1_1Spinner_afa4e24e5dbbbfa2e0d694ef2e3fa3bb8}} 
+\index{real\+\_\+time\+\_\+tools\+::\+Spinner@{real\+\_\+time\+\_\+tools\+::\+Spinner}!set\+\_\+frequency@{set\+\_\+frequency}}
+\index{set\+\_\+frequency@{set\+\_\+frequency}!real\+\_\+time\+\_\+tools\+::\+Spinner@{real\+\_\+time\+\_\+tools\+::\+Spinner}}
+\subsubsection{\texorpdfstring{set\+\_\+frequency()}{set\_frequency()}}
+{\footnotesize\ttfamily void real\+\_\+time\+\_\+tools\+::\+Spinner\+::set\+\_\+frequency (\begin{DoxyParamCaption}\item[{double}]{frequency }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the frequency of the loop \mbox{[}Hz\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frequency} & \\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{demo_spinner_8cpp-example}{demo\+\_\+spinner.\+cpp}, and \hyperlink{demo_timing_8cpp-example}{demo\+\_\+timing.\+cpp}.\end{Desc}
+\mbox{\Hypertarget{classreal__time__tools_1_1Spinner_ac945d6df02f33e75f499922d23838408}\label{classreal__time__tools_1_1Spinner_ac945d6df02f33e75f499922d23838408}} 
+\index{real\+\_\+time\+\_\+tools\+::\+Spinner@{real\+\_\+time\+\_\+tools\+::\+Spinner}!set\+\_\+period@{set\+\_\+period}}
+\index{set\+\_\+period@{set\+\_\+period}!real\+\_\+time\+\_\+tools\+::\+Spinner@{real\+\_\+time\+\_\+tools\+::\+Spinner}}
+\subsubsection{\texorpdfstring{set\+\_\+period()}{set\_period()}}
+{\footnotesize\ttfamily void real\+\_\+time\+\_\+tools\+::\+Spinner\+::set\+\_\+period (\begin{DoxyParamCaption}\item[{double}]{period }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set\+\_\+period sets the period of the loop in !!seconds!! 
+
+
+\begin{DoxyParams}{Parameters}
+{\em period} & in seconds. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/real\+\_\+time\+\_\+tools/\hyperlink{spinner_8hpp}{spinner.\+hpp}\item 
+src/\hyperlink{spinner_8cpp}{spinner.\+cpp}\end{DoxyCompactItemize}

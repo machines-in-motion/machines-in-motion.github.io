@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacereal__time__tools" kind="namespace" language="C++">
+    <compoundname>real_time_tools</compoundname>
+    <innerclass refid="classreal__time__tools_1_1CheckpointTimer" prot="public">real_time_tools::CheckpointTimer</innerclass>
+    <innerclass refid="classreal__time__tools_1_1FrequencyManager" prot="public">real_time_tools::FrequencyManager</innerclass>
+    <innerclass refid="classreal__time__tools_1_1PortConfig" prot="public">real_time_tools::PortConfig</innerclass>
+    <innerclass refid="classreal__time__tools_1_1RealTimeCheck" prot="public">real_time_tools::RealTimeCheck</innerclass>
+    <innerclass refid="classreal__time__tools_1_1RealTimeMutex" prot="public">real_time_tools::RealTimeMutex</innerclass>
+    <innerclass refid="classreal__time__tools_1_1RealTimeThread" prot="public">real_time_tools::RealTimeThread</innerclass>
+    <innerclass refid="classreal__time__tools_1_1RealTimeThreadParameters" prot="public">real_time_tools::RealTimeThreadParameters</innerclass>
+    <innerclass refid="classreal__time__tools_1_1SingletypeThreadsafeObject" prot="public">real_time_tools::SingletypeThreadsafeObject</innerclass>
+    <innerclass refid="classreal__time__tools_1_1Spinner" prot="public">real_time_tools::Spinner</innerclass>
+    <innerclass refid="classreal__time__tools_1_1ThreadsafeHistoryInterface" prot="public">real_time_tools::ThreadsafeHistoryInterface</innerclass>
+    <innerclass refid="classreal__time__tools_1_1ThreadsafeObject" prot="public">real_time_tools::ThreadsafeObject</innerclass>
+    <innerclass refid="classreal__time__tools_1_1ThreadsafeTimeseries" prot="public">real_time_tools::ThreadsafeTimeseries</innerclass>
+    <innerclass refid="classreal__time__tools_1_1Timer" prot="public">real_time_tools::Timer</innerclass>
+    <innerclass refid="classreal__time__tools_1_1UsbStream" prot="public">real_time_tools::UsbStream</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="mutex_8hpp_1a1ddc3c11c7ede92bbf52bafb61009ba2" prot="public" static="no">
+        <type>std::mutex *</type>
+        <definition>typedef std::mutex* real_time_tools::RealTimeMutex_t</definition>
+        <argsstring></argsstring>
+        <name>RealTimeMutex_t</name>
+        <briefdescription>
+<para>Alias for the real time mutex. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/mutex.hpp" line="45" column="1" bodyfile="include/real_time_tools/mutex.hpp" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mutex_8hpp_1a8a363a3ca3b0f37f2fd06ae393e871bb" prot="public" static="no">
+        <type>std::condition_variable</type>
+        <definition>typedef std::condition_variable real_time_tools::rt_cond</definition>
+        <argsstring></argsstring>
+        <name>rt_cond</name>
+        <briefdescription>
+<para>Alias for the real time condition variable. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/mutex.hpp" line="47" column="1" bodyfile="include/real_time_tools/mutex.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="timer_8cpp_1a4481ea2a14fb44cfe1bf76fc43357b59" prot="public" static="no">
+        <type>std::chrono::duration&lt; int, std::ratio_multiply&lt; std::chrono::hours::period, std::ratio&lt; 24 &gt; &gt;::type &gt;</type>
+        <definition>typedef std::chrono::duration&lt; int, std::ratio_multiply&lt;std::chrono::hours::period, std::ratio&lt;24&gt; &gt;::type&gt; real_time_tools::days</definition>
+        <argsstring></argsstring>
+        <name>days</name>
+        <briefdescription>
+<para>Simple renaming to get the number of days passed out of the date. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/timer.cpp" line="28" column="1" bodyfile="src/timer.cpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="iostream_8hpp_1a5146f16f97588edcc7dbe28641f4a1fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string real_time_tools::get_log_dir</definition>
+        <argsstring>(std::string app_name)</argsstring>
+        <name>get_log_dir</name>
+        <param>
+          <type>std::string</type>
+          <declname>app_name</declname>
+        </param>
+        <briefdescription>
+<para>Get the logging directory based on a specific application. </para>        </briefdescription>
+        <detaileddescription>
+<para>It creates a direction in $HOME/app_name/YEAR_MONTH_DAY_HOUR_SECOND/ and return the absolute path of this. It allows the user to dump data in different folders everytime the user launch the application.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>app_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the application name </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::string the absolute path to the log directory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/iostream.hpp" line="47" column="1" bodyfile="src/iostream.cpp" bodystart="19" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="iostream_8hpp_1a4ce01145e1d43fc6f54c3f654de5bd7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool real_time_tools::create_directory</definition>
+        <argsstring>(std::string path)</argsstring>
+        <name>create_directory</name>
+        <param>
+          <type>std::string</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+<para>Create a directory. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the path to be created </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if everything went well </para></simplesect>
+<simplesect kind="return"><para>false if a problem occur </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/iostream.hpp" line="56" column="1" bodyfile="src/iostream.cpp" bodystart="34" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="iostream_8hpp_1a21f87296dd11ab3784e7b793033a21ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string real_time_tools::get_home_dir</definition>
+        <argsstring>()</argsstring>
+        <name>get_home_dir</name>
+        <briefdescription>
+<para>Get the home directory path. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>std::string the home directory absolute path ending with a &quot;/&quot; </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/iostream.hpp" line="63" column="1" bodyfile="src/iostream.cpp" bodystart="39" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="process__manager_8hpp_1ae4959078e00ed85dd26b9a96dcd8fd3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool real_time_tools::fix_current_process_to_cpu</definition>
+        <argsstring>(std::vector&lt; int &gt; &amp;cpu_affinities, int pid)</argsstring>
+        <name>fix_current_process_to_cpu</name>
+        <param>
+          <type>std::vector&lt; int &gt; &amp;</type>
+          <declname>cpu_affinities</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pid</declname>
+        </param>
+        <briefdescription>
+<para>Pin an executing process to a specific CPU in order to avoid jumps between CPUs. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cpu_affinities</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the index of the CPU one wants to pin the process on. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the PID of the current process. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if everything went well. </para></simplesect>
+<simplesect kind="return"><para>false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/process_manager.hpp" line="33" column="1" bodyfile="src/process_manager.cpp" bodystart="25" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="process__manager_8hpp_1a6a8ceffef6761ee22e436a1151f020af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool real_time_tools::set_cpu_dma_latency</definition>
+        <argsstring>(int max_latency_us)</argsstring>
+        <name>set_cpu_dma_latency</name>
+        <param>
+          <type>int</type>
+          <declname>max_latency_us</declname>
+        </param>
+        <briefdescription>
+<para>Set the _cpu_dma_latency objectWe can set the maximum CPU latency for processes in micro seconds. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>max_latency_us</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the maximum latency in micro-seconds. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if everything went well. </para></simplesect>
+<simplesect kind="return"><para>false if something went wrong. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/process_manager.hpp" line="43" column="1" bodyfile="src/process_manager.cpp" bodystart="58" bodyend="80"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/real_time_tools/checkpoint_timer.hpp" line="19" column="1"/>
+  </compounddef>
+</doxygen>

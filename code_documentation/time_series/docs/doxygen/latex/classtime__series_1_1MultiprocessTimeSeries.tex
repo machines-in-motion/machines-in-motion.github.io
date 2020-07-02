@@ -1,0 +1,87 @@
+\hypertarget{classtime__series_1_1MultiprocessTimeSeries}{}\section{time\+\_\+series\+:\+:Multiprocess\+Time\+Series$<$ T $>$ Class Template Reference}
+\label{classtime__series_1_1MultiprocessTimeSeries}\index{time\+\_\+series\+::\+Multiprocess\+Time\+Series$<$ T $>$@{time\+\_\+series\+::\+Multiprocess\+Time\+Series$<$ T $>$}}
+
+
+Multiprocess Time Series.  
+
+
+
+
+{\ttfamily \#include $<$multiprocess\+\_\+time\+\_\+series.\+hpp$>$}
+
+
+
+Inheritance diagram for time\+\_\+series\+:\+:Multiprocess\+Time\+Series$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{classtime__series_1_1MultiprocessTimeSeries__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for time\+\_\+series\+:\+:Multiprocess\+Time\+Series$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{classtime__series_1_1MultiprocessTimeSeries__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classtime__series_1_1MultiprocessTimeSeries_a118890497b42365a56221c66edbb478e}{Multiprocess\+Time\+Series} (std\+::string segment\+\_\+id, size\+\_\+t \hyperlink{classtime__series_1_1internal_1_1TimeSeriesBase_aee1bf636a094a3068f9de731688c3972}{max\+\_\+length}, bool leader=true, Index start\+\_\+timeindex=0)
+\begin{DoxyCompactList}\small\item\em create a new instance pointing to the specified shared memory segment \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtime__series_1_1MultiprocessTimeSeries_a44445322f664019684a02caa31639c14}\label{classtime__series_1_1MultiprocessTimeSeries_a44445322f664019684a02caa31639c14}} 
+void {\bfseries read\+\_\+indexes} ()
+\item 
+\mbox{\Hypertarget{classtime__series_1_1MultiprocessTimeSeries_abc59736f908b8e3f4e6881607e2253a7}\label{classtime__series_1_1MultiprocessTimeSeries_abc59736f908b8e3f4e6881607e2253a7}} 
+void {\bfseries write\+\_\+indexes} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtime__series_1_1MultiprocessTimeSeries_a0ae05ba33e9f73f839e2229677062518}\label{classtime__series_1_1MultiprocessTimeSeries_a0ae05ba33e9f73f839e2229677062518}} 
+shared\+\_\+memory\+::array$<$ Index $>$ {\bfseries indexes\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T = int$>$\newline
+class time\+\_\+series\+::\+Multiprocess\+Time\+Series$<$ T $>$}
+
+Multiprocess Time Series. 
+
+Several instances hosted by different processes, if pointing to the same shared memory segment (as specified by the segment\+\_\+id), may read/write from the same underlying time series. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtime__series_1_1MultiprocessTimeSeries_a118890497b42365a56221c66edbb478e}\label{classtime__series_1_1MultiprocessTimeSeries_a118890497b42365a56221c66edbb478e}} 
+\index{time\+\_\+series\+::\+Multiprocess\+Time\+Series@{time\+\_\+series\+::\+Multiprocess\+Time\+Series}!Multiprocess\+Time\+Series@{Multiprocess\+Time\+Series}}
+\index{Multiprocess\+Time\+Series@{Multiprocess\+Time\+Series}!time\+\_\+series\+::\+Multiprocess\+Time\+Series@{time\+\_\+series\+::\+Multiprocess\+Time\+Series}}
+\subsubsection{\texorpdfstring{Multiprocess\+Time\+Series()}{MultiprocessTimeSeries()}}
+{\footnotesize\ttfamily template$<$typename T  = int$>$ \\
+\hyperlink{classtime__series_1_1MultiprocessTimeSeries}{time\+\_\+series\+::\+Multiprocess\+Time\+Series}$<$ T $>$\+::\hyperlink{classtime__series_1_1MultiprocessTimeSeries}{Multiprocess\+Time\+Series} (\begin{DoxyParamCaption}\item[{std\+::string}]{segment\+\_\+id,  }\item[{size\+\_\+t}]{max\+\_\+length,  }\item[{bool}]{leader = {\ttfamily true},  }\item[{Index}]{start\+\_\+timeindex = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+create a new instance pointing to the specified shared memory segment 
+
+
+\begin{DoxyParams}{Parameters}
+{\em segment\+\_\+id} & the id of the segment to point to \\
+\hline
+{\em max\+\_\+length} & max number of elements in the time series \\
+\hline
+{\em leader} & if true, the shared memory segment will initialize the shared time series, and wiped the related shared memory on destruction. Instantiating a first \hyperlink{classtime__series_1_1MultiprocessTimeSeries}{Multiprocess\+Time\+Series} with leader set to false will result in undefined behavior. When the leader instance is destroyed, other instances are pointing to the shared segment may crash or hang. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/time\+\_\+series/multiprocess\+\_\+time\+\_\+series.\+hpp\end{DoxyCompactItemize}

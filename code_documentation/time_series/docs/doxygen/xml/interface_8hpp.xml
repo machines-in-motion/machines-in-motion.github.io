@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="interface_8hpp" kind="file" language="C++">
+    <compoundname>interface.hpp</compoundname>
+    <includes local="no">cstddef</includes>
+    <includes local="no">limits</includes>
+    <includedby refid="base_8hpp" local="yes">include/time_series/internal/base.hpp</includedby>
+    <includedby refid="multiprocess__time__series_8hpp" local="yes">include/time_series/multiprocess_time_series.hpp</includedby>
+    <includedby refid="time__series_8hpp" local="yes">include/time_series/time_series.hpp</includedby>
+    <incdepgraph>
+      <node id="74">
+        <label>limits</label>
+      </node>
+      <node id="72">
+        <label>include/time_series/interface.hpp</label>
+        <link refid="interface_8hpp"/>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+      </node>
+      <node id="73">
+        <label>cstddef</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="75">
+        <label>include/time_series/interface.hpp</label>
+        <link refid="interface_8hpp"/>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+      </node>
+      <node id="78">
+        <label>demos/demo_multiprocess_read.cpp</label>
+        <link refid="demo__multiprocess__read_8cpp"/>
+      </node>
+      <node id="76">
+        <label>include/time_series/internal/base.hpp</label>
+        <link refid="base_8hpp_source"/>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+      </node>
+      <node id="81">
+        <label>demos/demo_time_series.cpp</label>
+        <link refid="demo__time__series_8cpp"/>
+      </node>
+      <node id="79">
+        <label>demos/demo_multiprocess_write.cpp</label>
+        <link refid="demo__multiprocess__write_8cpp"/>
+      </node>
+      <node id="80">
+        <label>include/time_series/time_series.hpp</label>
+        <link refid="time__series_8hpp"/>
+        <childnode refid="81" relation="include">
+        </childnode>
+      </node>
+      <node id="77">
+        <label>include/time_series/multiprocess_time_series.hpp</label>
+        <link refid="multiprocess__time__series_8hpp_source"/>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classtime__series_1_1TimeSeriesInterface" prot="public">time_series::TimeSeriesInterface</innerclass>
+    <innernamespace refid="namespacetime__series">time_series</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Vincent Berenz license License BSD-3-Clause </para></simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2019, Max Planck Gesellschaft. </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="8"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstddef&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;limits&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacetime__series" kindref="compound">time_series</ref></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>Index;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>Timestamp;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Index<sp/>EMPTY<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="34" refid="classtime__series_1_1TimeSeriesInterface" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classtime__series_1_1TimeSeriesInterface" kindref="compound">TimeSeriesInterface</ref></highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>Index<sp/><ref refid="classtime__series_1_1TimeSeriesInterface_1a19127d715b58f95c0e2581576fe80f18" kindref="member">newest_timeindex</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>wait<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>Index<sp/><ref refid="classtime__series_1_1TimeSeriesInterface_1a46cf7fc73adfcc400fbf40c22aa7268f" kindref="member">count_appended_elements</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>Index<sp/><ref refid="classtime__series_1_1TimeSeriesInterface_1a3a68de9ecf8bfeb6c05ea89386537307" kindref="member">oldest_timeindex</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>wait<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>T<sp/><ref refid="classtime__series_1_1TimeSeriesInterface_1ad3b66b6b5f0f763d440731c50e41b4cb" kindref="member">newest_element</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>T<sp/><ref refid="classtime__series_1_1TimeSeriesInterface_1a3149f64961e08315eb06798d0f075333" kindref="member">operator[]</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Index<sp/>&amp;timeindex)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>Timestamp<sp/><ref refid="classtime__series_1_1TimeSeriesInterface_1aaeb745c8c13170a645b25170f0b035f1" kindref="member">timestamp_ms</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Index<sp/>&amp;timeindex)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>Timestamp<sp/><ref refid="classtime__series_1_1TimeSeriesInterface_1acfb468e6e1766fe4b566189d3b888e4d" kindref="member">timestamp_s</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Index<sp/>&amp;timeindex)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classtime__series_1_1TimeSeriesInterface_1aa09c55259a1f34491b5ecdd1505ffdbf" kindref="member">wait_for_timeindex</ref>(</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Index<sp/>&amp;timeindex,</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>&amp;max_duration_s<sp/>=</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::numeric_limits&lt;double&gt;::quiet_NaN())<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::size_t<sp/><ref refid="classtime__series_1_1TimeSeriesInterface_1a90f6ed15d82006dbc7ef7783d9f6ff7a" kindref="member">length</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::size_t<sp/><ref refid="classtime__series_1_1TimeSeriesInterface_1aded8927e82c060aa3367f17dfd59a8ec" kindref="member">max_length</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classtime__series_1_1TimeSeriesInterface_1a2758b463ea41393a24ea37ccd0f5feb4" kindref="member">has_changed_since_tag</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtime__series_1_1TimeSeriesInterface_1a34e881c9496901127baf1d907d7399ac" kindref="member">tag</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Index<sp/>&amp;timeindex)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>Index<sp/><ref refid="classtime__series_1_1TimeSeriesInterface_1aa71ab509ac29c5da681aee9dbf65f2d8" kindref="member">tagged_timeindex</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtime__series_1_1TimeSeriesInterface_1a0782c522287cf041fc253529b61041f9" kindref="member">append</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T<sp/>&amp;element)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classtime__series_1_1TimeSeriesInterface_1a932e891f3f41781af4282ada18f05d31" kindref="member">is_empty</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>time_series</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/time_series/interface.hpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,209 @@
+\hypertarget{classreal__time__tools_1_1RealTimeCheck}{}\section{real\+\_\+time\+\_\+tools\+:\+:Real\+Time\+Check Class Reference}
+\label{classreal__time__tools_1_1RealTimeCheck}\index{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}}
+
+
+super simple class for checking if thread ever lost realtime.  
+
+
+
+
+{\ttfamily \#include $<$realtime\+\_\+check.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classreal__time__tools_1_1RealTimeCheck_a2f26472092432e628167f89a3a19e27e}{Real\+Time\+Check} (double \hyperlink{classreal__time__tools_1_1RealTimeCheck_a126c13a50d06703c515b35f87c3e867c}{target\+\_\+frequency}, double \hyperlink{classreal__time__tools_1_1RealTimeCheck_a235895032a789539a8ba957caac621ec}{switch\+\_\+frequency})
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classreal__time__tools_1_1RealTimeCheck}{Real\+Time\+Check} object. \end{DoxyCompactList}\item 
+void \hyperlink{classreal__time__tools_1_1RealTimeCheck_a83fdf97352d36aa20e482d7dfae442d5}{tick} ()
+\item 
+bool \hyperlink{classreal__time__tools_1_1RealTimeCheck_a88f45e9151a5709812adddbb5dd142cc}{was\+\_\+realtime\+\_\+lost} () const
+\item 
+bool \hyperlink{classreal__time__tools_1_1RealTimeCheck_a4d9614b08d2b4bf7162e14c473b7d491}{get\+\_\+statistics} (int \&\hyperlink{classreal__time__tools_1_1RealTimeCheck_ae2acb20d9f1e49cc35eb5505d63201aa}{ticks}, int \&\hyperlink{classreal__time__tools_1_1RealTimeCheck_acc235579eeb245f043fd188790540fa9}{switchs}, double \&\hyperlink{classreal__time__tools_1_1RealTimeCheck_a126c13a50d06703c515b35f87c3e867c}{target\+\_\+frequency}, double \&\hyperlink{classreal__time__tools_1_1RealTimeCheck_a235895032a789539a8ba957caac621ec}{switch\+\_\+frequency}, double \&\hyperlink{classreal__time__tools_1_1RealTimeCheck_a3ffb6de7e7c01a7248c2293e29b98011}{average\+\_\+frequency}, double \&\hyperlink{classreal__time__tools_1_1RealTimeCheck_a935b4c6b8ebf569e6510d47376f8499f}{current\+\_\+frequency}, double \&\hyperlink{classreal__time__tools_1_1RealTimeCheck_a3605c41d8c5c616879fa9af469860470}{worse\+\_\+frequency})
+\item 
+double \hyperlink{classreal__time__tools_1_1RealTimeCheck_a2b891d59055829fab442ba4c382778e3}{get\+\_\+average\+\_\+frequency} ()
+\item 
+double \hyperlink{classreal__time__tools_1_1RealTimeCheck_a375f76a8df6a08ea1755728391384302}{get\+\_\+current\+\_\+frequency} () const
+\item 
+void \hyperlink{classreal__time__tools_1_1RealTimeCheck_a9c9c68da79843098085204095286a143}{print} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classreal__time__tools_1_1RealTimeCheck_a21b5703a3c61b09955d94d06a3562667}{started}
+\item 
+std\+::chrono\+::high\+\_\+resolution\+\_\+clock\+::time\+\_\+point \hyperlink{classreal__time__tools_1_1RealTimeCheck_a969600ce8ecc4ec48bbf59e8d669749e}{start\+\_\+time}
+\item 
+std\+::chrono\+::high\+\_\+resolution\+\_\+clock\+::time\+\_\+point \hyperlink{classreal__time__tools_1_1RealTimeCheck_a3e200c0376362dcc9a7db7d77a124931}{last\+\_\+tick}
+\item 
+double \hyperlink{classreal__time__tools_1_1RealTimeCheck_a126c13a50d06703c515b35f87c3e867c}{target\+\_\+frequency}
+\item 
+double \hyperlink{classreal__time__tools_1_1RealTimeCheck_ab6a059be584e4a92254002d35713d0df}{epsilon}
+\item 
+uint \hyperlink{classreal__time__tools_1_1RealTimeCheck_ae2acb20d9f1e49cc35eb5505d63201aa}{ticks}
+\item 
+uint \hyperlink{classreal__time__tools_1_1RealTimeCheck_acc235579eeb245f043fd188790540fa9}{switchs}
+\item 
+double \hyperlink{classreal__time__tools_1_1RealTimeCheck_a3ffb6de7e7c01a7248c2293e29b98011}{average\+\_\+frequency}
+\item 
+double \hyperlink{classreal__time__tools_1_1RealTimeCheck_a3605c41d8c5c616879fa9af469860470}{worse\+\_\+frequency}
+\item 
+double \hyperlink{classreal__time__tools_1_1RealTimeCheck_a235895032a789539a8ba957caac621ec}{switch\+\_\+frequency}
+\item 
+double \hyperlink{classreal__time__tools_1_1RealTimeCheck_a935b4c6b8ebf569e6510d47376f8499f}{current\+\_\+frequency}
+\item 
+std\+::mutex \hyperlink{classreal__time__tools_1_1RealTimeCheck_a3a7cc4ef87fac5e4052a3240aced88d1}{mutex}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+super simple class for checking if thread ever lost realtime. 
+
+simply measure frequency between two calls to the tick function. \begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{demo_realtime_check_8cpp-example}{demo\+\_\+realtime\+\_\+check.\+cpp}, \hyperlink{demo_realtime_strict_check_8cpp-example}{demo\+\_\+realtime\+\_\+strict\+\_\+check.\+cpp}, and \hyperlink{demo_spinner_8cpp-example}{demo\+\_\+spinner.\+cpp}.\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classreal__time__tools_1_1RealTimeCheck_a2f26472092432e628167f89a3a19e27e}\label{classreal__time__tools_1_1RealTimeCheck_a2f26472092432e628167f89a3a19e27e}} 
+\index{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}!Real\+Time\+Check@{Real\+Time\+Check}}
+\index{Real\+Time\+Check@{Real\+Time\+Check}!real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}}
+\subsubsection{\texorpdfstring{Real\+Time\+Check()}{RealTimeCheck()}}
+{\footnotesize\ttfamily real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check\+::\+Real\+Time\+Check (\begin{DoxyParamCaption}\item[{double}]{target\+\_\+frequency,  }\item[{double}]{switch\+\_\+frequency }\end{DoxyParamCaption})}
+
+
+
+Construct a new \hyperlink{classreal__time__tools_1_1RealTimeCheck}{Real\+Time\+Check} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target\+\_\+frequency} & is the loop frequency. \\
+\hline
+{\em switch\+\_\+frequency} & is the admissible frequency. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classreal__time__tools_1_1RealTimeCheck_a2b891d59055829fab442ba4c382778e3}\label{classreal__time__tools_1_1RealTimeCheck_a2b891d59055829fab442ba4c382778e3}} 
+\index{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}!get\+\_\+average\+\_\+frequency@{get\+\_\+average\+\_\+frequency}}
+\index{get\+\_\+average\+\_\+frequency@{get\+\_\+average\+\_\+frequency}!real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}}
+\subsubsection{\texorpdfstring{get\+\_\+average\+\_\+frequency()}{get\_average\_frequency()}}
+{\footnotesize\ttfamily double real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check\+::get\+\_\+average\+\_\+frequency (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+return the averaged observed frequency if statistics are available, -\/1 otherwise (false is returned is tick has never been called or if ticks reached maximum integer value). \mbox{\Hypertarget{classreal__time__tools_1_1RealTimeCheck_a375f76a8df6a08ea1755728391384302}\label{classreal__time__tools_1_1RealTimeCheck_a375f76a8df6a08ea1755728391384302}} 
+\index{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}!get\+\_\+current\+\_\+frequency@{get\+\_\+current\+\_\+frequency}}
+\index{get\+\_\+current\+\_\+frequency@{get\+\_\+current\+\_\+frequency}!real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}}
+\subsubsection{\texorpdfstring{get\+\_\+current\+\_\+frequency()}{get\_current\_frequency()}}
+{\footnotesize\ttfamily double real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check\+::get\+\_\+current\+\_\+frequency (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+returns observed frequency after last call to tick \mbox{\Hypertarget{classreal__time__tools_1_1RealTimeCheck_a4d9614b08d2b4bf7162e14c473b7d491}\label{classreal__time__tools_1_1RealTimeCheck_a4d9614b08d2b4bf7162e14c473b7d491}} 
+\index{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}!get\+\_\+statistics@{get\+\_\+statistics}}
+\index{get\+\_\+statistics@{get\+\_\+statistics}!real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}}
+\subsubsection{\texorpdfstring{get\+\_\+statistics()}{get\_statistics()}}
+{\footnotesize\ttfamily bool real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check\+::get\+\_\+statistics (\begin{DoxyParamCaption}\item[{int \&}]{ticks,  }\item[{int \&}]{switchs,  }\item[{double \&}]{target\+\_\+frequency,  }\item[{double \&}]{switch\+\_\+frequency,  }\item[{double \&}]{average\+\_\+frequency,  }\item[{double \&}]{current\+\_\+frequency,  }\item[{double \&}]{worse\+\_\+frequency }\end{DoxyParamCaption})}
+
+return true if statistics are available, false otherwise (false is returned is tick has never been called or if ticks reached maximum integer value) switchs in the number of time realtime was lost. \mbox{\Hypertarget{classreal__time__tools_1_1RealTimeCheck_a9c9c68da79843098085204095286a143}\label{classreal__time__tools_1_1RealTimeCheck_a9c9c68da79843098085204095286a143}} 
+\index{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}!print@{print}}
+\index{print@{print}!real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Display the results of the frequency measurement. \begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{demo_realtime_check_8cpp-example}{demo\+\_\+realtime\+\_\+check.\+cpp}, \hyperlink{demo_realtime_strict_check_8cpp-example}{demo\+\_\+realtime\+\_\+strict\+\_\+check.\+cpp}, and \hyperlink{demo_spinner_8cpp-example}{demo\+\_\+spinner.\+cpp}.\end{Desc}
+\mbox{\Hypertarget{classreal__time__tools_1_1RealTimeCheck_a83fdf97352d36aa20e482d7dfae442d5}\label{classreal__time__tools_1_1RealTimeCheck_a83fdf97352d36aa20e482d7dfae442d5}} 
+\index{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}!tick@{tick}}
+\index{tick@{tick}!real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}}
+\subsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily void real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+inform the instance of this class that an iteration passed \begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{demo_realtime_check_8cpp-example}{demo\+\_\+realtime\+\_\+check.\+cpp}, \hyperlink{demo_realtime_strict_check_8cpp-example}{demo\+\_\+realtime\+\_\+strict\+\_\+check.\+cpp}, and \hyperlink{demo_spinner_8cpp-example}{demo\+\_\+spinner.\+cpp}.\end{Desc}
+\mbox{\Hypertarget{classreal__time__tools_1_1RealTimeCheck_a88f45e9151a5709812adddbb5dd142cc}\label{classreal__time__tools_1_1RealTimeCheck_a88f45e9151a5709812adddbb5dd142cc}} 
+\index{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}!was\+\_\+realtime\+\_\+lost@{was\+\_\+realtime\+\_\+lost}}
+\index{was\+\_\+realtime\+\_\+lost@{was\+\_\+realtime\+\_\+lost}!real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}}
+\subsubsection{\texorpdfstring{was\+\_\+realtime\+\_\+lost()}{was\_realtime\_lost()}}
+{\footnotesize\ttfamily bool real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check\+::was\+\_\+realtime\+\_\+lost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+true if realtime was lost at least once (frequency between two ticks was below target frequencies) 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classreal__time__tools_1_1RealTimeCheck_a3ffb6de7e7c01a7248c2293e29b98011}\label{classreal__time__tools_1_1RealTimeCheck_a3ffb6de7e7c01a7248c2293e29b98011}} 
+\index{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}!average\+\_\+frequency@{average\+\_\+frequency}}
+\index{average\+\_\+frequency@{average\+\_\+frequency}!real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}}
+\subsubsection{\texorpdfstring{average\+\_\+frequency}{average\_frequency}}
+{\footnotesize\ttfamily double real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check\+::average\+\_\+frequency\hspace{0.3cm}{\ttfamily [private]}}
+
+average frequency \mbox{\Hypertarget{classreal__time__tools_1_1RealTimeCheck_a935b4c6b8ebf569e6510d47376f8499f}\label{classreal__time__tools_1_1RealTimeCheck_a935b4c6b8ebf569e6510d47376f8499f}} 
+\index{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}!current\+\_\+frequency@{current\+\_\+frequency}}
+\index{current\+\_\+frequency@{current\+\_\+frequency}!real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}}
+\subsubsection{\texorpdfstring{current\+\_\+frequency}{current\_frequency}}
+{\footnotesize\ttfamily double real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check\+::current\+\_\+frequency\hspace{0.3cm}{\ttfamily [private]}}
+
+latest frequency that was measured \mbox{\Hypertarget{classreal__time__tools_1_1RealTimeCheck_ab6a059be584e4a92254002d35713d0df}\label{classreal__time__tools_1_1RealTimeCheck_ab6a059be584e4a92254002d35713d0df}} 
+\index{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}!epsilon@{epsilon}}
+\index{epsilon@{epsilon}!real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}}
+\subsubsection{\texorpdfstring{epsilon}{epsilon}}
+{\footnotesize\ttfamily double real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check\+::epsilon\hspace{0.3cm}{\ttfamily [private]}}
+
+small quantity \mbox{\Hypertarget{classreal__time__tools_1_1RealTimeCheck_a3e200c0376362dcc9a7db7d77a124931}\label{classreal__time__tools_1_1RealTimeCheck_a3e200c0376362dcc9a7db7d77a124931}} 
+\index{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}!last\+\_\+tick@{last\+\_\+tick}}
+\index{last\+\_\+tick@{last\+\_\+tick}!real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}}
+\subsubsection{\texorpdfstring{last\+\_\+tick}{last\_tick}}
+{\footnotesize\ttfamily std\+::chrono\+::high\+\_\+resolution\+\_\+clock\+::time\+\_\+point real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check\+::last\+\_\+tick\hspace{0.3cm}{\ttfamily [private]}}
+
+last time system was ticked \mbox{\Hypertarget{classreal__time__tools_1_1RealTimeCheck_a3a7cc4ef87fac5e4052a3240aced88d1}\label{classreal__time__tools_1_1RealTimeCheck_a3a7cc4ef87fac5e4052a3240aced88d1}} 
+\index{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}!mutex@{mutex}}
+\index{mutex@{mutex}!real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}}
+\subsubsection{\texorpdfstring{mutex}{mutex}}
+{\footnotesize\ttfamily std\+::mutex real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check\+::mutex\hspace{0.3cm}{\ttfamily [private]}}
+
+multithreading safety \mbox{\Hypertarget{classreal__time__tools_1_1RealTimeCheck_a969600ce8ecc4ec48bbf59e8d669749e}\label{classreal__time__tools_1_1RealTimeCheck_a969600ce8ecc4ec48bbf59e8d669749e}} 
+\index{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}!start\+\_\+time@{start\+\_\+time}}
+\index{start\+\_\+time@{start\+\_\+time}!real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}}
+\subsubsection{\texorpdfstring{start\+\_\+time}{start\_time}}
+{\footnotesize\ttfamily std\+::chrono\+::high\+\_\+resolution\+\_\+clock\+::time\+\_\+point real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check\+::start\+\_\+time\hspace{0.3cm}{\ttfamily [private]}}
+
+time at which tick was called first \mbox{\Hypertarget{classreal__time__tools_1_1RealTimeCheck_a21b5703a3c61b09955d94d06a3562667}\label{classreal__time__tools_1_1RealTimeCheck_a21b5703a3c61b09955d94d06a3562667}} 
+\index{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}!started@{started}}
+\index{started@{started}!real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}}
+\subsubsection{\texorpdfstring{started}{started}}
+{\footnotesize\ttfamily bool real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check\+::started\hspace{0.3cm}{\ttfamily [private]}}
+
+true if tick has been called once \mbox{\Hypertarget{classreal__time__tools_1_1RealTimeCheck_a235895032a789539a8ba957caac621ec}\label{classreal__time__tools_1_1RealTimeCheck_a235895032a789539a8ba957caac621ec}} 
+\index{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}!switch\+\_\+frequency@{switch\+\_\+frequency}}
+\index{switch\+\_\+frequency@{switch\+\_\+frequency}!real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}}
+\subsubsection{\texorpdfstring{switch\+\_\+frequency}{switch\_frequency}}
+{\footnotesize\ttfamily double real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check\+::switch\+\_\+frequency\hspace{0.3cm}{\ttfamily [private]}}
+
+nb of switches will increase by 1 each time measured frequency below this value \mbox{\Hypertarget{classreal__time__tools_1_1RealTimeCheck_acc235579eeb245f043fd188790540fa9}\label{classreal__time__tools_1_1RealTimeCheck_acc235579eeb245f043fd188790540fa9}} 
+\index{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}!switchs@{switchs}}
+\index{switchs@{switchs}!real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}}
+\subsubsection{\texorpdfstring{switchs}{switchs}}
+{\footnotesize\ttfamily uint real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check\+::switchs\hspace{0.3cm}{\ttfamily [private]}}
+
+number of time realtime was lost (target frequency not respected between two ticks) \mbox{\Hypertarget{classreal__time__tools_1_1RealTimeCheck_a126c13a50d06703c515b35f87c3e867c}\label{classreal__time__tools_1_1RealTimeCheck_a126c13a50d06703c515b35f87c3e867c}} 
+\index{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}!target\+\_\+frequency@{target\+\_\+frequency}}
+\index{target\+\_\+frequency@{target\+\_\+frequency}!real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}}
+\subsubsection{\texorpdfstring{target\+\_\+frequency}{target\_frequency}}
+{\footnotesize\ttfamily double real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check\+::target\+\_\+frequency\hspace{0.3cm}{\ttfamily [private]}}
+
+frequency at which ticks are expected \mbox{\Hypertarget{classreal__time__tools_1_1RealTimeCheck_ae2acb20d9f1e49cc35eb5505d63201aa}\label{classreal__time__tools_1_1RealTimeCheck_ae2acb20d9f1e49cc35eb5505d63201aa}} 
+\index{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}!ticks@{ticks}}
+\index{ticks@{ticks}!real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}}
+\subsubsection{\texorpdfstring{ticks}{ticks}}
+{\footnotesize\ttfamily uint real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check\+::ticks\hspace{0.3cm}{\ttfamily [private]}}
+
+number of iterations \mbox{\Hypertarget{classreal__time__tools_1_1RealTimeCheck_a3605c41d8c5c616879fa9af469860470}\label{classreal__time__tools_1_1RealTimeCheck_a3605c41d8c5c616879fa9af469860470}} 
+\index{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}!worse\+\_\+frequency@{worse\+\_\+frequency}}
+\index{worse\+\_\+frequency@{worse\+\_\+frequency}!real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check@{real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check}}
+\subsubsection{\texorpdfstring{worse\+\_\+frequency}{worse\_frequency}}
+{\footnotesize\ttfamily double real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Check\+::worse\+\_\+frequency\hspace{0.3cm}{\ttfamily [private]}}
+
+worse frequency ever experienced 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/real\+\_\+time\+\_\+tools/\hyperlink{realtime__check_8hpp}{realtime\+\_\+check.\+hpp}\item 
+src/\hyperlink{realtime__check_8cpp}{realtime\+\_\+check.\+cpp}\end{DoxyCompactItemize}

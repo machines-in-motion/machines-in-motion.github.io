@@ -1,0 +1,97 @@
+\hypertarget{iostream_8cpp}{}\section{src/iostream.cpp File Reference}
+\label{iostream_8cpp}\index{src/iostream.\+cpp@{src/iostream.\+cpp}}
+
+
+implement some cross platform utilities to create folder or detect the home folder, etc.  
+
+
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include \char`\"{}real\+\_\+time\+\_\+tools/iostream.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}real\+\_\+time\+\_\+tools/timer.\+hpp\char`\"{}}\newline
+Include dependency graph for iostream.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{iostream_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{iostream_8hpp_a5146f16f97588edcc7dbe28641f4a1fd}{real\+\_\+time\+\_\+tools\+::get\+\_\+log\+\_\+dir} (std\+::string app\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Get the logging directory based on a specific application. \end{DoxyCompactList}\item 
+bool \hyperlink{iostream_8hpp_a4ce01145e1d43fc6f54c3f654de5bd7d}{real\+\_\+time\+\_\+tools\+::create\+\_\+directory} (std\+::string path)
+\begin{DoxyCompactList}\small\item\em Create a directory. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{iostream_8hpp_a21f87296dd11ab3784e7b793033a21ed}{real\+\_\+time\+\_\+tools\+::get\+\_\+home\+\_\+dir} ()
+\begin{DoxyCompactList}\small\item\em Get the home directory path. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+implement some cross platform utilities to create folder or detect the home folder, etc. 
+
+\begin{DoxyAuthor}{Author}
+Maximilien Naveau (\href{mailto:maximilien.naveau@gmail.com}{\tt maximilien.\+naveau@gmail.\+com}) license License B\+S\+D-\/3-\/\+Clause 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2019, New York University and Max Planck Gesellschaft. 
+\end{DoxyCopyright}
+\begin{DoxyDate}{Date}
+2019-\/05-\/22 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{iostream_8hpp_file_a4ce01145e1d43fc6f54c3f654de5bd7d}\label{iostream_8hpp_file_a4ce01145e1d43fc6f54c3f654de5bd7d}} 
+\index{iostream.\+cpp@{iostream.\+cpp}!create\+\_\+directory@{create\+\_\+directory}}
+\index{create\+\_\+directory@{create\+\_\+directory}!iostream.\+cpp@{iostream.\+cpp}}
+\subsubsection{\texorpdfstring{create\+\_\+directory()}{create\_directory()}}
+{\footnotesize\ttfamily bool real\+\_\+time\+\_\+tools\+::create\+\_\+directory (\begin{DoxyParamCaption}\item[{std\+::string}]{path }\end{DoxyParamCaption})}
+
+
+
+Create a directory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & is the path to be created \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if everything went well 
+
+false if a problem occur 
+\end{DoxyReturn}
+\mbox{\Hypertarget{iostream_8hpp_file_a21f87296dd11ab3784e7b793033a21ed}\label{iostream_8hpp_file_a21f87296dd11ab3784e7b793033a21ed}} 
+\index{iostream.\+cpp@{iostream.\+cpp}!get\+\_\+home\+\_\+dir@{get\+\_\+home\+\_\+dir}}
+\index{get\+\_\+home\+\_\+dir@{get\+\_\+home\+\_\+dir}!iostream.\+cpp@{iostream.\+cpp}}
+\subsubsection{\texorpdfstring{get\+\_\+home\+\_\+dir()}{get\_home\_dir()}}
+{\footnotesize\ttfamily std\+::string real\+\_\+time\+\_\+tools\+::get\+\_\+home\+\_\+dir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the home directory path. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string the home directory absolute path ending with a \char`\"{}/\char`\"{} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{iostream_8hpp_file_a5146f16f97588edcc7dbe28641f4a1fd}\label{iostream_8hpp_file_a5146f16f97588edcc7dbe28641f4a1fd}} 
+\index{iostream.\+cpp@{iostream.\+cpp}!get\+\_\+log\+\_\+dir@{get\+\_\+log\+\_\+dir}}
+\index{get\+\_\+log\+\_\+dir@{get\+\_\+log\+\_\+dir}!iostream.\+cpp@{iostream.\+cpp}}
+\subsubsection{\texorpdfstring{get\+\_\+log\+\_\+dir()}{get\_log\_dir()}}
+{\footnotesize\ttfamily std\+::string real\+\_\+time\+\_\+tools\+::get\+\_\+log\+\_\+dir (\begin{DoxyParamCaption}\item[{std\+::string}]{app\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Get the logging directory based on a specific application. 
+
+It creates a direction in \$\+H\+O\+ME/app\+\_\+name/\+Y\+E\+A\+R\+\_\+\+M\+O\+N\+T\+H\+\_\+\+D\+A\+Y\+\_\+\+H\+O\+U\+R\+\_\+\+S\+E\+C\+O\+N\+D/ and return the absolute path of this. It allows the user to dump data in different folders everytime the user launch the application.
+
+
+\begin{DoxyParams}{Parameters}
+{\em app\+\_\+name} & is the application name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string the absolute path to the log directory 
+\end{DoxyReturn}

@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dynamic__graph_8md" kind="file" language="Markdown">
+    <compoundname>dynamic_graph.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">Dynamic<sp/>graph</highlight></codeline>
+<codeline><highlight class="normal">=============</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Introduction</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>package<sp/>provide<sp/>tools<sp/>to<sp/>ease<sp/>the<sp/>use<sp/>of<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">[dynamic-graph](https://github.com/stack-of-tasks/dynamic-graph)</highlight></codeline>
+<codeline><highlight class="normal">package<sp/>for<sp/>building<sp/>the<sp/>entities,<sp/>their<sp/>python<sp/>bindings</highlight></codeline>
+<codeline><highlight class="normal">and<sp/>install<sp/>them.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Usage</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>order<sp/>to<sp/>build<sp/>a<sp/>package<sp/>containing<sp/>dynamic-graph<sp/>entities<sp/>one<sp/>need<sp/>to<sp/>fetch</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>dependencies<sp/>first.<sp/>In<sp/>order<sp/>to<sp/>to<sp/>this<sp/>one<sp/>can<sp/>use<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">[pkg-config](@ref<sp/>md_doc_pkg_config).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>catkin_add_required_dependency(&quot;dynamic-graph<sp/>&gt;=<sp/>3.0.0&quot;)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>catkin_add_required_dependency(&quot;dynamic-graph-python<sp/>&gt;=<sp/>3.0.0&quot;)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Then<sp/>one<sp/>need<sp/>to<sp/>create<sp/>a<sp/>library<sp/>based<sp/>on<sp/>C++<sp/>and<sp/>then<sp/>build<sp/>the<sp/>python</highlight></codeline>
+<codeline><highlight class="normal">dynamic<sp/>graph<sp/>module:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>################################</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>Build<sp/>a<sp/>dynamic<sp/>graph<sp/>module<sp/>#</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>################################</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>add_library(a_cpp_library<sp/>SHARED</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>src/my_first_entity.cpp</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>src/a_second_controller.cpp</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>src/some_dynamic_graph_operators.cpp</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>target_link_libraries(a_cpp_library<sp/>${catkin_LIBRARIES})</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>set_target_properties(a_cpp_library<sp/>PROPERTIES</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PREFIX<sp/>&quot;&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LIBRARY_OUTPUT_DIRECTORY<sp/>${DYNAMIC_GRAPH_PLUGIN_DIR}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>dynamic_graph_python_module(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;a_cpp_library&quot;<sp/><sp/><sp/><sp/>#<sp/>from<sp/>dynamic_graph_manager.a_cpp_library<sp/>import<sp/>*</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a_cpp_library<sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>python<sp/>wrapper<sp/>dependencies</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a_cpp_library_wrap<sp/>#<sp/>python<sp/>wrapper<sp/>target<sp/>name</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>little<sp/>peace<sp/>of<sp/>code<sp/>creates<sp/>a<sp/>library<sp/>called<sp/>`a_cpp_library`<sp/>and<sp/>build<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">corresponding<sp/>python<sp/>dynamic-graph<sp/>module<sp/>and<sp/>install<sp/>it<sp/>in</highlight></codeline>
+<codeline><highlight class="normal">`lib/pythonX.X/dist-packages/dynamic_graph_manager`.</highlight></codeline>
+    </programlisting>
+    <location file="doc/dynamic_graph.md"/>
+  </compounddef>
+</doxygen>

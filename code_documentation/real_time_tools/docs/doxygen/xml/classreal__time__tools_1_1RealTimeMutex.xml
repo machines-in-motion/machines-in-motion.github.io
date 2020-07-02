@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classreal__time__tools_1_1RealTimeMutex" kind="class" language="C++" prot="public">
+    <compoundname>real_time_tools::RealTimeMutex</compoundname>
+    <includes refid="mutex_8hpp" local="no">mutex.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classreal__time__tools_1_1RealTimeMutex_1a21e60b2fffe69eba625590fa3201404b" prot="private" static="no" mutable="no">
+        <type><ref refid="mutex_8hpp_1a1ddc3c11c7ede92bbf52bafb61009ba2" kindref="member">RealTimeMutex_t</ref></type>
+        <definition>RealTimeMutex_t real_time_tools::RealTimeMutex::mutex_</definition>
+        <argsstring></argsstring>
+        <name>mutex_</name>
+        <briefdescription>
+<para>This is the object which type chenge according to the OS this code is compiled. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/mutex.hpp" line="158" column="1" bodyfile="include/real_time_tools/mutex.hpp" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classreal__time__tools_1_1RealTimeMutex_1a42edb13b07a983e48d9348bb20465962" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string real_time_tools::RealTimeMutex::mutex_id_</definition>
+        <argsstring></argsstring>
+        <name>mutex_id_</name>
+        <briefdescription>
+<para>Save the mutex id internally. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/mutex.hpp" line="163" column="1" bodyfile="include/real_time_tools/mutex.hpp" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classreal__time__tools_1_1RealTimeMutex_1aef1777e27f3f2802ebcc7cb6db101df0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>real_time_tools::RealTimeMutex::RealTimeMutex</definition>
+        <argsstring>(std::string mutex_id=&quot;&quot;)</argsstring>
+        <name>RealTimeMutex</name>
+        <param>
+          <type>std::string</type>
+          <declname>mutex_id</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+<para>Construct a new <ref refid="classreal__time__tools_1_1RealTimeMutex" kindref="compound">RealTimeMutex</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/mutex.hpp" line="60" column="1" bodyfile="include/real_time_tools/mutex.hpp" bodystart="60" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classreal__time__tools_1_1RealTimeMutex_1a86c9ab73fb02cf4a954735d56f4f23ed" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>real_time_tools::RealTimeMutex::~RealTimeMutex</definition>
+        <argsstring>()</argsstring>
+        <name>~RealTimeMutex</name>
+        <briefdescription>
+<para>Destroy the <ref refid="classreal__time__tools_1_1RealTimeMutex" kindref="compound">RealTimeMutex</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/mutex.hpp" line="86" column="1" bodyfile="include/real_time_tools/mutex.hpp" bodystart="86" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classreal__time__tools_1_1RealTimeMutex_1a38d84501c3929f8dbb3c884299cfcb9c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void real_time_tools::RealTimeMutex::lock</definition>
+        <argsstring>()</argsstring>
+        <name>lock</name>
+        <briefdescription>
+<para>lock the mutex. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/mutex.hpp" line="113" column="1" bodyfile="include/real_time_tools/mutex.hpp" bodystart="113" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="classreal__time__tools_1_1RealTimeMutex_1a9b85b1aa898c22197dffc3958e0ec60c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void real_time_tools::RealTimeMutex::unlock</definition>
+        <argsstring>()</argsstring>
+        <name>unlock</name>
+        <briefdescription>
+<para>unlock the mutex </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/real_time_tools/mutex.hpp" line="134" column="1" bodyfile="include/real_time_tools/mutex.hpp" bodystart="134" bodyend="151"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class uses the real-time API of xenomai and posix to implement mutexes. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/real_time_tools/mutex.hpp" line="55" column="1" bodyfile="include/real_time_tools/mutex.hpp" bodystart="54" bodyend="164"/>
+    <listofallmembers>
+      <member refid="classreal__time__tools_1_1RealTimeMutex_1a38d84501c3929f8dbb3c884299cfcb9c" prot="public" virt="non-virtual"><scope>real_time_tools::RealTimeMutex</scope><name>lock</name></member>
+      <member refid="classreal__time__tools_1_1RealTimeMutex_1a21e60b2fffe69eba625590fa3201404b" prot="private" virt="non-virtual"><scope>real_time_tools::RealTimeMutex</scope><name>mutex_</name></member>
+      <member refid="classreal__time__tools_1_1RealTimeMutex_1a42edb13b07a983e48d9348bb20465962" prot="private" virt="non-virtual"><scope>real_time_tools::RealTimeMutex</scope><name>mutex_id_</name></member>
+      <member refid="classreal__time__tools_1_1RealTimeMutex_1aef1777e27f3f2802ebcc7cb6db101df0" prot="public" virt="non-virtual"><scope>real_time_tools::RealTimeMutex</scope><name>RealTimeMutex</name></member>
+      <member refid="classreal__time__tools_1_1RealTimeMutex_1a9b85b1aa898c22197dffc3958e0ec60c" prot="public" virt="non-virtual"><scope>real_time_tools::RealTimeMutex</scope><name>unlock</name></member>
+      <member refid="classreal__time__tools_1_1RealTimeMutex_1a86c9ab73fb02cf4a954735d56f4f23ed" prot="public" virt="non-virtual"><scope>real_time_tools::RealTimeMutex</scope><name>~RealTimeMutex</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
