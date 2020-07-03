@@ -2,7 +2,6 @@ var dir_f00dc19403fc986de014588220102ffb =
 [
     [ "benchmarks", "dir_b5573e134a7a320d5dcf0116c5cf7981.html", "dir_b5573e134a7a320d5dcf0116c5cf7981" ],
     [ "demos", "dir_e67b538666431575162ea8e2b45403b5.html", "dir_e67b538666431575162ea8e2b45403b5" ],
-    [ "internal", "dir_eb050f63e8928658d69934bb54fdf580.html", "dir_eb050f63e8928658d69934bb54fdf580" ],
     [ "array.hpp", "array_8hpp_source.html", null ],
     [ "array.hxx", "array_8hxx_source.html", null ],
     [ "array_fundamental.hxx", "array__fundamental_8hxx_source.html", null ],

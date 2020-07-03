@@ -4,26 +4,26 @@
     <compoundname>array_serializable.hxx</compoundname>
     <includedby refid="array_8hpp" local="yes">include/shared_memory/array.hpp</includedby>
     <invincdepgraph>
-      <node id="781">
+      <node id="701">
         <label>demos/demo_write_array.cpp</label>
         <link refid="demo__write__array_8cpp"/>
       </node>
-      <node id="779">
+      <node id="699">
         <label>include/shared_memory/array.hpp</label>
         <link refid="array_8hpp_source"/>
-        <childnode refid="780" relation="include">
+        <childnode refid="700" relation="include">
         </childnode>
-        <childnode refid="781" relation="include">
+        <childnode refid="701" relation="include">
         </childnode>
       </node>
-      <node id="780">
+      <node id="700">
         <label>demos/demo_read_array.cpp</label>
         <link refid="demo__read__array_8cpp"/>
       </node>
-      <node id="778">
+      <node id="698">
         <label>include/shared_memory/array_serializable.hxx</label>
         <link refid="array__serializable_8hxx"/>
-        <childnode refid="779" relation="include">
+        <childnode refid="699" relation="include">
         </childnode>
       </node>
     </invincdepgraph>
@@ -38,7 +38,7 @@
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>SIZE&gt;</highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>array&lt;T,<sp/>SIZE&gt;::init(SERIALIZABLE)</highlight></codeline>
 <codeline lineno="6"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;item_size_<sp/>=<sp/><ref refid="classshared__memory_1_1Serializer_1af5edd0af254d6061e8e18c0bbec10aa9" kindref="member">Serializer&lt;T&gt;::serializable_size</ref>();</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;item_size_<sp/>=<sp/>Serializer&lt;T&gt;::serializable_size();</highlight></codeline>
 <codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;total_size_<sp/>=<sp/>this-&gt;item_size_<sp/>*<sp/>this-&gt;size_;</highlight></codeline>
 <codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>uint<sp/>segment_size<sp/>=<sp/>get_segment_size(this-&gt;total_size_,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">));</highlight></codeline>
 <codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>segment_manager_<sp/>=<sp/>boost::interprocess::managed_shared_memory(</highlight></codeline>

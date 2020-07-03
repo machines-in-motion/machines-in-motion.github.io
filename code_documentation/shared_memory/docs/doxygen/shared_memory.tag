@@ -148,7 +148,6 @@
     <name>exchange_manager_consumer.hpp</name>
     <path>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/</path>
     <filename>exchange__manager__consumer_8hpp</filename>
-    <includes id="exchange__manager__memory_8hpp" name="exchange_manager_memory.hpp" local="yes" imported="no">shared_memory/internal/exchange_manager_memory.hpp</includes>
     <class kind="class">shared_memory::Exchange_manager_consumer</class>
     <namespace>shared_memory</namespace>
   </compound>
@@ -156,18 +155,7 @@
     <name>exchange_manager_producer.hpp</name>
     <path>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/</path>
     <filename>exchange__manager__producer_8hpp</filename>
-    <includes id="exchange__manager__memory_8hpp" name="exchange_manager_memory.hpp" local="yes" imported="no">shared_memory/internal/exchange_manager_memory.hpp</includes>
     <class kind="class">shared_memory::Exchange_manager_producer</class>
-    <namespace>shared_memory</namespace>
-  </compound>
-  <compound kind="file">
-    <name>exchange_manager_memory.hpp</name>
-    <path>/workspace/software/workspace/src/catkin/core_robotics/shared_memory/include/shared_memory/internal/</path>
-    <filename>exchange__manager__memory_8hpp</filename>
-    <includes id="shared__memory_8hpp" name="shared_memory.hpp" local="yes" imported="no">shared_memory/shared_memory.hpp</includes>
-    <class kind="class">shared_memory::internal::Serialized_read</class>
-    <class kind="class">shared_memory::internal::Serialized_write</class>
-    <class kind="class">shared_memory::internal::Exchange_manager_memory</class>
     <namespace>shared_memory</namespace>
   </compound>
   <compound kind="file">
@@ -623,7 +611,6 @@
     <filename>classshared__memory_1_1array.html</filename>
     <templarg>T</templarg>
     <templarg>SIZE</templarg>
-    <base>array_members&lt; T, SIZE &gt;</base>
     <member kind="function">
       <type></type>
       <name>array</name>
@@ -701,28 +688,6 @@
       <anchor>a9e912e143886359921c04fdbba7f6cba</anchor>
       <arglist>()</arglist>
     </member>
-  </compound>
-  <compound kind="class">
-    <name>shared_memory::internal::array_members</name>
-    <filename>classshared__memory_1_1internal_1_1array__members.html</filename>
-    <templarg>T</templarg>
-    <templarg>SIZE</templarg>
-    <templarg>Enable</templarg>
-  </compound>
-  <compound kind="class">
-    <name>shared_memory::internal::array_members&lt; T, 0, typename std::enable_if&lt; std::is_fundamental&lt; T &gt;::value &gt;::type &gt;</name>
-    <filename>classshared__memory_1_1internal_1_1array__members_3_01T_00_010_00_01typename_01std_1_1enable__ifb2fde5f96702510d664610c5e9570772.html</filename>
-    <templarg></templarg>
-  </compound>
-  <compound kind="class">
-    <name>array_members&lt; T, SIZE &gt;</name>
-    <filename>classshared__memory_1_1internal_1_1array__members.html</filename>
-  </compound>
-  <compound kind="class">
-    <name>shared_memory::internal::array_members&lt; T, SIZE, typename std::enable_if&lt; std::is_fundamental&lt; T &gt;::value &amp;&amp;SIZE !=0 &gt;::type &gt;</name>
-    <filename>classshared__memory_1_1internal_1_1array__members_3_01T_00_01SIZE_00_01typename_01std_1_1enable_8ab74519d0175245a44202cbdf761091.html</filename>
-    <templarg></templarg>
-    <templarg>SIZE</templarg>
   </compound>
   <compound kind="class">
     <name>shared_memory::ConditionVariable</name>
@@ -849,12 +814,6 @@
       <anchor>ab8651cff750b5cb2ceae97a97b2c7f2d</anchor>
       <arglist>()</arglist>
     </member>
-  </compound>
-  <compound kind="class">
-    <name>shared_memory::internal::Exchange_manager_memory</name>
-    <filename>classshared__memory_1_1internal_1_1Exchange__manager__memory.html</filename>
-    <templarg></templarg>
-    <templarg>QUEUE_SIZE</templarg>
   </compound>
   <compound kind="class">
     <name>shared_memory::Exchange_manager_producer</name>
@@ -1187,16 +1146,6 @@
     <filename>classSerializableExample.html</filename>
   </compound>
   <compound kind="class">
-    <name>shared_memory::internal::Serialized_read</name>
-    <filename>classshared__memory_1_1internal_1_1Serialized__read.html</filename>
-    <templarg>Serializable</templarg>
-  </compound>
-  <compound kind="class">
-    <name>shared_memory::internal::Serialized_write</name>
-    <filename>classshared__memory_1_1internal_1_1Serialized__write.html</filename>
-    <templarg>Serializable</templarg>
-  </compound>
-  <compound kind="class">
     <name>shared_memory::Serializer</name>
     <filename>classshared__memory_1_1Serializer.html</filename>
     <templarg>Serializable</templarg>
@@ -1213,31 +1162,6 @@
       <anchorfile>classshared__memory_1_1Serializer.html</anchorfile>
       <anchor>a8f674c9b3a7c053403112d2fad4e09a9</anchor>
       <arglist>(const std::string &amp;data, Serializable &amp;serializable)</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static int</type>
-      <name>serializable_size</name>
-      <anchorfile>classshared__memory_1_1Serializer.html</anchorfile>
-      <anchor>af5edd0af254d6061e8e18c0bbec10aa9</anchor>
-      <arglist>()</arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>Serializer&lt; T &gt;</name>
-    <filename>classshared__memory_1_1Serializer.html</filename>
-    <member kind="function">
-      <type>const std::string &amp;</type>
-      <name>serialize</name>
-      <anchorfile>classshared__memory_1_1Serializer.html</anchorfile>
-      <anchor>a61ea01a0e5e28fc24c9274455050b1c1</anchor>
-      <arglist>(const T &amp;serializable)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>deserialize</name>
-      <anchorfile>classshared__memory_1_1Serializer.html</anchorfile>
-      <anchor>a8f674c9b3a7c053403112d2fad4e09a9</anchor>
-      <arglist>(const std::string &amp;data, T &amp;serializable)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static int</type>
