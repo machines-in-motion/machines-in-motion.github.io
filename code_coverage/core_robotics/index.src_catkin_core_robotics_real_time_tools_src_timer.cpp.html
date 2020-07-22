@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2020-07-20 14:10:18</td>
+            <td class="headerValue">2020-07-22 14:59:25</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">48</td>
@@ -505,7 +505,7 @@
     <tr>
     <td align="right" class="lineno"><pre>30</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>23</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>std::string Timer::get_current_date_str()</pre></td>
     </tr>
 
@@ -518,78 +518,78 @@
 
     <tr>
     <td align="right" class="lineno"><pre>32</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 23 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>46</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>    std::ostringstream oss;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>33</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>23</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>    auto now = std::chrono::system_clock::now();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>34</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>23</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>    std::time_t now_c = std::chrono::system_clock::to_time_t(now);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>35</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>23</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>    struct tm* parts = std::localtime(&amp;now_c);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>36</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 23 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 23 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>23</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>    oss &lt;&lt; (int)(1900 + parts->tm_year) &lt;&lt; "-";</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>37</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 23 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 6 taken 23 times">&check;</span><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 9 taken 23 times">&check;</span><span class="notTakenBranch" title="Branch 10 not taken">&cross;</span><span class="takenBranch" title="Branch 12 taken 23 times">&check;</span><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>23</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 6 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 9 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 10 not taken">&cross;</span><span class="takenBranch" title="Branch 12 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>    oss &lt;&lt; std::setfill('0') &lt;&lt; std::setw(2) &lt;&lt; 1 + parts->tm_mon &lt;&lt; "-";</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>38</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 23 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 6 taken 23 times">&check;</span><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 9 taken 23 times">&check;</span><span class="notTakenBranch" title="Branch 10 not taken">&cross;</span><span class="takenBranch" title="Branch 12 taken 23 times">&check;</span><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>23</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 6 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 9 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 10 not taken">&cross;</span><span class="takenBranch" title="Branch 12 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>    oss &lt;&lt; std::setfill('0') &lt;&lt; std::setw(2) &lt;&lt; parts->tm_mday &lt;&lt; "_";</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>39</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 23 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 6 taken 23 times">&check;</span><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 9 taken 23 times">&check;</span><span class="notTakenBranch" title="Branch 10 not taken">&cross;</span><span class="takenBranch" title="Branch 12 taken 23 times">&check;</span><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>23</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 6 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 9 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 10 not taken">&cross;</span><span class="takenBranch" title="Branch 12 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>    oss &lt;&lt; std::setfill('0') &lt;&lt; std::setw(2) &lt;&lt; parts->tm_hour &lt;&lt; "-";</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>40</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 23 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 6 taken 23 times">&check;</span><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 9 taken 23 times">&check;</span><span class="notTakenBranch" title="Branch 10 not taken">&cross;</span><span class="takenBranch" title="Branch 12 taken 23 times">&check;</span><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>23</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 6 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 9 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 10 not taken">&cross;</span><span class="takenBranch" title="Branch 12 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>    oss &lt;&lt; std::setfill('0') &lt;&lt; std::setw(2) &lt;&lt; parts->tm_min &lt;&lt; "-";</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>41</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 23 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 6 taken 23 times">&check;</span><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 9 taken 23 times">&check;</span><span class="notTakenBranch" title="Branch 10 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>23</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 6 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 9 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 10 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
     <td align="left" class="src coveredLine"><pre>    oss &lt;&lt; std::setfill('0') &lt;&lt; std::setw(2) &lt;&lt; parts->tm_sec;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>42</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 23 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>46</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
     <td align="left" class="src coveredLine"><pre>    return oss.str();</pre></td>
     </tr>
 
@@ -610,7 +610,7 @@
     <tr>
     <td align="right" class="lineno"><pre>45</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1172</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1028</pre></td>
     <td align="left" class="src coveredLine"><pre>Timer::Timer()</pre></td>
     </tr>
 
@@ -631,7 +631,7 @@
     <tr>
     <td align="right" class="lineno"><pre>48</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1172</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1028</pre></td>
     <td align="left" class="src coveredLine"><pre>    tic_time_ = std::numeric_limits&lt;double>::quiet_NaN();</pre></td>
     </tr>
 
@@ -651,8 +651,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>51</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1172 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1172</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1028 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1028</pre></td>
     <td align="left" class="src coveredLine"><pre>    set_memory_size(60000);</pre></td>
     </tr>
 
@@ -665,8 +665,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>53</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1172 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1172</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1028 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1028</pre></td>
     <td align="left" class="src coveredLine"><pre>    name_ = "timer";</pre></td>
     </tr>
 
@@ -680,42 +680,42 @@
     <tr>
     <td align="right" class="lineno"><pre>55</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1172</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1028</pre></td>
     <td align="left" class="src coveredLine"><pre>    min_elapsed_time_ = std::numeric_limits&lt;double>::infinity();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>56</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1172</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1028</pre></td>
     <td align="left" class="src coveredLine"><pre>    max_elapsed_time_ = -std::numeric_limits&lt;double>::infinity();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>57</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1172</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1028</pre></td>
     <td align="left" class="src coveredLine"><pre>    avg_elapsed_time_ = 0.0;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>58</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1172</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1028</pre></td>
     <td align="left" class="src coveredLine"><pre>    second_moment_elapsed_time_ = 0.0;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>59</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1172</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1028</pre></td>
     <td align="left" class="src coveredLine"><pre>    count_ = 0;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>60</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1172</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1028</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -729,7 +729,7 @@
     <tr>
     <td align="right" class="lineno"><pre>62</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>8274</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1005</pre></td>
     <td align="left" class="src coveredLine"><pre>void Timer::tic()</pre></td>
     </tr>
 
@@ -750,14 +750,14 @@
     <tr>
     <td align="right" class="lineno"><pre>65</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>8274</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1005</pre></td>
     <td align="left" class="src coveredLine"><pre>    tic_time_ = Timer::get_current_time_sec();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>66</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>8274</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1005</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -771,7 +771,7 @@
     <tr>
     <td align="right" class="lineno"><pre>68</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>8267</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1005</pre></td>
     <td align="left" class="src coveredLine"><pre>double Timer::tac()</pre></td>
     </tr>
 
@@ -785,14 +785,14 @@
     <tr>
     <td align="right" class="lineno"><pre>70</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>8267</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1005</pre></td>
     <td align="left" class="src coveredLine"><pre>    double tac_time = Timer::get_current_time_sec();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>71</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>8267</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1005</pre></td>
     <td align="left" class="src coveredLine"><pre>    double time_interval = tac_time - tic_time_;</pre></td>
     </tr>
 
@@ -806,7 +806,7 @@
     <tr>
     <td align="right" class="lineno"><pre>73</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>8267</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1005</pre></td>
     <td align="left" class="src coveredLine"><pre>    log_time_interval(time_interval);</pre></td>
     </tr>
 
@@ -820,7 +820,7 @@
     <tr>
     <td align="right" class="lineno"><pre>75</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>8267</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1005</pre></td>
     <td align="left" class="src coveredLine"><pre>    return time_interval;</pre></td>
     </tr>
 
@@ -841,7 +841,7 @@
     <tr>
     <td align="right" class="lineno"><pre>78</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>223631</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>220000</pre></td>
     <td align="left" class="src coveredLine"><pre>double Timer::tac_tic()</pre></td>
     </tr>
 
@@ -855,14 +855,14 @@
     <tr>
     <td align="right" class="lineno"><pre>80</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>223631</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>220000</pre></td>
     <td align="left" class="src coveredLine"><pre>    double tac_time = Timer::get_current_time_sec();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>81</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>223631</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>220000</pre></td>
     <td align="left" class="src coveredLine"><pre>    double time_interval = tac_time - tic_time_;</pre></td>
     </tr>
 
@@ -876,7 +876,7 @@
     <tr>
     <td align="right" class="lineno"><pre>83</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>223631</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>220000</pre></td>
     <td align="left" class="src coveredLine"><pre>    log_time_interval(time_interval);</pre></td>
     </tr>
 
@@ -890,7 +890,7 @@
     <tr>
     <td align="right" class="lineno"><pre>85</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>223631</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>220000</pre></td>
     <td align="left" class="src coveredLine"><pre>    tic_time_ = tac_time;</pre></td>
     </tr>
 
@@ -904,7 +904,7 @@
     <tr>
     <td align="right" class="lineno"><pre>87</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>223631</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>220000</pre></td>
     <td align="left" class="src coveredLine"><pre>    return time_interval;</pre></td>
     </tr>
 
@@ -925,7 +925,7 @@
     <tr>
     <td align="right" class="lineno"><pre>90</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>231898</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>221005</pre></td>
     <td align="left" class="src coveredLine"><pre>void Timer::log_time_interval(double time_interval)</pre></td>
     </tr>
 
@@ -938,8 +938,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>92</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 22 times">&check;</span><span class="takenBranch" title="Branch 2 taken 231876 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>231898</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 22 times">&check;</span><span class="takenBranch" title="Branch 2 taken 220983 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>221005</pre></td>
     <td align="left" class="src coveredLine"><pre>    if (std::isnan(time_interval)) return;</pre></td>
     </tr>
 
@@ -959,8 +959,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>95</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 231876 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>231876</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 220983 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>220983</pre></td>
     <td align="left" class="src coveredLine"><pre>    if (memory_buffer_size_ != 0)</pre></td>
     </tr>
 
@@ -980,8 +980,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>98</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 231876 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>231876</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span><span class="takenBranch" title="Branch 2 taken 220983 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>220983</pre></td>
     <td align="left" class="src coveredLine"><pre>        if (count_ >= time_measurement_buffer_.size())</pre></td>
     </tr>
 
@@ -1037,7 +1037,7 @@
     <tr>
     <td align="right" class="lineno"><pre>106</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>231876</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>220983</pre></td>
     <td align="left" class="src coveredLine"><pre>            time_measurement_buffer_[count_] = time_interval;</pre></td>
     </tr>
 
@@ -1072,7 +1072,7 @@
     <tr>
     <td align="right" class="lineno"><pre>111</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>231876</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>220983</pre></td>
     <td align="left" class="src coveredLine"><pre>    ++count_;</pre></td>
     </tr>
 
@@ -1086,77 +1086,77 @@
     <tr>
     <td align="right" class="lineno"><pre>113</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>231876</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>220983</pre></td>
     <td align="left" class="src coveredLine"><pre>    min_elapsed_time_ =</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>114</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1290 times">&check;</span><span class="takenBranch" title="Branch 1 taken 230586 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>231876</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1226 times">&check;</span><span class="takenBranch" title="Branch 1 taken 219757 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>220983</pre></td>
     <td align="left" class="src coveredLine"><pre>        time_interval &lt; min_elapsed_time_ ? time_interval : min_elapsed_time_;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>115</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>231876</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>220983</pre></td>
     <td align="left" class="src coveredLine"><pre>    max_elapsed_time_ =</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>116</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1245 times">&check;</span><span class="takenBranch" title="Branch 1 taken 230631 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>231876</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1225 times">&check;</span><span class="takenBranch" title="Branch 1 taken 219758 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>220983</pre></td>
     <td align="left" class="src coveredLine"><pre>        time_interval > max_elapsed_time_ ? time_interval : max_elapsed_time_;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>117</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>231876</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>220983</pre></td>
     <td align="left" class="src coveredLine"><pre>    avg_elapsed_time_ =</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>118</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>463752</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>441966</pre></td>
     <td align="left" class="src coveredLine"><pre>        (double(count_ - 1) * avg_elapsed_time_ + time_interval) /</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>119</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>231876</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>220983</pre></td>
     <td align="left" class="src coveredLine"><pre>        double(count_);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>120</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>231876</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>220983</pre></td>
     <td align="left" class="src coveredLine"><pre>    second_moment_elapsed_time_ =</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>121</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>463752</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>441966</pre></td>
     <td align="left" class="src coveredLine"><pre>        (double(count_ - 1) * second_moment_elapsed_time_ +</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>122</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>463752</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>441966</pre></td>
     <td align="left" class="src coveredLine"><pre>         time_interval * time_interval) /</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>123</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>231876</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>220983</pre></td>
     <td align="left" class="src coveredLine"><pre>        double(count_);</pre></td>
     </tr>
 
@@ -1177,7 +1177,7 @@
     <tr>
     <td align="right" class="lineno"><pre>126</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1009</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1000</pre></td>
     <td align="left" class="src coveredLine"><pre>void Timer::dump_measurements(std::string file_name) const</pre></td>
     </tr>
 
@@ -1204,29 +1204,29 @@
 
     <tr>
     <td align="right" class="lineno"><pre>130</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 1009 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>2018</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 1000 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>2000</pre></td>
     <td align="left" class="src coveredLine"><pre>        std::ofstream log_file(file_name, std::ios::binary | std::ios::out);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>131</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1009</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1000</pre></td>
     <td align="left" class="src coveredLine"><pre>        log_file.precision(10);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>132</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>12902</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2000</pre></td>
     <td align="left" class="src coveredLine"><pre>        for (unsigned i = 0;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>133</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 11893 times">&check;</span><span class="takenBranch" title="Branch 2 taken 1009 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>12902</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1000 times">&check;</span><span class="takenBranch" title="Branch 2 taken 1000 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>2000</pre></td>
     <td align="left" class="src coveredLine"><pre>             i &lt; std::min(count_, (unsigned long)memory_buffer_size_);</pre></td>
     </tr>
 
@@ -1246,8 +1246,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>136</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 11893 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 11893 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 8 taken 11893 times">&check;</span><span class="notTakenBranch" title="Branch 9 not taken">&cross;</span><span class="takenBranch" title="Branch 11 taken 11893 times">&check;</span><span class="notTakenBranch" title="Branch 12 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>11893</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1000 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 1000 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 8 taken 1000 times">&check;</span><span class="notTakenBranch" title="Branch 9 not taken">&cross;</span><span class="takenBranch" title="Branch 11 taken 1000 times">&check;</span><span class="notTakenBranch" title="Branch 12 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>1000</pre></td>
     <td align="left" class="src coveredLine"><pre>            log_file &lt;&lt; i &lt;&lt; " " &lt;&lt; time_measurement_buffer_[i] &lt;&lt; std::endl;</pre></td>
     </tr>
 
@@ -1260,15 +1260,15 @@
 
     <tr>
     <td align="right" class="lineno"><pre>138</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1009 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1009</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1000 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1000</pre></td>
     <td align="left" class="src coveredLine"><pre>        log_file.flush();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>139</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1009 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1009</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1000 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1000</pre></td>
     <td align="left" class="src coveredLine"><pre>        log_file.close();</pre></td>
     </tr>
 
@@ -1324,7 +1324,7 @@
     <tr>
     <td align="right" class="lineno"><pre>147</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1009</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1000</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -1464,7 +1464,7 @@
     <tr>
     <td align="right" class="lineno"><pre>167</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>11804</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>13215</pre></td>
     <td align="left" class="src coveredLine"><pre>void Timer::timespec_add_sec(struct timespec&amp; date_spec,</pre></td>
     </tr>
 
@@ -1485,35 +1485,35 @@
     <tr>
     <td align="right" class="lineno"><pre>170</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>23608</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>26430</pre></td>
     <td align="left" class="src coveredLine"><pre>    double total_time_sec = duration_sec +</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>171</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>11804</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>13215</pre></td>
     <td align="left" class="src coveredLine"><pre>                            static_cast&lt;double>(date_spec.tv_nsec) / 1e9 +</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>172</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>11804</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>13215</pre></td>
     <td align="left" class="src coveredLine"><pre>                            static_cast&lt;double>(date_spec.tv_sec);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>173</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>11804</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>13215</pre></td>
     <td align="left" class="src coveredLine"><pre>    sec_to_timespec(total_time_sec, date_spec);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>174</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>11804</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>13215</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -1527,7 +1527,7 @@
     <tr>
     <td align="right" class="lineno"><pre>176</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>15445</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>13226</pre></td>
     <td align="left" class="src coveredLine"><pre>void Timer::sec_to_timespec(double date_sec, struct timespec&amp; date_spec)</pre></td>
     </tr>
 
@@ -1541,35 +1541,35 @@
     <tr>
     <td align="right" class="lineno"><pre>178</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>15445</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>13226</pre></td>
     <td align="left" class="src coveredLine"><pre>    date_sec += 0.5e-9;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>179</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>15445</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>13226</pre></td>
     <td align="left" class="src coveredLine"><pre>    date_spec.tv_sec = static_cast&lt;long>(date_sec);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>180</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>15445</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>13226</pre></td>
     <td align="left" class="src coveredLine"><pre>    date_spec.tv_nsec = static_cast&lt;long>(</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>181</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>15445</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>13226</pre></td>
     <td align="left" class="src coveredLine"><pre>        (date_sec - static_cast&lt;double>(date_spec.tv_sec)) * 1e9);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>182</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>15445</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>13226</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -1597,7 +1597,7 @@
     <tr>
     <td align="right" class="lineno"><pre>186</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>268670</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>245956</pre></td>
     <td align="left" class="src coveredLine"><pre>double Timer::get_current_time_sec()</pre></td>
     </tr>
 
@@ -1639,21 +1639,21 @@
     <tr>
     <td align="right" class="lineno"><pre>192</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>268670</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>245956</pre></td>
     <td align="left" class="src coveredLine"><pre>    clock_gettime(CLOCK_REALTIME, &amp;now);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>193</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>268670</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>245956</pre></td>
     <td align="left" class="src coveredLine"><pre>    return static_cast&lt;double>(now.tv_sec) +</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>194</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>268670</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>245956</pre></td>
     <td align="left" class="src coveredLine"><pre>           static_cast&lt;double>(now.tv_nsec) / 1e9;</pre></td>
     </tr>
 
@@ -1765,7 +1765,7 @@
     <tr>
     <td align="right" class="lineno"><pre>210</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>11803</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>13214</pre></td>
     <td align="left" class="src coveredLine"><pre>void Timer::sleep_sec(const double&amp; sleep_duration_sec)</pre></td>
     </tr>
 
@@ -1807,21 +1807,21 @@
     <tr>
     <td align="right" class="lineno"><pre>216</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>11803</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>13214</pre></td>
     <td align="left" class="src coveredLine"><pre>    clock_gettime(CLOCK_REALTIME, &amp;abs_target_time);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>217</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 11803 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>11803</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 13214 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>13214</pre></td>
     <td align="left" class="src coveredLine"><pre>    timespec_add_sec(abs_target_time, sleep_duration_sec);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>218</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 11803 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>11803</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 13199 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>13214</pre></td>
     <td align="left" class="src coveredLine"><pre>    clock_nanosleep(CLOCK_REALTIME, TIMER_ABSTIME, &amp;abs_target_time, nullptr);</pre></td>
     </tr>
 
@@ -1835,7 +1835,7 @@
     <tr>
     <td align="right" class="lineno"><pre>220</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>11803</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>13199</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -1849,7 +1849,7 @@
     <tr>
     <td align="right" class="lineno"><pre>222</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3641</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>11</pre></td>
     <td align="left" class="src coveredLine"><pre>void Timer::sleep_until_sec(const double&amp; date_sec)</pre></td>
     </tr>
 
@@ -1890,15 +1890,15 @@
 
     <tr>
     <td align="right" class="lineno"><pre>228</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 3641 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>3641</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 11 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>11</pre></td>
     <td align="left" class="src coveredLine"><pre>    sec_to_timespec(date_sec, abs_target_time);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>229</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 3641 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>3641</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 11 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>11</pre></td>
     <td align="left" class="src coveredLine"><pre>    clock_nanosleep(CLOCK_REALTIME, TIMER_ABSTIME, &amp;abs_target_time, nullptr);</pre></td>
     </tr>
 
@@ -1912,7 +1912,7 @@
     <tr>
     <td align="right" class="lineno"><pre>231</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3641</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>11</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -1925,8 +1925,8 @@
 
     <tr>
     <td align="right" class="lineno"><pre>233</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 7 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 3 taken 7 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>21</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 3 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
     <td align="left" class="src coveredLine"><pre>}  // namespace real_time_tools</pre></td>
     </tr>
 
