@@ -20,7 +20,6 @@ mpi\_cmake\_modules.yaml2oneline module
    :undoc-members:
    :show-inheritance:
 
-
 Module contents
 ---------------
 
