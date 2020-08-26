@@ -1,0 +1,386 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classdynamic__graph_1_1Device" kind="class" language="C++" prot="public">
+    <compoundname>dynamic_graph::Device</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Entity</basecompoundref>
+    <derivedcompoundref refid="classdynamic__graph_1_1DeviceSimulator" prot="public" virt="non-virtual">dynamic_graph::DeviceSimulator</derivedcompoundref>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classdynamic__graph_1_1Device_1ab1612928a8cf1a9133fb2571f99095b1" prot="public" static="yes" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string dynamic_graph::Device::CLASS_NAME</definition>
+        <argsstring></argsstring>
+        <name>CLASS_NAME</name>
+        <briefdescription>
+<para>This is the name of the classe that is used to store the object in the dynamic graph. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/dynamic_graph_manager/device.hh" line="36" column="1" bodyfile="include/dynamic_graph_manager/device.hh" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classdynamic__graph_1_1Device_1ab397e65116cdc32ffa767bfc92c0b7e0" prot="public" static="no" mutable="no">
+        <type>DeviceOutSignalMap</type>
+        <definition>DeviceOutSignalMap dynamic_graph::Device::sensors_out_</definition>
+        <argsstring></argsstring>
+        <name>sensors_out_</name>
+        <briefdescription>
+<para>sensors_out_ is a map of device output signals. </para>        </briefdescription>
+        <detaileddescription>
+<para>They represent all the sensors belonging to the robot. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/dynamic_graph_manager/device.hh" line="130" column="1" bodyfile="include/dynamic_graph_manager/device.hh" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamic__graph_1_1Device_1a338b04580b75994516b8cc04d6605541" prot="public" static="no" mutable="no">
+        <type><ref refid="namespacedynamic__graph_1abd184187f3bc15df5e227d866529e4a7" kindref="member">VectorDGMap</ref></type>
+        <definition>VectorDGMap dynamic_graph::Device::sensors_map_</definition>
+        <argsstring></argsstring>
+        <name>sensors_map_</name>
+        <briefdescription>
+<para>sensors_map_ is a map of dynamicgraph::Vector. </para>        </briefdescription>
+        <detaileddescription>
+<para>They represent all the sensors data measured on the robot. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/dynamic_graph_manager/device.hh" line="136" column="1" bodyfile="include/dynamic_graph_manager/device.hh" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamic__graph_1_1Device_1a77f0617d7b53fb47d77af7557521daf4" prot="public" static="no" mutable="no">
+        <type>DeviceInSignalMap</type>
+        <definition>DeviceInSignalMap dynamic_graph::Device::motor_controls_in_</definition>
+        <argsstring></argsstring>
+        <name>motor_controls_in_</name>
+        <briefdescription>
+<para>motor_control_in_ is the output motor control for each joint. </para>        </briefdescription>
+        <detaileddescription>
+<para>Feeding this signal <emphasis>IS MANDATORY</emphasis> otherwise accessing this data will make the process crash. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/dynamic_graph_manager/device.hh" line="147" column="1" bodyfile="include/dynamic_graph_manager/device.hh" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamic__graph_1_1Device_1a9d866a7e294a7445fb88dee8d8a80851" prot="public" static="no" mutable="no">
+        <type><ref refid="namespacedynamic__graph_1abd184187f3bc15df5e227d866529e4a7" kindref="member">VectorDGMap</ref></type>
+        <definition>VectorDGMap dynamic_graph::Device::motor_controls_map_</definition>
+        <argsstring></argsstring>
+        <name>motor_controls_map_</name>
+        <briefdescription>
+<para>motor_controls_map_ is a map of dynamicgraph::Vector. </para>        </briefdescription>
+        <detaileddescription>
+<para>They represent all the controls to be sent to the robot. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/dynamic_graph_manager/device.hh" line="153" column="1" bodyfile="include/dynamic_graph_manager/device.hh" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classdynamic__graph_1_1Device_1afe6456e2d14701498bde6ed74fb0526a" prot="protected" static="no" mutable="no">
+        <type><ref refid="classdynamic__graph_1_1PeriodicCall" kindref="compound">PeriodicCall</ref></type>
+        <definition>PeriodicCall dynamic_graph::Device::periodic_call_before_</definition>
+        <argsstring></argsstring>
+        <name>periodic_call_before_</name>
+        <briefdescription>
+<para>periodic_call_before_ handle the <emphasis>synchronous</emphasis> command call on the device between getting the sensor data and sending the commands. </para>        </briefdescription>
+        <detaileddescription>
+<para>Typically used when one wants to evaluate a signal that is not plugged. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/dynamic_graph_manager/device.hh" line="161" column="1" bodyfile="include/dynamic_graph_manager/device.hh" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamic__graph_1_1Device_1aa2ff18a40858856c9be43b2d609d63ab" prot="protected" static="no" mutable="no">
+        <type><ref refid="classdynamic__graph_1_1PeriodicCall" kindref="compound">PeriodicCall</ref></type>
+        <definition>PeriodicCall dynamic_graph::Device::periodic_call_after_</definition>
+        <argsstring></argsstring>
+        <name>periodic_call_after_</name>
+        <briefdescription>
+<para>periodic_call_after_ handle the <emphasis>synchronous</emphasis> command call on the device between getting the sensor data and sending the commands. </para>        </briefdescription>
+        <detaileddescription>
+<para>Typically used when one wants to evaluate a signal that is not plugged. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/dynamic_graph_manager/device.hh" line="168" column="1" bodyfile="include/dynamic_graph_manager/device.hh" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamic__graph_1_1Device_1a9dc0a118c20e33194463eff1c18ce247" prot="protected" static="no" mutable="no">
+        <type>YAML::Node</type>
+        <definition>YAML::Node dynamic_graph::Device::params_</definition>
+        <argsstring></argsstring>
+        <name>params_</name>
+        <briefdescription>
+<para>params is a YAML node that allow the creation of a modular device </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/dynamic_graph_manager/device.hh" line="173" column="1" bodyfile="include/dynamic_graph_manager/device.hh" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classdynamic__graph_1_1Device_1af0e00dbc756e6191b2f5d6883187c92f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>const std::string &amp;</type>
+        <definition>virtual const std::string&amp; dynamic_graph::Device::getClassName</definition>
+        <argsstring>(void) const</argsstring>
+        <name>getClassName</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>getClassName is an overloaded function from the class Entity. </para>        </briefdescription>
+        <detaileddescription>
+<para>It is used to access the class name and do <simplesect kind="return"><para>the name of the device class </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/dynamic_graph_manager/device.hh" line="43" column="1" bodyfile="include/dynamic_graph_manager/device.hh" bodystart="43" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamic__graph_1_1Device_1a76c80f6d47e2151494e375e2faf78c0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Device::Device</definition>
+        <argsstring>(const std::string &amp;input_name)</argsstring>
+        <name>Device</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>input_name</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classdynamic__graph_1_1Device" kindref="compound">Device</ref> is the constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>The name allow the DynamicGraph to identify the entity <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the yaml file used to initialize the device </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/dynamic_graph_manager/device.hh" line="53" column="1" bodyfile="src/device.cpp" bodystart="44" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamic__graph_1_1Device_1a9dabc419c8d8df3a686c33ce042bc99a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>Device::~Device</definition>
+        <argsstring>()</argsstring>
+        <name>~Device</name>
+        <briefdescription>
+<para>~Device is a default destructor that might overloaded </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/dynamic_graph_manager/device.hh" line="58" column="1" bodyfile="src/device.cpp" bodystart="118" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamic__graph_1_1Device_1af6edd01afac2838c4e336c76caa4338a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Device::initialize</definition>
+        <argsstring>(const YAML::Node &amp;params)</argsstring>
+        <name>initialize</name>
+        <reimplementedby refid="classdynamic__graph_1_1DeviceSimulator_1a346995902653feca7707f8c62ab4bf95">initialize</reimplementedby>
+        <param>
+          <type>const YAML::Node &amp;</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+<para>initialize is the function that initialize the device from the YAML paramters </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the yaml file used to initialize the device </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/dynamic_graph_manager/device.hh" line="65" column="1" bodyfile="src/device.cpp" bodystart="89" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamic__graph_1_1Device_1af71d151e69555e9530d770d3d90b7f3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Device::initialize_from_file</definition>
+        <argsstring>(const std::string &amp;yaml_file)</argsstring>
+        <name>initialize_from_file</name>
+        <reimplementedby refid="classdynamic__graph_1_1DeviceSimulator_1a8a9370f236ba03162be2472c79f865f2">initialize_from_file</reimplementedby>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>yaml_file</declname>
+        </param>
+        <briefdescription>
+<para>initialize_from_file is the function that initialize the device from a YAML file. </para>        </briefdescription>
+        <detaileddescription>
+<para>It loads internally the file and then use the paramters to initialize itself using the &quot;initialize&quot; method. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the yaml file used to initialize the device </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/dynamic_graph_manager/device.hh" line="73" column="1" bodyfile="src/device.cpp" bodystart="83" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamic__graph_1_1Device_1ac4203f6753b2d534c0ade84fb52ac47e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Device::initialize_maps</definition>
+        <argsstring>(const YAML::Node &amp;sensors_and_controls)</argsstring>
+        <name>initialize_maps</name>
+        <param>
+          <type>const YAML::Node &amp;</type>
+          <declname>sensors_and_controls</declname>
+        </param>
+        <briefdescription>
+<para>parse_yaml_file fill in the internal maps for sensors and controls. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/dynamic_graph_manager/device.hh" line="79" column="1" bodyfile="src/device.cpp" bodystart="146" bodyend="194"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamic__graph_1_1Device_1ab8dc9a016ebbc34521812a27b5aa6efa" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Device::set_sensors_from_map</definition>
+        <argsstring>(const VectorDGMap &amp;sensors)</argsstring>
+        <name>set_sensors_from_map</name>
+        <param>
+          <type>const <ref refid="namespacedynamic__graph_1abd184187f3bc15df5e227d866529e4a7" kindref="member">VectorDGMap</ref> &amp;</type>
+          <declname>sensors</declname>
+        </param>
+        <briefdescription>
+<para>set_sensors_from_map is a parser that feed the map &quot;sensors&quot; with the hardware sensor readings. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sensors</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the sensors data. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/dynamic_graph_manager/device.hh" line="86" column="1" bodyfile="src/device.cpp" bodystart="196" bodyend="219"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamic__graph_1_1Device_1adb596e7acd67089bb4929cf577b3c6ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Device::execute_graph</definition>
+        <argsstring>()</argsstring>
+        <name>execute_graph</name>
+        <reimplementedby refid="classdynamic__graph_1_1DeviceSimulator_1a614c51ee8d55765019ae98715f875ed5">execute_graph</reimplementedby>
+        <briefdescription>
+<para>execute_graph is a fonction that execute the graph. </para>        </briefdescription>
+        <detaileddescription>
+<para>In order it does:<itemizedlist>
+<listitem><para>Execute a first set of synchrounous commands.</para></listitem><listitem><para>Execute the graph.</para></listitem><listitem><para>Execute a second set of synchronous commands. </para></listitem></itemizedlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/dynamic_graph_manager/device.hh" line="97" column="1" bodyfile="src/device.cpp" bodystart="221" bodyend="303"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamic__graph_1_1Device_1a126268314fea8fff802fc957cbf3e0d7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void dynamic_graph::Device::execute_graph_deprecated</definition>
+        <argsstring>()</argsstring>
+        <name>execute_graph_deprecated</name>
+        <briefdescription>
+<para>execute_graph is a fonction that execute the graph. </para>        </briefdescription>
+        <detaileddescription>
+<para>In order it does:<itemizedlist>
+<listitem><para>Execute a first set of synchrounous commands.</para></listitem><listitem><para>Execute the graph.</para></listitem><listitem><para>Execute a second set of synchronous commands. </para></listitem></itemizedlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/dynamic_graph_manager/device.hh" line="108" column="1" bodyfile="include/dynamic_graph_manager/device.hh" bodystart="108" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamic__graph_1_1Device_1a3291a91974c35f03719220e237512aa8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Device::get_controls_to_map</definition>
+        <argsstring>(VectorDGMap &amp;motor_controls)</argsstring>
+        <name>get_controls_to_map</name>
+        <param>
+          <type><ref refid="namespacedynamic__graph_1abd184187f3bc15df5e227d866529e4a7" kindref="member">VectorDGMap</ref> &amp;</type>
+          <declname>motor_controls</declname>
+        </param>
+        <briefdescription>
+<para>get_controls_to_map is a parser that feed the map &quot;controls&quot; with the output of the DynamicGraph. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>controls</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the map containing the controls. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/dynamic_graph_manager/device.hh" line="120" column="1" bodyfile="src/device.cpp" bodystart="305" bodyend="330"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="17">
+        <label>dynamic_graph::DeviceSimulator</label>
+        <link refid="classdynamic__graph_1_1DeviceSimulator"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>Entity</label>
+      </node>
+      <node id="15">
+        <label>dynamic_graph::Device</label>
+        <link refid="classdynamic__graph_1_1Device"/>
+        <childnode refid="16" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="20">
+        <label>dynamic_graph::PeriodicCall</label>
+        <link refid="classdynamic__graph_1_1PeriodicCall"/>
+      </node>
+      <node id="19">
+        <label>Entity</label>
+      </node>
+      <node id="18">
+        <label>dynamic_graph::Device</label>
+        <link refid="classdynamic__graph_1_1Device"/>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+        <childnode refid="20" relation="usage">
+          <edgelabel>periodic_call_after_</edgelabel>
+          <edgelabel>periodic_call_before_</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/dynamic_graph_manager/device.hh" line="30" column="1" bodyfile="include/dynamic_graph_manager/device.hh" bodystart="29" bodyend="174"/>
+    <listofallmembers>
+      <member refid="classdynamic__graph_1_1Device_1ab1612928a8cf1a9133fb2571f99095b1" prot="public" virt="non-virtual"><scope>dynamic_graph::Device</scope><name>CLASS_NAME</name></member>
+      <member refid="classdynamic__graph_1_1Device_1a76c80f6d47e2151494e375e2faf78c0d" prot="public" virt="non-virtual"><scope>dynamic_graph::Device</scope><name>Device</name></member>
+      <member refid="classdynamic__graph_1_1Device_1adb596e7acd67089bb4929cf577b3c6ff" prot="public" virt="virtual"><scope>dynamic_graph::Device</scope><name>execute_graph</name></member>
+      <member refid="classdynamic__graph_1_1Device_1a126268314fea8fff802fc957cbf3e0d7" prot="public" virt="non-virtual"><scope>dynamic_graph::Device</scope><name>execute_graph_deprecated</name></member>
+      <member refid="classdynamic__graph_1_1Device_1a3291a91974c35f03719220e237512aa8" prot="public" virt="virtual"><scope>dynamic_graph::Device</scope><name>get_controls_to_map</name></member>
+      <member refid="classdynamic__graph_1_1Device_1af0e00dbc756e6191b2f5d6883187c92f" prot="public" virt="virtual"><scope>dynamic_graph::Device</scope><name>getClassName</name></member>
+      <member refid="classdynamic__graph_1_1Device_1af6edd01afac2838c4e336c76caa4338a" prot="public" virt="virtual"><scope>dynamic_graph::Device</scope><name>initialize</name></member>
+      <member refid="classdynamic__graph_1_1Device_1af71d151e69555e9530d770d3d90b7f3e" prot="public" virt="virtual"><scope>dynamic_graph::Device</scope><name>initialize_from_file</name></member>
+      <member refid="classdynamic__graph_1_1Device_1ac4203f6753b2d534c0ade84fb52ac47e" prot="public" virt="non-virtual"><scope>dynamic_graph::Device</scope><name>initialize_maps</name></member>
+      <member refid="classdynamic__graph_1_1Device_1a77f0617d7b53fb47d77af7557521daf4" prot="public" virt="non-virtual"><scope>dynamic_graph::Device</scope><name>motor_controls_in_</name></member>
+      <member refid="classdynamic__graph_1_1Device_1a9d866a7e294a7445fb88dee8d8a80851" prot="public" virt="non-virtual"><scope>dynamic_graph::Device</scope><name>motor_controls_map_</name></member>
+      <member refid="classdynamic__graph_1_1Device_1a9dc0a118c20e33194463eff1c18ce247" prot="protected" virt="non-virtual"><scope>dynamic_graph::Device</scope><name>params_</name></member>
+      <member refid="classdynamic__graph_1_1Device_1aa2ff18a40858856c9be43b2d609d63ab" prot="protected" virt="non-virtual"><scope>dynamic_graph::Device</scope><name>periodic_call_after_</name></member>
+      <member refid="classdynamic__graph_1_1Device_1afe6456e2d14701498bde6ed74fb0526a" prot="protected" virt="non-virtual"><scope>dynamic_graph::Device</scope><name>periodic_call_before_</name></member>
+      <member refid="classdynamic__graph_1_1Device_1a338b04580b75994516b8cc04d6605541" prot="public" virt="non-virtual"><scope>dynamic_graph::Device</scope><name>sensors_map_</name></member>
+      <member refid="classdynamic__graph_1_1Device_1ab397e65116cdc32ffa767bfc92c0b7e0" prot="public" virt="non-virtual"><scope>dynamic_graph::Device</scope><name>sensors_out_</name></member>
+      <member refid="classdynamic__graph_1_1Device_1ab8dc9a016ebbc34521812a27b5aa6efa" prot="public" virt="virtual"><scope>dynamic_graph::Device</scope><name>set_sensors_from_map</name></member>
+      <member refid="classdynamic__graph_1_1Device_1a9dabc419c8d8df3a686c33ce042bc99a" prot="public" virt="virtual"><scope>dynamic_graph::Device</scope><name>~Device</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

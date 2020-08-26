@@ -1,0 +1,27 @@
+var classdg__blmc__robots_1_1DGMQuadrupedSimu =
+[
+    [ "DGMQuadrupedSimu", "classdg__blmc__robots_1_1DGMQuadrupedSimu.html#a6dd0768f9887c92a9fe26839b73771a3", null ],
+    [ "~DGMQuadrupedSimu", "classdg__blmc__robots_1_1DGMQuadrupedSimu.html#a5aabe831d173f9fc58c420b0ba33330f", null ],
+    [ "get_sensors_to_map", "classdg__blmc__robots_1_1DGMQuadrupedSimu.html#a6804388dddf35aa3980ec87c44606a14", null ],
+    [ "initialize_hardware_communication_process", "classdg__blmc__robots_1_1DGMQuadrupedSimu.html#a1a5010a4279e2118c6d500427a223d07", null ],
+    [ "is_in_safety_mode", "classdg__blmc__robots_1_1DGMQuadrupedSimu.html#a89ae101b6a85455885d2ef9d7441941c", null ],
+    [ "set_motor_controls_from_map", "classdg__blmc__robots_1_1DGMQuadrupedSimu.html#a431bbaae92470e69562c2749e35a75c8", null ],
+    [ "contact_sensors_", "classdg__blmc__robots_1_1DGMQuadrupedSimu.html#a1db56af78a0fcb48da954e2a89afefe5", null ],
+    [ "ctrl_joint_torques_", "classdg__blmc__robots_1_1DGMQuadrupedSimu.html#a0a4ed493d2899823945cf1eceb8c3a9e", null ],
+    [ "joint_positions_", "classdg__blmc__robots_1_1DGMQuadrupedSimu.html#aa3df5cbb9c1305dd00083bae979308b4", null ],
+    [ "joint_target_torques_", "classdg__blmc__robots_1_1DGMQuadrupedSimu.html#a93819bd1ecaeb691d533acb443fe185f", null ],
+    [ "joint_torques_", "classdg__blmc__robots_1_1DGMQuadrupedSimu.html#a955e295bd749e25807c77d4a649ccd69", null ],
+    [ "joint_velocities_", "classdg__blmc__robots_1_1DGMQuadrupedSimu.html#a0339ab56e226bb44358fd859bb451546", null ],
+    [ "motor_board_enabled_", "classdg__blmc__robots_1_1DGMQuadrupedSimu.html#accc0e2374788ce5e6d13e641c2a86900", null ],
+    [ "motor_board_errors_", "classdg__blmc__robots_1_1DGMQuadrupedSimu.html#abcb00d4ab13ef169b4b7efa8a98f7a40", null ],
+    [ "motor_enabled_", "classdg__blmc__robots_1_1DGMQuadrupedSimu.html#a3ca5fd3129cb1c400908ae3e9bc4717d", null ],
+    [ "motor_encoder_indexes_", "classdg__blmc__robots_1_1DGMQuadrupedSimu.html#abf4a5707075edfd128f4f3adced432b4", null ],
+    [ "motor_ready_", "classdg__blmc__robots_1_1DGMQuadrupedSimu.html#a82e1782f8a9d28558be935c820978bf9", null ],
+    [ "motor_target_currents_", "classdg__blmc__robots_1_1DGMQuadrupedSimu.html#a664b79890bc32dca86e185d09f8aafc4", null ],
+    [ "motor_target_torques_", "classdg__blmc__robots_1_1DGMQuadrupedSimu.html#af5a7c4baa3e920227f0123fc907e12dd", null ],
+    [ "motor_torques_", "classdg__blmc__robots_1_1DGMQuadrupedSimu.html#a3ca3d36a87cc6efcba595195bdba99c7", null ],
+    [ "motors_gear_ratio_", "classdg__blmc__robots_1_1DGMQuadrupedSimu.html#a95b261bc63aa641b5c416c1d64e39454", null ],
+    [ "motors_inertia_", "classdg__blmc__robots_1_1DGMQuadrupedSimu.html#a6be1446e66ba0553984b0c683b7ce74d", null ],
+    [ "motors_torque_constant_", "classdg__blmc__robots_1_1DGMQuadrupedSimu.html#a341d34d4379a57de2f015862f25d54f6", null ],
+    [ "slider_positions_", "classdg__blmc__robots_1_1DGMQuadrupedSimu.html#a15f06f8d2c4c1a890f361ed9bf25c5e6", null ]
+];

@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="ros__time_8hh" kind="file" language="C++">
+    <compoundname>ros_time.hh</compoundname>
+    <includes local="no">dynamic-graph/entity.h</includes>
+    <includes local="no">dynamic-graph/signal.h</includes>
+    <includes local="no">ros/time.h</includes>
+    <includes local="no">boost/date_time/posix_time/posix_time_types.hpp</includes>
+    <includedby refid="ros__subscribe_8hxx" local="yes">include/ros_entities/ros_subscribe.hxx</includedby>
+    <includedby refid="ros__time_8cpp" local="yes">src/ros_entities/ros_time.cpp</includedby>
+    <incdepgraph>
+      <node id="642">
+        <label>dynamic-graph/signal.h</label>
+      </node>
+      <node id="644">
+        <label>boost/date_time/posix_time/posix_time_types.hpp</label>
+      </node>
+      <node id="643">
+        <label>ros/time.h</label>
+      </node>
+      <node id="641">
+        <label>dynamic-graph/entity.h</label>
+      </node>
+      <node id="640">
+        <label>include/ros_entities/ros_time.hh</label>
+        <link refid="ros__time_8hh"/>
+        <childnode refid="641" relation="include">
+        </childnode>
+        <childnode refid="642" relation="include">
+        </childnode>
+        <childnode refid="643" relation="include">
+        </childnode>
+        <childnode refid="644" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="648">
+        <label>src/ros_entities/ros_subscribe.cpp</label>
+        <link refid="ros__subscribe_8cpp"/>
+      </node>
+      <node id="647">
+        <label>include/ros_entities/ros_subscribe.hh</label>
+        <link refid="ros__subscribe_8hh"/>
+        <childnode refid="648" relation="include">
+        </childnode>
+      </node>
+      <node id="649">
+        <label>src/ros_entities/ros_time.cpp</label>
+        <link refid="ros__time_8cpp"/>
+      </node>
+      <node id="646">
+        <label>include/ros_entities/ros_subscribe.hxx</label>
+        <link refid="ros__subscribe_8hxx"/>
+        <childnode refid="647" relation="include">
+        </childnode>
+      </node>
+      <node id="645">
+        <label>include/ros_entities/ros_time.hh</label>
+        <link refid="ros__time_8hh"/>
+        <childnode refid="646" relation="include">
+        </childnode>
+        <childnode refid="649" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classdynamic__graph_1_1RosTime" prot="public">dynamic_graph::RosTime</innerclass>
+    <innernamespace refid="namespacedynamic__graph">dynamic_graph</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Maximilien Naveau (<ulink url="mailto:maximilien.naveau@gmail.com">maximilien.naveau@gmail.com</ulink>) </para></simplesect>
+<xrefsect id="license_1_license000030"><xreftitle>License</xreftitle><xrefdescription><para>License BSD-3-Clause </para></xrefdescription></xrefsect><simplesect kind="copyright"><para>Copyright (c) 2019, New York University and Max Planck Gesellschaft. </para></simplesect>
+<simplesect kind="date"><para>2019-05-22 </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="10"><highlight class="preprocessor">#ifndef<sp/>DYNAMIC_GRAPH_ROS_TIME_HH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DYNAMIC_GRAPH_ROS_TIME_HH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dynamic-graph/entity.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dynamic-graph/signal.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ros/time.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/date_time/posix_time/posix_time_types.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacedynamic__graph" kindref="compound">dynamic_graph</ref></highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20" refid="classdynamic__graph_1_1RosTime" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classdynamic__graph_1_1RosTime" kindref="compound">RosTime</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>dynamicgraph::Entity</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>DYNAMIC_GRAPH_ENTITY_DECL();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>dynamicgraph::Signal&lt;boost::posix_time::ptime,<sp/>int&gt;<sp/>now_;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classdynamic__graph_1_1RosTime" kindref="compound">RosTime</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::string<sp/>getDocString()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::posix_time::ptime&amp;<sp/>update(boost::posix_time::ptime&amp;<sp/>time,</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>t);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>docstring_;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">};<sp/><sp/></highlight><highlight class="comment">//<sp/>class<sp/>RosTime</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>dynamic_graph</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>DYNAMIC_GRAPH_ROS_TIME_HH</highlight></codeline>
+    </programlisting>
+    <location file="include/ros_entities/ros_time.hh"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,265 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="calibrator_8cpp" kind="file" language="C++">
+    <compoundname>calibrator.cpp</compoundname>
+    <includes refid="calibrator_8hpp" local="yes">dg_tools/control/calibrator.hpp</includes>
+    <includes local="no">sot/core/debug.hh</includes>
+    <includes local="no">dynamic-graph/factory.h</includes>
+    <incdepgraph>
+      <node id="171">
+        <label>dynamic-graph/factory.h</label>
+      </node>
+      <node id="164">
+        <label>src/control/calibrator.cpp</label>
+        <link refid="calibrator.cpp"/>
+        <childnode refid="165" relation="include">
+        </childnode>
+        <childnode refid="170" relation="include">
+        </childnode>
+        <childnode refid="171" relation="include">
+        </childnode>
+      </node>
+      <node id="170">
+        <label>sot/core/debug.hh</label>
+      </node>
+      <node id="166">
+        <label>dynamic-graph/linear-algebra.h</label>
+      </node>
+      <node id="167">
+        <label>dynamic-graph/signal-time-dependent.h</label>
+      </node>
+      <node id="165">
+        <label>dg_tools/control/calibrator.hpp</label>
+        <link refid="calibrator_8hpp_source"/>
+        <childnode refid="166" relation="include">
+        </childnode>
+        <childnode refid="167" relation="include">
+        </childnode>
+        <childnode refid="168" relation="include">
+        </childnode>
+        <childnode refid="169" relation="include">
+        </childnode>
+      </node>
+      <node id="168">
+        <label>dynamic-graph/signal-ptr.h</label>
+      </node>
+      <node id="169">
+        <label>dynamic-graph/entity.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="calibrator_8cpp_1a553593db8ec24701adbc152a5db9cde8" prot="public" static="no">
+        <name>__SOT_Calibrator_INIT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/control/calibrator.cpp" line="42" column="9" bodyfile="src/control/calibrator.cpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="calibrator_8cpp_1af42ef546aac5c99700465750019f14b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DYNAMICGRAPH_FACTORY_ENTITY_PLUGIN</definition>
+        <argsstring>(Calibrator,&quot;Calibrator&quot;)</argsstring>
+        <name>DYNAMICGRAPH_FACTORY_ENTITY_PLUGIN</name>
+        <param>
+          <type><ref refid="classdynamicgraph_1_1sot_1_1Calibrator" kindref="compound">Calibrator</ref></type>
+        </param>
+        <param>
+          <type>&quot;Calibrator&quot;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/control/calibrator.cpp" line="32" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>2010,</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Steve<sp/>Heim</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>CNRS/AIST</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>sot-core.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>sot-core<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>modify<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>as<sp/>published<sp/>by<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>the<sp/>License,<sp/>or<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>sot-core<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>useful,<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.<sp/><sp/>You<sp/>should</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>along</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>with<sp/>sot-core.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>SOT<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;dg_tools/control/calibrator.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sot/core/debug.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dynamic-graph/factory.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacedynamicgraph_1_1sot" kindref="compound">dynamicgraph::sot</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacedynamicgraph" kindref="compound">dynamicgraph</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal">DYNAMICGRAPH_FACTORY_ENTITY_PLUGIN(<ref refid="classdynamicgraph_1_1sot_1_1Calibrator" kindref="compound">Calibrator</ref>,<sp/></highlight><highlight class="stringliteral">&quot;Calibrator&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>Calibrator::</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">TIME_STEP_DEFAULT<sp/>=<sp/>.001;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__SOT_Calibrator_INIT<sp/>\</highlight></codeline>
+<codeline lineno="43"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal">Calibrator::Calibrator(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name<sp/>)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/>:Entity(name)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/>,positionSIN(NULL,</highlight><highlight class="stringliteral">&quot;Calibrator(&quot;</highlight><highlight class="normal">+name+</highlight><highlight class="stringliteral">&quot;)::input(vector)::raw_position&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/>,velocitySIN(NULL,</highlight><highlight class="stringliteral">&quot;Calibrator(&quot;</highlight><highlight class="normal">+name+</highlight><highlight class="stringliteral">&quot;)::input(vector)::velocity&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/>,calibration_torqueSIN(NULL,</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Calibrator(&quot;</highlight><highlight class="normal">+name+</highlight><highlight class="stringliteral">&quot;)::input(vector)::calibration_torque&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/>,hardstop2zeroSIN(NULL,</highlight><highlight class="stringliteral">&quot;Calibrator(&quot;</highlight><highlight class="normal">+name+</highlight><highlight class="stringliteral">&quot;)::input(vector)::hardstop2zero&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/>,positionSOUT(<sp/>boost::bind(&amp;<ref refid="classdynamicgraph_1_1sot_1_1Calibrator" kindref="compound">Calibrator</ref>::compute_position,this,_1,_2),</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>positionSIN<sp/>&lt;&lt;<sp/>hardstop2zeroSIN,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Calibrator(&quot;</highlight><highlight class="normal">+name+</highlight><highlight class="stringliteral">&quot;)::output(vector)::calibrated_position&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/>,controlSOUT(<sp/>boost::bind(&amp;<ref refid="classdynamicgraph_1_1sot_1_1Calibrator" kindref="compound">Calibrator</ref>::calibrate,this,_1,_2),</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>positionSIN<sp/>&lt;&lt;<sp/>velocitySIN<sp/>&lt;&lt;<sp/>calibration_torqueSIN,</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;Calibrator(&quot;</highlight><highlight class="normal">+name+</highlight><highlight class="stringliteral">&quot;)::output(vector)::control&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/>,calibrated_flagSOUT(<sp/>boost::bind(&amp;<ref refid="classdynamicgraph_1_1sot_1_1Calibrator" kindref="compound">Calibrator</ref>::is_calibrated,this,_1,_2),</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>internal_signal_refresher_,</highlight><highlight class="stringliteral">&quot;Calibrator(&quot;</highlight><highlight class="normal">+name+</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/></highlight><highlight class="stringliteral">&quot;)::output(vector)::calibrated_flag&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/>,internal_signal_refresher_(</highlight><highlight class="stringliteral">&quot;Calibrator(&quot;</highlight><highlight class="normal">+name+</highlight><highlight class="stringliteral">&quot;)::intern(dummy)::refresher&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/>,init_flag(1)</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/>,calibrated_flag_(0)<sp/></highlight><highlight class="comment">//<sp/>now<sp/>a<sp/>signal_OUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/>,threshold_time(1000)<sp/></highlight><highlight class="comment">//<sp/>threshold_time<sp/>used<sp/>to<sp/>ramp<sp/>up</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/>,threshold_velocity(0.001)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/>internal_signal_refresher_.setDependencyType(</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>dynamicgraph::TimeDependency&lt;int&gt;::ALWAYS_READY);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/>Entity::signalRegistration(<sp/>positionSIN<sp/>&lt;&lt;<sp/>velocitySIN<sp/>&lt;&lt;<sp/>hardstop2zeroSIN<sp/>&lt;&lt;<sp/></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>calibration_torqueSIN<sp/>&lt;&lt;<sp/>positionSOUT<sp/>&lt;&lt;<sp/>controlSOUT<sp/></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>calibrated_flagSOUT);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TODO:<sp/>setters<sp/>for<sp/>thresholds</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Calibrator::display(<sp/>std::ostream&amp;<sp/>os<sp/>)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="77"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Calibrator<sp/>&quot;</highlight><highlight class="normal">&lt;&lt;getName();</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;</highlight><highlight class="stringliteral">&quot;control<sp/>=<sp/>&quot;</highlight><highlight class="normal">&lt;&lt;controlSOUT;<sp/></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(ExceptionSignal<sp/>e)<sp/>{}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/>os<sp/>&lt;&lt;</highlight><highlight class="stringliteral">&quot;<sp/>(&quot;</highlight><highlight class="normal">&lt;&lt;TimeStep&lt;&lt;</highlight><highlight class="stringliteral">&quot;)<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">&amp;<sp/>Calibrator::setsize(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dimension)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/>_dimension<sp/>=<sp/>dimension;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_dimension;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal">dynamicgraph::Vector&amp;<sp/></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>Calibrator::calibrate(<sp/>dynamicgraph::Vector<sp/>&amp;torque,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>t<sp/>)<sp/></highlight></codeline>
+<codeline lineno="98"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/>sotDEBUGIN(15);<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>dynamicgraph::Vector&amp;<sp/>position<sp/>=<sp/>positionSIN(t);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>dynamicgraph::Vector&amp;<sp/>velocity<sp/>=<sp/>velocitySIN(t);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>dynamicgraph::Vector&amp;<sp/>calibration_torque<sp/>=<sp/>calibration_torqueSIN(t);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/>num_joints<sp/>=<sp/>position.size();</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/>torque.resize(num_joints);<sp/>torque.setZero();</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(init_flag){<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>t_start<sp/>=<sp/>t;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>error.resize(num_joints);<sp/>error.setZero();</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>calibrated.resize(num_joints);<sp/>calibrated.setZero();</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>start2hardstop.resize(num_joints);<sp/>start2hardstop.setZero();</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>init_flag<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>ramp<sp/>to<sp/>calibration<sp/>torque<sp/>in<sp/>threshold_time,<sp/>then<sp/>hold</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idx<sp/>=<sp/>0;<sp/>idx<sp/>&lt;<sp/>num_joints;<sp/>idx++){</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>turn<sp/>motors<sp/>off<sp/>after<sp/>calibration<sp/>is<sp/>finished</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(calibrated[idx]){</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>torque[idx]=0;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((t-t_start)&lt;=threshold_time){<sp/></highlight><highlight class="comment">//ramp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>torque[idx]<sp/>=<sp/>calibration_torque[idx]/threshold_time*(t-t_start);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{<sp/></highlight><highlight class="comment">//and<sp/>hold</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>torque[idx]<sp/>=<sp/>calibration_torque[idx];</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>check<sp/>if<sp/>we&apos;ve<sp/>saturated<sp/>on<sp/>error.<sp/>If<sp/>yes,<sp/>save<sp/>position<sp/>and<sp/>flip<sp/>flag</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((t-t_start)&gt;threshold_time<sp/>&amp;&amp;<sp/></highlight><highlight class="comment">//<sp/>finished<sp/>ramp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>abs(velocity[idx])&lt;threshold_velocity<sp/>&amp;&amp;<sp/></highlight><highlight class="comment">//<sp/>joint<sp/>has<sp/>stopped</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!calibrated[idx])<sp/></highlight><highlight class="comment">//<sp/>hasn&apos;t<sp/>already<sp/>been<sp/>calibrated</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>start2hardstop[idx]<sp/>=<sp/>position[idx];</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>calibrated[idx]<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>all<sp/>joints<sp/>are<sp/>calibrated,<sp/>yay.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(calibrated.sum()<sp/>==<sp/>num_joints<sp/>&amp;&amp;<sp/>!calibrated_flag_){</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>calibrated_flag_<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/>sotDEBUGOUT(15);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>torque;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>&amp;Calibrator::</highlight></codeline>
+<codeline lineno="148"><highlight class="normal">is_calibrated(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>&amp;calibrated_flag,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>t)</highlight></codeline>
+<codeline lineno="149"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>calibrated_flag.resize(1,1);//<sp/>=<sp/>calibrated_flag_;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/>calibrated_flag<sp/>=<sp/>calibrated_flag_;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>calibrated_flag;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal">dynamicgraph::Vector<sp/>&amp;Calibrator::</highlight></codeline>
+<codeline lineno="156"><highlight class="normal">compute_position(dynamicgraph::Vector<sp/>&amp;calibratedPosition,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>t)</highlight></codeline>
+<codeline lineno="157"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>sotDEBUGIN(15);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>dynamicgraph::Vector<sp/>&amp;position<sp/>=<sp/>positionSIN(t);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>dynamicgraph::Vector<sp/>&amp;hardstop2zero<sp/>=<sp/>hardstop2zeroSIN(t);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>calibratedPosition.resize(position.size());</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(start2hardstop.size()<sp/>==<sp/>0){<sp/></highlight><highlight class="comment">//<sp/>calibration<sp/>has<sp/>not<sp/>yet<sp/>happened!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>start2hardstop.resize(position.size());</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>start2hardstop.setZero();</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>calibratedPosition.array()<sp/>=<sp/>position.array()<sp/>-<sp/>start2hardstop.array()</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>hardstop2zero.array();</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>sotDEBUGOUT(15);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>calibratedPosition;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/control/calibrator.cpp"/>
+  </compounddef>
+</doxygen>

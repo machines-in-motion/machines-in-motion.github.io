@@ -1,0 +1,398 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>&lt;no title&gt; &mdash; mpi_cmake_modules 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> mpi_cmake_modules
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to mpi_cmake_modules’s documentation!</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../general_documentation.html">General Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">mpi_cmake_modules</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cmake_doc.html">CMake API</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">mpi_cmake_modules</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>&lt;no title&gt;</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/cmake/dynamic_graph.cmake.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p>#
+# Copyright (c) 2019, New York University and Max Planck Gesellschaft.
+# License BSD-3 clause
+#</p>
+<p>#.rst:
+#
+# Change the cmake policy <em>CMP0012</em> to <em>NEW</em> in this file to prevent cmake
+# warnings.
+#
+if(POLICY CMP0012)</p>
+<blockquote>
+<div><p>cmake_policy(PUSH)
+cmake_policy(SET CMP0012 NEW)</p>
+</div></blockquote>
+<p>endif()</p>
+<p>#.rst:
+# .. cmake:command:: BUILD_DOXYGEN_DOCUMENTATION
+#
+#   Define a list of the subdirectories.
+#
+macro(SUBDIRLIST result curdir)</p>
+<blockquote>
+<div><p>file(GLOB children RELATIVE ${curdir} ${curdir}/<a href="#id1"><span class="problematic" id="id2">*</span></a>)
+set(dirlist “”)
+foreach(child ${children})</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if(IS_DIRECTORY ${curdir}/${child})</dt><dd><p>list(APPEND dirlist ${child})</p>
+</dd>
+</dl>
+<p>endif()</p>
+</div></blockquote>
+<p>endforeach()
+set(${result} ${dirlist})</p>
+</div></blockquote>
+<p>endmacro()</p>
+<p>#.rst:
+# .. cmake:command:: FIND_DEVEL_FOLDER
+#
+#   Detect the parent catkin devel folder. This macro is called by default here.
+#
+macro(FIND_DEVEL_FOLDER CURRENT_DIR)</p>
+<blockquote>
+<div><p>set(CURRENT_FOLDER ${CURRENT_DIR})
+set(stop_find_devel_folder OFF)</p>
+<p>subdirlist(SUB_FOLDERS ${CURRENT_FOLDER})
+foreach(subfold ${SUB_FOLDERS})</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if(${subfold} STREQUAL “devel”)</dt><dd><p>set(DEVEL_FOLDER ${CURRENT_FOLDER}/devel)
+set(stop_find_devel_folder TRUE)</p>
+</dd>
+</dl>
+<p>endif()</p>
+</div></blockquote>
+<p>endforeach()</p>
+<dl class="simple">
+<dt>if(NOT ${stop_find_devel_folder})</dt><dd><p>get_filename_component(CURRENT_FOLDER ${CURRENT_FOLDER} PATH)
+find_devel_folder(${CURRENT_FOLDER})</p>
+</dd>
+</dl>
+<p>endif()</p>
+</div></blockquote>
+<p>endmacro()
+find_devel_folder(${CMAKE_CURRENT_SOURCE_DIR})</p>
+<p>#.rst:
+#
+# .. cmake:variable:: DYNAMIC_GRAPH_GLOBAL_PLUGIN_DIR
+#
+#   Location of the all the dynamic graph plugins.
+#
+set(DYNAMIC_GRAPH_GLOBAL_PLUGIN_DIR ${DEVEL_FOLDER}/lib/plugin)</p>
+<p>#.rst:
+#
+# .. cmake:variable:: DYNAMIC_GRAPH_PLUGIN_DIR
+#
+#   Relative path form the devel folder of the
+#   <span class="target" id="index-0-variable:DYNAMIC_GRAPH_GLOBAL_PLUGIN_DIR"></span><a class="reference internal" href="../cmake_doc.html#variable:DYNAMIC_GRAPH_GLOBAL_PLUGIN_DIR" title="DYNAMIC_GRAPH_GLOBAL_PLUGIN_DIR"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">DYNAMIC_GRAPH_GLOBAL_PLUGIN_DIR</span></code></a>
+#
+set(DYNAMIC_GRAPH_PLUGIN_DIR ${CATKIN_DEVEL_PREFIX}/lib/plugin)
+set(DYNAMIC_GRAPH_PYTHON_DIR</p>
+<blockquote>
+<div><p>${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_PYTHON_DESTINATION}/dynamic_graph_manager)</p>
+</div></blockquote>
+<p># Reset the policy here.
+if(POLICY CMP0012)</p>
+<blockquote>
+<div><p>cmake_policy(POP)</p>
+</div></blockquote>
+<p>endif()</p>
+<p>#.rst:
+# .. cmake:command:: DYNAMIC_GRAPH_PYTHON_MODULE ( SUBMODULENAME LIBRARYNAME TARGETNAME)
+#
+#   This file allows us to install the Python bindings of the dynamic graph
+#   at the correct place.
+#
+#   Add a python submodule to dynamic_graph
+#
+#   :param SUBMODULENAME: the name of the submodule (can be foo/bar),
+#
+#   :param LIBRARYNAME:   library to link the submodule with.
+#
+#   :param TARGETNAME:     name of the target: should be different for several
+#                   calls to the macro.
+#  .. note::
+#    Before calling this macro, set variable NEW_ENTITY_CLASS as
+#    the list of new Entity types that you want to be bound.
+#    Entity class name should match the name referencing the type
+#    in the factory.
+#
+MACRO(DYNAMIC_GRAPH_PYTHON_MODULE SUBMODULENAME LIBRARYNAME TARGET_NAME)</p>
+<blockquote>
+<div><p>set(SUBMODULE_DIR ${SUBMODULENAME})
+string(REPLACE “-” “_” SUBMODULE_DIR “${SUBMODULE_DIR}”)</p>
+<dl class="simple">
+<dt>IF(NOT DEFINED PYTHONLIBS_FOUND)</dt><dd><p>FINDPYTHON()</p>
+</dd>
+<dt>ELSEIF(NOT ${PYTHONLIBS_FOUND} STREQUAL “TRUE”)</dt><dd><p>MESSAGE(FATAL_ERROR “Python has not been found.”)</p>
+</dd>
+</dl>
+<p>ENDIF()</p>
+<p># local var to create the destination folders and install it
+SET(OUTPUT_MODULE_DIR ${DYNAMIC_GRAPH_PYTHON_DIR}/${SUBMODULE_DIR})</p>
+<p># create the install folder
+FILE(MAKE_DIRECTORY ${OUTPUT_MODULE_DIR})</p>
+<p># We need to set this policy to old to accept wrap target.
+CMAKE_POLICY(PUSH)
+IF(POLICY CMP0037)</p>
+<blockquote>
+<div><p>CMAKE_POLICY(SET CMP0037 OLD)</p>
+</div></blockquote>
+<p>ENDIF()</p>
+<p># create the library
+SET(PYTHON_MODULE “${TARGET_NAME}”)
+configure_file(${MPI_CMAKE_MODULES_RESOURCES_DIR}/python-module-py.cc.in</p>
+<blockquote>
+<div><p>${PROJECT_BINARY_DIR}/python-module-py.cc &#64;ONLY IMMEDIATE)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>ADD_LIBRARY(${PYTHON_MODULE}</dt><dd><p>MODULE
+${PROJECT_BINARY_DIR}/python-module-py.cc</p>
+</dd>
+</dl>
+<p>)
+MESSAGE(STATUS “Creating the python binding of: ${LIBRARYNAME}”)
+TARGET_LINK_LIBRARIES(${PYTHON_MODULE} ${LIBRARYNAME} ${PYTHON_LIBRARY})
+SET_TARGET_PROPERTIES(${PYTHON_MODULE} PROPERTIES</p>
+<blockquote>
+<div><p>PREFIX “”
+OUTPUT_NAME wrap
+LIBRARY_OUTPUT_DIRECTORY “${OUTPUT_MODULE_DIR}/”</p>
+</div></blockquote>
+<p>)</p>
+<p>CMAKE_POLICY(POP)</p>
+<p># In essence create an empty __init__.py in all SUBMODULENAME subfolder
+# this allow you to load the python package without trouble.
+string(REPLACE “/” “;” SUB_FOLDER_LIST ${SUBMODULENAME})
+set(current_folder ${DYNAMIC_GRAPH_PYTHON_DIR})
+foreach(subfolder ${SUB_FOLDER_LIST})</p>
+<blockquote>
+<div><dl>
+<dt>CONFIGURE_FILE(</dt><dd><blockquote>
+<div><p>${MPI_CMAKE_MODULES_RESOURCES_DIR}/__init__.py.empty.in</p>
+</div></blockquote>
+<p>${current_folder}/${subfolder}/__init__.py</p>
+</dd>
+</dl>
+<p>)
+set(current_folder ${current_folder}/${subfolder})</p>
+</div></blockquote>
+<p>endforeach(subfolder ${SUB_FOLDER_LIST})</p>
+<p># local var to create the destination folders and install it
+SET(OUTPUT_MODULE_DIR ${DYNAMIC_GRAPH_PYTHON_DIR}/${SUBMODULE_DIR})</p>
+<dl class="simple">
+<dt>CONFIGURE_FILE(</dt><dd><p>${MPI_CMAKE_MODULES_RESOURCES_DIR}/__init__.py.in
+${OUTPUT_MODULE_DIR}/__init__.py</p>
+</dd>
+</dl>
+<p>)</p>
+<p>SET(ENTITY_CLASS_LIST “”)
+FOREACH (ENTITY ${NEW_ENTITY_CLASS})</p>
+<blockquote>
+<div><p>SET(ENTITY_CLASS_LIST “${ENTITY_CLASS_LIST}${ENTITY}(‘’)n”)</p>
+</div></blockquote>
+<p>ENDFOREACH(ENTITY ${NEW_ENTITY_CLASS})</p>
+</div></blockquote>
+<p>ENDMACRO(DYNAMIC_GRAPH_PYTHON_MODULE SUBMODULENAME LIBRARYNAME TARGET_NAME)</p>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright Copyright (c) 2020, See license.txt file or the license section.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

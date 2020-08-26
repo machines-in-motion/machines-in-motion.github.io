@@ -1,0 +1,259 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>&lt;no title&gt; &mdash; mpi_cmake_modules 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> mpi_cmake_modules
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to mpi_cmake_modules’s documentation!</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../general_documentation.html">General Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">mpi_cmake_modules</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cmake_doc.html">CMake API</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">mpi_cmake_modules</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>&lt;no title&gt;</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/cmake/pthread.cmake.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p>#
+# &#64;file pthread.cmake
+# &#64;author Maximilien Naveau (<a class="reference external" href="mailto:maximilien&#46;naveau&#37;&#52;&#48;gmail&#46;com">maximilien<span>&#46;</span>naveau<span>&#64;</span>gmail<span>&#46;</span>com</a>)
+# &#64;copyright Copyright (c) 2019, New York University and Max Planck Gesellschaft.
+# &#64;license License BSD-3 clause
+# &#64;date 2019-05-06
+#
+# &#64;brief This file is copied/inspired from
+# <a class="reference external" href="https://github.com/jrl-umi3218/jrl-cmakemodules/blob/master/pthread.cmake">https://github.com/jrl-umi3218/jrl-cmakemodules/blob/master/pthread.cmake</a>
+#</p>
+<p>INCLUDE(FindThreads)</p>
+<p>#.rst:
+# .. cmake:command:: SEARCH_FOR_PTHREAD
+#
+#    Check for pthread support on Linux. This does nothing on Windows.
+#
+MACRO(SEARCH_FOR_PTHREAD)</p>
+<blockquote>
+<div><dl>
+<dt>IF(UNIX)</dt><dd><dl class="simple">
+<dt>IF(CMAKE_USE_PTHREADS_INIT)</dt><dd><p>ADD_DEFINITIONS(-pthread)</p>
+</dd>
+<dt>ELSE(CMAKE_USE_PTHREADS_INIT)</dt><dd><dl class="simple">
+<dt>MESSAGE(FATAL_ERROR</dt><dd><p>“Pthread is required on Unix, but ”
+${CMAKE_THREAD_LIBS_INIT} ” has been detected.”)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>ENDIF(CMAKE_USE_PTHREADS_INIT)</p>
+</dd>
+<dt>ELSEIF(WIN32)</dt><dd><p># Nothing to do.</p>
+</dd>
+<dt>ELSE(UNIX)</dt><dd><p>MESSAGE(FATAL_ERROR “Thread support for this platform is not implemented.”)</p>
+</dd>
+</dl>
+<p>ENDIF(UNIX)</p>
+<dl class="simple">
+<dt>LIST(APPEND LOGGING_WATCHED_VARIABLES</dt><dd><p>CMAKE_THREAD_LIBS_INIT
+CMAKE_USE_SPROC_INIT
+CMAKE_USE_WIN32_THREADS_INIT
+CMAKE_USE_PTHREADS_INIT
+CMAKE_HP_PTHREADS_INIT
+)</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>ENDMACRO(SEARCH_FOR_PTHREAD)</p>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright Copyright (c) 2020, See license.txt file or the license section.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

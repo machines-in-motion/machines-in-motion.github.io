@@ -1,0 +1,340 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classdynamic__graph_1_1RosRobotStatePublisher" kind="class" language="C++" prot="public">
+    <compoundname>dynamic_graph::RosRobotStatePublisher</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Entity</basecompoundref>
+    <includes refid="ros__robot__state__publisher_8hpp" local="no">ros_robot_state_publisher.hpp</includes>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classdynamic__graph_1_1RosRobotStatePublisher_1a3794be6383ba4bc9a7412218a755f524" prot="private" static="yes" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string dynamic_graph::RosRobotStatePublisher::CLASS_NAME</definition>
+        <argsstring></argsstring>
+        <name>CLASS_NAME</name>
+        <briefdescription>
+<para>The class name used to identify it in the dynamic graph pool. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ros_entities/ros_robot_state_publisher.hpp" line="106" column="1" bodyfile="include/ros_entities/ros_robot_state_publisher.hpp" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classdynamic__graph_1_1RosRobotStatePublisher_1a175914c0624474d019cb1360fa9c14e4" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacedynamic__graph_1a9d80c350c95e161319d7a6e629ecdc4b" kindref="member">SignalOUT</ref></type>
+        <definition>SignalOUT dynamic_graph::RosRobotStatePublisher::trigger_signal_</definition>
+        <argsstring></argsstring>
+        <name>trigger_signal_</name>
+        <briefdescription>
+<para>Create an internal output signal which should be call periodically in the device in order to publish the data. </para>        </briefdescription>
+        <detaileddescription>
+<para>The callback function of this signal is the trigger methode. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ros_entities/ros_robot_state_publisher.hpp" line="137" column="1" bodyfile="include/ros_entities/ros_robot_state_publisher.hpp" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamic__graph_1_1RosRobotStatePublisher_1a5b494e473d93118cb69320c01dfd772c" prot="private" static="no" mutable="no">
+        <type>ros::NodeHandle &amp;</type>
+        <definition>ros::NodeHandle&amp; dynamic_graph::RosRobotStatePublisher::ros_node_handle_</definition>
+        <argsstring></argsstring>
+        <name>ros_node_handle_</name>
+        <briefdescription>
+<para>Ros node handle corresponding to the dynamic graph process node handle. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ros_entities/ros_robot_state_publisher.hpp" line="143" column="1" bodyfile="include/ros_entities/ros_robot_state_publisher.hpp" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamic__graph_1_1RosRobotStatePublisher_1a556fe3ed8d7c0786e0d6aad4cbb415db" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, <ref refid="structdynamic__graph_1_1RosRobotStatePublisherInternal" kindref="compound">RosRobotStatePublisherInternal</ref> &gt;</type>
+        <definition>std::map&lt;std::string, RosRobotStatePublisherInternal&gt; dynamic_graph::RosRobotStatePublisher::publishers_</definition>
+        <argsstring></argsstring>
+        <name>publishers_</name>
+        <briefdescription>
+<para>This is the list of publishers registered for this class. </para>        </briefdescription>
+        <detaileddescription>
+<para>It correspond to the list of robot states one wants to publish. See the add methode (Command) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ros_entities/ros_robot_state_publisher.hpp" line="150" column="1" bodyfile="include/ros_entities/ros_robot_state_publisher.hpp" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamic__graph_1_1RosRobotStatePublisher_1af638eb336998964161a89e4ce76821d1" prot="private" static="no" mutable="no">
+        <type>ros::Duration</type>
+        <definition>ros::Duration dynamic_graph::RosRobotStatePublisher::rate_</definition>
+        <argsstring></argsstring>
+        <name>rate_</name>
+        <briefdescription>
+<para>manage the rate data publication in topics </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ros_entities/ros_robot_state_publisher.hpp" line="155" column="1" bodyfile="include/ros_entities/ros_robot_state_publisher.hpp" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamic__graph_1_1RosRobotStatePublisher_1a000e917f448ac480bfc8b2559d41a4b5" prot="private" static="no" mutable="no">
+        <type>ros::Time</type>
+        <definition>ros::Time dynamic_graph::RosRobotStatePublisher::last_time_of_publication_</definition>
+        <argsstring></argsstring>
+        <name>last_time_of_publication_</name>
+        <briefdescription>
+<para>Check at what time the publication was done. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ros_entities/ros_robot_state_publisher.hpp" line="160" column="1" bodyfile="include/ros_entities/ros_robot_state_publisher.hpp" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classdynamic__graph_1_1RosRobotStatePublisher_1a7dbda339acfbacd6c2f45e7aac4409be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamic_graph::RosRobotStatePublisher::RosRobotStatePublisher</definition>
+        <argsstring>(const std::string &amp;name)</argsstring>
+        <name>RosRobotStatePublisher</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ros_entities/ros_robot_state_publisher.hpp" line="70" column="1" bodyfile="src/ros_entities/ros_robot_state_publisher.cpp" bodystart="26" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamic__graph_1_1RosRobotStatePublisher_1a36dce009c7e4ab8a16220be91992bbb9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>dynamic_graph::RosRobotStatePublisher::~RosRobotStatePublisher</definition>
+        <argsstring>(void)</argsstring>
+        <name>~RosRobotStatePublisher</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ros_entities/ros_robot_state_publisher.hpp" line="72" column="1" bodyfile="include/ros_entities/ros_robot_state_publisher.hpp" bodystart="72" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamic__graph_1_1RosRobotStatePublisher_1a92094934e53306e73b6fc13d1de61b3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void dynamic_graph::RosRobotStatePublisher::add</definition>
+        <argsstring>(const std::string &amp;base_link_name, const std::string &amp;joint_names, const std::string &amp;tf_prefix, const std::string &amp;signal_name, const std::string &amp;joint_state_topic_name)</argsstring>
+        <name>add</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>base_link_name</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>joint_names</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>tf_prefix</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>signal_name</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>joint_state_topic_name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>base_link_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>joint_names</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tf_prefix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>signal_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ros_entities/ros_robot_state_publisher.hpp" line="84" column="1" bodyfile="src/ros_entities/ros_robot_state_publisher.cpp" bodystart="75" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamic__graph_1_1RosRobotStatePublisher_1a4d66defbd1b308cd06394107f55f6cbb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int &amp;</type>
+        <definition>int &amp; dynamic_graph::RosRobotStatePublisher::trigger</definition>
+        <argsstring>(int &amp;, int)</argsstring>
+        <name>trigger</name>
+        <param>
+          <type>int &amp;</type>
+          <defname>dummy</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>time</defname>
+        </param>
+        <briefdescription>
+<para>Trigger the publishing of the data to ros for all signals. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>int&amp; dummy stuff. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ros_entities/ros_robot_state_publisher.hpp" line="95" column="1" bodyfile="src/ros_entities/ros_robot_state_publisher.cpp" bodystart="143" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamic__graph_1_1RosRobotStatePublisher_1a196621509ce1e5becada60a7093bcb3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void dynamic_graph::RosRobotStatePublisher::send_data</definition>
+        <argsstring>(const RosRobotStatePublisherInternal &amp;publisher, int time)</argsstring>
+        <name>send_data</name>
+        <param>
+          <type>const <ref refid="structdynamic__graph_1_1RosRobotStatePublisherInternal" kindref="compound">RosRobotStatePublisherInternal</ref> &amp;</type>
+          <declname>publisher</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>time</declname>
+        </param>
+        <briefdescription>
+<para>Signal callback functions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ros_entities/ros_robot_state_publisher.hpp" line="100" column="1" bodyfile="src/ros_entities/ros_robot_state_publisher.cpp" bodystart="167" bodyend="227"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classdynamic__graph_1_1RosRobotStatePublisher_1aa031a669a2c2784c50b558fd2e2b6da3" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>const std::string &amp;</type>
+        <definition>virtual const std::string&amp; dynamic_graph::RosRobotStatePublisher::getClassName</definition>
+        <argsstring>(void) const</argsstring>
+        <name>getClassName</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Get the CLASS_NAME object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>const std::string&amp; </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ros_entities/ros_robot_state_publisher.hpp" line="113" column="1" bodyfile="include/ros_entities/ros_robot_state_publisher.hpp" bodystart="113" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamic__graph_1_1RosRobotStatePublisher_1af3e0cfe13273ecd8c6e01b59bb6220e7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void dynamic_graph::RosRobotStatePublisher::set_tf_msg_to_identity</definition>
+        <argsstring>(geometry_msgs::TransformStamped &amp;msg)</argsstring>
+        <name>set_tf_msg_to_identity</name>
+        <param>
+          <type>geometry_msgs::TransformStamped &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+<para>Set a tf msg to identity. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ros_entities/ros_robot_state_publisher.hpp" line="123" column="1" bodyfile="src/ros_entities/ros_robot_state_publisher.cpp" bodystart="229" bodyend="239"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamic__graph_1_1RosRobotStatePublisher_1acb4e771801c5bc13c7a2b022c3dd6b9d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void dynamic_graph::RosRobotStatePublisher::normalize_tf_msg_quaternion</definition>
+        <argsstring>(geometry_msgs::TransformStamped &amp;msg)</argsstring>
+        <name>normalize_tf_msg_quaternion</name>
+        <param>
+          <type>geometry_msgs::TransformStamped &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+<para>Normalize the tf message quaternion before sending it to the. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ros_entities/ros_robot_state_publisher.hpp" line="130" column="1" bodyfile="src/ros_entities/ros_robot_state_publisher.cpp" bodystart="241" bodyend="263"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class define a dynamic graph wrapper around the vicon client. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="142">
+        <label>dynamic_graph::RosRobotStatePublisher</label>
+        <link refid="classdynamic__graph_1_1RosRobotStatePublisher"/>
+        <childnode refid="143" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="143">
+        <label>Entity</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="144">
+        <label>dynamic_graph::RosRobotStatePublisher</label>
+        <link refid="classdynamic__graph_1_1RosRobotStatePublisher"/>
+        <childnode refid="145" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="145">
+        <label>Entity</label>
+      </node>
+    </collaborationgraph>
+    <location file="include/ros_entities/ros_robot_state_publisher.hpp" line="68" column="1" bodyfile="include/ros_entities/ros_robot_state_publisher.hpp" bodystart="67" bodyend="161"/>
+    <listofallmembers>
+      <member refid="classdynamic__graph_1_1RosRobotStatePublisher_1a92094934e53306e73b6fc13d1de61b3d" prot="public" virt="non-virtual"><scope>dynamic_graph::RosRobotStatePublisher</scope><name>add</name></member>
+      <member refid="classdynamic__graph_1_1RosRobotStatePublisher_1a3794be6383ba4bc9a7412218a755f524" prot="private" virt="non-virtual"><scope>dynamic_graph::RosRobotStatePublisher</scope><name>CLASS_NAME</name></member>
+      <member refid="classdynamic__graph_1_1RosRobotStatePublisher_1aa031a669a2c2784c50b558fd2e2b6da3" prot="private" virt="virtual"><scope>dynamic_graph::RosRobotStatePublisher</scope><name>getClassName</name></member>
+      <member refid="classdynamic__graph_1_1RosRobotStatePublisher_1a000e917f448ac480bfc8b2559d41a4b5" prot="private" virt="non-virtual"><scope>dynamic_graph::RosRobotStatePublisher</scope><name>last_time_of_publication_</name></member>
+      <member refid="classdynamic__graph_1_1RosRobotStatePublisher_1acb4e771801c5bc13c7a2b022c3dd6b9d" prot="private" virt="non-virtual"><scope>dynamic_graph::RosRobotStatePublisher</scope><name>normalize_tf_msg_quaternion</name></member>
+      <member refid="classdynamic__graph_1_1RosRobotStatePublisher_1a556fe3ed8d7c0786e0d6aad4cbb415db" prot="private" virt="non-virtual"><scope>dynamic_graph::RosRobotStatePublisher</scope><name>publishers_</name></member>
+      <member refid="classdynamic__graph_1_1RosRobotStatePublisher_1af638eb336998964161a89e4ce76821d1" prot="private" virt="non-virtual"><scope>dynamic_graph::RosRobotStatePublisher</scope><name>rate_</name></member>
+      <member refid="classdynamic__graph_1_1RosRobotStatePublisher_1a5b494e473d93118cb69320c01dfd772c" prot="private" virt="non-virtual"><scope>dynamic_graph::RosRobotStatePublisher</scope><name>ros_node_handle_</name></member>
+      <member refid="classdynamic__graph_1_1RosRobotStatePublisher_1a7dbda339acfbacd6c2f45e7aac4409be" prot="public" virt="non-virtual"><scope>dynamic_graph::RosRobotStatePublisher</scope><name>RosRobotStatePublisher</name></member>
+      <member refid="classdynamic__graph_1_1RosRobotStatePublisher_1a196621509ce1e5becada60a7093bcb3a" prot="public" virt="non-virtual"><scope>dynamic_graph::RosRobotStatePublisher</scope><name>send_data</name></member>
+      <member refid="classdynamic__graph_1_1RosRobotStatePublisher_1af3e0cfe13273ecd8c6e01b59bb6220e7" prot="private" virt="non-virtual"><scope>dynamic_graph::RosRobotStatePublisher</scope><name>set_tf_msg_to_identity</name></member>
+      <member refid="classdynamic__graph_1_1RosRobotStatePublisher_1a4d66defbd1b308cd06394107f55f6cbb" prot="public" virt="non-virtual"><scope>dynamic_graph::RosRobotStatePublisher</scope><name>trigger</name></member>
+      <member refid="classdynamic__graph_1_1RosRobotStatePublisher_1a175914c0624474d019cb1360fa9c14e4" prot="private" virt="non-virtual"><scope>dynamic_graph::RosRobotStatePublisher</scope><name>trigger_signal_</name></member>
+      <member refid="classdynamic__graph_1_1RosRobotStatePublisher_1a36dce009c7e4ab8a16220be91992bbb9" prot="public" virt="non-virtual"><scope>dynamic_graph::RosRobotStatePublisher</scope><name>~RosRobotStatePublisher</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

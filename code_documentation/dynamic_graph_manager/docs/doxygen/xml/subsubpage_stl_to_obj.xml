@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="subsubpage_stl_to_obj" kind="page">
+    <compoundname>subsubpage_stl_to_obj</compoundname>
+    <title>4.3/ Convert the stl files in obj files</title>
+    <detaileddescription>
+<sect1 id="subsubpage_stl_to_obj_1stl_obj_sec_download">
+<title>4.3.1/ Download the scripts</title>
+<para>Download the following package using the package manager: <programlisting><codeline><highlight class="normal">mkdir<sp/>devel<sp/>#<sp/>if<sp/>not<sp/>done<sp/>already</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>devel</highlight></codeline>
+<codeline><highlight class="normal">git<sp/>clone<sp/>git@git-amd.tuebingen.mpg.de:amd-clmc/treep_amd_clmc.git</highlight></codeline>
+<codeline><highlight class="normal">treep<sp/>--clone<sp/>model_tools</highlight></codeline>
+</programlisting> This should clone the repository in &quot;workspace/src/catkin/utilities/model_tools&quot; from <ulink url="https://git-amd.tuebingen.mpg.de/amd-clmc/model_tools">https://git-amd.tuebingen.mpg.de/amd-clmc/model_tools</ulink> with the following output: <image type="html" name="clone.png"></image>
+</para></sect1>
+<sect1 id="subsubpage_stl_to_obj_1stl_obj_sec_compilation">
+<title>4.3.2/ Compile the package with catkin</title>
+<para>This compilation will tell catkin where to find the python scripts the binaries depends on. In order to do so change directory to your catkin workspace and run: <programlisting><codeline><highlight class="normal">catkin_make</highlight></codeline>
+</programlisting></para></sect1>
+<sect1 id="subsubpage_stl_to_obj_1stl_obj_sec_run">
+<title>4.3.3/ Run the conversion script</title>
+<para>The conversion tools is located in model_tools/nodes/stl_to_obj. Though in order to run this tools you need to be in the active directory because the input path will local in order to makes things easy for the user. This is the reason why this binary is available through ros: <programlisting><codeline><highlight class="normal">rosrun<sp/>model_tools<sp/>stl_to_obj<sp/>--input_stl_dir<sp/>[path<sp/>to<sp/>a<sp/>stl<sp/>folder]<sp/>--output_obj_dir<sp/>[path<sp/>to<sp/>a<sp/>obj<sp/>folder]</highlight></codeline>
+</programlisting> I strongly suggest you check the &quot;–help&quot; or &quot;-h&quot; output: <programlisting><codeline><highlight class="normal">rosrun<sp/>model_tools<sp/>stl_to_obj<sp/>-h</highlight></codeline>
+</programlisting> Last output known (28/02/2019) for the above instruction: <image type="html" name="usage.png"></image>
+</para></sect1>
+<sect1 id="subsubpage_stl_to_obj_1stl_obj_sec_usage">
+<title>4.3.3/ Typical use.</title>
+<para>Change directory to your [robot_name]_description/meshes or your robot_properties_[robot_name]/meshes where you saved the stl files in stl: <programlisting><codeline><highlight class="normal">-<sp/>robot_properties_[robot_name]:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>meshes:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>stl:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>body.stl</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>arm.stl</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>...</highlight></codeline>
+</programlisting> in the meshes folder you can typically run: <programlisting><codeline><highlight class="normal">rosrun<sp/>model_tools<sp/>stl_to_obj<sp/>-i<sp/>stl/<sp/>-o<sp/>obj/</highlight></codeline>
+</programlisting> </para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

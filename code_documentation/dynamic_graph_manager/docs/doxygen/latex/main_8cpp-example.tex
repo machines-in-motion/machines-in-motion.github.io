@@ -1,0 +1,20 @@
+\hypertarget{main_8cpp-example}{}\section{main.\+cpp}
+
+\begin{DoxyCodeInclude}
+
+\textcolor{preprocessor}{#include "\hyperlink{simple__dgm_8hpp}{simple\_dgm.hpp}"}
+
+\textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{char}* [])
+\{
+    std::string yaml\_params\_file =
+        TEST\_CONFIG\_PATH + std::string(\textcolor{stringliteral}{"simple\_robot.yaml"});
+    std::cout << \textcolor{stringliteral}{"Loading paramters from "} << yaml\_params\_file << std::endl;
+    YAML::Node param = YAML::LoadFile(yaml\_params\_file);
+    \hyperlink{classdynamic__graph__manager_1_1SimpleDGM}{dynamic\_graph\_manager::SimpleDGM} dgm;
+
+    dgm.\hyperlink{classdynamic__graph_1_1DynamicGraphManager_ac6859456bbdd4307cb880dc5e54131dd}{initialize}(param);
+    dgm.\hyperlink{classdynamic__graph_1_1DynamicGraphManager_a93272fcbb3793dfc92422186022ecf72}{run}();
+    ros::waitForShutdown();
+\}
+\end{DoxyCodeInclude}
+ 

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="subsubpage_robot_package" kind="page">
+    <compoundname>subsubpage_robot_package</compoundname>
+    <title>4.1/ Create a robot/object/environment package</title>
+    <detaileddescription>
+<sect1 id="subsubpage_robot_package_1robot_properties_context">
+<title>4.1.1/ Context</title>
+<para>There is no real convention about the naming of these package, certain groups will call them robot_properties_[robot name] others [robot name]_description.</para><para>Lab convention:<itemizedlist>
+<listitem><para>For robots the package name will be called: robot_properties_[robot name]</para></listitem><listitem><para>For other things like objects, environment, ...: [object/environment name]_description</para></listitem></itemizedlist>
+</para><para>In the following we will talk about creating of these packages which are typically called robot_properties_[robot name] in our case. The following description is valid for both name conventions.</para></sect1>
+<sect1 id="subsubpage_robot_package_1robot_properties_ci">
+<title>4.1.2/ Continuous integration:</title>
+<para>First of all these packages are catkin packages, so they follow the classic packaging from the Continuous Integration. Typically follow the packaging of the python package located in <ulink url="https://git-amd.tuebingen.mpg.de/amd-clmc/ci_example">https://git-amd.tuebingen.mpg.de/amd-clmc/ci_example</ulink>. The folder structure is the following:</para><para><itemizedlist>
+<listitem><para>robot_properties_[robot name]<itemizedlist>
+<listitem><para>config/<itemizedlist>
+<listitem><para>[robot_name].yaml {Contains some parameters of the robot for specific application like the <ref refid="namespacedynamic__graph__manager" kindref="compound">dynamic_graph_manager</ref> }</para></listitem><listitem><para>other.yaml {More yaml parameters}</para></listitem><listitem><para>other.ext {More exotics parameter files}</para></listitem></itemizedlist>
+</para></listitem><listitem><para>launch/ {This contains the typical roslaunch one might use to load the robot description in ros/rviz/...}</para></listitem><listitem><para>meshes/ {Contains all the necessary meshes one may need}<itemizedlist>
+<listitem><para>stl/<itemizedlist>
+<listitem><para>body_link.stl</para></listitem></itemizedlist>
+</para></listitem><listitem><para>obj/ {gepetto-viewer, rviz and pybullet obj files works}<itemizedlist>
+<listitem><para>body_link.obj</para></listitem></itemizedlist>
+</para></listitem><listitem><para>dae/<itemizedlist>
+<listitem><para>body_link.dae</para></listitem></itemizedlist>
+</para></listitem><listitem><para>...</para></listitem></itemizedlist>
+</para></listitem><listitem><para>nodes/<itemizedlist>
+<listitem><para>executables {There are executables that one can launch using rosrun}</para></listitem></itemizedlist>
+</para></listitem><listitem><para>rqt/ {This folder contain the potential robot specific rqt perspectives}</para></listitem><listitem><para>rviz/ {This folder contain the robot specific rviz environment}</para></listitem><listitem><para>python/<itemizedlist>
+<listitem><para>robot_properties_[robot_name]/ {Please follow this naming convention!!!}<itemizedlist>
+<listitem><para>__init__.py</para></listitem><listitem><para>other.py</para></listitem></itemizedlist>
+</para></listitem></itemizedlist>
+</para></listitem><listitem><para>xacro/ {This contains the xacro files that correspond to the urdfs. These are the only files one need to modify, An automatic generation urdf files from these is present in the CMakeLists.txt so that all have the last generated urdf file from the urdf.}</para></listitem><listitem><para>CMakelists.txt {<ulink url="https://git-amd.tuebingen.mpg.de/amd-clmc/robot_properties_quadruped/blob/master/CMakeLists.txt">https://git-amd.tuebingen.mpg.de/amd-clmc/robot_properties_quadruped/blob/master/CMakeLists.txt</ulink>}</para></listitem><listitem><para>package.xml {<ulink url="https://git-amd.tuebingen.mpg.de/amd-clmc/robot_properties_quadruped/blob/master/package.xml">https://git-amd.tuebingen.mpg.de/amd-clmc/robot_properties_quadruped/blob/master/package.xml</ulink>}</para></listitem><listitem><para><ref refid="setup_8py" kindref="compound">setup.py</ref> {<ulink url="https://git-amd.tuebingen.mpg.de/amd-clmc/robot_properties_quadruped/blob/master/setup.py">https://git-amd.tuebingen.mpg.de/amd-clmc/robot_properties_quadruped/blob/master/setup.py</ulink>} </para></listitem></itemizedlist>
+</para></listitem></itemizedlist>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

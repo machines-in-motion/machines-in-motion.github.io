@@ -1,0 +1,1287 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>&lt;no title&gt; &mdash; mpi_cmake_modules 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> mpi_cmake_modules
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to mpi_cmake_modules’s documentation!</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../general_documentation.html">General Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">mpi_cmake_modules</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cmake_doc.html">CMake API</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">mpi_cmake_modules</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>&lt;no title&gt;</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/cmake/pkg-config.cmake.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p>#
+# Copyright (c) 2019, New York University and Max Planck Gesellschaft.
+# License BSD-3 clause
+#</p>
+<p>#.rst:
+# This file is copied/inspired from
+# <a class="reference external" href="https://github.com/jrl-umi3218/jrl-cmakemodules/blob/master/pkg-config.cmake">https://github.com/jrl-umi3218/jrl-cmakemodules/blob/master/pkg-config.cmake</a>
+#
+# .. note:: CMake commands starting with <em>_</em> are for internal purpose only.</p>
+<p>FIND_PACKAGE(PkgConfig)</p>
+<p>#.rst:
+#
+# .. cmake:variable:: PKG_CONFIG_ADDITIONAL_VARIABLES
+#
+#    Additional pkg-config variables whose value will be imported
+#    during the dependency check.
+#
+SET(PKG_CONFIG_ADDITIONAL_VARIABLES bindir pkglibdir datarootdir pkgdatarootdir docdir doxygendocdir)</p>
+<p>#.rst:
+# .. cmake:command:: _SETUP_PROJECT_PKG_CONFIG
+#
+#    Prepares pkg-config pc file generation step.
+#
+MACRO(_SETUP_PROJECT_PKG_CONFIG)</p>
+<blockquote>
+<div><p># Pkg-config related commands.
+SET(_PKG_CONFIG_PREFIX “${CMAKE_INSTALL_PREFIX}” CACHE INTERNAL “”)
+SET(_PKG_CONFIG_EXEC_PREFIX “${_PKG_CONFIG_PREFIX}” CACHE INTERNAL “”)
+SET(_PKG_CONFIG_LIBDIR “${CMAKE_INSTALL_FULL_LIBDIR}” CACHE INTERNAL “”)
+SET(_PKG_CONFIG_BINDIR “${CMAKE_INSTALL_FULL_BINDIR}” CACHE INTERNAL “”)
+SET(_PKG_CONFIG_PKGLIBDIR “${CMAKE_INSTALL_FULL_PKGLIBDIR}” CACHE INTERNAL “”)
+SET(_PKG_CONFIG_INCLUDEDIR “${CMAKE_INSTALL_FULL_INCLUDEDIR}” CACHE INTERNAL “”)
+SET(_PKG_CONFIG_DATAROOTDIR “${CMAKE_INSTALL_FULL_DATAROOTDIR}” CACHE INTERNAL “”)
+SET(_PKG_CONFIG_PKGDATAROOTDIR “${CMAKE_INSTALL_FULL_DATADIR}” CACHE INTERNAL “”)
+SET(_PKG_CONFIG_DOCDIR “${CMAKE_INSTALL_FULL_DOCDIR}” CACHE INTERNAL “”)
+SET(_PKG_CONFIG_DOXYGENDOCDIR “${_PKG_CONFIG_DOCDIR}/doxygen-html” CACHE INTERNAL “”)
+IF(DEFINED PROJECT_DEBUG_POSTFIX)</p>
+<blockquote>
+<div><dl class="simple">
+<dt>IF(DEFINED CMAKE_CONFIGURATION_TYPES)</dt><dd><p>SET(_PKG_CONFIG_PROJECT_NAME_NOPOSTFIX “${PROJECT_NAME}” CACHE INTERNAL “”)
+SET(_PKG_CONFIG_PROJECT_NAME “${PROJECT_NAME}${PKGCONFIG_POSTFIX}” CACHE INTERNAL “”)</p>
+</dd>
+<dt>ELSE()</dt><dd><p>SET(_PKG_CONFIG_PROJECT_NAME “${PROJECT_NAME}${PKGCONFIG_POSTFIX}” CACHE INTERNAL “”)</p>
+</dd>
+</dl>
+<p>ENDIF()</p>
+</div></blockquote>
+<dl class="simple">
+<dt>ELSE()</dt><dd><p>SET(_PKG_CONFIG_PROJECT_NAME “${PROJECT_NAME}” CACHE INTERNAL “”)</p>
+</dd>
+</dl>
+<p>ENDIF()
+SET(_PKG_CONFIG_DESCRIPTION “${PROJECT_DESCRIPTION}” CACHE INTERNAL “”)
+SET(_PKG_CONFIG_URL “${PROJECT_URL}” CACHE INTERNAL “”)
+SET(_PKG_CONFIG_VERSION “${PROJECT_VERSION}” CACHE INTERNAL “”)
+SET(_PKG_CONFIG_REQUIRES “” CACHE INTERNAL “”)
+SET(_PKG_CONFIG_REQUIRES_DEBUG “” CACHE INTERNAL “”)
+SET(_PKG_CONFIG_REQUIRES_OPTIMIZED “” CACHE INTERNAL “”)
+SET(_PKG_CONFIG_CONFLICTS “” CACHE INTERNAL “”)
+SET(_PKG_CONFIG_LIBS “” CACHE INTERNAL “”)
+SET(_PKG_CONFIG_LIBS_DEBUG “${LIBDIR_KW}${libdir}” CACHE INTERNAL “”)
+SET(_PKG_CONFIG_LIBS_OPTIMIZED “${LIBDIR_KW}${libdir}” CACHE INTERNAL “”)
+SET(_PKG_CONFIG_LIBS_PRIVATE “” CACHE INTERNAL “”)
+SET(_PKG_CONFIG_CFLAGS “-I${includedir}” CACHE INTERNAL “”)
+SET(_PKG_CONFIG_CFLAGS_DEBUG “” CACHE INTERNAL “”)
+SET(_PKG_CONFIG_CFLAGS_OPTIMIZED “” CACHE INTERNAL “”)</p>
+<p>SET(PKG_CONFIG_EXTRA “”)</p>
+<p># Where to install the pkg-config file?
+SET(_PKG_CONFIG_DIR “${_PKG_CONFIG_LIBDIR}/pkgconfig” CACHE INTERNAL “”)</p>
+<p># Watch variables.
+LIST(APPEND LOGGING_WATCHED_VARIABLES</p>
+<blockquote>
+<div><p>_PKG_CONFIG_FOUND
+PKG_CONFIG_EXECUTABLE
+_PKG_CONFIG_PREFIX
+_PKG_CONFIG_EXEC_PREFIX
+_PKG_CONFIG_LIBDIR
+_PKG_CONFIG_BINDIR
+_PKG_CONFIG_PKGLIBDIR
+_PKG_CONFIG_INCLUDEDIR
+_PKG_CONFIG_DATAROOTDIR
+_PKG_CONFIG_PKGDATAROOTDIR
+_PKG_CONFIG_DOCDIR
+_PKG_CONFIG_DOXYGENDOCDIR
+_PKG_CONFIG_PROJECT_NAME
+_PKG_CONFIG_DESCRIPTION
+_PKG_CONFIG_URL
+_PKG_CONFIG_VERSION
+_PKG_CONFIG_REQUIRES
+_PKG_CONFIG_REQUIRES_DEBUG
+_PKG_CONFIG_REQUIRES_OPTIMIZED
+_PKG_CONFIG_CONFLICTS
+_PKG_CONFIG_LIBS
+_PKG_CONFIG_LIBS_DEBUG
+_PKG_CONFIG_LIBS_OPTIMIZED
+_PKG_CONFIG_LIBS_PRIVATE
+_PKG_CONFIG_CFLAGS
+_PKG_CONFIG_CFLAGS_DEBUG
+_PKG_CONFIG_CFLAGS_OPTIMIZED
+PKG_CONFIG_EXTRA
+)</p>
+</div></blockquote>
+</div></blockquote>
+<p>ENDMACRO(_SETUP_PROJECT_PKG_CONFIG)</p>
+<p>#.rst:
+# .. cmake:command:: _SETUP_PROJECT_PKG_CONFIG_FINALIZE_DEBUG
+#
+#   Post-processing of the pkg-config step.
+#
+#   The pkg-config file has to be generated at the end to allow end-user
+#   defined variables replacement.
+#
+#   This macro adds <code class="docutils literal notranslate"><span class="pre">_PKG_CONFIG_LIBS_DEBUG</span></code> to <code class="docutils literal notranslate"><span class="pre">_PKG_CONFIG_LIBS</span></code> and
+#   <code class="docutils literal notranslate"><span class="pre">_PKGCONFIG_CFLAGS_DEBUG</span></code> to <code class="docutils literal notranslate"><span class="pre">_PKG_CONFIG_CFLAGS</span></code>
+#
+MACRO(_SETUP_PROJECT_PKG_CONFIG_FINALIZE_DEBUG)</p>
+<blockquote>
+<div><p># Setup altered variables
+SET(TEMP_CFLAGS ${_PKG_CONFIG_CFLAGS})
+SET(_PKG_CONFIG_CFLAGS “${_PKG_CONFIG_CFLAGS_DEBUG} ${_PKG_CONFIG_CFLAGS}”)
+SET(TEMP_LIBS ${_PKG_CONFIG_LIBS})
+SET(_PKG_CONFIG_LIBS “${_PKG_CONFIG_LIBS_DEBUG} ${_PKG_CONFIG_LIBS}”)
+SET(TEMP_REQUIRES ${_PKG_CONFIG_REQUIRES})
+_ADD_TO_LIST(_PKG_CONFIG_REQUIRES “${_PKG_CONFIG_REQUIRES_DEBUG}” “,”)
+CONFIGURE_FILE(</p>
+<blockquote>
+<div><p>“${PROJECT_SOURCE_DIR}/cmake/pkg-config.pc.cmake”
+“${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}${PKGCONFIG_POSTFIX}.pc”
+)</p>
+</div></blockquote>
+<p># Restore altered variables
+SET(_PKG_CONFIG_CFLAGS ${TEMP_CFLAGS})
+SET(_PKG_CONFIG_LIBS ${TEMP_LIBS})
+SET(_PKG_CONFIG_REQUIRES ${TEMP_REQUIRES})</p>
+<dl class="simple">
+<dt>INSTALL(</dt><dd><p>FILES “${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}${PKGCONFIG_POSTFIX}.pc”
+DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig
+PERMISSIONS OWNER_READ GROUP_READ WORLD_READ OWNER_WRITE)</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>ENDMACRO(_SETUP_PROJECT_PKG_CONFIG_FINALIZE_DEBUG)</p>
+<p>#.rst:
+# .. cmake:command:: _SETUP_PROJECT_PKG_CONFIG_FINALIZE_OPTIMIZED
+#
+#  Post-processing of the pkg-config step.
+#
+#  The pkg-config file has to be generated at the end to allow end-user
+#  defined variables replacement.
+#
+#  This macro adds _PKG_CONFIG_LIBS_OPTIMIZED to <code class="docutils literal notranslate"><span class="pre">_PKG_CONFIG_LIBS</span></code> and
+#  <code class="docutils literal notranslate"><span class="pre">_PKGCONFIG_CFLAGS_OPTIMIZED</span></code> to <code class="docutils literal notranslate"><span class="pre">_PKG_CONFIG_CFLAGS</span></code>
+#
+MACRO(_SETUP_PROJECT_PKG_CONFIG_FINALIZE_OPTIMIZED)</p>
+<blockquote>
+<div><p># Setup altered variables
+SET(TEMP_PROJECT_NAME ${_PKG_CONFIG_PROJECT_NAME})
+SET(_PKG_CONFIG_PROJECT_NAME ${_PKG_CONFIG_PROJECT_NAME_NOPOSTFIX})
+SET(TEMP_CFLAGS ${_PKG_CONFIG_CFLAGS})
+SET(_PKG_CONFIG_CFLAGS “${_PKG_CONFIG_CFLAGS_OPTIMIZED} ${_PKG_CONFIG_CFLAGS}”)
+SET(TEMP_LIBS ${_PKG_CONFIG_LIBS})
+SET(_PKG_CONFIG_LIBS “${_PKG_CONFIG_LIBS_OPTIMIZED} ${_PKG_CONFIG_LIBS}”)
+SET(TEMP_REQUIRES ${_PKG_CONFIG_REQUIRES})
+_ADD_TO_LIST(_PKG_CONFIG_REQUIRES “${_PKG_CONFIG_REQUIRES_OPTIMIZED}” “,”)
+# Generate the pkg-config file.
+CONFIGURE_FILE(</p>
+<blockquote>
+<div><p>“${PROJECT_SOURCE_DIR}/cmake/pkg-config.pc.cmake”
+“${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.pc”
+)</p>
+</div></blockquote>
+<p># Restore altered variables
+SET(_PKG_CONFIG_PROJECT_NAME ${TEMP_PROJECT_NAME})
+SET(_PKG_CONFIG_CFLAGS ${TEMP_CFLAGS})
+SET(_PKG_CONFIG_LIBS ${TEMP_LIBS})
+SET(_PKG_CONFIG_REQUIRES ${TEMP_REQUIRES})</p>
+<dl class="simple">
+<dt>INSTALL(</dt><dd><p>FILES “${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.pc”
+DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig
+PERMISSIONS OWNER_READ GROUP_READ WORLD_READ OWNER_WRITE)</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>ENDMACRO(_SETUP_PROJECT_PKG_CONFIG_FINALIZE_OPTIMIZED)</p>
+<p>#.rst:
+# .. cmake:command:: _SETUP_PROJECT_PKG_CONFIG_FINALIZE
+#
+#   Post-processing of the pkg-config step.
+#
+#   The pkg-config file has to be generated at the end to allow end-user
+#   defined variables replacement.
+#
+MACRO(_SETUP_PROJECT_PKG_CONFIG_FINALIZE)</p>
+<blockquote>
+<div><p># Single build type generator
+IF(DEFINED CMAKE_BUILD_TYPE)</p>
+<blockquote>
+<div><p>STRING(TOLOWER “${CMAKE_BUILD_TYPE}” cmake_build_type)
+IF(${cmake_build_type} MATCHES debug)</p>
+<blockquote>
+<div><p>_SETUP_PROJECT_PKG_CONFIG_FINALIZE_DEBUG()</p>
+</div></blockquote>
+<dl class="simple">
+<dt>ELSE()</dt><dd><p>_SETUP_PROJECT_PKG_CONFIG_FINALIZE_OPTIMIZED()</p>
+</dd>
+</dl>
+<p>ENDIF()</p>
+</div></blockquote>
+<p># Multiple build types generator
+ELSE()</p>
+<blockquote>
+<div><dl class="simple">
+<dt>IF(DEFINED PROJECT_DEBUG_POSTFIX)</dt><dd><p>_SETUP_PROJECT_PKG_CONFIG_FINALIZE_DEBUG()
+_SETUP_PROJECT_PKG_CONFIG_FINALIZE_OPTIMIZED()</p>
+</dd>
+<dt>ELSE()</dt><dd><p>_SETUP_PROJECT_PKG_CONFIG_FINALIZE_OPTIMIZED()</p>
+</dd>
+</dl>
+<p>ENDIF()</p>
+</div></blockquote>
+<p>ENDIF()</p>
+</div></blockquote>
+<p>ENDMACRO(_SETUP_PROJECT_PKG_CONFIG_FINALIZE)</p>
+<p>#.rst:
+# .. cmake:command:: ADD_DEPENDENCY(PREFIX P_REQUIRED PKGCONFIG_STRING)
+#
+#   Check for a dependency using pkg-config. Fail if the package cannot
+#   be found.
+#
+#   P_REQUIRED : if set to 1 the package is required, otherwise it consider
+#                as optional.
+#                WARNING for optional package:
+#                if the package is detected its compile
+#                and linking options are still put in the required fields
+#                of the generated pc file. Indeed from the binary viewpoint
+#                the package becomes required.
+#
+#   PKG_CONFIG_STRING : String passed to pkg-config to check the version.
+#                       Typically, this string looks like:
+#
+#                          <code class="docutils literal notranslate"><span class="pre">&quot;my-package</span> <span class="pre">&gt;=</span> <span class="pre">0.5&quot;</span></code>
+#
+MACRO(ADD_DEPENDENCY P_REQUIRED DOC_ONLY PKG_CONFIG_STRING PKG_CONFIG_DEBUG_STRING)</p>
+<blockquote>
+<div><p># Retrieve the left part of the equation to get package name.
+STRING(REGEX MATCH “[^&lt;&gt;= ]+” LIBRARY_NAME “${PKG_CONFIG_STRING}”)
+# And transform it into a valid variable prefix.
+# 1. replace invalid characters into underscores.
+STRING(REGEX REPLACE “[^a-zA-Z0-9]” “_” PREFIX “${LIBRARY_NAME}”)
+# 2. make it uppercase.
+STRING(TOUPPER “${PREFIX}” “PREFIX”)
+IF(NOT ${PKG_CONFIG_DEBUG_STRING} STREQUAL “”)</p>
+<blockquote>
+<div><p># Retrieve the left part of the equation to get package name.
+STRING(REGEX MATCH “[^&lt;&gt;= ]+” LIBRARY_DEBUG_NAME “${PKG_CONFIG_DEBUG_STRING}”)
+# And transform it into a valid variable prefix.
+# 1. replace invalid characters into underscores.
+STRING(REGEX REPLACE “[^a-zA-Z0-9]” “_” ${PREFIX}_DEBUG “${LIBRARY_DEBUG_NAME}”)
+# 2. make it uppercase.
+STRING(TOUPPER “${PREFIX}_DEBUG” “${PREFIX}_DEBUG”)</p>
+</div></blockquote>
+<p>ENDIF()</p>
+<p># Force redetection each time CMake is launched.
+# Rationale: these values are <em>NEVER</em> manually set, so information is never
+# lost by overriding them. Moreover, changes in the pkg-config files are
+# not seen as long as the cache is not destroyed, even if the .pc file
+# is changed. This is a BAD behavior.
+SET(${PREFIX}_FOUND 0)
+IF(DEFINED ${PREFIX}_DEBUG)</p>
+<blockquote>
+<div><p>SET(${PREFIX}_DEBUG_FOUND 0)</p>
+</div></blockquote>
+<p>ENDIF()</p>
+<p># This makes the debug dependency optional when building in release and
+# vice-versa, this only applies to single build type generators
+SET(PP_REQUIRED ${P_REQUIRED}) # Work-around macro limitation
+IF(DEFINED ${PREFIX}_DEBUG)</p>
+<blockquote>
+<div><p>SET(P_DEBUG_REQUIRED ${P_REQUIRED})
+IF(${P_REQUIRED})</p>
+<blockquote>
+<div><p># Single build type generators
+IF(DEFINED CMAKE_BUILD_TYPE)</p>
+<blockquote>
+<div><p>STRING(TOLOWER “${CMAKE_BUILD_TYPE}” cmake_build_type)
+IF(“${cmake_build_type}” MATCHES “debug”)</p>
+<blockquote>
+<div><p>SET(PP_REQUIRED 0)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>ELSE()</dt><dd><p>SET(P_DEBUG_REQUIRED 0)</p>
+</dd>
+</dl>
+<p>ENDIF()</p>
+</div></blockquote>
+<p>ENDIF()</p>
+</div></blockquote>
+<p>ENDIF()</p>
+</div></blockquote>
+<p>ENDIF()</p>
+<p># Search for the package.
+IF(${PP_REQUIRED})</p>
+<blockquote>
+<div><p>MESSAGE(STATUS “${PKG_CONFIG_STRING} is required.”)
+PKG_CHECK_MODULES(“${PREFIX}” REQUIRED “${PKG_CONFIG_STRING}”)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>ELSE(${PP_REQUIRED})</dt><dd><p>MESSAGE(STATUS “${PKG_CONFIG_STRING} is optional.”)
+PKG_CHECK_MODULES(“${PREFIX}” “${PKG_CONFIG_STRING}”)</p>
+</dd>
+</dl>
+<p>ENDIF(${PP_REQUIRED})</p>
+<p># Search for the debug package
+IF(DEFINED ${PREFIX}_DEBUG)</p>
+<blockquote>
+<div><dl class="simple">
+<dt>IF(${P_DEBUG_REQUIRED})</dt><dd><p>MESSAGE(STATUS “${PKG_CONFIG_DEBUG_STRING} is required”)
+PKG_CHECK_MODULES(“${PREFIX}_DEBUG” REQUIRED “${PKG_CONFIG_DEBUG_STRING}”)</p>
+</dd>
+<dt>ELSE(${P_DEBUG_REQUIRED})</dt><dd><p>MESSAGE(STATUS “${PKG_CONFIG_DEBUG_STRING} is optional”)
+PKG_CHECK_MODULES(“${PREFIX}_DEBUG” “${PKG_CONFIG_DEBUG_STRING}”)</p>
+</dd>
+</dl>
+<p>ENDIF(${P_DEBUG_REQUIRED})</p>
+</div></blockquote>
+<p>ENDIF()</p>
+<p># Fix for ld &gt;= 2.24.90: -l:/some/absolute/path.so is no longer supported.
+# See shared-library.cmake.
+IF(UNIX AND NOT ${LD_VERSION} VERSION_LESS “2.24.90”)</p>
+<blockquote>
+<div><p>STRING(REPLACE “:/” “/” “${PREFIX}_LIBRARIES” “${${PREFIX}_LIBRARIES}”)
+STRING(REPLACE “-l:/” “/” “${PREFIX}_LDFLAGS” “${${PREFIX}_LDFLAGS}”)</p>
+<dl class="simple">
+<dt>IF(DEFINED ${PREFIX}_DEBUG)</dt><dd><p>STRING(REPLACE “:/” “/” “${PREFIX}_DEBUG_LIBRARIES” “${${PREFIX}_DEBUG_LIBRARIES}”)
+STRING(REPLACE “-l:/” “/” “${PREFIX}_DEBUG_LDFLAGS” “${${PREFIX}_DEBUG_LDFLAGS}”)</p>
+</dd>
+</dl>
+<p>ENDIF()</p>
+</div></blockquote>
+<p>ENDIF()</p>
+<p># Watch variables.
+LIST(APPEND LOGGING_WATCHED_VARIABLES</p>
+<blockquote>
+<div><p>${PREFIX}_FOUND
+${PREFIX}_LIBRARIES
+${PREFIX}_LIBRARY_DIRS
+${PREFIX}_LDFLAGS
+${PREFIX}_LDFLAGS_OTHER
+${PREFIX}_INCLUDE_DIRS
+${PREFIX}_CFLAGS
+${PREFIX}_CFLAGS_OTHER
+${PREFIX}
+${PREFIX}_STATIC
+${PREFIX}_VERSION
+${PREFIX}_PREFIX
+${PREFIX}_INCLUDEDIR
+${PREFIX}_LIBDIR
+${PREFIX}_PKGLIBDIR
+${PREFIX}_BINDIR
+${PREFIX}_DATAROOTDIR
+${PREFIX}_PKGDATAROOTDIR
+${PREFIX}_DOCDIR
+${PREFIX}_DOXYGENDOCDIR
+)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>IF(DEFINED ${PREFIX}_DEBUG)</dt><dd><dl class="simple">
+<dt>LIST(APPEND LOGGING_WATCHED_VARIABLES</dt><dd><p>${PREFIX}_DEBUG_FOUND
+${PREFIX}_DEBUG_LIBRARIES
+${PREFIX}_DEBUG_LIBRARY_DIRS
+${PREFIX}_DEBUG_LDFLAGS
+${PREFIX}_DEBUG_LDFLAGS_OTHER
+${PREFIX}_DEBUG_INCLUDE_DIRS
+${PREFIX}_DEBUG_CFLAGS
+${PREFIX}_DEBUG_CFLAGS_OTHER
+${PREFIX}_DEBUG
+${PREFIX}_DEBUG_STATIC
+${PREFIX}_DEBUG_VERSION
+${PREFIX}_DEBUG_PREFIX_DEBUG
+${PREFIX}_DEBUG_INCLUDEDIR
+${PREFIX}_DEBUG_LIBDIR
+${PREFIX}_DEBUG_PKGLIBDIR
+${PREFIX}_DEBUG_BINDIR
+${PREFIX}_DEBUG_DATAROOTDIR
+${PREFIX}_DEBUG_PKGDATAROOTDIR
+${PREFIX}_DEBUG_DOCDIR
+${PREFIX}_DEBUG_DOXYGENDOCDIR
+)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>ENDIF()</p>
+<p># Get the values of additional variables.
+FOREACH(VARIABLE ${PKG_CONFIG_ADDITIONAL_VARIABLES})</p>
+<blockquote>
+<div><p># Upper-case version of the variable for CMake variable generation.
+STRING(TOUPPER “${VARIABLE}” “VARIABLE_UC”)
+EXECUTE_PROCESS(</p>
+<blockquote>
+<div><p>COMMAND “${PKG_CONFIG_EXECUTABLE}”
+“–variable=${VARIABLE}” “${LIBRARY_NAME}”
+OUTPUT_VARIABLE “${PREFIX}_${VARIABLE_UC}”
+ERROR_QUIET)</p>
+</div></blockquote>
+<p>STRING(REPLACE “n” “” “${PREFIX}_${VARIABLE_UC}” “${${PREFIX}_${VARIABLE_UC}}”)
+# Watch additional variables.
+LIST(APPEND LOGGING_WATCHED_VARIABLES ${PREFIX}_${VARIABLE_UC})
+IF(DEFINED ${PREFIX}_DEBUG)</p>
+<blockquote>
+<div><dl class="simple">
+<dt>EXECUTE_PROCESS(</dt><dd><p>COMMAND “${PKG_CONFIG_EXECUTABLE}”
+“–variable=${VARIABLE}” “${LIBRARY_DEBUG_NAME}”
+OUTPUT_VARIABLE “${PREFIX}_DEBUG_${VARIABLE_UC}”
+ERROR_QUIET)</p>
+</dd>
+</dl>
+<p>STRING(REPLACE “n” “” “${PREFIX}_DEBUG_${VARIABLE_UC}” “${PREFIX}_DEBUG_${VARIABLE_UC}}”)
+LIST(APPEND LOGGING_WATCHED_VARIABLES ${PREFIX}_DEBUG_${VARIABLE_UC})</p>
+</div></blockquote>
+<p>ENDIF()</p>
+</div></blockquote>
+<p>ENDFOREACH(VARIABLE)</p>
+<p>#FIXME: spaces are replaced by semi-colon by mistakes, revert the change.
+#I cannot see why CMake is doing that…
+STRING(REPLACE “;” ” ” PKG_CONFIG_STRING “${PKG_CONFIG_STRING}”)
+IF(DEFINED ${PREFIX}_DEBUG)</p>
+<blockquote>
+<div><p>STRING(REPLACE “;” ” ” PKG_CONFIG_DEBUG_STRING “${PKG_CONFIG_DEBUG_STRING}”)</p>
+</div></blockquote>
+<p>ENDIF()</p>
+<p># Add the package to the dependency list if found and if dependency
+# is triggered not only for documentation
+IF((${${PREFIX}_FOUND}) AND (NOT ${DOC_ONLY}))</p>
+<blockquote>
+<div><dl>
+<dt>IF(DEFINED PROJECT_DEBUG_POSTFIX AND DEFINED ${PREFIX}_DEBUG)</dt><dd><p>_ADD_TO_LIST(_PKG_CONFIG_REQUIRES_DEBUG “${PKG_CONFIG_DEBUG_STRING}” “,”)
+_ADD_TO_LIST(_PKG_CONFIG_REQUIRES_OPTIMIZED “${PKG_CONFIG_STRING}” “,”)</p>
+</dd>
+<dt>ELSE()</dt><dd><p># Warn the user in case he/she is using alternative libraries for debug but no postfix
+IF(NOT DEFINED PROJECT_DEBUG_POSTFIX AND DEFINED ${PREFIX}_DEBUG)</p>
+<blockquote>
+<div><dl class="simple">
+<dt>MESSAGE(AUTHOR_WARNING</dt><dd><dl class="simple">
+<dt>“You are linking with different libraries in debug mode but the</dt><dd><p>generated .pc cannot reflect that, it will default to release flags. Consider
+setting PROJECT_DEBUG_POSTFIX to generate different libraries and pc files in
+debug mode.”)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+<p>ENDIF()
+_ADD_TO_LIST(_PKG_CONFIG_REQUIRES “${PKG_CONFIG_STRING}” “,”)</p>
+</dd>
+</dl>
+<p>ENDIF()</p>
+</div></blockquote>
+<p>ENDIF()</p>
+<p># Add the package to the cmake dependency list
+# if cpack has been included.
+# This is likely to disappear when Ubuntu 8.04 will
+# disappear.
+IF(COMMAND ADD_CMAKE_DEPENDENCY)</p>
+<blockquote>
+<div><p>ADD_CMAKE_DEPENDENCY(${PKG_CONFIG_STRING})</p>
+</div></blockquote>
+<p>ENDIF(COMMAND ADD_CMAKE_DEPENDENCY)</p>
+<dl class="simple">
+<dt>IF(${${PREFIX}_FOUND})</dt><dd><dl class="simple">
+<dt>MESSAGE(STATUS</dt><dd><p>“Pkg-config module ${LIBRARY_NAME} v${${PREFIX}_VERSION}”
+” has been detected with success.”)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>ENDIF()
+IF(DEFINED ${PREFIX}_DEBUG AND “${${PREFIX}_DEBUG_FOUND}”)</p>
+<blockquote>
+<div><dl class="simple">
+<dt>MESSAGE(STATUS</dt><dd><p>“Pkg-config module ${LIBRARY_DEBUG_NAME} v${${PREFIX}_DEBUG_VERSION}”
+” has been detected with success.”)</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>ENDIF()</p>
+</div></blockquote>
+<p>ENDMACRO(ADD_DEPENDENCY)</p>
+<p>#.rst:
+# .. cmake:command:: ADD_REQUIRED_DEPENDENCY(PREFIX PKGCONFIG_STRING)
+#
+#   Check for a dependency using pkg-config. Fail if the package cannot
+#   be found.
+#
+#   PKG_CONFIG_STRING : String passed to pkg-config to check the version.
+#                       Typically, this string looks like:
+#                           <code class="docutils literal notranslate"><span class="pre">&quot;my-package</span> <span class="pre">&gt;=</span> <span class="pre">0.5&quot;</span></code>
+#
+#   An optional argument can be passed to define an alternate PKG_CONFIG_STRING
+#   for debug builds. It should follow the same rule as PKG_CONFIG_STRING.
+#
+MACRO(ADD_REQUIRED_DEPENDENCY PKG_CONFIG_STRING)</p>
+<blockquote>
+<div><p>SET(PKG_CONFIG_DEBUG_STRING “”)
+FOREACH(ARG ${ARGN})</p>
+<blockquote>
+<div><p>SET(PKG_CONFIG_DEBUG_STRING ${ARG})</p>
+</div></blockquote>
+<p>ENDFOREACH()
+ADD_DEPENDENCY(1 0 ${PKG_CONFIG_STRING} “${PKG_CONFIG_DEBUG_STRING}”)</p>
+</div></blockquote>
+<p>ENDMACRO(ADD_REQUIRED_DEPENDENCY)</p>
+<p>#.rst:
+# .. cmake:command:: ADD_OPTIONAL_DEPENDENCY(PREFIX PKGCONFIG_STRING)
+#
+#   Check for a dependency using pkg-config. Quiet if the package cannot
+#   be found.
+#
+#   PKG_CONFIG_STRING : String passed to pkg-config to check the version.
+#                       Typically, this string looks like:
+#                          <code class="docutils literal notranslate"><span class="pre">&quot;my-package</span> <span class="pre">&gt;=</span> <span class="pre">0.5&quot;</span></code>
+#
+# An optional argument can be passed to define an alternate PKG_CONFIG_STRING
+# for debug builds. It should follow the same rule as PKG_CONFIG_STRING.
+#
+MACRO(ADD_OPTIONAL_DEPENDENCY PKG_CONFIG_STRING)</p>
+<blockquote>
+<div><p>SET(PKG_CONFIG_DEBUG_STRING “”)
+FOREACH(ARG ${ARGN})</p>
+<blockquote>
+<div><p>SET(PKG_CONFIG_DEBUG_STRING ${ARG})</p>
+</div></blockquote>
+<p>ENDFOREACH()
+ADD_DEPENDENCY(0 0 ${PKG_CONFIG_STRING} “${PKG_CONFIG_DEBUG_STRING}”)</p>
+</div></blockquote>
+<p>ENDMACRO(ADD_OPTIONAL_DEPENDENCY)</p>
+<p>#.rst:
+# .. cmake:command:: ADD_DOC_DEPENDENCY(PREFIX PKGCONFIG_STRING)
+#
+#   Check for a dependency using pkg-config. Do not express dependency in
+#   “requires” field.
+#
+#   PKG_CONFIG_STRING : String passed to pkg-config to check the version.
+#                       Typically, this string looks like:
+#                         <code class="docutils literal notranslate"><span class="pre">&quot;my-package</span> <span class="pre">&gt;=</span> <span class="pre">0.5&quot;</span></code>
+#
+#   An optional argument can be passed to define an alternate PKG_CONFIG_STRING
+#   for debug builds. It should follow the same rule as PKG_CONFIG_STRING.
+#
+MACRO(ADD_DOC_DEPENDENCY PKG_CONFIG_STRING)</p>
+<blockquote>
+<div><p>SET(PKG_CONFIG_DEBUG_STRING “”)
+FOREACH(ARG ${ARGN})</p>
+<blockquote>
+<div><p>SET(PKG_CONFIG_DEBUG_STRING ${ARG})</p>
+</div></blockquote>
+<p>ENDFOREACH()
+ADD_DEPENDENCY(1 1 ${PKG_CONFIG_STRING} “${PKG_CONFIG_DEBUG_STRING}”)</p>
+</div></blockquote>
+<p>ENDMACRO(ADD_DOC_DEPENDENCY)</p>
+<p>#.rst:
+# .. cmake:command:: PKG_CONFIG_APPEND_LIBRARY_DIR
+#
+#   This macro adds library directories in a portable way
+#   into the CMake file.
+MACRO(PKG_CONFIG_APPEND_LIBRARY_DIR DIRS)</p>
+<blockquote>
+<div><dl>
+<dt>FOREACH(DIR ${DIRS})</dt><dd><dl class="simple">
+<dt>IF(DIR)</dt><dd><p>SET(_PKG_CONFIG_LIBS “${_PKG_CONFIG_LIBS} ${LIBDIR_KW}${DIR}” CACHE INTERNAL “”)</p>
+</dd>
+</dl>
+<p>ENDIF(DIR)</p>
+</dd>
+</dl>
+<p>ENDFOREACH(DIR ${DIRS})</p>
+</div></blockquote>
+<p>ENDMACRO(PKG_CONFIG_APPEND_LIBRARY_DIR DIR)</p>
+<p>#.rst:
+# .. cmake:command:: PKG_CONFIG_APPEND_CFLAGS_DEBUG
+#
+#   This macro adds CFLAGS in a portable way into the pkg-config file of the
+#   debug library. As such the macro fails if <code class="docutils literal notranslate"><span class="pre">PROJECT_DEBUG_POSTFIX</span></code> is not set
+#
+MACRO(PKG_CONFIG_APPEND_CFLAGS_DEBUG FLAGS)</p>
+<blockquote>
+<div><dl class="simple">
+<dt>IF(NOT DEFINED PROJECT_DEBUG_POSTFIX)</dt><dd><p>MESSAGE(FATAL_ERROR “You are trying to use PKG_CONFIG_APPEND_CFLAGS_DEBUG on a package that does not have a debug library”)</p>
+</dd>
+</dl>
+<p>ENDIF()
+FOREACH(FLAG ${FLAGS})</p>
+<blockquote>
+<div><dl class="simple">
+<dt>IF(FLAG)</dt><dd><p>SET(_PKG_CONFIG_CFLAGS_DEBUG “${_PKG_CONFIG_CFLAGS_DEBUG} ${FLAG}” CACHE INTERNAL “”)</p>
+</dd>
+</dl>
+<p>ENDIF(FLAG)</p>
+</div></blockquote>
+<p>ENDFOREACH(FLAG ${FLAGS})</p>
+</div></blockquote>
+<p>ENDMACRO(PKG_CONFIG_APPEND_CFLAGS_DEBUG FLAGS)</p>
+<p>#.rst:
+# .. cmake:command:: PKG_CONFIG_APPEND_CFLAGS_OPTIMIZED
+#
+#   This macro adds <code class="docutils literal notranslate"><span class="pre">CFLAGS</span></code> in a portable way into the pkg-config file of the
+#   <code class="docutils literal notranslate"><span class="pre">OPTIMIZED</span></code> library. As such the macro fails if <code class="docutils literal notranslate"><span class="pre">PROJECT_OPTIMIZED_POSTFIX</span></code>
+#   is not set
+#
+MACRO(PKG_CONFIG_APPEND_CFLAGS_OPTIMIZED FLAGS)</p>
+<blockquote>
+<div><dl class="simple">
+<dt>IF(NOT DEFINED PROJECT_DEBUG_POSTFIX)</dt><dd><p>MESSAGE(FATAL_ERROR “You are trying to use PKG_CONFIG_APPEND_CFLAGS_OPTIMIZED on a package that does not have a debug library”)</p>
+</dd>
+</dl>
+<p>ENDIF()
+FOREACH(FLAG ${FLAGS})</p>
+<blockquote>
+<div><dl class="simple">
+<dt>IF(FLAG)</dt><dd><p>SET(_PKG_CONFIG_CFLAGS_OPTIMIZED “${_PKG_CONFIG_CFLAGS_OPTIMIZED} ${FLAG}” CACHE INTERNAL “”)</p>
+</dd>
+</dl>
+<p>ENDIF(FLAG)</p>
+</div></blockquote>
+<p>ENDFOREACH(FLAG ${FLAGS})</p>
+</div></blockquote>
+<p>ENDMACRO(PKG_CONFIG_APPEND_CFLAGS_OPTIMIZED FLAGS)</p>
+<p>#.rst:
+# .. cmake:command:: PKG_CONFIG_APPEND_CFLAGS
+#
+#   This macro adds CFLAGS in a portable way into the pkg-config file.
+#
+MACRO(PKG_CONFIG_APPEND_CFLAGS FLAGS)</p>
+<blockquote>
+<div><dl>
+<dt>FOREACH(FLAG ${FLAGS})</dt><dd><dl class="simple">
+<dt>IF(FLAG)</dt><dd><p>SET(_PKG_CONFIG_CFLAGS “${_PKG_CONFIG_CFLAGS} ${FLAG}” CACHE INTERNAL “”)</p>
+</dd>
+</dl>
+<p>ENDIF(FLAG)</p>
+</dd>
+</dl>
+<p>ENDFOREACH(FLAG ${FLAGS})</p>
+</div></blockquote>
+<p>ENDMACRO(PKG_CONFIG_APPEND_CFLAGS)</p>
+<p>#.rst:
+# .. cmake:command:: PKG_CONFIG_APPEND_LIBS_RAW
+#
+#   This macro adds raw value in the “Libs:” into the pkg-config file.
+#
+#   Exception for mac OS X:
+#   In addition to the classical static and dynamic libraries (handled like
+#   unix does), mac systems can link against frameworks.
+#   Frameworks are directories gathering headers, libraries, shared resources…
+#
+#   The syntax used to link with a framework is particular, hence a filter is
+#   added to convert the absolute path to a framework
+#   (e.g. /Path/to/Sample.framework) into the correct flags
+#   (-F/Path/to/ -framework Sample).
+#
+MACRO(PKG_CONFIG_APPEND_LIBS_RAW LIBS)</p>
+<blockquote>
+<div><dl>
+<dt>FOREACH(LIB ${LIBS})</dt><dd><dl>
+<dt>IF(LIB)</dt><dd><dl>
+<dt>IF( APPLE AND ${LIB} MATCHES “\.framework”)</dt><dd><blockquote>
+<div><p>GET_FILENAME_COMPONENT(framework_PATH ${LIB} PATH)
+GET_FILENAME_COMPONENT(framework_NAME ${LIB} NAME_WE)</p>
+</div></blockquote>
+<p>SET(_PKG_CONFIG_LIBS “${_PKG_CONFIG_LIBS} -F${framework_PATH} -framework ${framework_NAME}” CACHE INTERNAL “”)</p>
+</dd>
+<dt>ELSE( APPLE AND ${LIB} MATCHES “\.framework”)</dt><dd><p>SET(_PKG_CONFIG_LIBS “${_PKG_CONFIG_LIBS} ${LIB}” CACHE INTERNAL “”)</p>
+</dd>
+</dl>
+<p>ENDIF( APPLE AND ${LIB} MATCHES “\.framework”)</p>
+</dd>
+</dl>
+<p>ENDIF(LIB)</p>
+</dd>
+</dl>
+<p>ENDFOREACH(LIB ${LIBS})
+STRING(REPLACE “n” “” _PKG_CONFIG_LIBS “${_PKG_CONFIG_LIBS}”)</p>
+</div></blockquote>
+<p>ENDMACRO(PKG_CONFIG_APPEND_LIBS_RAW)</p>
+<p>#.rst:
+# .. cmake:command:: PKG_CONFIG_APPEND_LIBS
+#
+#   This macro adds libraries in a portable way into the pkg-config
+#   file.
+#
+#   Library prefix and suffix is automatically added.
+#
+MACRO(PKG_CONFIG_APPEND_LIBS LIBS)</p>
+<blockquote>
+<div><dl>
+<dt>FOREACH(LIB ${LIBS})</dt><dd><dl>
+<dt>IF(LIB)</dt><dd><p># Check if this project is building this library
+IF(TARGET ${LIB})</p>
+<blockquote>
+<div><p># Single build type generator
+IF(DEFINED CMAKE_BUILD_TYPE)</p>
+<blockquote>
+<div><p>SET(_PKG_CONFIG_LIBS “${_PKG_CONFIG_LIBS} ${LIBINCL_KW}${LIB}${PKGCONFIG_POSTFIX}${LIB_EXT}” CACHE INTERNAL “”)</p>
+</div></blockquote>
+<p># Multiple build types generator
+ELSE()</p>
+<blockquote>
+<div><p>SET(_PKG_CONFIG_LIBS_DEBUG “${_PKG_CONFIG_LIBS_DEBUG} ${LIBINCL_KW}${LIB}${PKGCONFIG_POSTFIX}${LIB_EXT}” CACHE INTERNAL “”)
+SET(_PKG_CONFIG_LIBS_OPTIMIZED “${_PKG_CONFIG_LIBS_OPTIMIZED} ${LIBINCL_KW}${LIB}${LIB_EXT}” CACHE INTERNAL “”)</p>
+</div></blockquote>
+<p>ENDIF()</p>
+</div></blockquote>
+<dl>
+<dt>ELSE()</dt><dd><dl class="simple">
+<dt>IF(IS_ABSOLUTE ${LIB})</dt><dd><p>SET(_PKG_CONFIG_LIBS “${_PKG_CONFIG_LIBS} ${LIBINCL_ABSKW}${LIB}” CACHE INTERNAL “”)</p>
+</dd>
+<dt>ELSE()</dt><dd><p>SET(_PKG_CONFIG_LIBS “${_PKG_CONFIG_LIBS} ${LIBINCL_KW}${LIB}${LIB_EXT}” CACHE INTERNAL “”)</p>
+</dd>
+</dl>
+<p>ENDIF()</p>
+</dd>
+</dl>
+<p>ENDIF()</p>
+</dd>
+</dl>
+<p>ENDIF(LIB)</p>
+</dd>
+</dl>
+<p>ENDFOREACH(LIB ${LIBS})</p>
+</div></blockquote>
+<p>ENDMACRO(PKG_CONFIG_APPEND_LIBS)</p>
+<p>#.rst:
+# .. cmake:command:: PKG_CONFIG_USE_LCOMPILE_DEPENDENCY(TARGET DEPENDENCY)
+#
+#   .. note:: For internal use only. For user look at
+#             <span class="target" id="index-0-command:pkg_config_use_compile_dependency"></span><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">PKG_CONFIG_USE_COMPILE_DEPENDENCY()</span></code>
+#
+#   This macro changes the target properties to properly search for
+#   headers  against the required shared libraries
+#   when using a dependency detected through pkg-config.
+#
+#   I.e. <code class="docutils literal notranslate"><span class="pre">PKG_CONFIG_USE_LCOMPILE_DEPENDENCY(my-binary</span> <span class="pre">my-package)</span></code>
+#
+MACRO(PKG_CONFIG_USE_LCOMPILE_DEPENDENCY TARGET PREFIX)</p>
+<blockquote>
+<div><p>GET_TARGET_PROPERTY(CFLAGS ${TARGET} COMPILE_OPTIONS)
+IF(NOT CFLAGS)</p>
+<blockquote>
+<div><p>SET(CFLAGS “”)</p>
+</div></blockquote>
+<p>ENDIF()</p>
+<dl>
+<dt>IF(DEFINED ${PREFIX}_DEBUG_FOUND)</dt><dd><dl class="simple">
+<dt>FOREACH(FLAG ${${PREFIX}_DEBUG_CFLAGS_OTHER})</dt><dd><p>SET(CFLAGS “${CFLAGS};$&lt;$&lt;CONFIG:Debug&gt;:${FLAG}&gt;”)</p>
+</dd>
+</dl>
+<p>ENDFOREACH()
+FOREACH(FLAG ${${PREFIX}_CFLAGS_OTHER})</p>
+<blockquote>
+<div><p>SET(CFLAGS “${CFLAGS};$&lt;$&lt;NOT:$&lt;CONFIG:Debug&gt;&gt;:${FLAG}&gt;”)</p>
+</div></blockquote>
+<p>ENDFOREACH()</p>
+</dd>
+<dt>ELSE()</dt><dd><dl class="simple">
+<dt>FOREACH(FLAG ${${PREFIX}_CFLAGS_OTHER})</dt><dd><p>SET(CFLAGS “${CFLAGS};${FLAG}”)</p>
+</dd>
+</dl>
+<p>ENDFOREACH()</p>
+</dd>
+</dl>
+<p>ENDIF()
+SET_TARGET_PROPERTIES(${TARGET} PROPERTIES COMPILE_OPTIONS “${CFLAGS}”)</p>
+<p># Include/libraries paths seems to be filtered on Linux, add paths
+# again.
+INCLUDE_DIRECTORIES(SYSTEM ${${PREFIX}_INCLUDE_DIRS})
+IF(DEFINED ${PREFIX}_DEBUG_FOUND)</p>
+<blockquote>
+<div><p>INCLUDE_DIRECTORIES(SYSTEM ${${PREFIX}_DEBUG_INCLUDE_DIRS})</p>
+</div></blockquote>
+<p>ENDIF()</p>
+</div></blockquote>
+<p>ENDMACRO(PKG_CONFIG_USE_LCOMPILE_DEPENDENCY)</p>
+<p># Internal use only.
+# _PKG_CONFIG_MANIPULATE_LDFLAGS(TARGET PREFIX CONFIG IS_GENERAL IS_DEBUG)
+#
+MACRO(_PKG_CONFIG_MANIPULATE_LDFLAGS TARGET PREFIX CONFIG IS_GENERAL IS_DEBUG)</p>
+<blockquote>
+<div><p># Make sure we do not override previous flags
+GET_TARGET_PROPERTY(LDFLAGS ${TARGET} LINK_FLAGS${CONFIG})</p>
+<p># If there were no previous flags, get rid of the XYFLAGS-NOTFOUND
+# in the variables.
+IF(NOT LDFLAGS)</p>
+<blockquote>
+<div><p>SET(LDFLAGS “”)</p>
+</div></blockquote>
+<p>ENDIF()</p>
+<p># Transform semi-colon seperated list in to space separated list.
+FOREACH(FLAG ${${PREFIX}_LDFLAGS})</p>
+<blockquote>
+<div><p>SET(LDFLAGS “${LDFLAGS} ${FLAG}”)</p>
+</div></blockquote>
+<p>ENDFOREACH()</p>
+<p># Update the flags.
+SET_TARGET_PROPERTIES(${TARGET}</p>
+<blockquote>
+<div><p>PROPERTIES LINK_FLAGS${CONFIG} “${LDFLAGS}”)</p>
+</div></blockquote>
+<dl>
+<dt>IF(UNIX AND NOT APPLE)</dt><dd><dl>
+<dt>IF(${IS_GENERAL})</dt><dd><p>TARGET_LINK_LIBRARIES(${TARGET} ${${PREFIX}_LDFLAGS})
+TARGET_LINK_LIBRARIES(${TARGET} ${${PREFIX}_LDFLAGS_OTHER})</p>
+</dd>
+<dt>ELSEIF(${IS_DEBUG})</dt><dd><dl class="simple">
+<dt>FOREACH(FLAG ${${PREFIX}_LDFLAGS})</dt><dd><p>TARGET_LINK_LIBRARIES(${TARGET} debug ${FLAG})</p>
+</dd>
+</dl>
+<p>ENDFOREACH()
+FOREACH(FLAG ${${PREFIX}_LDFLAGS_OTHER})</p>
+<blockquote>
+<div><p>TARGET_LINK_LIBRARIES(${TARGET} debug ${FLAG})</p>
+</div></blockquote>
+<p>ENDFOREACH()</p>
+</dd>
+<dt>ELSE()</dt><dd><dl class="simple">
+<dt>FOREACH(FLAG ${${PREFIX}_LDFLAGS})</dt><dd><p>TARGET_LINK_LIBRARIES(${TARGET} optimized ${FLAG})</p>
+</dd>
+</dl>
+<p>ENDFOREACH()
+FOREACH(FLAG ${${PREFIX}_LDFLAGS_OTHER})</p>
+<blockquote>
+<div><p>TARGET_LINK_LIBRARIES(${TARGET} optimized ${FLAG})</p>
+</div></blockquote>
+<p>ENDFOREACH()</p>
+</dd>
+</dl>
+<p>ENDIF()</p>
+</dd>
+</dl>
+<p>ENDIF(UNIX AND NOT APPLE)</p>
+</div></blockquote>
+<p>ENDMACRO(_PKG_CONFIG_MANIPULATE_LDFLAGS TARGET PREFIX CONFIG IS_GENERAL IS_DEBUG)</p>
+<p>#.rst:
+# .. cmake:command:: PKG_CONFIG_USE_LLINK_DEPENDENCY(TARGET DEPENDENCY)
+#
+#   .. note: Internal use only. For user look at
+#            <span class="target" id="index-0-command:pkg_config_use_link_dependency"></span><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">PKG_CONFIG_USE_LINK_DEPENDENCY()</span></code>
+#
+#   This macro changes the target properties to properly search for
+#   the required shared libraries
+#   when using a dependency detected through pkg-config.
+#
+#   I.e. <code class="docutils literal notranslate"><span class="pre">PKG_CONFIG_USE_LLINK_DEPENDENCY(my-binary</span> <span class="pre">my-package)</span></code>
+#
+MACRO(PKG_CONFIG_USE_LLINK_DEPENDENCY TARGET PREFIX)</p>
+<blockquote>
+<div><dl>
+<dt>IF(NOT DEFINED ${PREFIX}_DEBUG_FOUND)</dt><dd><p>_PKG_CONFIG_MANIPULATE_LDFLAGS(${TARGET} ${PREFIX} “” 1 0)</p>
+</dd>
+<dt>ELSE()</dt><dd><p># Single build type generators
+IF(DEFINED CMAKE_BUILD_TYPE)</p>
+<blockquote>
+<div><p>STRING(TOLOWER “${CMAKE_BUILD_TYPE}” cmake_build_type)
+IF(“${cmake_build_type}” MATCHES “debug”)</p>
+<blockquote>
+<div><p>_PKG_CONFIG_MANIPULATE_LDFLAGS(${TARGET} “${PREFIX}_DEBUG” “” 1 0)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>ELSE()</dt><dd><p>_PKG_CONFIG_MANIPULATE_LDFLAGS(${TARGET} ${PREFIX} “” 1 0)</p>
+</dd>
+</dl>
+<p>ENDIF()</p>
+</div></blockquote>
+<p># Multiple build types generators
+ELSE()</p>
+<blockquote>
+<div><dl>
+<dt>FOREACH(config ${CMAKE_CONFIGURATION_TYPES})</dt><dd><p>STRING(TOUPPER “_${config}” config_in)
+IF(${config_in} MATCHES “_DEBUG”)</p>
+<blockquote>
+<div><p>_PKG_CONFIG_MANIPULATE_LDFLAGS(${TARGET} “${PREFIX}_DEBUG” “${config_in}” 0 1)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>ELSE()</dt><dd><p>_PKG_CONFIG_MANIPULATE_LDFLAGS(${TARGET} “${PREFIX}” “${config_in}” 0 0)</p>
+</dd>
+</dl>
+<p>ENDIF()</p>
+</dd>
+</dl>
+<p>ENDFOREACH()</p>
+</div></blockquote>
+<p>ENDIF()</p>
+</dd>
+</dl>
+<p>ENDIF()</p>
+<p># Include/libraries paths seems to be filtered on Linux, add paths
+# again.
+LINK_DIRECTORIES(${${PREFIX}_LIBRARY_DIRS})
+IF(DEFINED ${PREFIX}_DEBUG_FOUND)</p>
+<blockquote>
+<div><p>LINK_DIRECTORIES(${${PREFIX}_DEBUG_LIBRARY_DIRS})</p>
+</div></blockquote>
+<p>ENDIF()</p>
+</div></blockquote>
+<p>ENDMACRO(PKG_CONFIG_USE_LLINK_DEPENDENCY)</p>
+<p>MACRO(BUILD_PREFIX_FOR_PKG DEPENDENCY PREFIX)</p>
+<blockquote>
+<div><p># Transform the dependency into a valid variable prefix.
+# 1. replace invalid characters into underscores.
+STRING(REGEX REPLACE “[^a-zA-Z0-9]” “_” LPREFIX “${DEPENDENCY}”)
+# 2. make it uppercase.
+STRING(TOUPPER “${LPREFIX}” “LPREFIX”)</p>
+<p># Make sure we search for a previously detected package.
+IF(NOT DEFINED ${LPREFIX}_FOUND)</p>
+<blockquote>
+<div><dl class="simple">
+<dt>MESSAGE(FATAL_ERROR</dt><dd><p>“The package ${DEPENDENCY} has not been detected correctly.n”
+“Have you called ADD_REQUIRED_DEPENDENCY/ADD_OPTIONAL_DEPENDENCY?”)</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>ENDIF()
+IF(NOT (${LPREFIX}_FOUND OR ${LPREFIX}_DEBUG_FOUND))</p>
+<blockquote>
+<div><dl class="simple">
+<dt>MESSAGE(FATAL_ERROR</dt><dd><p>“The package ${DEPENDENCY} has not been found.”)</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>ENDIF()</p>
+<p>SET(${PREFIX} ${LPREFIX})</p>
+</div></blockquote>
+<p>ENDMACRO(BUILD_PREFIX_FOR_PKG)</p>
+<p>#.rst:
+# .. cmake:command:: PKG_CONFIG_USE_DEPENDENCY(TARGET DEPENDENCY)
+#
+#   This macro changes the target properties to properly search for
+#   headers, libraries and link against the required shared libraries
+#   when using a dependency detected through pkg-config.
+#
+#   I.e. <code class="docutils literal notranslate"><span class="pre">PKG_CONFIG_USE_DEPENDENCY(my-binary</span> <span class="pre">my-package)</span></code>
+#
+MACRO(PKG_CONFIG_USE_DEPENDENCY TARGET DEPENDENCY)</p>
+<blockquote>
+<div><p>BUILD_PREFIX_FOR_PKG(${DEPENDENCY} PREFIX)
+PKG_CONFIG_USE_LCOMPILE_DEPENDENCY(${TARGET} ${PREFIX})
+PKG_CONFIG_USE_LLINK_DEPENDENCY(${TARGET} ${PREFIX})</p>
+</div></blockquote>
+<p>ENDMACRO(PKG_CONFIG_USE_DEPENDENCY TARGET DEPENDENCY)</p>
+<p>#.rst:
+# .. cmake:command:: PKG_CONFIG_USE_COMPILE_DEPENDENCY(TARGET DEPENDENCY)
+#
+#   This macro changes the target properties to properly search for
+#   headers  against the required shared libraries
+#   when using a dependency detected through pkg-config.
+#
+#   I.e. <code class="docutils literal notranslate"><span class="pre">PKG_CONFIG_USE_COMPILE_DEPENDENCY(my-binary</span> <span class="pre">my-package)</span></code>
+MACRO(PKG_CONFIG_USE_COMPILE_DEPENDENCY TARGET DEPENDENCY)</p>
+<blockquote>
+<div><p>BUILD_PREFIX_FOR_PKG(${DEPENDENCY} PREFIX)
+PKG_CONFIG_USE_LCOMPILE_DEPENDENCY(${TARGET} ${PREFIX})</p>
+</div></blockquote>
+<p>ENDMACRO(PKG_CONFIG_USE_COMPILE_DEPENDENCY TARGET DEPENDENCY)</p>
+<p>#.rst:
+# .. cmake:command:: PKG_CONFIG_USE_LINK_DEPENDENCY(TARGET DEPENDENCY)
+#
+#   This macro changes the target properties to properly search for
+#   the required shared libraries
+#   when using a dependency detected through pkg-config.
+#
+#   I.e. <code class="docutils literal notranslate"><span class="pre">PKG_CONFIG_USE_LINK_DEPENDENCY(my-binary</span> <span class="pre">my-package)</span></code>
+MACRO(PKG_CONFIG_USE_LINK_DEPENDENCY TARGET DEPENDENCY)</p>
+<blockquote>
+<div><p>BUILD_PREFIX_FOR_PKG(${DEPENDENCY} PREFIX)
+PKG_CONFIG_USE_LLINK_DEPENDENCY(${TARGET} ${PREFIX})</p>
+</div></blockquote>
+<p>ENDMACRO(PKG_CONFIG_USE_LINK_DEPENDENCY TARGET DEPENDENCY)</p>
+<p>#.rst:
+# .. cmake:command:: PKG_CONFIG_ADD_COMPILE_OPTIONS(COMPILE_OPTIONS DEPENDENCY)
+#
+#   This macro adds the compile-time options for a given pkg-config
+#   dependency to a given semi-colon-separated list. This can be
+#   used to provide options to CUDA_ADD_LIBRARY for instance, since
+#   it does not support SET_TARGET_PROPERTIES…
+#
+#   I.e. <code class="docutils literal notranslate"><span class="pre">PKG_CONFIG_ADD_COMPILE_OPTIONS(${MY_OPTIONS}</span> <span class="pre">my-package)</span></code>
+MACRO(PKG_CONFIG_ADD_COMPILE_OPTIONS COMPILE_OPTIONS DEPENDENCY)</p>
+<blockquote>
+<div><p>BUILD_PREFIX_FOR_PKG(${DEPENDENCY} PREFIX)</p>
+<p># If there were no previous options
+IF(NOT ${COMPILE_OPTIONS})</p>
+<blockquote>
+<div><p>SET(${COMPILE_OPTIONS} “”)</p>
+</div></blockquote>
+<p>ENDIF()</p>
+<p># Append flags
+FOREACH(FLAG ${${PREFIX}_CFLAGS_OTHER})</p>
+<blockquote>
+<div><p>SET(${COMPILE_OPTIONS} “${${COMPILE_OPTIONS}};${FLAG}”)</p>
+</div></blockquote>
+<p>ENDFOREACH()</p>
+</div></blockquote>
+<p>ENDMACRO(PKG_CONFIG_ADD_COMPILE_OPTIONS COMPILE_OPTIONS DEPENDENCY)</p>
+<p>#.rst:
+# .. cmake:command:: CATKIN_ADD_REQUIRED_DEPENDENCY(DEPENDENCY)
+#
+#   This macros looks for the dependencies using pkg config and export the
+#   cmake variables using catkin.
+#
+#   I.e. <code class="docutils literal notranslate"><span class="pre">CATKIN_ADD_REQUIRED_DEPENDENCY(&quot;my-package</span> <span class="pre">&gt;=</span> <span class="pre">1.0.0&quot;)</span></code>
+MACRO(CATKIN_ADD_REQUIRED_DEPENDENCY DEPENDENCY)</p>
+<blockquote>
+<div><p># Get the name from the string
+SET(ARGS ${DEPENDENCY})
+SEPARATE_ARGUMENTS(ARGS)
+list(LENGTH ARGS NB_ARGS)
+list(GET ARGS 0 DEPENDENCY_NAME)</p>
+<p># Look for the dependency
+ADD_REQUIRED_DEPENDENCY(${DEPENDENCY})</p>
+<p># Setup the catkin variable
+BUILD_PREFIX_FOR_PKG(${DEPENDENCY_NAME} DEPENDENCY_FORMATED_NAME)</p>
+<dl class="simple">
+<dt>SET(catkin_INCLUDE_DIRS</dt><dd><p>${${DEPENDENCY_FORMATED_NAME}_INCLUDE_DIRS}
+${catkin_INCLUDE_DIRS}</p>
+</dd>
+</dl>
+<p>)
+LINK_DIRECTORIES(</p>
+<blockquote>
+<div><p>${${DEPENDENCY_FORMATED_NAME}_LIBRARY_DIRS}</p>
+</div></blockquote>
+<p>)
+SET(catkin_LIBRARIES</p>
+<blockquote>
+<div><p>${${DEPENDENCY_FORMATED_NAME}_LIBRARIES}
+${catkin_LIBRARIES}</p>
+</div></blockquote>
+<p>)</p>
+</div></blockquote>
+<p>ENDMACRO(CATKIN_ADD_REQUIRED_DEPENDENCY DEPENDENCY)</p>
+<p>#.rst:
+# .. cmake:command:: CATKIN_ADD_OPTIONAL_DEPENDENCY(DEPENDENCY)
+#
+#   This macros looks for the dependencies using pkg config and export the
+#   cmake variables using catkin.
+#
+#   I.e. <code class="docutils literal notranslate"><span class="pre">CATKIN_ADD_OPTIONAL_DEPENDENCY(&quot;my-package</span> <span class="pre">&gt;=</span> <span class="pre">1.0.0&quot;)</span></code>
+MACRO(CATKIN_ADD_OPTIONAL_DEPENDENCY DEPENDENCY)</p>
+<blockquote>
+<div><p># Get the name from the string
+SET(ARGS ${DEPENDENCY})
+SEPARATE_ARGUMENTS(ARGS)
+list(LENGTH ARGS NB_ARGS)
+list(GET ARGS 0 DEPENDENCY_NAME)</p>
+<p># Look for the dependency
+ADD_OPTIONAL_DEPENDENCY(${DEPENDENCY})</p>
+<p># Setup the catkin variable
+BUILD_PREFIX_FOR_PKG(${DEPENDENCY_NAME} DEPENDENCY_FORMATED_NAME)</p>
+<dl class="simple">
+<dt>SET(catkin_INCLUDE_DIRS</dt><dd><p>${${DEPENDENCY_FORMATED_NAME}_INCLUDE_DIRS}
+${catkin_INCLUDE_DIRS}</p>
+</dd>
+</dl>
+<p>)
+LINK_DIRECTORIES(</p>
+<blockquote>
+<div><p>${${DEPENDENCY_FORMATED_NAME}_LIBRARY_DIRS}</p>
+</div></blockquote>
+<p>)
+SET(catkin_LIBRARIES</p>
+<blockquote>
+<div><p>${${DEPENDENCY_FORMATED_NAME}_LIBRARIES}
+${catkin_LIBRARIES}</p>
+</div></blockquote>
+<p>)</p>
+</div></blockquote>
+<p>ENDMACRO(CATKIN_ADD_OPTIONAL_DEPENDENCY DEPENDENCY)</p>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright Copyright (c) 2020, See license.txt file or the license section.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

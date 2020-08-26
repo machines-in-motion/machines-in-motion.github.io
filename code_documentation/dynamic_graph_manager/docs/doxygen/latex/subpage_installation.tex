@@ -1,0 +1,223 @@
+\hypertarget{subpage_installation_install_sec_introduction}{}\section{2.\+1/ Introduction}\label{subpage_installation_install_sec_introduction}
+In here we are going to explain the different way of obtaining the code base. And in particular the dependencies. We {\bfseries  highly recommand } a binary installation of the dependencies.\hypertarget{subpage_installation_install_sec_binary}{}\section{2.\+2/ Binary Installation}\label{subpage_installation_install_sec_binary}
+\hypertarget{subpage_installation_install_subsec_official_image}{}\subsection{2.\+2.\+1/ Install using the official image on U\+B\+U\+N\+T\+U 16.\+04}\label{subpage_installation_install_subsec_official_image}
+First clone the official image git repository. 
+\begin{DoxyCode}
+git clone https:\textcolor{comment}{//git-amd.tuebingen.mpg.de/amd-clmc/ubuntu\_installation\_scripts}
+\end{DoxyCode}
+ The repositories contains convenience installation scripts for ubuntu. The most useful script is \char`\"{}official/setup\+\_\+ubuntu\char`\"{}. This script is meant to be called after a fresh installation of ubuntu, and install all typical dependencies required for programming robots. These include R\+OS, dynamic graph and related \char`\"{}robot-\/pkg\char`\"{} software (e.\+g stack of task and pinocchio). Only 16.\+04 is fully supported. The script will also work on 14.\+04, but mostly R\+OS and dependencies related to SL will be installed. Usage\+: 
+\begin{DoxyCode}
+cd ubuntu\_installation\_scripts/official
+sudo ./setup\_ubuntu install
+\end{DoxyCode}
+ This setup script is sometimes updated. You may run it again\+: 
+\begin{DoxyCode}
+cd ubuntu\_installation\_scripts/official
+sudo ./setup\_ubuntu update
+\end{DoxyCode}
+ To see the list of software this script install (and how it install it), visit the related dockerfile (e.\+g. for 16.\+04 \+: \href{https://git-amd.tuebingen.mpg.de/amd-clmc/ubuntu_installation_scripts/blob/master/official/ubuntu_16_04/docker/Dockerfile}{\tt https\+://git-\/amd.\+tuebingen.\+mpg.\+de/amd-\/clmc/ubuntu\+\_\+installation\+\_\+scripts/blob/master/official/ubuntu\+\_\+16\+\_\+04/docker/\+Dockerfile}).
+
+With this process a file in /opt/openrobots/setup.bash should have been created. In order to use the binary installation you {\bfseries M\+U\+ST} source this file\+: 
+\begin{DoxyCode}
+source /opt/openrobots/\hyperlink{namespacesetup}{setup}.bash
+\end{DoxyCode}
+ one can add this line to its \char`\"{}.\+bashrc\char`\"{}\hypertarget{subpage_installation_install_subsec_binary}{}\subsection{2.\+2.\+2/ Do the same as the official image but install uniquely the dynamic graph.}\label{subpage_installation_install_subsec_binary}
+First get the robotpkg P\+PA. Assuming you are using Ubuntu 16.\+04, if not, please adjust the \char`\"{}xenial\char`\"{} to the output of {\ttfamily lsb\+\_\+release -\/c}\+: 
+\begin{DoxyCode}
+sudo sh -c \textcolor{stringliteral}{"echo 'deb [arch=amd64] http://robotpkg.openrobots.org/wip/packages/debian/pub xenialrobotpkg\(\backslash\)n
+      deb [arch=amd64] http://robotpkg.openrobots.org/packages/debian/pub xenial robotpkg' >
+       /etc/apt/sources.list.d/robotpkg.list"}
+curl http:\textcolor{comment}{//robotpkg.openrobots.org/packages/debian}
+/robotpkg.key | sudo apt-key add -
+sudo apt-\textcolor{keyword}{get} update
+\end{DoxyCode}
+
+
+Install the following packages from robotpkg using apt-\/get\+:
+
+
+\begin{DoxyCode}
+sudo apt-\textcolor{keyword}{get} install -y robotpkg-dynamic-graph-v3 `# The dynamic graph` \(\backslash\)
+                        robotpkg-py27-dynamic-graph-v3 `# Thedynamic graph python bindings` \(\backslash\)
+                        robotpkg-tsid `# AndreaDelprete Task Space Inverse Dynamics` \(\backslash\)
+                        robotpkg-pinocchio `# Eigenbased rigid body dynamics library` \(\backslash\)
+                        robotpkg-hpp-fcl `# collision detection \textcolor{keywordflow}{for} pinocchio` \(\backslash\)
+                        robotpkg-libccd `# notsure` \(\backslash\)
+                        robotpkg-octomap `# notsure` \(\backslash\)
+                        robotpkg-parametric-curves `# Splineand polynomes library` \(\backslash\)
+                        robotpkg-simple-humanoid-description `# Simplehumanoid robot\_properties package` \(\backslash\)
+                        robotpkg-eigen-quadprog `# Quadprog package` \(\backslash\)
+                        robotpkg-sot-core-v3 `# DynamicGraph Utilities` \(\backslash\)
+                        robotpkg-sot-tools-v3 `# DynamicGraph Utilities` \(\backslash\)
+                        robotpkg-sot-dynamic-pinocchio-v3 `# DGwrapper around pinocchio` \(\backslash\)
+                        robotpkg-sot-torque-control `# AndreaDelprete dynamic graph entities` \(\backslash\)
+                        robotpkg-py27-eigenpy `# Pythonbindings` \(\backslash\)
+                        robotpkg-py27-pinocchio `# Pythonbindings` \(\backslash\)
+                        robotpkg-py27-parametric-curves `# Pythonbindings` \(\backslash\)
+                        robotpkg-py27-sot-core-v3 `# Pythonbindings` \(\backslash\)
+                        robotpkg-py27-sot-torque-control `# Pythonbindings` \(\backslash\)
+                        robotpkg-py27-sot-dynamic-pinocchio-v3 `# Pythonbindings` \(\backslash\)
+                        robotpkg-py27-qt4-gepetto-viewer-corba `# LAAS 3Drobot viewer network client/server
+      ` ;
+\end{DoxyCode}
+
+
+Export the following environment variables e.\+g. by adding exports in $\sim$/. bashrc file\+:
+
+
+\begin{DoxyCode}
+export PATH=/opt/openrobots/bin:$PATH
+export PKG\_CONFIG\_PATH=/opt/openrobots/lib/pkgconfig:$PKG\_CONFIG\_PATH
+export LD\_LIBRARY\_PATH=/opt/openrobots/lib:/opt/openrobots/lib/plugin:$LD\_LIBRARY\_PATH
+export PYTHONPATH=/opt/openrobots/lib/python2.7/site-packages:$PYTHONPATH
+export ROS\_PACKAGE\_PATH=\textcolor{stringliteral}{"/opt/openrobots/share:$ROS\_PACKAGE\_PATH"}
+\end{DoxyCode}
+\hypertarget{subpage_installation_install_subsec_troubleshooting}{}\subsection{2.\+2.\+3/ Troubleshooting}\label{subpage_installation_install_subsec_troubleshooting}
+
+\begin{DoxyEnumerate}
+\item {\bfseries Python 3}\+: When using python3 and you installed packages with prefix /opt/openrobots/, you have to remove the python2.\+7 path and add the python3.\+5 one.
+\item Compilation problem\+: upon catkin\+\_\+make the package \char`\"{}dynamic-\/graph\char`\"{} is not found.
+\begin{DoxyEnumerate}
+\item make sure the environment variable concerning /opt/openrobots has been set. See the previous paragraph. In order to verify this one can run\+: 
+\begin{DoxyCode}
+env | grep openrobots
+\end{DoxyCode}
+
+\item The folder /opt/openerobots does belong to roor and/or does not have the correct permissions. In order to fix this one can do\+: 
+\begin{DoxyCode}
+sudo chown root:root -R /opt/openerobots
+sudo chmod 755 -R /opt/openerobots
+\end{DoxyCode}
+
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}\hypertarget{subpage_installation_install_sec_source}{}\section{2.\+3/ From source Installation}\label{subpage_installation_install_sec_source}
+\hypertarget{subpage_installation_install_subsec_python2}{}\subsection{2.\+3.\+1/ For python2}\label{subpage_installation_install_subsec_python2}
+
+\begin{DoxyEnumerate}
+\item first make sure you have treep installed. 
+\begin{DoxyCode}
+pip2 install --user treep
+\end{DoxyCode}
+ or 
+\begin{DoxyCode}
+pip3 install --user treep
+\end{DoxyCode}
+
+\item Then clone the different packages.
+\begin{DoxyItemize}
+\item For just the dynamic graph\+: 
+\begin{DoxyCode}
+mkdir devel # or your favorite development folder
+cd devel
+git clone git@github.com:machines-in-motion/treep\_machines\_in\_motion.git
+treep --clone DYNAMIC\_GRAPH
+\end{DoxyCode}
+ At this point you should see something like this\+: 
+\item If you decided to clone every package it would look like this\+: 
+\begin{DoxyCode}
+mkdir devel # or your favorite development folder
+cd devel
+git clone git@github.com:machines-in-motion/treep\_machines\_in\_motion.git
+treep --clone ALL\_LAAS
+\end{DoxyCode}
+ At this point you should see something like this\+: 
+\end{DoxyItemize}
+\item Now let us assume you have something clone in your workspace/src folder.
+\begin{DoxyItemize}
+\item The next step is to generate the compilation script. 
+\begin{DoxyCode}
+treep --compilation-script
+\end{DoxyCode}
+ The ouput\+:  At this point treep generated a compilation script in bash that you need to {\bfseries execute} anytime you do the compilation.
+\item If the compilation script is not an executable you should do a 
+\begin{DoxyCode}
+chmod +x compilation.sh
+\end{DoxyCode}
+ The compilation script is based on the python script in the treep\+\_\+dynamic\+\_\+manager package. A quick glance should allow you to tune the installation folder and type of compilation (Debug/\+Release/...) A \char`\"{}dynamic\+\_\+graph\+\_\+setup.\+bash\char`\"{} is generated as well in the installation folder. If you source it you will tell your system to use the installed binary.
+\end{DoxyItemize}
+\item Launch the compilation\+: 
+\begin{DoxyCode}
+./compilation.sh
+\end{DoxyCode}
+ This should build and install all the repositories.
+\begin{DoxyItemize}
+\item Troubleshooting with \char`\"{}sphinx\char`\"{} 
+\begin{DoxyCode}
+sudo -H pip2 install sphinx
+\end{DoxyCode}
+
+\end{DoxyItemize}
+\end{DoxyEnumerate}\hypertarget{subpage_installation_install_subsec_python2_3}{}\subsection{2.\+3.\+2/ For using python3 alongside python2}\label{subpage_installation_install_subsec_python2_3}
+Installing the eigenpy and pinocchio libraries into the same folder creates problem when loading the libraries. Instead of using the boost\+\_\+python-\/py35 library, eigenpy also tries to load the boost\+\_\+python-\/ py27 library. To avoid this, it is recommended to
+\begin{DoxyItemize}
+\item create a separate \char`\"{}devel\char`\"{} folder for the python3 installation like devel\+\_\+py35
+\item make sure to source the corresponding \char`\"{}dynamic\+\_\+graph\+\_\+setu
+p.\+bash\char`\"{}. And to edit the 
+\begin{DoxyCode}
+export PYTHONPATH=/opt/openrobots\_py35/lib/python3.5/site-packages:$PYTHONPATH
+\end{DoxyCode}
+ Otherwise, eigenpy tries to load boost\+\_\+python-\/py27 libraries. This boils down to using separate functions to source either python2 or python3\+: 
+\begin{DoxyCode}
+source\_devel\_py27() \{
+\textcolor{preprocessor}{  # robotpkg installation.}
+  export PATH=/opt/openrobots/bin:$PATH
+  export PKG\_CONFIG\_PATH=/opt/openrobots/lib/pkgconfig:$PKG\_CONFIG\_PATH
+  export LD\_LIBRARY\_PATH=/opt/openrobots/lib::/opt/openrobots/lib/plugin:$LD\_LIBRARY\_PATH
+  export PYTHONPATH=/opt/openrobots/lib/python2.7/site-packages:$PYTHONPATH
+  export LD\_LIBRARY\_PATH=$LD\_LIBRARY\_PATH:/usr/local/lib/
+\}
+source\_devel\_py35() \{
+  export PATH=/opt/openrobots\_py35/bin:$PATH
+  export PKG\_CONFIG\_PATH=/opt/openrobots\_py35/lib/pkgconfig:$PKG\_CONFIG\_PATH
+  export LD\_LIBRARY\_PATH=/opt/openrobots\_py35/lib:/opt/openrobots\_py35/lib/plugin:$LD\_LIBRARY\_PATH
+  export PYTHONPATH=/opt/openrobots\_py35/lib/python3.5/site-packages:$PYTHONPATH
+  export LD\_LIBRARY\_PATH=$LD\_LIBRARY\_PATH:/usr/local/lib/
+\}
+\end{DoxyCode}
+ In order to build the pacakges for Python 3, use the cmake configuration as\+: 
+\begin{DoxyCode}
+cmake .. -DCMAKE\_BUILD\_TYPE=Release -DPYTHON\_EXECUTABLE=`which python3` -DCMAKE\_INSTALL\_PREFIX=/path/to/
+      your/devel\_py35/workspace/devel
+\end{DoxyCode}
+ For using the catkin project using python3, install the following packages 
+\begin{DoxyCode}
+pip3 install rospkg catkin\_pkg
+\end{DoxyCode}
+ and build the catkin workspace with python3 (make sure you have source the python3 environment variables using source\+\_\+openrobots\+\_\+py35) 
+\begin{DoxyCode}
+catkin\_make -DCMAKE\_BUILD\_TYPE=Release -DPYTHON\_EXECUTABLE=\textcolor{stringliteral}{"`which python3`"}
+\end{DoxyCode}
+
+\end{DoxyItemize}\hypertarget{subpage_installation_install_sec_dgm}{}\section{2.\+4/ Installation of dynamic graph manager}\label{subpage_installation_install_sec_dgm}
+
+\begin{DoxyEnumerate}
+\item First make sure you have treep installed. 
+\begin{DoxyCode}
+pip2 install --user treep
+\end{DoxyCode}
+ or 
+\begin{DoxyCode}
+pip3 install --user treep
+\end{DoxyCode}
+
+\item Clone the repository manager \char`\"{}treep\+\_\+machines\+\_\+in\+\_\+motion\char`\"{}. All actions on the repositories can be done via the \char`\"{}treep\char`\"{} executable. 
+\begin{DoxyCode}
+cd
+mkdir devel # devel could be also devel\_dg or your favorite cat name
+cd devel
+git clone git@github.com:machines-in-motion/treep\_machines\_in\_motion.git
+treep --clone DYNAMIC\_GRAPH\_MANAGER
+cd workspace
+\end{DoxyCode}
+ If you do not have the ssh key allowing you to download it, please contact Maximilien Naveau (\href{mailto:maximilien.naveau@gmail.com}{\tt maximilien.\+naveau@gmail.\+com}) or Vincent Berenz (\href{mailto:vberenz@tue.mpg.de}{\tt vberenz@tue.\+mpg.\+de}).
+\item Source \char`\"{}ros\char`\"{}. Pick your favorite one (On ubuntu16.\+04 kinetic is the one used)\+: 
+\begin{DoxyCode}
+source /opt/\hyperlink{namespaceros}{ros}/kinetic/\hyperlink{namespacesetup}{setup}.bash
+\end{DoxyCode}
+
+\item Finally run the build process by calling the catkin executable. 
+\begin{DoxyCode}
+catkin\_make install
+\end{DoxyCode}
+ 
+\end{DoxyEnumerate}

@@ -1,0 +1,228 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="control__pd_8cpp" kind="file" language="C++">
+    <compoundname>control_pd.cpp</compoundname>
+    <includes refid="control__pd_8hpp" local="yes">dg_tools/control/control_pd.hpp</includes>
+    <includes local="no">sot/core/debug.hh</includes>
+    <includes local="no">dynamic-graph/factory.h</includes>
+    <incdepgraph>
+      <node id="180">
+        <label>dynamic-graph/factory.h</label>
+      </node>
+      <node id="179">
+        <label>sot/core/debug.hh</label>
+      </node>
+      <node id="175">
+        <label>dynamic-graph/linear-algebra.h</label>
+      </node>
+      <node id="173">
+        <label>src/control/control_pd.cpp</label>
+        <link refid="control_pd.cpp"/>
+        <childnode refid="174" relation="include">
+        </childnode>
+        <childnode refid="179" relation="include">
+        </childnode>
+        <childnode refid="180" relation="include">
+        </childnode>
+      </node>
+      <node id="174">
+        <label>dg_tools/control/control_pd.hpp</label>
+        <link refid="control__pd_8hpp"/>
+        <childnode refid="175" relation="include">
+        </childnode>
+        <childnode refid="176" relation="include">
+        </childnode>
+        <childnode refid="177" relation="include">
+        </childnode>
+        <childnode refid="178" relation="include">
+        </childnode>
+      </node>
+      <node id="176">
+        <label>dynamic-graph/signal-time-dependent.h</label>
+      </node>
+      <node id="177">
+        <label>dynamic-graph/signal-ptr.h</label>
+      </node>
+      <node id="178">
+        <label>dynamic-graph/entity.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="control__pd_8cpp_1a20fc0140d6fa5823b74fc45bc49ca7c0" prot="public" static="no">
+        <name>__SOT_ControlPD_INIT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/control/control_pd.cpp" line="43" column="9" bodyfile="src/control/control_pd.cpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="control__pd_8cpp_1af81056ae0a652767702343554c176e13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DYNAMICGRAPH_FACTORY_ENTITY_PLUGIN</definition>
+        <argsstring>(PDController,&quot;PDController&quot;)</argsstring>
+        <name>DYNAMICGRAPH_FACTORY_ENTITY_PLUGIN</name>
+        <param>
+          <type><ref refid="classdynamicgraph_1_1sot_1_1PDController" kindref="compound">PDController</ref></type>
+        </param>
+        <param>
+          <type>&quot;PDController&quot;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/control/control_pd.cpp" line="33" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>2010,</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>François<sp/>Bleibel,</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Olivier<sp/>Stasse,</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>CNRS/AIST</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>sot-core.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>sot-core<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>modify<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>as<sp/>published<sp/>by<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>the<sp/>License,<sp/>or<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>sot-core<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>useful,<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.<sp/><sp/>You<sp/>should</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>along</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>with<sp/>sot-core.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>SOT<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="control__pd_8hpp" kindref="compound">dg_tools/control/control_pd.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sot/core/debug.hh&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dynamic-graph/factory.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacedynamicgraph_1_1sot" kindref="compound">dynamicgraph::sot</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacedynamicgraph" kindref="compound">dynamicgraph</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">DYNAMICGRAPH_FACTORY_ENTITY_PLUGIN(<ref refid="classdynamicgraph_1_1sot_1_1PDController" kindref="compound">PDController</ref>,<sp/></highlight><highlight class="stringliteral">&quot;PDController&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>PDController::</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">TIME_STEP_DEFAULT<sp/>=<sp/>.001;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__SOT_ControlPD_INIT<sp/>\</highlight></codeline>
+<codeline lineno="44"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal">PDController::PDController(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name<sp/>)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/>:Entity(name)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/>,TimeStep(0)</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/>,KpSIN(NULL,</highlight><highlight class="stringliteral">&quot;PDController(&quot;</highlight><highlight class="normal">+name+</highlight><highlight class="stringliteral">&quot;)::input(vector)::Kp&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/>,KdSIN(NULL,</highlight><highlight class="stringliteral">&quot;PDController(&quot;</highlight><highlight class="normal">+name+</highlight><highlight class="stringliteral">&quot;)::input(vector)::Kd&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/>,positionSIN(NULL,</highlight><highlight class="stringliteral">&quot;PDController(&quot;</highlight><highlight class="normal">+name+</highlight><highlight class="stringliteral">&quot;)::input(vector)::position&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/>,desiredpositionSIN(NULL,</highlight><highlight class="stringliteral">&quot;PDController(&quot;</highlight><highlight class="normal">+name+</highlight><highlight class="stringliteral">&quot;)::input(vector)::desired_position&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/>,velocitySIN(NULL,</highlight><highlight class="stringliteral">&quot;PDController(&quot;</highlight><highlight class="normal">+name+</highlight><highlight class="stringliteral">&quot;)::input(vector)::velocity&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/>,desiredvelocitySIN(NULL,</highlight><highlight class="stringliteral">&quot;PDController(&quot;</highlight><highlight class="normal">+name+</highlight><highlight class="stringliteral">&quot;)::input(vector)::desired_velocity&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/>,controlSOUT(<sp/>boost::bind(&amp;<ref refid="classdynamicgraph_1_1sot_1_1PDController" kindref="compound">PDController</ref>::computeControl,this,_1,_2),</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>KpSIN<sp/>&lt;&lt;<sp/>KdSIN<sp/>&lt;&lt;<sp/>positionSIN<sp/>&lt;&lt;<sp/>desiredpositionSIN</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>velocitySIN<sp/>&lt;&lt;<sp/>desiredvelocitySIN,</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;PDController(&quot;</highlight><highlight class="normal">+name+</highlight><highlight class="stringliteral">&quot;)::output(vector)::control&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>,positionErrorSOUT(boost::bind(&amp;<ref refid="classdynamicgraph_1_1sot_1_1PDController" kindref="compound">PDController</ref>::computeControl,this,_1,_2),</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>controlSOUT,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;PDController(&quot;</highlight><highlight class="normal">+name+</highlight><highlight class="stringliteral">&quot;)::output(vector)::position_error&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/>,velocityErrorSOUT(boost::bind(&amp;<ref refid="classdynamicgraph_1_1sot_1_1PDController" kindref="compound">PDController</ref>::computeControl,this,_1,_2),</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>controlSOUT,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;PDController(&quot;</highlight><highlight class="normal">+name+</highlight><highlight class="stringliteral">&quot;)::output(vector)::velocity_error&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/>Entity::signalRegistration(<sp/>KpSIN<sp/>&lt;&lt;<sp/>KdSIN<sp/>&lt;&lt;<sp/>positionSIN<sp/>&lt;&lt;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>desiredpositionSIN<sp/>&lt;&lt;<sp/>velocitySIN<sp/>&lt;&lt;<sp/>desiredvelocitySIN<sp/>&lt;&lt;<sp/>controlSOUT</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>positionErrorSOUT<sp/>&lt;&lt;<sp/>velocityErrorSOUT<sp/>);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>PDController::display(<sp/>std::ostream&amp;<sp/>os<sp/>)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="75"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;PDController<sp/>&quot;</highlight><highlight class="normal">&lt;&lt;getName();</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;</highlight><highlight class="stringliteral">&quot;control<sp/>=<sp/>&quot;</highlight><highlight class="normal">&lt;&lt;controlSOUT;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(ExceptionSignal<sp/>e)<sp/>{}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/>os<sp/>&lt;&lt;</highlight><highlight class="stringliteral">&quot;<sp/>(&quot;</highlight><highlight class="normal">&lt;&lt;TimeStep&lt;&lt;</highlight><highlight class="stringliteral">&quot;)<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">&amp;<sp/>PDController::setsize(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dimension)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>_dimension<sp/>=<sp/>dimension;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_dimension;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal">dynamicgraph::Vector&amp;<sp/>PDController::</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">computeControl(<sp/>dynamicgraph::Vector<sp/>&amp;tau,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>t<sp/>)</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/>sotDEBUGIN(15);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>dynamicgraph::Vector&amp;<sp/>Kp<sp/>=<sp/>KpSIN(t);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>dynamicgraph::Vector&amp;<sp/>Kd<sp/>=<sp/>KdSIN(t);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>dynamicgraph::Vector&amp;<sp/>position<sp/>=<sp/>positionSIN(t);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>dynamicgraph::Vector&amp;<sp/>desired_position<sp/>=<sp/>desiredpositionSIN(t);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>dynamicgraph::Vector&amp;<sp/>velocity<sp/>=<sp/>velocitySIN(t);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>dynamicgraph::Vector&amp;<sp/>desired_velocity<sp/>=<sp/>desiredvelocitySIN(t);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/>dynamicgraph::Vector::Index<sp/>size<sp/>=<sp/>Kp.size();</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/>tau.resize(size);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/>position_error.resize(size);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/>velocity_error.resize(size);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/>position_error.array()<sp/>=<sp/>desired_position.array()-position.array();</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/>velocity_error.array()<sp/>=<sp/>desired_velocity.array()-velocity.array();</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/>tau.array()<sp/>=<sp/>position_error.array()*Kp.array()</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>velocity_error.array()*Kd.array();</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/>sotDEBUGOUT(15);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tau;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal">dynamicgraph::Vector&amp;<sp/>PDController::</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">getPositionError(<sp/>dynamicgraph::Vector<sp/>&amp;position_error,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>t)</highlight></codeline>
+<codeline lineno="126"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//sotDEBUGOUT(15)<sp/>??</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/>controlSOUT(t);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>position_error;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal">dynamicgraph::Vector&amp;<sp/>PDController::</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">getVelocityError(<sp/>dynamicgraph::Vector<sp/>&amp;velocity_error,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>t)</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/>controlSOUT(t);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>velocity_error;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/control/control_pd.cpp"/>
+  </compounddef>
+</doxygen>
