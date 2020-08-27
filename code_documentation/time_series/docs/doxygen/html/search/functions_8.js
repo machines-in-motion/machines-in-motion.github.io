@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['producer',['producer',['../demo__time__series_8cpp.html#a518842da1ba4ef4ba8c7f57fd9731cfc',1,'demo_time_series.cpp']]]
+  ['oldest_5ftimeindex',['oldest_timeindex',['../classtime__series_1_1TimeSeriesInterface.html#a3a68de9ecf8bfeb6c05ea89386537307',1,'time_series::TimeSeriesInterface']]],
+  ['operator_5b_5d',['operator[]',['../classtime__series_1_1TimeSeriesInterface.html#a3149f64961e08315eb06798d0f075333',1,'time_series::TimeSeriesInterface']]]
 ];

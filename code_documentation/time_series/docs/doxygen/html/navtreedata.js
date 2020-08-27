@@ -2,6 +2,7 @@ var NAVTREE =
 [
   [ "time_series", "index.html", [
     [ "Time Series", "md_readme.html", null ],
+    [ "Deprecated List", "deprecated.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],

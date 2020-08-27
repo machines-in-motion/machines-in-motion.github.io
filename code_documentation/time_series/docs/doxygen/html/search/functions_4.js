@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['length',['length',['../classtime__series_1_1TimeSeriesInterface.html#a90f6ed15d82006dbc7ef7783d9f6ff7a',1,'time_series::TimeSeriesInterface']]]
+  ['is_5fempty',['is_empty',['../classtime__series_1_1TimeSeriesInterface.html#a932e891f3f41781af4282ada18f05d31',1,'time_series::TimeSeriesInterface']]]
 ];
