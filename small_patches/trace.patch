@@ -16,3 +16,31 @@ index 360f4423..f0bec920 100644
  /// Registers useful casts
  namespace {
  DefaultCastRegisterer<double> double_reg;
+diff --git a/src/signal/signal-cast-helper.cpp b/src/signal/signal-cast-helper.cpp
+index 360f4423..32abedf7 100644
+--- a/src/signal/signal-cast-helper.cpp
++++ b/src/signal/signal-cast-helper.cpp
+@@ -68,6 +68,23 @@ inline void DefaultCastRegisterer<std::string>::disp(const boost::any &object,
+   os << boost::any_cast<std::string>(object);
+ }
+ 
++template <>
++inline void DefaultCastRegisterer<dynamicgraph::Vector>::disp(const boost::any &object,
++                                                              std::ostream &os) {
++    os << boost::any_cast<const dynamicgraph::Vector&>(object).transpose();
++}
++
++template <>
++inline void DefaultCastRegisterer<dynamicgraph::Matrix>::disp(const boost::any &object,
++                                                              std::ostream &os) {
++     const dynamicgraph::Matrix& mat = boost::any_cast<const dynamicgraph::Matrix&>(object);
++     for (int i = 0 ; i < mat.size() ; ++i)
++     {
++       os << mat.data()[i] << " ";
++     }	 
++}
++  
++
+ /// Registers useful casts
+ namespace {
+ DefaultCastRegisterer<double> double_reg;
