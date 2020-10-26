@@ -1,6 +1,6 @@
 var classshared__memory_1_1SharedMemorySegment =
 [
-    [ "SharedMemorySegment", "classshared__memory_1_1SharedMemorySegment.html#ae984411227bd175e684f90c9c28c976c", null ],
+    [ "SharedMemorySegment", "classshared__memory_1_1SharedMemorySegment.html#a83cd09d0839d4299ceed02f7d458bd56", null ],
     [ "~SharedMemorySegment", "classshared__memory_1_1SharedMemorySegment.html#a9f02fd9f35950df5f6ce7ceaba5fbb53", null ],
     [ "clear_memory", "classshared__memory_1_1SharedMemorySegment.html#a0224739cd729dfb249c3d7882463e5eb", null ],
     [ "create_mutex", "classshared__memory_1_1SharedMemorySegment.html#ac8bbbc98968a8a2b3fe35c50e0768d8f", null ],
@@ -18,6 +18,7 @@ var classshared__memory_1_1SharedMemorySegment =
     [ "clear_upon_destruction_", "classshared__memory_1_1SharedMemorySegment.html#af50ac70dca284926b15803f86958b220", null ],
     [ "mutex_", "classshared__memory_1_1SharedMemorySegment.html#a9e72fec52b3c76b9c2b0809b40b4e11d", null ],
     [ "objects_", "classshared__memory_1_1SharedMemorySegment.html#a8c4d0eb6f2a620bf7e5b22a57c07380b", null ],
+    [ "ravioli_", "classshared__memory_1_1SharedMemorySegment.html#af4836878ec12f32a5eabf5cb4c534f57", null ],
     [ "segment_id_", "classshared__memory_1_1SharedMemorySegment.html#a08408dc6b860388eb3b08e493f0188d9", null ],
     [ "segment_manager_", "classshared__memory_1_1SharedMemorySegment.html#af775c0982687b6e9bc9856b21aa1e009", null ]
 ];

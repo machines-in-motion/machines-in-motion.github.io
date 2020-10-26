@@ -92,7 +92,8 @@ $(document).ready(function(){initNavTree('shared__memory_8hpp.html','');});
 
 <p>This file declares a class that is used for shared memory segment introspection (e.g. used and free memory)  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<div class="textblock"><code>#include &lt;chrono&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;map&gt;</code><br />
 <code>#include &lt;mutex&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
@@ -103,7 +104,7 @@ $(document).ready(function(){initNavTree('shared__memory_8hpp.html','');});
 <code>#include &lt;boost/interprocess/containers/string.hpp&gt;</code><br />
 <code>#include &lt;boost/interprocess/containers/vector.hpp&gt;</code><br />
 <code>#include &lt;boost/interprocess/managed_shared_memory.hpp&gt;</code><br />
-<code>#include &quot;<a class="el" href="exceptions_8h_source.html">shared_memory/exceptions.h</a>&quot;</code><br />
+<code>#include &quot;shared_memory/exceptions.hpp&quot;</code><br />
 <code>#include &quot;shared_memory/segment_info.hpp&quot;</code><br />
 <code>#include &quot;shared_memory/serializer.hpp&quot;</code><br />
 <code>#include &lt;<a class="el" href="shared__memory_8hxx_source.html">shared_memory/shared_memory.hxx</a>&gt;</code><br />
@@ -112,11 +113,11 @@ Include dependency graph for shared_memory.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="shared__memory_8hpp__incl.png" border="0" usemap="#include_2shared__memory_2shared__memory_8hpp" alt=""/></div>
 <map name="include_2shared__memory_2shared__memory_8hpp" id="include_2shared__memory_2shared__memory_8hpp">
-<area shape="rect" id="node13" href="exceptions_8h.html" title="Defines debugging exceptions for this package. " alt="" coords="1426,102,1620,129"/>
-<area shape="rect" id="node16" href="segment__info_8hpp_source.html" title="shared_memory/segment\l_info.hpp" alt="" coords="186,95,356,136"/>
-<area shape="rect" id="node17" href="serializer_8hpp_source.html" title="shared_memory/serializer.hpp" alt="" coords="1644,102,1840,129"/>
-<area shape="rect" id="node23" href="shared__memory_8hxx.html" title="This file implements the functions from shared_memory.hpp that encapsulate the use of the shared memo..." alt="" coords="1864,95,2022,136"/>
-<area shape="rect" id="node22" href="serializer_8hxx_source.html" title="shared_memory/serializer.hxx" alt="" coords="2244,191,2440,218"/>
+<area shape="rect" id="node14" href="exceptions_8hpp_source.html" title="shared_memory/exceptions.hpp" alt="" coords="1535,102,1742,129"/>
+<area shape="rect" id="node17" href="segment__info_8hpp_source.html" title="shared_memory/segment\l_info.hpp" alt="" coords="1290,95,1459,136"/>
+<area shape="rect" id="node18" href="serializer_8hpp_source.html" title="shared_memory/serializer.hpp" alt="" coords="1766,102,1962,129"/>
+<area shape="rect" id="node24" href="shared__memory_8hxx.html" title="This file implements the functions from shared_memory.hpp that encapsulate the use of the shared memo..." alt="" coords="1986,95,2145,136"/>
+<area shape="rect" id="node23" href="serializer_8hxx_source.html" title="shared_memory/serializer.hxx" alt="" coords="2411,191,2607,218"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -127,17 +128,18 @@ This graph shows which files directly or indirectly include this file:</div>
 <area shape="rect" id="node2" href="stress__get__api_8cpp.html" title="Benchmark on the get method of the API. " alt="" coords="5,95,164,136"/>
 <area shape="rect" id="node3" href="stress__set__api_8cpp.html" title="Benchmark the set method form the API. " alt="" coords="188,95,347,136"/>
 <area shape="rect" id="node4" href="get__data_8cpp.html" title="Create a small app that fetch the data from a shared memory. This memory is filled with the counter p..." alt="" coords="371,102,511,129"/>
-<area shape="rect" id="node5" href="set__data_8cpp.html" title="shows how to serialize an instance of a class with an eigen matrix as attribute " alt="" coords="535,102,675,129"/>
-<area shape="rect" id="node6" href="array_8hpp_source.html" title="include/shared_memory\l/array.hpp" alt="" coords="566,184,726,225"/>
-<area shape="rect" id="node9" href="locked__condition__variable_8hpp_source.html" title="include/shared_memory\l/locked_condition_variable.hpp" alt="" coords="934,184,1134,225"/>
-<area shape="rect" id="node10" href="mutex_8hpp_source.html" title="include/shared_memory\l/mutex.hpp" alt="" coords="750,95,910,136"/>
-<area shape="rect" id="node13" href="serializable__exchange_8hpp.html" title="Interface to a serializable object. " alt="" coords="985,95,1163,136"/>
-<area shape="rect" id="node14" href="shared__memory_8hxx.html" title="This file implements the functions from shared_memory.hpp that encapsulate the use of the shared memo..." alt="" coords="1187,95,1347,136"/>
-<area shape="rect" id="node15" href="shared__memory_8cpp.html" title="Implementation of the shared_memory.hpp API. " alt="" coords="1371,102,1534,129"/>
-<area shape="rect" id="node7" href="demo__read__array_8cpp.html" title="example of reading from interprocesses arrays " alt="" coords="551,281,741,307"/>
-<area shape="rect" id="node8" href="demo__write__array_8cpp.html" title="example of writing into interprocesses arrays " alt="" coords="333,281,527,307"/>
-<area shape="rect" id="node11" href="lock_8hpp_source.html" title="include/shared_memory\l/lock.hpp" alt="" coords="750,184,910,225"/>
-<area shape="rect" id="node12" href="condition__variable_8hpp_source.html" title="include/shared_memory\l/condition_variable.hpp" alt="" coords="766,273,926,315"/>
+<area shape="rect" id="node5" href="non__existing__segment_8cpp.html" title="checks exceptions are throwm when reading non existing segment " alt="" coords="535,95,674,136"/>
+<area shape="rect" id="node6" href="set__data_8cpp.html" title="shows how to serialize an instance of a class with an eigen matrix as attribute " alt="" coords="699,102,839,129"/>
+<area shape="rect" id="node7" href="array_8hpp_source.html" title="include/shared_memory\l/array.hpp" alt="" coords="730,184,890,225"/>
+<area shape="rect" id="node10" href="locked__condition__variable_8hpp_source.html" title="include/shared_memory\l/locked_condition_variable.hpp" alt="" coords="1098,184,1298,225"/>
+<area shape="rect" id="node11" href="mutex_8hpp_source.html" title="include/shared_memory\l/mutex.hpp" alt="" coords="914,95,1074,136"/>
+<area shape="rect" id="node14" href="serializable__exchange_8hpp.html" title="Interface to a serializable object. " alt="" coords="1149,95,1327,136"/>
+<area shape="rect" id="node15" href="shared__memory_8hxx.html" title="This file implements the functions from shared_memory.hpp that encapsulate the use of the shared memo..." alt="" coords="1351,95,1511,136"/>
+<area shape="rect" id="node16" href="shared__memory_8cpp.html" title="Implementation of the shared_memory.hpp API. " alt="" coords="1535,102,1698,129"/>
+<area shape="rect" id="node8" href="demo__read__array_8cpp.html" title="example of reading from interprocesses arrays " alt="" coords="715,281,905,307"/>
+<area shape="rect" id="node9" href="demo__write__array_8cpp.html" title="example of writing into interprocesses arrays " alt="" coords="497,281,691,307"/>
+<area shape="rect" id="node12" href="lock_8hpp_source.html" title="include/shared_memory\l/lock.hpp" alt="" coords="914,184,1074,225"/>
+<area shape="rect" id="node13" href="condition__variable_8hpp_source.html" title="include/shared_memory\l/condition_variable.hpp" alt="" coords="930,273,1090,315"/>
 </map>
 </div>
 </div>
@@ -194,12 +196,12 @@ Functions</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a841687861fcc9efe381ffbe84843ca33">shared_memory::set_default_segment_sizes</a> ()</td></tr>
 <tr class="memdesc:a841687861fcc9efe381ffbe84843ca33"><td class="mdescLeft">&#160;</td><td class="mdescRight">set the size of segment newly created to the default size value of 65536 <br /></td></tr>
 <tr class="separator:a841687861fcc9efe381ffbe84843ca33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c76ec22ab70d3b7487becd3ec9943bc"><td class="memItemLeft" align="right" valign="top">SharedMemorySegment &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a7c76ec22ab70d3b7487becd3ec9943bc">shared_memory::get_segment</a> (const std::string &amp;segment_id, const bool clear_upon_destruction=false)</td></tr>
-<tr class="memdesc:a7c76ec22ab70d3b7487becd3ec9943bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">get_segment creates or give back a pointer to a <a class="el" href="classshared__memory_1_1SharedMemorySegment.html" title="The SharedMemorySegment contains the pointers of the shared objects in on shared memrory segment...">SharedMemorySegment</a> object.  <a href="namespaceshared__memory.html#a7c76ec22ab70d3b7487becd3ec9943bc">More...</a><br /></td></tr>
-<tr class="separator:a7c76ec22ab70d3b7487becd3ec9943bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70f7613a247615e323cab083934c803e"><td class="memItemLeft" align="right" valign="top">SegmentInfo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a70f7613a247615e323cab083934c803e">shared_memory::get_segment_info</a> (const std::string &amp;segment_id, const bool clear_upon_destruction=false)</td></tr>
-<tr class="memdesc:a70f7613a247615e323cab083934c803e"><td class="mdescLeft">&#160;</td><td class="mdescRight">performs introspection on the segment and return related information.  <a href="namespaceshared__memory.html#a70f7613a247615e323cab083934c803e">More...</a><br /></td></tr>
-<tr class="separator:a70f7613a247615e323cab083934c803e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a941a195376d94ee95023d4152af655f7"><td class="memItemLeft" align="right" valign="top">SharedMemorySegment &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a941a195376d94ee95023d4152af655f7">shared_memory::get_segment</a> (const std::string &amp;segment_id, const bool clear_upon_destruction=false, const bool create=true)</td></tr>
+<tr class="memdesc:a941a195376d94ee95023d4152af655f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">get_segment creates or give back a pointer to a <a class="el" href="classshared__memory_1_1SharedMemorySegment.html" title="The SharedMemorySegment contains the pointers of the shared objects in on shared memrory segment...">SharedMemorySegment</a> object.  <a href="namespaceshared__memory.html#a941a195376d94ee95023d4152af655f7">More...</a><br /></td></tr>
+<tr class="separator:a941a195376d94ee95023d4152af655f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab984acfe7dba0e5e3f7f8f8483c3833c"><td class="memItemLeft" align="right" valign="top">SegmentInfo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#ab984acfe7dba0e5e3f7f8f8483c3833c">shared_memory::get_segment_info</a> (const std::string &amp;segment_id)</td></tr>
+<tr class="memdesc:ab984acfe7dba0e5e3f7f8f8483c3833c"><td class="mdescLeft">&#160;</td><td class="mdescRight">performs introspection on the segment and return related information.  <a href="namespaceshared__memory.html#ab984acfe7dba0e5e3f7f8f8483c3833c">More...</a><br /></td></tr>
+<tr class="separator:ab984acfe7dba0e5e3f7f8f8483c3833c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82297c2b7b85c57c53578749c9bd6429"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a82297c2b7b85c57c53578749c9bd6429">shared_memory::segment_exists</a> (const std::string &amp;segment_id)</td></tr>
 <tr class="memdesc:a82297c2b7b85c57c53578749c9bd6429"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns true if a segment exists under this id  <a href="namespaceshared__memory.html#a82297c2b7b85c57c53578749c9bd6429">More...</a><br /></td></tr>
 <tr class="separator:a82297c2b7b85c57c53578749c9bd6429"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -247,33 +249,33 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="name
 <tr class="memitem:a562e79433e54463f39c9c276b8440f4b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a562e79433e54463f39c9c276b8440f4b">shared_memory::set</a> (const std::string &amp;segment_id, const std::string &amp;object_id, const std::map&lt; KeyType, ValueType &gt; &amp;set_)</td></tr>
 <tr class="memdesc:a562e79433e54463f39c9c276b8440f4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">set instanciates or get pointer to a std::vector&lt;ElemType&gt; or an Eigen::Matrix&lt;ElemType, any, any&gt; in the shared memory.  <a href="namespaceshared__memory.html#a562e79433e54463f39c9c276b8440f4b">More...</a><br /></td></tr>
 <tr class="separator:a562e79433e54463f39c9c276b8440f4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad017562102dbe044db2de6c79c0669d3"><td class="memTemplParams" colspan="2">template&lt;typename ElemType &gt; </td></tr>
-<tr class="memitem:ad017562102dbe044db2de6c79c0669d3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#ad017562102dbe044db2de6c79c0669d3">shared_memory::get</a> (const std::string &amp;segment_id, const std::string &amp;object_id, ElemType &amp;get_)</td></tr>
-<tr class="memdesc:ad017562102dbe044db2de6c79c0669d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">get gets a pointer to any elementary types in the shared memory.  <a href="namespaceshared__memory.html#ad017562102dbe044db2de6c79c0669d3">More...</a><br /></td></tr>
-<tr class="separator:ad017562102dbe044db2de6c79c0669d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6241b9143a2152b0c0beb784869373c7"><td class="memTemplParams" colspan="2">template&lt;typename ElemType &gt; </td></tr>
-<tr class="memitem:a6241b9143a2152b0c0beb784869373c7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a6241b9143a2152b0c0beb784869373c7">shared_memory::get</a> (const std::string &amp;segment_id, const std::string &amp;object_id, ElemType *get_, const std::size_t expected_size)</td></tr>
-<tr class="memdesc:a6241b9143a2152b0c0beb784869373c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">get gets a pointer to a fixed sized array of the templated type "T" in the shared memory.  <a href="namespaceshared__memory.html#a6241b9143a2152b0c0beb784869373c7">More...</a><br /></td></tr>
-<tr class="separator:a6241b9143a2152b0c0beb784869373c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a952cc446e3dce8fea8cd1ea02613f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a8a952cc446e3dce8fea8cd1ea02613f9">shared_memory::get</a> (const std::string &amp;segment_id, const std::string &amp;object_id, std::string &amp;get_)</td></tr>
-<tr class="memdesc:a8a952cc446e3dce8fea8cd1ea02613f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">get gets a pointer to a string in the shared memory.  <a href="namespaceshared__memory.html#a8a952cc446e3dce8fea8cd1ea02613f9">More...</a><br /></td></tr>
-<tr class="separator:a8a952cc446e3dce8fea8cd1ea02613f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd0ab66344562f5d927dea0d319a6a08"><td class="memTemplParams" colspan="2">template&lt;typename ElemType &gt; </td></tr>
-<tr class="memitem:afd0ab66344562f5d927dea0d319a6a08"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#afd0ab66344562f5d927dea0d319a6a08">shared_memory::get</a> (const std::string &amp;segment_id, const std::string &amp;object_id, std::vector&lt; ElemType &gt; &amp;get_)</td></tr>
-<tr class="memdesc:afd0ab66344562f5d927dea0d319a6a08"><td class="mdescLeft">&#160;</td><td class="mdescRight">get gets a pointer to a std::vector&lt;ElemType&gt; in the shared memory.  <a href="namespaceshared__memory.html#afd0ab66344562f5d927dea0d319a6a08">More...</a><br /></td></tr>
-<tr class="separator:afd0ab66344562f5d927dea0d319a6a08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e230e55e38089aee71cd6df93110174"><td class="memTemplParams" colspan="2">template&lt;typename ElemType &gt; </td></tr>
-<tr class="memitem:a4e230e55e38089aee71cd6df93110174"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a4e230e55e38089aee71cd6df93110174">shared_memory::get</a> (const std::string &amp;segment_id, const std::string &amp;object_id, Eigen::Matrix&lt; ElemType, Eigen::Dynamic, 1 &gt; &amp;get_)</td></tr>
-<tr class="memdesc:a4e230e55e38089aee71cd6df93110174"><td class="mdescLeft">&#160;</td><td class="mdescRight">get gets a pointer to a Eigen::Matrix&lt;ElemType, Eigen::Dynamic, 1&gt; in the shared memory.  <a href="namespaceshared__memory.html#a4e230e55e38089aee71cd6df93110174">More...</a><br /></td></tr>
-<tr class="separator:a4e230e55e38089aee71cd6df93110174"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2579e9a10a16e0fbd006900c618addc8"><td class="memTemplParams" colspan="2">template&lt;typename FirstType , typename SecondType &gt; </td></tr>
-<tr class="memitem:a2579e9a10a16e0fbd006900c618addc8"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a2579e9a10a16e0fbd006900c618addc8">shared_memory::get</a> (const std::string &amp;segment_id, const std::string &amp;object_id, std::pair&lt; FirstType, SecondType &gt; &amp;get_)</td></tr>
-<tr class="memdesc:a2579e9a10a16e0fbd006900c618addc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">get instanciates or get pointer to a std::pair&lt;FirstType, SecondType&gt; in the shared memory.  <a href="namespaceshared__memory.html#a2579e9a10a16e0fbd006900c618addc8">More...</a><br /></td></tr>
-<tr class="separator:a2579e9a10a16e0fbd006900c618addc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add6604c2716e51cdcf17de2439251089"><td class="memTemplParams" colspan="2">template&lt;typename KeyType , typename ValueType &gt; </td></tr>
-<tr class="memitem:add6604c2716e51cdcf17de2439251089"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#add6604c2716e51cdcf17de2439251089">shared_memory::get</a> (const std::string &amp;segment_id, const std::string &amp;object_id, std::map&lt; KeyType, ValueType &gt; &amp;get_)</td></tr>
-<tr class="memdesc:add6604c2716e51cdcf17de2439251089"><td class="mdescLeft">&#160;</td><td class="mdescRight">get gets a pointer to a std::vector&lt;ElemType&gt; or an Eigen::Matrix&lt;ElemType, any, any&gt; in the shared memory.  <a href="namespaceshared__memory.html#add6604c2716e51cdcf17de2439251089">More...</a><br /></td></tr>
-<tr class="separator:add6604c2716e51cdcf17de2439251089"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab96e5cf7502b4bbec7d8f9ca124a9411"><td class="memTemplParams" colspan="2">template&lt;typename ElemType &gt; </td></tr>
+<tr class="memitem:ab96e5cf7502b4bbec7d8f9ca124a9411"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#ab96e5cf7502b4bbec7d8f9ca124a9411">shared_memory::get</a> (const std::string &amp;segment_id, const std::string &amp;object_id, ElemType &amp;get_, bool create=true)</td></tr>
+<tr class="memdesc:ab96e5cf7502b4bbec7d8f9ca124a9411"><td class="mdescLeft">&#160;</td><td class="mdescRight">get gets a pointer to any elementary types in the shared memory.  <a href="namespaceshared__memory.html#ab96e5cf7502b4bbec7d8f9ca124a9411">More...</a><br /></td></tr>
+<tr class="separator:ab96e5cf7502b4bbec7d8f9ca124a9411"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adefa06195ade18f305102aabed24c0ce"><td class="memTemplParams" colspan="2">template&lt;typename ElemType &gt; </td></tr>
+<tr class="memitem:adefa06195ade18f305102aabed24c0ce"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#adefa06195ade18f305102aabed24c0ce">shared_memory::get</a> (const std::string &amp;segment_id, const std::string &amp;object_id, ElemType *get_, const std::size_t expected_size, bool create=true)</td></tr>
+<tr class="memdesc:adefa06195ade18f305102aabed24c0ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">get gets a pointer to a fixed sized array of the templated type "T" in the shared memory.  <a href="namespaceshared__memory.html#adefa06195ade18f305102aabed24c0ce">More...</a><br /></td></tr>
+<tr class="separator:adefa06195ade18f305102aabed24c0ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a792342f467194a202b0d667b1d2adb11"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a792342f467194a202b0d667b1d2adb11">shared_memory::get</a> (const std::string &amp;segment_id, const std::string &amp;object_id, std::string &amp;get_, bool create=true)</td></tr>
+<tr class="memdesc:a792342f467194a202b0d667b1d2adb11"><td class="mdescLeft">&#160;</td><td class="mdescRight">get gets a pointer to a string in the shared memory.  <a href="namespaceshared__memory.html#a792342f467194a202b0d667b1d2adb11">More...</a><br /></td></tr>
+<tr class="separator:a792342f467194a202b0d667b1d2adb11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae55afa82cef34563d33d3af86c07919f"><td class="memTemplParams" colspan="2">template&lt;typename ElemType &gt; </td></tr>
+<tr class="memitem:ae55afa82cef34563d33d3af86c07919f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#ae55afa82cef34563d33d3af86c07919f">shared_memory::get</a> (const std::string &amp;segment_id, const std::string &amp;object_id, std::vector&lt; ElemType &gt; &amp;get_, bool create=true)</td></tr>
+<tr class="memdesc:ae55afa82cef34563d33d3af86c07919f"><td class="mdescLeft">&#160;</td><td class="mdescRight">get gets a pointer to a std::vector&lt;ElemType&gt; in the shared memory.  <a href="namespaceshared__memory.html#ae55afa82cef34563d33d3af86c07919f">More...</a><br /></td></tr>
+<tr class="separator:ae55afa82cef34563d33d3af86c07919f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2f19bd39f7680ecc6c6088aa4cf909a"><td class="memTemplParams" colspan="2">template&lt;typename ElemType &gt; </td></tr>
+<tr class="memitem:ab2f19bd39f7680ecc6c6088aa4cf909a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#ab2f19bd39f7680ecc6c6088aa4cf909a">shared_memory::get</a> (const std::string &amp;segment_id, const std::string &amp;object_id, Eigen::Matrix&lt; ElemType, Eigen::Dynamic, 1 &gt; &amp;get_, bool create=true)</td></tr>
+<tr class="memdesc:ab2f19bd39f7680ecc6c6088aa4cf909a"><td class="mdescLeft">&#160;</td><td class="mdescRight">get gets a pointer to a Eigen::Matrix&lt;ElemType, Eigen::Dynamic, 1&gt; in the shared memory.  <a href="namespaceshared__memory.html#ab2f19bd39f7680ecc6c6088aa4cf909a">More...</a><br /></td></tr>
+<tr class="separator:ab2f19bd39f7680ecc6c6088aa4cf909a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5c3aba4f2960db86723fa522ff22157"><td class="memTemplParams" colspan="2">template&lt;typename FirstType , typename SecondType &gt; </td></tr>
+<tr class="memitem:aa5c3aba4f2960db86723fa522ff22157"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#aa5c3aba4f2960db86723fa522ff22157">shared_memory::get</a> (const std::string &amp;segment_id, const std::string &amp;object_id, std::pair&lt; FirstType, SecondType &gt; &amp;get_, bool create=true)</td></tr>
+<tr class="memdesc:aa5c3aba4f2960db86723fa522ff22157"><td class="mdescLeft">&#160;</td><td class="mdescRight">get instanciates or get pointer to a std::pair&lt;FirstType, SecondType&gt; in the shared memory.  <a href="namespaceshared__memory.html#aa5c3aba4f2960db86723fa522ff22157">More...</a><br /></td></tr>
+<tr class="separator:aa5c3aba4f2960db86723fa522ff22157"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59795a44d134c89c15a4b6ea5e8ed0aa"><td class="memTemplParams" colspan="2">template&lt;typename KeyType , typename ValueType &gt; </td></tr>
+<tr class="memitem:a59795a44d134c89c15a4b6ea5e8ed0aa"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a59795a44d134c89c15a4b6ea5e8ed0aa">shared_memory::get</a> (const std::string &amp;segment_id, const std::string &amp;object_id, std::map&lt; KeyType, ValueType &gt; &amp;get_, bool create=true)</td></tr>
+<tr class="memdesc:a59795a44d134c89c15a4b6ea5e8ed0aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">get gets a pointer to a std::vector&lt;ElemType&gt; or an Eigen::Matrix&lt;ElemType, any, any&gt; in the shared memory.  <a href="namespaceshared__memory.html#a59795a44d134c89c15a4b6ea5e8ed0aa">More...</a><br /></td></tr>
+<tr class="separator:a59795a44d134c89c15a4b6ea5e8ed0aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a003005dc269ebf79f08523dc0f8d1ed0"><td class="memTemplParams" colspan="2">template&lt;class Serializable &gt; </td></tr>
 <tr class="memitem:a003005dc269ebf79f08523dc0f8d1ed0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a003005dc269ebf79f08523dc0f8d1ed0">shared_memory::serialize</a> (const std::string &amp;segment, const std::string &amp;object, const <a class="el" href="classSerializable.html">Serializable</a> &amp;serializable)</td></tr>
 <tr class="memdesc:a003005dc269ebf79f08523dc0f8d1ed0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize the instance into a string which is written in the shared memory.  <a href="namespaceshared__memory.html#a003005dc269ebf79f08523dc0f8d1ed0">More...</a><br /></td></tr>
@@ -285,6 +287,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="name
 <tr class="memitem:afe26d531f043f59bb36ea7816b8a40bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#afe26d531f043f59bb36ea7816b8a40bf">shared_memory::set_verbose</a> (bool mode)</td></tr>
 <tr class="memdesc:afe26d531f043f59bb36ea7816b8a40bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">if verbose mode set to true (starting default is false), informaton about newly created objects will be displayed in the terminal.  <a href="namespaceshared__memory.html#afe26d531f043f59bb36ea7816b8a40bf">More...</a><br /></td></tr>
 <tr class="separator:afe26d531f043f59bb36ea7816b8a40bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b545392909d96de216b656a4eadc560"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__memory.html#a2b545392909d96de216b656a4eadc560">shared_memory::wait_for_segment</a> (const std::string &amp;segment_id, int timeout_ms=-1)</td></tr>
+<tr class="memdesc:a2b545392909d96de216b656a4eadc560"><td class="mdescLeft">&#160;</td><td class="mdescRight">wait until the segment is created either via call to a get or set function.  <a href="namespaceshared__memory.html#a2b545392909d96de216b656a4eadc560">More...</a><br /></td></tr>
+<tr class="separator:a2b545392909d96de216b656a4eadc560"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This file declares a class that is used for shared memory segment introspection (e.g. used and free memory) </p>
@@ -292,13 +297,13 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="name
 <dl class="section author"><dt>Author</dt><dd>Vincent Berenz </dd>
 <dd>
 Maximilien Naveau (<a href="#" onclick="location.href='mai'+'lto:'+'max'+'im'+'ili'+'en'+'.na'+'ve'+'au@'+'gm'+'ail'+'.c'+'om'; return false;">maxim<span style="display: none;">.nosp@m.</span>ilie<span style="display: none;">.nosp@m.</span>n.nav<span style="display: none;">.nosp@m.</span>eau@<span style="display: none;">.nosp@m.</span>gmail<span style="display: none;">.nosp@m.</span>.com</a>) </dd></dl>
-<dl class="license"><dt><b><a class="el" href="license.html#_license000023">License:</a></b></dt><dd>License BSD-3-Clause </dd></dl>
+<dl class="license"><dt><b><a class="el" href="license.html#_license000026">License:</a></b></dt><dd>License BSD-3-Clause </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2019, New York University and Max Planck Gesellschaft. </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2019-05-22</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Vincent Berenz </dd>
 <dd>
 Maximilien Naveau (<a href="#" onclick="location.href='mai'+'lto:'+'max'+'im'+'ili'+'en'+'.na'+'ve'+'au@'+'gm'+'ail'+'.c'+'om'; return false;">maxim<span style="display: none;">.nosp@m.</span>ilie<span style="display: none;">.nosp@m.</span>n.nav<span style="display: none;">.nosp@m.</span>eau@<span style="display: none;">.nosp@m.</span>gmail<span style="display: none;">.nosp@m.</span>.com</a>) </dd></dl>
-<dl class="license"><dt><b><a class="el" href="license.html#_license000027">License:</a></b></dt><dd>License BSD-3-Clause </dd></dl>
+<dl class="license"><dt><b><a class="el" href="license.html#_license000030">License:</a></b></dt><dd>License BSD-3-Clause </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2019, New York University and Max Planck Gesellschaft. </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2019-05-22 </dd></dl>
 </div></div><!-- contents -->

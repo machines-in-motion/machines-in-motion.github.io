@@ -11,6 +11,7 @@ var namespaceshared__memory =
     [ "LockedConditionVariable", "classshared__memory_1_1LockedConditionVariable.html", "classshared__memory_1_1LockedConditionVariable" ],
     [ "Memory_overflow_exception", "classshared__memory_1_1Memory__overflow__exception.html", "classshared__memory_1_1Memory__overflow__exception" ],
     [ "Mutex", "classshared__memory_1_1Mutex.html", "classshared__memory_1_1Mutex" ],
+    [ "Non_existing_segment_exception", "classshared__memory_1_1Non__existing__segment__exception.html", "classshared__memory_1_1Non__existing__segment__exception" ],
     [ "Not_consumed_exception", "classshared__memory_1_1Not__consumed__exception.html", "classshared__memory_1_1Not__consumed__exception" ],
     [ "SegmentInfo", "classshared__memory_1_1SegmentInfo.html", "classshared__memory_1_1SegmentInfo" ],
     [ "Serializable_exchange", "classshared__memory_1_1Serializable__exchange.html", "classshared__memory_1_1Serializable__exchange" ],

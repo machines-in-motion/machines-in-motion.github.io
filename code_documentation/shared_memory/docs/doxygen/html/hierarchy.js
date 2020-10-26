@@ -8,6 +8,7 @@ var hierarchy =
     [ "exception", null, [
       [ "shared_memory::Allocation_exception", "classshared__memory_1_1Allocation__exception.html", null ],
       [ "shared_memory::Memory_overflow_exception", "classshared__memory_1_1Memory__overflow__exception.html", null ],
+      [ "shared_memory::Non_existing_segment_exception", "classshared__memory_1_1Non__existing__segment__exception.html", null ],
       [ "shared_memory::Not_consumed_exception", "classshared__memory_1_1Not__consumed__exception.html", null ],
       [ "shared_memory::Unexpected_map_key< Key >", "classshared__memory_1_1Unexpected__map__key.html", null ],
       [ "shared_memory::Unexpected_size_exception", "classshared__memory_1_1Unexpected__size__exception.html", null ]
