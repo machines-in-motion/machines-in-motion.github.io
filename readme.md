@@ -1,5 +1,3 @@
-`build token` `unit test token`
-
 Readme
 ------
 
