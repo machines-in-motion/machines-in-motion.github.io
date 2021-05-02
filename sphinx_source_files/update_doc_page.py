@@ -61,8 +61,7 @@ def update_index_rst():
             second_column[i + 1] = (
                 "`api doc "
                 + "<"
-                + "https://machines-in-motion.github.io/"
-                + "code_documentation/"
+                + "./code_documentation/"
                 + package_name
                 + "/documentation/index.html>`_"
             )
@@ -73,8 +72,7 @@ def update_index_rst():
             third_column[i + 1] = (
                 "`coverage "
                 + "<"
-                + "https://machines-in-motion.github.io/"
-                + "code_documentation/"
+                + "./code_documentation/"
                 + package_name
                 + "/coverage/index.html>`_"
             )
