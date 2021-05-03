@@ -1,0 +1,310 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>&lt;no title&gt; &mdash; mpi_cmake_modules 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+    <link rel="canonical" href="https://machines-in-motion.github.io/code_documentation/mpi_cmake_modules/cmake/find_modules/XenomaiConfig.html" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> mpi_cmake_modules
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Welcome to mpi_cmake_modules’s documentation!</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../general_documentation.html">General Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../doxygen_index.html">C++ API</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">mpi_cmake_modules</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cmake_doc.html">CMake API</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">mpi_cmake_modules</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>&lt;no title&gt;</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/cmake/find_modules/XenomaiConfig.cmake.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p># (C) Copyright 2005-2012 Johns Hopkins University (JHU), All Rights
+# Reserved.
+#
+# — begin cisst license - do not edit —
+#
+# This software is provided “as is” under an open source license, with
+# no warranty.  The complete license can be found in license.txt and
+# <a class="reference external" href="http://www.cisst.org/cisst/license.txt">http://www.cisst.org/cisst/license.txt</a>.
+#
+# — end cisst license —</p>
+<p>#.rst:
+#
+# Find the Xenamai library. Usage::
+#
+#    find_package(Xenomai REQUIRED)
+#</p>
+<p>if( UNIX )</p>
+<blockquote>
+<div><p># set the search paths
+set( Xenomai_SEARCH_PATH /usr/local /usr $ENV{XENOMAI_ROOT_DIR})</p>
+<p># find xeno_config.h
+find_path( Xenomai_INCLUDE_DIR</p>
+<blockquote>
+<div><p>xeno_config.h
+PATHS ${Xenomai_SEARCH_PATH}
+PATH_SUFFIXES xenomai include xenomai/include include/xenomai
+)</p>
+</div></blockquote>
+<p># did we find xeno_config.h?
+if(Xenomai_INCLUDE_DIR)</p>
+<blockquote>
+<div><p>MESSAGE(STATUS “xenomai found: &quot;${Xenomai_INCLUDE_DIR}&quot;”)</p>
+<p># set the root directory
+if( “${Xenomai_INCLUDE_DIR}” MATCHES “/usr/include/xenomai” )</p>
+<blockquote>
+<div><p># on ubuntu linux, xenomai install is not rooted to a single dir
+set( Xenomai_ROOT_DIR /usr)
+set( Xenomai_INCLUDE_POSIX_DIR ${Xenomai_INCLUDE_DIR}/posix )</p>
+</div></blockquote>
+<dl class="simple">
+<dt>else()</dt><dd><p># elsewhere, xenomai install is packaged
+get_filename_component(Xenomai_ROOT_DIR ${Xenomai_INCLUDE_DIR} PATH)
+set( Xenomai_INCLUDE_POSIX_DIR ${Xenomai_ROOT_DIR}/include/posix )</p>
+</dd>
+</dl>
+<p>endif()</p>
+<p># Find xeno-config
+find_program(Xenomai_XENO_CONFIG NAMES xeno-config  PATHS ${Xenomai_ROOT_DIR}/bin NO_DEFAULT_PATH)</p>
+<p># get version
+execute_process(COMMAND ${Xenomai_XENO_CONFIG} –version OUTPUT_VARIABLE Xenomai_VERSION)</p>
+<p># find the xenomai pthread library
+find_library( Xenomai_LIBRARY_NATIVE  native  ${Xenomai_ROOT_DIR}/lib )
+find_library( Xenomai_LIBRARY_XENOMAI xenomai ${Xenomai_ROOT_DIR}/lib )
+find_library( Xenomai_LIBRARY_PTHREAD_RT pthread_rt rtdm ${Xenomai_ROOT_DIR}/lib )
+find_library( Xenomai_LIBRARY_RTDM    rtdm    ${Xenomai_ROOT_DIR}/lib )
+if(“${Xenomai_VERSION}” VERSION_LESS “2.6”)</p>
+<blockquote>
+<div><p>find_library( Xenomai_LIBRARY_RTDK    rtdk    ${Xenomai_ROOT_DIR}/lib )</p>
+</div></blockquote>
+<p>endif()</p>
+<p>set(Xenomai_LIBRARIES_NATIVE ${Xenomai_LIBRARY_NATIVE} ${Xenomai_LIBRARY_XENOMAI} pthread)
+set(Xenomai_LIBRARIES_POSIX ${Xenomai_LIBRARY_PTHREAD_RT} ${Xenomai_LIBRARY_XENOMAI} pthread rt)</p>
+<p># Linker flags for the posix wrappers
+set(Xenomai_LDFLAGS_NATIVE “”)#”-lnative -lxenomai -lpthread -lrt”)
+set(Xenomai_LDFLAGS_POSIX “-Wl,&#64;${Xenomai_ROOT_DIR}/lib/posix.wrappers”)#-lpthread_rt -lxenomai -lpthread -lrt”)</p>
+<p># add compile/preprocess options
+set(Xenomai_DEFINITIONS -D_GNU_SOURCE -D_REENTRANT -pipe -D__XENO__)
+set(Xenomai_DEFINITIONS_POSIX ${Xenomai_DEFINITIONS})</p>
+<p># set the library dirs
+set( Xenomai_LIBRARY_DIRS ${Xenomai_ROOT_DIR}/lib )</p>
+</div></blockquote>
+<dl class="simple">
+<dt>else( )</dt><dd><p>MESSAGE(STATUS “xenomai NOT found. (${Xenomai_SEARCH_PATH})”)</p>
+</dd>
+</dl>
+<p>endif( )</p>
+</div></blockquote>
+<p>endif( UNIX )</p>
+<p>include(FindPackageHandleStandardArgs)</p>
+<dl class="simple">
+<dt>set(Xenomai_REQUIRED_VARS</dt><dd><p>Xenomai_ROOT_DIR
+Xenomai_LIBRARY_NATIVE
+Xenomai_LIBRARY_XENOMAI
+Xenomai_LIBRARY_PTHREAD_RT
+Xenomai_LIBRARY_RTDM
+Xenomai_VERSION
+)</p>
+</dd>
+<dt>if(“${Xenomai_VERSION}” VERSION_LESS “2.6”)</dt><dd><p>set(Xenomai_REQUIRED_VARS ${Xenomai_REQUIRED_VARS} Xenomai_LIBRARY_RTDK)</p>
+</dd>
+</dl>
+<p>endif()</p>
+<p>find_package_handle_standard_args(Xenomai DEFAULT_MSG ${Xenomai_REQUIRED_VARS})</p>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright Copyright (c) 2021, See license.txt file or the license section..
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
