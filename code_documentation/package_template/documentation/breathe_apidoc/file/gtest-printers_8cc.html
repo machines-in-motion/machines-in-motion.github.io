@@ -1,0 +1,652 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>File gtest-printers.cc &mdash; package_template 2.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+    <link rel="canonical" href="https://machines-in-motion.github.io/code_documentation/package_template/breathe_apidoc/file/gtest-printers_8cc.html" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="File gtest-test-part.cc" href="gtest-test-part_8cc.html" />
+    <link rel="prev" title="File gtest-port.cc" href="gtest-port_8cc.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> package_template
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Welcome to package_template’s documentation!</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#package-template">package_template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#general-documentation">General Documentation</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html#c-api">C++ API</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../doxygen_index.html">C++ API</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../classlist.html">Class list</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../filelist.html">File list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../grouplist.html">Group list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../doxygen_index_one_page.html">C++ API and example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#python-api">Python API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#indices-and-tables">Indices and Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#id3">License and Copyrights</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../general_documentation.html">General Documentation</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../doxygen_index.html">C++ API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../classlist.html">Class list</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../filelist.html">File list</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="basic__pid_8cpp.html">File basic_pid.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="default__configuration_8cpp.html">File default_configuration.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="default__configuration_8hpp.html">File default_configuration.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo__pid_8cpp.html">File demo_pid.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo__pid__load__from__file_8cpp.html">File demo_pid_load_from_file.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file__configuration_8cpp.html">File file_configuration.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file__configuration_8hpp.html">File file_configuration.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gains__configuration_8cpp.html">File gains_configuration.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gains__configuration_8hpp.html">File gains_configuration.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gmock-actions__test_8cc.html">File gmock-actions_test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gmock-all_8cc.html">File gmock-all.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gmock-cardinalities_8cc.html">File gmock-cardinalities.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gmock-cardinalities__test_8cc.html">File gmock-cardinalities_test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gmock-function-mocker__test_8cc.html">File gmock-function-mocker_test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gmock-internal-utils_8cc.html">File gmock-internal-utils.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gmock-internal-utils__test_8cc.html">File gmock-internal-utils_test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gmock-matchers_8cc.html">File gmock-matchers.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gmock-matchers__test_8cc.html">File gmock-matchers_test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gmock-more-actions__test_8cc.html">File gmock-more-actions_test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gmock-nice-strict__test_8cc.html">File gmock-nice-strict_test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gmock-port__test_8cc.html">File gmock-port_test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gmock-pp-string__test_8cc.html">File gmock-pp-string_test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gmock-pp__test_8cc.html">File gmock-pp_test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gmock-spec-builders_8cc.html">File gmock-spec-builders.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gmock-spec-builders__test_8cc.html">File gmock-spec-builders_test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gmock_8cc.html">File gmock.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gmock__all__test_8cc.html">File gmock_all_test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gmock__ex__test_8cc.html">File gmock_ex_test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gmock__leak__test___8cc.html">File gmock_leak_test_.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gmock__link2__test_8cc.html">File gmock_link2_test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gmock__link__test_8cc.html">File gmock_link_test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gmock__link__test_8h.html">File gmock_link_test.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gmock__main_8cc.html">File gmock_main.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gmock__output__test___8cc.html">File gmock_output_test_.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gmock__stress__test_8cc.html">File gmock_stress_test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gmock__test_8cc.html">File gmock_test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="googletest-break-on-failure-unittest___8cc.html">File googletest-break-on-failure-unittest_.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="googletest-catch-exceptions-test___8cc.html">File googletest-catch-exceptions-test_.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="googletest-color-test___8cc.html">File googletest-color-test_.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="googletest-death-test-test_8cc.html">File googletest-death-test-test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="googletest-death-test__ex__test_8cc.html">File googletest-death-test_ex_test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="googletest-env-var-test___8cc.html">File googletest-env-var-test_.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="googletest-failfast-unittest___8cc.html">File googletest-failfast-unittest_.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="googletest-filepath-test_8cc.html">File googletest-filepath-test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="googletest-filter-unittest___8cc.html">File googletest-filter-unittest_.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="googletest-global-environment-unittest___8cc.html">File googletest-global-environment-unittest_.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="googletest-list-tests-unittest___8cc.html">File googletest-list-tests-unittest_.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="googletest-listener-test_8cc.html">File googletest-listener-test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="googletest-message-test_8cc.html">File googletest-message-test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="googletest-options-test_8cc.html">File googletest-options-test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="googletest-output-test___8cc.html">File googletest-output-test_.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="googletest-param-test-invalid-name1-test___8cc.html">File googletest-param-test-invalid-name1-test_.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="googletest-param-test-invalid-name2-test___8cc.html">File googletest-param-test-invalid-name2-test_.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="googletest-param-test-test_8cc.html">File googletest-param-test-test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="googletest-param-test-test_8h.html">File googletest-param-test-test.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="googletest-param-test2-test_8cc.html">File googletest-param-test2-test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="googletest-port-test_8cc.html">File googletest-port-test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="googletest-printers-test_8cc.html">File googletest-printers-test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="googletest-setuptestsuite-test___8cc.html">File googletest-setuptestsuite-test_.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="googletest-shuffle-test___8cc.html">File googletest-shuffle-test_.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="googletest-test-part-test_8cc.html">File googletest-test-part-test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="googletest-throw-on-failure-test___8cc.html">File googletest-throw-on-failure-test_.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="googletest-uninitialized-test___8cc.html">File googletest-uninitialized-test_.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest-all_8cc.html">File gtest-all.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest-death-test_8cc.html">File gtest-death-test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest-filepath_8cc.html">File gtest-filepath.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest-internal-inl_8h.html">File gtest-internal-inl.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest-matchers_8cc.html">File gtest-matchers.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest-port_8cc.html">File gtest-port.cc</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">File gtest-printers.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest-test-part_8cc.html">File gtest-test-part.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest-typed-test2__test_8cc.html">File gtest-typed-test2_test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest-typed-test_8cc.html">File gtest-typed-test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest-typed-test__test_8cc.html">File gtest-typed-test_test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest-typed-test__test_8h.html">File gtest-typed-test_test.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest-unittest-api__test_8cc.html">File gtest-unittest-api_test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest_8cc.html">File gtest.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest__all__test_8cc.html">File gtest_all_test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest__assert__by__exception__test_8cc.html">File gtest_assert_by_exception_test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest__environment__test_8cc.html">File gtest_environment_test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest__help__test___8cc.html">File gtest_help_test_.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest__list__output__unittest___8cc.html">File gtest_list_output_unittest_.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest__main_8cc.html">File gtest_main.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest__main__unittest_8cc.html">File gtest_main_unittest.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest__no__test__unittest_8cc.html">File gtest_no_test_unittest.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest__pred__impl__unittest_8cc.html">File gtest_pred_impl_unittest.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest__premature__exit__test_8cc.html">File gtest_premature_exit_test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest__prod__test_8cc.html">File gtest_prod_test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest__repeat__test_8cc.html">File gtest_repeat_test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest__skip__in__environment__setup__test_8cc.html">File gtest_skip_in_environment_setup_test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest__skip__test_8cc.html">File gtest_skip_test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest__sole__header__test_8cc.html">File gtest_sole_header_test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest__stress__test_8cc.html">File gtest_stress_test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest__test__macro__stack__footprint__test_8cc.html">File gtest_test_macro_stack_footprint_test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest__testbridge__test___8cc.html">File gtest_testbridge_test_.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest__throw__on__failure__ex__test_8cc.html">File gtest_throw_on_failure_ex_test.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest__unittest_8cc.html">File gtest_unittest.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest__xml__outfile1__test___8cc.html">File gtest_xml_outfile1_test_.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest__xml__outfile2__test___8cc.html">File gtest_xml_outfile2_test_.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtest__xml__output__unittest___8cc.html">File gtest_xml_output_unittest_.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2googletest-distribution_2include_2gmock_2gmock-actions_8h.html">File gmock-actions.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2googletest-distribution_2include_2gmock_2gmock-cardinalities_8h.html">File gmock-cardinalities.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2googletest-distribution_2include_2gmock_2gmock-function-mocker_8h.html">File gmock-function-mocker.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2googletest-distribution_2include_2gmock_2gmock-matchers_8h.html">File gmock-matchers.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2googletest-distribution_2include_2gmock_2gmock-more-actions_8h.html">File gmock-more-actions.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2googletest-distribution_2include_2gmock_2gmock-more-matchers_8h.html">File gmock-more-matchers.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2googletest-distribution_2include_2gmock_2gmock-nice-strict_8h.html">File gmock-nice-strict.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2googletest-distribution_2include_2gmock_2gmock-spec-builders_8h.html">File gmock-spec-builders.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2googletest-distribution_2include_2gmock_2gmock_8h.html">File gmock.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2googletest-distribution_2include_2gtest_2gtest-death-test_8h.html">File gtest-death-test.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2googletest-distribution_2include_2gtest_2gtest-matchers_8h.html">File gtest-matchers.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2googletest-distribution_2include_2gtest_2gtest-message_8h.html">File gtest-message.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2googletest-distribution_2include_2gtest_2gtest-param-test_8h.html">File gtest-param-test.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2googletest-distribution_2include_2gtest_2gtest-printers_8h.html">File gtest-printers.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2googletest-distribution_2include_2gtest_2gtest-spi_8h.html">File gtest-spi.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2googletest-distribution_2include_2gtest_2gtest-test-part_8h.html">File gtest-test-part.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2googletest-distribution_2include_2gtest_2gtest-typed-test_8h.html">File gtest-typed-test.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2googletest-distribution_2include_2gtest_2gtest_8h.html">File gtest.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2googletest-distribution_2include_2gtest_2gtest__pred__impl_8h.html">File gtest_pred_impl.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2googletest-distribution_2include_2gtest_2gtest__prod_8h.html">File gtest_prod.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2pybind11_2include_2pybind11_2attr_8h.html">File attr.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2pybind11_2include_2pybind11_2buffer__info_8h.html">File buffer_info.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2pybind11_2include_2pybind11_2cast_8h.html">File cast.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2pybind11_2include_2pybind11_2chrono_8h.html">File chrono.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2pybind11_2include_2pybind11_2common_8h.html">File common.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2pybind11_2include_2pybind11_2complex_8h.html">File complex.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2pybind11_2include_2pybind11_2detail_2class_8h.html">File class.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2pybind11_2include_2pybind11_2detail_2common_8h.html">File common.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2pybind11_2include_2pybind11_2detail_2descr_8h.html">File descr.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2pybind11_2include_2pybind11_2detail_2init_8h.html">File init.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2pybind11_2include_2pybind11_2detail_2internals_8h.html">File internals.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2pybind11_2include_2pybind11_2detail_2typeid_8h.html">File typeid.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2pybind11_2include_2pybind11_2eigen_8h.html">File eigen.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2pybind11_2include_2pybind11_2embed_8h.html">File embed.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2pybind11_2include_2pybind11_2eval_8h.html">File eval.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2pybind11_2include_2pybind11_2functional_8h.html">File functional.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2pybind11_2include_2pybind11_2iostream_8h.html">File iostream.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2pybind11_2include_2pybind11_2numpy_8h.html">File numpy.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2pybind11_2include_2pybind11_2operators_8h.html">File operators.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2pybind11_2include_2pybind11_2options_8h.html">File options.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2pybind11_2include_2pybind11_2pybind11_8h.html">File pybind11.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2pybind11_2include_2pybind11_2pytypes_8h.html">File pytypes.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2pybind11_2include_2pybind11_2stl_8h.html">File stl.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2pybind11_2include_2pybind11_2stl__bind_8h.html">File stl_bind.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2yaml__utils_2include_2yaml__utils_2yaml__cpp__fwd_8hpp.html">File yaml_cpp_fwd.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2yaml__utils_2include_2yaml__utils_2yaml__eigen_8hpp.html">File yaml_eigen.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install_2yaml__utils_2include_2yaml__utils_2yaml__tools_8hpp.html">File yaml_tools.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pid_8cpp.html">File pid.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pid_8hpp.html">File pid.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="prime__tables_8h.html">File prime_tables.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="production_8cc.html">File production.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="production_8h.html">File production.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rosparameters__configuration_8cpp.html">File rosparameters_configuration.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rosparameters__configuration_8hpp.html">File rosparameters_configuration.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sample10__unittest_8cc.html">File sample10_unittest.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sample1_8cc.html">File sample1.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sample1_8h.html">File sample1.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sample1__unittest_8cc.html">File sample1_unittest.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sample2_8cc.html">File sample2.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sample2_8h.html">File sample2.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sample2__unittest_8cc.html">File sample2_unittest.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sample3-inl_8h.html">File sample3-inl.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sample3__unittest_8cc.html">File sample3_unittest.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sample4_8cc.html">File sample4.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sample4_8h.html">File sample4.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sample4__unittest_8cc.html">File sample4_unittest.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sample5__unittest_8cc.html">File sample5_unittest.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sample6__unittest_8cc.html">File sample6_unittest.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sample7__unittest_8cc.html">File sample7_unittest.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sample8__unittest_8cc.html">File sample8_unittest.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sample9__unittest_8cc.html">File sample9_unittest.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2googletest_2googlemock_2include_2gmock_2gmock-actions_8h.html">File gmock-actions.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2googletest_2googlemock_2include_2gmock_2gmock-cardinalities_8h.html">File gmock-cardinalities.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2googletest_2googlemock_2include_2gmock_2gmock-function-mocker_8h.html">File gmock-function-mocker.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2googletest_2googlemock_2include_2gmock_2gmock-matchers_8h.html">File gmock-matchers.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2googletest_2googlemock_2include_2gmock_2gmock-more-actions_8h.html">File gmock-more-actions.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2googletest_2googlemock_2include_2gmock_2gmock-more-matchers_8h.html">File gmock-more-matchers.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2googletest_2googlemock_2include_2gmock_2gmock-nice-strict_8h.html">File gmock-nice-strict.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2googletest_2googlemock_2include_2gmock_2gmock-spec-builders_8h.html">File gmock-spec-builders.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2googletest_2googlemock_2include_2gmock_2gmock_8h.html">File gmock.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2googletest_2googletest_2include_2gtest_2gtest-death-test_8h.html">File gtest-death-test.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2googletest_2googletest_2include_2gtest_2gtest-matchers_8h.html">File gtest-matchers.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2googletest_2googletest_2include_2gtest_2gtest-message_8h.html">File gtest-message.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2googletest_2googletest_2include_2gtest_2gtest-param-test_8h.html">File gtest-param-test.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2googletest_2googletest_2include_2gtest_2gtest-printers_8h.html">File gtest-printers.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2googletest_2googletest_2include_2gtest_2gtest-spi_8h.html">File gtest-spi.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2googletest_2googletest_2include_2gtest_2gtest-test-part_8h.html">File gtest-test-part.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2googletest_2googletest_2include_2gtest_2gtest-typed-test_8h.html">File gtest-typed-test.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2googletest_2googletest_2include_2gtest_2gtest_8h.html">File gtest.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2googletest_2googletest_2include_2gtest_2gtest__pred__impl_8h.html">File gtest_pred_impl.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2googletest_2googletest_2include_2gtest_2gtest__prod_8h.html">File gtest_prod.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2pybind11_2include_2pybind11_2attr_8h.html">File attr.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2pybind11_2include_2pybind11_2buffer__info_8h.html">File buffer_info.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2pybind11_2include_2pybind11_2cast_8h.html">File cast.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2pybind11_2include_2pybind11_2chrono_8h.html">File chrono.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2pybind11_2include_2pybind11_2common_8h.html">File common.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2pybind11_2include_2pybind11_2complex_8h.html">File complex.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2pybind11_2include_2pybind11_2detail_2class_8h.html">File class.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2pybind11_2include_2pybind11_2detail_2common_8h.html">File common.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2pybind11_2include_2pybind11_2detail_2descr_8h.html">File descr.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2pybind11_2include_2pybind11_2detail_2init_8h.html">File init.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2pybind11_2include_2pybind11_2detail_2internals_8h.html">File internals.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2pybind11_2include_2pybind11_2detail_2typeid_8h.html">File typeid.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2pybind11_2include_2pybind11_2eigen_8h.html">File eigen.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2pybind11_2include_2pybind11_2embed_8h.html">File embed.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2pybind11_2include_2pybind11_2eval_8h.html">File eval.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2pybind11_2include_2pybind11_2functional_8h.html">File functional.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2pybind11_2include_2pybind11_2iostream_8h.html">File iostream.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2pybind11_2include_2pybind11_2numpy_8h.html">File numpy.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2pybind11_2include_2pybind11_2operators_8h.html">File operators.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2pybind11_2include_2pybind11_2options_8h.html">File options.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2pybind11_2include_2pybind11_2pybind11_8h.html">File pybind11.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2pybind11_2include_2pybind11_2pytypes_8h.html">File pytypes.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2pybind11_2include_2pybind11_2stl_8h.html">File stl.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2pybind11_2include_2pybind11_2stl__bind_8h.html">File stl_bind.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2yaml__utils_2include_2yaml__utils_2yaml__cpp__fwd_8hpp.html">File yaml_cpp_fwd.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2yaml__utils_2include_2yaml__utils_2yaml__eigen_8hpp.html">File yaml_eigen.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src_2yaml__utils_2include_2yaml__utils_2yaml__tools_8hpp.html">File yaml_tools.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wrappers_8cpp.html">File wrappers.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../grouplist.html">Group list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../doxygen_index_one_page.html">C++ API and example</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">package_template</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">package_template</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../doxygen_index.html">C++ API</a> &raquo;</li>
+        
+          <li><a href="../filelist.html">File list</a> &raquo;</li>
+        
+      <li>File gtest-printers.cc</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/breathe_apidoc/file/gtest-printers_8cc.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="file-gtest-printers-cc">
+<h1>File gtest-printers.cc<a class="headerlink" href="#file-gtest-printers-cc" title="Permalink to this headline">¶</a></h1>
+<dl class="cpp type">
+<dt id="_CPPv47testing">
+<span id="_CPPv37testing"></span><span id="_CPPv27testing"></span><span id="testing"></span><span class="target" id="namespacetesting"></span><em class="property"><span class="pre">namespace</span> </em><code class="sig-name descname"><span class="pre">testing</span></code><br /></dt>
+<dd><dl class="cpp type">
+<dt id="_CPPv4N7testing8internalE">
+<span id="_CPPv3N7testing8internalE"></span><span id="_CPPv2N7testing8internalE"></span><span id="testing::internal"></span><span class="target" id="namespacetesting_1_1internal"></span><em class="property"><span class="pre">namespace</span> </em><code class="sig-name descname"><span class="pre">internal</span></code><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-enums">Enums</p>
+<dl class="cpp enum">
+<dt id="_CPPv4N7testing8internal10CharFormatE">
+<span id="_CPPv3N7testing8internal10CharFormatE"></span><span id="_CPPv2N7testing8internal10CharFormatE"></span><span class="target" id="namespacetesting_1_1internal_1ae2ef98247c76a50cdc80ceb4a6c81793"></span><em class="property"><span class="pre">enum</span> </em><code class="sig-name descname"><span class="pre">CharFormat</span></code><a class="headerlink" href="#_CPPv4N7testing8internal10CharFormatE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N7testing8internal10CharFormat5kAsIsE">
+<span id="_CPPv3N7testing8internal10CharFormat5kAsIsE"></span><span id="_CPPv2N7testing8internal10CharFormat5kAsIsE"></span><span class="target" id="namespacetesting_1_1internal_1ae2ef98247c76a50cdc80ceb4a6c81793af7038866be92e9978360b831e376ffaa"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">kAsIs</span></code><a class="headerlink" href="#_CPPv4N7testing8internal10CharFormat5kAsIsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N7testing8internal10CharFormat10kHexEscapeE">
+<span id="_CPPv3N7testing8internal10CharFormat10kHexEscapeE"></span><span id="_CPPv2N7testing8internal10CharFormat10kHexEscapeE"></span><span class="target" id="namespacetesting_1_1internal_1ae2ef98247c76a50cdc80ceb4a6c81793aebfa5293302338a8e8678744c103f113"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">kHexEscape</span></code><a class="headerlink" href="#_CPPv4N7testing8internal10CharFormat10kHexEscapeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N7testing8internal10CharFormat14kSpecialEscapeE">
+<span id="_CPPv3N7testing8internal10CharFormat14kSpecialEscapeE"></span><span id="_CPPv2N7testing8internal10CharFormat14kSpecialEscapeE"></span><span class="target" id="namespacetesting_1_1internal_1ae2ef98247c76a50cdc80ceb4a6c81793ae1211108e9f35f891d9951da64794d03"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">kSpecialEscape</span></code><a class="headerlink" href="#_CPPv4N7testing8internal10CharFormat14kSpecialEscapeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N7testing8internal20PrintBytesInObjectToEPKh6size_tP7ostream">
+<span id="_CPPv3N7testing8internal20PrintBytesInObjectToEPKh6size_tP7ostream"></span><span id="_CPPv2N7testing8internal20PrintBytesInObjectToEPKh6size_tP7ostream"></span><span id="testing::internal::PrintBytesInObjectTo__unsigned-cCP.s.ostreamP"></span><span class="target" id="namespacetesting_1_1internal_1a52d18c9d995e8b3a3cb77cc83d7bbc68"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">PrintBytesInObjectTo</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">unsigned</span> <span class="pre">char</span> <span class="pre">*</span><em><span class="pre">obj_bytes</span></em>, <a class="reference internal" href="../../doxygen_index_one_page.html#_CPPv46size_t" title="size_t"><span class="pre">size_t</span></a> <em><span class="pre">count</span></em>, <span class="pre">ostream</span> <span class="pre">*</span><em><span class="pre">os</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7testing8internal20PrintBytesInObjectToEPKh6size_tP7ostream" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7testing8internal16IsPrintableAsciiEDi">
+<span id="_CPPv3N7testing8internal16IsPrintableAsciiEDi"></span><span id="_CPPv2N7testing8internal16IsPrintableAsciiEDi"></span><span id="testing::internal::IsPrintableAscii__char32_t"></span><span class="target" id="namespacetesting_1_1internal_1a015a6ee397bad1b5496d50790bbd67b0"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">bool</span> <code class="sig-name descname"><span class="pre">IsPrintableAscii</span></code><span class="sig-paren">(</span><span class="pre">char32_t</span> <em><span class="pre">c</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7testing8internal16IsPrintableAsciiEDi" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN7testing8internal20PrintAsCharLiteralToE10CharFormat4CharP7ostream">
+<span id="_CPPv3I0EN7testing8internal20PrintAsCharLiteralToE4CharP7ostream"></span><span id="_CPPv2I0EN7testing8internal20PrintAsCharLiteralToE4CharP7ostream"></span><span class="pre">template&lt;</span><span class="pre">typename</span> <code class="sig-name descname"><span class="pre">Char</span></code><span class="pre">&gt;</span><br /><span class="target" id="namespacetesting_1_1internal_1a493c0416192a167ab34edc9654620d50"></span><em class="property"><span class="pre">static</span></em> <a class="reference internal" href="#_CPPv4N7testing8internal10CharFormatE" title="testing::internal::CharFormat"><span class="pre">CharFormat</span></a> <code class="sig-name descname"><span class="pre">PrintAsCharLiteralTo</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN7testing8internal20PrintAsCharLiteralToE10CharFormat4CharP7ostream" title="testing::internal::PrintAsCharLiteralTo::Char"><span class="pre">Char</span></a> <em><span class="pre">c</span></em>, <span class="pre">ostream</span> <span class="pre">*</span><em><span class="pre">os</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN7testing8internal20PrintAsCharLiteralToE10CharFormat4CharP7ostream" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7testing8internal22PrintAsStringLiteralToEDiP7ostream">
+<span id="_CPPv3N7testing8internal22PrintAsStringLiteralToEDiP7ostream"></span><span id="_CPPv2N7testing8internal22PrintAsStringLiteralToEDiP7ostream"></span><span id="testing::internal::PrintAsStringLiteralTo__char32_t.ostreamP"></span><span class="target" id="namespacetesting_1_1internal_1abe42471e5d3d8c350849320057b388db"></span><em class="property"><span class="pre">static</span></em> <a class="reference internal" href="#_CPPv4N7testing8internal10CharFormatE" title="testing::internal::CharFormat"><span class="pre">CharFormat</span></a> <code class="sig-name descname"><span class="pre">PrintAsStringLiteralTo</span></code><span class="sig-paren">(</span><span class="pre">char32_t</span> <em><span class="pre">c</span></em>, <span class="pre">ostream</span> <span class="pre">*</span><em><span class="pre">os</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7testing8internal22PrintAsStringLiteralToEDiP7ostream" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7testing8internal18GetCharWidthPrefixEc">
+<span id="_CPPv3N7testing8internal18GetCharWidthPrefixEc"></span><span id="_CPPv2N7testing8internal18GetCharWidthPrefixEc"></span><span id="testing::internal::GetCharWidthPrefix__c"></span><span class="target" id="namespacetesting_1_1internal_1a946058f2e2eaf32b525d05c5633dc260"></span><em class="property"><span class="pre">static</span></em> <em class="property"><span class="pre">const</span></em> <span class="pre">char</span> <span class="pre">*</span><code class="sig-name descname"><span class="pre">GetCharWidthPrefix</span></code><span class="sig-paren">(</span><span class="pre">char</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7testing8internal18GetCharWidthPrefixEc" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7testing8internal18GetCharWidthPrefixEa">
+<span id="_CPPv3N7testing8internal18GetCharWidthPrefixEa"></span><span id="_CPPv2N7testing8internal18GetCharWidthPrefixEa"></span><span id="testing::internal::GetCharWidthPrefix__signed-c"></span><span class="target" id="namespacetesting_1_1internal_1ad68ed57fa704d0cf01098241cd6dbe61"></span><em class="property"><span class="pre">static</span></em> <em class="property"><span class="pre">const</span></em> <span class="pre">char</span> <span class="pre">*</span><code class="sig-name descname"><span class="pre">GetCharWidthPrefix</span></code><span class="sig-paren">(</span><span class="pre">signed</span> <span class="pre">char</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7testing8internal18GetCharWidthPrefixEa" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7testing8internal18GetCharWidthPrefixEh">
+<span id="_CPPv3N7testing8internal18GetCharWidthPrefixEh"></span><span id="_CPPv2N7testing8internal18GetCharWidthPrefixEh"></span><span id="testing::internal::GetCharWidthPrefix__unsigned-c"></span><span class="target" id="namespacetesting_1_1internal_1aa8fd755118d02c44def117393fda8e6c"></span><em class="property"><span class="pre">static</span></em> <em class="property"><span class="pre">const</span></em> <span class="pre">char</span> <span class="pre">*</span><code class="sig-name descname"><span class="pre">GetCharWidthPrefix</span></code><span class="sig-paren">(</span><span class="pre">unsigned</span> <span class="pre">char</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7testing8internal18GetCharWidthPrefixEh" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7testing8internal18GetCharWidthPrefixEDs">
+<span id="_CPPv3N7testing8internal18GetCharWidthPrefixEDs"></span><span id="_CPPv2N7testing8internal18GetCharWidthPrefixEDs"></span><span id="testing::internal::GetCharWidthPrefix__char16_t"></span><span class="target" id="namespacetesting_1_1internal_1abc36b104cba867202f7c975219740f6e"></span><em class="property"><span class="pre">static</span></em> <em class="property"><span class="pre">const</span></em> <span class="pre">char</span> <span class="pre">*</span><code class="sig-name descname"><span class="pre">GetCharWidthPrefix</span></code><span class="sig-paren">(</span><span class="pre">char16_t</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7testing8internal18GetCharWidthPrefixEDs" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7testing8internal18GetCharWidthPrefixEDi">
+<span id="_CPPv3N7testing8internal18GetCharWidthPrefixEDi"></span><span id="_CPPv2N7testing8internal18GetCharWidthPrefixEDi"></span><span id="testing::internal::GetCharWidthPrefix__char32_t"></span><span class="target" id="namespacetesting_1_1internal_1ad90f9929dc22f2cc87dfa94c4d774221"></span><em class="property"><span class="pre">static</span></em> <em class="property"><span class="pre">const</span></em> <span class="pre">char</span> <span class="pre">*</span><code class="sig-name descname"><span class="pre">GetCharWidthPrefix</span></code><span class="sig-paren">(</span><span class="pre">char32_t</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7testing8internal18GetCharWidthPrefixEDi" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7testing8internal18GetCharWidthPrefixEw">
+<span id="_CPPv3N7testing8internal18GetCharWidthPrefixEw"></span><span id="_CPPv2N7testing8internal18GetCharWidthPrefixEw"></span><span id="testing::internal::GetCharWidthPrefix__wchar_t"></span><span class="target" id="namespacetesting_1_1internal_1a190f20f4dbf66876e6f38730814ff00b"></span><em class="property"><span class="pre">static</span></em> <em class="property"><span class="pre">const</span></em> <span class="pre">char</span> <span class="pre">*</span><code class="sig-name descname"><span class="pre">GetCharWidthPrefix</span></code><span class="sig-paren">(</span><span class="pre">wchar_t</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7testing8internal18GetCharWidthPrefixEw" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7testing8internal22PrintAsStringLiteralToEcP7ostream">
+<span id="_CPPv3N7testing8internal22PrintAsStringLiteralToEcP7ostream"></span><span id="_CPPv2N7testing8internal22PrintAsStringLiteralToEcP7ostream"></span><span id="testing::internal::PrintAsStringLiteralTo__c.ostreamP"></span><span class="target" id="namespacetesting_1_1internal_1a82e5b3cf45fd9c4603dbe14bc4cb38c2"></span><em class="property"><span class="pre">static</span></em> <a class="reference internal" href="#_CPPv4N7testing8internal10CharFormatE" title="testing::internal::CharFormat"><span class="pre">CharFormat</span></a> <code class="sig-name descname"><span class="pre">PrintAsStringLiteralTo</span></code><span class="sig-paren">(</span><span class="pre">char</span> <em><span class="pre">c</span></em>, <span class="pre">ostream</span> <span class="pre">*</span><em><span class="pre">os</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7testing8internal22PrintAsStringLiteralToEcP7ostream" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7testing8internal22PrintAsStringLiteralToEDsP7ostream">
+<span id="_CPPv3N7testing8internal22PrintAsStringLiteralToEDsP7ostream"></span><span id="_CPPv2N7testing8internal22PrintAsStringLiteralToEDsP7ostream"></span><span id="testing::internal::PrintAsStringLiteralTo__char16_t.ostreamP"></span><span class="target" id="namespacetesting_1_1internal_1ae3d2943c6c8191a2b1dbe44b5d6582fd"></span><em class="property"><span class="pre">static</span></em> <a class="reference internal" href="#_CPPv4N7testing8internal10CharFormatE" title="testing::internal::CharFormat"><span class="pre">CharFormat</span></a> <code class="sig-name descname"><span class="pre">PrintAsStringLiteralTo</span></code><span class="sig-paren">(</span><span class="pre">char16_t</span> <em><span class="pre">c</span></em>, <span class="pre">ostream</span> <span class="pre">*</span><em><span class="pre">os</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7testing8internal22PrintAsStringLiteralToEDsP7ostream" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7testing8internal22PrintAsStringLiteralToEwP7ostream">
+<span id="_CPPv3N7testing8internal22PrintAsStringLiteralToEwP7ostream"></span><span id="_CPPv2N7testing8internal22PrintAsStringLiteralToEwP7ostream"></span><span id="testing::internal::PrintAsStringLiteralTo__wchar_t.ostreamP"></span><span class="target" id="namespacetesting_1_1internal_1a8c5838995d7bb9e4232b69e6bcdb9ab8"></span><em class="property"><span class="pre">static</span></em> <a class="reference internal" href="#_CPPv4N7testing8internal10CharFormatE" title="testing::internal::CharFormat"><span class="pre">CharFormat</span></a> <code class="sig-name descname"><span class="pre">PrintAsStringLiteralTo</span></code><span class="sig-paren">(</span><span class="pre">wchar_t</span> <em><span class="pre">c</span></em>, <span class="pre">ostream</span> <span class="pre">*</span><em><span class="pre">os</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7testing8internal22PrintAsStringLiteralToEwP7ostream" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4I0EN7testing8internal18PrintCharAndCodeToEv4CharP7ostream">
+<span id="_CPPv3I0EN7testing8internal18PrintCharAndCodeToE4CharP7ostream"></span><span id="_CPPv2I0EN7testing8internal18PrintCharAndCodeToE4CharP7ostream"></span><span class="pre">template&lt;</span><span class="pre">typename</span> <code class="sig-name descname"><span class="pre">Char</span></code><span class="pre">&gt;</span><br /><span class="target" id="namespacetesting_1_1internal_1ae309e29fd7a2218b8f03b2a66d1149cb"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">PrintCharAndCodeTo</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN7testing8internal18PrintCharAndCodeToEv4CharP7ostream" title="testing::internal::PrintCharAndCodeTo::Char"><span class="pre">Char</span></a> <em><span class="pre">c</span></em>, <span class="pre">ostream</span> <span class="pre">*</span><em><span class="pre">os</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN7testing8internal18PrintCharAndCodeToEv4CharP7ostream" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7testing8internal7PrintToEwP7ostream">
+<span id="_CPPv3N7testing8internal7PrintToEwP7ostream"></span><span id="_CPPv2N7testing8internal7PrintToEwP7ostream"></span><span id="testing::internal::PrintTo__wchar_t.ostreamP"></span><span class="target" id="namespacetesting_1_1internal_1aa74ea9d64f76ce69eceb225ca5ebef58"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">PrintTo</span></code><span class="sig-paren">(</span><span class="pre">wchar_t</span> <em><span class="pre">wc</span></em>, <span class="pre">ostream</span> <span class="pre">*</span><em><span class="pre">os</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7testing8internal7PrintToEwP7ostream" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt>
+<span class="target" id="namespacetesting_1_1internal_1aa85ad5fc870841fdccb8f2a373628521"></span><code class="sig-name descname"><span class="pre">template&lt;typename</span> <span class="pre">CharType&gt;</span> <span class="pre">static</span> <span class="pre">GTEST_ATTRIBUTE_NO_SANITIZE_MEMORY_</span> <span class="pre">GTEST_ATTRIBUTE_NO_SANITIZE_ADDRESS_</span> <span class="pre">GTEST_ATTRIBUTE_NO_SANITIZE_HWADDRESS_</span> <span class="pre">static</span> <span class="pre">GTEST_ATTRIBUTE_NO_SANITIZE_THREAD_</span> <span class="pre">CharFormat</span> <span class="pre">PrintCharsAsStringTo</span> <span class="pre">(const</span> <span class="pre">CharType</span> <span class="pre">*begin,</span> <span class="pre">size_t</span> <span class="pre">len,</span> <span class="pre">ostream</span> <span class="pre">*os)</span></code></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt>
+<span class="target" id="namespacetesting_1_1internal_1a369a76d3f473ed383eb76b76cbac24ce"></span><code class="sig-name descname"><span class="pre">template&lt;typename</span> <span class="pre">CharType&gt;</span> <span class="pre">static</span> <span class="pre">GTEST_ATTRIBUTE_NO_SANITIZE_MEMORY_</span> <span class="pre">GTEST_ATTRIBUTE_NO_SANITIZE_ADDRESS_</span> <span class="pre">GTEST_ATTRIBUTE_NO_SANITIZE_HWADDRESS_</span> <span class="pre">static</span> <span class="pre">GTEST_ATTRIBUTE_NO_SANITIZE_THREAD_</span> <span class="pre">void</span> <span class="pre">UniversalPrintCharArray</span> <span class="pre">(const</span> <span class="pre">CharType</span> <span class="pre">*begin,</span> <span class="pre">size_t</span> <span class="pre">len,</span> <span class="pre">ostream</span> <span class="pre">*os)</span></code></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7testing8internal19UniversalPrintArrayEPKc6size_tP7ostream">
+<span id="_CPPv3N7testing8internal19UniversalPrintArrayEPKc6size_tP7ostream"></span><span id="_CPPv2N7testing8internal19UniversalPrintArrayEPKc6size_tP7ostream"></span><span id="testing::internal::UniversalPrintArray__cCP.s.ostreamP"></span><span class="target" id="namespacetesting_1_1internal_1a070107e7a8205ad6ec4d538d52b15b38"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">UniversalPrintArray</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">char</span> <span class="pre">*</span><em><span class="pre">begin</span></em>, <a class="reference internal" href="../../doxygen_index_one_page.html#_CPPv46size_t" title="size_t"><span class="pre">size_t</span></a> <em><span class="pre">len</span></em>, <span class="pre">ostream</span> <span class="pre">*</span><em><span class="pre">os</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7testing8internal19UniversalPrintArrayEPKc6size_tP7ostream" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7testing8internal19UniversalPrintArrayEPKDs6size_tP7ostream">
+<span id="_CPPv3N7testing8internal19UniversalPrintArrayEPKDs6size_tP7ostream"></span><span id="_CPPv2N7testing8internal19UniversalPrintArrayEPKDs6size_tP7ostream"></span><span id="testing::internal::UniversalPrintArray__char16_tCP.s.ostreamP"></span><span class="target" id="namespacetesting_1_1internal_1aebe5db97cc05310ee31c2b2c16bd4485"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">UniversalPrintArray</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">char16_t</span> <span class="pre">*</span><em><span class="pre">begin</span></em>, <a class="reference internal" href="../../doxygen_index_one_page.html#_CPPv46size_t" title="size_t"><span class="pre">size_t</span></a> <em><span class="pre">len</span></em>, <span class="pre">ostream</span> <span class="pre">*</span><em><span class="pre">os</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7testing8internal19UniversalPrintArrayEPKDs6size_tP7ostream" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7testing8internal19UniversalPrintArrayEPKDi6size_tP7ostream">
+<span id="_CPPv3N7testing8internal19UniversalPrintArrayEPKDi6size_tP7ostream"></span><span id="_CPPv2N7testing8internal19UniversalPrintArrayEPKDi6size_tP7ostream"></span><span id="testing::internal::UniversalPrintArray__char32_tCP.s.ostreamP"></span><span class="target" id="namespacetesting_1_1internal_1a1858d4aac7d0eb32c19e4bdff14a2864"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">UniversalPrintArray</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">char32_t</span> <span class="pre">*</span><em><span class="pre">begin</span></em>, <a class="reference internal" href="../../doxygen_index_one_page.html#_CPPv46size_t" title="size_t"><span class="pre">size_t</span></a> <em><span class="pre">len</span></em>, <span class="pre">ostream</span> <span class="pre">*</span><em><span class="pre">os</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7testing8internal19UniversalPrintArrayEPKDi6size_tP7ostream" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7testing8internal19UniversalPrintArrayEPKw6size_tP7ostream">
+<span id="_CPPv3N7testing8internal19UniversalPrintArrayEPKw6size_tP7ostream"></span><span id="_CPPv2N7testing8internal19UniversalPrintArrayEPKw6size_tP7ostream"></span><span id="testing::internal::UniversalPrintArray__wchar_tCP.s.ostreamP"></span><span class="target" id="namespacetesting_1_1internal_1a52394019018eb5079f9f1bcca23dcd60"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">UniversalPrintArray</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">wchar_t</span> <span class="pre">*</span><em><span class="pre">begin</span></em>, <a class="reference internal" href="../../doxygen_index_one_page.html#_CPPv46size_t" title="size_t"><span class="pre">size_t</span></a> <em><span class="pre">len</span></em>, <span class="pre">ostream</span> <span class="pre">*</span><em><span class="pre">os</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7testing8internal19UniversalPrintArrayEPKw6size_tP7ostream" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7testing8internal7PrintToEPKcP7ostream">
+<span id="_CPPv3N7testing8internal7PrintToEPKcP7ostream"></span><span id="_CPPv2N7testing8internal7PrintToEPKcP7ostream"></span><span id="testing::internal::PrintTo__cCP.ostreamP"></span><span class="target" id="namespacetesting_1_1internal_1adc6c98306d40b53fd07be4e295102a0a"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">PrintTo</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">char</span> <span class="pre">*</span><em><span class="pre">s</span></em>, <span class="pre">ostream</span> <span class="pre">*</span><em><span class="pre">os</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7testing8internal7PrintToEPKcP7ostream" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7testing8internal7PrintToEPKDsP7ostream">
+<span id="_CPPv3N7testing8internal7PrintToEPKDsP7ostream"></span><span id="_CPPv2N7testing8internal7PrintToEPKDsP7ostream"></span><span id="testing::internal::PrintTo__char16_tCP.ostreamP"></span><span class="target" id="namespacetesting_1_1internal_1ad0bc07b66792a391c6753cfb1a43a08c"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">PrintTo</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">char16_t</span> <span class="pre">*</span><em><span class="pre">s</span></em>, <span class="pre">ostream</span> <span class="pre">*</span><em><span class="pre">os</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7testing8internal7PrintToEPKDsP7ostream" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7testing8internal7PrintToEPKDiP7ostream">
+<span id="_CPPv3N7testing8internal7PrintToEPKDiP7ostream"></span><span id="_CPPv2N7testing8internal7PrintToEPKDiP7ostream"></span><span id="testing::internal::PrintTo__char32_tCP.ostreamP"></span><span class="target" id="namespacetesting_1_1internal_1a8814e076fa3e05dbdacba89b69a65e11"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">PrintTo</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">char32_t</span> <span class="pre">*</span><em><span class="pre">s</span></em>, <span class="pre">ostream</span> <span class="pre">*</span><em><span class="pre">os</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7testing8internal7PrintToEPKDiP7ostream" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7testing8internal7PrintToEPKwP7ostream">
+<span id="_CPPv3N7testing8internal7PrintToEPKwP7ostream"></span><span id="_CPPv2N7testing8internal7PrintToEPKwP7ostream"></span><span id="testing::internal::PrintTo__wchar_tCP.ostreamP"></span><span class="target" id="namespacetesting_1_1internal_1afc20fb56b2547a8f91f9ff99650f2024"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">PrintTo</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">wchar_t</span> <span class="pre">*</span><em><span class="pre">s</span></em>, <span class="pre">ostream</span> <span class="pre">*</span><em><span class="pre">os</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7testing8internal7PrintToEPKwP7ostream" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7testing8internal13PrintStringToERKNSt6stringEP7ostream">
+<span id="_CPPv3N7testing8internal13PrintStringToERKNSt6stringEP7ostream"></span><span id="_CPPv2N7testing8internal13PrintStringToERKNSt6stringEP7ostream"></span><span id="testing::internal::PrintStringTo__std::stringCR.ostreamP"></span><span class="target" id="namespacetesting_1_1internal_1ad609167d8d6792b0fb186539e0e159bd"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">PrintStringTo</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">::</span><span class="pre">std</span><span class="pre">::</span><span class="pre">string</span> <span class="pre">&amp;</span><em><span class="pre">s</span></em>, <span class="pre">ostream</span> <span class="pre">*</span><em><span class="pre">os</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7testing8internal13PrintStringToERKNSt6stringEP7ostream" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7testing8internal16PrintU16StringToERKNSt9u16stringEP7ostream">
+<span id="_CPPv3N7testing8internal16PrintU16StringToERKNSt9u16stringEP7ostream"></span><span id="_CPPv2N7testing8internal16PrintU16StringToERKNSt9u16stringEP7ostream"></span><span id="testing::internal::PrintU16StringTo__std::u16stringCR.ostreamP"></span><span class="target" id="namespacetesting_1_1internal_1a07ad0fc028c84e42db25649d7ad304f6"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">PrintU16StringTo</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">::</span><span class="pre">std</span><span class="pre">::</span><span class="pre">u16string</span> <span class="pre">&amp;</span><em><span class="pre">s</span></em>, <span class="pre">ostream</span> <span class="pre">*</span><em><span class="pre">os</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7testing8internal16PrintU16StringToERKNSt9u16stringEP7ostream" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7testing8internal16PrintU32StringToERKNSt9u32stringEP7ostream">
+<span id="_CPPv3N7testing8internal16PrintU32StringToERKNSt9u32stringEP7ostream"></span><span id="_CPPv2N7testing8internal16PrintU32StringToERKNSt9u32stringEP7ostream"></span><span id="testing::internal::PrintU32StringTo__std::u32stringCR.ostreamP"></span><span class="target" id="namespacetesting_1_1internal_1afc0094a7e0fcb9f63a1f2b6c2ef4f585"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">PrintU32StringTo</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">::</span><span class="pre">std</span><span class="pre">::</span><span class="pre">u32string</span> <span class="pre">&amp;</span><em><span class="pre">s</span></em>, <span class="pre">ostream</span> <span class="pre">*</span><em><span class="pre">os</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7testing8internal16PrintU32StringToERKNSt9u32stringEP7ostream" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="gtest-test-part_8cc.html" class="btn btn-neutral float-right" title="File gtest-test-part.cc" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="gtest-port_8cc.html" class="btn btn-neutral float-left" title="File gtest-port.cc" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright Copyright (c) 2021, See license.txt file or the license section..
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

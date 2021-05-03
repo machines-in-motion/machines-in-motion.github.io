@@ -1,0 +1,4 @@
+Struct move_always< T, enable_if_t< all_of< move_is_plain_type< T >, negation< is_copy_constructible< T > >, std::is_move_constructible< T >, std::is_same< decltype(std::declval< make_caster< T >>().operator T &()), T & >>::value > >
+=========================================================================================================================================================================================================================================
+
+.. doxygenstruct:: move_always< T, enable_if_t< all_of< move_is_plain_type< T >, negation< is_copy_constructible< T > >, std::is_move_constructible< T >, std::is_same< decltype(std::declval< make_caster< T >>().operator T &()), T & >>::value > >

@@ -1,0 +1,396 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>1. General rules applied in the code base &mdash; package_template 2.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+    <link rel="canonical" href="https://machines-in-motion.github.io/code_documentation/package_template/doc/1.general_rules.html" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. C++ Coding Guidelines" href="2.cpp_coding_guidelines.html" />
+    <link rel="prev" title="General Documentation" href="../general_documentation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> package_template
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Welcome to package_template’s documentation!</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#package-template">package_template</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#general-documentation">General Documentation</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../general_documentation.html">General Documentation</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">1. General rules applied in the code base</a></li>
+<li class="toctree-l4"><a class="reference internal" href="2.cpp_coding_guidelines.html">2. C++ Coding Guidelines</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#c-api">C++ API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#python-api">Python API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#indices-and-tables">Indices and Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id3">License and Copyrights</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../general_documentation.html">General Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1. General rules applied in the code base</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#i-introduction">I. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ii-catkin-package-and-repository-naming">II. Catkin Package and Repository Naming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#iii-versioning">III. Versioning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#iv-contribution-guidelines">IV. Contribution Guidelines</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#iv-1-code-revision">IV.1. Code revision:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#iv-2-some-rules-for-the-contributors">IV.2. Some rules for the contributors:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#iv-3-some-rules-for-the-reviewers">IV.3. Some rules for the reviewers:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#v-documentation">V. Documentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#v-1-in-code-documentation">V.1 In-code documentation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#v-2-unit-tests-and-demos">V.2 Unit-tests and demos</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="2.cpp_coding_guidelines.html">2. C++ Coding Guidelines</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../doxygen_index.html">C++ API</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">package_template</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">package_template</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../general_documentation.html">General Documentation</a> &raquo;</li>
+        
+      <li>1. General rules applied in the code base</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/doc/1.general_rules.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="general-rules-applied-in-the-code-base">
+<h1>1. General rules applied in the code base<a class="headerlink" href="#general-rules-applied-in-the-code-base" title="Permalink to this headline">¶</a></h1>
+<section id="i-introduction">
+<h2>I. Introduction<a class="headerlink" href="#i-introduction" title="Permalink to this headline">¶</a></h2>
+<p>These are general rules independent of the coding  language.</p>
+</section>
+<section id="ii-catkin-package-and-repository-naming">
+<h2>II. Catkin Package and Repository Naming<a class="headerlink" href="#ii-catkin-package-and-repository-naming" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Name: lower_cases_with_underscore.</p></li>
+<li><p>One repository per catkin package.</p></li>
+<li><p>Same name for package and repository.</p></li>
+</ul>
+</section>
+<section id="iii-versioning">
+<h2>III. Versioning<a class="headerlink" href="#iii-versioning" title="Permalink to this headline">¶</a></h2>
+<p>Use semantic versioning when versioning packages. Short summary:</p>
+<ul class="simple">
+<li><p>Given a version number MAJOR.MINOR.PATCH, increment the:</p></li>
+<li><p>MAJOR version when you make incompatible API changes,</p></li>
+<li><p>MINOR version when you add functionality in a backwards-compatible manner, and</p></li>
+<li><p>PATCH version when you make backwards-compatible bug fixes.</p></li>
+</ul>
+<p>Regarding formatting of pre-releases (alpha, beta, rc, …) consider PEP440,
+especially when versioning Python packages (note that there is no general
+conflict with semantic versioning, only the format is a bit different).</p>
+</section>
+<section id="iv-contribution-guidelines">
+<h2>IV. Contribution Guidelines<a class="headerlink" href="#iv-contribution-guidelines" title="Permalink to this headline">¶</a></h2>
+<section id="iv-1-code-revision">
+<h3>IV.1. Code revision:<a class="headerlink" href="#iv-1-code-revision" title="Permalink to this headline">¶</a></h3>
+<p>To ensure some level of code quality, all modifications have to be reviewed
+before they can be merged. This is done via merge requests in GitLab
+(on GitHub it is called pull request but the concept is the same).</p>
+<p>The procedure for adding a change is as follows:</p>
+<ul class="simple">
+<li><p>When creating branches, use your name as a namespace,
+e.g. if you are John Doe name you branch <em>jdoe/fix_segfault_demo1</em>.
+This is to avoid confusion with branches of other people and to indicate who
+is responsible for that branch. It is not allowed to push branches without
+such namespace. Moreover use a <strong>meaningful branch name</strong>!</p></li>
+<li><p>Test all your changes and update documentation.</p></li>
+<li><p>When finished, create a merge request to the master branch of the main
+repository.</p></li>
+<li><p>Add one or more of the maintainers as reviewers. The reviewers will review and
+maybe request changes.</p></li>
+<li><p>Merging is done by the contributor but is only allowed after all reviewers
+approved. If the merge will affect other people (e.g. by breaking the API),
+make sure to inform them, e.g. via a Mail on an appropriate mailing list.
+After a merge request is merged, the feature branch shall be deleted.</p></li>
+</ul>
+<p>Never push directly to master or other top-level branches. Never force-push to
+any branch that others are using as well. All your development should happen in
+branches inside your namespace. To keep the number of branches on the repository
+low, make sure to delete branches that are not needed anymore.</p>
+<p>The top-level namespace of the repository should only contain a master branch
+and maybe a few branches for specific versions. Those branches should be
+protected so that direct pushing is not possible (everything has to go through
+merge requests).</p>
+</section>
+<section id="iv-2-some-rules-for-the-contributors">
+<h3>IV.2. Some rules for the contributors:<a class="headerlink" href="#iv-2-some-rules-for-the-contributors" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>To make life easier for the reviewers and to get your changes merged quickly
+(thus reducing the risk of merge conflicts), try to keep merge requests
+rather small. This means that, where possible, a bigger task should be split
+into smaller sub-tasks that can be merged one after another instead of
+putting everything in one huge merge request.</p></li>
+<li><p>When synchronising your feature branch with upstream, you may want to prefer
+git rebase over git merge to keep the history of you branch clean. However,
+when there are complicated merge conflicts, it can be much less painful to
+use merge, which is okay in this case.</p></li>
+<li><p>On your own branches, you can do whatever you want, i.e. it is usually okay to
+force push there (and even necessary when you rebase). However, when
+applying changes requested by a reviewer, please do not amend or squash them
+into older commits but add them as new commits. This makes it easier for the
+reviewer to see what changed.</p></li>
+<li><p>Do not add functional changes and major reformatting in the same commit as
+this makes review of the functional changes very difficult.</p></li>
+<li><p>Do add unit tests for new features</p></li>
+<li><p>Do create new demos or update existing demos to make it easier how to use
+the updated API</p></li>
+</ul>
+</section>
+<section id="iv-3-some-rules-for-the-reviewers">
+<h3>IV.3. Some rules for the reviewers:<a class="headerlink" href="#iv-3-some-rules-for-the-reviewers" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>To make life easier for the contributors, try to provide reviews in a timely
+manner. The contributor may be blocked in continuing their work while the
+merge request is under review.</p></li>
+<li><p>When reviewing, check the following things:</p>
+<ul>
+<li><p>Is the style guide followed?</p></li>
+<li><p>Are new features/changes properly documented?</p></li>
+<li><p>And of course: Do the changes look reasonable and correct?</p></li>
+</ul>
+</li>
+<li><p>The one who merges should directly delete the feature branch afterwards.</p></li>
+</ul>
+</section>
+</section>
+<section id="v-documentation">
+<h2>V. Documentation<a class="headerlink" href="#v-documentation" title="Permalink to this headline">¶</a></h2>
+<section id="v-1-in-code-documentation">
+<h3>V.1 In-code documentation<a class="headerlink" href="#v-1-in-code-documentation" title="Permalink to this headline">¶</a></h3>
+<p>All code <strong>shall</strong> be documented in-source using Doxygen.
+This means that every function, class, struct, global variable, etc,
+needs to have a docstring containing some documentation in:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://google.github.io/styleguide/pyguide.html?showone=Comments#Comments">Google</a>
+format for Python,</p></li>
+<li><p><a class="reference external" href="http://www.doxygen.nl/manual/index.html">Doxygen</a> format for C/C++.</p></li>
+</ul>
+<p>If the definition and declaration are separated (C/C++), Doxygen should be in
+the header, not the cpp file. <strong>Please do not duplicate!</strong>.</p>
+<p>If you are using catkin, the package should include the mpi_cmake_modules
+package and in the CMakeLists.txt file call the
+<code class="docutils literal notranslate"><span class="pre">add_documentation()</span></code> macro.
+The documentation can then be build via
+<code class="docutils literal notranslate"><span class="pre">colcon</span> <span class="pre">build</span> <span class="pre">--cmake-args</span> <span class="pre">-DGENERATE_DOCUMENTATION=ON</span></code>.</p>
+<p>Make the documentation as compact as possible. Avoid boilerplate formulations
+that do not add useful information, e.g. instead of
+“This function returns foobar” simply write “Returns foobar”.</p>
+<p>Also add regular comments to the code whenever you feel that they would help a
+future reader to more easily understand what that code is doing.</p>
+</section>
+<section id="v-2-unit-tests-and-demos">
+<h3>V.2 Unit-tests and demos<a class="headerlink" href="#v-2-unit-tests-and-demos" title="Permalink to this headline">¶</a></h3>
+<p>Please do <strong>NOT</strong> neglect the power of the continuous integration and a nice
+written demos in terms of documentation. So <strong>please</strong> take the time to:</p>
+<ul class="simple">
+<li><p>write some unit-tests. See how to write a unit-tests from the tests folder in
+this package.</p></li>
+<li><p>write demo executables to make the external user understand how your
+API should be used.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="2.cpp_coding_guidelines.html" class="btn btn-neutral float-right" title="2. C++ Coding Guidelines" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../general_documentation.html" class="btn btn-neutral float-left" title="General Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright Copyright (c) 2021, See license.txt file or the license section..
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
