@@ -3,9 +3,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Boost &mdash; mpi_cmake_modules 1.0.0 documentation</title>
   
@@ -16,8 +17,12 @@
 
   
   
+
   
   
+
+  
+    <link rel="canonical" href="https://machines-in-motion.github.io/code_documentation/mpi_cmake_modules/doc/boost.html" />
 
   
   <!--[if lt IE 9]>
@@ -29,7 +34,6 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -51,7 +55,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> mpi_cmake_modules
+            <a href="../index.html" class="icon icon-home"> mpi_cmake_modules
           
 
           
@@ -97,16 +101,11 @@
 <li class="toctree-l4"><a class="reference internal" href="doxygen.html">Doxygen</a></li>
 <li class="toctree-l4"><a class="reference internal" href="dynamic_graph.html">Dynamic graph</a></li>
 <li class="toctree-l4"><a class="reference internal" href="eigen.html">Eigen (linear algebra)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="main_page.html">mpi_cmake_modules {#mainpage}</a></li>
 <li class="toctree-l4"><a class="reference internal" href="os_detection.html">OS detection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pkg_config.html">PKG Config</a></li>
-<li class="toctree-l4"><a class="reference internal" href="protobuf.html">Protobuf</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pthread.html">Pthread</a></li>
 <li class="toctree-l4"><a class="reference internal" href="python.html">Python</a></li>
-<li class="toctree-l4"><a class="reference internal" href="set_if_empty.html">Set if empty</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sphinx.html">Sphinx</a></li>
 <li class="toctree-l4"><a class="reference internal" href="xacro.html">Xacro</a></li>
-<li class="toctree-l4"><a class="reference internal" href="xenomai.html">Xenomai</a></li>
 </ul>
 </li>
 </ul>
@@ -121,8 +120,8 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../general_documentation.html">General Documentation</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Boost</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#in-practice">In practice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#boost-python">Boost python</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="cereal.html">Cereal (serialization)</a></li>
@@ -130,16 +129,11 @@
 <li class="toctree-l2"><a class="reference internal" href="doxygen.html">Doxygen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dynamic_graph.html">Dynamic graph</a></li>
 <li class="toctree-l2"><a class="reference internal" href="eigen.html">Eigen (linear algebra)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="main_page.html">mpi_cmake_modules {#mainpage}</a></li>
 <li class="toctree-l2"><a class="reference internal" href="os_detection.html">OS detection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pkg_config.html">PKG Config</a></li>
-<li class="toctree-l2"><a class="reference internal" href="protobuf.html">Protobuf</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pthread.html">Pthread</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html">Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="set_if_empty.html">Set if empty</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sphinx.html">Sphinx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xacro.html">Xacro</a></li>
-<li class="toctree-l2"><a class="reference internal" href="xenomai.html">Xenomai</a></li>
 </ul>
 </li>
 </ul>
@@ -188,6 +182,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -201,7 +197,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/doc/boost.md.txt" rel="nofollow"> View page source</a>
           
         
@@ -215,74 +211,70 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="boost">
+  <section id="boost">
 <h1>Boost<a class="headerlink" href="#boost" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>This package provide a CMake macros which looks for the
-<a class="reference external" href="https://www.boost.org/doc/libs/">Boost</a>
-libraries.</p>
-</div>
-<div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
-<p>Inside your <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> one can use:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SET</span><span class="p">(</span><span class="n">BOOST_COMPONENTS</span> <span class="o">&lt;</span><span class="n">Boost</span> <span class="n">components</span> <span class="nb">list</span><span class="o">&gt;</span><span class="p">)</span>
-<span class="n">SEARCH_FOR_BOOST</span><span class="p">(</span><span class="n">BOOST_COMPONENTS</span><span class="p">)</span>
+<p>Use the default way to find boost in the official
+<a class="reference external" href="https://cmake.org/cmake/help/v3.10/module/FindBoost.html">CMake documentation</a>.</p>
+<section id="in-practice">
+<h2>In practice<a class="headerlink" href="#in-practice" title="Permalink to this headline">¶</a></h2>
+<p>We need to look for boost and it’s components:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find_package</span><span class="p">(</span><span class="n">Boost</span> <span class="n">REQUIRED</span> <span class="n">COMPONENTS</span> <span class="n">thread</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>or in lower case:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span><span class="p">(</span><span class="n">BOOST_COMPONENTS</span> <span class="o">&lt;</span><span class="n">Boost</span> <span class="n">components</span> <span class="nb">list</span><span class="o">&gt;</span><span class="p">)</span>
-<span class="n">search_for_boost</span><span class="p">()</span>
+<p>Then we need to link them to our targets:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">target_link_library</span><span class="p">(</span><span class="n">my_lib</span> <span class="n">Boost</span><span class="p">::</span><span class="n">boost</span> <span class="n">Boost</span><span class="p">::</span><span class="n">thread</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This will already define for you the path to the include directories for Boost.
-It provide the variable <code class="docutils literal notranslate"><span class="pre">BOOST_LIBRARIES</span></code> in order to use the Boost component.</p>
-<p>In order to link a CMake target with boost-python (cf.
-<a class="reference external" href="https://cmake.org/cmake/help/v3.17/command/add_library.html?highlight=add_library">add_library</a>
-or
-<a class="reference external" href="https://cmake.org/cmake/help/v3.17/command/add_executable.html?highlight=add_executable">add_executable</a>) one can simply use the following macro:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">target_link_boost_python</span><span class="p">(</span><span class="o">&lt;</span><span class="n">target</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">)</span>
+</section>
+<section id="boost-python">
+<h2>Boost python<a class="headerlink" href="#boost-python" title="Permalink to this headline">¶</a></h2>
+<p>Boost python is a bit more annoying as it requires the version of python used
+on the system. Hence the search is a bit different:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Find python
+find_package(Python REQUIRED)
+# Extract major/minor python version
+string(REPLACE &quot;.&quot; &quot;;&quot; VERSION_LIST ${PYTHONLIBS_VERSION_STRING})
+list(GET VERSION_LIST 0 PYTHONLIBS_VERSION_MAJOR)
+list(GET VERSION_LIST 1 PYTHONLIBS_VERSION_MINOR)
+set(boost_python_name python${PYTHONLIBS_VERSION_MAJOR}.${PYTHONLIBS_VERSION_MINOR})
+find_package(Boost COMPONENTS ${boost_python_name} REQUIRED)
 </pre></div>
 </div>
+<p>And then link to it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>target_link_library(my_lib Boost::${boost_python_name})
+</pre></div>
 </div>
-</div>
+</section>
+</section>
 
 
            </div>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="cereal.html" class="btn btn-neutral float-right" title="Cereal (serialization)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../general_documentation.html" class="btn btn-neutral float-left" title="General Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="cereal.html" class="btn btn-neutral float-right" title="Cereal (serialization)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../general_documentation.html" class="btn btn-neutral float-left" title="General Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright Copyright (c) 2020, See license.txt file or the license section.
+        &#169; Copyright Copyright (c) 2021, See license.txt file or the license section..
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

@@ -3,10 +3,13 @@ Pthread
 
 ## Introduction
 
-Provide a macro to ease the serach and use of the pthread library for linux.
+Use the default CMake macros
+[here](https://cmake.org/cmake/help/v3.10/module/FindThreads.html).
 
-## Usege
+## Usage
 
 Simply add to you CMakeLists.txt:
 
-    search_for_pthread()
+    find_package(Threads REQUIRED)
+
+    target_link_library(my_lib Threads::Threads)

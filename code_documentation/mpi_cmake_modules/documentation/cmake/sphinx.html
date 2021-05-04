@@ -3,9 +3,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>&lt;no title&gt; &mdash; mpi_cmake_modules 1.0.0 documentation</title>
   
@@ -16,8 +17,12 @@
 
   
   
+
   
   
+
+  
+    <link rel="canonical" href="https://machines-in-motion.github.io/code_documentation/mpi_cmake_modules/cmake/sphinx.html" />
 
   
   <!--[if lt IE 9]>
@@ -29,7 +34,6 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -49,7 +53,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> mpi_cmake_modules
+            <a href="../index.html" class="icon icon-home"> mpi_cmake_modules
           
 
           
@@ -135,6 +139,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -146,7 +152,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/cmake/sphinx.cmake.txt" rel="nofollow"> View page source</a>
           
         
@@ -162,6 +168,7 @@
             
   <p>#
 # Copyright (c) 2019-2020, New York University and Max Planck Gesellschaft.
+#
 # License BSD-3 clause
 #
 # Build the documentation based on sphinx and the read_the_doc layout.
@@ -170,8 +177,8 @@
 #
 # .. cmake:command:: _BUILD_DOXYGEN
 #
-#   Use doxygen to parse the C++ source files and generate a corresponding xml
-#   entry.
+#    Use doxygen to parse the C++ source files and generate a corresponding xml
+#    entry.
 #
 macro(_BUILD_DOXYGEN)</p>
 <blockquote>
@@ -179,7 +186,14 @@ macro(_BUILD_DOXYGEN)</p>
 find_package(Doxygen)
 if(NOT DOXYGEN_FOUND)</p>
 <blockquote>
-<div><p>message(FATAL_ERROR “Doxygen is needed to build the documentation. Please install it correctly”)</p>
+<div><dl class="simple">
+<dt>message(</dt><dd><dl class="simple">
+<dt>FATAL_ERROR</dt><dd><p>“Doxygen is needed to build the documentation. Please install it correctly”</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>)</p>
 </div></blockquote>
 <p>endif()</p>
 <p># Create the doxyfile in function of the current project. If the Doxyfile.in
@@ -204,8 +218,8 @@ COMMENT “Building xml doxygen documentation for ${PROJECT_NAME}”)</p>
 #
 # .. cmake:command:: _BUILD_BREATHE_APIDOC
 #
-#   Use breathe_apidoc to parse the xml output from Doxygen and generate .rst
-#   files.
+#    Use breathe_apidoc to parse the xml output from Doxygen and generate .rst
+#    files.
 #
 macro(_BUILD_BREATHE_APIDOC)</p>
 <blockquote>
@@ -239,8 +253,8 @@ COMMENT “Building breathe-apidoc for ${PROJECT_NAME}”)</p>
 #
 # .. cmake:command:: _BUILD_SPHINX_API_DOC
 #
-#   Use sphinx_apidoc to parse the python files output from Doxygen and generate
-#   .rst files.
+#    Use sphinx_apidoc to parse the python files output from Doxygen and generate
+#    .rst files.
 #
 macro(_BUILD_SPHINX_API_DOC)</p>
 <blockquote>
@@ -273,8 +287,8 @@ COMMENT “Building sphinx-apidoc for ${PROJECT_NAME}”)</p>
 #
 # .. cmake:command:: _BUILD_SPHINX_BUILD
 #
-#   Use sphinx_build to parse the cmake and rst files previously generated and
-#   generate the final html layout.
+#    Use sphinx_build to parse the cmake and rst files previously generated and
+#    generate the final html layout.
 #
 macro(_BUILD_SPHINX_BUILD)</p>
 <blockquote>
@@ -303,51 +317,70 @@ COMMENT “Building sphinx-apidoc for ${PROJECT_NAME}”)</p>
 <p>endmacro(_BUILD_SPHINX_BUILD)</p>
 <p>#.rst:
 #
+# .. cmake:command:: _FIND_README
+#
+#    Search for a README with the given file extension and, if found, return
+#    its name using <code class="docutils literal notranslate"><span class="pre">OUTPUT_VAR</span></code>.  Example to search for ‘readme.md’::
+#
+#        _FIND_README(readme_file “md”)
+#
+macro(_FIND_README OUTPUT_VAR EXTENSION)</p>
+<blockquote>
+<div><dl>
+<dt>file(</dt><dd><p>GLOB files
+RELATIVE ${PROJECT_SOURCE_DIR}
+${PROJECT_SOURCE_DIR}/<a href="#id1"><span class="problematic" id="id2">*</span></a>.${EXTENSION})</p>
+</dd>
+<dt>foreach(file ${files})</dt><dd><p>string(TOLOWER ${file} file_lower)
+if(${file_lower} STREQUAL “readme.${EXTENSION}”)</p>
+<blockquote>
+<div><p>set(${OUTPUT_VAR} ${file})</p>
+</div></blockquote>
+<p>endif()</p>
+</dd>
+</dl>
+<p>endforeach()</p>
+</div></blockquote>
+<p>endmacro()</p>
+<p>#.rst:
+#
 # .. cmake:command:: ADD_SPHINX_DOCUMENTATION
 #
 #   Process the current project in order to generate a specific documentation
-#   content. This macro generates the appropriate documentation if is detects
-#   the corresponding files::
-#       * <em>files</em> with the extensions {.h, .cpp, …} generates the <em>C++ API</em>
-#         section.
-#       * the <em>python</em> folder will generate the <em>Python API</em> section.
-#       * the <em>cmake</em> folder will generate the <em>CMake API</em> section.
-#       * the <em>doc</em> folder containing markdown files (<em>.md</em>) will generate the
-#         the <em>Additionnal Documentation</em> section.
+#   content. This macro generates the appropriate documentation if is detects the
+#   corresponding files::
+#      * <em>files</em> with the extensions {.h, .cpp, …} generates
+#        the <em>C++ API</em> section.
+#      * the <em>python</em> folder will generate the <em>Python API</em> section.
+#      * the <em>cmake</em> folder will generate the <em>CMake API</em> section.
+#      * the <em>doc</em> folder containing markdown files (<em>.md</em>) will generate the
+#        <em>Additionnal Documentation</em> section.
 #
-#   The following macros are called in order and if needed::
-#       * :command: _BUILD_DOXYGEN
-#       * :command: _BUILD_BREATHE_APIDOC
-#       * :command: _BUILD_SPHINX_API_DOC
-#       * :command: _BUILD_SPHINX_BUILD
+#   The following macros are called in order and if needed:: * :command:
+#   _BUILD_DOXYGEN * :command: _BUILD_BREATHE_APIDOC * :command:
+#   _BUILD_SPHINX_API_DOC * :command: _BUILD_SPHINX_BUILD
 #
-#   Please refer to the <em>Sphinx</em> paragraph in the <em>General Documentation</em> in
-#   this package for more explanation about the parametrization of the tools.
+#   Please refer to the <em>Sphinx</em> paragraph in the <em>General Documentation</em> in this
+#   package for more explanation about the parametrization of the tools.
 #
 macro(ADD_SPHINX_DOCUMENTATION)</p>
 <blockquote>
 <div><p># All parameters</p>
 <p># Build and install directories
-set(SPHINX_DOC_BUILD_FOLDER</p>
-<blockquote>
-<div><p>${CATKIN_DEVEL_PREFIX}/${CATKIN_PACKAGE_SHARE_DESTINATION}/docs/sphinx)</p>
-</div></blockquote>
-<dl class="simple">
-<dt>set(SPHINX_DOC_INSTALL_FOLDER</dt><dd><p>${CMAKE_INSTALL_PREFIX}/${CATKIN_PACKAGE_SHARE_DESTINATION}/docs/sphinx)</p>
-</dd>
-</dl>
-<p># Doxygen
+set(SPHINX_DOC_BUILD_FOLDER ${CMAKE_BINARY_DIR}/share/docs/sphinx)
+set(SPHINX_DOC_INSTALL_FOLDER share/${PROJECT_NAME}/docs/sphinx)
+# Doxygen
 set(DOXYGEN_DOXYFILE_IN</p>
 <blockquote>
-<div><p>${MPI_CMAKE_MODULES_ROOT_DIR}/resources/sphinx/doxygen/Doxyfile.in)</p>
+<div><p>${MPI_CMAKE_MODULES_RESOURCES_DIR}/sphinx/doxygen/Doxyfile.in)</p>
 </div></blockquote>
 <p>set(DOXYGEN_DOXYFILE ${SPHINX_DOC_BUILD_FOLDER}/doxygen/Doxyfile)
 set(DOXYGEN_OUTPUT ${SPHINX_DOC_BUILD_FOLDER}/doxygen)
 set(DOXYGEN_XML_OUTPUT ${SPHINX_DOC_BUILD_FOLDER}/doxygen/xml)
-set(DOXYGEN_FILE_PATTERNS “<a href="#id1"><span class="problematic" id="id2">*</span></a>.h <a href="#id3"><span class="problematic" id="id4">*</span></a>.hpp <a href="#id5"><span class="problematic" id="id6">*</span></a>.hh <a href="#id7"><span class="problematic" id="id8">*</span></a>.cpp <a href="#id9"><span class="problematic" id="id10">*</span></a>.c <a href="#id11"><span class="problematic" id="id12">*</span></a>.cc <a href="#id13"><span class="problematic" id="id14">*</span></a>.hxx”)
+set(DOXYGEN_FILE_PATTERNS “<a href="#id3"><span class="problematic" id="id4">*</span></a>.h <a href="#id5"><span class="problematic" id="id6">*</span></a>.hpp <a href="#id7"><span class="problematic" id="id8">*</span></a>.hh <a href="#id9"><span class="problematic" id="id10">*</span></a>.cpp <a href="#id11"><span class="problematic" id="id12">*</span></a>.c <a href="#id13"><span class="problematic" id="id14">*</span></a>.cc <a href="#id15"><span class="problematic" id="id16">*</span></a>.hxx”)
 # Breathe apidoc
 set(BREATHE_INPUT ${SPHINX_DOC_BUILD_FOLDER}/doxygen/xml)
-set(BREATHE_OUTPUT ${SPHINX_DOC_BUILD_FOLDER}/breathe)
+set(BREATHE_OUTPUT ${SPHINX_DOC_BUILD_FOLDER}/breathe_apidoc)
 set(BREATHE_OPTION -g union,namespace,class,group,struct,file,interface)
 # Sphinx apidoc
 set(SPHINX_APIDOC_INPUT ${PROJECT_SOURCE_DIR}/python/${PROJECT_NAME})
@@ -384,13 +417,13 @@ set(CPP_API</p>
 # Associated configuration files
 configure_file(</p>
 <blockquote>
-<div><p>${MPI_CMAKE_MODULES_ROOT_DIR}/resources/sphinx/sphinx/doxygen_index_one_page.rst.in
+<div><p>${MPI_CMAKE_MODULES_RESOURCES_DIR}/sphinx/sphinx/doxygen_index_one_page.rst.in
 ${SPHINX_DOC_BUILD_FOLDER}/doxygen_index_one_page.rst
 &#64;ONLY
 IMMEDIATE)</p>
 </div></blockquote>
 <dl class="simple">
-<dt>configure_file(</dt><dd><p>${MPI_CMAKE_MODULES_ROOT_DIR}/resources/sphinx/sphinx/doxygen_index.rst.in
+<dt>configure_file(</dt><dd><p>${MPI_CMAKE_MODULES_RESOURCES_DIR}/sphinx/sphinx/doxygen_index.rst.in
 ${SPHINX_DOC_BUILD_FOLDER}/doxygen_index.rst &#64;ONLY IMMEDIATE)</p>
 </dd>
 </dl>
@@ -429,7 +462,7 @@ file(</p>
 <blockquote>
 <div><p>GLOB_RECURSE CMAKE_FILES_FOUND
 RELATIVE ${PROJECT_SOURCE_DIR}
-FOLLOW_SYMLINKS ${PROJECT_SOURCE_DIR}/cmake/<a href="#id15"><span class="problematic" id="id16">*</span></a>.cmake)</p>
+FOLLOW_SYMLINKS ${PROJECT_SOURCE_DIR}/cmake/<a href="#id17"><span class="problematic" id="id18">*</span></a>.cmake)</p>
 </div></blockquote>
 <p>list(SORT CMAKE_FILES_FOUND)
 set(DOC_CMAKE_MODULE “”)
@@ -445,7 +478,7 @@ foreach(cmake_file ${CMAKE_FILES_FOUND})</p>
 <p># Add the cmake documentation to the main doc
 configure_file(</p>
 <blockquote>
-<div><p>${MPI_CMAKE_MODULES_ROOT_DIR}/resources/sphinx/sphinx/cmake_doc.rst.in
+<div><p>${MPI_CMAKE_MODULES_RESOURCES_DIR}/sphinx/sphinx/cmake_doc.rst.in
 ${SPHINX_DOC_BUILD_FOLDER}/cmake_doc.rst &#64;ONLY IMMEDIATE)</p>
 </div></blockquote>
 <p># Create a symlink to the cmake folder
@@ -468,7 +501,7 @@ set(ADDITIONNAL_DOC_PATH “”)
 if(IS_DIRECTORY ${PROJECT_SOURCE_DIR}/doc)</p>
 <blockquote>
 <div><p># Add the general documentation to the main one if needed.
-set(ADDITIONNAL_DOC_PATH “doc/<a href="#id17"><span class="problematic" id="id18">*</span></a>”)
+set(ADDITIONNAL_DOC_PATH “doc/<a href="#id19"><span class="problematic" id="id20">*</span></a>”)
 # Add the cmake files to the main documentation
 set(GENERAL_DOCUMENTATION</p>
 <blockquote>
@@ -491,41 +524,41 @@ COMMENT “Add the doc folder to the sphinx build.”)</p>
 </div></blockquote>
 <p>endif()</p>
 <p># Generate the configuration files
+set(HEADER “Welcome to ${PROJECT_NAME}’s documentation!”)
+string(LENGTH ${HEADER} HEADER_LENGTH)
+set(HEADER_UNDERLINE “”)
+foreach(i RANGE ${HEADER_LENGTH})</p>
+<blockquote>
+<div><p>string(CONCAT HEADER_UNDERLINE “${HEADER_UNDERLINE}=”)</p>
+</div></blockquote>
+<p>endforeach()
+set(HEADER “${HEADER}n${HEADER_UNDERLINE}”)
 configure_file(</p>
 <blockquote>
-<div><p>${MPI_CMAKE_MODULES_ROOT_DIR}/resources/sphinx/sphinx/conf.py.in
+<div><p>${MPI_CMAKE_MODULES_RESOURCES_DIR}/sphinx/sphinx/conf.py.in
 ${SPHINX_DOC_BUILD_FOLDER}/conf.py &#64;ONLY IMMEDIATE)</p>
 </div></blockquote>
 <dl class="simple">
-<dt>configure_file(</dt><dd><p>${MPI_CMAKE_MODULES_ROOT_DIR}/resources/sphinx/sphinx/index.rst.in
+<dt>configure_file(</dt><dd><p>${MPI_CMAKE_MODULES_RESOURCES_DIR}/sphinx/sphinx/index.rst.in
 ${SPHINX_DOC_BUILD_FOLDER}/index.rst &#64;ONLY IMMEDIATE)</p>
 </dd>
-<dt>configure_file(</dt><dd><p>${MPI_CMAKE_MODULES_ROOT_DIR}/resources/sphinx/sphinx/general_documentation.rst.in
+<dt>configure_file(</dt><dd><p>${MPI_CMAKE_MODULES_RESOURCES_DIR}/sphinx/sphinx/general_documentation.rst.in
 ${SPHINX_DOC_BUILD_FOLDER}/general_documentation.rst
 &#64;ONLY
 IMMEDIATE)</p>
 </dd>
 </dl>
 <p># Fetch the readme.md and the license.txt
-file(</p>
-<blockquote>
-<div><p>GLOB md_files
-RELATIVE ${PROJECT_SOURCE_DIR}
-${PROJECT_SOURCE_DIR}/<a href="#id19"><span class="problematic" id="id20">*</span></a>.md)</p>
-</div></blockquote>
-<dl>
-<dt>foreach(md_file ${md_files})</dt><dd><p>string(TOLOWER ${md_file} md_file_lower)
-if(${md_file_lower} STREQUAL “readme.md”)</p>
-<blockquote>
-<div><p>set(readme_file ${md_file})</p>
-</div></blockquote>
-<p>endif(${md_file_lower} STREQUAL “readme.md”)</p>
-</dd>
-</dl>
-<p>endforeach(md_file ${md_files})
+_FIND_README(readme_file “md”)
 if(NOT readme_file)</p>
 <blockquote>
-<div><p>message(FATAL_ERROR “No readme file found.”)</p>
+<div><p># If no “readme.md” is found, let’s check if there is a “readme.rst”
+_FIND_README(readme_file “rst”)</p>
+<dl class="simple">
+<dt>if(NOT readme_file)</dt><dd><p>message(FATAL_ERROR “No readme file found.”)</p>
+</dd>
+</dl>
+<p>endif()</p>
 </div></blockquote>
 <p>endif()
 add_custom_target(</p>
@@ -549,6 +582,15 @@ ${PROJECT_NAME}_license_symlink)</p>
 </dl>
 <p># We generate the final layout. Mardown files are looked for automatically.
 _build_sphinx_build()</p>
+<p># install the documentation
+if(GENERATE_DOCUMENTATION)</p>
+<blockquote>
+<div><dl class="simple">
+<dt>install(DIRECTORY ${SPHINX_DOC_BUILD_FOLDER}/html</dt><dd><p>DESTINATION ${SPHINX_DOC_INSTALL_FOLDER})</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>endif()</p>
 <p># Create a dependency on the doc target
 add_dependencies(doc ${PROJECT_NAME}_sphinx_html)</p>
 </div></blockquote>
@@ -559,28 +601,25 @@ add_dependencies(doc ${PROJECT_NAME}_sphinx_html)</p>
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright Copyright (c) 2020, See license.txt file or the license section.
+        &#169; Copyright Copyright (c) 2021, See license.txt file or the license section..
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

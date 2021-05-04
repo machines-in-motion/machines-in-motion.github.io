@@ -1,5 +1,6 @@
 #
-# Copyright (c) 2019-2020, New York University and Max Planck Gesellschaft.
+# Copyright (c) 2019, New York University and Max Planck Gesellschaft.
+#
 # License BSD-3 clause
 #
 

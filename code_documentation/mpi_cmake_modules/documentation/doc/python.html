@@ -3,9 +3,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Python &mdash; mpi_cmake_modules 1.0.0 documentation</title>
   
@@ -16,8 +17,12 @@
 
   
   
+
   
   
+
+  
+    <link rel="canonical" href="https://machines-in-motion.github.io/code_documentation/mpi_cmake_modules/doc/python.html" />
 
   
   <!--[if lt IE 9]>
@@ -29,14 +34,13 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Set if empty" href="set_if_empty.html" />
+    <link rel="next" title="Sphinx" href="sphinx.html" />
     <link rel="prev" title="Pthread" href="pthread.html" /> 
 </head>
 
@@ -51,7 +55,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> mpi_cmake_modules
+            <a href="../index.html" class="icon icon-home"> mpi_cmake_modules
           
 
           
@@ -97,16 +101,11 @@
 <li class="toctree-l4"><a class="reference internal" href="doxygen.html">Doxygen</a></li>
 <li class="toctree-l4"><a class="reference internal" href="dynamic_graph.html">Dynamic graph</a></li>
 <li class="toctree-l4"><a class="reference internal" href="eigen.html">Eigen (linear algebra)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="main_page.html">mpi_cmake_modules {#mainpage}</a></li>
 <li class="toctree-l4"><a class="reference internal" href="os_detection.html">OS detection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pkg_config.html">PKG Config</a></li>
-<li class="toctree-l4"><a class="reference internal" href="protobuf.html">Protobuf</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pthread.html">Pthread</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Python</a></li>
-<li class="toctree-l4"><a class="reference internal" href="set_if_empty.html">Set if empty</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sphinx.html">Sphinx</a></li>
 <li class="toctree-l4"><a class="reference internal" href="xacro.html">Xacro</a></li>
-<li class="toctree-l4"><a class="reference internal" href="xenomai.html">Xenomai</a></li>
 </ul>
 </li>
 </ul>
@@ -126,24 +125,20 @@
 <li class="toctree-l2"><a class="reference internal" href="doxygen.html">Doxygen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dynamic_graph.html">Dynamic graph</a></li>
 <li class="toctree-l2"><a class="reference internal" href="eigen.html">Eigen (linear algebra)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="main_page.html">mpi_cmake_modules {#mainpage}</a></li>
 <li class="toctree-l2"><a class="reference internal" href="os_detection.html">OS detection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pkg_config.html">PKG Config</a></li>
-<li class="toctree-l2"><a class="reference internal" href="protobuf.html">Protobuf</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pthread.html">Pthread</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Python</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#search-for-python">Search for Python</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#search-for-numpy">Search for Numpy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#install-path">Install path</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#search-python-module">Search python module</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="set_if_empty.html">Set if empty</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sphinx.html">Sphinx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xacro.html">Xacro</a></li>
-<li class="toctree-l2"><a class="reference internal" href="xenomai.html">Xenomai</a></li>
 </ul>
 </li>
 </ul>
@@ -192,6 +187,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -205,7 +202,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/doc/python.md.txt" rel="nofollow"> View page source</a>
           
         
@@ -219,81 +216,105 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="python">
+  <section id="python">
 <h1>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="introduction">
+<section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>This module is very important as it provide tools to search for the Python
+<p>This part is very important as it provides tools to search for the Python
 libraries and includes depending on the required Python version.
-Plus some tools to create python bindings using boost python or pybind11.</p>
-</div>
-<div class="section" id="usage">
+Plus some tools to create python bindings using pybind11.</p>
+</section>
+<section id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="search-for-python">
+<section id="search-for-python">
 <h3>Search for Python<a class="headerlink" href="#search-for-python" title="Permalink to this headline">¶</a></h3>
 <p>The simplest thing is here to find the default Python library:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">search_for_python</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find_package</span><span class="p">(</span><span class="n">Python</span> <span class="n">REQUIRED</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>This macros is influenced by <code class="docutils literal notranslate"><span class="pre">PYTHON_EXECUTABLE</span></code> and <code class="docutils literal notranslate"><span class="pre">PYTHON_LIBRARY</span></code> which can
 be set for Python2 via the command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>catkin build --cmake-args -DPYTHON_EXECUTABLE=`which python2` -DPYTHON_LIBRARY=`/usr/lib/x86_64-linux-gnu/libpython2.7.so`
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>colcon build --cmake-args -DPYTHON_EXECUTABLE=`which python2`
 </pre></div>
 </div>
-<p>or for Python3 via the command</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>catkin build --cmake-args -DPYTHON_EXECUTABLE=`which python3` -DPYTHON_LIBRARY=`/usr/lib/x86_64-linux-gnu/libpython3.5m.so`
+<p>you can add <code class="docutils literal notranslate"><span class="pre">-DPYTHON_LIBRARY=</span></code>/usr/lib/x86_64-linux-gnu/libpython2.7.so``
+if needed</p>
+<p>or for Python3 via the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>colcon build --cmake-args -DPYTHON_EXECUTABLE=`which python3`
 </pre></div>
 </div>
+<p>you can add <code class="docutils literal notranslate"><span class="pre">-DPYTHON_LIBRARY=</span></code>/usr/lib/x86_64-linux-gnu/libpython3.5m.so``
+if needed</p>
 <p>Please make sure the library exists at the defined place before executing the
 above commands.</p>
-</div>
-<div class="section" id="search-for-numpy">
-<h3>Search for Numpy<a class="headerlink" href="#search-for-numpy" title="Permalink to this headline">¶</a></h3>
-<p>Numpy includes can be found via the following macro:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">search_for_numpy</span><span class="p">()</span>
+<p>If you only want to find the python executable you can just do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">get_python_interpreter</span><span class="p">(</span><span class="n">my_var</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The macro <code class="docutils literal notranslate"><span class="pre">search_for_python()</span></code> must have been called before hand.</p>
+<p><code class="docutils literal notranslate"><span class="pre">my_var</span></code> will contain the path to the python interpreter.</p>
+</section>
+<section id="install-path">
+<h3>Install path<a class="headerlink" href="#install-path" title="Permalink to this headline">¶</a></h3>
+<p>In order to install files and library in the good place for python to find it
+on need to get the correct path:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">get_python_install_dir</span><span class="p">(</span><span class="n">my_var</span><span class="p">)</span>
+</pre></div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">my_var</span></code> contains the path to where the python files needs to be installed.</p>
+</section>
+<section id="search-python-module">
+<h3>Search python module<a class="headerlink" href="#search-python-module" title="Permalink to this headline">¶</a></h3>
+<p>In order to find pure python package one can use this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find_package</span><span class="p">(</span><span class="n">PythonModule</span> <span class="n">REQUIRED</span> <span class="n">COMPONENTS</span> <span class="n">robot_properties_solo</span><span class="p">)</span>
+</pre></div>
 </div>
-</div>
+<p>This will declare the following variables:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">PythonModules_FOUND</span></code>: Whether all specified Python modules were found.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PythonModules_&lt;module&gt;_FOUND</span></code>: Whether the Python module &lt;module&gt; was found.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PythonModules_&lt;module&gt;_PATH</span></code>: Absolute path of the directory containing the
+Python module named &lt;module&gt;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PythonModules_&lt;module&gt;</span></code>: Import target for module named &lt;module&gt;.
+The location of the target is <code class="docutils literal notranslate"><span class="pre">PythonModules_&lt;module&gt;_PATH</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PythonModules_PYTHONPATH</span></code>: The <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> setting required for the found
+Python module(s), i.e., The directories that have to be added to the Python
+search path. To support the use of this CMake module more than once with
+different arguments to the find_package() command, e.g., with and without
+the <code class="docutils literal notranslate"><span class="pre">REQUIRED</span></code> argument, the directories containing the found Python
+modules are appended to any existing directories in<br /><code class="docutils literal notranslate"><span class="pre">PythonModules_PYTHONPATH</span></code> if not already listed.</p></li>
+</ul>
+</section>
+</section>
+</section>
 
 
            </div>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="set_if_empty.html" class="btn btn-neutral float-right" title="Set if empty" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="pthread.html" class="btn btn-neutral float-left" title="Pthread" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="sphinx.html" class="btn btn-neutral float-right" title="Sphinx" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pthread.html" class="btn btn-neutral float-left" title="Pthread" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright Copyright (c) 2020, See license.txt file or the license section.
+        &#169; Copyright Copyright (c) 2021, See license.txt file or the license section..
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

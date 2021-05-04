@@ -12,22 +12,15 @@ specific set of rules.
 
 In order to use it one need to source the workspace environment:
 
-    source workspace/devel/setup.bash
+    source workspace/install/setup.bash
 
 And to run the following command:
 
-    rosrun mpi_cmake_modules clang_format list_of_files list_of_folders
+    mpi_clang_format list_of_files list_of_folders
 
 `list_of_files` and `list_of_folders` can be either relative paths or absolute paths.
 
-For those not willing to use rosrun the executable is located in
-
-    mpi_cmake_modules/scripts/clang_format
-
-So one can simply get the full path of the executable in order to use it.
-A cleaner way would be to properly install the executable script.
-
-The executable will create the list of all files to be formatted by checking all
+This executable will create the list of all files to be formatted by checking all
 arguments (which order does not matter). And perform the following tests:
 - If you provided a file it will keep it if:
     - it exists &
@@ -36,18 +29,3 @@ arguments (which order does not matter). And perform the following tests:
     perform the above checks.
 
 Once the list is created the tool format each selected files.
-
-## CMake macro
-
-This package also provide a CMake macro allowing you to perform automatically
-the formatting upon build.
-
-The macro to add is located in the `mpi_cmake_modules/cmake/clang-format.cmake`
-and is called
-    
-    format_code()
-
-By default it does nothing. In order to activate it you need to add the
-folowwing CMake argument:
-
-    catkin build mpi_cmake_modules --cmake-args -DFORMAT_CODE=ON

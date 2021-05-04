@@ -20,10 +20,8 @@
 #
 macro(BUILD_XACRO_FILES)
 
-  # find dependencies using catkin
-  find_package(catkin REQUIRED COMPONENTS
-    xacro
-  )
+  # find the xacro package
+  find_package(xacro REQUIRED)
 
   # Xacro files of the quadruped
   file(GLOB  xacro_file_names RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}/xacro

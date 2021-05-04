@@ -1,31 +1,33 @@
 Boost
 =====
 
-## Introduction
+Use the default way to find boost in the official
+[CMake documentation](https://cmake.org/cmake/help/v3.10/module/FindBoost.html).
 
-This package provide a CMake macros which looks for the 
-[Boost](https://www.boost.org/doc/libs/)
-libraries.
+## In practice
 
-## Usage
+We need to look for boost and it's components:
 
-Inside your `CMakeLists.txt` one can use:
+    find_package(Boost REQUIRED COMPONENTS thread)
 
-    SET(BOOST_COMPONENTS <Boost components list>)
-    SEARCH_FOR_BOOST(BOOST_COMPONENTS)
+Then we need to link them to our targets:
 
-or in lower case:
+    target_link_library(my_lib Boost::boost Boost::thread)
 
-    set(BOOST_COMPONENTS <Boost components list>)
-    search_for_boost()
+## Boost python
 
-This will already define for you the path to the include directories for Boost.
-It provide the variable `BOOST_LIBRARIES` in order to use the Boost component.
+Boost python is a bit more annoying as it requires the version of python used
+on the system. Hence the search is a bit different:
 
-In order to link a CMake target with boost-python (cf. 
-[add_library](https://cmake.org/cmake/help/v3.17/command/add_library.html?highlight=add_library)
-or 
-[add_executable](https://cmake.org/cmake/help/v3.17/command/add_executable.html?highlight=add_executable)) one can simply use the following macro:
+    # Find python
+    find_package(Python REQUIRED)
+    # Extract major/minor python version
+    string(REPLACE "." ";" VERSION_LIST ${PYTHONLIBS_VERSION_STRING})
+    list(GET VERSION_LIST 0 PYTHONLIBS_VERSION_MAJOR)
+    list(GET VERSION_LIST 1 PYTHONLIBS_VERSION_MINOR)
+    set(boost_python_name python${PYTHONLIBS_VERSION_MAJOR}.${PYTHONLIBS_VERSION_MINOR})
+    find_package(Boost COMPONENTS ${boost_python_name} REQUIRED)
 
+And then link to it:
 
-    target_link_boost_python(<target name>)
+    target_link_library(my_lib Boost::${boost_python_name})

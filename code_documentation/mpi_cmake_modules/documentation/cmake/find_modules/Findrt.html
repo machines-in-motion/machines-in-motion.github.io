@@ -1,0 +1,308 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Imported Targets &mdash; mpi_cmake_modules 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+    <link rel="canonical" href="https://machines-in-motion.github.io/code_documentation/mpi_cmake_modules/cmake/find_modules/Findrt.html" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> mpi_cmake_modules
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Welcome to mpi_cmake_modules’s documentation!</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../general_documentation.html">General Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">mpi_cmake_modules</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cmake_doc.html">CMake API</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">mpi_cmake_modules</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Imported Targets</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/cmake/find_modules/Findrt.cmake.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p>#
+# Copyright (c) 2019, New York University and Max Planck Gesellschaft. License
+# BSD-3 clause
+#</p>
+<p># cmake-format off
+#[=======================================================================[.rst:
+Findrt
+———-</p>
+<p>Finds the rt library.</p>
+<section id="imported-targets">
+<h1>Imported Targets<a class="headerlink" href="#imported-targets" title="Permalink to this headline">¶</a></h1>
+<p>This module provides the following imported targets, if found:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">rt::rt</span></code></dt><dd><p>The rt interface library.</p>
+</dd>
+</dl>
+</section>
+<section id="result-variables">
+<h1>Result Variables<a class="headerlink" href="#result-variables" title="Permalink to this headline">¶</a></h1>
+<p>This will define the following variables:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">rt_FOUND</span></code></dt><dd><p>True if the system has the rt library.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">rt_VERSION</span></code></dt><dd><p>The version of the rt library which was found.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">rt_INCLUDE_DIRS</span></code></dt><dd><p>Include directories needed to use rt.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">rt_LIBRARIES</span></code></dt><dd><p>Libraries needed to link to rt. This will be empty as this is a header
+only library.</p>
+</dd>
+</dl>
+</section>
+<section id="cache-variables">
+<h1>Cache Variables<a class="headerlink" href="#cache-variables" title="Permalink to this headline">¶</a></h1>
+<p>The following cache variables may also be set:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">rt_INCLUDE_DIR</span></code></dt><dd><p>The directory containing <code class="docutils literal notranslate"><span class="pre">rt.h</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">rt_LIBRARY</span></code></dt><dd><p>The path to the rt library.</p>
+</dd>
+</dl>
+<p>#]=======================================================================]
+# cmake-format on
+set(rt_error_message “Could not find ‘rt’, the serialization library.”)</p>
+<p>find_library(rt_LIBRARY rt)
+if(rt_LIBRARY STREQUAL “rt_LIBRARY-NOTFOUND”)</p>
+<blockquote>
+<div><p>message(FATAL_ERROR ${rt_error_message})
+set(rt_path_found FALSE)</p>
+</div></blockquote>
+<p>endif()</p>
+<p>set(rt_path_found TRUE)</p>
+<p>if(rt_path_found)</p>
+<blockquote>
+<div><p># Verify the information given.
+include(FindPackageHandleStandardArgs)
+find_package_handle_standard_args(</p>
+<blockquote>
+<div><p>rt
+REQUIRED_VARS rt_LIBRARY
+FOUND_VAR rt_FOUND)</p>
+</div></blockquote>
+<p># Export the library.
+if(rt_FOUND)</p>
+<blockquote>
+<div><p>set(rt_LIBRARIES ${rt_LIBRARY})
+set(rt_INCLUDE_DIR “”)
+set(rt_INCLUDE_DIRS ${rt_INCLUDE_DIR})
+set(rt_DEFINITIONS “”)</p>
+</div></blockquote>
+<p>endif()</p>
+<dl>
+<dt>if(rt_FOUND)</dt><dd><dl class="simple">
+<dt>if(NOT TARGET rt::rt)</dt><dd><p>add_library(rt::rt UNKNOWN IMPORTED)
+set_target_properties(rt::rt PROPERTIES IMPORTED_LOCATION ${rt_LIBRARY})</p>
+</dd>
+</dl>
+<p>endif()</p>
+</dd>
+</dl>
+<p>endif()</p>
+<dl class="simple">
+<dt>mark_as_advanced(</dt><dd><p>rt_INCLUDE_DIR
+rt_INCLUDE_DIRS
+rt_LIBRARY
+rt_LIBRARIES
+rt_DEFINITIONS
+rt_VERSION
+rt_FOUND)</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>endif()</p>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright Copyright (c) 2021, See license.txt file or the license section..
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

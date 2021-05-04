@@ -3,13 +3,12 @@ Eigen (linear algebra)
 
 ## Introduction
 
-This package provide a simple macros to look for the 
-[Eigen](http://eigen.tuxfamily.org/index.php?title=Main_Page)
-package.
+Use the default
+[FindEigen.cmake](https://eigen.tuxfamily.org/dox/TopicCMakeGuide.html)
+provided by the CMake install.
 
 ## Usage
 
-The Eigen package is an include only C++ project so only using the following
-macros is enough in order to use Cereal.
+    find_package(Eigen3 REQUIRED)
 
-    search_for_eigen()
+    target_link_library(my_lib Eigen3::Eigen)
