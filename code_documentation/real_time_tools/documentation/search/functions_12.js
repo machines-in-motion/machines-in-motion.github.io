@@ -1,9 +1,0 @@
-var searchData=
-[
-  ['wait',['wait',['../classreal__time__tools_1_1FrequencyManager.html#a3496f77c75f5ac8013b9f62345595e80',1,'real_time_tools::FrequencyManager']]],
-  ['wait_5ffor_5ftimeindex',['wait_for_timeindex',['../classreal__time__tools_1_1ThreadsafeTimeseries.html#ae7e9f19aae9a415788adca06e20d84b3',1,'real_time_tools::ThreadsafeTimeseries']]],
-  ['wait_5ffor_5fupdate',['wait_for_update',['../classreal__time__tools_1_1SingletypeThreadsafeObject.html#ac105db0216c21d2bf7cb0f2465857aeb',1,'real_time_tools::SingletypeThreadsafeObject::wait_for_update(const size_t &amp;index) const'],['../classreal__time__tools_1_1SingletypeThreadsafeObject.html#ab97c9e8f26f6a9a3c67bd59842bad4b2',1,'real_time_tools::SingletypeThreadsafeObject::wait_for_update(const std::string &amp;name) const'],['../classreal__time__tools_1_1SingletypeThreadsafeObject.html#a4d77aeca1b3789cc97f49ff2dd4c6562',1,'real_time_tools::SingletypeThreadsafeObject::wait_for_update() const'],['../classreal__time__tools_1_1ThreadsafeObject.html#a85d7f9175a08a3440f9bb783fd4aa264',1,'real_time_tools::ThreadsafeObject::wait_for_update(unsigned index) const'],['../classreal__time__tools_1_1ThreadsafeObject.html#a2b1cc6a7d2691e8266130701975fd1f1',1,'real_time_tools::ThreadsafeObject::wait_for_update() const'],['../classreal__time__tools_1_1ThreadsafeObject.html#a16807abf31871861f2fc3e228ecda18f',1,'real_time_tools::ThreadsafeObject::wait_for_update() const']]],
-  ['was_5frealtime_5flost',['was_realtime_lost',['../classreal__time__tools_1_1RealTimeCheck.html#a88f45e9151a5709812adddbb5dd142cc',1,'real_time_tools::RealTimeCheck']]],
-  ['write_5fdevice',['write_device',['../classreal__time__tools_1_1UsbStream.html#aa9fdd0d43fbf0cddbffb65538af60321',1,'real_time_tools::UsbStream']]],
-  ['write_5flog',['write_log',['../demo__checkpoint__timer_8cpp.html#a609e6537df0c7eb15c1f5b4e02fbe0ed',1,'demo_checkpoint_timer.cpp']]]
-];

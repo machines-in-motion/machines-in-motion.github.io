@@ -1,0 +1,426 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>File realtime_check.hpp &mdash; real_time_tools 2.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+    <link rel="canonical" href="https://machines-in-motion.github.io/code_documentation/real_time_tools/breathe_apidoc/file/realtime__check_8hpp.html" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="File realtime_test.cpp" href="realtime__test_8cpp.html" />
+    <link rel="prev" title="File realtime_check.cpp" href="realtime__check_8cpp.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> real_time_tools
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Welcome to real_time_tools’s documentation!</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#readme">Readme</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html#c-api">C++ API</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../doxygen_index.html">C++ API</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../classlist.html">Class list</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../filelist.html">File list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../doxygen_index_one_page.html">C++ API and example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#indices-and-tables">Indices and Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#license-and-copyrights">License and Copyrights</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../doxygen_index.html">C++ API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../classlist.html">Class list</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../filelist.html">File list</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="checkpoint__timer_8hpp.html">File checkpoint_timer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="checkpoint__timer_8hxx.html">File checkpoint_timer.hxx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo__checkpoint__timer_8cpp.html">File demo_checkpoint_timer.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo__realtime__check_8cpp.html">File demo_realtime_check.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo__realtime__strict__check_8cpp.html">File demo_realtime_strict_check.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo__spinner_8cpp.html">File demo_spinner.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo__thread_8cpp.html">File demo_thread.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo__timing_8cpp.html">File demo_timing.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo__usb__stream__imu__3_d_m___g_x3__25_8cpp.html">File demo_usb_stream_imu_3DM_GX3_25.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="frequency__manager_8cpp.html">File frequency_manager.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="frequency__manager_8hpp.html">File frequency_manager.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="iostream_8cpp.html">File iostream.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="iostream_8hpp.html">File iostream.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mutex_8hpp.html">File mutex.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="process__manager_8cpp.html">File process_manager.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="process__manager_8hpp.html">File process_manager.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="real__time__tools_8cpp.html">File real_time_tools.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="realtime__check_8cpp.html">File realtime_check.cpp</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">File realtime_check.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="realtime__test_8cpp.html">File realtime_test.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="realtime__test__display_8cpp.html">File realtime_test_display.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rt__mutex_8hpp.html">File rt_mutex.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spinner_8cpp.html">File spinner.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spinner_8hpp.html">File spinner.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="thread_8cpp.html">File thread.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="thread_8hpp.html">File thread.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="threadsafe__object_8hpp.html">File threadsafe_object.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="threadsafe__object_8hxx.html">File threadsafe_object.hxx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="timer_8cpp.html">File timer.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="timer_8hpp.html">File timer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usb__stream_8cpp.html">File usb_stream.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usb__stream_8hpp.html">File usb_stream.hpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../doxygen_index_one_page.html">C++ API and example</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">real_time_tools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../doxygen_index.html">C++ API</a> &raquo;</li>
+        
+          <li><a href="../filelist.html">File list</a> &raquo;</li>
+        
+      <li>File realtime_check.hpp</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/breathe_apidoc/file/realtime__check_8hpp.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="file-realtime-check-hpp">
+<h1>File realtime_check.hpp<a class="headerlink" href="#file-realtime-check-hpp" title="Permalink to this headline">¶</a></h1>
+<p>Tools for checking the real time of an algorithm. </p>
+<p><dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>Maximilien Naveau (<a class="reference external" href="mailto:maximilien&#46;naveau&#37;&#52;&#48;gmail&#46;com">maximilien<span>&#46;</span>naveau<span>&#64;</span>gmail<span>&#46;</span>com</a>) license License BSD-3-Clause </p>
+</dd>
+<dt><strong>Copyright</strong></dt><dd><p>Copyright (c) 2019, New York University and Max Planck Gesellschaft. </p>
+</dd>
+<dt><strong>Date</strong></dt><dd><p>2019-05-22 </p>
+</dd>
+</dl>
+</p>
+<dl class="cpp type">
+<dt id="_CPPv415real_time_tools">
+<span id="_CPPv315real_time_tools"></span><span id="_CPPv215real_time_tools"></span><span id="real_time_tools"></span><span class="target" id="namespacereal__time__tools"></span><em class="property"><span class="pre">namespace</span> </em><code class="sig-name descname"><span class="pre">real_time_tools</span></code><br /></dt>
+<dd><dl class="cpp class">
+<dt id="_CPPv4N15real_time_tools13RealTimeCheckE">
+<span id="_CPPv3N15real_time_tools13RealTimeCheckE"></span><span id="_CPPv2N15real_time_tools13RealTimeCheckE"></span><span id="real_time_tools::RealTimeCheck"></span><span class="target" id="classreal__time__tools_1_1_real_time_check"></span><em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">RealTimeCheck</span></code><br /></dt>
+<dd><em>#include &lt;realtime_check.hpp&gt;</em><p>super simple class for checking if thread ever lost realtime. </p>
+<p>simply measure frequency between two calls to the tick function. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N15real_time_tools13RealTimeCheck13RealTimeCheckEdd">
+<span id="_CPPv3N15real_time_tools13RealTimeCheck13RealTimeCheckEdd"></span><span id="_CPPv2N15real_time_tools13RealTimeCheck13RealTimeCheckEdd"></span><span id="real_time_tools::RealTimeCheck::RealTimeCheck__double.double"></span><span class="target" id="classreal__time__tools_1_1_real_time_check_1a2f26472092432e628167f89a3a19e27e"></span><code class="sig-name descname"><span class="pre">RealTimeCheck</span></code><span class="sig-paren">(</span><span class="pre">double</span> <em><span class="pre">target_frequency</span></em>, <span class="pre">double</span> <em><span class="pre">switch_frequency</span></em><span class="sig-paren">)</span><br /></dt>
+<dd><p>Construct a new <a class="reference internal" href="../../doxygen_index_one_page.html#classreal__time__tools_1_1_real_time_check"><span class="std std-ref">RealTimeCheck</span></a> object. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target_frequency</strong> – is the loop frequency. </p></li>
+<li><p><strong>switch_frequency</strong> – is the admissible frequency. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N15real_time_tools13RealTimeCheck4tickEv">
+<span id="_CPPv3N15real_time_tools13RealTimeCheck4tickEv"></span><span id="_CPPv2N15real_time_tools13RealTimeCheck4tickEv"></span><span id="real_time_tools::RealTimeCheck::tick"></span><span class="target" id="classreal__time__tools_1_1_real_time_check_1a83fdf97352d36aa20e482d7dfae442d5"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">tick</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>inform the instance of this class that an iteration passed </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK15real_time_tools13RealTimeCheck17was_realtime_lostEv">
+<span id="_CPPv3NK15real_time_tools13RealTimeCheck17was_realtime_lostEv"></span><span id="_CPPv2NK15real_time_tools13RealTimeCheck17was_realtime_lostEv"></span><span id="real_time_tools::RealTimeCheck::was_realtime_lostC"></span><span class="target" id="classreal__time__tools_1_1_real_time_check_1a88f45e9151a5709812adddbb5dd142cc"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">was_realtime_lost</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><br /></dt>
+<dd><p>true if realtime was lost at least once (frequency between two ticks was below target frequencies) </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N15real_time_tools13RealTimeCheck14get_statisticsERiRiRdRdRdRdRd">
+<span id="_CPPv3N15real_time_tools13RealTimeCheck14get_statisticsERiRiRdRdRdRdRd"></span><span id="_CPPv2N15real_time_tools13RealTimeCheck14get_statisticsERiRiRdRdRdRdRd"></span><span id="real_time_tools::RealTimeCheck::get_statistics__iR.iR.doubleR.doubleR.doubleR.doubleR.doubleR"></span><span class="target" id="classreal__time__tools_1_1_real_time_check_1a4d9614b08d2b4bf7162e14c473b7d491"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">get_statistics</span></code><span class="sig-paren">(</span><span class="pre">int</span> <span class="pre">&amp;</span><em><span class="pre">ticks</span></em>, <span class="pre">int</span> <span class="pre">&amp;</span><em><span class="pre">switchs</span></em>, <span class="pre">double</span> <span class="pre">&amp;</span><em><span class="pre">target_frequency</span></em>, <span class="pre">double</span> <span class="pre">&amp;</span><em><span class="pre">switch_frequency</span></em>, <span class="pre">double</span> <span class="pre">&amp;</span><em><span class="pre">average_frequency</span></em>, <span class="pre">double</span> <span class="pre">&amp;</span><em><span class="pre">current_frequency</span></em>, <span class="pre">double</span> <span class="pre">&amp;</span><em><span class="pre">worse_frequency</span></em><span class="sig-paren">)</span><br /></dt>
+<dd><p>return true if statistics are available, false otherwise (false is returned is tick has never been called or if ticks reached maximum integer value) switchs in the number of time realtime was lost. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N15real_time_tools13RealTimeCheck21get_average_frequencyEv">
+<span id="_CPPv3N15real_time_tools13RealTimeCheck21get_average_frequencyEv"></span><span id="_CPPv2N15real_time_tools13RealTimeCheck21get_average_frequencyEv"></span><span id="real_time_tools::RealTimeCheck::get_average_frequency"></span><span class="target" id="classreal__time__tools_1_1_real_time_check_1a2b891d59055829fab442ba4c382778e3"></span><span class="pre">double</span> <code class="sig-name descname"><span class="pre">get_average_frequency</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>return the averaged observed frequency if statistics are available, -1 otherwise (false is returned is tick has never been called or if ticks reached maximum integer value). </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK15real_time_tools13RealTimeCheck21get_current_frequencyEv">
+<span id="_CPPv3NK15real_time_tools13RealTimeCheck21get_current_frequencyEv"></span><span id="_CPPv2NK15real_time_tools13RealTimeCheck21get_current_frequencyEv"></span><span id="real_time_tools::RealTimeCheck::get_current_frequencyC"></span><span class="target" id="classreal__time__tools_1_1_real_time_check_1a375f76a8df6a08ea1755728391384302"></span><span class="pre">double</span> <code class="sig-name descname"><span class="pre">get_current_frequency</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><br /></dt>
+<dd><p>returns observed frequency after last call to tick </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N15real_time_tools13RealTimeCheck5printEv">
+<span id="_CPPv3N15real_time_tools13RealTimeCheck5printEv"></span><span id="_CPPv2N15real_time_tools13RealTimeCheck5printEv"></span><span id="real_time_tools::RealTimeCheck::print"></span><span class="target" id="classreal__time__tools_1_1_real_time_check_1a9c9c68da79843098085204095286a143"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">print</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Display the results of the frequency measurement. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt id="_CPPv4N15real_time_tools13RealTimeCheck7startedE">
+<span id="_CPPv3N15real_time_tools13RealTimeCheck7startedE"></span><span id="_CPPv2N15real_time_tools13RealTimeCheck7startedE"></span><span id="real_time_tools::RealTimeCheck::started__b"></span><span class="target" id="classreal__time__tools_1_1_real_time_check_1a21b5703a3c61b09955d94d06a3562667"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">started</span></code><br /></dt>
+<dd><p>true if tick has been called once </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N15real_time_tools13RealTimeCheck10start_timeE">
+<span id="_CPPv3N15real_time_tools13RealTimeCheck10start_timeE"></span><span id="_CPPv2N15real_time_tools13RealTimeCheck10start_timeE"></span><span id="real_time_tools::RealTimeCheck::start_time__std::chrono::high_resolution_clock::time_point"></span><span class="target" id="classreal__time__tools_1_1_real_time_check_1a969600ce8ecc4ec48bbf59e8d669749e"></span><span class="pre">std</span><span class="pre">::</span><span class="pre">chrono</span><span class="pre">::</span><span class="pre">high_resolution_clock</span><span class="pre">::</span><span class="pre">time_point</span> <code class="sig-name descname"><span class="pre">start_time</span></code><br /></dt>
+<dd><p>time at which tick was called first </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N15real_time_tools13RealTimeCheck9last_tickE">
+<span id="_CPPv3N15real_time_tools13RealTimeCheck9last_tickE"></span><span id="_CPPv2N15real_time_tools13RealTimeCheck9last_tickE"></span><span id="real_time_tools::RealTimeCheck::last_tick__std::chrono::high_resolution_clock::time_point"></span><span class="target" id="classreal__time__tools_1_1_real_time_check_1a3e200c0376362dcc9a7db7d77a124931"></span><span class="pre">std</span><span class="pre">::</span><span class="pre">chrono</span><span class="pre">::</span><span class="pre">high_resolution_clock</span><span class="pre">::</span><span class="pre">time_point</span> <code class="sig-name descname"><span class="pre">last_tick</span></code><br /></dt>
+<dd><p>last time system was ticked </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N15real_time_tools13RealTimeCheck16target_frequencyE">
+<span id="_CPPv3N15real_time_tools13RealTimeCheck16target_frequencyE"></span><span id="_CPPv2N15real_time_tools13RealTimeCheck16target_frequencyE"></span><span id="real_time_tools::RealTimeCheck::target_frequency__double"></span><span class="target" id="classreal__time__tools_1_1_real_time_check_1a126c13a50d06703c515b35f87c3e867c"></span><span class="pre">double</span> <code class="sig-name descname"><span class="pre">target_frequency</span></code><br /></dt>
+<dd><p>frequency at which ticks are expected </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N15real_time_tools13RealTimeCheck7epsilonE">
+<span id="_CPPv3N15real_time_tools13RealTimeCheck7epsilonE"></span><span id="_CPPv2N15real_time_tools13RealTimeCheck7epsilonE"></span><span id="real_time_tools::RealTimeCheck::epsilon__double"></span><span class="target" id="classreal__time__tools_1_1_real_time_check_1ab6a059be584e4a92254002d35713d0df"></span><span class="pre">double</span> <code class="sig-name descname"><span class="pre">epsilon</span></code><br /></dt>
+<dd><p>small quantity </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N15real_time_tools13RealTimeCheck5ticksE">
+<span id="_CPPv3N15real_time_tools13RealTimeCheck5ticksE"></span><span id="_CPPv2N15real_time_tools13RealTimeCheck5ticksE"></span><span id="real_time_tools::RealTimeCheck::ticks__uint"></span><span class="target" id="classreal__time__tools_1_1_real_time_check_1ae2acb20d9f1e49cc35eb5505d63201aa"></span><span class="pre">uint</span> <code class="sig-name descname"><span class="pre">ticks</span></code><br /></dt>
+<dd><p>number of iterations </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N15real_time_tools13RealTimeCheck7switchsE">
+<span id="_CPPv3N15real_time_tools13RealTimeCheck7switchsE"></span><span id="_CPPv2N15real_time_tools13RealTimeCheck7switchsE"></span><span id="real_time_tools::RealTimeCheck::switchs__uint"></span><span class="target" id="classreal__time__tools_1_1_real_time_check_1acc235579eeb245f043fd188790540fa9"></span><span class="pre">uint</span> <code class="sig-name descname"><span class="pre">switchs</span></code><br /></dt>
+<dd><p>number of time realtime was lost (target frequency not respected between two ticks) </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N15real_time_tools13RealTimeCheck17average_frequencyE">
+<span id="_CPPv3N15real_time_tools13RealTimeCheck17average_frequencyE"></span><span id="_CPPv2N15real_time_tools13RealTimeCheck17average_frequencyE"></span><span id="real_time_tools::RealTimeCheck::average_frequency__double"></span><span class="target" id="classreal__time__tools_1_1_real_time_check_1a3ffb6de7e7c01a7248c2293e29b98011"></span><span class="pre">double</span> <code class="sig-name descname"><span class="pre">average_frequency</span></code><br /></dt>
+<dd><p>average frequency </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N15real_time_tools13RealTimeCheck15worse_frequencyE">
+<span id="_CPPv3N15real_time_tools13RealTimeCheck15worse_frequencyE"></span><span id="_CPPv2N15real_time_tools13RealTimeCheck15worse_frequencyE"></span><span id="real_time_tools::RealTimeCheck::worse_frequency__double"></span><span class="target" id="classreal__time__tools_1_1_real_time_check_1a3605c41d8c5c616879fa9af469860470"></span><span class="pre">double</span> <code class="sig-name descname"><span class="pre">worse_frequency</span></code><br /></dt>
+<dd><p>worse frequency ever experienced </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N15real_time_tools13RealTimeCheck16switch_frequencyE">
+<span id="_CPPv3N15real_time_tools13RealTimeCheck16switch_frequencyE"></span><span id="_CPPv2N15real_time_tools13RealTimeCheck16switch_frequencyE"></span><span id="real_time_tools::RealTimeCheck::switch_frequency__double"></span><span class="target" id="classreal__time__tools_1_1_real_time_check_1a235895032a789539a8ba957caac621ec"></span><span class="pre">double</span> <code class="sig-name descname"><span class="pre">switch_frequency</span></code><br /></dt>
+<dd><p>nb of switches will increase by 1 each time measured frequency below this value </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N15real_time_tools13RealTimeCheck17current_frequencyE">
+<span id="_CPPv3N15real_time_tools13RealTimeCheck17current_frequencyE"></span><span id="_CPPv2N15real_time_tools13RealTimeCheck17current_frequencyE"></span><span id="real_time_tools::RealTimeCheck::current_frequency__double"></span><span class="target" id="classreal__time__tools_1_1_real_time_check_1a935b4c6b8ebf569e6510d47376f8499f"></span><span class="pre">double</span> <code class="sig-name descname"><span class="pre">current_frequency</span></code><br /></dt>
+<dd><p>latest frequency that was measured </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N15real_time_tools13RealTimeCheck5mutexE">
+<span id="_CPPv3N15real_time_tools13RealTimeCheck5mutexE"></span><span id="_CPPv2N15real_time_tools13RealTimeCheck5mutexE"></span><span id="real_time_tools::RealTimeCheck::mutex__std::mutex"></span><span class="target" id="classreal__time__tools_1_1_real_time_check_1a3a7cc4ef87fac5e4052a3240aced88d1"></span><span class="pre">std</span><span class="pre">::</span><span class="pre">mutex</span> <code class="sig-name descname"><span class="pre">mutex</span></code><br /></dt>
+<dd><p>multithreading safety </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="realtime__test_8cpp.html" class="btn btn-neutral float-right" title="File realtime_test.cpp" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="realtime__check_8cpp.html" class="btn btn-neutral float-left" title="File realtime_check.cpp" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright Copyright (c) 2021, See license.txt file or the license section..
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,591 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>File timer.hpp &mdash; real_time_tools 2.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+    <link rel="canonical" href="https://machines-in-motion.github.io/code_documentation/real_time_tools/breathe_apidoc/file/timer_8hpp.html" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="File usb_stream.cpp" href="usb__stream_8cpp.html" />
+    <link rel="prev" title="File timer.cpp" href="timer_8cpp.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> real_time_tools
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Welcome to real_time_tools’s documentation!</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#readme">Readme</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html#c-api">C++ API</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../doxygen_index.html">C++ API</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../classlist.html">Class list</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../filelist.html">File list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../doxygen_index_one_page.html">C++ API and example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#indices-and-tables">Indices and Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#license-and-copyrights">License and Copyrights</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../doxygen_index.html">C++ API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../classlist.html">Class list</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../filelist.html">File list</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="checkpoint__timer_8hpp.html">File checkpoint_timer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="checkpoint__timer_8hxx.html">File checkpoint_timer.hxx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo__checkpoint__timer_8cpp.html">File demo_checkpoint_timer.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo__realtime__check_8cpp.html">File demo_realtime_check.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo__realtime__strict__check_8cpp.html">File demo_realtime_strict_check.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo__spinner_8cpp.html">File demo_spinner.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo__thread_8cpp.html">File demo_thread.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo__timing_8cpp.html">File demo_timing.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo__usb__stream__imu__3_d_m___g_x3__25_8cpp.html">File demo_usb_stream_imu_3DM_GX3_25.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="frequency__manager_8cpp.html">File frequency_manager.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="frequency__manager_8hpp.html">File frequency_manager.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="iostream_8cpp.html">File iostream.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="iostream_8hpp.html">File iostream.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mutex_8hpp.html">File mutex.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="process__manager_8cpp.html">File process_manager.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="process__manager_8hpp.html">File process_manager.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="real__time__tools_8cpp.html">File real_time_tools.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="realtime__check_8cpp.html">File realtime_check.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="realtime__check_8hpp.html">File realtime_check.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="realtime__test_8cpp.html">File realtime_test.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="realtime__test__display_8cpp.html">File realtime_test_display.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rt__mutex_8hpp.html">File rt_mutex.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spinner_8cpp.html">File spinner.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spinner_8hpp.html">File spinner.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="thread_8cpp.html">File thread.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="thread_8hpp.html">File thread.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="threadsafe__object_8hpp.html">File threadsafe_object.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="threadsafe__object_8hxx.html">File threadsafe_object.hxx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="timer_8cpp.html">File timer.cpp</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">File timer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usb__stream_8cpp.html">File usb_stream.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usb__stream_8hpp.html">File usb_stream.hpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../doxygen_index_one_page.html">C++ API and example</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">real_time_tools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../doxygen_index.html">C++ API</a> &raquo;</li>
+        
+          <li><a href="../filelist.html">File list</a> &raquo;</li>
+        
+      <li>File timer.hpp</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/breathe_apidoc/file/timer_8hpp.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="file-timer-hpp">
+<h1>File timer.hpp<a class="headerlink" href="#file-timer-hpp" title="Permalink to this headline">¶</a></h1>
+<p>Some tools to measure (ellapsed) time. </p>
+<p><dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>Maximilien Naveau (<a class="reference external" href="mailto:maximilien&#46;naveau&#37;&#52;&#48;gmail&#46;com">maximilien<span>&#46;</span>naveau<span>&#64;</span>gmail<span>&#46;</span>com</a>) license License BSD-3-Clause </p>
+</dd>
+<dt><strong>Copyright</strong></dt><dd><p>Copyright (c) 2019, New York University and Max Planck Gesellschaft. </p>
+</dd>
+<dt><strong>Date</strong></dt><dd><p>2019-05-22 </p>
+</dd>
+</dl>
+</p>
+<dl class="cpp type">
+<dt id="_CPPv415real_time_tools">
+<span id="_CPPv315real_time_tools"></span><span id="_CPPv215real_time_tools"></span><span id="real_time_tools"></span><span class="target" id="namespacereal__time__tools"></span><em class="property"><span class="pre">namespace</span> </em><code class="sig-name descname"><span class="pre">real_time_tools</span></code><br /></dt>
+<dd><dl class="cpp class">
+<dt id="_CPPv4N15real_time_tools5TimerE">
+<span id="_CPPv3N15real_time_tools5TimerE"></span><span id="_CPPv2N15real_time_tools5TimerE"></span><span id="real_time_tools::Timer"></span><span class="target" id="classreal__time__tools_1_1_timer"></span><em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">Timer</span></code><br /></dt>
+<dd><em>#include &lt;timer.hpp&gt;</em><p>The timer class is a simple time measurement class that measure between tic and tac and with a memory buffer of a certain size. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N15real_time_tools5Timer5TimerEv">
+<span id="_CPPv3N15real_time_tools5Timer5TimerEv"></span><span id="_CPPv2N15real_time_tools5Timer5TimerEv"></span><span id="real_time_tools::Timer::Timer"></span><span class="target" id="classreal__time__tools_1_1_timer_1a572f7022db18de269ba08b31b05b4af7"></span><code class="sig-name descname"><span class="pre">Timer</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>timer constructor </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N15real_time_tools5Timer3ticEv">
+<span id="_CPPv3N15real_time_tools5Timer3ticEv"></span><span id="_CPPv2N15real_time_tools5Timer3ticEv"></span><span id="real_time_tools::Timer::tic"></span><span class="target" id="classreal__time__tools_1_1_timer_1a540f7f6925768c6f333b2fef4a914374"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">tic</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>tic measures the time when it is called. </p>
+<p>This is to be used with the tac method that will return the time elapsed between tic and tac. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N15real_time_tools5Timer3tacEv">
+<span id="_CPPv3N15real_time_tools5Timer3tacEv"></span><span id="_CPPv2N15real_time_tools5Timer3tacEv"></span><span id="real_time_tools::Timer::tac"></span><span class="target" id="classreal__time__tools_1_1_timer_1a3d55794492714544c5c83aed23d8f1f9"></span><span class="pre">double</span> <code class="sig-name descname"><span class="pre">tac</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>tac is to be used after tic has been called. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the duration in seconds between the call of <a class="reference internal" href="../../doxygen_index_one_page.html#classreal__time__tools_1_1_timer_1a540f7f6925768c6f333b2fef4a914374"><span class="std std-ref">tic()</span></a> and the call of <a class="reference internal" href="../../doxygen_index_one_page.html#classreal__time__tools_1_1_timer_1a3d55794492714544c5c83aed23d8f1f9"><span class="std std-ref">tac()</span></a>. if <a class="reference internal" href="../../doxygen_index_one_page.html#classreal__time__tools_1_1_timer_1a540f7f6925768c6f333b2fef4a914374"><span class="std std-ref">tic()</span></a> has not been called previously this will return nan </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N15real_time_tools5Timer7tac_ticEv">
+<span id="_CPPv3N15real_time_tools5Timer7tac_ticEv"></span><span id="_CPPv2N15real_time_tools5Timer7tac_ticEv"></span><span id="real_time_tools::Timer::tac_tic"></span><span class="target" id="classreal__time__tools_1_1_timer_1a310fc3b9165c3751a36ff92586f0facd"></span><span class="pre">double</span> <code class="sig-name descname"><span class="pre">tac_tic</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>this is like a <a class="reference internal" href="../../doxygen_index_one_page.html#classreal__time__tools_1_1_timer_1a3d55794492714544c5c83aed23d8f1f9"><span class="std std-ref">tac()</span></a> followed by a <a class="reference internal" href="../../doxygen_index_one_page.html#classreal__time__tools_1_1_timer_1a540f7f6925768c6f333b2fef4a914374"><span class="std std-ref">tic()</span></a>, making sure the previous tac_time becomes the tic_time </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N15real_time_tools5Timer17log_time_intervalEd">
+<span id="_CPPv3N15real_time_tools5Timer17log_time_intervalEd"></span><span id="_CPPv2N15real_time_tools5Timer17log_time_intervalEd"></span><span id="real_time_tools::Timer::log_time_interval__double"></span><span class="target" id="classreal__time__tools_1_1_timer_1a14bd35142437b42533b1b478ce044c8f"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">log_time_interval</span></code><span class="sig-paren">(</span><span class="pre">double</span> <em><span class="pre">time_interval</span></em><span class="sig-paren">)</span><br /></dt>
+<dd><p>Save the time interval measured. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>time_interval</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK15real_time_tools5Timer17dump_measurementsENSt6stringE">
+<span id="_CPPv3NK15real_time_tools5Timer17dump_measurementsENSt6stringE"></span><span id="_CPPv2NK15real_time_tools5Timer17dump_measurementsENSt6stringE"></span><span id="real_time_tools::Timer::dump_measurements__ssC"></span><span class="target" id="classreal__time__tools_1_1_timer_1a05347a5971441d46b1293f8ed9361b0f"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dump_measurements</span></code><span class="sig-paren">(</span><span class="pre">std</span><span class="pre">::</span><span class="pre">string</span> <em><span class="pre">file_name</span></em><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><br /></dt>
+<dd><p>IOSTREAM functions. </p>
+<p>dump_tic_tac_measurements writes in a file the time elapsed between every tick </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file_name</strong> – is the path to the file. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK15real_time_tools5Timer16print_statisticsEv">
+<span id="_CPPv3NK15real_time_tools5Timer16print_statisticsEv"></span><span id="_CPPv2NK15real_time_tools5Timer16print_statisticsEv"></span><span id="real_time_tools::Timer::print_statisticsC"></span><span class="target" id="classreal__time__tools_1_1_timer_1a16635bb883c6f71772093a89cbe3130a"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">print_statistics</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><br /></dt>
+<dd><p>print_statistics display in real time the statistics of the time measurements acquiered so far. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N15real_time_tools5Timer15set_memory_sizeEKj">
+<span id="_CPPv3N15real_time_tools5Timer15set_memory_sizeEKj"></span><span id="_CPPv2N15real_time_tools5Timer15set_memory_sizeEKj"></span><span id="real_time_tools::Timer::set_memory_size__unsignedC"></span><span class="target" id="classreal__time__tools_1_1_timer_1a0319fbdc56fd5046d701c8728b27e860"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">void</span> <code class="sig-name descname"><span class="pre">set_memory_size</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">unsigned</span> <em><span class="pre">memory_buffer_size</span></em><span class="sig-paren">)</span><br /></dt>
+<dd><p>SETTERS. </p>
+<p>set_memory_size sets the buffer size. It resets all value of the buffer to zero. !! WARNING non real time method. !! </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>memory_buffer_size</strong> – is the size use to reset the size of the </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N15real_time_tools5Timer8set_nameENSt6stringE">
+<span id="_CPPv3N15real_time_tools5Timer8set_nameENSt6stringE"></span><span id="_CPPv2N15real_time_tools5Timer8set_nameENSt6stringE"></span><span id="real_time_tools::Timer::set_name__ss"></span><span class="target" id="classreal__time__tools_1_1_timer_1a1005cc3c2d7e68ab6d97c8d3167c7f93"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">void</span> <code class="sig-name descname"><span class="pre">set_name</span></code><span class="sig-paren">(</span><span class="pre">std</span><span class="pre">::</span><span class="pre">string</span> <em><span class="pre">name</span></em><span class="sig-paren">)</span><br /></dt>
+<dd><p>set_name modify the name of the object for display purposes. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> – is the new name of the object. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK15real_time_tools5Timer19get_min_elapsed_secEv">
+<span id="_CPPv3NK15real_time_tools5Timer19get_min_elapsed_secEv"></span><span id="_CPPv2NK15real_time_tools5Timer19get_min_elapsed_secEv"></span><span id="real_time_tools::Timer::get_min_elapsed_secC"></span><span class="target" id="classreal__time__tools_1_1_timer_1a167d5aa0ce706bc317999db70ff0f7cd"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">double</span> <code class="sig-name descname"><span class="pre">get_min_elapsed_sec</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><br /></dt>
+<dd><p>GETTERS. </p>
+<p>get_min_elapsed_sec </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a copy of the minimum elapsed times </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK15real_time_tools5Timer19get_max_elapsed_secEv">
+<span id="_CPPv3NK15real_time_tools5Timer19get_max_elapsed_secEv"></span><span id="_CPPv2NK15real_time_tools5Timer19get_max_elapsed_secEv"></span><span id="real_time_tools::Timer::get_max_elapsed_secC"></span><span class="target" id="classreal__time__tools_1_1_timer_1a18563032c4730c75cefba43e69d5aaa9"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">double</span> <code class="sig-name descname"><span class="pre">get_max_elapsed_sec</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><br /></dt>
+<dd><p>get_max_elapsed_sec </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a copy of the maximum elapsed times </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK15real_time_tools5Timer19get_avg_elapsed_secEv">
+<span id="_CPPv3NK15real_time_tools5Timer19get_avg_elapsed_secEv"></span><span id="_CPPv2NK15real_time_tools5Timer19get_avg_elapsed_secEv"></span><span id="real_time_tools::Timer::get_avg_elapsed_secC"></span><span class="target" id="classreal__time__tools_1_1_timer_1ac1be39401be7768a17cbe8388329f2fc"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">double</span> <code class="sig-name descname"><span class="pre">get_avg_elapsed_sec</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><br /></dt>
+<dd><p>get_avg_elapsed_sec </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a copy of the average elapsed time </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK15real_time_tools5Timer23get_std_dev_elapsed_secEv">
+<span id="_CPPv3NK15real_time_tools5Timer23get_std_dev_elapsed_secEv"></span><span id="_CPPv2NK15real_time_tools5Timer23get_std_dev_elapsed_secEv"></span><span id="real_time_tools::Timer::get_std_dev_elapsed_secC"></span><span class="target" id="classreal__time__tools_1_1_timer_1abc6382e906ae6f90582e0f7026e9dd76"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">double</span> <code class="sig-name descname"><span class="pre">get_std_dev_elapsed_sec</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><br /></dt>
+<dd><p>get_std_dev_elapsed_sec </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a copy of the standard deviation of the elapsed times </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N15real_time_tools5Timer20get_current_time_secEv">
+<span id="_CPPv3N15real_time_tools5Timer20get_current_time_secEv"></span><span id="_CPPv2N15real_time_tools5Timer20get_current_time_secEv"></span><span id="real_time_tools::Timer::get_current_time_sec"></span><span class="target" id="classreal__time__tools_1_1_timer_1aa1e7794aa57dfba12f7cc30c852ea08c"></span><em class="property"><span class="pre">static</span></em> <span class="pre">double</span> <code class="sig-name descname"><span class="pre">get_current_time_sec</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Some utilities. </p>
+<p>get_current_time_sec gives the current time in double and in seconds </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N15real_time_tools5Timer19get_current_time_msEv">
+<span id="_CPPv3N15real_time_tools5Timer19get_current_time_msEv"></span><span id="_CPPv2N15real_time_tools5Timer19get_current_time_msEv"></span><span id="real_time_tools::Timer::get_current_time_ms"></span><span class="target" id="classreal__time__tools_1_1_timer_1aa89f45d2228eb343418c71afb5eaf9b5"></span><em class="property"><span class="pre">static</span></em> <em class="property"><span class="pre">inline</span></em> <span class="pre">double</span> <code class="sig-name descname"><span class="pre">get_current_time_ms</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>get_current_time_ms gives the current time in double and in milli seconds </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N15real_time_tools5Timer18sleep_microsecondsEi">
+<span id="_CPPv3N15real_time_tools5Timer18sleep_microsecondsEi"></span><span id="_CPPv2N15real_time_tools5Timer18sleep_microsecondsEi"></span><span id="real_time_tools::Timer::sleep_microseconds__i"></span><span class="target" id="classreal__time__tools_1_1_timer_1a705486df1486d737ac30a04ecf7e2b97"></span><em class="property"><span class="pre">static</span></em> <span class="pre">int</span> <code class="sig-name descname"><span class="pre">sleep_microseconds</span></code><span class="sig-paren">(</span><span class="pre">int</span> <em><span class="pre">sleep_duration_us</span></em><span class="sig-paren">)</span><br /></dt>
+<dd><p>puts the current thread to sleep for the duration of “sleep_duration_us” micro-seconds. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sleep_time_us</strong> – is the sleeping duration asked in micro-seconds. </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>0 on success, error code otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N15real_time_tools5Timer9sleep_secERKd">
+<span id="_CPPv3N15real_time_tools5Timer9sleep_secERKd"></span><span id="_CPPv2N15real_time_tools5Timer9sleep_secERKd"></span><span id="real_time_tools::Timer::sleep_sec__doubleCR"></span><span class="target" id="classreal__time__tools_1_1_timer_1a0a0df8a3baef34e820203e5579afda38"></span><em class="property"><span class="pre">static</span></em> <span class="pre">void</span> <code class="sig-name descname"><span class="pre">sleep_sec</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">double</span> <span class="pre">&amp;</span><em><span class="pre">sleep_time_sec</span></em><span class="sig-paren">)</span><br /></dt>
+<dd><p>sleep_sec puts the current thread to sleep for the duration of “sleep_time_sec” seconds. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sleep_time_sec</strong> – is the sleeping duration asked in seconds. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N15real_time_tools5Timer8sleep_msERKd">
+<span id="_CPPv3N15real_time_tools5Timer8sleep_msERKd"></span><span id="_CPPv2N15real_time_tools5Timer8sleep_msERKd"></span><span id="real_time_tools::Timer::sleep_ms__doubleCR"></span><span class="target" id="classreal__time__tools_1_1_timer_1abb2ce808994282d63846e7fca544f818"></span><em class="property"><span class="pre">static</span></em> <em class="property"><span class="pre">inline</span></em> <span class="pre">void</span> <code class="sig-name descname"><span class="pre">sleep_ms</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">double</span> <span class="pre">&amp;</span><em><span class="pre">sleep_time_ms</span></em><span class="sig-paren">)</span><br /></dt>
+<dd><p>sleep_ms puts the current thread to sleep for the duration of “sleep_time_sec” seconds. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sleep_time_ms</strong> – is the sleeping duration asked in seconds. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N15real_time_tools5Timer15sleep_until_secERKd">
+<span id="_CPPv3N15real_time_tools5Timer15sleep_until_secERKd"></span><span id="_CPPv2N15real_time_tools5Timer15sleep_until_secERKd"></span><span id="real_time_tools::Timer::sleep_until_sec__doubleCR"></span><span class="target" id="classreal__time__tools_1_1_timer_1a8de5eedf9fe5607d78a703cd22665137"></span><em class="property"><span class="pre">static</span></em> <span class="pre">void</span> <code class="sig-name descname"><span class="pre">sleep_until_sec</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">double</span> <span class="pre">&amp;</span><em><span class="pre">date_sec</span></em><span class="sig-paren">)</span><br /></dt>
+<dd><p>sleep_until_sec puts the threads to sleep until the date “date_sec” is reached. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>date_sec</strong> – is the date until when to sleep in seconds. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N15real_time_tools5Timer16timespec_add_secER8timespecKd">
+<span id="_CPPv3N15real_time_tools5Timer16timespec_add_secER8timespecKd"></span><span id="_CPPv2N15real_time_tools5Timer16timespec_add_secER8timespecKd"></span><span id="real_time_tools::Timer::timespec_add_sec__timespecR.doubleC"></span><span class="target" id="classreal__time__tools_1_1_timer_1a0055b704a4e0b518269b0ab5fbed9278"></span><em class="property"><span class="pre">static</span></em> <span class="pre">void</span> <code class="sig-name descname"><span class="pre">timespec_add_sec</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">struct</span></em> <span class="pre">timespec</span> <span class="pre">&amp;</span><em><span class="pre">date_spec</span></em>, <em class="property"><span class="pre">const</span></em> <span class="pre">double</span> <em><span class="pre">duration_sec</span></em><span class="sig-paren">)</span><br /></dt>
+<dd><p>timespec_add_sec posix type of a date in time. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>date_spec</strong> – is the date to be changed </p></li>
+<li><p><strong>duration_sec</strong> – the duration to be added to “t” in seconds </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N15real_time_tools5Timer15sec_to_timespecEdR8timespec">
+<span id="_CPPv3N15real_time_tools5Timer15sec_to_timespecEdR8timespec"></span><span id="_CPPv2N15real_time_tools5Timer15sec_to_timespecEdR8timespec"></span><span id="real_time_tools::Timer::sec_to_timespec__double.timespecR"></span><span class="target" id="classreal__time__tools_1_1_timer_1a7370c65fa7810c6bcbe1b2f33e21f2ff"></span><em class="property"><span class="pre">static</span></em> <span class="pre">void</span> <code class="sig-name descname"><span class="pre">sec_to_timespec</span></code><span class="sig-paren">(</span><span class="pre">double</span> <em><span class="pre">date_sec</span></em>, <em class="property"><span class="pre">struct</span></em> <span class="pre">timespec</span> <span class="pre">&amp;</span><em><span class="pre">date_spec</span></em><span class="sig-paren">)</span><br /></dt>
+<dd><p>sec_to_timespec converts a double representing the time in seconds to a struct timespec. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>date_sec</strong> – <strong>[in]</strong> is the time in sec to be converted. </p></li>
+<li><p><strong>date_spec</strong> – <strong>[out]</strong> is the converted structure. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N15real_time_tools5Timer20get_current_date_strEv">
+<span id="_CPPv3N15real_time_tools5Timer20get_current_date_strEv"></span><span id="_CPPv2N15real_time_tools5Timer20get_current_date_strEv"></span><span id="real_time_tools::Timer::get_current_date_str"></span><span class="target" id="classreal__time__tools_1_1_timer_1a6e5ef2fc811582b8ff4fe52775525e14"></span><em class="property"><span class="pre">static</span></em> <span class="pre">std</span><span class="pre">::</span><span class="pre">string</span> <code class="sig-name descname"><span class="pre">get_current_date_str</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>get_current_date_str get the current date and format it in a string with “year_month_day_hour_minute_sec” </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
+<dl class="cpp var">
+<dt id="_CPPv4N15real_time_tools5Timer9tic_time_E">
+<span id="_CPPv3N15real_time_tools5Timer9tic_time_E"></span><span id="_CPPv2N15real_time_tools5Timer9tic_time_E"></span><span id="real_time_tools::Timer::tic_time___double"></span><span class="target" id="classreal__time__tools_1_1_timer_1a19c7f3297d2762948843afaba92eade6"></span><span class="pre">double</span> <code class="sig-name descname"><span class="pre">tic_time_</span></code><a class="headerlink" href="#_CPPv4N15real_time_tools5Timer9tic_time_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>tic_time_ time at which <a class="reference internal" href="../../doxygen_index_one_page.html#classreal__time__tools_1_1_timer_1a540f7f6925768c6f333b2fef4a914374"><span class="std std-ref">tic()</span></a> was called </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N15real_time_tools5Timer24time_measurement_buffer_E">
+<span id="_CPPv3N15real_time_tools5Timer24time_measurement_buffer_E"></span><span id="_CPPv2N15real_time_tools5Timer24time_measurement_buffer_E"></span><span id="real_time_tools::Timer::time_measurement_buffer___std::deque:double:"></span><span class="target" id="classreal__time__tools_1_1_timer_1a9b509f58fc1eef3f7ce4145f75c01fa9"></span><span class="pre">std</span><span class="pre">::</span><span class="pre">deque</span><span class="pre">&lt;</span><span class="pre">double</span><span class="pre">&gt;</span> <code class="sig-name descname"><span class="pre">time_measurement_buffer_</span></code><a class="headerlink" href="#_CPPv4N15real_time_tools5Timer24time_measurement_buffer_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>time_measurement_buffer_ this is a chained list of double </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt>
+<span class="target" id="classreal__time__tools_1_1_timer_1a3967e7252cf6d9795e5b04c60763037d"></span><code class="sig-name descname"><span class="pre">long</span> <span class="pre">unsigned</span> <span class="pre">count_</span></code></dt>
+<dd><p>count_time_buffer_ is a counter that manages the time_measurement_buffer_ fill in. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N15real_time_tools5Timer19memory_buffer_size_E">
+<span id="_CPPv3N15real_time_tools5Timer19memory_buffer_size_E"></span><span id="_CPPv2N15real_time_tools5Timer19memory_buffer_size_E"></span><span id="real_time_tools::Timer::memory_buffer_size___unsigned"></span><span class="target" id="classreal__time__tools_1_1_timer_1ac0f102a03a84fdebd3803a0199e352a2"></span><span class="pre">unsigned</span> <code class="sig-name descname"><span class="pre">memory_buffer_size_</span></code><a class="headerlink" href="#_CPPv4N15real_time_tools5Timer19memory_buffer_size_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>memory_buffer_size_ is the max size of the memory buffer. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N15real_time_tools5Timer17min_elapsed_time_E">
+<span id="_CPPv3N15real_time_tools5Timer17min_elapsed_time_E"></span><span id="_CPPv2N15real_time_tools5Timer17min_elapsed_time_E"></span><span id="real_time_tools::Timer::min_elapsed_time___double"></span><span class="target" id="classreal__time__tools_1_1_timer_1a212c2fff68b8098731ab59f14416ce01"></span><span class="pre">double</span> <code class="sig-name descname"><span class="pre">min_elapsed_time_</span></code><a class="headerlink" href="#_CPPv4N15real_time_tools5Timer17min_elapsed_time_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>min_elapsed_time_ is the minimum measured elapsed time </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N15real_time_tools5Timer17max_elapsed_time_E">
+<span id="_CPPv3N15real_time_tools5Timer17max_elapsed_time_E"></span><span id="_CPPv2N15real_time_tools5Timer17max_elapsed_time_E"></span><span id="real_time_tools::Timer::max_elapsed_time___double"></span><span class="target" id="classreal__time__tools_1_1_timer_1a6d794ee63c2eafb0399d55b433c27c43"></span><span class="pre">double</span> <code class="sig-name descname"><span class="pre">max_elapsed_time_</span></code><a class="headerlink" href="#_CPPv4N15real_time_tools5Timer17max_elapsed_time_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>max_elapsed_time_ is the maximum measured elapsed time </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N15real_time_tools5Timer17avg_elapsed_time_E">
+<span id="_CPPv3N15real_time_tools5Timer17avg_elapsed_time_E"></span><span id="_CPPv2N15real_time_tools5Timer17avg_elapsed_time_E"></span><span id="real_time_tools::Timer::avg_elapsed_time___double"></span><span class="target" id="classreal__time__tools_1_1_timer_1a058a28efa6f0fd3c4e332068e7db8574"></span><span class="pre">double</span> <code class="sig-name descname"><span class="pre">avg_elapsed_time_</span></code><a class="headerlink" href="#_CPPv4N15real_time_tools5Timer17avg_elapsed_time_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>avg_elapsed_time_ is the average measured elapsed time </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N15real_time_tools5Timer27second_moment_elapsed_time_E">
+<span id="_CPPv3N15real_time_tools5Timer27second_moment_elapsed_time_E"></span><span id="_CPPv2N15real_time_tools5Timer27second_moment_elapsed_time_E"></span><span id="real_time_tools::Timer::second_moment_elapsed_time___double"></span><span class="target" id="classreal__time__tools_1_1_timer_1a1d4e8ddf078ef1c544e2715a0420726a"></span><span class="pre">double</span> <code class="sig-name descname"><span class="pre">second_moment_elapsed_time_</span></code><a class="headerlink" href="#_CPPv4N15real_time_tools5Timer27second_moment_elapsed_time_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>avg_elapsed_time_ is the second moment measured elapsed time </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N15real_time_tools5Timer5name_E">
+<span id="_CPPv3N15real_time_tools5Timer5name_E"></span><span id="_CPPv2N15real_time_tools5Timer5name_E"></span><span id="real_time_tools::Timer::name___ss"></span><span class="target" id="classreal__time__tools_1_1_timer_1aadcaf1f743a7d3d967b740ec04fc0607"></span><span class="pre">std</span><span class="pre">::</span><span class="pre">string</span> <code class="sig-name descname"><span class="pre">name_</span></code><a class="headerlink" href="#_CPPv4N15real_time_tools5Timer5name_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>name_ of the timer object </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="usb__stream_8cpp.html" class="btn btn-neutral float-right" title="File usb_stream.cpp" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="timer_8cpp.html" class="btn btn-neutral float-left" title="File timer.cpp" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright Copyright (c) 2021, See license.txt file or the license section..
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

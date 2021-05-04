@@ -1,0 +1,388 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>File checkpoint_timer.hpp &mdash; real_time_tools 2.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+    <link rel="canonical" href="https://machines-in-motion.github.io/code_documentation/real_time_tools/breathe_apidoc/file/checkpoint__timer_8hpp.html" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="File checkpoint_timer.hxx" href="checkpoint__timer_8hxx.html" />
+    <link rel="prev" title="File list" href="../filelist.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> real_time_tools
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Welcome to real_time_tools’s documentation!</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#readme">Readme</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html#c-api">C++ API</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../doxygen_index.html">C++ API</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../classlist.html">Class list</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../filelist.html">File list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../doxygen_index_one_page.html">C++ API and example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#indices-and-tables">Indices and Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#license-and-copyrights">License and Copyrights</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../doxygen_index.html">C++ API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../classlist.html">Class list</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../filelist.html">File list</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">File checkpoint_timer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="checkpoint__timer_8hxx.html">File checkpoint_timer.hxx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo__checkpoint__timer_8cpp.html">File demo_checkpoint_timer.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo__realtime__check_8cpp.html">File demo_realtime_check.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo__realtime__strict__check_8cpp.html">File demo_realtime_strict_check.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo__spinner_8cpp.html">File demo_spinner.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo__thread_8cpp.html">File demo_thread.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo__timing_8cpp.html">File demo_timing.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo__usb__stream__imu__3_d_m___g_x3__25_8cpp.html">File demo_usb_stream_imu_3DM_GX3_25.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="frequency__manager_8cpp.html">File frequency_manager.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="frequency__manager_8hpp.html">File frequency_manager.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="iostream_8cpp.html">File iostream.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="iostream_8hpp.html">File iostream.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mutex_8hpp.html">File mutex.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="process__manager_8cpp.html">File process_manager.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="process__manager_8hpp.html">File process_manager.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="real__time__tools_8cpp.html">File real_time_tools.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="realtime__check_8cpp.html">File realtime_check.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="realtime__check_8hpp.html">File realtime_check.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="realtime__test_8cpp.html">File realtime_test.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="realtime__test__display_8cpp.html">File realtime_test_display.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rt__mutex_8hpp.html">File rt_mutex.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spinner_8cpp.html">File spinner.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spinner_8hpp.html">File spinner.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="thread_8cpp.html">File thread.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="thread_8hpp.html">File thread.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="threadsafe__object_8hpp.html">File threadsafe_object.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="threadsafe__object_8hxx.html">File threadsafe_object.hxx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="timer_8cpp.html">File timer.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="timer_8hpp.html">File timer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usb__stream_8cpp.html">File usb_stream.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usb__stream_8hpp.html">File usb_stream.hpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../doxygen_index_one_page.html">C++ API and example</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">real_time_tools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../doxygen_index.html">C++ API</a> &raquo;</li>
+        
+          <li><a href="../filelist.html">File list</a> &raquo;</li>
+        
+      <li>File checkpoint_timer.hpp</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/breathe_apidoc/file/checkpoint__timer_8hpp.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="file-checkpoint-timer-hpp">
+<h1>File checkpoint_timer.hpp<a class="headerlink" href="#file-checkpoint-timer-hpp" title="Permalink to this headline">¶</a></h1>
+<p>Implementation of the CheckpointTimer class. </p>
+<p><dl class="xrefsect">
+<dt>
+<a class="reference internal" href="../../doxygen_index_one_page.html#license_1_license000002"><span class="std std-ref"><span class="pre">License:</span></span></a></dt>
+<dd><p>BSD 3-clause </p>
+</dd></dl>
+
+<dl class="simple">
+<dt><strong>Copyright</strong></dt><dd><p>Copyright (c) 2020, New York University and Max Planck Gesellschaft </p>
+</dd>
+</dl>
+</p>
+<dl class="cpp type">
+<dt id="_CPPv415real_time_tools">
+<span id="_CPPv315real_time_tools"></span><span id="_CPPv215real_time_tools"></span><span id="real_time_tools"></span><span class="target" id="namespacereal__time__tools"></span><em class="property"><span class="pre">namespace</span> </em><code class="sig-name descname"><span class="pre">real_time_tools</span></code><a class="headerlink" href="#_CPPv415real_time_tools" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="cpp class">
+<dt id="_CPPv4I_6size_t_bEN15real_time_tools15CheckpointTimerE">
+<span id="_CPPv3I_6size_t_bEN15real_time_tools15CheckpointTimerE"></span><span id="_CPPv2I_6size_t_bEN15real_time_tools15CheckpointTimerE"></span><span class="pre">template&lt;</span><span class="pre">size_t</span> <code class="sig-name descname"><span class="pre">NUM_CHECKPOINTS</span></code><span class="pre">,</span> <span class="pre">bool</span> <code class="sig-name descname"><span class="pre">ENABLED</span></code> <span class="pre">=</span> <span class="pre">true</span><span class="pre">&gt;</span><br /><span class="target" id="classreal__time__tools_1_1_checkpoint_timer"></span><em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">CheckpointTimer</span></code><br /></dt>
+<dd><em>#include &lt;checkpoint_timer.hpp&gt;</em><p><a class="reference internal" href="../../doxygen_index_one_page.html#classreal__time__tools_1_1_timer"><span class="std std-ref">Timer</span></a> to measure code execution time with “checkpoints”. </p>
+<p>This timer is meant to be used for measuring execution time of a loop. It measures time between calls of the <code class="docutils literal notranslate"><span class="pre">start</span></code> method, so by calling this at the beginning of the loop, you get the execution time of the full iteration. Further, you can define “checkpoints” within the loop to measure time of separate steps in the loop. Call the <code class="docutils literal notranslate"><span class="pre">checkpoint</span></code> method after the code that is associated with it. For each checkpoint, the time elapsed since the last checkpoint is measured (<code class="docutils literal notranslate"><span class="pre">start</span></code> counts as a checkpoint in this regard).</p>
+<p>Example: <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+    <span class="o">//</span> <span class="nb">set</span> <span class="n">second</span> <span class="n">template</span> <span class="n">argument</span> <span class="n">to</span> <span class="n">false</span> <span class="n">to</span> <span class="n">disable</span> <span class="n">timer</span>
+    <span class="n">real_time_tools</span><span class="p">::</span><span class="n">CheckpointTimer</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">,</span> <span class="n">true</span><span class="o">&gt;</span> <span class="n">timer</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">timer</span><span class="o">.</span><span class="n">start</span><span class="p">();</span>
+
+        <span class="n">init</span><span class="p">();</span>
+        <span class="n">timer</span><span class="o">.</span><span class="n">checkpoint</span><span class="p">(</span><span class="s2">&quot;initialize&quot;</span><span class="p">);</span>
+
+        <span class="n">do_some_stuff</span><span class="p">();</span>
+        <span class="n">timer</span><span class="o">.</span><span class="n">checkpoint</span><span class="p">(</span><span class="s2">&quot;do some stuff&quot;</span><span class="p">);</span>
+
+        <span class="n">write_log</span><span class="p">();</span>
+        <span class="n">timer</span><span class="o">.</span><span class="n">checkpoint</span><span class="p">(</span><span class="s2">&quot;logging&quot;</span><span class="p">);</span>
+
+        <span class="o">//</span> <span class="nb">print</span> <span class="n">the</span> <span class="n">timing</span> <span class="n">results</span> <span class="n">every</span> <span class="mi">100</span> <span class="n">iterations</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">timer</span><span class="o">.</span><span class="n">print_statistics</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+ <dl class="field-list simple">
+<dt class="field-odd">tparam NUM_CHECKPOINTS</dt>
+<dd class="field-odd"><p>Number of checkpoints. </p>
+</dd>
+<dt class="field-even">tparam ENABLED</dt>
+<dd class="field-even"><p>Set to false, to disable timer. Method calls will have no effect (and should hopefully be optimized away by the compiler). </p>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N15real_time_tools15CheckpointTimer15CheckpointTimerEv">
+<span id="_CPPv3N15real_time_tools15CheckpointTimer15CheckpointTimerEv"></span><span id="_CPPv2N15real_time_tools15CheckpointTimer15CheckpointTimerEv"></span><span id="real_time_tools::CheckpointTimer::CheckpointTimer"></span><span class="target" id="classreal__time__tools_1_1_checkpoint_timer_1a0db0cad1676b37b951f2090ed81e1b98"></span><code class="sig-name descname"><span class="pre">CheckpointTimer</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N15real_time_tools15CheckpointTimer5startEv">
+<span id="_CPPv3N15real_time_tools15CheckpointTimer5startEv"></span><span id="_CPPv2N15real_time_tools15CheckpointTimer5startEv"></span><span id="real_time_tools::CheckpointTimer::start"></span><span class="target" id="classreal__time__tools_1_1_checkpoint_timer_1ad93a12cb74103528c8db4e7b1745eae6"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">start</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Start timer iteration. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N15real_time_tools15CheckpointTimer10checkpointERKNSt6stringE">
+<span id="_CPPv3N15real_time_tools15CheckpointTimer10checkpointERKNSt6stringE"></span><span id="_CPPv2N15real_time_tools15CheckpointTimer10checkpointERKNSt6stringE"></span><span id="real_time_tools::CheckpointTimer::checkpoint__ssCR"></span><span class="target" id="classreal__time__tools_1_1_checkpoint_timer_1a6e91b61b72c433a220b1bddb7a634bf5"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">checkpoint</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">std</span><span class="pre">::</span><span class="pre">string</span> <span class="pre">&amp;</span><em><span class="pre">checkpoint_name</span></em><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set checkpoint for time measurement. </p>
+<p>Measures time from the last call of <a class="reference internal" href="../../doxygen_index_one_page.html#classreal__time__tools_1_1_checkpoint_timer_1ad93a12cb74103528c8db4e7b1745eae6"><span class="std std-ref">start()</span></a> or <a class="reference internal" href="../../doxygen_index_one_page.html#classreal__time__tools_1_1_checkpoint_timer_1a6e91b61b72c433a220b1bddb7a634bf5"><span class="std std-ref">checkpoint()</span></a> until this call. The given name is used when printing the results.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>checkpoint_name</strong> – Name of the checkpoint (used for printing results) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK15real_time_tools15CheckpointTimer16print_statisticsEv">
+<span id="_CPPv3NK15real_time_tools15CheckpointTimer16print_statisticsEv"></span><span id="_CPPv2NK15real_time_tools15CheckpointTimer16print_statisticsEv"></span><span id="real_time_tools::CheckpointTimer::print_statisticsC"></span><span class="target" id="classreal__time__tools_1_1_checkpoint_timer_1a73e001fa40a76ce5fd917a2dfcd09555"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">print_statistics</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><br /></dt>
+<dd><p>Print results of time measurements. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt id="_CPPv4N15real_time_tools15CheckpointTimer7timers_E">
+<span id="_CPPv3N15real_time_tools15CheckpointTimer7timers_E"></span><span id="_CPPv2N15real_time_tools15CheckpointTimer7timers_E"></span><span id="real_time_tools::CheckpointTimer::timers___std::array:real_time_tools::Timer.NUM_CHECKPOINTS-+-1:"></span><span class="target" id="classreal__time__tools_1_1_checkpoint_timer_1a0abbead69aaf780b649f6af01f50cc62"></span><span class="pre">std</span><span class="pre">::</span><span class="pre">array</span><span class="pre">&lt;</span><a class="reference internal" href="#_CPPv415real_time_tools" title="real_time_tools"><span class="pre">real_time_tools</span></a><span class="pre">::</span><a class="reference internal" href="../class/classreal__time__tools_1_1_timer.html#_CPPv4N15real_time_tools5TimerE" title="real_time_tools::Timer"><span class="pre">Timer</span></a><span class="pre">,</span> <a class="reference internal" href="../class/classreal__time__tools_1_1_checkpoint_timer.html#_CPPv4I_6size_t_bEN15real_time_tools15CheckpointTimerE" title="real_time_tools::CheckpointTimer::NUM_CHECKPOINTS"><span class="pre">NUM_CHECKPOINTS</span></a> <span class="pre">+</span> <span class="pre">1</span><span class="pre">&gt;</span> <code class="sig-name descname"><span class="pre">timers_</span></code><br /></dt>
+<dd><p>Timers used for the different checkpoints. </p>
+<p>Index 0 is used for the total duration. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N15real_time_tools15CheckpointTimer17checkpoint_names_E">
+<span id="_CPPv3N15real_time_tools15CheckpointTimer17checkpoint_names_E"></span><span id="_CPPv2N15real_time_tools15CheckpointTimer17checkpoint_names_E"></span><span id="real_time_tools::CheckpointTimer::checkpoint_names___std::array:ss.NUM_CHECKPOINTS-+-1:"></span><span class="target" id="classreal__time__tools_1_1_checkpoint_timer_1afbb3abc9e62174d6046f6abb294a120f"></span><span class="pre">std</span><span class="pre">::</span><span class="pre">array</span><span class="pre">&lt;</span><span class="pre">std</span><span class="pre">::</span><span class="pre">string</span><span class="pre">,</span> <a class="reference internal" href="../class/classreal__time__tools_1_1_checkpoint_timer.html#_CPPv4I_6size_t_bEN15real_time_tools15CheckpointTimerE" title="real_time_tools::CheckpointTimer::NUM_CHECKPOINTS"><span class="pre">NUM_CHECKPOINTS</span></a> <span class="pre">+</span> <span class="pre">1</span><span class="pre">&gt;</span> <code class="sig-name descname"><span class="pre">checkpoint_names_</span></code><br /></dt>
+<dd><p>Names of the checkpoints. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N15real_time_tools15CheckpointTimer19current_checkpoint_E">
+<span id="_CPPv3N15real_time_tools15CheckpointTimer19current_checkpoint_E"></span><span id="_CPPv2N15real_time_tools15CheckpointTimer19current_checkpoint_E"></span><span id="real_time_tools::CheckpointTimer::current_checkpoint___s"></span><span class="target" id="classreal__time__tools_1_1_checkpoint_timer_1a07ae61ac85e755629625cc32416f2631"></span><span class="pre">size_t</span> <code class="sig-name descname"><span class="pre">current_checkpoint_</span></code> <span class="pre">=</span> <span class="pre">1</span><br /></dt>
+<dd><p>Index of the current checkpoint. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="checkpoint__timer_8hxx.html" class="btn btn-neutral float-right" title="File checkpoint_timer.hxx" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../filelist.html" class="btn btn-neutral float-left" title="File list" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright Copyright (c) 2021, See license.txt file or the license section..
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
