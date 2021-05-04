@@ -1,4 +1,5 @@
 [![continuous integration](https://raw.githubusercontent.com/MPI-IS-BambooAgent/sw_badges/master/badges/plans/corerobotics/tag.svg?sanitize=true)](url)
+[![check_main_branch_and_deploy_doc](https://github.com/machines-in-motion/mpi_cmake_modules/actions/workflows/deploy_doc.yml/badge.svg?branch=master)](https://github.com/machines-in-motion/mpi_cmake_modules/actions/workflows/deploy_doc.yml)
 
 Readme
 ------
