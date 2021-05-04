@@ -1,0 +1,336 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>&lt;no title&gt; &mdash; mpi_cmake_modules 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+    <link rel="canonical" href="https://machines-in-motion.github.io/code_documentation/mpi_cmake_modules/cmake/dynamic_graph.html" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> mpi_cmake_modules
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to mpi_cmake_modules’s documentation!</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../general_documentation.html">General Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">mpi_cmake_modules</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cmake_doc.html">CMake API</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">mpi_cmake_modules</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>&lt;no title&gt;</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/cmake/dynamic_graph.cmake.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p>#
+# Copyright (c) 2019, New York University and Max Planck Gesellschaft.
+#
+# License BSD-3 clause
+#</p>
+<p>include(${CMAKE_CURRENT_LIST_DIR}/get_python_install_dir.cmake)</p>
+<p># cmake-format: off
+#.rst:
+# .. cmake:command:: GET_DYNAMIC_GRAPH_PLUGIN_INSTALL_PATH(INSTALL_DYNAMIC_GRAPH_PLUGIN_PATH)
+#
+#   Get the install dir for the plugin to install them in the correct place.
+#
+#   :param INSTALL_DYNAMIC_GRAPH_PLUGIN_PATH: path to the dynamic graph plugin
+# cmake-format: on
+macro(GET_DYNAMIC_GRAPH_PLUGIN_INSTALL_PATH INSTALL_DYNAMIC_GRAPH_PLUGIN_PATH)</p>
+<blockquote>
+<div><dl class="simple">
+<dt>set(${INSTALL_DYNAMIC_GRAPH_PLUGIN_PATH}</dt><dd><p>lib/dynamic-graph-plugins)</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="simple">
+<dt>endmacro(GET_DYNAMIC_GRAPH_PLUGIN_INSTALL_PATH</dt><dd><p>INSTALL_DYNAMIC_GRAPH_PLUGIN_PATH)</p>
+</dd>
+</dl>
+<p># cmake-format: off
+#.rst:
+# .. cmake:command:: INSTALL_DYNAMIC_GRAPH_PLUGIN_PYTHON_BINDINGS(PLUGIN_TARGET)
+#
+#   This file allows us to install the Python bindings of the dynamic graph at
+#   the correct place.
+#
+#   Add a python submodule to dynamic_graph
+#
+#   :param plugin_target: target (library) name of the dynamic graph plugin,
+# cmake-format: on
+macro(INSTALL_DYNAMIC_GRAPH_PLUGIN_PYTHON_BINDINGS PLUGIN_TARGET)</p>
+<blockquote>
+<div><p># Parse arguments
+set(options)
+set(oneValueArgs)
+set(multiValueArgs)
+cmake_parse_arguments(ARG “${options}” “${oneValueArgs}” “${multiValueArgs}”</p>
+<blockquote>
+<div><p>${ARGN})</p>
+</div></blockquote>
+<p>message(STATUS “Creating the python binding of: ${PLUGIN_TARGET}”)</p>
+<p># Look for the python install directory.
+get_python_install_dir(python_install_dir)
+set(python_module_install_dir</p>
+<blockquote>
+<div><p>${python_install_dir}/${PROJECT_NAME}/dynamic_graph)</p>
+</div></blockquote>
+<p># Find Python.
+find_package(Python REQUIRED)</p>
+<p># Suffix to all python objects.
+set(PYTHON_SUFFIX dg_python_module)</p>
+<p># Python module name.
+set(PYTHON_MODULE “${PLUGIN_TARGET}_${PYTHON_SUFFIX}”)</p>
+<p># Get the source files.
+set(PYTHON_MODULE_SOURCE_FILE)
+set(PYTHON_MODULE_HEADER_FILE)
+set(PYTHON_MODULE_USER_SOURCE_FILE</p>
+<blockquote>
+<div><p>“${PROJECT_SOURCE_DIR}/srcpy/${PLUGIN_TARGET}_${PYTHON_SUFFIX}.cpp”)</p>
+</div></blockquote>
+<dl>
+<dt>set(PYTHON_MODULE_USER_HEADER_FILE</dt><dd><p>“${PROJECT_SOURCE_DIR}/srcpy/${PLUGIN_TARGET}_${PYTHON_SUFFIX}.hpp”)</p>
+</dd>
+<dt>if(EXISTS ${PYTHON_MODULE_USER_SOURCE_FILE})</dt><dd><p>set(PYTHON_MODULE_SOURCE_FILE ${PYTHON_MODULE_USER_SOURCE_FILE})</p>
+</dd>
+<dt>elseif(EXISTS ${PYTHON_MODULE_USER_HEADER_FILE})</dt><dd><p># Export the python module name using <cite>configure_file</cite>.
+set(DYNAMIC_GRAPH_PLUGIN_CPP_BINDINGS ${PLUGIN_TARGET})
+# Export the header name using <cite>configure_file</cite>.
+set(PYTHON_MODULE_HEADER_FILE ${PYTHON_MODULE_USER_HEADER_FILE})
+configure_file(${MPI_CMAKE_MODULES_RESOURCES_DIR}/${PYTHON_SUFFIX}.cc.in</p>
+<blockquote>
+<div><p>${PROJECT_BINARY_DIR}/${PYTHON_MODULE}.cc &#64;ONLY IMMEDIATE)</p>
+</div></blockquote>
+<p>set(PYTHON_MODULE_SOURCE_FILE ${PROJECT_BINARY_DIR}/${PYTHON_MODULE}.cc)</p>
+</dd>
+<dt>else()</dt><dd><dl class="simple">
+<dt>message(</dt><dd><dl class="simple">
+<dt>FATAL_ERROR</dt><dd><p>“INSTALL_DYNAMIC_GRAPH_PLUGIN_PYTHON_BINDINGS: No source found.n”
+“Cannot find ${PYTHON_MODULE_USER_SOURCE_FILE} nor ”
+“${PYTHON_MODULE_USER_HEADER_FILE}.n”
+“Cannot build the dynamic-graph plugin python bindings.”)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>endif()</p>
+<p># Create the python bindings
+add_library(${PYTHON_MODULE} MODULE ${PYTHON_MODULE_SOURCE_FILE})
+target_include_directories(</p>
+<blockquote>
+<div><dl class="simple">
+<dt>${PYTHON_MODULE} PUBLIC $&lt;BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/srcpy&gt;</dt><dd><p>${Python_INCLUDE_DIR} ${PYTHON_INCLUDE_DIR})</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="simple">
+<dt>target_link_libraries(${PYTHON_MODULE} ${PLUGIN_TARGET} ${PYTHON_LIBRARY}</dt><dd><p>${python_LIBRARY})</p>
+</dd>
+<dt>set_target_properties(${PYTHON_MODULE} PROPERTIES PREFIX “” OUTPUT_NAME</dt><dd><p>${PLUGIN_TARGET})</p>
+</dd>
+</dl>
+<p>get_dynamic_graph_plugin_install_path(plugin_install_path)
+set_target_properties(</p>
+<blockquote>
+<div><p>${PYTHON_MODULE}
+PROPERTIES</p>
+<blockquote>
+<div><p>INSTALL_RPATH
+“${CMAKE_INSTALL_RPATH}:${CMAKE_INSTALL_PREFIX}/${plugin_install_path}”)</p>
+</div></blockquote>
+</div></blockquote>
+<p>install(TARGETS ${PYTHON_MODULE} DESTINATION ${python_module_install_dir})</p>
+</div></blockquote>
+<p>endmacro()</p>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright Copyright (c) 2021, See license.txt file or the license section..
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -8,7 +8,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>package_template &mdash; package_template 2.0.0 documentation</title>
+  <title>Readme &mdash; mpi_cmake_modules 1.0.0 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
   
 
   
-    <link rel="canonical" href="https://machines-in-motion.github.io/code_documentation/package_template/readme.html" />
+    <link rel="canonical" href="https://machines-in-motion.github.io/code_documentation/mpi_cmake_modules/readme.html" />
 
   
   <!--[if lt IE 9]>
@@ -53,7 +53,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> package_template
+            <a href="index.html" class="icon icon-home"> mpi_cmake_modules
           
 
           
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                2.0.0
+                1.0.0
               </div>
             
           
@@ -89,16 +89,16 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Welcome to package_template’s documentation!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Welcome to mpi_cmake_modules’s documentation!</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="general_documentation.html">General Documentation</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="doxygen_index.html">C++ API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">mpi_cmake_modules</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">package_template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmake_doc.html">CMake API</a></li>
 </ul>
 
             
@@ -114,7 +114,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">package_template</a>
+          <a href="index.html">mpi_cmake_modules</a>
         
       </nav>
 
@@ -147,7 +147,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>package_template</li>
+      <li>Readme</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -166,109 +166,41 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <p><a class="reference external" href="https://github.com/machines-in-motion/package_template/actions/workflows/deploy_doc.yml"><img alt="check_main_branch_and_deploy_doc" src="https://github.com/machines-in-motion/package_template/actions/workflows/deploy_doc.yml/badge.svg?branch=master" /></a></p>
-<section id="package-template">
-<h1>package_template<a class="headerlink" href="#package-template" title="Permalink to this headline">¶</a></h1>
-<p>This repository is a tutorial on how to package C++ and python code together.
-The convention presented are to be followed by people in the
-<a class="reference external" href="https://wp.nyu.edu/machinesinmotion/">machines-in-motion</a> group.</p>
-<p>In particular it contains the examples for:</p>
+  <p><a class="reference external" href="url"><img alt="continuous integration" src="https://raw.githubusercontent.com/MPI-IS-BambooAgent/sw_badges/master/badges/plans/corerobotics/tag.svg?sanitize=true" /></a>
+<a class="reference external" href="https://github.com/machines-in-motion/mpi_cmake_modules/actions/workflows/deploy_doc.yml"><img alt="check_main_branch_and_deploy_doc" src="https://github.com/machines-in-motion/mpi_cmake_modules/actions/workflows/deploy_doc.yml/badge.svg?branch=master" /></a></p>
+<section id="readme">
+<h1>Readme<a class="headerlink" href="#readme" title="Permalink to this headline">¶</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This package <code class="docutils literal notranslate"><span class="pre">mpi_cmake_modules</span></code> defines a list of usefull cmake macros.
+It can be used by simply depending on it using ament.
+The documentation can be seen <a class="reference external" href="https://machines-in-motion.github.io/">here</a></p>
+</section>
+<section id="getting-started">
+<h2>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>In order to use the CMake macros contained in this package one need to depend
+on it in the following way:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find_package</span><span class="p">(</span><span class="n">mpi_cmake_module</span> <span class="n">REQUIRED</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong> This will perform by default:</p>
 <ul class="simple">
-<li><p>Packaging C++ and Python code in one repository.</p></li>
-<li><p>How to build C++ code and package it with <a class="reference external" href="https://cmake.org/">CMake</a> + <a class="reference external" href="https://github.com/machines-in-motion/mpi_cmake_modules">mpi_cmake_module</a>.</p></li>
-<li><p>How to write a PID controller in C++</p></li>
-<li><p>How to write a PID controller in Python</p></li>
-<li><p>How to write Python bindings over the C++ code using <a class="reference external" href="https://github.com/pybind/pybind11">Pybind11</a></p></li>
-<li><p>How to write unit-tests in C++ and Python.</p></li>
-<li><p>How to deal with YAML configuration files from C++ or Python.</p></li>
-<li><p>How to use ROS1 parameters (deprecated, privilege ROS2 param).</p></li>
-<li><p>How to write C++ and Python demos of the code.</p></li>
-<li><p>How to write the API documentation using:</p>
-<ul>
-<li><p>Doxygen docstring for C++,</p></li>
-<li><p>Google docstring for Python,</p></li>
-<li><p>Markdown or Restructured text for generic documentation.</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">define_os()</span></code> macro defined in cmake/os_detection.cmake</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">setup_xenomai()</span></code> macro defined in the cmake/xenomai.cmake
+if the OS Xenomai is detected.</p></li>
 </ul>
-</li>
-</ul>
-<p>A tutorial on how to write CMakeLists.txt is also available here:
-https://github.com/machines-in-motion/machines-in-motion.github.io/wiki/use_cmake</p>
-<section id="installation">
-<h2>Installation:<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
-<section id="standard-dependencies">
-<h3>Standard dependencies:<a class="headerlink" href="#standard-dependencies" title="Permalink to this headline">¶</a></h3>
-<p>This package depend externally on:</p>
+</section>
+<section id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p>BSD 3-Clause</p>
+</section>
+<section id="authors">
+<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>mpi_cmake_module for the build system (see next paragraph)</p></li>
-<li><p>pybind11 for the python bindings (see next paragraph)</p></li>
-<li><p>yaml_utils for the yaml parsing in C++ (see next paragraph)</p></li>
-<li><p>googletest for the C++ unit tests (see next paragraph)</p></li>
-<li><p>pytest for the Python unit tests.</p></li>
+<li><p>Vincent Berenz (vberenz&#64;tue.mpg.de)</p></li>
+<li><p>Maximilien Naveau (mnaveau&#64;tue.mpg.de)</p></li>
+<li><p>Felix Widmaier (fwidmaier&#64;tue.mpg.de)</p></li>
 </ul>
-<p>The mpi_cmake_module will ask for dependencies when building the documentation,
-see the <a class="reference external" href="https://github.com/machines-in-motion/mpi_cmake_modules/blob/master/requirements.txt">requirements.txt</a></p>
-<p>In short for the external dependencies without the doc ones:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">libyaml</span><span class="o">-</span><span class="n">cpp</span><span class="o">-</span><span class="n">dev</span>
-<span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">pytest</span>
-</pre></div>
-</div>
-</section>
-<section id="download-the-package">
-<h3>Download the package:<a class="headerlink" href="#download-the-package" title="Permalink to this headline">¶</a></h3>
-<p>Preferably use <a class="reference external" href="https://gitlab.is.tue.mpg.de/amd-clmc/treep">treep</a>
-with the
-<a class="reference external" href="https://github.com/machines-in-motion/treep_machines_in_motion">treep_machines_in_motion</a>
-configuration.</p>
-<p>**Note: ** do not forget to <em>register your ssh public key in your settings</em>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">~/</span><span class="n">devel</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">treep</span>
-<span class="n">cd</span> <span class="o">~/</span><span class="n">devel</span>
-<span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">machines</span><span class="o">-</span><span class="ow">in</span><span class="o">-</span><span class="n">motion</span><span class="o">/</span><span class="n">treep_machines_in_motion</span><span class="o">.</span><span class="n">git</span>
-<span class="n">treep</span> <span class="o">--</span><span class="n">clone</span> <span class="n">PACKAGE_TEMPLATE</span>
-</pre></div>
-</div>
-</section>
-<section id="build-the-package">
-<h3>Build the package<a class="headerlink" href="#build-the-package" title="Permalink to this headline">¶</a></h3>
-<p>We use <a class="reference external" href="https://github.com/machines-in-motion/machines-in-motion.github.io/wiki/use_colcon">colcon</a>
-to build this package:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">~/</span><span class="n">devel</span><span class="o">/</span><span class="n">workspace</span>
-<span class="n">colcon</span> <span class="n">build</span>
-</pre></div>
-</div>
-</section>
-</section>
-<section id="usage">
-<h2>Usage:<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
-<section id="demos-examples">
-<h3>Demos/Examples<a class="headerlink" href="#demos-examples" title="Permalink to this headline">¶</a></h3>
-<p>The purpose of the this code is for user to read it.
-But you can still start the demos compiled with this package:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package_template_demo_pid</span>
-</pre></div>
-</div>
-<p>or</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package_template_demo_pid_load_from_file</span>
-</pre></div>
-</div>
-<p>See the <a class="reference external" href="https://github.com/machines-in-motion/package_template/tree/master/demos">source files</a></p>
-</section>
-<section id="api-documentation">
-<h3>API documentation<a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h3>
-<p>Building the documentation locally:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">colcon</span> <span class="n">build</span> <span class="o">--</span><span class="n">packages</span><span class="o">-</span><span class="n">select</span> <span class="n">package_template</span> <span class="o">--</span><span class="n">cmake</span><span class="o">-</span><span class="n">args</span> <span class="o">-</span><span class="n">DGENERATE_DOCUMENTATION</span><span class="o">=</span><span class="n">ON</span>
-</pre></div>
-</div>
-<p>A pre-built documentation can be seen here:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">machines</span><span class="o">-</span><span class="ow">in</span><span class="o">-</span><span class="n">motion</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">code_documentation</span><span class="o">/</span><span class="n">package_template</span>
-</pre></div>
-</div>
-</section>
-</section>
-<section id="license-and-copyrights">
-<h2>License and Copyrights<a class="headerlink" href="#license-and-copyrights" title="Permalink to this headline">¶</a></h2>
-<p>License BSD-3-Clause
-Copyright (c) 2021, New York University and Max Planck Gesellschaft.</p>
 </section>
 </section>
 
