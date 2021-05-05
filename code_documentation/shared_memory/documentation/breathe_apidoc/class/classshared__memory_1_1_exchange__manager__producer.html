@@ -1,0 +1,426 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Class shared_memory::Exchange_manager_producer &mdash; shared_memory 2.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+    <link rel="canonical" href="https://machines-in-motion.github.io/code_documentation/shared_memory/breathe_apidoc/class/classshared__memory_1_1_exchange__manager__producer.html" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Class shared_memory::Four_int_values" href="classshared__memory_1_1_four__int__values.html" />
+    <link rel="prev" title="Class shared_memory::Exchange_manager_consumer" href="classshared__memory_1_1_exchange__manager__consumer.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> shared_memory
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Welcome to shared_memory’s documentation!</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#readme">Readme</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html#c-api">C++ API</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../doxygen_index.html">C++ API</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../classlist.html">Class list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../filelist.html">File list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../doxygen_index_one_page.html">C++ API and example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#indices-and-tables">Indices and Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#license-and-copyrights">License and Copyrights</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../doxygen_index.html">C++ API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../classlist.html">Class list</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="class_config.html">Class Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_serializable.html">Class Serializable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_serializable_example.html">Class SerializableExample</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_allocation__exception.html">Class shared_memory::Allocation_exception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_condition_variable.html">Class shared_memory::ConditionVariable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_exchange__manager__consumer.html">Class shared_memory::Exchange_manager_consumer</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Class shared_memory::Exchange_manager_producer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_four__int__values.html">Class shared_memory::Four_int_values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_item.html">Class shared_memory::Item</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_lock.html">Class shared_memory::Lock</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_locked_condition_variable.html">Class shared_memory::LockedConditionVariable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_memory__overflow__exception.html">Class shared_memory::Memory_overflow_exception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_mutex.html">Class shared_memory::Mutex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_non__existing__segment__exception.html">Class shared_memory::Non_existing_segment_exception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_not__consumed__exception.html">Class shared_memory::Not_consumed_exception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_segment_info.html">Class shared_memory::SegmentInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_serializable__exchange.html">Class shared_memory::Serializable_exchange</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_serializer.html">Class shared_memory::Serializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_shared_memory_segment.html">Class shared_memory::SharedMemorySegment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_unexpected__map__key.html">Class shared_memory::Unexpected_map_key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1_unexpected__size__exception.html">Class shared_memory::Unexpected_size_exception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classshared__memory_1_1array.html">Class shared_memory::array</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../filelist.html">File list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../doxygen_index_one_page.html">C++ API and example</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">shared_memory</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../doxygen_index.html">C++ API</a> &raquo;</li>
+        
+          <li><a href="../classlist.html">Class list</a> &raquo;</li>
+        
+      <li>Class shared_memory::Exchange_manager_producer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/breathe_apidoc/class/classshared__memory_1_1_exchange__manager__producer.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="class-shared-memory-exchange-manager-producer">
+<h1>Class shared_memory::Exchange_manager_producer<a class="headerlink" href="#class-shared-memory-exchange-manager-producer" title="Permalink to this headline">¶</a></h1>
+<dl class="cpp class">
+<dt id="_CPPv4I0_iEN13shared_memory25Exchange_manager_producerE">
+<span id="_CPPv3I0_iEN13shared_memory25Exchange_manager_producerE"></span><span id="_CPPv2I0_iEN13shared_memory25Exchange_manager_producerE"></span><span class="pre">template&lt;</span><span class="pre">class</span> <code class="sig-name descname"><span class="pre">Serializable</span></code><span class="pre">,</span> <span class="pre">int</span> <code class="sig-name descname"><span class="pre">QUEUE_SIZE</span></code><span class="pre">&gt;</span><br /><span class="target" id="classshared__memory_1_1_exchange__manager__producer"></span><em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><a class="reference internal" href="../file/array_8cpp.html#_CPPv413shared_memory" title="shared_memory"><span class="pre">shared_memory</span></a><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">Exchange_manager_producer</span></code><a class="headerlink" href="#_CPPv4I0_iEN13shared_memory25Exchange_manager_producerE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N13shared_memory25Exchange_manager_producer25Exchange_manager_producerENSt6stringENSt6stringEbb">
+<span id="_CPPv3N13shared_memory25Exchange_manager_producer25Exchange_manager_producerENSt6stringENSt6stringEbb"></span><span id="_CPPv2N13shared_memory25Exchange_manager_producer25Exchange_manager_producerENSt6stringENSt6stringEbb"></span><span id="shared_memory::Exchange_manager_producer::Exchange_manager_producer__ss.ss.b.b"></span><span class="target" id="classshared__memory_1_1_exchange__manager__producer_1a3fb01ae44f85b9d8b4a22137f2da90f1"></span><code class="sig-name descname"><span class="pre">Exchange_manager_producer</span></code><span class="sig-paren">(</span><span class="pre">std</span><span class="pre">::</span><span class="pre">string</span> <em><span class="pre">segment_id</span></em>, <span class="pre">std</span><span class="pre">::</span><span class="pre">string</span> <em><span class="pre">object_id</span></em>, <span class="pre">bool</span> <em><span class="pre">leading</span></em>, <span class="pre">bool</span> <em><span class="pre">autolock</span></em> <span class="pre">=</span> <span class="pre">true</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13shared_memory25Exchange_manager_producer25Exchange_manager_producerENSt6stringENSt6stringEbb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>An exchange_manager_producer writes in the shared memory serialized items expected to be consumed by an instance of exchange_manager_consumer (which should use the same segment_id and object_id), possibly running in a separate process. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>segment_id</strong> – id of the shared memory segment </p></li>
+<li><p><strong>object_id</strong> – id of the shared memory object prefix </p></li>
+<li><p><strong>autolock</strong> – mutex locking mechanism internally managed by the producer. If false, lock has to be “manually” called. This allows for example to set several items in one shot </p></li>
+<li><p><strong>clean_memory_on_exit.</strong> – If true, the destructor will clean the underlined shared memory items. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N13shared_memory25Exchange_manager_producerD0Ev">
+<span id="_CPPv3N13shared_memory25Exchange_manager_producerD0Ev"></span><span id="_CPPv2N13shared_memory25Exchange_manager_producerD0Ev"></span><span id="shared_memory::Exchange_manager_producer::~Exchange_manager_producer"></span><span class="target" id="classshared__memory_1_1_exchange__manager__producer_1a2facf670e12bfea1d7c4900f3ffae7d7"></span><code class="sig-name descname"><span class="pre">~Exchange_manager_producer</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13shared_memory25Exchange_manager_producerD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N13shared_memory25Exchange_manager_producer16ready_to_produceEv">
+<span id="_CPPv3N13shared_memory25Exchange_manager_producer16ready_to_produceEv"></span><span id="_CPPv2N13shared_memory25Exchange_manager_producer16ready_to_produceEv"></span><span id="shared_memory::Exchange_manager_producer::ready_to_produce"></span><span class="target" id="classshared__memory_1_1_exchange__manager__producer_1a3ef5cfdd196a396edfd6ca502119f839"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">ready_to_produce</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13shared_memory25Exchange_manager_producer16ready_to_produceEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>returns true if a consumer is also running. </p>
+<p>‘set’ should be called only if ready_to_produce returns true. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N13shared_memory25Exchange_manager_producer4lockEv">
+<span id="_CPPv3N13shared_memory25Exchange_manager_producer4lockEv"></span><span id="_CPPv2N13shared_memory25Exchange_manager_producer4lockEv"></span><span id="shared_memory::Exchange_manager_producer::lock"></span><span class="target" id="classshared__memory_1_1_exchange__manager__producer_1aa39c8b921eeff081111c756bd6d2ca3d"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">lock</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13shared_memory25Exchange_manager_producer4lockEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>lock the mutex required for writting in the shared memory without any collision with any consumer. </p>
+<p>Should be called before calls to “set”. Not required if the constructor was called with autolock set to true </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N13shared_memory25Exchange_manager_producer6unlockEv">
+<span id="_CPPv3N13shared_memory25Exchange_manager_producer6unlockEv"></span><span id="_CPPv2N13shared_memory25Exchange_manager_producer6unlockEv"></span><span id="shared_memory::Exchange_manager_producer::unlock"></span><span class="target" id="classshared__memory_1_1_exchange__manager__producer_1a9c02040ee5ef8db658f3112ae4b3b969"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">unlock</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13shared_memory25Exchange_manager_producer6unlockEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>unlock the mutex for writting in the shared memory without any collision with any consumer. </p>
+<p>Not required if the constructor was called with autolock set to true </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N13shared_memory25Exchange_manager_producer3setERK12Serializable">
+<span id="_CPPv3N13shared_memory25Exchange_manager_producer3setERK12Serializable"></span><span id="_CPPv2N13shared_memory25Exchange_manager_producer3setERK12Serializable"></span><span id="shared_memory::Exchange_manager_producer::set__SerializableCR"></span><span class="target" id="classshared__memory_1_1_exchange__manager__producer_1a0f86798dbbb5bead856c566257bd1b07"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">set</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4I0_iEN13shared_memory25Exchange_manager_producerE" title="shared_memory::Exchange_manager_producer::Serializable"><span class="pre">Serializable</span></a> <span class="pre">&amp;</span><em><span class="pre">serializable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13shared_memory25Exchange_manager_producer3setERK12Serializable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set this serializable to be consumed. </p>
+<p>Throws <a class="reference internal" href="../../doxygen_index_one_page.html#classshared__memory_1_1_memory__overflow__exception"><span class="std std-ref">shared_memory::Memory_overflow_exception</span></a> if the shared memory is full. Some of the shared memory should get free once items have been consumed by a consumer. This method should be called only if ‘ready_to_produce’ returns true; Returns true if all data could be written in the shared memory, false if some data required to be buffered (any following call to set, if any, will perform a new attempt to write remaining buffer to the shared memory) </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N13shared_memory25Exchange_manager_producer5clearEv">
+<span id="_CPPv3N13shared_memory25Exchange_manager_producer5clearEv"></span><span id="_CPPv2N13shared_memory25Exchange_manager_producer5clearEv"></span><span id="shared_memory::Exchange_manager_producer::clear"></span><span class="target" id="classshared__memory_1_1_exchange__manager__producer_1a733c4c3f794e10590569f94e3f320201"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">clear</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13shared_memory25Exchange_manager_producer5clearEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>removed all elements from the shared queue </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N13shared_memory25Exchange_manager_producer3getERNSt5dequeIiEE">
+<span id="_CPPv3N13shared_memory25Exchange_manager_producer3getERNSt5dequeIiEE"></span><span id="_CPPv2N13shared_memory25Exchange_manager_producer3getERNSt5dequeIiEE"></span><span id="shared_memory::Exchange_manager_producer::get__std::deque:i:R"></span><span class="target" id="classshared__memory_1_1_exchange__manager__producer_1afd8afb25d70407b785484e68d1182c0b"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">get</span></code><span class="sig-paren">(</span><span class="pre">std</span><span class="pre">::</span><span class="pre">deque</span><span class="pre">&lt;</span><span class="pre">int</span><span class="pre">&gt;</span> <span class="pre">&amp;</span><em><span class="pre">get_consumed_ids</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13shared_memory25Exchange_manager_producer3getERNSt5dequeIiEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>write into get_consumed_ids the ids of serialized items that have been successfully consumed by a consumer </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N13shared_memory25Exchange_manager_producer15nb_char_writtenEv">
+<span id="_CPPv3N13shared_memory25Exchange_manager_producer15nb_char_writtenEv"></span><span id="_CPPv2N13shared_memory25Exchange_manager_producer15nb_char_writtenEv"></span><span id="shared_memory::Exchange_manager_producer::nb_char_written"></span><span class="target" id="classshared__memory_1_1_exchange__manager__producer_1ab31e6b87ad4c856736dec15486ed4489"></span><span class="pre">int</span> <code class="sig-name descname"><span class="pre">nb_char_written</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13shared_memory25Exchange_manager_producer15nb_char_writtenEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>returns the number of characters that have been serialized and written to the exchange queue. </p>
+<p>For debug purposes. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N13shared_memory25Exchange_manager_producer16reset_char_countEv">
+<span id="_CPPv3N13shared_memory25Exchange_manager_producer16reset_char_countEv"></span><span id="_CPPv2N13shared_memory25Exchange_manager_producer16reset_char_countEv"></span><span id="shared_memory::Exchange_manager_producer::reset_char_count"></span><span class="target" id="classshared__memory_1_1_exchange__manager__producer_1a742e8859608d49901d3dafbbe08e4674"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">reset_char_count</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13shared_memory25Exchange_manager_producer16reset_char_countEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>reset the count of characters written to the exchange queue to zero </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK13shared_memory25Exchange_manager_producer20producer_queue_emptyEv">
+<span id="_CPPv3NK13shared_memory25Exchange_manager_producer20producer_queue_emptyEv"></span><span id="_CPPv2NK13shared_memory25Exchange_manager_producer20producer_queue_emptyEv"></span><span id="shared_memory::Exchange_manager_producer::producer_queue_emptyC"></span><span class="target" id="classshared__memory_1_1_exchange__manager__producer_1a4a38c8c14004bc46d254375a63f62096"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">producer_queue_empty</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK13shared_memory25Exchange_manager_producer20producer_queue_emptyEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK13shared_memory25Exchange_manager_producer20consumer_queue_emptyEv">
+<span id="_CPPv3NK13shared_memory25Exchange_manager_producer20consumer_queue_emptyEv"></span><span id="_CPPv2NK13shared_memory25Exchange_manager_producer20consumer_queue_emptyEv"></span><span id="shared_memory::Exchange_manager_producer::consumer_queue_emptyC"></span><span class="target" id="classshared__memory_1_1_exchange__manager__producer_1ab8f5eef0601cfdb418eb5d521bfa33d0"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">consumer_queue_empty</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK13shared_memory25Exchange_manager_producer20consumer_queue_emptyEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N13shared_memory25Exchange_manager_producer11clean_mutexENSt6stringE">
+<span id="_CPPv3N13shared_memory25Exchange_manager_producer11clean_mutexENSt6stringE"></span><span id="_CPPv2N13shared_memory25Exchange_manager_producer11clean_mutexENSt6stringE"></span><span id="shared_memory::Exchange_manager_producer::clean_mutex__ss"></span><span class="target" id="classshared__memory_1_1_exchange__manager__producer_1af98fe4321e1fd280b509f5dfd2cf4a5b"></span><em class="property"><span class="pre">static</span></em> <span class="pre">void</span> <code class="sig-name descname"><span class="pre">clean_mutex</span></code><span class="sig-paren">(</span><span class="pre">std</span><span class="pre">::</span><span class="pre">string</span> <em><span class="pre">segment_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13shared_memory25Exchange_manager_producer11clean_mutexENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>(unlock) and erase the mutex from the shared memory. </p>
+<p>To be used if some executable using the exchange manager crashed without calls to destructors. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N13shared_memory25Exchange_manager_producer12clean_memoryENSt6stringE">
+<span id="_CPPv3N13shared_memory25Exchange_manager_producer12clean_memoryENSt6stringE"></span><span id="_CPPv2N13shared_memory25Exchange_manager_producer12clean_memoryENSt6stringE"></span><span id="shared_memory::Exchange_manager_producer::clean_memory__ss"></span><span class="target" id="classshared__memory_1_1_exchange__manager__producer_1a8574f4e075d6f755e567d21d04f24aab"></span><em class="property"><span class="pre">static</span></em> <span class="pre">void</span> <code class="sig-name descname"><span class="pre">clean_memory</span></code><span class="sig-paren">(</span><span class="pre">std</span><span class="pre">::</span><span class="pre">string</span> <em><span class="pre">segment_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13shared_memory25Exchange_manager_producer12clean_memoryENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>wipe out the corresponding shared memory. </p>
+<p>To be used if some executable using the exchange manager crashed without calls to destructors. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-types">Private Types</p>
+<dl class="cpp type">
+<dt id="_CPPv4N13shared_memory25Exchange_manager_producer6MemoryE">
+<span id="_CPPv3N13shared_memory25Exchange_manager_producer6MemoryE"></span><span id="_CPPv2N13shared_memory25Exchange_manager_producer6MemoryE"></span><span id="shared_memory::Exchange_manager_producer::Memory"></span><span class="target" id="classshared__memory_1_1_exchange__manager__producer_1a65119cf07c0c10f167c191c9ee913029"></span><em class="property"><span class="pre">typedef</span> </em><span class="pre">Exchange_manager_memory</span><span class="pre">&lt;</span><a class="reference internal" href="#_CPPv4I0_iEN13shared_memory25Exchange_manager_producerE" title="shared_memory::Exchange_manager_producer::Serializable"><span class="pre">Serializable</span></a><span class="pre">,</span> <a class="reference internal" href="#_CPPv4I0_iEN13shared_memory25Exchange_manager_producerE" title="shared_memory::Exchange_manager_producer::QUEUE_SIZE"><span class="pre">QUEUE_SIZE</span></a><span class="pre">&gt;</span> <code class="sig-name descname"><span class="pre">Memory</span></code><a class="headerlink" href="#_CPPv4N13shared_memory25Exchange_manager_producer6MemoryE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv4N13shared_memory25Exchange_manager_producer10Memory_ptrE">
+<span id="_CPPv3N13shared_memory25Exchange_manager_producer10Memory_ptrE"></span><span id="_CPPv2N13shared_memory25Exchange_manager_producer10Memory_ptrE"></span><span id="shared_memory::Exchange_manager_producer::Memory_ptr"></span><span class="target" id="classshared__memory_1_1_exchange__manager__producer_1a7f3d7760ca2d1c01fa88e7a6447a38d7"></span><em class="property"><span class="pre">typedef</span> </em><span class="pre">std</span><span class="pre">::</span><span class="pre">shared_ptr</span><span class="pre">&lt;</span><a class="reference internal" href="#_CPPv4N13shared_memory25Exchange_manager_producer6MemoryE" title="shared_memory::Exchange_manager_producer::Memory"><span class="pre">Memory</span></a><span class="pre">&gt;</span> <code class="sig-name descname"><span class="pre">Memory_ptr</span></code><a class="headerlink" href="#_CPPv4N13shared_memory25Exchange_manager_producer10Memory_ptrE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N13shared_memory25Exchange_manager_producer5resetEv">
+<span id="_CPPv3N13shared_memory25Exchange_manager_producer5resetEv"></span><span id="_CPPv2N13shared_memory25Exchange_manager_producer5resetEv"></span><span id="shared_memory::Exchange_manager_producer::reset"></span><span class="target" id="classshared__memory_1_1_exchange__manager__producer_1a2148cfb2e9a1973089d81237ea5735b9"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">reset</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13shared_memory25Exchange_manager_producer5resetEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt id="_CPPv4N13shared_memory25Exchange_manager_producer7memory_E">
+<span id="_CPPv3N13shared_memory25Exchange_manager_producer7memory_E"></span><span id="_CPPv2N13shared_memory25Exchange_manager_producer7memory_E"></span><span id="shared_memory::Exchange_manager_producer::memory___Memory_ptr"></span><span class="target" id="classshared__memory_1_1_exchange__manager__producer_1a67f2a2c049dabace06c85a35335d1614"></span><a class="reference internal" href="#_CPPv4N13shared_memory25Exchange_manager_producer10Memory_ptrE" title="shared_memory::Exchange_manager_producer::Memory_ptr"><span class="pre">Memory_ptr</span></a> <code class="sig-name descname"><span class="pre">memory_</span></code><a class="headerlink" href="#_CPPv4N13shared_memory25Exchange_manager_producer7memory_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N13shared_memory25Exchange_manager_producer9autolock_E">
+<span id="_CPPv3N13shared_memory25Exchange_manager_producer9autolock_E"></span><span id="_CPPv2N13shared_memory25Exchange_manager_producer9autolock_E"></span><span id="shared_memory::Exchange_manager_producer::autolock___b"></span><span class="target" id="classshared__memory_1_1_exchange__manager__producer_1a6d89b939f08bbb9180460a0fab2c877f"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">autolock_</span></code><a class="headerlink" href="#_CPPv4N13shared_memory25Exchange_manager_producer9autolock_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N13shared_memory25Exchange_manager_producer8leading_E">
+<span id="_CPPv3N13shared_memory25Exchange_manager_producer8leading_E"></span><span id="_CPPv2N13shared_memory25Exchange_manager_producer8leading_E"></span><span id="shared_memory::Exchange_manager_producer::leading___b"></span><span class="target" id="classshared__memory_1_1_exchange__manager__producer_1a4c71d725b7b95e4dd00ecf68232d4ac9"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">leading_</span></code><a class="headerlink" href="#_CPPv4N13shared_memory25Exchange_manager_producer8leading_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N13shared_memory25Exchange_manager_producer11segment_id_E">
+<span id="_CPPv3N13shared_memory25Exchange_manager_producer11segment_id_E"></span><span id="_CPPv2N13shared_memory25Exchange_manager_producer11segment_id_E"></span><span id="shared_memory::Exchange_manager_producer::segment_id___ss"></span><span class="target" id="classshared__memory_1_1_exchange__manager__producer_1a96ce58e9619ac28b31b46a81c53c20c2"></span><span class="pre">std</span><span class="pre">::</span><span class="pre">string</span> <code class="sig-name descname"><span class="pre">segment_id_</span></code><a class="headerlink" href="#_CPPv4N13shared_memory25Exchange_manager_producer11segment_id_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N13shared_memory25Exchange_manager_producer10object_id_E">
+<span id="_CPPv3N13shared_memory25Exchange_manager_producer10object_id_E"></span><span id="_CPPv2N13shared_memory25Exchange_manager_producer10object_id_E"></span><span id="shared_memory::Exchange_manager_producer::object_id___ss"></span><span class="target" id="classshared__memory_1_1_exchange__manager__producer_1a57ea2e6076963223331f3b6e78cbbc05"></span><span class="pre">std</span><span class="pre">::</span><span class="pre">string</span> <code class="sig-name descname"><span class="pre">object_id_</span></code><a class="headerlink" href="#_CPPv4N13shared_memory25Exchange_manager_producer10object_id_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="classshared__memory_1_1_four__int__values.html" class="btn btn-neutral float-right" title="Class shared_memory::Four_int_values" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="classshared__memory_1_1_exchange__manager__consumer.html" class="btn btn-neutral float-left" title="Class shared_memory::Exchange_manager_consumer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright Copyright (c) 2021, See license.txt file or the license section..
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,5 +1,0 @@
-var stress__get__raw__boost__inefficient_8cpp =
-[
-    [ "cleaning_memory", "stress__get__raw__boost__inefficient_8cpp.html#a5d2be5fb88fef648640fe973785d58b1", null ],
-    [ "main", "stress__get__raw__boost__inefficient_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4", null ]
-];

@@ -1,0 +1,391 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>File segment_info.hpp &mdash; shared_memory 2.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+    <link rel="canonical" href="https://machines-in-motion.github.io/code_documentation/shared_memory/breathe_apidoc/file/segment__info_8hpp.html" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="File serializable_exchange.hpp" href="serializable__exchange_8hpp.html" />
+    <link rel="prev" title="File segment_info.cpp" href="segment__info_8cpp.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> shared_memory
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Welcome to shared_memory’s documentation!</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#readme">Readme</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html#c-api">C++ API</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../doxygen_index.html">C++ API</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../classlist.html">Class list</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../filelist.html">File list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../doxygen_index_one_page.html">C++ API and example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#indices-and-tables">Indices and Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#license-and-copyrights">License and Copyrights</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../doxygen_index.html">C++ API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../classlist.html">Class list</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../filelist.html">File list</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="array_8cpp.html">File array.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="array_8hpp.html">File array.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="array_8hxx.html">File array.hxx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="array__fundamental_8hxx.html">File array_fundamental.hxx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="array__fundamental__array_8hxx.html">File array_fundamental_array.hxx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="array__serializable_8hxx.html">File array_serializable.hxx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="benchmark__common_8hh.html">File benchmark_common.hh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clean__shared__memory_8cpp.html">File clean_shared_memory.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cond__var_8cpp.html">File cond_var.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cond__var__ping_8cpp.html">File cond_var_ping.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cond__var__pong_8cpp.html">File cond_var_pong.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cond__var__timeout_8cpp.html">File cond_var_timeout.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="condition__variable_8cpp.html">File condition_variable.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="condition__variable_8hpp.html">File condition_variable.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="create__segment_8cpp.html">File create_segment.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eigen_8cpp.html">File eigen.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exceptions_8cpp.html">File exceptions.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exceptions_8hpp.html">File exceptions.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exchange__manager_8cpp.html">File exchange_manager.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exchange__manager__clean_8cpp.html">File exchange_manager_clean.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exchange__manager__consumer_8cpp.html">File exchange_manager_consumer.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exchange__manager__consumer_8hpp.html">File exchange_manager_consumer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exchange__manager__consumer_8hxx.html">File exchange_manager_consumer.hxx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exchange__manager__producer_8cpp.html">File exchange_manager_producer.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exchange__manager__producer_8hpp.html">File exchange_manager_producer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exchange__manager__producer_8hxx.html">File exchange_manager_producer.hxx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="four__int__values_8cpp.html">File four_int_values.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="four__int__values_8hpp.html">File four_int_values.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="get__data_8cpp.html">File get_data.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="item_8hpp.html">File item.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lock_8cpp.html">File lock.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lock_8hpp.html">File lock.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="locked__cond__var__ping_8cpp.html">File locked_cond_var_ping.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="locked__cond__var__pong_8cpp.html">File locked_cond_var_pong.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="locked__condition__variable_8cpp.html">File locked_condition_variable.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="locked__condition__variable_8hpp.html">File locked_condition_variable.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mutex_8cpp.html">File mutex.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mutex_8hpp.html">File mutex.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="non__existing__segment_8cpp.html">File non_existing_segment.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="read__array_8cpp.html">File read_array.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="segment__info_8cpp.html">File segment_info.cpp</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">File segment_info.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="serializable__exchange_8hpp.html">File serializable_exchange.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="serializable__exchange_8hxx.html">File serializable_exchange.hxx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="serializable__read_8hxx.html">File serializable_read.hxx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="serialization_8cpp.html">File serialization.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="serialization__frequency_8cpp.html">File serialization_frequency.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="serializer_8hpp.html">File serializer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="serializer_8hxx.html">File serializer.hxx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="set__data_8cpp.html">File set_data.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="shared__memory_8cpp.html">File shared_memory.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="shared__memory_8hpp.html">File shared_memory.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="shared__memory_8hxx.html">File shared_memory.hxx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sm__cond__var_8cpp.html">File sm_cond_var.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="std__string__vector_8cpp.html">File std_string_vector.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stress__get__api_8cpp.html">File stress_get_api.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stress__get__raw__boost__efficient_8cpp.html">File stress_get_raw_boost_efficient.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stress__get__raw__boost__inefficient_8cpp.html">File stress_get_raw_boost_inefficient.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stress__set__api_8cpp.html">File stress_set_api.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stress__set__raw__boost__efficient_8cpp.html">File stress_set_raw_boost_efficient.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stress__set__raw__boost__inefficient_8cpp.html">File stress_set_raw_boost_inefficient.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="verbose_8cpp.html">File verbose.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wait__for__segment_8cpp.html">File wait_for_segment.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="write__array_8cpp.html">File write_array.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="y_2shared__memory_8cpp.html">File shared_memory.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../doxygen_index_one_page.html">C++ API and example</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">shared_memory</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../doxygen_index.html">C++ API</a> &raquo;</li>
+        
+          <li><a href="../filelist.html">File list</a> &raquo;</li>
+        
+      <li>File segment_info.hpp</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/breathe_apidoc/file/segment__info_8hpp.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="file-segment-info-hpp">
+<h1>File segment_info.hpp<a class="headerlink" href="#file-segment-info-hpp" title="Permalink to this headline">¶</a></h1>
+<dl class="cpp type">
+<dt id="_CPPv413shared_memory">
+<span id="_CPPv313shared_memory"></span><span id="_CPPv213shared_memory"></span><span id="shared_memory"></span><span class="target" id="namespaceshared__memory"></span><em class="property"><span class="pre">namespace</span> </em><code class="sig-name descname"><span class="pre">shared_memory</span></code><br /></dt>
+<dd><p>All templated types in this namespaces are elementary types: int, double, float, char*, … </p>
+<dl class="cpp class">
+<dt id="_CPPv4N13shared_memory11SegmentInfoE">
+<span id="_CPPv3N13shared_memory11SegmentInfoE"></span><span id="_CPPv2N13shared_memory11SegmentInfoE"></span><span id="shared_memory::SegmentInfo"></span><span class="target" id="classshared__memory_1_1_segment_info"></span><em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">SegmentInfo</span></code><br /></dt>
+<dd><em>#include &lt;segment_info.hpp&gt;</em><p>encapsulate information related to a shared memory segment </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N13shared_memory11SegmentInfo11SegmentInfoERN5boost12interprocess21managed_shared_memoryE">
+<span id="_CPPv3N13shared_memory11SegmentInfo11SegmentInfoERN5boost12interprocess21managed_shared_memoryE"></span><span id="_CPPv2N13shared_memory11SegmentInfo11SegmentInfoERN5boost12interprocess21managed_shared_memoryE"></span><span id="shared_memory::SegmentInfo::SegmentInfo__boost::interprocess::managed_shared_memoryR"></span><span class="target" id="classshared__memory_1_1_segment_info_1a254ed3b9d7e7e69a6888c9927504fe3b"></span><code class="sig-name descname"><span class="pre">SegmentInfo</span></code><span class="sig-paren">(</span><span class="pre">boost</span><span class="pre">::</span><span class="pre">interprocess</span><span class="pre">::</span><span class="pre">managed_shared_memory</span> <span class="pre">&amp;</span><em><span class="pre">msm</span></em><span class="sig-paren">)</span><br /></dt>
+<dd><p>introspection of the shared memory segment </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK13shared_memory11SegmentInfo8get_sizeEv">
+<span id="_CPPv3NK13shared_memory11SegmentInfo8get_sizeEv"></span><span id="_CPPv2NK13shared_memory11SegmentInfo8get_sizeEv"></span><span id="shared_memory::SegmentInfo::get_sizeC"></span><span class="target" id="classshared__memory_1_1_segment_info_1a10bc7f1530dcc602d12e42ddc222cdbe"></span><span class="pre">uint</span> <code class="sig-name descname"><span class="pre">get_size</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><br /></dt>
+<dd><p>total size of the segment </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK13shared_memory11SegmentInfo15get_free_memoryEv">
+<span id="_CPPv3NK13shared_memory11SegmentInfo15get_free_memoryEv"></span><span id="_CPPv2NK13shared_memory11SegmentInfo15get_free_memoryEv"></span><span id="shared_memory::SegmentInfo::get_free_memoryC"></span><span class="target" id="classshared__memory_1_1_segment_info_1a07049110a3ef9a082147b57b51111a7a"></span><span class="pre">uint</span> <code class="sig-name descname"><span class="pre">get_free_memory</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><br /></dt>
+<dd><p>free memory of the segment </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK13shared_memory11SegmentInfo15get_used_memoryEv">
+<span id="_CPPv3NK13shared_memory11SegmentInfo15get_used_memoryEv"></span><span id="_CPPv2NK13shared_memory11SegmentInfo15get_used_memoryEv"></span><span id="shared_memory::SegmentInfo::get_used_memoryC"></span><span class="target" id="classshared__memory_1_1_segment_info_1a165763fcbc24aa2b39beb837678e2c4f"></span><span class="pre">uint</span> <code class="sig-name descname"><span class="pre">get_used_memory</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><br /></dt>
+<dd><p>used memory of the segment </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK13shared_memory11SegmentInfo10has_issuesEv">
+<span id="_CPPv3NK13shared_memory11SegmentInfo10has_issuesEv"></span><span id="_CPPv2NK13shared_memory11SegmentInfo10has_issuesEv"></span><span id="shared_memory::SegmentInfo::has_issuesC"></span><span class="target" id="classshared__memory_1_1_segment_info_1abd146588f1eba17af6d53d351bc3e02d"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">has_issues</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><br /></dt>
+<dd><p>report on the status of the internal structures of the segment </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK13shared_memory11SegmentInfo10nb_objectsEv">
+<span id="_CPPv3NK13shared_memory11SegmentInfo10nb_objectsEv"></span><span id="_CPPv2NK13shared_memory11SegmentInfo10nb_objectsEv"></span><span id="shared_memory::SegmentInfo::nb_objectsC"></span><span class="target" id="classshared__memory_1_1_segment_info_1a0476820df56c71f90620324a41ee75e0"></span><span class="pre">uint</span> <code class="sig-name descname"><span class="pre">nb_objects</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><br /></dt>
+<dd><p>number of objects allocated in the segment </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK13shared_memory11SegmentInfo5printEv">
+<span id="_CPPv3NK13shared_memory11SegmentInfo5printEv"></span><span id="_CPPv2NK13shared_memory11SegmentInfo5printEv"></span><span id="shared_memory::SegmentInfo::printC"></span><span class="target" id="classshared__memory_1_1_segment_info_1abdd9baf28cb58a647668dcafa48ba28e"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">print</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><br /></dt>
+<dd><p>print in the terminal informations about the segment </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt id="_CPPv4N13shared_memory11SegmentInfo5size_E">
+<span id="_CPPv3N13shared_memory11SegmentInfo5size_E"></span><span id="_CPPv2N13shared_memory11SegmentInfo5size_E"></span><span id="shared_memory::SegmentInfo::size___uint"></span><span class="target" id="classshared__memory_1_1_segment_info_1a87f1d90b4bfefd07945ba0e7d42959f4"></span><span class="pre">uint</span> <code class="sig-name descname"><span class="pre">size_</span></code><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N13shared_memory11SegmentInfo12free_memory_E">
+<span id="_CPPv3N13shared_memory11SegmentInfo12free_memory_E"></span><span id="_CPPv2N13shared_memory11SegmentInfo12free_memory_E"></span><span id="shared_memory::SegmentInfo::free_memory___uint"></span><span class="target" id="classshared__memory_1_1_segment_info_1ab1b9e3b023e45ccb327e7322d9dde554"></span><span class="pre">uint</span> <code class="sig-name descname"><span class="pre">free_memory_</span></code><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N13shared_memory11SegmentInfo11has_issues_E">
+<span id="_CPPv3N13shared_memory11SegmentInfo11has_issues_E"></span><span id="_CPPv2N13shared_memory11SegmentInfo11has_issues_E"></span><span id="shared_memory::SegmentInfo::has_issues___b"></span><span class="target" id="classshared__memory_1_1_segment_info_1a727ff0d1a39302da90b26207de2ffc26"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">has_issues_</span></code><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N13shared_memory11SegmentInfo11nb_objects_E">
+<span id="_CPPv3N13shared_memory11SegmentInfo11nb_objects_E"></span><span id="_CPPv2N13shared_memory11SegmentInfo11nb_objects_E"></span><span id="shared_memory::SegmentInfo::nb_objects___uint"></span><span class="target" id="classshared__memory_1_1_segment_info_1a56992f58b9b7c0bebbbff56d85a95a4b"></span><span class="pre">uint</span> <code class="sig-name descname"><span class="pre">nb_objects_</span></code><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="serializable__exchange_8hpp.html" class="btn btn-neutral float-right" title="File serializable_exchange.hpp" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="segment__info_8cpp.html" class="btn btn-neutral float-left" title="File segment_info.cpp" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright Copyright (c) 2021, See license.txt file or the license section..
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

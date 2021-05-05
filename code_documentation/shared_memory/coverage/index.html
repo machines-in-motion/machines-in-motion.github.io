@@ -1,0 +1,1159 @@
+
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>Head</title>
+  <style media="screen" type="text/css">
+
+    body
+    {
+      color: #000000;
+      background-color: #FFFFFF;
+    }
+
+    /* Link formats: use maroon w/underlines */
+    a:link
+    {
+      color: navy;
+      text-decoration: underline;
+    }
+    a:visited
+    {
+      color: maroon;
+      text-decoration: underline;
+    }
+    a:active
+    {
+      color: navy;
+      text-decoration: underline;
+    }
+
+    /*** TD formats ***/
+    td
+    {
+      font-family: sans-serif;
+    }
+    td.title
+    {
+      text-align: center;
+      padding-bottom: 10px;
+      font-size: 20pt;
+      font-weight: bold;
+    }
+
+    /* TD Header Information */
+    td.headerName
+    {
+      text-align: right;
+      color: black;
+      padding-right: 6px;
+      font-weight: bold;
+      vertical-align: top;
+      white-space: nowrap;
+    }
+    td.headerValue
+    {
+      text-align: left;
+      color: blue;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+    td.headerTableEntry
+    {
+      text-align: right;
+      color: black;
+      font-weight: bold;
+      white-space: nowrap;
+      padding-left: 12px;
+      padding-right: 4px;
+      background-color: LightBlue;
+    }
+    td.headerValueLeg
+    {
+      text-align: left;
+      color: black;
+      font-size: 80%;
+      white-space: nowrap;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 2px;
+    }
+
+    /* Color of horizontal ruler */
+    td.hr
+    {
+      background-color: navy;
+      height:3px;
+    }
+    /* Footer format */
+    td.footer
+    {
+      text-align: center;
+      padding-top: 3px;
+      font-family: sans-serif;
+    }
+
+    /* Coverage Table */
+
+    td.coverTableHead
+    {
+      text-align: center;
+      color: white;
+      background-color: SteelBlue;
+      font-family: sans-serif;
+      font-size: 120%;
+      white-space: nowrap;
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+    td.coverFile
+    {
+      text-align: left;
+      padding-left: 10px;
+      padding-right: 20px;
+      color: black;
+      background-color: LightBlue;
+      font-family: monospace;
+      font-weight: bold;
+      font-size: 110%;
+    }
+    td.coverBar
+    {
+      padding-left: 10px;
+      padding-right: 10px;
+      background-color: LightBlue;
+    }
+    td.coverBarOutline
+    {
+      background-color: white;
+    }
+    td.coverValue
+    {
+      padding-top: 2px;
+      text-align: right;
+      padding-left: 10px;
+      padding-right: 10px;
+      font-family: sans-serif;
+      white-space: nowrap;
+      font-weight: bold;
+    }
+
+    /* Link Details */
+    a.detail:link
+    {
+      color: #B8D0FF;
+      font-size:80%;
+    }
+    a.detail:visited
+    {
+      color: #B8D0FF;
+      font-size:80%;
+    }
+    a.detail:active
+    {
+      color: #FFFFFF;
+      font-size:80%;
+    }
+
+    .graphcont{
+        color:#000;
+        font-weight:700;
+        float:left
+    }
+
+    .graph{
+        float:left;
+        background-color: white;
+        position:relative;
+        width:280px;
+        padding:0
+    }
+
+    .graph .bar{
+        display:block;
+        position:relative;
+        border:black 1px solid;
+        text-align:center;
+        color:#fff;
+        height:10px;
+        font-family:Arial,Helvetica,sans-serif;
+        font-size:12px;
+        line-height:1.9em
+    }
+
+    .graph .bar span{
+        position:absolute;
+        left:1em
+    }
+
+    td.coveredLine,
+    span.coveredLine
+    {
+        background-color: LightGreen!important;
+    }
+
+    td.uncoveredLine,
+    span.uncoveredLine
+    {
+        background-color: LightPink!important;
+    }
+
+    .linebranch, .linecount
+    {
+        border-right: 1px gray solid;
+        background-color: lightgray;
+    }
+
+    span.takenBranch
+    {
+        color: Green!important;
+        cursor: help;
+    }
+
+    span.notTakenBranch
+    {
+        color: Red!important;
+        cursor: help;
+    }
+
+    .src
+    {
+        padding-left: 12px;
+    }
+
+    .srcHeader,
+    span.takenBranch,
+    span.notTakenBranch
+    {
+        font-family: monospace;
+        font-weight: bold;
+    }
+
+    pre
+    {
+        height : 15px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .lineno
+    {
+        background-color: #EFE383;
+        border-right: 1px solid #BBB15F;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">GCC Code Coverage Report</td></tr>
+    <tr><td class="hr"></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerName">Directory:</td>
+            <td width="35%" class="headerValue">./</td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerValue" style="text-align:right;">Exec</td>
+            <td width="10%" class="headerValue" style="text-align:right;">Total</td>
+            <td width="15%" class="headerValue" style="text-align:right;">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerName">Date:</td>
+            <td class="headerValue">2021-05-05 08:30:37</td>
+            <td></td>
+            <td class="headerName">Lines:</td>
+            <td class="headerTableEntry">1404</td>
+            <td class="headerTableEntry">2453</td>
+            <td class="headerTableEntry" style="background-color:LightPink">57.2 %</td>
+          </tr>
+          <tr>
+            <td class="headerName">Legend:</td>
+            <td class="headerValueLeg">
+              <span style="background-color:LightPink">low: &lt; 75.0 %</span>
+              <span style="background-color:#FFFF55">medium: &gt;= 75.0 %</span>
+              <span style="background-color:LightGreen">high: &gt;= 90.0 %</span>
+            </td>
+            <td></td>
+            <td class="headerName">Branches:</td>
+            <td class="headerTableEntry">1536</td>
+            <td class="headerTableEntry">5269</td>
+            <td class="headerTableEntry" style="background-color:LightPink">29.2 %</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="hr"></td></tr>
+  </table>
+
+  <center>
+  <table width="80%" cellpadding=1 cellspacing=1 border=0>
+    <tr>
+      <td width="44%"><br></td>
+      <td width="8%"></td>
+      <td width="8%"></td>
+      <td width="8%"></td>
+      <td width="8%"></td>
+      <td width="8%"></td>
+    </tr>
+    <tr>
+      <td class="coverTableHead">File</td>
+      <td class="coverTableHead" colspan=3>Lines</td>
+      <td class="coverTableHead" colspan=2>Branches</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" ><a href="index.benchmarks_clean_shared_memory.cpp.html">benchmarks/clean_shared_memory.cpp</a></td>
+      <td class="coverBar" align="center" >
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 5</td>
+      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">0 / 4</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.benchmarks_serialization_frequency.cpp.html">benchmarks/serialization_frequency.cpp</a></td>
+      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 18</td>
+      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">0 / 24</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" ><a href="index.benchmarks_stress_get_api.cpp.html">benchmarks/stress_get_api.cpp</a></td>
+      <td class="coverBar" align="center" >
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 22</td>
+      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">0 / 32</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.benchmarks_stress_get_raw_boost_efficient.cpp.html">benchmarks/stress_get_raw_boost_efficient.cpp</a></td>
+      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 25</td>
+      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">0 / 36</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" ><a href="index.benchmarks_stress_get_raw_boost_inefficient.cpp.html">benchmarks/stress_get_raw_boost_inefficient.cpp</a></td>
+      <td class="coverBar" align="center" >
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 25</td>
+      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">0 / 36</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.benchmarks_stress_set_api.cpp.html">benchmarks/stress_set_api.cpp</a></td>
+      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 21</td>
+      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">0 / 30</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" ><a href="index.benchmarks_stress_set_raw_boost_efficient.cpp.html">benchmarks/stress_set_raw_boost_efficient.cpp</a></td>
+      <td class="coverBar" align="center" >
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 25</td>
+      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">0 / 38</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.benchmarks_stress_set_raw_boost_inefficient.cpp.html">benchmarks/stress_set_raw_boost_inefficient.cpp</a></td>
+      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 25</td>
+      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">0 / 38</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" ><a href="index.demos_cond_var.cpp.html">demos/cond_var.cpp</a></td>
+      <td class="coverBar" align="center" >
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 73</td>
+      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">0 / 64</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.demos_cond_var_ping.cpp.html">demos/cond_var_ping.cpp</a></td>
+      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 31</td>
+      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">0 / 74</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" ><a href="index.demos_cond_var_pong.cpp.html">demos/cond_var_pong.cpp</a></td>
+      <td class="coverBar" align="center" >
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 32</td>
+      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">0 / 74</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.demos_cond_var_timeout.cpp.html">demos/cond_var_timeout.cpp</a></td>
+      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 30</td>
+      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">0 / 90</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" ><a href="index.demos_create_segment.cpp.html">demos/create_segment.cpp</a></td>
+      <td class="coverBar" align="center" >
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 8</td>
+      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">0 / 18</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.demos_eigen.cpp.html">demos/eigen.cpp</a></td>
+      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 19</td>
+      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">0 / 30</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" ><a href="index.demos_exchange_manager_clean.cpp.html">demos/exchange_manager_clean.cpp</a></td>
+      <td class="coverBar" align="center" >
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 3</td>
+      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">0 / 12</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.demos_exchange_manager_consumer.cpp.html">demos/exchange_manager_consumer.cpp</a></td>
+      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 25</td>
+      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">0 / 36</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" ><a href="index.demos_exchange_manager_producer.cpp.html">demos/exchange_manager_producer.cpp</a></td>
+      <td class="coverBar" align="center" >
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 46</td>
+      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">0 / 68</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.demos_four_int_values.cpp.html">demos/four_int_values.cpp</a></td>
+      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:86.7%; background-color:yellow"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:#FFFF55;">86.7&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:#FFFF55;">26 / 30</td>
+      <td class="CoverValue" style="background-color:LightPink;">50.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">9 / 18</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" ><a href="index.demos_get_data.cpp.html">demos/get_data.cpp</a></td>
+      <td class="coverBar" align="center" >
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 60</td>
+      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">0 / 262</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.demos_locked_cond_var_ping.cpp.html">demos/locked_cond_var_ping.cpp</a></td>
+      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 27</td>
+      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">0 / 54</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" ><a href="index.demos_locked_cond_var_pong.cpp.html">demos/locked_cond_var_pong.cpp</a></td>
+      <td class="coverBar" align="center" >
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 21</td>
+      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">0 / 42</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.demos_non_existing_segment.cpp.html">demos/non_existing_segment.cpp</a></td>
+      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 6</td>
+      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">0 / 14</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" ><a href="index.demos_read_array.cpp.html">demos/read_array.cpp</a></td>
+      <td class="coverBar" align="center" >
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 28</td>
+      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">0 / 46</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.demos_serialization.cpp.html">demos/serialization.cpp</a></td>
+      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 25</td>
+      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">0 / 30</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" ><a href="index.demos_set_data.cpp.html">demos/set_data.cpp</a></td>
+      <td class="coverBar" align="center" >
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 95</td>
+      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">0 / 206</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.demos_std_string_vector.cpp.html">demos/std_string_vector.cpp</a></td>
+      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 17</td>
+      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">0 / 22</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" ><a href="index.demos_verbose.cpp.html">demos/verbose.cpp</a></td>
+      <td class="coverBar" align="center" >
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 5</td>
+      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">0 / 20</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.demos_wait_for_segment.cpp.html">demos/wait_for_segment.cpp</a></td>
+      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 9</td>
+      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">0 / 34</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" ><a href="index.demos_write_array.cpp.html">demos/write_array.cpp</a></td>
+      <td class="coverBar" align="center" >
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 35</td>
+      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">0 / 54</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.include_shared_memory_array.hxx.html">include/shared_memory/array.hxx</a></td>
+      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:90.5%; background-color:green"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">90.5&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">38 / 42</td>
+      <td class="CoverValue" style="background-color:LightPink;">44.4&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">36 / 81</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" ><a href="index.include_shared_memory_array_fundamental.hxx.html">include/shared_memory/array_fundamental.hxx</a></td>
+      <td class="coverBar" align="center" >
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:91.7%; background-color:green"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">91.7&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">22 / 24</td>
+      <td class="CoverValue" style="background-color:LightPink;">41.7&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">10 / 24</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.include_shared_memory_array_fundamental_array.hxx.html">include/shared_memory/array_fundamental_array.hxx</a></td>
+      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:93.5%; background-color:green"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">93.5&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">29 / 31</td>
+      <td class="CoverValue" style="background-color:LightPink;">50.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">14 / 28</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" ><a href="index.include_shared_memory_array_serializable.hxx.html">include/shared_memory/array_serializable.hxx</a></td>
+      <td class="coverBar" align="center" >
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:92.7%; background-color:green"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">92.7&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">38 / 41</td>
+      <td class="CoverValue" style="background-color:LightPink;">45.2&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">19 / 42</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.include_shared_memory_benchmarks_benchmark_common.hh.html">include/shared_memory/benchmarks/benchmark_common.hh</a></td>
+      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 19</td>
+      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">0 / 8</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" ><a href="index.include_shared_memory_demos_four_int_values.hpp.html">include/shared_memory/demos/four_int_values.hpp</a></td>
+      <td class="coverBar" align="center" >
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:100.0%; background-color:green"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">100.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">4 / 4</td>
+      <td class="CoverValue" style="background-color:LightGray;">-&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightGray;">0 / 0</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.include_shared_memory_demos_item.hpp.html">include/shared_memory/demos/item.hpp</a></td>
+      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:59.1%; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">59.1&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">13 / 22</td>
+      <td class="CoverValue" style="background-color:LightPink;">25.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">1 / 4</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" ><a href="index.include_shared_memory_exceptions.hpp.html">include/shared_memory/exceptions.hpp</a></td>
+      <td class="coverBar" align="center" >
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:50.0%; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">50.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">1 / 2</td>
+      <td class="CoverValue" style="background-color:LightPink;">25.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">1 / 4</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.include_shared_memory_exchange_manager_consumer.hxx.html">include/shared_memory/exchange_manager_consumer.hxx</a></td>
+      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:69.6%; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">69.6&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">39 / 56</td>
+      <td class="CoverValue" style="background-color:LightPink;">32.8&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">19 / 58</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" ><a href="index.include_shared_memory_exchange_manager_producer.hxx.html">include/shared_memory/exchange_manager_producer.hxx</a></td>
+      <td class="coverBar" align="center" >
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:88.4%; background-color:yellow"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:#FFFF55;">88.4&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:#FFFF55;">61 / 69</td>
+      <td class="CoverValue" style="background-color:LightPink;">46.9&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">30 / 64</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.include_shared_memory_internal_array_members.hpp.html">include/shared_memory/internal/array_members.hpp</a></td>
+      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:100.0%; background-color:green"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">100.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">1 / 1</td>
+      <td class="CoverValue" style="background-color:LightGray;">-&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightGray;">0 / 0</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" ><a href="index.include_shared_memory_internal_exchange_manager_memory.hxx.html">include/shared_memory/internal/exchange_manager_memory.hxx</a></td>
+      <td class="coverBar" align="center" >
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:93.2%; background-color:green"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">93.2&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">138 / 148</td>
+      <td class="CoverValue" style="background-color:LightPink;">53.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">71 / 134</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.include_shared_memory_lock.hpp.html">include/shared_memory/lock.hpp</a></td>
+      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:100.0%; background-color:green"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">100.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">1 / 1</td>
+      <td class="CoverValue" style="background-color:LightGray;">-&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightGray;">0 / 0</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" ><a href="index.include_shared_memory_serializer.hpp.html">include/shared_memory/serializer.hpp</a></td>
+      <td class="coverBar" align="center" >
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:100.0%; background-color:green"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">100.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">1 / 1</td>
+      <td class="CoverValue" style="background-color:LightGray;">-&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightGray;">0 / 0</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.include_shared_memory_serializer.hxx.html">include/shared_memory/serializer.hxx</a></td>
+      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:100.0%; background-color:green"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">100.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">16 / 16</td>
+      <td class="CoverValue" style="background-color:LightPink;">50.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">18 / 36</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" ><a href="index.include_shared_memory_shared_memory.hpp.html">include/shared_memory/shared_memory.hpp</a></td>
+      <td class="coverBar" align="center" >
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:84.8%; background-color:yellow"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:#FFFF55;">84.8&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:#FFFF55;">28 / 33</td>
+      <td class="CoverValue" style="background-color:LightPink;">64.3&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">18 / 28</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.include_shared_memory_shared_memory.hxx.html">include/shared_memory/shared_memory.hxx</a></td>
+      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:87.1%; background-color:yellow"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:#FFFF55;">87.1&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:#FFFF55;">108 / 124</td>
+      <td class="CoverValue" style="background-color:LightPink;">37.6&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">215 / 572</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" ><a href="index.include_shared_memory_tests_tests.h.html">include/shared_memory/tests/tests.h</a></td>
+      <td class="coverBar" align="center" >
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:100.0%; background-color:green"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">100.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">12 / 12</td>
+      <td class="CoverValue" style="background-color:LightPink;">50.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">12 / 24</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.src_array.cpp.html">src/array.cpp</a></td>
+      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:100.0%; background-color:green"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">100.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">6 / 6</td>
+      <td class="CoverValue" style="background-color:LightPink;">50.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">5 / 10</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" ><a href="index.src_condition_variable.cpp.html">src/condition_variable.cpp</a></td>
+      <td class="coverBar" align="center" >
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:64.3%; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">64.3&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">18 / 28</td>
+      <td class="CoverValue" style="background-color:LightPink;">33.3&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">8 / 24</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.src_exceptions.cpp.html">src/exceptions.cpp</a></td>
+      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:56.5%; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">56.5&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">26 / 46</td>
+      <td class="CoverValue" style="background-color:LightPink;">38.3&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">23 / 60</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" ><a href="index.src_lock.cpp.html">src/lock.cpp</a></td>
+      <td class="coverBar" align="center" >
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:100.0%; background-color:green"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">100.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">3 / 3</td>
+      <td class="CoverValue" style="background-color:LightPink;">50.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">2 / 4</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.src_locked_condition_variable.cpp.html">src/locked_condition_variable.cpp</a></td>
+      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:57.4%; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">57.4&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">35 / 61</td>
+      <td class="CoverValue" style="background-color:LightPink;">40.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">20 / 50</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" ><a href="index.src_mutex.cpp.html">src/mutex.cpp</a></td>
+      <td class="coverBar" align="center" >
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:95.5%; background-color:green"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">95.5&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">21 / 22</td>
+      <td class="CoverValue" style="background-color:LightPink;">55.6&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">10 / 18</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.src_segment_info.cpp.html">src/segment_info.cpp</a></td>
+      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:71.4%; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">71.4&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">15 / 21</td>
+      <td class="CoverValue" style="background-color:LightPink;">50.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">2 / 4</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" ><a href="index.src_shared_memory.cpp.html">src/shared_memory.cpp</a></td>
+      <td class="coverBar" align="center" >
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:65.3%; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">65.3&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">62 / 95</td>
+      <td class="CoverValue" style="background-color:LightPink;">30.9&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">25 / 81</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.srcpy_shared_memory.cpp.html">srcpy/shared_memory.cpp</a></td>
+      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 67</td>
+      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">0 / 103</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" ><a href="index.tests_main.cpp.html">tests/main.cpp</a></td>
+      <td class="coverBar" align="center" >
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:100.0%; background-color:green"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">100.0&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">4 / 4</td>
+      <td class="CoverValue" style="background-color:LightPink;">50.0&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">2 / 4</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.tests_support_tests_executable.cpp.html">tests/support/tests_executable.cpp</a></td>
+      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:91.7%; background-color:green"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">91.7&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">154 / 168</td>
+      <td class="CoverValue" style="background-color:LightPink;">55.7&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">185 / 332</td>
+    </tr>
+
+
+    <tr>
+      <td class="coverFile" ><a href="index.tests_unit_tests.cpp.html">tests/unit_tests.cpp</a></td>
+      <td class="coverBar" align="center" >
+        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
+                <div class="graph"><strong class="bar" style="width:97.8%; background-color:green"></strong></div>
+                </td></tr></table>
+      </td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">97.8&nbsp;%</td>
+      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">484 / 495</td>
+      <td class="CoverValue" style="background-color:LightPink;">39.7&nbsp;%</td>
+      <td class="CoverValue" style="background-color:LightPink;">781 / 1966</td>
+    </tr>
+
+
+    <tr>
+      <td width="44%"><br></td>
+      <td width="8%"></td>
+      <td width="8%"></td>
+      <td width="8%"></td>
+      <td width="8%"></td>
+      <td width="8%"></td>
+    </tr>
+  </table>
+  </center>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="hr"><td></tr>
+    <tr><td class="footer">Generated by: <a href="http://gcovr.com">GCOVR (Version 4.2)</a></td></tr>
+  </table>
+  <br>
+
+</body>
+
+</html>
+
