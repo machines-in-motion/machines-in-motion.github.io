@@ -1,669 +1,419 @@
-
+<!DOCTYPE html>
 <html>
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <title>Head</title>
-  <style media="screen" type="text/css">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>GCC Code Coverage Report</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="index.css">
+  </head>
 
-    body
-    {
-      color: #000000;
-      background-color: #FFFFFF;
-    }
+  <body>
+    <h1>GCC Code Coverage Report</h1>
 
-    /* Link formats: use maroon w/underlines */
-    a:link
-    {
-      color: navy;
-      text-decoration: underline;
-    }
-    a:visited
-    {
-      color: maroon;
-      text-decoration: underline;
-    }
-    a:active
-    {
-      color: navy;
-      text-decoration: underline;
-    }
+    <hr/>
 
-    /*** TD formats ***/
-    td
-    {
-      font-family: sans-serif;
-    }
-    td.title
-    {
-      text-align: center;
-      padding-bottom: 10px;
-      font-size: 20pt;
-      font-weight: bold;
-    }
-
-    /* TD Header Information */
-    td.headerName
-    {
-      text-align: right;
-      color: black;
-      padding-right: 6px;
-      font-weight: bold;
-      vertical-align: top;
-      white-space: nowrap;
-    }
-    td.headerValue
-    {
-      text-align: left;
-      color: blue;
-      font-weight: bold;
-      white-space: nowrap;
-    }
-    td.headerTableEntry
-    {
-      text-align: right;
-      color: black;
-      font-weight: bold;
-      white-space: nowrap;
-      padding-left: 12px;
-      padding-right: 4px;
-      background-color: LightBlue;
-    }
-    td.headerValueLeg
-    {
-      text-align: left;
-      color: black;
-      font-size: 80%;
-      white-space: nowrap;
-      padding-left: 10px;
-      padding-right: 10px;
-      padding-top: 2px;
-    }
-
-    /* Color of horizontal ruler */
-    td.hr
-    {
-      background-color: navy;
-      height:3px;
-    }
-    /* Footer format */
-    td.footer
-    {
-      text-align: center;
-      padding-top: 3px;
-      font-family: sans-serif;
-    }
-
-    /* Coverage Table */
-
-    td.coverTableHead
-    {
-      text-align: center;
-      color: white;
-      background-color: SteelBlue;
-      font-family: sans-serif;
-      font-size: 120%;
-      white-space: nowrap;
-      padding-left: 4px;
-      padding-right: 4px;
-    }
-    td.coverFile
-    {
-      text-align: left;
-      padding-left: 10px;
-      padding-right: 20px;
-      color: black;
-      background-color: LightBlue;
-      font-family: monospace;
-      font-weight: bold;
-      font-size: 110%;
-    }
-    td.coverBar
-    {
-      padding-left: 10px;
-      padding-right: 10px;
-      background-color: LightBlue;
-    }
-    td.coverBarOutline
-    {
-      background-color: white;
-    }
-    td.coverValue
-    {
-      padding-top: 2px;
-      text-align: right;
-      padding-left: 10px;
-      padding-right: 10px;
-      font-family: sans-serif;
-      white-space: nowrap;
-      font-weight: bold;
-    }
-
-    /* Link Details */
-    a.detail:link
-    {
-      color: #B8D0FF;
-      font-size:80%;
-    }
-    a.detail:visited
-    {
-      color: #B8D0FF;
-      font-size:80%;
-    }
-    a.detail:active
-    {
-      color: #FFFFFF;
-      font-size:80%;
-    }
-
-    .graphcont{
-        color:#000;
-        font-weight:700;
-        float:left
-    }
-
-    .graph{
-        float:left;
-        background-color: white;
-        position:relative;
-        width:280px;
-        padding:0
-    }
-
-    .graph .bar{
-        display:block;
-        position:relative;
-        border:black 1px solid;
-        text-align:center;
-        color:#fff;
-        height:10px;
-        font-family:Arial,Helvetica,sans-serif;
-        font-size:12px;
-        line-height:1.9em
-    }
-
-    .graph .bar span{
-        position:absolute;
-        left:1em
-    }
-
-    td.coveredLine,
-    span.coveredLine
-    {
-        background-color: LightGreen!important;
-    }
-
-    td.uncoveredLine,
-    span.uncoveredLine
-    {
-        background-color: LightPink!important;
-    }
-
-    .linebranch, .linecount
-    {
-        border-right: 1px gray solid;
-        background-color: lightgray;
-    }
-
-    span.takenBranch
-    {
-        color: Green!important;
-        cursor: help;
-    }
-
-    span.notTakenBranch
-    {
-        color: Red!important;
-        cursor: help;
-    }
-
-    .src
-    {
-        padding-left: 12px;
-    }
-
-    .srcHeader,
-    span.takenBranch,
-    span.notTakenBranch
-    {
-        font-family: monospace;
-        font-weight: bold;
-    }
-
-    pre
-    {
-        height : 15px;
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
-    .lineno
-    {
-        background-color: #EFE383;
-        border-right: 1px solid #BBB15F;
-    }
-
-  </style>
-</head>
-
-<body>
-
-  <table width="100%" border=0 cellspacing=0 cellpadding=0>
-    <tr><td class="title">GCC Code Coverage Report</td></tr>
-    <tr><td class="hr"></td></tr>
-
+    <div class="summary">
+<div>
+  <table class="legend">
     <tr>
-      <td width="100%">
-        <table cellpadding=1 border=0 width="100%">
-          <tr>
-            <td width="10%" class="headerName">Directory:</td>
-            <td width="35%" class="headerValue">./</td>
-            <td width="5%"></td>
-            <td width="15%"></td>
-            <td width="10%" class="headerValue" style="text-align:right;">Exec</td>
-            <td width="10%" class="headerValue" style="text-align:right;">Total</td>
-            <td width="15%" class="headerValue" style="text-align:right;">Coverage</td>
-          </tr>
-          <tr>
-            <td class="headerName">Date:</td>
-            <td class="headerValue">2021-06-03 12:55:28</td>
-            <td></td>
-            <td class="headerName">Lines:</td>
-            <td class="headerTableEntry">353</td>
-            <td class="headerTableEntry">938</td>
-            <td class="headerTableEntry" style="background-color:LightPink">37.6 %</td>
-          </tr>
-          <tr>
-            <td class="headerName">Legend:</td>
-            <td class="headerValueLeg">
-              <span style="background-color:LightPink">low: &lt; 75.0 %</span>
-              <span style="background-color:#FFFF55">medium: &gt;= 75.0 %</span>
-              <span style="background-color:LightGreen">high: &gt;= 90.0 %</span>
-            </td>
-            <td></td>
-            <td class="headerName">Branches:</td>
-            <td class="headerTableEntry">298</td>
-            <td class="headerTableEntry">1266</td>
-            <td class="headerTableEntry" style="background-color:LightPink">23.5 %</td>
-          </tr>
-        </table>
+      <th scope="row">Directory:</th>
+      <td>./</td>
+    </tr>
+    <tr>
+      <th scope="row">Date:</th>
+      <td>2021-07-08 15:22:37</td>
+    </tr>
+    <tr>
+      <th scope="row">Legend:</th>
+      <td class="legend">
+        <span class="coverage-low">low: &gt;= 0%</span>
+        <span class="coverage-medium">medium: &gt;= 75.0%</span>
+        <span class="coverage-high">high: &gt;= 90.0%</span>
       </td>
-    </tr>
-
-    <tr><td class="hr"></td></tr>
-  </table>
-
-  <center>
-  <table width="80%" cellpadding=1 cellspacing=1 border=0>
-    <tr>
-      <td width="44%"><br></td>
-      <td width="8%"></td>
-      <td width="8%"></td>
-      <td width="8%"></td>
-      <td width="8%"></td>
-      <td width="8%"></td>
-    </tr>
-    <tr>
-      <td class="coverTableHead">File</td>
-      <td class="coverTableHead" colspan=3>Lines</td>
-      <td class="coverTableHead" colspan=2>Branches</td>
-    </tr>
-
-
-    <tr>
-      <td class="coverFile" ><a href="index.demos_demo_checkpoint_timer.cpp.html">demos/demo_checkpoint_timer.cpp</a></td>
-      <td class="coverBar" align="center" >
-        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
-                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
-                </td></tr></table>
-      </td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 19</td>
-      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
-      <td class="CoverValue" style="background-color:LightPink;">0 / 40</td>
-    </tr>
-
-
-    <tr>
-      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.demos_demo_realtime_check.cpp.html">demos/demo_realtime_check.cpp</a></td>
-      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
-        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
-                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
-                </td></tr></table>
-      </td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 19</td>
-      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
-      <td class="CoverValue" style="background-color:LightPink;">0 / 26</td>
-    </tr>
-
-
-    <tr>
-      <td class="coverFile" ><a href="index.demos_demo_realtime_strict_check.cpp.html">demos/demo_realtime_strict_check.cpp</a></td>
-      <td class="coverBar" align="center" >
-        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
-                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
-                </td></tr></table>
-      </td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 31</td>
-      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
-      <td class="CoverValue" style="background-color:LightPink;">0 / 26</td>
-    </tr>
-
-
-    <tr>
-      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.demos_demo_spinner.cpp.html">demos/demo_spinner.cpp</a></td>
-      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
-        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
-                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
-                </td></tr></table>
-      </td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 17</td>
-      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
-      <td class="CoverValue" style="background-color:LightPink;">0 / 26</td>
-    </tr>
-
-
-    <tr>
-      <td class="coverFile" ><a href="index.demos_demo_thread.cpp.html">demos/demo_thread.cpp</a></td>
-      <td class="coverBar" align="center" >
-        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
-                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
-                </td></tr></table>
-      </td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 11</td>
-      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
-      <td class="CoverValue" style="background-color:LightPink;">0 / 14</td>
-    </tr>
-
-
-    <tr>
-      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.demos_demo_timing.cpp.html">demos/demo_timing.cpp</a></td>
-      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
-        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
-                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
-                </td></tr></table>
-      </td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 13</td>
-      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
-      <td class="CoverValue" style="background-color:LightPink;">0 / 22</td>
-    </tr>
-
-
-    <tr>
-      <td class="coverFile" ><a href="index.demos_demo_usb_stream_imu_3DM_GX3_25.cpp.html">demos/demo_usb_stream_imu_3DM_GX3_25.cpp</a></td>
-      <td class="coverBar" align="center" >
-        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
-                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
-                </td></tr></table>
-      </td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 88</td>
-      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
-      <td class="CoverValue" style="background-color:LightPink;">0 / 120</td>
-    </tr>
-
-
-    <tr>
-      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.include_real_time_tools_checkpoint_timer.hpp.html">include/real_time_tools/checkpoint_timer.hpp</a></td>
-      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
-        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
-                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
-                </td></tr></table>
-      </td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 1</td>
-      <td class="CoverValue" style="background-color:LightGray;">-&nbsp;%</td>
-      <td class="CoverValue" style="background-color:LightGray;">0 / 0</td>
-    </tr>
-
-
-    <tr>
-      <td class="coverFile" ><a href="index.include_real_time_tools_checkpoint_timer.hxx.html">include/real_time_tools/checkpoint_timer.hxx</a></td>
-      <td class="coverBar" align="center" >
-        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
-                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
-                </td></tr></table>
-      </td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 21</td>
-      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
-      <td class="CoverValue" style="background-color:LightPink;">0 / 20</td>
-    </tr>
-
-
-    <tr>
-      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.include_real_time_tools_spinner.hpp.html">include/real_time_tools/spinner.hpp</a></td>
-      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
-        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
-                <div class="graph"><strong class="bar" style="width:60.0%; background-color:red"></strong></div>
-                </td></tr></table>
-      </td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">60.0&nbsp;%</td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">3 / 5</td>
-      <td class="CoverValue" style="background-color:LightGray;">-&nbsp;%</td>
-      <td class="CoverValue" style="background-color:LightGray;">0 / 0</td>
-    </tr>
-
-
-    <tr>
-      <td class="coverFile" ><a href="index.include_real_time_tools_thread.hpp.html">include/real_time_tools/thread.hpp</a></td>
-      <td class="coverBar" align="center" >
-        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
-                <div class="graph"><strong class="bar" style="width:100.0%; background-color:green"></strong></div>
-                </td></tr></table>
-      </td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">100.0&nbsp;%</td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">13 / 13</td>
-      <td class="CoverValue" style="background-color:LightPink;">50.0&nbsp;%</td>
-      <td class="CoverValue" style="background-color:LightPink;">1 / 2</td>
-    </tr>
-
-
-    <tr>
-      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.include_real_time_tools_timer.hpp.html">include/real_time_tools/timer.hpp</a></td>
-      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
-        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
-                <div class="graph"><strong class="bar" style="width:100.0%; background-color:green"></strong></div>
-                </td></tr></table>
-      </td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">100.0&nbsp;%</td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">20 / 20</td>
-      <td class="CoverValue" style="background-color:LightPink;">50.0&nbsp;%</td>
-      <td class="CoverValue" style="background-color:LightPink;">2 / 4</td>
-    </tr>
-
-
-    <tr>
-      <td class="coverFile" ><a href="index.src_frequency_manager.cpp.html">src/frequency_manager.cpp</a></td>
-      <td class="coverBar" align="center" >
-        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
-                <div class="graph"><strong class="bar" style="width:59.3%; background-color:red"></strong></div>
-                </td></tr></table>
-      </td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">59.3&nbsp;%</td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">16 / 27</td>
-      <td class="CoverValue" style="background-color:LightPink;">58.3&nbsp;%</td>
-      <td class="CoverValue" style="background-color:LightPink;">7 / 12</td>
-    </tr>
-
-
-    <tr>
-      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.src_iostream.cpp.html">src/iostream.cpp</a></td>
-      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
-        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
-                <div class="graph"><strong class="bar" style="width:38.5%; background-color:red"></strong></div>
-                </td></tr></table>
-      </td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">38.5&nbsp;%</td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">5 / 13</td>
-      <td class="CoverValue" style="background-color:LightPink;">16.7&nbsp;%</td>
-      <td class="CoverValue" style="background-color:LightPink;">5 / 30</td>
-    </tr>
-
-
-    <tr>
-      <td class="coverFile" ><a href="index.src_process_manager.cpp.html">src/process_manager.cpp</a></td>
-      <td class="coverBar" align="center" >
-        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
-                <div class="graph"><strong class="bar" style="width:4.2%; background-color:red"></strong></div>
-                </td></tr></table>
-      </td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">4.2&nbsp;%</td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">1 / 24</td>
-      <td class="CoverValue" style="background-color:LightPink;">10.0&nbsp;%</td>
-      <td class="CoverValue" style="background-color:LightPink;">2 / 20</td>
-    </tr>
-
-
-    <tr>
-      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.src_realtime_check.cpp.html">src/realtime_check.cpp</a></td>
-      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
-        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
-                <div class="graph"><strong class="bar" style="width:57.4%; background-color:red"></strong></div>
-                </td></tr></table>
-      </td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">57.4&nbsp;%</td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">39 / 68</td>
-      <td class="CoverValue" style="background-color:LightPink;">40.9&nbsp;%</td>
-      <td class="CoverValue" style="background-color:LightPink;">18 / 44</td>
-    </tr>
-
-
-    <tr>
-      <td class="coverFile" ><a href="index.src_spinner.cpp.html">src/spinner.cpp</a></td>
-      <td class="coverBar" align="center" >
-        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
-                <div class="graph"><strong class="bar" style="width:69.2%; background-color:red"></strong></div>
-                </td></tr></table>
-      </td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">69.2&nbsp;%</td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">9 / 13</td>
-      <td class="CoverValue" style="background-color:LightPink;">50.0&nbsp;%</td>
-      <td class="CoverValue" style="background-color:LightPink;">2 / 4</td>
-    </tr>
-
-
-    <tr>
-      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.src_thread.cpp.html">src/thread.cpp</a></td>
-      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
-        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
-                <div class="graph"><strong class="bar" style="width:94.4%; background-color:green"></strong></div>
-                </td></tr></table>
-      </td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">94.4&nbsp;%</td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">17 / 18</td>
-      <td class="CoverValue" style="background-color:LightPink;">60.0&nbsp;%</td>
-      <td class="CoverValue" style="background-color:LightPink;">6 / 10</td>
-    </tr>
-
-
-    <tr>
-      <td class="coverFile" ><a href="index.src_timer.cpp.html">src/timer.cpp</a></td>
-      <td class="coverBar" align="center" >
-        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
-                <div class="graph"><strong class="bar" style="width:82.0%; background-color:yellow"></strong></div>
-                </td></tr></table>
-      </td>
-      <td class="CoverValue" style="font-weight:bold; background-color:#FFFF55;">82.0&nbsp;%</td>
-      <td class="CoverValue" style="font-weight:bold; background-color:#FFFF55;">82 / 100</td>
-      <td class="CoverValue" style="background-color:LightPink;">51.1&nbsp;%</td>
-      <td class="CoverValue" style="background-color:LightPink;">46 / 90</td>
-    </tr>
-
-
-    <tr>
-      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.src_usb_stream.cpp.html">src/usb_stream.cpp</a></td>
-      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
-        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
-                <div class="graph"><strong class="bar" style="width:0.4%; background-color:red"></strong></div>
-                </td></tr></table>
-      </td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.4&nbsp;%</td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">1 / 243</td>
-      <td class="CoverValue" style="background-color:LightPink;">1.6&nbsp;%</td>
-      <td class="CoverValue" style="background-color:LightPink;">2 / 129</td>
-    </tr>
-
-
-    <tr>
-      <td class="coverFile" ><a href="index.srcpy_real_time_tools.cpp.html">srcpy/real_time_tools.cpp</a></td>
-      <td class="coverBar" align="center" >
-        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
-                <div class="graph"><strong class="bar" style="width:0.0%; border:white; background-color:red"></strong></div>
-                </td></tr></table>
-      </td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0.0&nbsp;%</td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">0 / 5</td>
-      <td class="CoverValue" style="background-color:LightPink;">0.0&nbsp;%</td>
-      <td class="CoverValue" style="background-color:LightPink;">0 / 35</td>
-    </tr>
-
-
-    <tr>
-      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.tests_main.cpp.html">tests/main.cpp</a></td>
-      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
-        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
-                <div class="graph"><strong class="bar" style="width:100.0%; background-color:green"></strong></div>
-                </td></tr></table>
-      </td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">100.0&nbsp;%</td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">4 / 4</td>
-      <td class="CoverValue" style="background-color:LightPink;">50.0&nbsp;%</td>
-      <td class="CoverValue" style="background-color:LightPink;">2 / 4</td>
-    </tr>
-
-
-    <tr>
-      <td class="coverFile" ><a href="index.tests_test_real_time_tools.cpp.html">tests/test_real_time_tools.cpp</a></td>
-      <td class="coverBar" align="center" >
-        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
-                <div class="graph"><strong class="bar" style="width:91.5%; background-color:green"></strong></div>
-                </td></tr></table>
-      </td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">91.5&nbsp;%</td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightGreen;">140 / 153</td>
-      <td class="CoverValue" style="background-color:LightPink;">35.1&nbsp;%</td>
-      <td class="CoverValue" style="background-color:LightPink;">203 / 578</td>
-    </tr>
-
-
-    <tr>
-      <td class="coverFile" style="background-color:LightSteelBlue"><a href="index.tests_threadsafe_object_test.cpp.html">tests/threadsafe_object_test.cpp</a></td>
-      <td class="coverBar" align="center" style="background-color:LightSteelBlue">
-        <table border=0 cellspacing=0 cellpadding=1><tr><td class="coverBarOutline">
-                <div class="graph"><strong class="bar" style="width:25.0%; background-color:red"></strong></div>
-                </td></tr></table>
-      </td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">25.0&nbsp;%</td>
-      <td class="CoverValue" style="font-weight:bold; background-color:LightPink;">3 / 12</td>
-      <td class="CoverValue" style="background-color:LightPink;">20.0&nbsp;%</td>
-      <td class="CoverValue" style="background-color:LightPink;">2 / 10</td>
-    </tr>
-
-
-    <tr>
-      <td width="44%"><br></td>
-      <td width="8%"></td>
-      <td width="8%"></td>
-      <td width="8%"></td>
-      <td width="8%"></td>
-      <td width="8%"></td>
     </tr>
   </table>
-  </center>
+</div>
 
-  <table width="100%" border=0 cellspacing=0 cellpadding=0>
-    <tr><td class="hr"><td></tr>
-    <tr><td class="footer">Generated by: <a href="http://gcovr.com">GCOVR (Version 4.2)</a></td></tr>
+<div>
+  <table class="coverage">
+    <tr>
+      <th></th>
+      <th scope="col">Exec</th>
+      <th scope="col">Total</th>
+      <th scope="col">Coverage</th>
+    </tr>
+    <tr>
+      <th scope="row">Lines:</th>
+      <td>353</td>
+      <td>937</td>
+      <td class="coverage-low">37.7%</td>
+    </tr>
+    <tr>
+      <th scope="row">Branches:</th>
+      <td>298</td>
+      <td>1264</td>
+      <td class="coverage-low">23.6%</td>
+    </tr>
   </table>
-  <br>
+</div>
+    </div>
 
-</body>
+    <hr/>
 
+<table class="file-list">
+  <col/>
+  <colgroup span="3"/>
+  <colgroup span="2"/>
+
+  <tr>
+    <th scope="col">File</th>
+    <th scope="colgroup" colspan=3>Lines</th>
+    <th scope="colgroup" colspan=2>Branches</th>
+  </tr>
+
+
+  <tr>
+    <th scope="row">
+      <a href="index.demo_checkpoint_timer.cpp.b0cae5ddd20b0a6450d7454181a317eb.html">demos/demo_checkpoint_timer.cpp</a>
+    </th>
+    <td>
+      <meter class="coverage-none" min="0" max="100" value="0.0" title="0.0%">0.0</meter>
+    </td>
+    <td class="CoverValue line-coverage coverage-none">0.0%</td>
+    <td class="CoverValue line-coverage coverage-none">0 / 19</td>
+    <td class="CoverValue branch-coverage coverage-none">0.0%</td>
+    <td class="CoverValue branch-coverage coverage-none">0 / 40</td>
+  </tr>
+
+
+  <tr>
+    <th scope="row">
+      <a href="index.demo_realtime_check.cpp.3c10bf9ee29cfa66e7914a2dcd7cfc54.html">demos/demo_realtime_check.cpp</a>
+    </th>
+    <td>
+      <meter class="coverage-none" min="0" max="100" value="0.0" title="0.0%">0.0</meter>
+    </td>
+    <td class="CoverValue line-coverage coverage-none">0.0%</td>
+    <td class="CoverValue line-coverage coverage-none">0 / 19</td>
+    <td class="CoverValue branch-coverage coverage-none">0.0%</td>
+    <td class="CoverValue branch-coverage coverage-none">0 / 26</td>
+  </tr>
+
+
+  <tr>
+    <th scope="row">
+      <a href="index.demo_realtime_strict_check.cpp.d178856ecf2303c7cfa59db30ca49918.html">demos/demo_realtime_strict_check.cpp</a>
+    </th>
+    <td>
+      <meter class="coverage-none" min="0" max="100" value="0.0" title="0.0%">0.0</meter>
+    </td>
+    <td class="CoverValue line-coverage coverage-none">0.0%</td>
+    <td class="CoverValue line-coverage coverage-none">0 / 31</td>
+    <td class="CoverValue branch-coverage coverage-none">0.0%</td>
+    <td class="CoverValue branch-coverage coverage-none">0 / 26</td>
+  </tr>
+
+
+  <tr>
+    <th scope="row">
+      <a href="index.demo_spinner.cpp.d0a43114342ba6f91ac6a78dedb336a6.html">demos/demo_spinner.cpp</a>
+    </th>
+    <td>
+      <meter class="coverage-none" min="0" max="100" value="0.0" title="0.0%">0.0</meter>
+    </td>
+    <td class="CoverValue line-coverage coverage-none">0.0%</td>
+    <td class="CoverValue line-coverage coverage-none">0 / 17</td>
+    <td class="CoverValue branch-coverage coverage-none">0.0%</td>
+    <td class="CoverValue branch-coverage coverage-none">0 / 26</td>
+  </tr>
+
+
+  <tr>
+    <th scope="row">
+      <a href="index.demo_thread.cpp.73815f07c02681d08aaf71ce03f4ec3e.html">demos/demo_thread.cpp</a>
+    </th>
+    <td>
+      <meter class="coverage-none" min="0" max="100" value="0.0" title="0.0%">0.0</meter>
+    </td>
+    <td class="CoverValue line-coverage coverage-none">0.0%</td>
+    <td class="CoverValue line-coverage coverage-none">0 / 11</td>
+    <td class="CoverValue branch-coverage coverage-none">0.0%</td>
+    <td class="CoverValue branch-coverage coverage-none">0 / 14</td>
+  </tr>
+
+
+  <tr>
+    <th scope="row">
+      <a href="index.demo_timing.cpp.3d55ca8a6fe9a516cfcc22bb90022d89.html">demos/demo_timing.cpp</a>
+    </th>
+    <td>
+      <meter class="coverage-none" min="0" max="100" value="0.0" title="0.0%">0.0</meter>
+    </td>
+    <td class="CoverValue line-coverage coverage-none">0.0%</td>
+    <td class="CoverValue line-coverage coverage-none">0 / 13</td>
+    <td class="CoverValue branch-coverage coverage-none">0.0%</td>
+    <td class="CoverValue branch-coverage coverage-none">0 / 22</td>
+  </tr>
+
+
+  <tr>
+    <th scope="row">
+      <a href="index.demo_usb_stream_imu_3DM_GX3_25.cpp.23a816dcd54a93d4eec90795bcb5ffc4.html">demos/demo_usb_stream_imu_3DM_GX3_25.cpp</a>
+    </th>
+    <td>
+      <meter class="coverage-none" min="0" max="100" value="0.0" title="0.0%">0.0</meter>
+    </td>
+    <td class="CoverValue line-coverage coverage-none">0.0%</td>
+    <td class="CoverValue line-coverage coverage-none">0 / 88</td>
+    <td class="CoverValue branch-coverage coverage-none">0.0%</td>
+    <td class="CoverValue branch-coverage coverage-none">0 / 120</td>
+  </tr>
+
+
+  <tr>
+    <th scope="row">
+      <a href="index.checkpoint_timer.hpp.6d457cb06fdf6375dac6188a96a68960.html">include/real_time_tools/checkpoint_timer.hpp</a>
+    </th>
+    <td>
+      <meter class="coverage-none" min="0" max="100" value="0.0" title="0.0%">0.0</meter>
+    </td>
+    <td class="CoverValue line-coverage coverage-none">0.0%</td>
+    <td class="CoverValue line-coverage coverage-none">0 / 1</td>
+    <td class="CoverValue branch-coverage coverage-unknown">-%</td>
+    <td class="CoverValue branch-coverage coverage-unknown">0 / 0</td>
+  </tr>
+
+
+  <tr>
+    <th scope="row">
+      <a href="index.checkpoint_timer.hxx.71f91f11d41ba7f089c4f1bb0d7f58eb.html">include/real_time_tools/checkpoint_timer.hxx</a>
+    </th>
+    <td>
+      <meter class="coverage-none" min="0" max="100" value="0.0" title="0.0%">0.0</meter>
+    </td>
+    <td class="CoverValue line-coverage coverage-none">0.0%</td>
+    <td class="CoverValue line-coverage coverage-none">0 / 21</td>
+    <td class="CoverValue branch-coverage coverage-none">0.0%</td>
+    <td class="CoverValue branch-coverage coverage-none">0 / 20</td>
+  </tr>
+
+
+  <tr>
+    <th scope="row">
+      <a href="index.spinner.hpp.0d8314481f066fe488e5de34d60ccbbd.html">include/real_time_tools/spinner.hpp</a>
+    </th>
+    <td>
+      <meter class="coverage-low" min="0" max="100" value="60.0" title="60.0%">60.0</meter>
+    </td>
+    <td class="CoverValue line-coverage coverage-low">60.0%</td>
+    <td class="CoverValue line-coverage coverage-low">3 / 5</td>
+    <td class="CoverValue branch-coverage coverage-unknown">-%</td>
+    <td class="CoverValue branch-coverage coverage-unknown">0 / 0</td>
+  </tr>
+
+
+  <tr>
+    <th scope="row">
+      <a href="index.thread.hpp.68d4842b589fac628c0bb6c1050c052b.html">include/real_time_tools/thread.hpp</a>
+    </th>
+    <td>
+      <meter class="coverage-high" min="0" max="100" value="100.0" title="100.0%">100.0</meter>
+    </td>
+    <td class="CoverValue line-coverage coverage-high">100.0%</td>
+    <td class="CoverValue line-coverage coverage-high">13 / 13</td>
+    <td class="CoverValue branch-coverage coverage-low">50.0%</td>
+    <td class="CoverValue branch-coverage coverage-low">1 / 2</td>
+  </tr>
+
+
+  <tr>
+    <th scope="row">
+      <a href="index.timer.hpp.a20966245d77f7da0f6869c74d2f5f5a.html">include/real_time_tools/timer.hpp</a>
+    </th>
+    <td>
+      <meter class="coverage-high" min="0" max="100" value="100.0" title="100.0%">100.0</meter>
+    </td>
+    <td class="CoverValue line-coverage coverage-high">100.0%</td>
+    <td class="CoverValue line-coverage coverage-high">20 / 20</td>
+    <td class="CoverValue branch-coverage coverage-low">50.0%</td>
+    <td class="CoverValue branch-coverage coverage-low">2 / 4</td>
+  </tr>
+
+
+  <tr>
+    <th scope="row">
+      <a href="index.frequency_manager.cpp.c52c60a22ccae17bb3ea14610abf0f46.html">src/frequency_manager.cpp</a>
+    </th>
+    <td>
+      <meter class="coverage-low" min="0" max="100" value="59.3" title="59.3%">59.3</meter>
+    </td>
+    <td class="CoverValue line-coverage coverage-low">59.3%</td>
+    <td class="CoverValue line-coverage coverage-low">16 / 27</td>
+    <td class="CoverValue branch-coverage coverage-low">58.3%</td>
+    <td class="CoverValue branch-coverage coverage-low">7 / 12</td>
+  </tr>
+
+
+  <tr>
+    <th scope="row">
+      <a href="index.iostream.cpp.d07a61e71066d2a8ee914512ab24337c.html">src/iostream.cpp</a>
+    </th>
+    <td>
+      <meter class="coverage-low" min="0" max="100" value="38.5" title="38.5%">38.5</meter>
+    </td>
+    <td class="CoverValue line-coverage coverage-low">38.5%</td>
+    <td class="CoverValue line-coverage coverage-low">5 / 13</td>
+    <td class="CoverValue branch-coverage coverage-low">16.7%</td>
+    <td class="CoverValue branch-coverage coverage-low">5 / 30</td>
+  </tr>
+
+
+  <tr>
+    <th scope="row">
+      <a href="index.process_manager.cpp.32352cd14e3779ee945eb6ef3e2393bc.html">src/process_manager.cpp</a>
+    </th>
+    <td>
+      <meter class="coverage-low" min="0" max="100" value="4.2" title="4.2%">4.2</meter>
+    </td>
+    <td class="CoverValue line-coverage coverage-low">4.2%</td>
+    <td class="CoverValue line-coverage coverage-low">1 / 24</td>
+    <td class="CoverValue branch-coverage coverage-low">10.0%</td>
+    <td class="CoverValue branch-coverage coverage-low">2 / 20</td>
+  </tr>
+
+
+  <tr>
+    <th scope="row">
+      <a href="index.realtime_check.cpp.42a4b58a3f9bfcf4b19ad11ba4d18813.html">src/realtime_check.cpp</a>
+    </th>
+    <td>
+      <meter class="coverage-low" min="0" max="100" value="57.4" title="57.4%">57.4</meter>
+    </td>
+    <td class="CoverValue line-coverage coverage-low">57.4%</td>
+    <td class="CoverValue line-coverage coverage-low">39 / 68</td>
+    <td class="CoverValue branch-coverage coverage-low">40.9%</td>
+    <td class="CoverValue branch-coverage coverage-low">18 / 44</td>
+  </tr>
+
+
+  <tr>
+    <th scope="row">
+      <a href="index.spinner.cpp.df3ab90e47da26804030c51ac99ea71d.html">src/spinner.cpp</a>
+    </th>
+    <td>
+      <meter class="coverage-low" min="0" max="100" value="69.2" title="69.2%">69.2</meter>
+    </td>
+    <td class="CoverValue line-coverage coverage-low">69.2%</td>
+    <td class="CoverValue line-coverage coverage-low">9 / 13</td>
+    <td class="CoverValue branch-coverage coverage-low">50.0%</td>
+    <td class="CoverValue branch-coverage coverage-low">2 / 4</td>
+  </tr>
+
+
+  <tr>
+    <th scope="row">
+      <a href="index.thread.cpp.ed8cbcba28c9bc63e187da60dbf0b8bd.html">src/thread.cpp</a>
+    </th>
+    <td>
+      <meter class="coverage-high" min="0" max="100" value="94.4" title="94.4%">94.4</meter>
+    </td>
+    <td class="CoverValue line-coverage coverage-high">94.4%</td>
+    <td class="CoverValue line-coverage coverage-high">17 / 18</td>
+    <td class="CoverValue branch-coverage coverage-low">60.0%</td>
+    <td class="CoverValue branch-coverage coverage-low">6 / 10</td>
+  </tr>
+
+
+  <tr>
+    <th scope="row">
+      <a href="index.timer.cpp.61ba56a5441b3b32e729c9fb98686c68.html">src/timer.cpp</a>
+    </th>
+    <td>
+      <meter class="coverage-medium" min="0" max="100" value="82.0" title="82.0%">82.0</meter>
+    </td>
+    <td class="CoverValue line-coverage coverage-medium">82.0%</td>
+    <td class="CoverValue line-coverage coverage-medium">82 / 100</td>
+    <td class="CoverValue branch-coverage coverage-low">51.1%</td>
+    <td class="CoverValue branch-coverage coverage-low">46 / 90</td>
+  </tr>
+
+
+  <tr>
+    <th scope="row">
+      <a href="index.usb_stream.cpp.9d04eddd4196843a265b9604d2e07778.html">src/usb_stream.cpp</a>
+    </th>
+    <td>
+      <meter class="coverage-low" min="0" max="100" value="0.4" title="0.4%">0.4</meter>
+    </td>
+    <td class="CoverValue line-coverage coverage-low">0.4%</td>
+    <td class="CoverValue line-coverage coverage-low">1 / 242</td>
+    <td class="CoverValue branch-coverage coverage-low">1.6%</td>
+    <td class="CoverValue branch-coverage coverage-low">2 / 127</td>
+  </tr>
+
+
+  <tr>
+    <th scope="row">
+      <a href="index.real_time_tools.cpp.c93c47fa61b48595e6934fc18fc1bd31.html">srcpy/real_time_tools.cpp</a>
+    </th>
+    <td>
+      <meter class="coverage-none" min="0" max="100" value="0.0" title="0.0%">0.0</meter>
+    </td>
+    <td class="CoverValue line-coverage coverage-none">0.0%</td>
+    <td class="CoverValue line-coverage coverage-none">0 / 5</td>
+    <td class="CoverValue branch-coverage coverage-none">0.0%</td>
+    <td class="CoverValue branch-coverage coverage-none">0 / 35</td>
+  </tr>
+
+
+  <tr>
+    <th scope="row">
+      <a href="index.main.cpp.05af829f0a580e64a2a08d68abcfe7c6.html">tests/main.cpp</a>
+    </th>
+    <td>
+      <meter class="coverage-high" min="0" max="100" value="100.0" title="100.0%">100.0</meter>
+    </td>
+    <td class="CoverValue line-coverage coverage-high">100.0%</td>
+    <td class="CoverValue line-coverage coverage-high">4 / 4</td>
+    <td class="CoverValue branch-coverage coverage-low">50.0%</td>
+    <td class="CoverValue branch-coverage coverage-low">2 / 4</td>
+  </tr>
+
+
+  <tr>
+    <th scope="row">
+      <a href="index.test_real_time_tools.cpp.7e29a403e821c980c79761b1a1ae1b53.html">tests/test_real_time_tools.cpp</a>
+    </th>
+    <td>
+      <meter class="coverage-high" min="0" max="100" value="91.5" title="91.5%">91.5</meter>
+    </td>
+    <td class="CoverValue line-coverage coverage-high">91.5%</td>
+    <td class="CoverValue line-coverage coverage-high">140 / 153</td>
+    <td class="CoverValue branch-coverage coverage-low">35.1%</td>
+    <td class="CoverValue branch-coverage coverage-low">203 / 578</td>
+  </tr>
+
+
+  <tr>
+    <th scope="row">
+      <a href="index.threadsafe_object_test.cpp.0302abd88f2024f91e14aa48698d1954.html">tests/threadsafe_object_test.cpp</a>
+    </th>
+    <td>
+      <meter class="coverage-low" min="0" max="100" value="25.0" title="25.0%">25.0</meter>
+    </td>
+    <td class="CoverValue line-coverage coverage-low">25.0%</td>
+    <td class="CoverValue line-coverage coverage-low">3 / 12</td>
+    <td class="CoverValue branch-coverage coverage-low">20.0%</td>
+    <td class="CoverValue branch-coverage coverage-low">2 / 10</td>
+  </tr>
+
+</table>
+
+    <hr/>
+
+    <footer>
+      Generated by: <a href="http://gcovr.com">GCOVR (Version 5.0)</a>
+    </footer>
+  </body>
 </html>
-
