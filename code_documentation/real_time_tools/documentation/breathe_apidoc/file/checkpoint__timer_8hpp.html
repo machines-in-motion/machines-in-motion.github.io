@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>File checkpoint_timer.hpp &mdash; real_time_tools 2.0.0 documentation</title>
@@ -13,8 +14,6 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
 
   
   
@@ -32,10 +31,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -223,12 +223,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="file-checkpoint-timer-hpp">
+  <section id="file-checkpoint-timer-hpp">
 <h1>File checkpoint_timer.hpp<a class="headerlink" href="#file-checkpoint-timer-hpp" title="Permalink to this headline">¶</a></h1>
 <p>Implementation of the CheckpointTimer class. </p>
-<p><dl>
-<dt class="sig sig-object cpp">
-<a class="reference internal" href="../../doxygen_index_one_page.html#license_1_license000002"><span class="std std-ref"><span class="pre">License:</span></span></a></dt>
+<p><dl class="xrefsect">
+<dt>
+<a class="reference internal" href="../../doxygen_index_one_page.html#license_1_license000002"><span class="std std-ref">License:</span></a></dt>
 <dd><p>BSD 3-clause </p>
 </dd></dl>
 
@@ -238,11 +238,11 @@
 </dl>
 </p>
 <dl class="cpp type">
-<dt class="sig sig-object cpp" id="_CPPv415real_time_tools">
-<span id="_CPPv315real_time_tools"></span><span id="_CPPv215real_time_tools"></span><span id="real_time_tools"></span><span class="target" id="namespacereal__time__tools"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">real_time_tools</span></span></span><a class="headerlink" href="#_CPPv415real_time_tools" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv415real_time_tools">
+<span id="_CPPv315real_time_tools"></span><span id="_CPPv215real_time_tools"></span><span id="real_time_tools"></span><span class="target" id="namespacereal__time__tools"></span><em class="property">namespace </em><code class="sig-name descname">real_time_tools</code><a class="headerlink" href="#_CPPv415real_time_tools" title="Permalink to this definition">¶</a><br /></dt>
 <dd><dl class="cpp class">
-<dt class="sig sig-object cpp" id="_CPPv4I_6size_t_bEN15real_time_tools15CheckpointTimerE">
-<span id="_CPPv3I_6size_t_bEN15real_time_tools15CheckpointTimerE"></span><span id="_CPPv2I_6size_t_bEN15real_time_tools15CheckpointTimerE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">NUM_CHECKPOINTS</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ENABLED</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classreal__time__tools_1_1_checkpoint_timer"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CheckpointTimer</span></span></span><br /></dt>
+<dt id="_CPPv4I_6size_t_bEN15real_time_tools15CheckpointTimerE">
+<span id="_CPPv3I_6size_t_bEN15real_time_tools15CheckpointTimerE"></span><span id="_CPPv2I_6size_t_bEN15real_time_tools15CheckpointTimerE"></span>template&lt;size_t <code class="sig-name descname">NUM_CHECKPOINTS</code>, bool <code class="sig-name descname">ENABLED</code> = true&gt;<br /><span class="target" id="classreal__time__tools_1_1_checkpoint_timer"></span><em class="property">class </em><code class="sig-name descname">CheckpointTimer</code><br /></dt>
 <dd><em>#include &lt;checkpoint_timer.hpp&gt;</em><p><a class="reference internal" href="../../doxygen_index_one_page.html#classreal__time__tools_1_1_timer"><span class="std std-ref">Timer</span></a> to measure code execution time with “checkpoints”. </p>
 <p>This timer is meant to be used for measuring execution time of a loop. It measures time between calls of the <code class="docutils literal notranslate"><span class="pre">start</span></code> method, so by calling this at the beginning of the loop, you get the execution time of the full iteration. Further, you can define “checkpoints” within the loop to measure time of separate steps in the loop. Call the <code class="docutils literal notranslate"><span class="pre">checkpoint</span></code> method after the code that is associated with it. For each checkpoint, the time elapsed since the last checkpoint is measured (<code class="docutils literal notranslate"><span class="pre">start</span></code> counts as a checkpoint in this regard).</p>
 <p>Example: <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
@@ -282,19 +282,19 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N15real_time_tools15CheckpointTimer15CheckpointTimerEv">
-<span id="_CPPv3N15real_time_tools15CheckpointTimer15CheckpointTimerEv"></span><span id="_CPPv2N15real_time_tools15CheckpointTimer15CheckpointTimerEv"></span><span id="real_time_tools::CheckpointTimer::CheckpointTimer"></span><span class="target" id="classreal__time__tools_1_1_checkpoint_timer_1a0db0cad1676b37b951f2090ed81e1b98"></span><span class="sig-name descname"><span class="n"><span class="pre">CheckpointTimer</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dt id="_CPPv4N15real_time_tools15CheckpointTimer15CheckpointTimerEv">
+<span id="_CPPv3N15real_time_tools15CheckpointTimer15CheckpointTimerEv"></span><span id="_CPPv2N15real_time_tools15CheckpointTimer15CheckpointTimerEv"></span><span id="real_time_tools::CheckpointTimer::CheckpointTimer"></span><span class="target" id="classreal__time__tools_1_1_checkpoint_timer_1a0db0cad1676b37b951f2090ed81e1b98"></span><code class="sig-name descname">CheckpointTimer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N15real_time_tools15CheckpointTimer5startEv">
-<span id="_CPPv3N15real_time_tools15CheckpointTimer5startEv"></span><span id="_CPPv2N15real_time_tools15CheckpointTimer5startEv"></span><span id="real_time_tools::CheckpointTimer::start"></span><span class="target" id="classreal__time__tools_1_1_checkpoint_timer_1ad93a12cb74103528c8db4e7b1745eae6"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">start</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dt id="_CPPv4N15real_time_tools15CheckpointTimer5startEv">
+<span id="_CPPv3N15real_time_tools15CheckpointTimer5startEv"></span><span id="_CPPv2N15real_time_tools15CheckpointTimer5startEv"></span><span id="real_time_tools::CheckpointTimer::start"></span><span class="target" id="classreal__time__tools_1_1_checkpoint_timer_1ad93a12cb74103528c8db4e7b1745eae6"></span>void <code class="sig-name descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
 <dd><p>Start timer iteration. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N15real_time_tools15CheckpointTimer10checkpointERKNSt6stringE">
-<span id="_CPPv3N15real_time_tools15CheckpointTimer10checkpointERKNSt6stringE"></span><span id="_CPPv2N15real_time_tools15CheckpointTimer10checkpointERKNSt6stringE"></span><span id="real_time_tools::CheckpointTimer::checkpoint__ssCR"></span><span class="target" id="classreal__time__tools_1_1_checkpoint_timer_1a6e91b61b72c433a220b1bddb7a634bf5"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">checkpoint</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">checkpoint_name</span></span><span class="sig-paren">)</span><br /></dt>
+<dt id="_CPPv4N15real_time_tools15CheckpointTimer10checkpointERKNSt6stringE">
+<span id="_CPPv3N15real_time_tools15CheckpointTimer10checkpointERKNSt6stringE"></span><span id="_CPPv2N15real_time_tools15CheckpointTimer10checkpointERKNSt6stringE"></span><span id="real_time_tools::CheckpointTimer::checkpoint__ssCR"></span><span class="target" id="classreal__time__tools_1_1_checkpoint_timer_1a6e91b61b72c433a220b1bddb7a634bf5"></span>void <code class="sig-name descname">checkpoint</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>checkpoint_name</em><span class="sig-paren">)</span><br /></dt>
 <dd><p>Set checkpoint for time measurement. </p>
 <p>Measures time from the last call of <a class="reference internal" href="../../doxygen_index_one_page.html#classreal__time__tools_1_1_checkpoint_timer_1ad93a12cb74103528c8db4e7b1745eae6"><span class="std std-ref">start()</span></a> or <a class="reference internal" href="../../doxygen_index_one_page.html#classreal__time__tools_1_1_checkpoint_timer_1a6e91b61b72c433a220b1bddb7a634bf5"><span class="std std-ref">checkpoint()</span></a> until this call. The given name is used when printing the results.</p>
 <dl class="field-list simple">
@@ -305,8 +305,8 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK15real_time_tools15CheckpointTimer16print_statisticsEv">
-<span id="_CPPv3NK15real_time_tools15CheckpointTimer16print_statisticsEv"></span><span id="_CPPv2NK15real_time_tools15CheckpointTimer16print_statisticsEv"></span><span id="real_time_tools::CheckpointTimer::print_statisticsC"></span><span class="target" id="classreal__time__tools_1_1_checkpoint_timer_1a73e001fa40a76ce5fd917a2dfcd09555"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">print_statistics</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dt id="_CPPv4NK15real_time_tools15CheckpointTimer16print_statisticsEv">
+<span id="_CPPv3NK15real_time_tools15CheckpointTimer16print_statisticsEv"></span><span id="_CPPv2NK15real_time_tools15CheckpointTimer16print_statisticsEv"></span><span id="real_time_tools::CheckpointTimer::print_statisticsC"></span><span class="target" id="classreal__time__tools_1_1_checkpoint_timer_1a73e001fa40a76ce5fd917a2dfcd09555"></span>void <code class="sig-name descname">print_statistics</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><br /></dt>
 <dd><p>Print results of time measurements. </p>
 </dd></dl>
 
@@ -314,21 +314,21 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
 <dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N15real_time_tools15CheckpointTimer7timers_E">
-<span id="_CPPv3N15real_time_tools15CheckpointTimer7timers_E"></span><span id="_CPPv2N15real_time_tools15CheckpointTimer7timers_E"></span><span id="real_time_tools::CheckpointTimer::timers___std::array:real_time_tools::Timer.NUM_CHECKPOINTS-+-1:"></span><span class="target" id="classreal__time__tools_1_1_checkpoint_timer_1a0abbead69aaf780b649f6af01f50cc62"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv415real_time_tools" title="real_time_tools"><span class="n"><span class="pre">real_time_tools</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="../class/classreal__time__tools_1_1_timer.html#_CPPv4N15real_time_tools5TimerE" title="real_time_tools::Timer"><span class="n"><span class="pre">Timer</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../class/classreal__time__tools_1_1_checkpoint_timer.html#_CPPv4I_6size_t_bEN15real_time_tools15CheckpointTimerE" title="real_time_tools::CheckpointTimer::NUM_CHECKPOINTS"><span class="n"><span class="pre">NUM_CHECKPOINTS</span></span></a><span class="w"> </span><span class="o"><span class="pre">+</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">timers_</span></span></span><br /></dt>
+<dt id="_CPPv4N15real_time_tools15CheckpointTimer7timers_E">
+<span id="_CPPv3N15real_time_tools15CheckpointTimer7timers_E"></span><span id="_CPPv2N15real_time_tools15CheckpointTimer7timers_E"></span><span id="real_time_tools::CheckpointTimer::timers___std::array:real_time_tools::Timer.NUM_CHECKPOINTS-+-1:"></span><span class="target" id="classreal__time__tools_1_1_checkpoint_timer_1a0abbead69aaf780b649f6af01f50cc62"></span>std::array&lt;<a class="reference internal" href="#_CPPv415real_time_tools" title="real_time_tools">real_time_tools</a>::<a class="reference internal" href="../class/classreal__time__tools_1_1_timer.html#_CPPv4N15real_time_tools5TimerE" title="real_time_tools::Timer">Timer</a>, <a class="reference internal" href="../class/classreal__time__tools_1_1_checkpoint_timer.html#_CPPv4I_6size_t_bEN15real_time_tools15CheckpointTimerE" title="real_time_tools::CheckpointTimer::NUM_CHECKPOINTS">NUM_CHECKPOINTS</a> + 1&gt; <code class="sig-name descname">timers_</code><br /></dt>
 <dd><p>Timers used for the different checkpoints. </p>
 <p>Index 0 is used for the total duration. </p>
 </dd></dl>
 
 <dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N15real_time_tools15CheckpointTimer17checkpoint_names_E">
-<span id="_CPPv3N15real_time_tools15CheckpointTimer17checkpoint_names_E"></span><span id="_CPPv2N15real_time_tools15CheckpointTimer17checkpoint_names_E"></span><span id="real_time_tools::CheckpointTimer::checkpoint_names___std::array:ss.NUM_CHECKPOINTS-+-1:"></span><span class="target" id="classreal__time__tools_1_1_checkpoint_timer_1afbb3abc9e62174d6046f6abb294a120f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../class/classreal__time__tools_1_1_checkpoint_timer.html#_CPPv4I_6size_t_bEN15real_time_tools15CheckpointTimerE" title="real_time_tools::CheckpointTimer::NUM_CHECKPOINTS"><span class="n"><span class="pre">NUM_CHECKPOINTS</span></span></a><span class="w"> </span><span class="o"><span class="pre">+</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">checkpoint_names_</span></span></span><br /></dt>
+<dt id="_CPPv4N15real_time_tools15CheckpointTimer17checkpoint_names_E">
+<span id="_CPPv3N15real_time_tools15CheckpointTimer17checkpoint_names_E"></span><span id="_CPPv2N15real_time_tools15CheckpointTimer17checkpoint_names_E"></span><span id="real_time_tools::CheckpointTimer::checkpoint_names___std::array:ss.NUM_CHECKPOINTS-+-1:"></span><span class="target" id="classreal__time__tools_1_1_checkpoint_timer_1afbb3abc9e62174d6046f6abb294a120f"></span>std::array&lt;std::string, <a class="reference internal" href="../class/classreal__time__tools_1_1_checkpoint_timer.html#_CPPv4I_6size_t_bEN15real_time_tools15CheckpointTimerE" title="real_time_tools::CheckpointTimer::NUM_CHECKPOINTS">NUM_CHECKPOINTS</a> + 1&gt; <code class="sig-name descname">checkpoint_names_</code><br /></dt>
 <dd><p>Names of the checkpoints. </p>
 </dd></dl>
 
 <dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N15real_time_tools15CheckpointTimer19current_checkpoint_E">
-<span id="_CPPv3N15real_time_tools15CheckpointTimer19current_checkpoint_E"></span><span id="_CPPv2N15real_time_tools15CheckpointTimer19current_checkpoint_E"></span><span id="real_time_tools::CheckpointTimer::current_checkpoint___s"></span><span class="target" id="classreal__time__tools_1_1_checkpoint_timer_1a07ae61ac85e755629625cc32416f2631"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">current_checkpoint_</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><br /></dt>
+<dt id="_CPPv4N15real_time_tools15CheckpointTimer19current_checkpoint_E">
+<span id="_CPPv3N15real_time_tools15CheckpointTimer19current_checkpoint_E"></span><span id="_CPPv2N15real_time_tools15CheckpointTimer19current_checkpoint_E"></span><span id="real_time_tools::CheckpointTimer::current_checkpoint___s"></span><span class="target" id="classreal__time__tools_1_1_checkpoint_timer_1a07ae61ac85e755629625cc32416f2631"></span>size_t <code class="sig-name descname">current_checkpoint_</code> = 1<br /></dt>
 <dd><p>Index of the current checkpoint. </p>
 </dd></dl>
 
@@ -337,7 +337,7 @@
 
 </dd></dl>
 
-</div>
+</section>
 
 
            </div>
