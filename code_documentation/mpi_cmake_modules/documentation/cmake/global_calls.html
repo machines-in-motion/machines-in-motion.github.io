@@ -260,12 +260,17 @@ set(PYTHONINTERP_FOUND TRUE)
 # Get the python version from string
 #
 execute_process(COMMAND ${PYTHON_EXECUTABLE} –version OUTPUT_VARIABLE out)
+if(out)</p>
+<blockquote>
+<div><p>message(STATUS “Python version: ${out}”)
 string(REPLACE ” ” “;” python_version_str ${out})
 list(GET python_version_str 1 PYTHON_VERSION_STRING)
 string(REPLACE “.” “;” python_version_list ${PYTHON_VERSION_STRING})
 list(GET python_version_list 0 PYTHON_VERSION_MAJOR)
 list(GET python_version_list 1 PYTHON_VERSION_MINOR)
 list(GET python_version_list 2 PYTHON_VERSION_PATCH)</p>
+</div></blockquote>
+<p>endif()</p>
 </div></blockquote>
 <p>endif()</p>
 </div></blockquote>
