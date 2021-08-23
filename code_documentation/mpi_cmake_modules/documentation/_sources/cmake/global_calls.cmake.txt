@@ -77,16 +77,18 @@ create_doc_target()
 # By default we wanna use the default python executable available
 if(NOT PYTHON_EXECUTABLE)
   find_program(PYTHON_EXECUTABLE "python")
-  set(Python_EXECUTABLE ${PYTHON_EXECUTABLE})
-  set(PYTHONINTERP_FOUND TRUE)
-  #
-  # Get the python version from string
-  #
-  execute_process(COMMAND ${PYTHON_EXECUTABLE} --version OUTPUT_VARIABLE out)
-  string(REPLACE " " ";" python_version_str ${out})
-  list(GET python_version_str 1 PYTHON_VERSION_STRING)
-  string(REPLACE "." ";" python_version_list ${PYTHON_VERSION_STRING})
-  list(GET python_version_list 0 PYTHON_VERSION_MAJOR)
-  list(GET python_version_list 1 PYTHON_VERSION_MINOR)
-  list(GET python_version_list 2 PYTHON_VERSION_PATCH)
+  if(NOT PYTHON_EXECUTABLE-NOTFOUND)
+    set(Python_EXECUTABLE ${PYTHON_EXECUTABLE})
+    set(PYTHONINTERP_FOUND TRUE)
+    #
+    # Get the python version from string
+    #
+    execute_process(COMMAND ${PYTHON_EXECUTABLE} --version OUTPUT_VARIABLE out)
+    string(REPLACE " " ";" python_version_str ${out})
+    list(GET python_version_str 1 PYTHON_VERSION_STRING)
+    string(REPLACE "." ";" python_version_list ${PYTHON_VERSION_STRING})
+    list(GET python_version_list 0 PYTHON_VERSION_MAJOR)
+    list(GET python_version_list 1 PYTHON_VERSION_MINOR)
+    list(GET python_version_list 2 PYTHON_VERSION_PATCH)
+  endif()
 endif()
