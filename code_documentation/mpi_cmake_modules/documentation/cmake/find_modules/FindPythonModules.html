@@ -34,6 +34,7 @@
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -433,7 +434,7 @@ set (ENV{PYTHONHOME} “${PYTHONHOME}”)</p>
 if (STATUS EQUAL 0)</p>
 <blockquote>
 <div><dl class="simple">
-<dt>if (P MATCHES “__init__\.pyc?$”)</dt><dd><p>get_filename_component (P “${P}” PATH)
+<dt>if (P MATCHES “__init__.pyc?$”)</dt><dd><p>get_filename_component (P “${P}” PATH)
 get_filename_component (P “${P}” PATH)</p>
 </dd>
 <dt>else ()</dt><dd><p>get_filename_component (P “${P}” PATH)</p>
@@ -583,7 +584,7 @@ foreach (_PythonModules_MODULE ${PythonModules_FIND_COMPONENTS})</p>
 set (_PythonModules_HINT)
 if (PYTHON_EXECUTABLE)</p>
 <blockquote>
-<div><p>set (_PythonModules_HINT “Check if executing ${PYTHON_EXECUTABLE} -c &quot;import &lt;module&gt;&quot; works”)</p>
+<div><p>set (_PythonModules_HINT “Check if executing ${PYTHON_EXECUTABLE} -c “import &lt;module&gt;” works”)</p>
 </div></blockquote>
 <dl class="simple">
 <dt>else ()</dt><dd><p>set (_PythonModules_HINT “Set PYTHON_EXECUTABLE, e.g., by searching for Python interpreter first”)</p>

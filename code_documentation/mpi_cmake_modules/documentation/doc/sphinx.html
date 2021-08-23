@@ -34,6 +34,7 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -317,7 +318,7 @@ The sphinx module <code class="docutils literal notranslate"><span class="pre">r
 <p>In the header of the <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> used by sphinx we need to include:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># AutoStructify for math in markdown</span>
 <span class="kn">import</span> <span class="nn">recommonmark</span> 
-<span class="kn">from</span> <span class="nn">recommonmark.transform</span> <span class="k">import</span> <span class="n">AutoStructify</span>
+<span class="kn">from</span> <span class="nn">recommonmark.transform</span> <span class="kn">import</span> <span class="n">AutoStructify</span>
 </pre></div>
 </div>
 <p>We add it to the <code class="docutils literal notranslate"><span class="pre">extensions</span></code> variable in the same file:</p>
@@ -344,10 +345,10 @@ The sphinx module <code class="docutils literal notranslate"><span class="pre">r
 <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">):</span>
 <span class="n">app</span><span class="o">.</span><span class="n">add_config_value</span><span class="p">(</span><span class="s1">&#39;recommonmark_config&#39;</span><span class="p">,</span> <span class="p">{</span>
         <span class="s1">&#39;auto_toc_tree_section&#39;</span><span class="p">:</span> <span class="s1">&#39;Contents&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;enable_math&#39;</span><span class="p">:</span><span class="bp">True</span><span class="p">,</span>
-        <span class="s1">&#39;enable_inline_math&#39;</span><span class="p">:</span><span class="bp">True</span><span class="p">,</span>
-        <span class="s1">&#39;enable_eval_rst&#39;</span><span class="p">:</span><span class="bp">True</span><span class="p">,</span>
-        <span class="p">},</span> <span class="bp">True</span><span class="p">)</span>
+        <span class="s1">&#39;enable_math&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
+        <span class="s1">&#39;enable_inline_math&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
+        <span class="s1">&#39;enable_eval_rst&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">},</span> <span class="kc">True</span><span class="p">)</span>
 <span class="n">app</span><span class="o">.</span><span class="n">add_transform</span><span class="p">(</span><span class="n">AutoStructify</span><span class="p">)</span>
 </pre></div>
 </div>

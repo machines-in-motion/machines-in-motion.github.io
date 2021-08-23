@@ -24,12 +24,12 @@ if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
   # required to link the python bindings of the DG entities properly.
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wl,--no-as-needed")
 endif()
-  # display all warnings
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic")
-  # add debug flag
-  set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g")
-  # Strongly optimize code.
-  set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3")
+# display all warnings
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic")
+# add debug flag
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g")
+# Strongly optimize code.
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3")
 # endif()
 
 # use, i.e. don't skip the full RPATH for the build tree
@@ -78,4 +78,15 @@ create_doc_target()
 if(NOT PYTHON_EXECUTABLE)
   find_program(PYTHON_EXECUTABLE "python")
   set(Python_EXECUTABLE ${PYTHON_EXECUTABLE})
+  set(PYTHONINTERP_FOUND TRUE)
+  #
+  # Get the python version from string
+  #
+  execute_process(COMMAND ${PYTHON_EXECUTABLE} --version OUTPUT_VARIABLE out)
+  string(REPLACE " " ";" python_version_str ${out})
+  list(GET python_version_str 1 PYTHON_VERSION_STRING)
+  string(REPLACE "." ";" python_version_list ${PYTHON_VERSION_STRING})
+  list(GET python_version_list 0 PYTHON_VERSION_MAJOR)
+  list(GET python_version_list 1 PYTHON_VERSION_MINOR)
+  list(GET python_version_list 2 PYTHON_VERSION_PATCH)
 endif()

@@ -29,6 +29,10 @@ else()
 endif()
 
 #
+# Extract python pversion from executable.
+#
+
+#
 # If the libraries and include dirs have already been found we do not for them.
 #
 if(EXISTS "${PYTHON_LIBRARY}" AND EXISTS "${PYTHON_INCLUDE_DIR}")
@@ -47,6 +51,8 @@ endif()
 set(Python_EXECUTABLE ${PYTHON_EXECUTABLE})
 set(Python_INCLUDE_DIR ${PYTHON_INCLUDE_DIR})
 set(Python_LIBRARY ${PYTHON_LIBRARY})
+
+set(PYTHONLIBS_FOUND TRUE)
 
 # We display what has been found so far.
 message(STATUS "FindPython has found:")
