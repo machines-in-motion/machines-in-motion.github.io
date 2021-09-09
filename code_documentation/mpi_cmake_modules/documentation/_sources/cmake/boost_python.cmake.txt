@@ -106,12 +106,12 @@ macro(SEARCH_FOR_BOOST_PYTHON)
 
   set_boost_default_options()
 
-  if(NOT Python_LIBRARY)
+  if(NOT Python_LIBRARIES)
     message(
       FATAL_ERROR
         "Python has not been found. You should first call FindPython before calling SEARCH_FOR_BOOST_PYTHON macro."
     )
-  endif(NOT Python_LIBRARY)
+  endif()
 
   # Test: pythonX, pythonXY and python-pyXY
   set(BOOST_PYTHON_COMPONENT_LIST
