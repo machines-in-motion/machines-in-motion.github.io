@@ -288,17 +288,18 @@ if(_BOOST_PYTHON_REQUIRED)</p>
 </div></blockquote>
 <p>endif(_BOOST_PYTHON_REQUIRED)</p>
 <p>set_boost_default_options()</p>
-<dl>
-<dt>if(NOT Python_LIBRARIES)</dt><dd><dl class="simple">
+<p>message(STATUS “If python is found, the library should be: ${Python_LIBRARIES}”)
+if(NOT Python_LIBRARIES)</p>
+<blockquote>
+<div><dl class="simple">
 <dt>message(</dt><dd><dl class="simple">
-<dt>FATAL_ERROR</dt><dd><p>“Python has not been found. You should first call FindPython before calling SEARCH_FOR_BOOST_PYTHON macro.”</p>
+<dt>FATAL_ERROR</dt><dd><p>“Python has not been found. You should first call find_package(Python REQUIRED) before calling SEARCH_FOR_BOOST_PYTHON macro.”</p>
 </dd>
 </dl>
 </dd>
 </dl>
 <p>)</p>
-</dd>
-</dl>
+</div></blockquote>
 <p>endif()</p>
 <p># Test: pythonX, pythonXY and python-pyXY
 set(BOOST_PYTHON_COMPONENT_LIST</p>
