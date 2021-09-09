@@ -51,6 +51,7 @@ endif()
 set(Python_EXECUTABLE ${PYTHON_EXECUTABLE})
 set(Python_INCLUDE_DIR ${PYTHON_INCLUDE_DIR})
 set(Python_LIBRARY ${PYTHON_LIBRARY})
+set(Python_LIBRARIES ${PYTHON_LIBRARIES})
 
 set(PYTHONLIBS_FOUND TRUE)
 
@@ -59,3 +60,4 @@ message(STATUS "FindPython has found:")
 message(STATUS "    - Python_EXECUTABLE: ${PYTHON_EXECUTABLE}")
 message(STATUS "    - Python_INCLUDE_DIR: ${PYTHON_INCLUDE_DIR}")
 message(STATUS "    - Python_LIBRARY: ${PYTHON_LIBRARY}")
+message(STATUS "    - Python_LIBRARIES: ${PYTHON_LIBRARIES}")
