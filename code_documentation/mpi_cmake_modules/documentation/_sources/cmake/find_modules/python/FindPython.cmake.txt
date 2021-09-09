@@ -52,11 +52,13 @@ set(Python_EXECUTABLE ${PYTHON_EXECUTABLE})
 set(Python_INCLUDE_DIR ${PYTHON_INCLUDE_DIR})
 set(Python_LIBRARY ${PYTHON_LIBRARY})
 set(Python_LIBRARIES ${PYTHON_LIBRARIES})
+set(Python_FOUND TRUE)
 
 set(PYTHONLIBS_FOUND TRUE)
 
 # We display what has been found so far.
 message(STATUS "FindPython has found:")
+message(STATUS "    - Python_FOUND: ${Python_FOUND}")
 message(STATUS "    - Python_EXECUTABLE: ${PYTHON_EXECUTABLE}")
 message(STATUS "    - Python_INCLUDE_DIR: ${PYTHON_INCLUDE_DIR}")
 message(STATUS "    - Python_LIBRARY: ${PYTHON_LIBRARY}")
