@@ -107,7 +107,7 @@ macro(SEARCH_FOR_BOOST_PYTHON)
   set_boost_default_options()
   
   message(STATUS "If python is found, the library should be: ${Python_LIBRARIES}")
-  if(NOT Python_LIBRARIES AND NOT TARGET Python::Module)
+  if(NOT DEFINED Python_LIBRARIES AND NOT TARGET Python::Module)
     message(
       FATAL_ERROR
         "Python has not been found. You should first call find_package(Python REQUIRED) before calling SEARCH_FOR_BOOST_PYTHON macro."
