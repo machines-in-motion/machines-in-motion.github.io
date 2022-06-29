@@ -24,7 +24,7 @@ on it in the following way:
 
 ### License
 
-BSD 3-Clause
+BSD 3-Clause unless specified differently in the file header
 
 ### Authors
 

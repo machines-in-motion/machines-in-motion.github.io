@@ -36,14 +36,11 @@ endmacro(CREATE_DOC_TARGET)
 #.rst:
 # .. cmake:command:: ADD_DOCUMENTATION
 #
-#   Create targets that are dependencies to the *doc* target. It builds the
-#   documentation html output using the classic Doxygen output and the rather
-#   more modern Sphinx/Read-the-doc output. Eventually only the read-the-doc
-#   output will remain.
+#   Alias of ``add_sphinx_documentation()``.
 #
 macro(ADD_DOCUMENTATION)
 
-  add_sphinx_documentation()
+  add_sphinx_documentation(${ARGV})
 
 endmacro(ADD_DOCUMENTATION)
 

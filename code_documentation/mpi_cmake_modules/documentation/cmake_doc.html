@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CMake API &mdash; mpi_cmake_modules 1.0.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
@@ -39,46 +39,7 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Welcome to mpi_cmake_modules’s documentation!</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="index.html#readme">Readme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#general-documentation">General Documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#python-api">Python API</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html#cmake-api">CMake API</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">CMake API</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#cmake-boost-python-cmake">cmake/boost_python.cmake</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cmake-documentation-cmake">cmake/documentation.cmake</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cmake-doxygen-cmake">cmake/doxygen.cmake</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cmake-dynamic-graph-cmake">cmake/dynamic_graph.cmake</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cmake-find-modules-cmake">cmake/find_modules.cmake</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cmake-find-modules-findpythonmodules-cmake">cmake/find_modules/FindPythonModules.cmake</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cmake-find-modules-findzeromq-cmake">cmake/find_modules/FindZeroMQ.cmake</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cmake-find-modules-findzeromqpp-cmake">cmake/find_modules/FindZeroMQPP.cmake</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cmake-find-modules-findcereal-cmake">cmake/find_modules/Findcereal.cmake</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cmake-find-modules-findrt-cmake">cmake/find_modules/Findrt.cmake</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cmake-find-modules-xenomaiconfig-cmake">cmake/find_modules/XenomaiConfig.cmake</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cmake-find-modules-python-findpython-cmake">cmake/find_modules/python/FindPython.cmake</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cmake-generate-cmake-package-cmake">cmake/generate_cmake_package.cmake</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cmake-get-python-install-dir-cmake">cmake/get_python_install_dir.cmake</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cmake-get-python-interpreter-cmake">cmake/get_python_interpreter.cmake</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cmake-global-calls-cmake">cmake/global_calls.cmake</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cmake-install-scripts-cmake">cmake/install_scripts.cmake</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cmake-os-detection-cmake">cmake/os_detection.cmake</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cmake-print-target-properties-cmake">cmake/print_target_properties.cmake</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cmake-pybind11-cmake">cmake/pybind11.cmake</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cmake-sphinx-cmake">cmake/sphinx.cmake</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cmake-xacro-cmake">cmake/xacro.cmake</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cmake-xenomai-cmake">cmake/xenomai.cmake</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#indices-and-tables">Indices and Tables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#license-and-copyrights">License and Copyrights</a></li>
-</ul>
-</li>
-</ul>
-<ul>
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="general_documentation.html">General Documentation</a></li>
 </ul>
 <ul>
@@ -146,9 +107,9 @@
 <dt id="command:search_for_boost_component">
 <code class="sig-name descname">SEARCH_FOR_BOOST_COMPONENT</code><a class="headerlink" href="#command:search_for_boost_component" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Param boost_python_name</dt>
+<dt class="field-odd">Param boost_python_name<span class="colon">:</span></dt>
 <dd class="field-odd"><p></p></dd>
-<dt class="field-even">Param found</dt>
+<dt class="field-even">Param found<span class="colon">:</span></dt>
 <dd class="field-even"><p></p></dd>
 </dl>
 <p>This function returns found to TRUE if the boost_python_name has been
@@ -175,7 +136,7 @@ component version according to the Python version (2.7 or 3.x).</p>
 <code class="sig-name descname">TARGET_LINK_BOOST_PYTHON (TARGET &lt;PRIVATE|PUBLIC|INTERFACE&gt;)</code><a class="headerlink" href="#command:target_link_boost_python (target <private|public|interface>)" title="Permalink to this definition">¶</a></dt>
 <dd><p>Link target againt boost_python library.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Target</dt>
+<dt class="field-odd">Target<span class="colon">:</span></dt>
 <dd class="field-odd"><p>is either a library or an executable :private,public,interface: The</p>
 </dd>
 </dl>
@@ -211,16 +172,13 @@ to on:</p>
 <dl class="cmake command">
 <dt id="command:add_documentation">
 <code class="sig-name descname">ADD_DOCUMENTATION</code><a class="headerlink" href="#command:add_documentation" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create targets that are dependencies to the <em>doc</em> target. It builds the
-documentation html output using the classic Doxygen output and the rather
-more modern Sphinx/Read-the-doc output. Eventually only the read-the-doc
-output will remain.</p>
+<dd><p>Alias of <code class="docutils literal notranslate"><span class="pre">add_sphinx_documentation()</span></code>.</p>
 </dd></dl>
 
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The following is deprecated. It is used for backward support.</p>
-</div>
+</aside>
 <dl class="cmake command">
 <dt id="command:build_documentation">
 <code class="sig-name descname">BUILD_DOCUMENTATION</code><a class="headerlink" href="#command:build_documentation" title="Permalink to this definition">¶</a></dt>
@@ -263,7 +221,7 @@ parse the Markdown files in the <em>doc/</em> folder, the Python file in the
 <code class="sig-name descname">GET_DYNAMIC_GRAPH_PLUGIN_INSTALL_PATH(INSTALL_DYNAMIC_GRAPH_PLUGIN_PATH)</code><a class="headerlink" href="#command:get_dynamic_graph_plugin_install_path(install_dynamic_graph_plugin_path)" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the install dir for the plugin to install them in the correct place.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Param INSTALL_DYNAMIC_GRAPH_PLUGIN_PATH</dt>
+<dt class="field-odd">Param INSTALL_DYNAMIC_GRAPH_PLUGIN_PATH<span class="colon">:</span></dt>
 <dd class="field-odd"><p>path to the dynamic graph plugin</p>
 </dd>
 </dl>
@@ -277,7 +235,7 @@ parse the Markdown files in the <em>doc/</em> folder, the Python file in the
 the correct place.</p>
 <p>Add a python submodule to dynamic_graph</p>
 <dl class="field-list simple">
-<dt class="field-odd">Param plugin_target</dt>
+<dt class="field-odd">Param plugin_target<span class="colon">:</span></dt>
 <dd class="field-odd"><p>target (library) name of the dynamic graph plugin,</p>
 </dd>
 </dl>
@@ -434,12 +392,12 @@ variable <code class="docutils literal notranslate"><span class="pre">OS_VERSION
 compiling).</p>
 <p>Supported OS_VERSIONs are:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="s2">&quot;xenomai&quot;</span>
-<span class="o">*</span> <span class="s2">&quot;preempt-rt&quot;</span>
+<span class="o">*</span> <span class="s2">&quot;preempt-rt&quot;</span> <span class="o">/</span> <span class="s2">&quot;lowlatency&quot;</span>
 <span class="o">*</span> <span class="s2">&quot;non-real-time&quot;</span><span class="o">/</span><span class="s2">&quot;ubuntu&quot;</span>
 <span class="o">*</span> <span class="s2">&quot;darwin&quot;</span> <span class="p">(</span><span class="n">Mac</span><span class="o">-</span><span class="n">OS</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>It also discriminate between real-time and non-real-time <em>OS</em>.</p>
+<p>It also discriminate between real-time and non-real-time (or low latency) <em>OS</em> (kernel).</p>
 </dd></dl>
 
 </div></blockquote>
@@ -528,6 +486,19 @@ _BUILD_DOXYGEN * :command: _BUILD_BREATHE_APIDOC * :command:
 _BUILD_SPHINX_API_DOC * :command: _BUILD_SPHINX_BUILD</p>
 <p>Please refer to the <em>Sphinx</em> paragraph in the <em>General Documentation</em> in this
 package for more explanation about the parametrization of the tools.</p>
+<p>Optional Arguments:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>DOXYGEN_EXCLUDE_PATTERNS:  List of strings that are added to</dt><dd><p>EXCLUDE_PATTERNS in the doxygen configuration.  They can use wildcards,
+for example <cite>“${PROJECT_SOURCE_DIR}/*/build/*”</cite> to exclude any directory
+called “build” in the package directory.
+Always put <cite>${PROJECT_SOURCE_DIR}</cite> at the beginning of the pattern to
+avoid unintended matches on higher up parts on the path, which would
+result in <em>all</em> the files of the package being excluded.</p>
+</dd>
+</dl>
+</li>
+</ul>
 </dd></dl>
 
 </div></blockquote>
@@ -547,7 +518,7 @@ It then declare a target whith the xacro command.</p>
 <p>This all boils down to the following fact,
 at compile time the [package_root]/urdf/<em>.urdf files are going to
 be compiled from the [package_root]/xacro/</em>.urdf.xacro files.</p>
-</div>
+</aside>
 </dd></dl>
 
 </div></blockquote>
@@ -567,7 +538,7 @@ be compiled from the [package_root]/xacro/</em>.urdf.xacro files.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Has been tested only on Xenomai 2.6.</p>
-</div>
+</aside>
 </dd></dl>
 
 </div></blockquote>
@@ -584,7 +555,7 @@ be compiled from the [package_root]/xacro/</em>.urdf.xacro files.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright Copyright (c) 2021, See license.txt file or the license section..</p>
+    <p>&#169; Copyright Copyright (c) 2022, See license.txt file or the license section..</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

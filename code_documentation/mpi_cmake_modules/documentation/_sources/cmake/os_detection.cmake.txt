@@ -19,11 +19,11 @@
 #   Supported OS_VERSIONs are::
 #
 #       * "xenomai"
-#       * "preempt-rt"
+#       * "preempt-rt" / "lowlatency"
 #       * "non-real-time"/"ubuntu"
 #       * "darwin" (Mac-OS)
 #
-#   It also discriminate between real-time and non-real-time *OS*.
+#   It also discriminate between real-time and non-real-time (or low latency) *OS* (kernel).
 #
 macro(DEFINE_OS)
 
@@ -39,7 +39,7 @@ macro(DEFINE_OS)
     set(CURRENT_OS "xenomai")
     add_definitions("-DXENOMAI")
 
-  elseif(OS_VERSION MATCHES "preempt rt" OR OS_VERSION MATCHES "preempt-rt" OR OS_VERSION MATCHES "preempt_rt")
+  elseif(OS_VERSION MATCHES "preempt rt" OR OS_VERSION MATCHES "preempt-rt" OR OS_VERSION MATCHES "preempt_rt" OR OS_VERSION MATCHES "lowlatency")
     set(CURRENT_OS "rt-preempt")
     add_definitions("-DRT_PREEMPT")
 

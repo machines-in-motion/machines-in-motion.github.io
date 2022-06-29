@@ -169,9 +169,34 @@ endmacro()
 #   Please refer to the *Sphinx* paragraph in the *General Documentation* in this
 #   package for more explanation about the parametrization of the tools.
 #
+#   Optional Arguments:
+#
+#   - DOXYGEN_EXCLUDE_PATTERNS:  List of strings that are added to
+#       EXCLUDE_PATTERNS in the doxygen configuration.  They can use wildcards,
+#       for example `"${PROJECT_SOURCE_DIR}/*/build/*"` to exclude any directory
+#       called "build" in the package directory.
+#       Always put `${PROJECT_SOURCE_DIR}` at the beginning of the pattern to
+#       avoid unintended matches on higher up parts on the path, which would
+#       result in *all* the files of the package being excluded.
+#
 macro(ADD_SPHINX_DOCUMENTATION)
 
+  cmake_parse_arguments(ADD_SPHINX_DOCUMENTATION
+    ""  # options without arguments
+    ""  # options with single argument
+    "DOXYGEN_EXCLUDE_PATTERNS"  # options with multiple arguments
+    ${ARGN}
+  )
+
   # All parameters
+
+  # TODO: This should probably be handled in a nicer way that is more obvious to
+  # the user (probably via an argument that has to be passed?
+  if (DEFINED PYTHON_INSTALL_DIR)
+    set(PYTHON_PACKAGE_LOCATION ${CMAKE_INSTALL_PREFIX}/${PYTHON_INSTALL_DIR})
+  else()
+    set(PYTHON_PACKAGE_LOCATION ${PROJECT_SOURCE_DIR}/python)
+  endif()
 
   # Build and install directories
   set(SPHINX_DOC_BUILD_FOLDER ${CMAKE_BINARY_DIR}/share/docs/sphinx)
@@ -183,12 +208,17 @@ macro(ADD_SPHINX_DOCUMENTATION)
   set(DOXYGEN_OUTPUT ${SPHINX_DOC_BUILD_FOLDER}/doxygen)
   set(DOXYGEN_XML_OUTPUT ${SPHINX_DOC_BUILD_FOLDER}/doxygen/xml)
   set(DOXYGEN_FILE_PATTERNS "*.h *.hpp *.hh *.cpp *.c *.cc *.hxx")
+  # If multiple exclude patterns are provided, join them to a multi-line string
+  # where each line has a \ at the end (this is how doxygen expects multiple
+  # values).
+  string(JOIN " \\ \n" DOXYGEN_EXCLUDE_PATTERNS
+         ${ADD_SPHINX_DOCUMENTATION_DOXYGEN_EXCLUDE_PATTERNS})
   # Breathe apidoc
   set(BREATHE_INPUT ${SPHINX_DOC_BUILD_FOLDER}/doxygen/xml)
   set(BREATHE_OUTPUT ${SPHINX_DOC_BUILD_FOLDER}/breathe_apidoc)
   set(BREATHE_OPTION -g union,namespace,class,group,struct,file,interface)
   # Sphinx apidoc
-  set(SPHINX_APIDOC_INPUT ${PROJECT_SOURCE_DIR}/python/${PROJECT_NAME})
+  set(SPHINX_APIDOC_INPUT ${PYTHON_PACKAGE_LOCATION}/${PROJECT_NAME})
   set(SPHINX_APIDOC_OUTPUT ${SPHINX_DOC_BUILD_FOLDER})
   # Shinx build
   set(SPHINX_BUILD_INPUT ${SPHINX_DOC_BUILD_FOLDER})
@@ -233,7 +263,7 @@ macro(ADD_SPHINX_DOCUMENTATION)
   endif()
   # Build the Python API rst files if needed
   set(PYTHON_API "")
-  if(IS_DIRECTORY ${PROJECT_SOURCE_DIR}/python)
+  if(IS_DIRECTORY ${PYTHON_PACKAGE_LOCATION})
 
     # Add the Python API to the main documentation
     set(PYTHON_API
