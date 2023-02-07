@@ -4,7 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
@@ -14,6 +14,9 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
 
   
   
@@ -22,7 +25,6 @@
   
 
   
-    <link rel="canonical" href="https://machines-in-motion.github.io/code_documentation/package_template/doc/1.general_rules.html" />
 
   
   <!--[if lt IE 9]>
@@ -31,9 +33,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -90,24 +95,7 @@
               
             
             
-              <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Welcome to package_template’s documentation!</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../index.html#package-template">package_template</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html#general-documentation">General Documentation</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="../general_documentation.html">General Documentation</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">1. General rules applied in the code base</a></li>
-<li class="toctree-l4"><a class="reference internal" href="2.cpp_coding_guidelines.html">2. C++ Coding Guidelines</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#c-api">C++ API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#python-api">Python API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#indices-and-tables">Indices and Tables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id3">License and Copyrights</a></li>
-</ul>
-</li>
-</ul>
+              <p class="caption" role="heading"><span class="caption-text">General Documentation</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../general_documentation.html">General Documentation</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">1. General rules applied in the code base</a><ul>
@@ -131,9 +119,11 @@
 </ul>
 </li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">C++ API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../doxygen_index.html">C++ API</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Python API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../modules.html">package_template</a></li>
 </ul>
@@ -158,7 +148,7 @@
 
       <div class="wy-nav-content">
         
-        <div class="rst-content">
+        <div class="rst-content style-external-links">
         
           
 
@@ -206,13 +196,13 @@
            <div itemprop="articleBody">
             
   <section id="general-rules-applied-in-the-code-base">
-<h1>1. General rules applied in the code base<a class="headerlink" href="#general-rules-applied-in-the-code-base" title="Permalink to this headline">¶</a></h1>
+<h1>1. General rules applied in the code base<a class="headerlink" href="#general-rules-applied-in-the-code-base" title="Permalink to this heading">¶</a></h1>
 <section id="i-introduction">
-<h2>I. Introduction<a class="headerlink" href="#i-introduction" title="Permalink to this headline">¶</a></h2>
+<h2>I. Introduction<a class="headerlink" href="#i-introduction" title="Permalink to this heading">¶</a></h2>
 <p>These are general rules independent of the coding  language.</p>
 </section>
 <section id="ii-catkin-package-and-repository-naming">
-<h2>II. Catkin Package and Repository Naming<a class="headerlink" href="#ii-catkin-package-and-repository-naming" title="Permalink to this headline">¶</a></h2>
+<h2>II. Catkin Package and Repository Naming<a class="headerlink" href="#ii-catkin-package-and-repository-naming" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Name: lower_cases_with_underscore.</p></li>
 <li><p>One repository per catkin package.</p></li>
@@ -220,7 +210,7 @@
 </ul>
 </section>
 <section id="iii-versioning">
-<h2>III. Versioning<a class="headerlink" href="#iii-versioning" title="Permalink to this headline">¶</a></h2>
+<h2>III. Versioning<a class="headerlink" href="#iii-versioning" title="Permalink to this heading">¶</a></h2>
 <p>Use semantic versioning when versioning packages. Short summary:</p>
 <ul class="simple">
 <li><p>Given a version number MAJOR.MINOR.PATCH, increment the:</p></li>
@@ -233,9 +223,9 @@ especially when versioning Python packages (note that there is no general
 conflict with semantic versioning, only the format is a bit different).</p>
 </section>
 <section id="iv-contribution-guidelines">
-<h2>IV. Contribution Guidelines<a class="headerlink" href="#iv-contribution-guidelines" title="Permalink to this headline">¶</a></h2>
+<h2>IV. Contribution Guidelines<a class="headerlink" href="#iv-contribution-guidelines" title="Permalink to this heading">¶</a></h2>
 <section id="iv-1-code-revision">
-<h3>IV.1. Code revision:<a class="headerlink" href="#iv-1-code-revision" title="Permalink to this headline">¶</a></h3>
+<h3>IV.1. Code revision:<a class="headerlink" href="#iv-1-code-revision" title="Permalink to this heading">¶</a></h3>
 <p>To ensure some level of code quality, all modifications have to be reviewed
 before they can be merged. This is done via merge requests in GitLab
 (on GitHub it is called pull request but the concept is the same).</p>
@@ -266,7 +256,7 @@ protected so that direct pushing is not possible (everything has to go through
 merge requests).</p>
 </section>
 <section id="iv-2-some-rules-for-the-contributors">
-<h3>IV.2. Some rules for the contributors:<a class="headerlink" href="#iv-2-some-rules-for-the-contributors" title="Permalink to this headline">¶</a></h3>
+<h3>IV.2. Some rules for the contributors:<a class="headerlink" href="#iv-2-some-rules-for-the-contributors" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>To make life easier for the reviewers and to get your changes merged quickly
 (thus reducing the risk of merge conflicts), try to keep merge requests
@@ -290,7 +280,7 @@ the updated API</p></li>
 </ul>
 </section>
 <section id="iv-3-some-rules-for-the-reviewers">
-<h3>IV.3. Some rules for the reviewers:<a class="headerlink" href="#iv-3-some-rules-for-the-reviewers" title="Permalink to this headline">¶</a></h3>
+<h3>IV.3. Some rules for the reviewers:<a class="headerlink" href="#iv-3-some-rules-for-the-reviewers" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>To make life easier for the contributors, try to provide reviews in a timely
 manner. The contributor may be blocked in continuing their work while the
@@ -307,9 +297,9 @@ merge request is under review.</p></li>
 </section>
 </section>
 <section id="v-documentation">
-<h2>V. Documentation<a class="headerlink" href="#v-documentation" title="Permalink to this headline">¶</a></h2>
+<h2>V. Documentation<a class="headerlink" href="#v-documentation" title="Permalink to this heading">¶</a></h2>
 <section id="v-1-in-code-documentation">
-<h3>V.1 In-code documentation<a class="headerlink" href="#v-1-in-code-documentation" title="Permalink to this headline">¶</a></h3>
+<h3>V.1 In-code documentation<a class="headerlink" href="#v-1-in-code-documentation" title="Permalink to this heading">¶</a></h3>
 <p>All code <strong>shall</strong> be documented in-source using Doxygen.
 This means that every function, class, struct, global variable, etc,
 needs to have a docstring containing some documentation in:</p>
@@ -332,7 +322,7 @@ that do not add useful information, e.g. instead of
 future reader to more easily understand what that code is doing.</p>
 </section>
 <section id="v-2-unit-tests-and-demos">
-<h3>V.2 Unit-tests and demos<a class="headerlink" href="#v-2-unit-tests-and-demos" title="Permalink to this headline">¶</a></h3>
+<h3>V.2 Unit-tests and demos<a class="headerlink" href="#v-2-unit-tests-and-demos" title="Permalink to this heading">¶</a></h3>
 <p>Please do <strong>NOT</strong> neglect the power of the continuous integration and a nice
 written demos in terms of documentation. So <strong>please</strong> take the time to:</p>
 <ul class="simple">
@@ -359,7 +349,7 @@ API should be used.</p></li>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright Copyright (c) 2021, See license.txt file or the license section..
+        &#169; Copyright .
 
     </p>
   </div>

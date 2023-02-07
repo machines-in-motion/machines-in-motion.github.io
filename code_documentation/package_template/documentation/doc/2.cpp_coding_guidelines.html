@@ -4,7 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
@@ -14,6 +14,9 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
 
   
   
@@ -22,7 +25,6 @@
   
 
   
-    <link rel="canonical" href="https://machines-in-motion.github.io/code_documentation/package_template/doc/2.cpp_coding_guidelines.html" />
 
   
   <!--[if lt IE 9]>
@@ -31,9 +33,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -90,24 +95,7 @@
               
             
             
-              <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Welcome to package_template’s documentation!</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../index.html#package-template">package_template</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html#general-documentation">General Documentation</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="../general_documentation.html">General Documentation</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="1.general_rules.html">1. General rules applied in the code base</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">2. C++ Coding Guidelines</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#c-api">C++ API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#python-api">Python API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#indices-and-tables">Indices and Tables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id3">License and Copyrights</a></li>
-</ul>
-</li>
-</ul>
+              <p class="caption" role="heading"><span class="caption-text">General Documentation</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../general_documentation.html">General Documentation</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="1.general_rules.html">1. General rules applied in the code base</a></li>
@@ -137,9 +125,11 @@
 </ul>
 </li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">C++ API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../doxygen_index.html">C++ API</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Python API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../modules.html">package_template</a></li>
 </ul>
@@ -164,7 +154,7 @@
 
       <div class="wy-nav-content">
         
-        <div class="rst-content">
+        <div class="rst-content style-external-links">
         
           
 
@@ -212,9 +202,9 @@
            <div itemprop="articleBody">
             
   <section id="c-coding-guidelines">
-<h1>2. C++ Coding Guidelines<a class="headerlink" href="#c-coding-guidelines" title="Permalink to this headline">¶</a></h1>
+<h1>2. C++ Coding Guidelines<a class="headerlink" href="#c-coding-guidelines" title="Permalink to this heading">¶</a></h1>
 <section id="i-introduction">
-<h2>I. Introduction<a class="headerlink" href="#i-introduction" title="Permalink to this headline">¶</a></h2>
+<h2>I. Introduction<a class="headerlink" href="#i-introduction" title="Permalink to this heading">¶</a></h2>
 <p>These are the internal C++ guidelines for the
 <a class="reference external" href="https://wp.nyu.edu/machinesinmotion/">machines-in-motion</a> group. The same
 guidelines are used in the
@@ -235,7 +225,7 @@ that we have a few small deviations from the Google style.</p>
 good practice to check them upon creation of a new package or code refactoring.</p>
 </section>
 <section id="ii-folder-structure-and-file-naming">
-<h2>II. Folder Structure and File Naming<a class="headerlink" href="#ii-folder-structure-and-file-naming" title="Permalink to this headline">¶</a></h2>
+<h2>II. Folder Structure and File Naming<a class="headerlink" href="#ii-folder-structure-and-file-naming" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Header files should be in a folder: <code class="docutils literal notranslate"><span class="pre">include/&lt;name_of_the_project&gt;/*</span></code>,
 e.g. <code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&quot;package_template_cpp/gains_configuration.hpp&quot;</span></code></p></li>
@@ -257,7 +247,7 @@ a CMake <strong>install rule</strong> that makes them executable upon installati
 </ul>
 </section>
 <section id="iii-naming">
-<h2>III. Naming<a class="headerlink" href="#iii-naming" title="Permalink to this headline">¶</a></h2>
+<h2>III. Naming<a class="headerlink" href="#iii-naming" title="Permalink to this heading">¶</a></h2>
 <p>Give as descriptive a name as possible, within reason. Do not worry about saving
 horizontal space as it is far more important to make your code immediately
 understandable by a new reader. Do not use abbreviations that are ambiguous or
@@ -277,7 +267,7 @@ g_, i.e. <em>g_variable_name</em>.</p></li>
 </ul>
 </section>
 <section id="iv-add-units-to-variable-names">
-<h2>IV. Add Units to Variable Names<a class="headerlink" href="#iv-add-units-to-variable-names" title="Permalink to this headline">¶</a></h2>
+<h2>IV. Add Units to Variable Names<a class="headerlink" href="#iv-add-units-to-variable-names" title="Permalink to this heading">¶</a></h2>
 <p>Variables that hold values of a specific unit should have that unit appended to
 the name.  For example if a variable holds the velocity of a motor in <em>krpm</em> it
 should be called <code class="docutils literal notranslate"><span class="pre">velocity_krpm</span></code> instead of <code class="docutils literal notranslate"><span class="pre">just</span> <span class="pre">velocity</span></code>. Some more examples:</p>
@@ -288,77 +278,36 @@ should be called <code class="docutils literal notranslate"><span class="pre">ve
 </ul>
 </section>
 <section id="v-c-c-formatting">
-<h2>V. C/C++ Formatting<a class="headerlink" href="#v-c-c-formatting" title="Permalink to this headline">¶</a></h2>
+<h2>V. C/C++ Formatting<a class="headerlink" href="#v-c-c-formatting" title="Permalink to this heading">¶</a></h2>
 <section id="v-1-line-length">
-<h3>V.1. Line Length<a class="headerlink" href="#v-1-line-length" title="Permalink to this headline">¶</a></h3>
+<h3>V.1. Line Length<a class="headerlink" href="#v-1-line-length" title="Permalink to this heading">¶</a></h3>
 <p>Limit the length of lines to 80 characters.</p>
 <p>This may seem hard to follow sometimes but makes it much easier to view two or even three files next to each other (important during code review or when resolving merge conflicts).</p>
 </section>
 <section id="v-2-indentation">
-<h3>V.2. Indentation<a class="headerlink" href="#v-2-indentation" title="Permalink to this headline">¶</a></h3>
+<h3>V.2. Indentation<a class="headerlink" href="#v-2-indentation" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Use spaces instead of tabs.</p></li>
 <li><p>4 spaces per “tab”.</p></li>
 </ul>
 </section>
 <section id="v-3-position-of-braces">
-<h3>V.3. Position of braces<a class="headerlink" href="#v-3-position-of-braces" title="Permalink to this headline">¶</a></h3>
+<h3>V.3. Position of braces<a class="headerlink" href="#v-3-position-of-braces" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Opening brace always goes to the next line.</p></li>
 <li><p><strong>Always</strong> add braces for single-line if/loop/etc.</p></li>
 </ul>
 <p>Example:</p>
-<div class="highlight-{.c} notranslate"><div class="highlight"><pre><span></span>namespace bar
-{
-
-class Foo
-{
-    void my_function(const Foo &amp;foo, int *output_arg)
-    {
-        if (condition)
-        {
-            ...
-        }
-        else if (other_condition)
-        {
-            ...
-        }
-        else
-        {
-            ...
-        }
-
-        while (condition)
-        {
-            ...
-        }
-    }
-}
-
-} // namespace
-</pre></div>
-</div>
 </section>
 <section id="v-3-spaces">
-<h3>V.3. Spaces<a class="headerlink" href="#v-3-spaces" title="Permalink to this headline">¶</a></h3>
+<h3>V.3. Spaces<a class="headerlink" href="#v-3-spaces" title="Permalink to this heading">¶</a></h3>
 <p>Add single spaces between if/for/etc., the condition and the brace. add spaces
 around most binary operators. Exception: No spaces around <code class="docutils literal notranslate"><span class="pre">::</span></code>, <code class="docutils literal notranslate"><span class="pre">.</span></code> and <code class="docutils literal notranslate"><span class="pre">-&gt;</span></code>.
 Also no spaces for unary operators (<code class="docutils literal notranslate"><span class="pre">i++</span></code>, <code class="docutils literal notranslate"><span class="pre">&amp;x</span></code>, <code class="docutils literal notranslate"><span class="pre">*x</span></code>, …).</p>
 <p>Example:</p>
-<div class="highlight-{.c} notranslate"><div class="highlight"><pre><span></span>int x = 42;
-for (int i = 0; i &lt; x; i++)
-{
-    int y = i * x;
-    if (y == foo.bar-&gt;baz)
-    {
-        ...
-    }
-}
-</pre></div>
-</div>
 </section>
 <section id="v-4-formatting-of-switch-blocks">
-<h3>V.4. Formatting of switch blocks<a class="headerlink" href="#v-4-formatting-of-switch-blocks" title="Permalink to this headline">¶</a></h3>
+<h3>V.4. Formatting of switch blocks<a class="headerlink" href="#v-4-formatting-of-switch-blocks" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>See the following example for proper indentation of switch blocks.</p></li>
 <li><p>Always add a default case, even when it is technically not needed.</p>
@@ -371,55 +320,23 @@ last.</p></li>
 </li>
 <li><p>Non-empty cases shall be terminated by an unconditional break.</p></li>
 </ul>
-<div class="highlight-{.c} notranslate"><div class="highlight"><pre><span></span>switch (x)
-{
-    case 1:
-        // ...
-        break;
- 
-    case 2:
-        // ...
-        break;
- 
-    case 3: // multiple cases for one block are okay
-    case 4:
-        // ...
-        break;
- 
-    case 5:           // BAD. A non-empty case without break should not be
-        something();  // used
-    case 6:
-        more();
-        break;
- 
-    default:
-        // no action needed
-        break;
-}
-</pre></div>
-</div>
 </section>
 <section id="v-5-clang-format-configuration">
-<h3>V.5. Clang-Format Configuration<a class="headerlink" href="#v-5-clang-format-configuration" title="Permalink to this headline">¶</a></h3>
+<h3>V.5. Clang-Format Configuration<a class="headerlink" href="#v-5-clang-format-configuration" title="Permalink to this heading">¶</a></h3>
 <p>To automatically format your code according to this guidelines, you can use
 clang-format with the configuration
 <a class="reference external" href="https://github.com/machines-in-motion/mpi_cmake_modules/blob/master/python/mpi_cmake_modules/_clang-format">here</a>.</p>
 </section>
 </section>
 <section id="vi-c-c-coding-guidelines">
-<h2>VI. C/C++ Coding Guidelines<a class="headerlink" href="#vi-c-c-coding-guidelines" title="Permalink to this headline">¶</a></h2>
+<h2>VI. C/C++ Coding Guidelines<a class="headerlink" href="#vi-c-c-coding-guidelines" title="Permalink to this heading">¶</a></h2>
 <section id="vi-1-pass-objects-by-const-reference">
-<h3>VI.1. Pass objects by const reference<a class="headerlink" href="#vi-1-pass-objects-by-const-reference" title="Permalink to this headline">¶</a></h3>
+<h3>VI.1. Pass objects by const reference<a class="headerlink" href="#vi-1-pass-objects-by-const-reference" title="Permalink to this heading">¶</a></h3>
 <p>In general, non-primitive data types should be passed to functions by const
 reference instead of by value.</p>
-<div class="highlight-{.c} notranslate"><div class="highlight"><pre><span></span>void foobar(const Foo &amp;foo);  // good
-void foobar(Foo foo);  // results in copy of `foo`. Only do this if const
-                       // reference is not possible for some reason.
-</pre></div>
-</div>
 </section>
 <section id="vi-2-pragma-once-vs-include-guards">
-<h3>VI.2. <code class="docutils literal notranslate"><span class="pre">#pragma</span> <span class="pre">once</span></code> vs Include Guards<a class="headerlink" href="#vi-2-pragma-once-vs-include-guards" title="Permalink to this headline">¶</a></h3>
+<h3>VI.2. <code class="docutils literal notranslate"><span class="pre">#pragma</span> <span class="pre">once</span></code> vs Include Guards<a class="headerlink" href="#vi-2-pragma-once-vs-include-guards" title="Permalink to this heading">¶</a></h3>
 <p>Prefer <code class="docutils literal notranslate"><span class="pre">#pragma</span> <span class="pre">once</span></code> over include guards.
 <code class="docutils literal notranslate"><span class="pre">#pragma</span> <span class="pre">once</span></code> is not part of the official standard but is widely
 supported by compilers and much simpler to maintain.</p>
@@ -432,7 +349,7 @@ prefix nor suffix because this is reserved for the compiler pre-proccesor
 variables.</p>
 </section>
 <section id="vi-3-keep-scopes-small">
-<h3>VI.3. Keep scopes small<a class="headerlink" href="#vi-3-keep-scopes-small" title="Permalink to this headline">¶</a></h3>
+<h3>VI.3. Keep scopes small<a class="headerlink" href="#vi-3-keep-scopes-small" title="Permalink to this heading">¶</a></h3>
 <p>Avoid adding anything to the global namespace if possible. This means</p>
 <ul class="simple">
 <li><p>Use a namespace when defining extern symbols.</p></li>
@@ -443,14 +360,11 @@ only used inside one loop, define it inside this loop (however, do not consider
 this to be a very strict rule, deviate from it where it seems reasonable).</p>
 </section>
 <section id="vi-4-use-types-with-explicit-sizes">
-<h3>VI.4. Use types with explicit sizes<a class="headerlink" href="#vi-4-use-types-with-explicit-sizes" title="Permalink to this headline">¶</a></h3>
+<h3>VI.4. Use types with explicit sizes<a class="headerlink" href="#vi-4-use-types-with-explicit-sizes" title="Permalink to this heading">¶</a></h3>
 <p>The header <em>stdint</em> defines primitive types with explicit sizes:
 <em>int32_t</em>, <em>uint32_t</em>, <em>int16_t</em>, …
 They should be preferred over the build-in types int, unsigned, short, …
 To use them add the following include:</p>
-<div class="highlight-{.c} notranslate"><div class="highlight"><pre><span></span>#include &lt;stdint&gt;
-</pre></div>
-</div>
 </section>
 </section>
 </section>
@@ -469,7 +383,7 @@ To use them add the following include:</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright Copyright (c) 2021, See license.txt file or the license section..
+        &#169; Copyright .
 
     </p>
   </div>
