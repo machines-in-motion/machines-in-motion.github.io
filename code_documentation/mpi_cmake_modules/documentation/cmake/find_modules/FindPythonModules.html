@@ -4,17 +4,20 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>&lt;no title&gt; &mdash; mpi_cmake_modules 2.0.0 documentation</title><link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="canonical" href="https://machines-in-motion.github.io/code_documentation/mpi_cmake_modules/cmake/find_modules/FindPythonModules.html" />
+  <title>&lt;no title&gt; &mdash; mpi_cmake_modules 2.0.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" /> 
@@ -25,25 +28,32 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> mpi_cmake_modules
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            mpi_cmake_modules
           </a>
               <div class="version">
                 2.0.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
+              <p class="caption" role="heading"><span class="caption-text">General Documentation</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../general_documentation.html">General Documentation</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Python API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../modules.html">mpi_cmake_modules</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">CMake API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../cmake_doc.html">CMake API</a></li>
 </ul>
@@ -58,11 +68,11 @@
       </nav>
 
       <div class="wy-nav-content">
-        <div class="rst-content">
+        <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>&lt;no title&gt;</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">&lt;no title&gt;</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/cmake/find_modules/FindPythonModules.cmake.txt" rel="nofollow"> View page source</a>
       </li>
@@ -250,7 +260,7 @@ set (ARGN_PYTHON_EXECUTABLE)</p>
 </div></blockquote>
 <p>endif ()
 # set initial value of cache entry
-if (${CACHEVAR} MATCHES “^ <a href="#system-message-1"><span class="problematic" id="problematic-1">*</span></a>$”)</p>
+if (${CACHEVAR} MATCHES “^ <a href="#id1"><span class="problematic" id="id2">*</span></a>$”)</p>
 <blockquote>
 <div><p>set (${CACHEVAR} “${ARGN_NAME}-NOTFOUND” CACHE PATH “Directory containing ${ARGN_NAME} Python module/package.” FORCE)</p>
 </div></blockquote>
@@ -339,7 +349,7 @@ set (ENV{PYTHONHOME} “${PYTHONHOME}”)</p>
 if (STATUS EQUAL 0)</p>
 <blockquote>
 <div><dl class="simple">
-<dt>if (P MATCHES “__init__.pyc?$”)</dt><dd><p>get_filename_component (P “${P}” PATH)
+<dt>if (P MATCHES “__init__\.pyc?$”)</dt><dd><p>get_filename_component (P “${P}” PATH)
 get_filename_component (P “${P}” PATH)</p>
 </dd>
 <dt>else ()</dt><dd><p>get_filename_component (P “${P}” PATH)</p>
@@ -392,7 +402,7 @@ return ()</p>
 # find Python modules
 if (NOT PythonModules_FIND_COMPONENTS AND NOT PythonModules_FIND_OPTIONAL_COMPONENTS)</p>
 <blockquote>
-<div><p>message (FATAL_ERROR “PythonModules: No (<a href="#system-message-4"><span class="problematic" id="problematic-4">OPTIONAL_</span></a>)COMPONENTS (i.e., Python module names) specified!”)</p>
+<div><p>message (FATAL_ERROR “PythonModules: No (<a href="#id7"><span class="problematic" id="id8">OPTIONAL_</span></a>)COMPONENTS (i.e., Python module names) specified!”)</p>
 </div></blockquote>
 <p>endif ()
 if (NOT DEFINED PythonModules_PYTHONPATH)</p>
@@ -431,7 +441,7 @@ PATH “${PythonModules_DIR}”</p>
 </dl>
 <p>endif ()
 mark_as_advanced (${_PythonModules_VAR})
-if (${_PythonModules_VAR} MATCHES “(^ <a href="#system-message-2"><span class="problematic" id="problematic-2">*</span></a><a href="#system-message-3"><span class="problematic" id="problematic-3">|</span></a>NOTFOUND)$”)</p>
+if (${_PythonModules_VAR} MATCHES “(^ <a href="#id3"><span class="problematic" id="id4">*</span></a><a href="#id5"><span class="problematic" id="id6">|</span></a>NOTFOUND)$”)</p>
 <blockquote>
 <div><p>set (${ALL_FOUND}                                 FALSE)
 set (PythonModules_${_PythonModules_MODULE}_FOUND FALSE)</p>
@@ -489,7 +499,7 @@ foreach (_PythonModules_MODULE ${PythonModules_FIND_COMPONENTS})</p>
 set (_PythonModules_HINT)
 if (PYTHON_EXECUTABLE)</p>
 <blockquote>
-<div><p>set (_PythonModules_HINT “Check if executing ${PYTHON_EXECUTABLE} -c “import &lt;module&gt;” works”)</p>
+<div><p>set (_PythonModules_HINT “Check if executing ${PYTHON_EXECUTABLE} -c &quot;import &lt;module&gt;&quot; works”)</p>
 </div></blockquote>
 <dl class="simple">
 <dt>else ()</dt><dd><p>set (_PythonModules_HINT “Set PYTHON_EXECUTABLE, e.g., by searching for Python interpreter first”)</p>
@@ -546,7 +556,7 @@ unset (_PythonModules_VARS)</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright Copyright (c) 2022, See license.txt file or the license section..</p>
+    <p>&#169; Copyright .</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -4,17 +4,20 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Doxygen &mdash; mpi_cmake_modules 2.0.0 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="canonical" href="https://machines-in-motion.github.io/code_documentation/mpi_cmake_modules/doc/doxygen.html" />
+  <title>Doxygen &mdash; mpi_cmake_modules 2.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,20 +30,25 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> mpi_cmake_modules
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            mpi_cmake_modules
           </a>
               <div class="version">
                 2.0.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
+              <p class="caption" role="heading"><span class="caption-text">General Documentation</span></p>
+<ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../general_documentation.html">General Documentation</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="boost.html">Boost</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cereal.html">Cereal (serialization)</a></li>
@@ -57,14 +65,15 @@
 <li class="toctree-l2"><a class="reference internal" href="os_detection.html">OS detection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pthread.html">Pthread</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html">Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sphinx.html">Sphinx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xacro.html">Xacro</a></li>
 </ul>
 </li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Python API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../modules.html">mpi_cmake_modules</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">CMake API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../cmake_doc.html">CMake API</a></li>
 </ul>
@@ -79,12 +88,12 @@
       </nav>
 
       <div class="wy-nav-content">
-        <div class="rst-content">
+        <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../general_documentation.html">General Documentation</a> &raquo;</li>
-      <li>Doxygen</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../general_documentation.html">General Documentation</a></li>
+      <li class="breadcrumb-item active">Doxygen</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/doc/doxygen.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -95,45 +104,45 @@
            <div itemprop="articleBody">
              
   <section id="doxygen">
-<h1>Doxygen<a class="headerlink" href="#doxygen" title="Permalink to this headline">¶</a></h1>
+<h1>Doxygen<a class="headerlink" href="#doxygen" title="Permalink to this heading">¶</a></h1>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
 <p>In the machines-in-motion group we use doxygen in order to build all
 documentations from C/C++ and Python code.
 The main idea is that we can have a unified way to generate the documentation.</p>
 </section>
 <section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">¶</a></h2>
 <p>In order to use this macro one obviously needs to depend on this package through
 a <code class="docutils literal notranslate"><span class="pre">find_package</span></code>.
 Once the dependency is found <strong>ONE</strong> of the following macro needs to be added to
 the CMakelists.txt:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># to build the doxygen html</span>
-<span class="n">add_sphinx_documentation</span><span class="p">()</span>
-<span class="c1"># to build the sphinx html</span>
-<span class="n">add_doxygen_documentation</span><span class="p">()</span>
-<span class="c1"># to build both</span>
-<span class="n">add_documentation</span><span class="p">()</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># to build the doxygen html
+add_sphinx_documentation()
+# to build the sphinx html
+add_doxygen_documentation()
+# to build both
+add_documentation()
 </pre></div>
 </div>
 <p>These macro are idle by default. To activate it one need to pass the following
 CMake argument:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">colcon</span> <span class="n">build</span> <span class="o">--</span><span class="n">ament</span><span class="o">-</span><span class="n">cmake</span><span class="o">-</span><span class="n">args</span> <span class="o">-</span><span class="n">DGENERATE_DOCUMENTATION</span><span class="o">=</span><span class="n">ON</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>colcon build --ament-cmake-args -DGENERATE_DOCUMENTATION=ON
 </pre></div>
 </div>
 <p>The macro will generate a specific target using the name of the project for
 unicity. The documentations are located in:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">workspace</span><span class="o">/</span><span class="n">install</span><span class="o">/&lt;</span><span class="n">project</span> <span class="n">name</span><span class="o">&gt;/</span><span class="n">share</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">doxygen</span><span class="o">/</span><span class="n">html</span><span class="o">/</span>
-<span class="n">workspace</span><span class="o">/</span><span class="n">install</span><span class="o">/&lt;</span><span class="n">project</span> <span class="n">name</span><span class="o">&gt;/</span><span class="n">share</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">sphinx</span><span class="o">/</span><span class="n">html</span><span class="o">/</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>workspace/install/&lt;project name&gt;/share/docs/doxygen/html/
+workspace/install/&lt;project name&gt;/share/docs/sphinx/html/
 </pre></div>
 </div>
 <p>In order to visualise the built documentation with firefox please run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">firefox</span> <span class="n">workspace</span><span class="o">/</span><span class="n">install</span><span class="o">/&lt;</span><span class="n">project</span> <span class="n">name</span><span class="o">&gt;/</span><span class="n">share</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">doxygen</span><span class="o">/</span><span class="n">html</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>firefox workspace/install/&lt;project name&gt;/share/docs/doxygen/html/index.html
 </pre></div>
 </div>
 </section>
 <section id="writing-a-documentation">
-<h2>Writing a documentation<a class="headerlink" href="#writing-a-documentation" title="Permalink to this headline">¶</a></h2>
+<h2>Writing a documentation<a class="headerlink" href="#writing-a-documentation" title="Permalink to this heading">¶</a></h2>
 <p>In order to write a decent documentation one need to make sure that Doxygen
 do not output warnings. A warning from DOxygen proves that a code item is not
 documentated. See the
@@ -154,7 +163,7 @@ C/C++:</p>
 <div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/** </span>
 <span class="cm">  * @example &lt;file name&gt; This example provide an example on how to use ...</span>
 <span class="cm">  * Remarque: remove the `\` before the `@`.</span>
-<span class="cm">  */</span><span class="w"></span>
+<span class="cm">  */</span>
 </pre></div>
 </div>
 </li>
@@ -170,7 +179,7 @@ containing the additional documentation.</p></li>
 </ul>
 </section>
 <section id="implementation-details">
-<h2>Implementation details<a class="headerlink" href="#implementation-details" title="Permalink to this headline">¶</a></h2>
+<h2>Implementation details<a class="headerlink" href="#implementation-details" title="Permalink to this heading">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">Doxyfile.in</span></code> place in this repository’s <code class="docutils literal notranslate"><span class="pre">resources</span></code> folder is responsible
 for the parsing parameters and shape of the documentation. The idea here is that
 upon build Doxygen will go recursively through all the current project files
@@ -194,7 +203,7 @@ So one need to install this dependency using pip for example.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright Copyright (c) 2022, See license.txt file or the license section..</p>
+    <p>&#169; Copyright .</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

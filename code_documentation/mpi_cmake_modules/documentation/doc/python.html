@@ -4,21 +4,24 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Python &mdash; mpi_cmake_modules 2.0.0 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="canonical" href="https://machines-in-motion.github.io/code_documentation/mpi_cmake_modules/doc/python.html" />
+  <title>Python &mdash; mpi_cmake_modules 2.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Sphinx" href="sphinx.html" />
+    <link rel="next" title="Xacro" href="xacro.html" />
     <link rel="prev" title="Pthread" href="pthread.html" /> 
 </head>
 
@@ -27,20 +30,25 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> mpi_cmake_modules
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            mpi_cmake_modules
           </a>
               <div class="version">
                 2.0.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
+              <p class="caption" role="heading"><span class="caption-text">General Documentation</span></p>
+<ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../general_documentation.html">General Documentation</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="boost.html">Boost</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cereal.html">Cereal (serialization)</a></li>
@@ -60,14 +68,15 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="sphinx.html">Sphinx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xacro.html">Xacro</a></li>
 </ul>
 </li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Python API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../modules.html">mpi_cmake_modules</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">CMake API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../cmake_doc.html">CMake API</a></li>
 </ul>
@@ -82,12 +91,12 @@
       </nav>
 
       <div class="wy-nav-content">
-        <div class="rst-content">
+        <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../general_documentation.html">General Documentation</a> &raquo;</li>
-      <li>Python</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../general_documentation.html">General Documentation</a></li>
+      <li class="breadcrumb-item active">Python</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/doc/python.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -98,30 +107,30 @@
            <div itemprop="articleBody">
              
   <section id="python">
-<h1>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h1>
+<h1>Python<a class="headerlink" href="#python" title="Permalink to this heading">¶</a></h1>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
 <p>This part is very important as it provides tools to search for the Python
 libraries and includes depending on the required Python version.
 Plus some tools to create python bindings using pybind11.</p>
 </section>
 <section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">¶</a></h2>
 <section id="search-for-python">
-<h3>Search for Python<a class="headerlink" href="#search-for-python" title="Permalink to this headline">¶</a></h3>
+<h3>Search for Python<a class="headerlink" href="#search-for-python" title="Permalink to this heading">¶</a></h3>
 <p>The simplest thing is here to find the default Python library:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find_package</span><span class="p">(</span><span class="n">Python</span> <span class="n">REQUIRED</span><span class="p">)</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>find_package(Python REQUIRED)
 </pre></div>
 </div>
 <p>This macros is influenced by <code class="docutils literal notranslate"><span class="pre">PYTHON_EXECUTABLE</span></code> and <code class="docutils literal notranslate"><span class="pre">PYTHON_LIBRARY</span></code> which can
 be set for Python2 via the command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>colcon build --cmake-args -DPYTHON_EXECUTABLE=`which python2`
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>colcon build --cmake-args -DPYTHON_EXECUTABLE=`which python2`
 </pre></div>
 </div>
 <p>you can add <code class="docutils literal notranslate"><span class="pre">-DPYTHON_LIBRARY=</span></code>/usr/lib/x86_64-linux-gnu/libpython2.7.so``
 if needed</p>
 <p>or for Python3 via the command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>colcon build --cmake-args -DPYTHON_EXECUTABLE=`which python3`
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>colcon build --cmake-args -DPYTHON_EXECUTABLE=`which python3`
 </pre></div>
 </div>
 <p>you can add <code class="docutils literal notranslate"><span class="pre">-DPYTHON_LIBRARY=</span></code>/usr/lib/x86_64-linux-gnu/libpython3.5m.so``
@@ -129,24 +138,24 @@ if needed</p>
 <p>Please make sure the library exists at the defined place before executing the
 above commands.</p>
 <p>If you only want to find the python executable you can just do:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">get_python_interpreter</span><span class="p">(</span><span class="n">my_var</span><span class="p">)</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>get_python_interpreter(my_var)
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">my_var</span></code> will contain the path to the python interpreter.</p>
 </section>
 <section id="install-path">
-<h3>Install path<a class="headerlink" href="#install-path" title="Permalink to this headline">¶</a></h3>
+<h3>Install path<a class="headerlink" href="#install-path" title="Permalink to this heading">¶</a></h3>
 <p>In order to install files and library in the good place for python to find it
 on need to get the correct path:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">get_python_install_dir</span><span class="p">(</span><span class="n">my_var</span><span class="p">)</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>get_python_install_dir(my_var)
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">my_var</span></code> contains the path to where the python files needs to be installed.</p>
 </section>
 <section id="search-python-module">
-<h3>Search python module<a class="headerlink" href="#search-python-module" title="Permalink to this headline">¶</a></h3>
+<h3>Search python module<a class="headerlink" href="#search-python-module" title="Permalink to this heading">¶</a></h3>
 <p>In order to find pure python package one can use this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find_package</span><span class="p">(</span><span class="n">PythonModule</span> <span class="n">REQUIRED</span> <span class="n">COMPONENTS</span> <span class="n">robot_properties_solo</span><span class="p">)</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>find_package(PythonModule REQUIRED COMPONENTS robot_properties_solo)
 </pre></div>
 </div>
 <p>This will declare the following variables:</p>
@@ -162,7 +171,8 @@ Python module(s), i.e., The directories that have to be added to the Python
 search path. To support the use of this CMake module more than once with
 different arguments to the find_package() command, e.g., with and without
 the <code class="docutils literal notranslate"><span class="pre">REQUIRED</span></code> argument, the directories containing the found Python
-modules are appended to any existing directories in<br /><code class="docutils literal notranslate"><span class="pre">PythonModules_PYTHONPATH</span></code> if not already listed.</p></li>
+modules are appended to any existing directories in<br />
+<code class="docutils literal notranslate"><span class="pre">PythonModules_PYTHONPATH</span></code> if not already listed.</p></li>
 </ul>
 </section>
 </section>
@@ -173,13 +183,13 @@ modules are appended to any existing directories in<br /><code class="docutils l
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="pthread.html" class="btn btn-neutral float-left" title="Pthread" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="sphinx.html" class="btn btn-neutral float-right" title="Sphinx" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="xacro.html" class="btn btn-neutral float-right" title="Xacro" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright Copyright (c) 2022, See license.txt file or the license section..</p>
+    <p>&#169; Copyright .</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

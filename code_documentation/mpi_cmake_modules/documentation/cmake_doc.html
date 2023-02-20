@@ -4,21 +4,24 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CMake API &mdash; mpi_cmake_modules 2.0.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="canonical" href="https://machines-in-motion.github.io/code_documentation/mpi_cmake_modules/cmake_doc.html" />
+  <title>CMake API &mdash; mpi_cmake_modules 2.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="mpi_cmake_modules package" href="mpi_cmake_modules.html" /> 
+    <link rel="prev" title="mpi_cmake_modules.yaml2oneline module" href="mpi_cmake_modules.yaml2oneline.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -26,50 +29,50 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> mpi_cmake_modules
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            mpi_cmake_modules
           </a>
               <div class="version">
                 2.0.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
+              <p class="caption" role="heading"><span class="caption-text">General Documentation</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="general_documentation.html">General Documentation</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Python API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">mpi_cmake_modules</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">CMake API</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">CMake API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#cmake-boost-python-cmake">cmake/boost_python.cmake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cmake-documentation-cmake">cmake/documentation.cmake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cmake-doxygen-cmake">cmake/doxygen.cmake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cmake-dynamic-graph-cmake">cmake/dynamic_graph.cmake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cmake-find-modules-cmake">cmake/find_modules.cmake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cmake-find-modules-findpythonmodules-cmake">cmake/find_modules/FindPythonModules.cmake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cmake-find-modules-findzeromq-cmake">cmake/find_modules/FindZeroMQ.cmake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cmake-find-modules-findzeromqpp-cmake">cmake/find_modules/FindZeroMQPP.cmake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cmake-find-modules-findcereal-cmake">cmake/find_modules/Findcereal.cmake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cmake-find-modules-findrt-cmake">cmake/find_modules/Findrt.cmake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cmake-find-modules-xenomaiconfig-cmake">cmake/find_modules/XenomaiConfig.cmake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cmake-find-modules-python-findpython-cmake">cmake/find_modules/python/FindPython.cmake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cmake-generate-cmake-package-cmake">cmake/generate_cmake_package.cmake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cmake-get-python-install-dir-cmake">cmake/get_python_install_dir.cmake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cmake-get-python-interpreter-cmake">cmake/get_python_interpreter.cmake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cmake-global-calls-cmake">cmake/global_calls.cmake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cmake-install-scripts-cmake">cmake/install_scripts.cmake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cmake-os-detection-cmake">cmake/os_detection.cmake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cmake-print-target-properties-cmake">cmake/print_target_properties.cmake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cmake-pybind11-cmake">cmake/pybind11.cmake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cmake-sphinx-cmake">cmake/sphinx.cmake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cmake-xacro-cmake">cmake/xacro.cmake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cmake-xenomai-cmake">cmake/xenomai.cmake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-scripts">install_scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#documentation">documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sphinx">sphinx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#xacro">xacro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#xenomai">xenomai</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#find-modules">find_modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-python-install-dir">get_python_install_dir</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#global-calls">global_calls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#generate-cmake-package">generate_cmake_package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-python-interpreter">get_python_interpreter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pybind11">pybind11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dynamic-graph">dynamic_graph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#os-detection">os_detection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#doxygen">doxygen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#boost-python">boost_python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#print-target-properties">print_target_properties</a></li>
 </ul>
 </li>
 </ul>
@@ -84,11 +87,11 @@
       </nav>
 
       <div class="wy-nav-content">
-        <div class="rst-content">
+        <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>CMake API</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">CMake API</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/cmake_doc.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -99,13 +102,230 @@
            <div itemprop="articleBody">
              
   <section id="cmake-api">
-<h1>CMake API<a class="headerlink" href="#cmake-api" title="Permalink to this headline">¶</a></h1>
-<section id="cmake-boost-python-cmake">
-<h2>cmake/boost_python.cmake<a class="headerlink" href="#cmake-boost-python-cmake" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><dl class="cmake command">
-<dt id="command:search_for_boost_component">
-<code class="sig-name descname">SEARCH_FOR_BOOST_COMPONENT</code><a class="headerlink" href="#command:search_for_boost_component" title="Permalink to this definition">¶</a></dt>
+<h1>CMake API<a class="headerlink" href="#cmake-api" title="Permalink to this heading">¶</a></h1>
+<section id="install-scripts">
+<h2>install_scripts<a class="headerlink" href="#install-scripts" title="Permalink to this heading">¶</a></h2>
+<p>Install scripts without their file extension.</p>
+<dl class="cmake command">
+<dt class="sig sig-object cmake" id="command:install_scripts">
+<span class="sig-name descname"><span class="pre">INSTALL_SCRIPTS</span></span><a class="headerlink" href="#command:install_scripts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Expects as argument a list of files and a <code class="docutils literal notranslate"><span class="pre">DESTINATION</span></code> parameter with an
+installation destination.</p>
+<p>The files are installed as programs (i.e. as executables) with the file
+extension (e.g. “.py”) striped from their names.</p>
+</dd></dl>
+
+</section>
+<section id="documentation">
+<h2>documentation<a class="headerlink" href="#documentation" title="Permalink to this heading">¶</a></h2>
+<dl class="cmake command">
+<dt class="sig sig-object cmake" id="command:create_doc_target">
+<span class="sig-name descname"><span class="pre">CREATE_DOC_TARGET</span></span><a class="headerlink" href="#command:create_doc_target" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a target called <em>doc</em>. This target allows you do perform:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">doc</span>
+</pre></div>
+</div>
+<p>This target is created by default in the <em>cmake/global_calls.cmake</em>. It can
+be built by default if one set the CMake variable <code class="docutils literal notranslate"><span class="pre">GENERATE_DOCUMENTATION</span></code>
+to on:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">..</span> <span class="o">-</span><span class="n">DGENERATE_DOCUMENTATION</span><span class="o">=</span><span class="n">ON</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="cmake command">
+<dt class="sig sig-object cmake" id="command:add_documentation">
+<span class="sig-name descname"><span class="pre">ADD_DOCUMENTATION</span></span><a class="headerlink" href="#command:add_documentation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias of <code class="docutils literal notranslate"><span class="pre">add_sphinx_documentation()</span></code>.</p>
+</dd></dl>
+
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The following is deprecated. It is used for backward support.</p>
+</div>
+<dl class="cmake command">
+<dt class="sig sig-object cmake" id="command:build_documentation">
+<span class="sig-name descname"><span class="pre">BUILD_DOCUMENTATION</span></span><a class="headerlink" href="#command:build_documentation" title="Permalink to this definition">¶</a></dt>
+<dd><p>See <span class="target" id="index-0-command:add_documentation"></span><a class="reference internal" href="#command:add_documentation" title="add_documentation"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">ADD_DOCUMENTATION()</span></code></a></p>
+</dd></dl>
+
+<dl class="cmake command">
+<dt class="sig sig-object cmake" id="command:build_doxygen_documentation">
+<span class="sig-name descname"><span class="pre">BUILD_DOXYGEN_DOCUMENTATION</span></span><a class="headerlink" href="#command:build_doxygen_documentation" title="Permalink to this definition">¶</a></dt>
+<dd><p>See <span class="target" id="index-0-command:add_doxygen_documentation"></span><a class="reference internal" href="#command:add_doxygen_documentation" title="add_doxygen_documentation"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">ADD_DOXYGEN_DOCUMENTATION()</span></code></a></p>
+</dd></dl>
+
+<dl class="cmake command">
+<dt class="sig sig-object cmake" id="command:build_sphinx_documentation">
+<span class="sig-name descname"><span class="pre">BUILD_SPHINX_DOCUMENTATION</span></span><a class="headerlink" href="#command:build_sphinx_documentation" title="Permalink to this definition">¶</a></dt>
+<dd><p>See <span class="target" id="index-0-command:add_sphinx_documentation"></span><a class="reference internal" href="#command:add_sphinx_documentation" title="add_sphinx_documentation"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">ADD_SPHINX_DOCUMENTATION()</span></code></a></p>
+</dd></dl>
+
+</section>
+<section id="sphinx">
+<h2>sphinx<a class="headerlink" href="#sphinx" title="Permalink to this heading">¶</a></h2>
+<dl class="cmake command">
+<dt class="sig sig-object cmake" id="command:add_sphinx_documentation">
+<span class="sig-name descname"><span class="pre">ADD_SPHINX_DOCUMENTATION</span></span><a class="headerlink" href="#command:add_sphinx_documentation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use <a class="reference external" href="https://github.com/machines-in-motion/breathing-cat">breathing cat</a>
+to generate documentation for the current project.</p>
+<p>This macro adds a target for the documentation that is only build/installed
+if <code class="docutils literal notranslate"><span class="pre">GENERATE_DOCUMENTATION</span></code> is set (otherwise it has no effect).</p>
+<p>Optional Arguments:</p>
+<ul class="simple">
+<li><p>DOXYGEN_EXCLUDE_PATTERNS:  <strong>This argument is not supported anymore!</strong>
+Setting it will cause an error.  It will be complete removed in the
+future.
+To specify exclude patterns, use a breathing-cat config file instead
+(see <a class="reference external" href="https://github.com/machines-in-motion/breathing-cat">https://github.com/machines-in-motion/breathing-cat</a>).</p></li>
+</ul>
+</dd></dl>
+
+</section>
+<section id="xacro">
+<h2>xacro<a class="headerlink" href="#xacro" title="Permalink to this heading">¶</a></h2>
+<p>Build the documentation based on sphinx and the read_the_doc layout.</p>
+<dl class="cmake command">
+<dt class="sig sig-object cmake" id="command:build_xacro_files">
+<span class="sig-name descname"><span class="pre">BUILD_XACRO_FILES</span></span><a class="headerlink" href="#command:build_xacro_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>This looks for any files ending with .urdf.xacro in the [package_root]/xacro
+folder. Then it calls the xacro command on each and every file found.
+It then declare a target whith the xacro command.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This all boils down to the following fact,
+at compile time the [package_root]/urdf/<em>.urdf files are going to
+be compiled from the [package_root]/xacro/</em>.urdf.xacro files.</p>
+</div>
+</dd></dl>
+
+</section>
+<section id="xenomai">
+<h2>xenomai<a class="headerlink" href="#xenomai" title="Permalink to this heading">¶</a></h2>
+<dl class="cmake command">
+<dt class="sig sig-object cmake" id="command:setup_xenomai">
+<span class="sig-name descname"><span class="pre">SETUP_XENOMAI</span></span><a class="headerlink" href="#command:setup_xenomai" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple">
+<li><p>calls xeno-config</p></li>
+<li><p>add suitable libraries to linked directories</p></li>
+<li><p>add suitable directories to include directories</p></li>
+<li><p>setup variable <code class="docutils literal notranslate"><span class="pre">Xenomai_LIBS</span></code>.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Has been tested only on Xenomai 2.6.</p>
+</div>
+</dd></dl>
+
+</section>
+<section id="find-modules">
+<h2>find_modules<a class="headerlink" href="#find-modules" title="Permalink to this heading">¶</a></h2>
+<p>Simply add the find_modules/* to the <em>CMAKE_MODULE_PATH</em>.</p>
+</section>
+<section id="get-python-install-dir">
+<h2>get_python_install_dir<a class="headerlink" href="#get-python-install-dir" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="global-calls">
+<h2>global_calls<a class="headerlink" href="#global-calls" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="generate-cmake-package">
+<h2>generate_cmake_package<a class="headerlink" href="#generate-cmake-package" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="get-python-interpreter">
+<h2>get_python_interpreter<a class="headerlink" href="#get-python-interpreter" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="pybind11">
+<h2>pybind11<a class="headerlink" href="#pybind11" title="Permalink to this heading">¶</a></h2>
+<p>Add a Python module using pybind11</p>
+<dl class="cmake command">
+<dt class="sig sig-object cmake" id="command:add_pybind11_module">
+<span class="sig-name descname"><span class="pre">ADD_PYBIND11_MODULE</span></span><a class="headerlink" href="#command:add_pybind11_module" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a pybind11 module.  First argument is the target name (needs to
+match the name of the Python module!) followed by a list of source files.</p>
+<dl class="simple">
+<dt>Optional arguments:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>NO_EXTRAS:  Disables some optimisation in pybind11 (see documentation of</dt><dd><p>pybind11_add_module for details).</p>
+</dd>
+</dl>
+</li>
+<li><p>LINK_LIBRARIES:  List of libraries that are linked to the target.</p></li>
+<li><p>INLUCDE_DIRS:  List of include directories.  “include” is added by
+default.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="dynamic-graph">
+<h2>dynamic_graph<a class="headerlink" href="#dynamic-graph" title="Permalink to this heading">¶</a></h2>
+<dl class="cmake command">
+<dt class="sig sig-object cmake" id="command:get_dynamic_graph_plugin_install_path(install_dynamic_graph_plugin_path)">
+<span class="sig-name descname"><span class="pre">GET_DYNAMIC_GRAPH_PLUGIN_INSTALL_PATH(INSTALL_DYNAMIC_GRAPH_PLUGIN_PATH)</span></span><a class="headerlink" href="#command:get_dynamic_graph_plugin_install_path(install_dynamic_graph_plugin_path)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the install dir for the plugin to install them in the correct place.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param INSTALL_DYNAMIC_GRAPH_PLUGIN_PATH<span class="colon">:</span></dt>
+<dd class="field-odd"><p>path to the dynamic graph plugin</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>cmake-format: on</p>
+<dl class="cmake command">
+<dt class="sig sig-object cmake" id="command:install_dynamic_graph_plugin_python_bindings(plugin_target)">
+<span class="sig-name descname"><span class="pre">INSTALL_DYNAMIC_GRAPH_PLUGIN_PYTHON_BINDINGS(PLUGIN_TARGET)</span></span><a class="headerlink" href="#command:install_dynamic_graph_plugin_python_bindings(plugin_target)" title="Permalink to this definition">¶</a></dt>
+<dd><p>This file allows us to install the Python bindings of the dynamic graph at
+the correct place.</p>
+<p>Add a python submodule to dynamic_graph</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param plugin_target<span class="colon">:</span></dt>
+<dd class="field-odd"><p>target (library) name of the dynamic graph plugin,</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>cmake-format: on</p>
+</section>
+<section id="os-detection">
+<h2>os_detection<a class="headerlink" href="#os-detection" title="Permalink to this heading">¶</a></h2>
+<p>This file allows us to detect which linux os we are using to compile
+the code.</p>
+<dl class="cmake command">
+<dt class="sig sig-object cmake" id="command:define_os">
+<span class="sig-name descname"><span class="pre">DEFINE_OS</span></span><a class="headerlink" href="#command:define_os" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes <code class="docutils literal notranslate"><span class="pre">uname</span> <span class="pre">-a</span></code> to detect the OS and sets some flags accordingly.
+Alternatively, the target OS can explicitly be specified by setting the
+variable <code class="docutils literal notranslate"><span class="pre">OS_VERSION</span></code> before calling this macro (useful for cross
+compiling).</p>
+<p>Supported OS_VERSIONs are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="s2">&quot;xenomai&quot;</span>
+<span class="o">*</span> <span class="s2">&quot;preempt-rt&quot;</span> <span class="o">/</span> <span class="s2">&quot;lowlatency&quot;</span>
+<span class="o">*</span> <span class="s2">&quot;non-real-time&quot;</span><span class="o">/</span><span class="s2">&quot;ubuntu&quot;</span>
+<span class="o">*</span> <span class="s2">&quot;darwin&quot;</span> <span class="p">(</span><span class="n">Mac</span><span class="o">-</span><span class="n">OS</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>It also discriminate between real-time and non-real-time (or low latency) <em>OS</em> (kernel).</p>
+</dd></dl>
+
+</section>
+<section id="doxygen">
+<h2>doxygen<a class="headerlink" href="#doxygen" title="Permalink to this heading">¶</a></h2>
+<dl class="cmake command">
+<dt class="sig sig-object cmake" id="command:add_doxygen_documentation">
+<span class="sig-name descname"><span class="pre">ADD_DOXYGEN_DOCUMENTATION</span></span><a class="headerlink" href="#command:add_doxygen_documentation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds the doxygen html documentation of a package. The Doxyfile is set to
+parse the Markdown files in the <em>doc/</em> folder, the Python file in the
+<em>python/</em> folder and the C/C++ files. The output is gnerated in
+<em>install/${PROJECT_NAME}/share/docs/doxygen/html/</em>.</p>
+</dd></dl>
+
+</section>
+<section id="boost-python">
+<h2>boost_python<a class="headerlink" href="#boost-python" title="Permalink to this heading">¶</a></h2>
+<dl class="cmake command">
+<dt class="sig sig-object cmake" id="command:search_for_boost_component">
+<span class="sig-name descname"><span class="pre">SEARCH_FOR_BOOST_COMPONENT</span></span><a class="headerlink" href="#command:search_for_boost_component" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Param boost_python_name<span class="colon">:</span></dt>
 <dd class="field-odd"><p></p></dd>
@@ -117,23 +337,23 @@ found, FALSE otherwise. This function is for internal use only.</p>
 </dd></dl>
 
 <dl class="cmake command">
-<dt id="command:export_boost_default_options">
-<code class="sig-name descname">EXPORT_BOOST_DEFAULT_OPTIONS</code><a class="headerlink" href="#command:export_boost_default_options" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object cmake" id="command:export_boost_default_options">
+<span class="sig-name descname"><span class="pre">EXPORT_BOOST_DEFAULT_OPTIONS</span></span><a class="headerlink" href="#command:export_boost_default_options" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function allows to export the default options for detecting Boost
 components.</p>
 </dd></dl>
 
 <dl class="cmake command">
-<dt id="command:search_for_boost_python([required])">
-<code class="sig-name descname">SEARCH_FOR_BOOST_PYTHON([REQUIRED])</code><a class="headerlink" href="#command:search_for_boost_python([required])" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object cmake" id="command:search_for_boost_python([required])">
+<span class="sig-name descname"><span class="pre">SEARCH_FOR_BOOST_PYTHON([REQUIRED])</span></span><a class="headerlink" href="#command:search_for_boost_python([required])" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find boost-python component. For boost &gt;= 1.67.0, FindPython macro should
 be called first in order to automatically detect the right boost-python
 component version according to the Python version (2.7 or 3.x).</p>
 </dd></dl>
 
 <dl class="cmake command">
-<dt id="command:target_link_boost_python (target &lt;private|public|interface&gt;)">
-<code class="sig-name descname">TARGET_LINK_BOOST_PYTHON (TARGET &lt;PRIVATE|PUBLIC|INTERFACE&gt;)</code><a class="headerlink" href="#command:target_link_boost_python (target <private|public|interface>)" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object cmake" id="command:target_link_boost_python (target &lt;private|public|interface&gt;)">
+<span class="sig-name descname"><span class="pre">TARGET_LINK_BOOST_PYTHON</span> <span class="pre">(TARGET</span> <span class="pre">&lt;PRIVATE|PUBLIC|INTERFACE&gt;)</span></span><a class="headerlink" href="#command:target_link_boost_python (target <private|public|interface>)" title="Permalink to this definition">¶</a></dt>
 <dd><p>Link target againt boost_python library.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Target<span class="colon">:</span></dt>
@@ -149,399 +369,9 @@ time for a library target. Otherwise, for executables we need to link to a
 specific version of python.</p>
 </dd></dl>
 
-</div></blockquote>
 </section>
-<section id="cmake-documentation-cmake">
-<h2>cmake/documentation.cmake<a class="headerlink" href="#cmake-documentation-cmake" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><dl class="cmake command">
-<dt id="command:create_doc_target">
-<code class="sig-name descname">CREATE_DOC_TARGET</code><a class="headerlink" href="#command:create_doc_target" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a target called <em>doc</em>. This target allows you do perform:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">doc</span>
-</pre></div>
-</div>
-<p>This target is created by default in the <em>cmake/global_calls.cmake</em>. It can
-be built by default if one set the CMake variable <code class="docutils literal notranslate"><span class="pre">GENERATE_DOCUMENTATION</span></code>
-to on:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">..</span> <span class="o">-</span><span class="n">DGENERATE_DOCUMENTATION</span><span class="o">=</span><span class="n">ON</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="cmake command">
-<dt id="command:add_documentation">
-<code class="sig-name descname">ADD_DOCUMENTATION</code><a class="headerlink" href="#command:add_documentation" title="Permalink to this definition">¶</a></dt>
-<dd><p>Alias of <code class="docutils literal notranslate"><span class="pre">add_sphinx_documentation()</span></code>.</p>
-</dd></dl>
-
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The following is deprecated. It is used for backward support.</p>
-</aside>
-<dl class="cmake command">
-<dt id="command:build_documentation">
-<code class="sig-name descname">BUILD_DOCUMENTATION</code><a class="headerlink" href="#command:build_documentation" title="Permalink to this definition">¶</a></dt>
-<dd><p>See <span class="target" id="index-0-command:add_documentation"></span><a class="reference internal" href="#command:add_documentation" title="add_documentation"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">ADD_DOCUMENTATION()</span></code></a></p>
-</dd></dl>
-
-<dl class="cmake command">
-<dt id="command:build_doxygen_documentation">
-<code class="sig-name descname">BUILD_DOXYGEN_DOCUMENTATION</code><a class="headerlink" href="#command:build_doxygen_documentation" title="Permalink to this definition">¶</a></dt>
-<dd><p>See <span class="target" id="index-0-command:add_doxygen_documentation"></span><a class="reference internal" href="#command:add_doxygen_documentation" title="add_doxygen_documentation"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">ADD_DOXYGEN_DOCUMENTATION()</span></code></a></p>
-</dd></dl>
-
-<dl class="cmake command">
-<dt id="command:build_sphinx_documentation">
-<code class="sig-name descname">BUILD_SPHINX_DOCUMENTATION</code><a class="headerlink" href="#command:build_sphinx_documentation" title="Permalink to this definition">¶</a></dt>
-<dd><p>See <span class="target" id="index-0-command:add_sphinx_documentation"></span><a class="reference internal" href="#command:add_sphinx_documentation" title="add_sphinx_documentation"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">ADD_SPHINX_DOCUMENTATION()</span></code></a></p>
-</dd></dl>
-
-</div></blockquote>
-</section>
-<section id="cmake-doxygen-cmake">
-<h2>cmake/doxygen.cmake<a class="headerlink" href="#cmake-doxygen-cmake" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><dl class="cmake command">
-<dt id="command:add_doxygen_documentation">
-<code class="sig-name descname">ADD_DOXYGEN_DOCUMENTATION</code><a class="headerlink" href="#command:add_doxygen_documentation" title="Permalink to this definition">¶</a></dt>
-<dd><p>Builds the doxygen html documentation of a package. The Doxyfile is set to
-parse the Markdown files in the <em>doc/</em> folder, the Python file in the
-<em>python/</em> folder and the C/C++ files. The output is gnerated in
-<em>install/${PROJECT_NAME}/share/docs/doxygen/html/</em>.</p>
-</dd></dl>
-
-</div></blockquote>
-</section>
-<section id="cmake-dynamic-graph-cmake">
-<h2>cmake/dynamic_graph.cmake<a class="headerlink" href="#cmake-dynamic-graph-cmake" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><dl class="cmake command">
-<dt id="command:get_dynamic_graph_plugin_install_path(install_dynamic_graph_plugin_path)">
-<code class="sig-name descname">GET_DYNAMIC_GRAPH_PLUGIN_INSTALL_PATH(INSTALL_DYNAMIC_GRAPH_PLUGIN_PATH)</code><a class="headerlink" href="#command:get_dynamic_graph_plugin_install_path(install_dynamic_graph_plugin_path)" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the install dir for the plugin to install them in the correct place.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Param INSTALL_DYNAMIC_GRAPH_PLUGIN_PATH<span class="colon">:</span></dt>
-<dd class="field-odd"><p>path to the dynamic graph plugin</p>
-</dd>
-</dl>
-</dd></dl>
-
-<p>cmake-format: on</p>
-<dl class="cmake command">
-<dt id="command:install_dynamic_graph_plugin_python_bindings(plugin_target)">
-<code class="sig-name descname">INSTALL_DYNAMIC_GRAPH_PLUGIN_PYTHON_BINDINGS(PLUGIN_TARGET)</code><a class="headerlink" href="#command:install_dynamic_graph_plugin_python_bindings(plugin_target)" title="Permalink to this definition">¶</a></dt>
-<dd><p>This file allows us to install the Python bindings of the dynamic graph at
-the correct place.</p>
-<p>Add a python submodule to dynamic_graph</p>
-<dl class="field-list simple">
-<dt class="field-odd">Param plugin_target<span class="colon">:</span></dt>
-<dd class="field-odd"><p>target (library) name of the dynamic graph plugin,</p>
-</dd>
-</dl>
-</dd></dl>
-
-<p>cmake-format: on</p>
-</div></blockquote>
-</section>
-<section id="cmake-find-modules-cmake">
-<h2>cmake/find_modules.cmake<a class="headerlink" href="#cmake-find-modules-cmake" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>Simply add the find_modules/* to the <em>CMAKE_MODULE_PATH</em>.</p>
-</div></blockquote>
-</section>
-<section id="cmake-find-modules-findpythonmodules-cmake">
-<h2>cmake/find_modules/FindPythonModules.cmake<a class="headerlink" href="#cmake-find-modules-findpythonmodules-cmake" title="Permalink to this headline">¶</a></h2>
-</section>
-<section id="cmake-find-modules-findzeromq-cmake">
-<h2>cmake/find_modules/FindZeroMQ.cmake<a class="headerlink" href="#cmake-find-modules-findzeromq-cmake" title="Permalink to this headline">¶</a></h2>
-</section>
-<section id="cmake-find-modules-findzeromqpp-cmake">
-<h2>cmake/find_modules/FindZeroMQPP.cmake<a class="headerlink" href="#cmake-find-modules-findzeromqpp-cmake" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>Finds the libzmqpp library.</p>
-<p>This module provides the following imported targets, if found:</p>
-<dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">ZeroMQPP::ZeroMQPP</span></code></dt><dd><p>The ZeroMQPP interface library.</p>
-</dd>
-</dl>
-<p>This will define the following variables:</p>
-<dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">ZeroMQPP_FOUND</span></code></dt><dd><p>True if the system has the ZeroMQPP library.</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">ZeroMQPP_VERSION</span></code></dt><dd><p>The version of the ZeroMQPP library which was found.</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">ZeroMQPP_INCLUDE_DIR</span></code></dt><dd><p>Include directory needed to use ZeroMQPP.</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">ZeroMQPP_LIBRARY</span></code></dt><dd><p>ZeroMPQQ library
-only library.</p>
-</dd>
-</dl>
-</div></blockquote>
-</section>
-<section id="cmake-find-modules-findcereal-cmake">
-<h2>cmake/find_modules/Findcereal.cmake<a class="headerlink" href="#cmake-find-modules-findcereal-cmake" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>Finds the cereal library.</p>
-<p>This module provides the following imported targets, if found:</p>
-<dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">cereal::cereal</span></code></dt><dd><p>The cereal interface library.</p>
-</dd>
-</dl>
-<p>This will define the following variables:</p>
-<dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">cereal_FOUND</span></code></dt><dd><p>True if the system has the cereal library.</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">cereal_VERSION</span></code></dt><dd><p>The version of the cereal library which was found.</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">cereal_INCLUDE_DIRS</span></code></dt><dd><p>Include directories needed to use cereal.</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">cereal_LIBRARIES</span></code></dt><dd><p>Libraries needed to link to cereal. This will be empty as this is a header
-only library.</p>
-</dd>
-</dl>
-<p>The following cache variables may also be set:</p>
-<dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">cereal_INCLUDE_DIR</span></code></dt><dd><p>The directory containing <code class="docutils literal notranslate"><span class="pre">cereal.h</span></code>.</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">cereal_LIBRARY</span></code></dt><dd><p>The path to the cereal library.</p>
-</dd>
-</dl>
-</div></blockquote>
-</section>
-<section id="cmake-find-modules-findrt-cmake">
-<h2>cmake/find_modules/Findrt.cmake<a class="headerlink" href="#cmake-find-modules-findrt-cmake" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>Finds the rt library.</p>
-<p>This module provides the following imported targets, if found:</p>
-<dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">rt::rt</span></code></dt><dd><p>The rt interface library.</p>
-</dd>
-</dl>
-<p>This will define the following variables:</p>
-<dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">rt_FOUND</span></code></dt><dd><p>True if the system has the rt library.</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">rt_VERSION</span></code></dt><dd><p>The version of the rt library which was found.</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">rt_INCLUDE_DIRS</span></code></dt><dd><p>Include directories needed to use rt.</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">rt_LIBRARIES</span></code></dt><dd><p>Libraries needed to link to rt. This will be empty as this is a header
-only library.</p>
-</dd>
-</dl>
-<p>The following cache variables may also be set:</p>
-<dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">rt_INCLUDE_DIR</span></code></dt><dd><p>The directory containing <code class="docutils literal notranslate"><span class="pre">rt.h</span></code>.</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">rt_LIBRARY</span></code></dt><dd><p>The path to the rt library.</p>
-</dd>
-</dl>
-</div></blockquote>
-</section>
-<section id="cmake-find-modules-xenomaiconfig-cmake">
-<h2>cmake/find_modules/XenomaiConfig.cmake<a class="headerlink" href="#cmake-find-modules-xenomaiconfig-cmake" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>Find the Xenamai library. Usage:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find_package</span><span class="p">(</span><span class="n">Xenomai</span> <span class="n">REQUIRED</span><span class="p">)</span>
-</pre></div>
-</div>
-</div></blockquote>
-</section>
-<section id="cmake-find-modules-python-findpython-cmake">
-<h2>cmake/find_modules/python/FindPython.cmake<a class="headerlink" href="#cmake-find-modules-python-findpython-cmake" title="Permalink to this headline">¶</a></h2>
-</section>
-<section id="cmake-generate-cmake-package-cmake">
-<h2>cmake/generate_cmake_package.cmake<a class="headerlink" href="#cmake-generate-cmake-package-cmake" title="Permalink to this headline">¶</a></h2>
-</section>
-<section id="cmake-get-python-install-dir-cmake">
-<h2>cmake/get_python_install_dir.cmake<a class="headerlink" href="#cmake-get-python-install-dir-cmake" title="Permalink to this headline">¶</a></h2>
-</section>
-<section id="cmake-get-python-interpreter-cmake">
-<h2>cmake/get_python_interpreter.cmake<a class="headerlink" href="#cmake-get-python-interpreter-cmake" title="Permalink to this headline">¶</a></h2>
-</section>
-<section id="cmake-global-calls-cmake">
-<h2>cmake/global_calls.cmake<a class="headerlink" href="#cmake-global-calls-cmake" title="Permalink to this headline">¶</a></h2>
-</section>
-<section id="cmake-install-scripts-cmake">
-<h2>cmake/install_scripts.cmake<a class="headerlink" href="#cmake-install-scripts-cmake" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>Install scripts without their file extension.</p>
-<dl class="cmake command">
-<dt id="command:install_scripts">
-<code class="sig-name descname">INSTALL_SCRIPTS</code><a class="headerlink" href="#command:install_scripts" title="Permalink to this definition">¶</a></dt>
-<dd><p>Expects as argument a list of files and a <code class="docutils literal notranslate"><span class="pre">DESTINATION</span></code> parameter with an
-installation destination.</p>
-<p>The files are installed as programs (i.e. as executables) with the file
-extension (e.g. “.py”) striped from their names.</p>
-</dd></dl>
-
-</div></blockquote>
-</section>
-<section id="cmake-os-detection-cmake">
-<h2>cmake/os_detection.cmake<a class="headerlink" href="#cmake-os-detection-cmake" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>This file allows us to detect which linux os we are using to compile
-the code.</p>
-<dl class="cmake command">
-<dt id="command:define_os">
-<code class="sig-name descname">DEFINE_OS</code><a class="headerlink" href="#command:define_os" title="Permalink to this definition">¶</a></dt>
-<dd><p>Executes <code class="docutils literal notranslate"><span class="pre">uname</span> <span class="pre">-a</span></code> to detect the OS and sets some flags accordingly.
-Alternatively, the target OS can explicitly be specified by setting the
-variable <code class="docutils literal notranslate"><span class="pre">OS_VERSION</span></code> before calling this macro (useful for cross
-compiling).</p>
-<p>Supported OS_VERSIONs are:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="s2">&quot;xenomai&quot;</span>
-<span class="o">*</span> <span class="s2">&quot;preempt-rt&quot;</span> <span class="o">/</span> <span class="s2">&quot;lowlatency&quot;</span>
-<span class="o">*</span> <span class="s2">&quot;non-real-time&quot;</span><span class="o">/</span><span class="s2">&quot;ubuntu&quot;</span>
-<span class="o">*</span> <span class="s2">&quot;darwin&quot;</span> <span class="p">(</span><span class="n">Mac</span><span class="o">-</span><span class="n">OS</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>It also discriminate between real-time and non-real-time (or low latency) <em>OS</em> (kernel).</p>
-</dd></dl>
-
-</div></blockquote>
-</section>
-<section id="cmake-print-target-properties-cmake">
-<h2>cmake/print_target_properties.cmake<a class="headerlink" href="#cmake-print-target-properties-cmake" title="Permalink to this headline">¶</a></h2>
-</section>
-<section id="cmake-pybind11-cmake">
-<h2>cmake/pybind11.cmake<a class="headerlink" href="#cmake-pybind11-cmake" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>Add a Python module using pybind11</p>
-<dl class="cmake command">
-<dt id="command:add_pybind11_module">
-<code class="sig-name descname">ADD_PYBIND11_MODULE</code><a class="headerlink" href="#command:add_pybind11_module" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a pybind11 module.  First argument is the target name (needs to
-match the name of the Python module!) followed by a list of source files.</p>
-<dl class="simple">
-<dt>Optional arguments:</dt><dd><ul class="simple">
-<li><p>LINK_LIBRARIES:  List of libraries that are linked to the target.</p></li>
-<li><p>INLUCDE_DIRS:  List of include directories.  “include” is added by
-default.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-</div></blockquote>
-</section>
-<section id="cmake-sphinx-cmake">
-<h2>cmake/sphinx.cmake<a class="headerlink" href="#cmake-sphinx-cmake" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><dl class="cmake command">
-<dt id="command:_build_doxygen">
-<code class="sig-name descname">_BUILD_DOXYGEN</code><a class="headerlink" href="#command:_build_doxygen" title="Permalink to this definition">¶</a></dt>
-<dd><p>Use doxygen to parse the C++ source files and generate a corresponding xml
-entry.</p>
-</dd></dl>
-
-<dl class="cmake command">
-<dt id="command:_build_breathe_apidoc">
-<code class="sig-name descname">_BUILD_BREATHE_APIDOC</code><a class="headerlink" href="#command:_build_breathe_apidoc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Use breathe_apidoc to parse the xml output from Doxygen and generate .rst
-files.</p>
-</dd></dl>
-
-<dl class="cmake command">
-<dt id="command:_build_sphinx_api_doc">
-<code class="sig-name descname">_BUILD_SPHINX_API_DOC</code><a class="headerlink" href="#command:_build_sphinx_api_doc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Use sphinx_apidoc to parse the python files output from Doxygen and generate
-.rst files.</p>
-</dd></dl>
-
-<dl class="cmake command">
-<dt id="command:_build_sphinx_build">
-<code class="sig-name descname">_BUILD_SPHINX_BUILD</code><a class="headerlink" href="#command:_build_sphinx_build" title="Permalink to this definition">¶</a></dt>
-<dd><p>Use sphinx_build to parse the cmake and rst files previously generated and
-generate the final html layout.</p>
-</dd></dl>
-
-<dl class="cmake command">
-<dt id="command:_find_readme">
-<code class="sig-name descname">_FIND_README</code><a class="headerlink" href="#command:_find_readme" title="Permalink to this definition">¶</a></dt>
-<dd><p>Search for a README with the given file extension and, if found, return
-its name using <code class="docutils literal notranslate"><span class="pre">OUTPUT_VAR</span></code>.  Example to search for ‘readme.md’:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_FIND_README</span><span class="p">(</span><span class="n">readme_file</span> <span class="s2">&quot;md&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="cmake command">
-<dt id="command:add_sphinx_documentation">
-<code class="sig-name descname">ADD_SPHINX_DOCUMENTATION</code><a class="headerlink" href="#command:add_sphinx_documentation" title="Permalink to this definition">¶</a></dt>
-<dd><p>Process the current project in order to generate a specific documentation
-content. This macro generates the appropriate documentation if is detects the
-corresponding files:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="o">*</span><span class="n">files</span><span class="o">*</span> <span class="k">with</span> <span class="n">the</span> <span class="n">extensions</span> <span class="p">{</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="o">.</span><span class="n">cpp</span><span class="p">,</span> <span class="o">...</span><span class="p">}</span> <span class="n">generates</span>
-  <span class="n">the</span> <span class="o">*</span><span class="n">C</span><span class="o">++</span> <span class="n">API</span><span class="o">*</span> <span class="n">section</span><span class="o">.</span>
-<span class="o">*</span> <span class="n">the</span> <span class="o">*</span><span class="n">python</span><span class="o">*</span> <span class="n">folder</span> <span class="n">will</span> <span class="n">generate</span> <span class="n">the</span> <span class="o">*</span><span class="n">Python</span> <span class="n">API</span><span class="o">*</span> <span class="n">section</span><span class="o">.</span>
-<span class="o">*</span> <span class="n">the</span> <span class="o">*</span><span class="n">cmake</span><span class="o">*</span> <span class="n">folder</span> <span class="n">will</span> <span class="n">generate</span> <span class="n">the</span> <span class="o">*</span><span class="n">CMake</span> <span class="n">API</span><span class="o">*</span> <span class="n">section</span><span class="o">.</span>
-<span class="o">*</span> <span class="n">the</span> <span class="o">*</span><span class="n">doc</span><span class="o">*</span> <span class="n">folder</span> <span class="n">containing</span> <span class="n">markdown</span> <span class="n">files</span> <span class="p">(</span><span class="o">*.</span><span class="n">md</span><span class="o">*</span><span class="p">)</span> <span class="n">will</span> <span class="n">generate</span> <span class="n">the</span>
-  <span class="o">*</span><span class="n">Additionnal</span> <span class="n">Documentation</span><span class="o">*</span> <span class="n">section</span><span class="o">.</span>
-</pre></div>
-</div>
-<p>The following macros are called in order and if needed:: * :command:
-_BUILD_DOXYGEN * :command: _BUILD_BREATHE_APIDOC * :command:
-_BUILD_SPHINX_API_DOC * :command: _BUILD_SPHINX_BUILD</p>
-<p>Please refer to the <em>Sphinx</em> paragraph in the <em>General Documentation</em> in this
-package for more explanation about the parametrization of the tools.</p>
-<p>Optional Arguments:</p>
-<ul class="simple">
-<li><dl class="simple">
-<dt>DOXYGEN_EXCLUDE_PATTERNS:  List of strings that are added to</dt><dd><p>EXCLUDE_PATTERNS in the doxygen configuration.  They can use wildcards,
-for example <cite>“${PROJECT_SOURCE_DIR}/*/build/*”</cite> to exclude any directory
-called “build” in the package directory.
-Always put <cite>${PROJECT_SOURCE_DIR}</cite> at the beginning of the pattern to
-avoid unintended matches on higher up parts on the path, which would
-result in <em>all</em> the files of the package being excluded.</p>
-</dd>
-</dl>
-</li>
-</ul>
-</dd></dl>
-
-</div></blockquote>
-</section>
-<section id="cmake-xacro-cmake">
-<h2>cmake/xacro.cmake<a class="headerlink" href="#cmake-xacro-cmake" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>Build the documentation based on sphinx and the read_the_doc layout.</p>
-<dl class="cmake command">
-<dt id="command:build_xacro_files">
-<code class="sig-name descname">BUILD_XACRO_FILES</code><a class="headerlink" href="#command:build_xacro_files" title="Permalink to this definition">¶</a></dt>
-<dd><p>This looks for any files ending with .urdf.xacro in the [package_root]/xacro
-folder. Then it calls the xacro command on each and every file found.
-It then declare a target whith the xacro command.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This all boils down to the following fact,
-at compile time the [package_root]/urdf/<em>.urdf files are going to
-be compiled from the [package_root]/xacro/</em>.urdf.xacro files.</p>
-</aside>
-</dd></dl>
-
-</div></blockquote>
-</section>
-<section id="cmake-xenomai-cmake">
-<h2>cmake/xenomai.cmake<a class="headerlink" href="#cmake-xenomai-cmake" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><dl class="cmake command">
-<dt id="command:setup_xenomai">
-<code class="sig-name descname">SETUP_XENOMAI</code><a class="headerlink" href="#command:setup_xenomai" title="Permalink to this definition">¶</a></dt>
-<dd><ol class="arabic simple">
-<li><p>calls xeno-config</p></li>
-<li><p>add suitable libraries to linked directories</p></li>
-<li><p>add suitable directories to include directories</p></li>
-<li><p>setup variable <code class="docutils literal notranslate"><span class="pre">Xenomai_LIBS</span></code>.</p></li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Has been tested only on Xenomai 2.6.</p>
-</aside>
-</dd></dl>
-
-</div></blockquote>
+<section id="print-target-properties">
+<h2>print_target_properties<a class="headerlink" href="#print-target-properties" title="Permalink to this heading">¶</a></h2>
 </section>
 </section>
 
@@ -549,13 +379,13 @@ be compiled from the [package_root]/xacro/</em>.urdf.xacro files.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="mpi_cmake_modules.html" class="btn btn-neutral float-left" title="mpi_cmake_modules package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mpi_cmake_modules.yaml2oneline.html" class="btn btn-neutral float-left" title="mpi_cmake_modules.yaml2oneline module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright Copyright (c) 2022, See license.txt file or the license section..</p>
+    <p>&#169; Copyright .</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

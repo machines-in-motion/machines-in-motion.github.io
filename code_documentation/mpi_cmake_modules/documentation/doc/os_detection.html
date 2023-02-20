@@ -4,17 +4,20 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OS detection &mdash; mpi_cmake_modules 2.0.0 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="canonical" href="https://machines-in-motion.github.io/code_documentation/mpi_cmake_modules/doc/os_detection.html" />
+  <title>OS detection &mdash; mpi_cmake_modules 2.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,20 +30,25 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> mpi_cmake_modules
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            mpi_cmake_modules
           </a>
               <div class="version">
                 2.0.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
+              <p class="caption" role="heading"><span class="caption-text">General Documentation</span></p>
+<ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../general_documentation.html">General Documentation</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="boost.html">Boost</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cereal.html">Cereal (serialization)</a></li>
@@ -55,14 +63,15 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="pthread.html">Pthread</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html">Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sphinx.html">Sphinx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xacro.html">Xacro</a></li>
 </ul>
 </li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Python API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../modules.html">mpi_cmake_modules</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">CMake API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../cmake_doc.html">CMake API</a></li>
 </ul>
@@ -77,12 +86,12 @@
       </nav>
 
       <div class="wy-nav-content">
-        <div class="rst-content">
+        <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../general_documentation.html">General Documentation</a> &raquo;</li>
-      <li>OS detection</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../general_documentation.html">General Documentation</a></li>
+      <li class="breadcrumb-item active">OS detection</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/doc/os_detection.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -93,9 +102,9 @@
            <div itemprop="articleBody">
              
   <section id="os-detection">
-<h1>OS detection<a class="headerlink" href="#os-detection" title="Permalink to this headline">¶</a></h1>
+<h1>OS detection<a class="headerlink" href="#os-detection" title="Permalink to this heading">¶</a></h1>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
 <p>This module has for purpose to detect the kind of Operating System (OS) the
 build is executed in using the tool <code class="docutils literal notranslate"><span class="pre">uname</span> <span class="pre">-a</span></code>. It is supporting:</p>
 <ul class="simple">
@@ -116,7 +125,7 @@ build is executed in using the tool <code class="docutils literal notranslate"><
 package depends heavily on this detection.</p>
 </section>
 <section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">¶</a></h2>
 <p>There is a macros called <code class="docutils literal notranslate"><span class="pre">define_os()</span></code> that is called by default if one
 depend on this pacakge, see [readme.md](&#64;ref md_readme).
 So basically there is nothing specific to be done to use this tool.</p>
@@ -134,7 +143,7 @@ So basically there is nothing specific to be done to use this tool.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright Copyright (c) 2022, See license.txt file or the license section..</p>
+    <p>&#169; Copyright .</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

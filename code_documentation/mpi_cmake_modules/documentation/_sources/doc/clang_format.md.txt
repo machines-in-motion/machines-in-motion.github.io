@@ -16,7 +16,7 @@ In order to use it one need to source the workspace environment:
 
 And to run the following command:
 
-    mpi_clang_format list_of_files list_of_folders
+    run-clang-format list_of_files list_of_folders
 
 `list_of_files` and `list_of_folders` can be either relative paths or absolute paths.
 
