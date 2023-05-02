@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>File ukf.hpp &mdash; mim_estimation 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="File ukf.hxx" href="ukf_8hxx.html" />
+    <link rel="prev" title="File test_extended_kalman_filter.cpp" href="test__extended__kalman__filter_8cpp.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            mim_estimation
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">C++ API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../doxygen_index.html">C++ API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../classlist.html">Class list</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../filelist.html">File list</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="base__ekf__with__imu__kin_8cpp.html">File base_ekf_with_imu_kin.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="base__ekf__with__imu__kin_8hpp.html">File base_ekf_with_imu_kin.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="butterworth__filter_8hpp.html">File butterworth_filter.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="butterworth__filter_8hxx.html">File butterworth_filter.hxx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data__collector_8hpp.html">File data_collector.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data__reader_8hpp.html">File data_reader.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo__ekf__vicon__imu_8cpp.html">File demo_ekf_vicon_imu.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dg__python__module_8cpp.html">File dg_python_module.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ekf_8hpp.html">File ekf.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ekf_8hxx.html">File ekf.hxx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ekf__vicon__imu__simple_8hpp.html">File ekf_vicon_imu_simple.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="end__effector__force__estimator_8cpp.html">File end_effector_force_estimator.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="end__effector__force__estimator_8hpp.html">File end_effector_force_estimator.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="include_2mim__estimation_2robot__state__estimator_8hpp.html">File robot_state_estimator.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mim__estimation_8cpp.html">File mim_estimation.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="non__rt__data__collector_8hpp.html">File non_rt_data_collector.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robot__state__estimation_8cpp.html">File robot_state_estimation.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robot__state__estimation_8hpp.html">File robot_state_estimation.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="signal__utils_8cpp.html">File signal_utils.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="signal__utils_8hpp.html">File signal_utils.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simple__1d__ekf_8hpp.html">File simple_1d_ekf.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="srcdg_2robot__state__estimator_8cpp.html">File robot_state_estimator.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="srcdg_2robot__state__estimator_8hpp.html">File robot_state_estimator.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="srcpy_2robot__state__estimator_8cpp.html">File robot_state_estimator.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="test__ekf__vicon__imu_8cpp.html">File test_ekf_vicon_imu.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="test__extended__kalman__filter_8cpp.html">File test_extended_kalman_filter.cpp</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">File ukf.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ukf_8hxx.html">File ukf.hxx</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../doxygen_index_one_page.html">C++ API and example</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">mim_estimation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">mim_estimation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../doxygen_index.html">C++ API</a></li>
+          <li class="breadcrumb-item"><a href="../filelist.html">File list</a></li>
+      <li class="breadcrumb-item active">File ukf.hpp</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/breathe_apidoc/file/ukf_8hpp.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="file-ukf-hpp">
+<h1>File ukf.hpp<a class="headerlink" href="#file-ukf-hpp" title="Permalink to this heading">¶</a></h1>
+<p>Implements the Unscented Kalman Filter (UKF). </p>
+<p><dl>
+<dt class="sig sig-object cpp">
+<a class="reference internal" href="../../doxygen_index_one_page.html#license_1_license000006"><span class="std std-ref"><span class="pre">License:</span></span></a></dt>
+<dd><p>BSD 3-clause </p>
+</dd></dl>
+
+
+The theory is described here. <a class="reference external" href="https://www.seas.harvard.edu/courses/cs281/papers/unscented.pdf">https://www.seas.harvard.edu/courses/cs281/papers/unscented.pdf</a><dl class="simple">
+<dt><strong>Copyright</strong></dt><dd><p>Copyright (c) 2020, New York University and Max Planck Gesellschaft</p>
+</dd>
+</dl>
+</p>
+<p><dl>
+<dt class="sig sig-object cpp">
+<a class="reference internal" href="../../doxygen_index_one_page.html#todo_1_todo000001"><span class="std std-ref"><span class="pre">Todo:</span></span></a></dt>
+<dd><p>Explain here the math a little at least or add ref. </p>
+</dd></dl>
+
+</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv414mim_estimation">
+<span id="_CPPv314mim_estimation"></span><span id="_CPPv214mim_estimation"></span><span id="mim_estimation"></span><span class="target" id="namespacemim__estimation"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mim_estimation</span></span></span><br /></dt>
+<dd><dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filtersE">
+<span id="_CPPv3N14mim_estimation16standard_filtersE"></span><span id="_CPPv2N14mim_estimation16standard_filtersE"></span><span id="mim_estimation::standard_filters"></span><span class="target" id="namespacemim__estimation_1_1standard__filters"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">standard_filters</span></span></span><br /></dt>
+<dd><dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I00EN14mim_estimation16standard_filters3UKFE">
+<span id="_CPPv3I00EN14mim_estimation16standard_filters3UKFE"></span><span id="_CPPv2I00EN14mim_estimation16standard_filters3UKFE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">S</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">M</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">UKF</span></span></span><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;<a class="reference internal" href="../../doxygen_index_one_page.html#ukf_8hpp"><span class="std std-ref">ukf.hpp</span></a>&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF3UKFEbbbd">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF3UKFEbbbd"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF3UKFEbbbd"></span><span id="mim_estimation::standard_filters::UKF::UKF__b.b.b.double"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1ae65a4405ff9348f9defb1624b1b9749c"></span><span class="sig-name descname"><span class="n"><span class="pre">UKF</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">numerical_jac</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">is_discrete</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">update_on</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">dt</span></span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKFD0Ev">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKFD0Ev"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKFD0Ev"></span><span id="mim_estimation::standard_filters::UKF::~UKF"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1af3c63545db645b6d28e132a84c0a2065"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~UKF</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF10initializeEv">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF10initializeEv"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF10initializeEv"></span><span id="mim_estimation::standard_filters::UKF::initialize__void"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a13834805d61ab09f43edc522a9fc5152"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">initialize</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF14updateControlsEv">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF14updateControlsEv"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF14updateControlsEv"></span><span id="mim_estimation::standard_filters::UKF::updateControls__void"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a3d8b60e033b618a42383e413792f06f8"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">updateControls</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF6updateEv">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF6updateEv"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF6updateEv"></span><span id="mim_estimation::standard_filters::UKF::update__void"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a5b34b202f1be8ce16f9cd6b338611a59"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">update</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF16get_filter_stateEv">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF16get_filter_stateEv"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF16get_filter_stateEv"></span><span id="mim_estimation::standard_filters::UKF::get_filter_state__void"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1abb2b996bf1a892990fbbb6ebc3659823"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../class/classmim__estimation_1_1standard__filters_1_1_u_k_f.html#_CPPv4N14mim_estimation16standard_filters3UKF1NE" title="mim_estimation::standard_filters::UKF::N"><span class="n"><span class="pre">N</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_filter_state</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF11print_debugEv">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF11print_debugEv"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF11print_debugEv"></span><span id="mim_estimation::standard_filters::UKF::print_debug__void"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1af4f75321d90f8a2774b849b7e025f17f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">print_debug</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-attributes">Public Static Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF1NE">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF1NE"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF1NE"></span><span id="mim_estimation::standard_filters::UKF::N__iC"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a0a9e920dd03b5ea8f88ec07866cacab5"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">N</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="../class/classmim__estimation_1_1standard__filters_1_1_u_k_f.html#_CPPv4I00EN14mim_estimation16standard_filters3UKFE" title="mim_estimation::standard_filters::UKF::S"><span class="n"><span class="pre">S</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">state_dim</span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF1PE">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF1PE"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF1PE"></span><span id="mim_estimation::standard_filters::UKF::P__iC"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a06e24c8c041fd42c5e26297ef807c890"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">P</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="../class/classmim__estimation_1_1standard__filters_1_1_u_k_f.html#_CPPv4I00EN14mim_estimation16standard_filters3UKFE" title="mim_estimation::standard_filters::UKF::S"><span class="n"><span class="pre">S</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">noise_dim</span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF1KE">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF1KE"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF1KE"></span><span id="mim_estimation::standard_filters::UKF::K__iC"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1aef1ac29c46beb0739f7badd4527a85d4"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">K</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="../class/classmim__estimation_1_1standard__filters_1_1_u_k_f.html#_CPPv4I00EN14mim_estimation16standard_filters3UKFE" title="mim_estimation::standard_filters::UKF::M"><span class="n"><span class="pre">M</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">meas_dim</span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF1LE">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF1LE"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF1LE"></span><span id="mim_estimation::standard_filters::UKF::L__iC"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a6efe67f99f5d4ccf348eaa3d4107515c"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">L</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">2</span></span><span class="w"> </span><span class="o"><span class="pre">*</span></span><span class="w"> </span><a class="reference internal" href="../class/classmim__estimation_1_1standard__filters_1_1_u_k_f.html#_CPPv4N14mim_estimation16standard_filters3UKF1NE" title="mim_estimation::standard_filters::UKF::N"><span class="n"><span class="pre">N</span></span></a><span class="w"> </span><span class="o"><span class="pre">+</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-functions">Protected Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF13process_modelER1S">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF13process_modelER1S"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF13process_modelER1S"></span><span id="mim_estimation::standard_filters::UKF::process_model__SR"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1ab403527c505e35903efbab8cc35463e2"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../class/classmim__estimation_1_1standard__filters_1_1_u_k_f.html#_CPPv4N14mim_estimation16standard_filters3UKF1NE" title="mim_estimation::standard_filters::UKF::N"><span class="n"><span class="pre">N</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">process_model</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../class/classmim__estimation_1_1standard__filters_1_1_u_k_f.html#_CPPv4I00EN14mim_estimation16standard_filters3UKFE" title="mim_estimation::standard_filters::UKF::S"><span class="n"><span class="pre">S</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF13process_modelER1S" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF17measurement_modelER1S">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF17measurement_modelER1S"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF17measurement_modelER1S"></span><span id="mim_estimation::standard_filters::UKF::measurement_model__SR"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1abc754dfee8436bc70a123a291c551573"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../class/classmim__estimation_1_1standard__filters_1_1_u_k_f.html#_CPPv4N14mim_estimation16standard_filters3UKF1KE" title="mim_estimation::standard_filters::UKF::K"><span class="n"><span class="pre">K</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">measurement_model</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../class/classmim__estimation_1_1standard__filters_1_1_u_k_f.html#_CPPv4I00EN14mim_estimation16standard_filters3UKFE" title="mim_estimation::standard_filters::UKF::S"><span class="n"><span class="pre">S</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF17measurement_modelER1S" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF21form_process_jacobianEv">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF21form_process_jacobianEv"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF21form_process_jacobianEv"></span><span id="mim_estimation::standard_filters::UKF::form_process_jacobian__void"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a12f508e46ed1b15233b7b3dcbca38095"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">form_process_jacobian</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF21form_process_jacobianEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF18form_process_noiseEv">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF18form_process_noiseEv"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF18form_process_noiseEv"></span><span id="mim_estimation::standard_filters::UKF::form_process_noise__void"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a9ed9422d2fe3af4d30abac96804f6e47"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">form_process_noise</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF18form_process_noiseEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF19form_noise_jacobianEv">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF19form_noise_jacobianEv"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF19form_noise_jacobianEv"></span><span id="mim_estimation::standard_filters::UKF::form_noise_jacobian__void"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a9d30c36bab52b9aa5b3c9d1ba27c97bd"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">form_noise_jacobian</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF19form_noise_jacobianEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF22form_measurement_noiseEv">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF22form_measurement_noiseEv"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF22form_measurement_noiseEv"></span><span id="mim_estimation::standard_filters::UKF::form_measurement_noise__void"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a888b947db6e407d75b82344a0963b3be"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">form_measurement_noise</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF22form_measurement_noiseEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF23form_actual_measurementEv">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF23form_actual_measurementEv"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF23form_actual_measurementEv"></span><span id="mim_estimation::standard_filters::UKF::form_actual_measurement__void"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1ae4073af01b05e394f2846dcc22a6a478"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">form_actual_measurement</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF23form_actual_measurementEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF10state_pre_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF10state_pre_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF10state_pre_E"></span><span id="mim_estimation::standard_filters::UKF::state_pre___S"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1aa65328db468fc9e564b473d1d700a1ce"></span><a class="reference internal" href="../class/classmim__estimation_1_1standard__filters_1_1_u_k_f.html#_CPPv4I00EN14mim_estimation16standard_filters3UKFE" title="mim_estimation::standard_filters::UKF::S"><span class="n"><span class="pre">S</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">state_pre_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF10state_pre_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF11state_post_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF11state_post_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF11state_post_E"></span><span id="mim_estimation::standard_filters::UKF::state_post___S"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1adb94b35330fc0af8ded7e36d7aadb257"></span><a class="reference internal" href="../class/classmim__estimation_1_1standard__filters_1_1_u_k_f.html#_CPPv4I00EN14mim_estimation16standard_filters3UKFE" title="mim_estimation::standard_filters::UKF::S"><span class="n"><span class="pre">S</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">state_post_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF11state_post_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF12meas_actual_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF12meas_actual_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF12meas_actual_E"></span><span id="mim_estimation::standard_filters::UKF::meas_actual___M"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a42bebb8d8b4964c6975d2710a3d7aafa"></span><a class="reference internal" href="../class/classmim__estimation_1_1standard__filters_1_1_u_k_f.html#_CPPv4I00EN14mim_estimation16standard_filters3UKFE" title="mim_estimation::standard_filters::UKF::M"><span class="n"><span class="pre">M</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">meas_actual_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF12meas_actual_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF10meas_pred_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF10meas_pred_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF10meas_pred_E"></span><span id="mim_estimation::standard_filters::UKF::meas_pred___M"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a2ce14b3f01b6a28ed1e7e5238b8113a6"></span><a class="reference internal" href="../class/classmim__estimation_1_1standard__filters_1_1_u_k_f.html#_CPPv4I00EN14mim_estimation16standard_filters3UKFE" title="mim_estimation::standard_filters::UKF::M"><span class="n"><span class="pre">M</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">meas_pred_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF10meas_pred_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF9proc_jac_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF9proc_jac_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF9proc_jac_E"></span><span id="mim_estimation::standard_filters::UKF::proc_jac___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a6d76e19ecf0d19bbe673a73b5d74816f"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">proc_jac_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF9proc_jac_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF14proc_jac_disc_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF14proc_jac_disc_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF14proc_jac_disc_E"></span><span id="mim_estimation::standard_filters::UKF::proc_jac_disc___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a568037b5f28d9802442cf94cae6c7281"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">proc_jac_disc_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF14proc_jac_disc_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF10noise_jac_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF10noise_jac_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF10noise_jac_E"></span><span id="mim_estimation::standard_filters::UKF::noise_jac___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a81f656eeeb0ff091ca21419bf452989d"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">noise_jac_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF10noise_jac_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF11proc_noise_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF11proc_noise_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF11proc_noise_E"></span><span id="mim_estimation::standard_filters::UKF::proc_noise___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1ab9014b7dc50fe2041278e30f2f57678b"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">proc_noise_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF11proc_noise_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF16proc_noise_disc_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF16proc_noise_disc_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF16proc_noise_disc_E"></span><span id="mim_estimation::standard_filters::UKF::proc_noise_disc___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1aa89f1a5ba1d8f9ce0fbbe413b6ad3c2f"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">proc_noise_disc_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF16proc_noise_disc_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF9meas_jac_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF9meas_jac_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF9meas_jac_E"></span><span id="mim_estimation::standard_filters::UKF::meas_jac___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a43b8e1db14b0ee5bd6cc34b450adbfc1"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">meas_jac_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF9meas_jac_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF11meas_noise_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF11meas_noise_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF11meas_noise_E"></span><span id="mim_estimation::standard_filters::UKF::meas_noise___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a7f867fc1b97907a061fef67b552acdb3"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">meas_noise_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF11meas_noise_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF16meas_noise_disc_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF16meas_noise_disc_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF16meas_noise_disc_E"></span><span id="mim_estimation::standard_filters::UKF::meas_noise_disc___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a8d8d08b7212b4f82f7b0555f1e218beb"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">meas_noise_disc_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF16meas_noise_disc_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF14state_weights_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF14state_weights_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF14state_weights_E"></span><span id="mim_estimation::standard_filters::UKF::state_weights___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a4ae935a5411b769eb0592fedeed9895a"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">state_weights_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF14state_weights_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF12cov_weights_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF12cov_weights_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF12cov_weights_E"></span><span id="mim_estimation::standard_filters::UKF::cov_weights___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a8200dc3c8d4d3d05124543ed090a8e43"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cov_weights_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF12cov_weights_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF12spoints_mat_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF12spoints_mat_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF12spoints_mat_E"></span><span id="mim_estimation::standard_filters::UKF::spoints_mat___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a79147d1d793c7300b7e13596c87c7c0a"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">spoints_mat_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF12spoints_mat_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF13spoints_proc_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF13spoints_proc_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF13spoints_proc_E"></span><span id="mim_estimation::standard_filters::UKF::spoints_proc___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a96cf4bfded60e7d3d312f5c88cf00d49"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">spoints_proc_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF13spoints_proc_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF13spoints_meas_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF13spoints_meas_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF13spoints_meas_E"></span><span id="mim_estimation::standard_filters::UKF::spoints_meas___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a0ab28b137d4b5995a9af67677dd8fd6a"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">spoints_meas_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF13spoints_meas_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF10cross_cov_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF10cross_cov_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF10cross_cov_E"></span><span id="mim_estimation::standard_filters::UKF::cross_cov___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1abb209044fe0384c77fb7f0b33958fbe0"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cross_cov_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF10cross_cov_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF9gain_mat_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF9gain_mat_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF9gain_mat_E"></span><span id="mim_estimation::standard_filters::UKF::gain_mat___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a1be5c07d6edd9adb9b7e2dc9f1fc28c7"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">gain_mat_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF9gain_mat_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF4ldltE">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF4ldltE"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF4ldltE"></span><span id="mim_estimation::standard_filters::UKF::ldlt__Eigen::LDLT:Eigen::MatrixXd:"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a0552593e4f1bb253f1e14299481dd99a"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">LDLT</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ldlt</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF4ldltE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF6alpha_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF6alpha_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF6alpha_E"></span><span id="mim_estimation::standard_filters::UKF::alpha___double"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a3a7b6329ed7acc211d58cf2109a787d6"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">alpha_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF6alpha_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF5beta_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF5beta_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF5beta_E"></span><span id="mim_estimation::standard_filters::UKF::beta___double"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a48f5163a9d997238a4d7088fed30733e"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">beta_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF5beta_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF6kappa_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF6kappa_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF6kappa_E"></span><span id="mim_estimation::standard_filters::UKF::kappa___double"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a900b8673fb8461db678666a843348ced"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">kappa_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF6kappa_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF7lambda_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF7lambda_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF7lambda_E"></span><span id="mim_estimation::standard_filters::UKF::lambda___double"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1af74326265f886f289076f97012a45f5e"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lambda_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF7lambda_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF14numerical_jac_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF14numerical_jac_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF14numerical_jac_E"></span><span id="mim_estimation::standard_filters::UKF::numerical_jac___b"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a29b5a075a1ae0f2ff38a67cd55d7456c"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">numerical_jac_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF14numerical_jac_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF12is_discrete_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF12is_discrete_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF12is_discrete_E"></span><span id="mim_estimation::standard_filters::UKF::is_discrete___b"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a0f544da7724d62ff6e5706428673b938"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">is_discrete_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF12is_discrete_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF10update_on_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF10update_on_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF10update_on_E"></span><span id="mim_estimation::standard_filters::UKF::update_on___b"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a111791d95bb84166201a47d8ffad622a"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">update_on_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF10update_on_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF3dt_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF3dt_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF3dt_E"></span><span id="mim_estimation::standard_filters::UKF::dt___double"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1ad8d220c67f7fb76e02144b93356b58bb"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dt_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF3dt_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="test__extended__kalman__filter_8cpp.html" class="btn btn-neutral float-left" title="File test_extended_kalman_filter.cpp" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ukf_8hxx.html" class="btn btn-neutral float-right" title="File ukf.hxx" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

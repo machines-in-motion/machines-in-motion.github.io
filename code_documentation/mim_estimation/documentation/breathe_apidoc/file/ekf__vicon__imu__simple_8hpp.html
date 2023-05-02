@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>File ekf_vicon_imu_simple.hpp &mdash; mim_estimation 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="File end_effector_force_estimator.cpp" href="end__effector__force__estimator_8cpp.html" />
+    <link rel="prev" title="File ekf.hxx" href="ekf_8hxx.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            mim_estimation
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">C++ API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../doxygen_index.html">C++ API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../classlist.html">Class list</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../filelist.html">File list</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="base__ekf__with__imu__kin_8cpp.html">File base_ekf_with_imu_kin.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="base__ekf__with__imu__kin_8hpp.html">File base_ekf_with_imu_kin.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="butterworth__filter_8hpp.html">File butterworth_filter.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="butterworth__filter_8hxx.html">File butterworth_filter.hxx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data__collector_8hpp.html">File data_collector.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data__reader_8hpp.html">File data_reader.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo__ekf__vicon__imu_8cpp.html">File demo_ekf_vicon_imu.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dg__python__module_8cpp.html">File dg_python_module.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ekf_8hpp.html">File ekf.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ekf_8hxx.html">File ekf.hxx</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">File ekf_vicon_imu_simple.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="end__effector__force__estimator_8cpp.html">File end_effector_force_estimator.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="end__effector__force__estimator_8hpp.html">File end_effector_force_estimator.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="include_2mim__estimation_2robot__state__estimator_8hpp.html">File robot_state_estimator.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mim__estimation_8cpp.html">File mim_estimation.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="non__rt__data__collector_8hpp.html">File non_rt_data_collector.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robot__state__estimation_8cpp.html">File robot_state_estimation.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robot__state__estimation_8hpp.html">File robot_state_estimation.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="signal__utils_8cpp.html">File signal_utils.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="signal__utils_8hpp.html">File signal_utils.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simple__1d__ekf_8hpp.html">File simple_1d_ekf.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="srcdg_2robot__state__estimator_8cpp.html">File robot_state_estimator.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="srcdg_2robot__state__estimator_8hpp.html">File robot_state_estimator.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="srcpy_2robot__state__estimator_8cpp.html">File robot_state_estimator.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="test__ekf__vicon__imu_8cpp.html">File test_ekf_vicon_imu.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="test__extended__kalman__filter_8cpp.html">File test_extended_kalman_filter.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ukf_8hpp.html">File ukf.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ukf_8hxx.html">File ukf.hxx</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../doxygen_index_one_page.html">C++ API and example</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">mim_estimation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">mim_estimation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../doxygen_index.html">C++ API</a></li>
+          <li class="breadcrumb-item"><a href="../filelist.html">File list</a></li>
+      <li class="breadcrumb-item active">File ekf_vicon_imu_simple.hpp</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/breathe_apidoc/file/ekf__vicon__imu__simple_8hpp.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="file-ekf-vicon-imu-simple-hpp">
+<h1>File ekf_vicon_imu_simple.hpp<a class="headerlink" href="#file-ekf-vicon-imu-simple-hpp" title="Permalink to this heading">¶</a></h1>
+<p>Implements a testing class for the Vicon and IMU based estimator. It loads a yaml configuration file and a SL data file, estimate the state from these data and compare to the vicon trajectory. </p>
+<p><dl>
+<dt class="sig sig-object cpp">
+<a class="reference internal" href="../../doxygen_index_one_page.html#license_1_license000004"><span class="std std-ref"><span class="pre">License:</span></span></a></dt>
+<dd><p>BSD 3-clause </p>
+</dd></dl>
+
+<dl class="simple">
+<dt><strong>Copyright</strong></dt><dd><p>Copyright (c) 2020, New York University and Max Planck Gesellschaft </p>
+</dd>
+</dl>
+</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv414mim_estimation">
+<span id="_CPPv314mim_estimation"></span><span id="_CPPv214mim_estimation"></span><span id="mim_estimation"></span><span class="target" id="namespacemim__estimation"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mim_estimation</span></span></span><br /></dt>
+<dd><dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4testE">
+<span id="_CPPv3N14mim_estimation4testE"></span><span id="_CPPv2N14mim_estimation4testE"></span><span id="mim_estimation::test"></span><span class="target" id="namespacemim__estimation_1_1test"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">test</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation4testE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTestE">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTestE"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTestE"></span><span id="mim_estimation::test::EstimatorViconImuTest"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">EstimatorViconImuTest</span></span></span><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;<a class="reference internal" href="../../doxygen_index_one_page.html#ekf__vicon__imu__simple_8hpp"><span class="std std-ref">ekf_vicon_imu_simple.hpp</span></a>&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest21EstimatorViconImuTestENSt6stringENSt6stringE">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest21EstimatorViconImuTestENSt6stringENSt6stringE"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest21EstimatorViconImuTestENSt6stringENSt6stringE"></span><span id="mim_estimation::test::EstimatorViconImuTest::EstimatorViconImuTest__ss.ss"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1a2cb4e80bd384034070494e3537f85a90"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">EstimatorViconImuTest</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">yaml_file</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">d_file</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>This class tests the <a class="reference internal" href="../../doxygen_index_one_page.html#namespacemim__estimation"><span class="std std-ref">mim_estimation</span></a> based on IMU and Vicon measurement. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest3runEv">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest3runEv"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest3runEv"></span><span id="mim_estimation::test::EstimatorViconImuTest::run"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1aaa67d4ad2a10e5c771d7d26bf3a60f76"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">run</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>run, simple method that execute the estimation of the base position from motion capture and IMU data saved from SL </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest4dumpENSt6stringE">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest4dumpENSt6stringE"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest4dumpENSt6stringE"></span><span id="mim_estimation::test::EstimatorViconImuTest::dump__ss"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1aa87ead73fc504f4dd4fa22f1482c7a66"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dump</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">file_name</span></span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest18get_data_from_fileEKiRN5Eigen8Vector3dERN5Eigen8Vector3dERN5Eigen8Matrix4dERN5Eigen11QuaterniondERb">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest18get_data_from_fileEKiRN5Eigen8Vector3dERN5Eigen8Vector3dERN5Eigen8Matrix4dERN5Eigen11QuaterniondERb"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest18get_data_from_fileEKiRN5Eigen8Vector3dERN5Eigen8Vector3dERN5Eigen8Matrix4dERN5Eigen11QuaterniondERb"></span><span id="mim_estimation::test::EstimatorViconImuTest::get_data_from_file__iC.Eigen::Vector3dR.Eigen::Vector3dR.Eigen::Matrix4dR.Eigen::QuaterniondR.bR"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1a65afc430198676a68b3c6e2a0bc87e9f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_data_from_file</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">row</span></span>, <span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">gyroscope</span></span>, <span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">accelerometer</span></span>, <span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix4d</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">vicon_base_pose</span></span>, <span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Quaterniond</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">input_vicon_base_quat</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">vicon_is_new_frame</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>get_data_from_file </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>row</strong> – row index homogenous to time/sampling_period. </p></li>
+<li><p><strong>gyroscope</strong> – output imu data copied from the data set </p></li>
+<li><p><strong>accelerometer</strong> – output imu data copied from the data set </p></li>
+<li><p><strong>unfiltered_joint_data</strong> – joint position copied from the data set </p></li>
+<li><p><strong>filtered_joint_data</strong> – filtered joint position copied from the data set</p></li>
+<li><p><strong>vicon_base_pose</strong> – position of the based measured form the Vicon system copied from the data set</p></li>
+<li><p><strong>vicon_is_new_frame</strong> – True is the Vicon data if actually a new one. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest27subscribe_to_data_collectorEv">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest27subscribe_to_data_collectorEv"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest27subscribe_to_data_collectorEv"></span><span id="mim_estimation::test::EstimatorViconImuTest::subscribe_to_data_collector"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1ae8f21f86f9a47ce9af32cd1e04ae7df5"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">subscribe_to_data_collector</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>subscribe_to_data_collector, collect the address of all variables to save </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest16get_data_indexesEv">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest16get_data_indexesEv"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest16get_data_indexesEv"></span><span id="mim_estimation::test::EstimatorViconImuTest::get_data_indexes"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1a794a556fff73d2484b89482d69e4a587"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_data_indexes</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>get_data_indexes In order to parse the SL data file one need the indexes associated to the data. </p>
+<p>This method computes the different names and indexes. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest22display_one_statisticsEdddNSt6stringE">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest22display_one_statisticsEdddNSt6stringE"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest22display_one_statisticsEdddNSt6stringE"></span><span id="mim_estimation::test::EstimatorViconImuTest::display_one_statistics__double.double.double.ss"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1a717fc96f925b851748a3beac80251c78"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">display_one_statistics</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">avg</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">min</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">max</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest22display_all_statisticsEv">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest22display_all_statisticsEv"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest22display_all_statisticsEv"></span><span id="mim_estimation::test::EstimatorViconImuTest::display_all_statistics"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1a6e22eac8c11eae5335b0ad46b2a3ce30"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">display_all_statistics</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest22compute_all_statisticsEv">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest22compute_all_statisticsEv"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest22compute_all_statisticsEv"></span><span id="mim_estimation::test::EstimatorViconImuTest::compute_all_statistics"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1a64253e071cce80203d2e7ef21dc9ffcf"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">compute_all_statistics</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest22compute_one_statisticsEN5Eigen3RefIN5Eigen8MatrixXdEEERdRdRd">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest22compute_one_statisticsEN5Eigen3RefIN5Eigen8MatrixXdEEERdRdRd"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest22compute_one_statisticsEN5Eigen3RefIN5Eigen8MatrixXdEEERdRdRd"></span><span id="mim_estimation::test::EstimatorViconImuTest::compute_one_statistics__Eigen::Ref:Eigen::MatrixXd:.doubleR.doubleR.doubleR"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1a40ee17347c8d9c197904d3f261cd96d2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">compute_one_statistics</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Ref</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">mat</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">avg</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">min</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">max</span></span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest17avg_err_base_poseE">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest17avg_err_base_poseE"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest17avg_err_base_poseE"></span><span id="mim_estimation::test::EstimatorViconImuTest::avg_err_base_pose__double"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1a62bac7e9904f348cb26d0eb901aa14fa"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">avg_err_base_pose</span></span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest19avg_err_base_pose_xE">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest19avg_err_base_pose_xE"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest19avg_err_base_pose_xE"></span><span id="mim_estimation::test::EstimatorViconImuTest::avg_err_base_pose_x__double"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1a9dbf17aa22fe50f28233b6e76b47a33b"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">avg_err_base_pose_x</span></span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest19avg_err_base_pose_yE">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest19avg_err_base_pose_yE"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest19avg_err_base_pose_yE"></span><span id="mim_estimation::test::EstimatorViconImuTest::avg_err_base_pose_y__double"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1a3058e7dd1e8c4df586bfcaf644ae1567"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">avg_err_base_pose_y</span></span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest19avg_err_base_pose_zE">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest19avg_err_base_pose_zE"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest19avg_err_base_pose_zE"></span><span id="mim_estimation::test::EstimatorViconImuTest::avg_err_base_pose_z__double"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1a5248e76a4be59f22e4d19cce364b71ae"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">avg_err_base_pose_z</span></span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest17max_err_base_poseE">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest17max_err_base_poseE"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest17max_err_base_poseE"></span><span id="mim_estimation::test::EstimatorViconImuTest::max_err_base_pose__double"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1a9146d9297767d5c73127304d7adb46cc"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">max_err_base_pose</span></span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest19max_err_base_pose_xE">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest19max_err_base_pose_xE"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest19max_err_base_pose_xE"></span><span id="mim_estimation::test::EstimatorViconImuTest::max_err_base_pose_x__double"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1a515d48f1727aa277fad8c30116b3c50a"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">max_err_base_pose_x</span></span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest19max_err_base_pose_yE">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest19max_err_base_pose_yE"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest19max_err_base_pose_yE"></span><span id="mim_estimation::test::EstimatorViconImuTest::max_err_base_pose_y__double"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1af889a9034d3fe5a444ba9fe371387266"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">max_err_base_pose_y</span></span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest19max_err_base_pose_zE">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest19max_err_base_pose_zE"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest19max_err_base_pose_zE"></span><span id="mim_estimation::test::EstimatorViconImuTest::max_err_base_pose_z__double"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1ac2fdd47b8e523b77a478db36d67e250d"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">max_err_base_pose_z</span></span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest17min_err_base_poseE">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest17min_err_base_poseE"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest17min_err_base_poseE"></span><span id="mim_estimation::test::EstimatorViconImuTest::min_err_base_pose__double"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1ab05e96e6ef978fa7354c24c6bd1ac4b8"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">min_err_base_pose</span></span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest19min_err_base_pose_xE">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest19min_err_base_pose_xE"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest19min_err_base_pose_xE"></span><span id="mim_estimation::test::EstimatorViconImuTest::min_err_base_pose_x__double"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1a40caf68322d6117a930887b3a7a69d85"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">min_err_base_pose_x</span></span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest19min_err_base_pose_yE">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest19min_err_base_pose_yE"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest19min_err_base_pose_yE"></span><span id="mim_estimation::test::EstimatorViconImuTest::min_err_base_pose_y__double"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1a042bc8ebec1845a046dc7377a338635e"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">min_err_base_pose_y</span></span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest19min_err_base_pose_zE">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest19min_err_base_pose_zE"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest19min_err_base_pose_zE"></span><span id="mim_estimation::test::EstimatorViconImuTest::min_err_base_pose_z__double"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1a0b398d581f2a5127d157e2f3d3d027f2"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">min_err_base_pose_z</span></span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest19avg_err_base_quat_xE">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest19avg_err_base_quat_xE"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest19avg_err_base_quat_xE"></span><span id="mim_estimation::test::EstimatorViconImuTest::avg_err_base_quat_x__double"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1af4a5f44e907864732c871d3973709bbb"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">avg_err_base_quat_x</span></span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest19avg_err_base_quat_yE">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest19avg_err_base_quat_yE"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest19avg_err_base_quat_yE"></span><span id="mim_estimation::test::EstimatorViconImuTest::avg_err_base_quat_y__double"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1a1e535382057dfd634d1e4390841ac6e9"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">avg_err_base_quat_y</span></span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest19avg_err_base_quat_zE">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest19avg_err_base_quat_zE"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest19avg_err_base_quat_zE"></span><span id="mim_estimation::test::EstimatorViconImuTest::avg_err_base_quat_z__double"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1afadf9bf4555804724c10c32412f358b1"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">avg_err_base_quat_z</span></span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest19max_err_base_quat_xE">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest19max_err_base_quat_xE"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest19max_err_base_quat_xE"></span><span id="mim_estimation::test::EstimatorViconImuTest::max_err_base_quat_x__double"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1a5096265a34bb4d9265fe32b94e17fac2"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">max_err_base_quat_x</span></span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest19max_err_base_quat_yE">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest19max_err_base_quat_yE"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest19max_err_base_quat_yE"></span><span id="mim_estimation::test::EstimatorViconImuTest::max_err_base_quat_y__double"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1a65ba8a4f4e0d5f1d65d17289f3556a33"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">max_err_base_quat_y</span></span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest19max_err_base_quat_zE">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest19max_err_base_quat_zE"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest19max_err_base_quat_zE"></span><span id="mim_estimation::test::EstimatorViconImuTest::max_err_base_quat_z__double"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1a376213d11c12b127107a2fc0bbe42e6e"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">max_err_base_quat_z</span></span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest19min_err_base_quat_xE">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest19min_err_base_quat_xE"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest19min_err_base_quat_xE"></span><span id="mim_estimation::test::EstimatorViconImuTest::min_err_base_quat_x__double"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1a92e2e197573eeb11356d1e4d5c6b056f"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">min_err_base_quat_x</span></span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest19min_err_base_quat_yE">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest19min_err_base_quat_yE"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest19min_err_base_quat_yE"></span><span id="mim_estimation::test::EstimatorViconImuTest::min_err_base_quat_y__double"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1ae67d705f5cbdb0cfd8c2c2b14305be86"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">min_err_base_quat_y</span></span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest19min_err_base_quat_zE">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest19min_err_base_quat_zE"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest19min_err_base_quat_zE"></span><span id="mim_estimation::test::EstimatorViconImuTest::min_err_base_quat_z__double"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1af02b1b780792e96138c685f2e2460ab6"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">min_err_base_quat_z</span></span></span><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest7config_E">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest7config_E"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest7config_E"></span><span id="mim_estimation::test::EstimatorViconImuTest::config___YAML::Node"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1a091699a43970e292f993a6c07ba0920e"></span><span class="n"><span class="pre">YAML</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Node</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">config_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation4test21EstimatorViconImuTest7config_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest11config_est_E">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest11config_est_E"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest11config_est_E"></span><span id="mim_estimation::test::EstimatorViconImuTest::config_est___YAML::Node"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1a997c93d5917c3cf25790830857431486"></span><span class="n"><span class="pre">YAML</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Node</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">config_est_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation4test21EstimatorViconImuTest11config_est_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest17update_frequency_E">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest17update_frequency_E"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest17update_frequency_E"></span><span id="mim_estimation::test::EstimatorViconImuTest::update_frequency___double"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1a5dda859c793963e9cf5aa0acecf2d9f4"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">update_frequency_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation4test21EstimatorViconImuTest17update_frequency_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest12data_reader_E">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest12data_reader_E"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest12data_reader_E"></span><span id="mim_estimation::test::EstimatorViconImuTest::data_reader___io_tools::DataReader"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1ae9736d8e52f13df3c8b14d8a8d1080e2"></span><a class="reference internal" href="data__collector_8hpp.html#_CPPv4N14mim_estimation8io_toolsE" title="mim_estimation::io_tools"><span class="n"><span class="pre">io_tools</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="../class/classmim__estimation_1_1io__tools_1_1_data_reader.html#_CPPv4N14mim_estimation8io_tools10DataReaderE" title="mim_estimation::io_tools::DataReader"><span class="n"><span class="pre">DataReader</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">data_reader_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation4test21EstimatorViconImuTest12data_reader_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest15data_collector_E">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest15data_collector_E"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest15data_collector_E"></span><span id="mim_estimation::test::EstimatorViconImuTest::data_collector___io_tools::NonRtDataCollector"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1a2231ed536246cff649ad3c92594c1e03"></span><a class="reference internal" href="data__collector_8hpp.html#_CPPv4N14mim_estimation8io_toolsE" title="mim_estimation::io_tools"><span class="n"><span class="pre">io_tools</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="../class/classmim__estimation_1_1io__tools_1_1_non_rt_data_collector.html#_CPPv4N14mim_estimation8io_tools18NonRtDataCollectorE" title="mim_estimation::io_tools::NonRtDataCollector"><span class="n"><span class="pre">NonRtDataCollector</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">data_collector_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation4test21EstimatorViconImuTest15data_collector_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest5time_E">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest5time_E"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest5time_E"></span><span id="mim_estimation::test::EstimatorViconImuTest::time___double"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1ac6335743e6281e32b1c973aba6f33323"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">time_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation4test21EstimatorViconImuTest5time_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest14gyroscope_ids_E">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest14gyroscope_ids_E"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest14gyroscope_ids_E"></span><span id="mim_estimation::test::EstimatorViconImuTest::gyroscope_ids___std::vector:i:"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1a942980783b641fa7bcda723968531485"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">gyroscope_ids_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation4test21EstimatorViconImuTest14gyroscope_ids_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest18accelerometer_ids_E">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest18accelerometer_ids_E"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest18accelerometer_ids_E"></span><span id="mim_estimation::test::EstimatorViconImuTest::accelerometer_ids___std::vector:i:"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1a1b90f8e44a9623409ea1f3c46dc94337"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">accelerometer_ids_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation4test21EstimatorViconImuTest18accelerometer_ids_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest20vicon_base_pose_ids_E">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest20vicon_base_pose_ids_E"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest20vicon_base_pose_ids_E"></span><span id="mim_estimation::test::EstimatorViconImuTest::vicon_base_pose_ids___std::vector:i:"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1a85e1c0e8d399f1fecbe0f813330bf128"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">vicon_base_pose_ids_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation4test21EstimatorViconImuTest20vicon_base_pose_ids_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest22vicon_is_new_frame_id_E">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest22vicon_is_new_frame_id_E"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest22vicon_is_new_frame_id_E"></span><span id="mim_estimation::test::EstimatorViconImuTest::vicon_is_new_frame_id___i"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1a4aeefab0a02179d52f8824ff91ead311"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">vicon_is_new_frame_id_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation4test21EstimatorViconImuTest22vicon_is_new_frame_id_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest16input_gyroscope_E">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest16input_gyroscope_E"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest16input_gyroscope_E"></span><span id="mim_estimation::test::EstimatorViconImuTest::input_gyroscope___Eigen::Vector3d"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1aacf51be6b1eaafd016089a908dfbf098"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">input_gyroscope_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation4test21EstimatorViconImuTest16input_gyroscope_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest20input_accelerometer_E">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest20input_accelerometer_E"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest20input_accelerometer_E"></span><span id="mim_estimation::test::EstimatorViconImuTest::input_accelerometer___Eigen::Vector3d"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1ad9565ea4b6d00e0eb45b1db91ad8bdd3"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">input_accelerometer_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation4test21EstimatorViconImuTest20input_accelerometer_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest22input_vicon_base_pose_E">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest22input_vicon_base_pose_E"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest22input_vicon_base_pose_E"></span><span id="mim_estimation::test::EstimatorViconImuTest::input_vicon_base_pose___Eigen::Matrix4d"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1ab9580306a8d563f03d1ce47ba4a971e5"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix4d</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">input_vicon_base_pose_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation4test21EstimatorViconImuTest22input_vicon_base_pose_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest22input_vicon_base_quat_E">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest22input_vicon_base_quat_E"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest22input_vicon_base_quat_E"></span><span id="mim_estimation::test::EstimatorViconImuTest::input_vicon_base_quat___Eigen::Quaterniond"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1a8f654906545bafd0f9695e7e9f38ea73"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Quaterniond</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">input_vicon_base_quat_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation4test21EstimatorViconImuTest22input_vicon_base_quat_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest25input_vicon_is_new_frame_E">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest25input_vicon_is_new_frame_E"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest25input_vicon_is_new_frame_E"></span><span id="mim_estimation::test::EstimatorViconImuTest::input_vicon_is_new_frame___b"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1a0a441bfa97de0f02725b44e5ff281c00"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">input_vicon_is_new_frame_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation4test21EstimatorViconImuTest25input_vicon_is_new_frame_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest20output_imu_position_E">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest20output_imu_position_E"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest20output_imu_position_E"></span><span id="mim_estimation::test::EstimatorViconImuTest::output_imu_position___Eigen::Vector3d"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1ab8cddde89ac2f700e589850ff9600259"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">output_imu_position_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation4test21EstimatorViconImuTest20output_imu_position_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest23output_imu_orientation_E">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest23output_imu_orientation_E"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest23output_imu_orientation_E"></span><span id="mim_estimation::test::EstimatorViconImuTest::output_imu_orientation___Eigen::Quaterniond"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1acd08297211a48d7f4964e096e671aaaf"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Quaterniond</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">output_imu_orientation_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation4test21EstimatorViconImuTest23output_imu_orientation_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest27output_imu_linear_velocity_E">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest27output_imu_linear_velocity_E"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest27output_imu_linear_velocity_E"></span><span id="mim_estimation::test::EstimatorViconImuTest::output_imu_linear_velocity___Eigen::Vector3d"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1aa1aa76c8557d8e1b8c023c6e72dfb66f"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">output_imu_linear_velocity_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation4test21EstimatorViconImuTest27output_imu_linear_velocity_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest27output_imu_angular_velocty_E">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest27output_imu_angular_velocty_E"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest27output_imu_angular_velocty_E"></span><span id="mim_estimation::test::EstimatorViconImuTest::output_imu_angular_velocty___Eigen::Vector3d"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1a568c59d4044a42e1b0152d03cbf263f6"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">output_imu_angular_velocty_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation4test21EstimatorViconImuTest27output_imu_angular_velocty_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest18output_accel_bias_E">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest18output_accel_bias_E"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest18output_accel_bias_E"></span><span id="mim_estimation::test::EstimatorViconImuTest::output_accel_bias___Eigen::Vector3d"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1aef094c9b80192ce2f03961fe92ae25de"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">output_accel_bias_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation4test21EstimatorViconImuTest18output_accel_bias_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest17output_gyro_bias_E">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest17output_gyro_bias_E"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest17output_gyro_bias_E"></span><span id="mim_estimation::test::EstimatorViconImuTest::output_gyro_bias___Eigen::Vector3d"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1a4c913aa41e22facc986486b9eed9f761"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">output_gyro_bias_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation4test21EstimatorViconImuTest17output_gyro_bias_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest21output_base_position_E">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest21output_base_position_E"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest21output_base_position_E"></span><span id="mim_estimation::test::EstimatorViconImuTest::output_base_position___Eigen::Vector3d"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1abb1f684e4fb3e9e576cfef10cbc594af"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">output_base_position_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation4test21EstimatorViconImuTest21output_base_position_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest24output_base_orientation_E">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest24output_base_orientation_E"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest24output_base_orientation_E"></span><span id="mim_estimation::test::EstimatorViconImuTest::output_base_orientation___Eigen::Quaterniond"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1ae391182e12ec3eaea93abc7728f2b83f"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Quaterniond</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">output_base_orientation_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation4test21EstimatorViconImuTest24output_base_orientation_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest28output_base_linear_velocity_E">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest28output_base_linear_velocity_E"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest28output_base_linear_velocity_E"></span><span id="mim_estimation::test::EstimatorViconImuTest::output_base_linear_velocity___Eigen::Vector3d"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1a564d7d2269c81a20e07841e7535f5f49"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">output_base_linear_velocity_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation4test21EstimatorViconImuTest28output_base_linear_velocity_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest29output_base_angular_velocity_E">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest29output_base_angular_velocity_E"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest29output_base_angular_velocity_E"></span><span id="mim_estimation::test::EstimatorViconImuTest::output_base_angular_velocity___Eigen::Vector3d"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1ad0715c1b198c6dd00509779312035920"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">output_base_angular_velocity_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation4test21EstimatorViconImuTest29output_base_angular_velocity_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest16error_base_pose_E">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest16error_base_pose_E"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest16error_base_pose_E"></span><span id="mim_estimation::test::EstimatorViconImuTest::error_base_pose___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1aa56ffb7c37adb282a121263ff5ba8411"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">error_base_pose_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation4test21EstimatorViconImuTest16error_base_pose_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest16error_base_quat_E">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest16error_base_quat_E"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest16error_base_quat_E"></span><span id="mim_estimation::test::EstimatorViconImuTest::error_base_quat___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1ac7fd6231fc0588d2e0a284b3739b372e"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">error_base_quat_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation4test21EstimatorViconImuTest16error_base_quat_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation4test21EstimatorViconImuTest10vicon_bse_E">
+<span id="_CPPv3N14mim_estimation4test21EstimatorViconImuTest10vicon_bse_E"></span><span id="_CPPv2N14mim_estimation4test21EstimatorViconImuTest10vicon_bse_E"></span><span id="mim_estimation::test::EstimatorViconImuTest::vicon_bse___std::unique_ptr:mim_estimation::EkfViconImu:"></span><span class="target" id="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test_1af5a0c9a103ecd6e082228a4c9b5aee1c"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unique_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="base__ekf__with__imu__kin_8cpp.html#_CPPv414mim_estimation" title="mim_estimation"><span class="n"><span class="pre">mim_estimation</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">EkfViconImu</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">vicon_bse_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation4test21EstimatorViconImuTest10vicon_bse_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ekf_8hxx.html" class="btn btn-neutral float-left" title="File ekf.hxx" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="end__effector__force__estimator_8cpp.html" class="btn btn-neutral float-right" title="File end_effector_force_estimator.cpp" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

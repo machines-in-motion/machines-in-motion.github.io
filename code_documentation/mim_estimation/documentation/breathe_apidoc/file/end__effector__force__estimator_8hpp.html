@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>File end_effector_force_estimator.hpp &mdash; mim_estimation 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="File robot_state_estimator.hpp" href="include_2mim__estimation_2robot__state__estimator_8hpp.html" />
+    <link rel="prev" title="File end_effector_force_estimator.cpp" href="end__effector__force__estimator_8cpp.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            mim_estimation
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">C++ API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../doxygen_index.html">C++ API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../classlist.html">Class list</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../filelist.html">File list</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="base__ekf__with__imu__kin_8cpp.html">File base_ekf_with_imu_kin.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="base__ekf__with__imu__kin_8hpp.html">File base_ekf_with_imu_kin.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="butterworth__filter_8hpp.html">File butterworth_filter.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="butterworth__filter_8hxx.html">File butterworth_filter.hxx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data__collector_8hpp.html">File data_collector.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data__reader_8hpp.html">File data_reader.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo__ekf__vicon__imu_8cpp.html">File demo_ekf_vicon_imu.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dg__python__module_8cpp.html">File dg_python_module.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ekf_8hpp.html">File ekf.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ekf_8hxx.html">File ekf.hxx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ekf__vicon__imu__simple_8hpp.html">File ekf_vicon_imu_simple.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="end__effector__force__estimator_8cpp.html">File end_effector_force_estimator.cpp</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">File end_effector_force_estimator.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="include_2mim__estimation_2robot__state__estimator_8hpp.html">File robot_state_estimator.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mim__estimation_8cpp.html">File mim_estimation.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="non__rt__data__collector_8hpp.html">File non_rt_data_collector.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robot__state__estimation_8cpp.html">File robot_state_estimation.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robot__state__estimation_8hpp.html">File robot_state_estimation.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="signal__utils_8cpp.html">File signal_utils.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="signal__utils_8hpp.html">File signal_utils.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simple__1d__ekf_8hpp.html">File simple_1d_ekf.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="srcdg_2robot__state__estimator_8cpp.html">File robot_state_estimator.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="srcdg_2robot__state__estimator_8hpp.html">File robot_state_estimator.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="srcpy_2robot__state__estimator_8cpp.html">File robot_state_estimator.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="test__ekf__vicon__imu_8cpp.html">File test_ekf_vicon_imu.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="test__extended__kalman__filter_8cpp.html">File test_extended_kalman_filter.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ukf_8hpp.html">File ukf.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ukf_8hxx.html">File ukf.hxx</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../doxygen_index_one_page.html">C++ API and example</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">mim_estimation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">mim_estimation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../doxygen_index.html">C++ API</a></li>
+          <li class="breadcrumb-item"><a href="../filelist.html">File list</a></li>
+      <li class="breadcrumb-item active">File end_effector_force_estimator.hpp</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/breathe_apidoc/file/end__effector__force__estimator_8hpp.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="file-end-effector-force-estimator-hpp">
+<h1>File end_effector_force_estimator.hpp<a class="headerlink" href="#file-end-effector-force-estimator-hpp" title="Permalink to this heading">¶</a></h1>
+<p>Computes the forces at the end-effector. </p>
+<p><dl>
+<dt class="sig sig-object cpp">
+<a class="reference internal" href="../../doxygen_index_one_page.html#license_1_license000009"><span class="std std-ref"><span class="pre">License:</span></span></a></dt>
+<dd><p>BSD 3-clause </p>
+</dd></dl>
+
+<dl class="simple">
+<dt><strong>Copyright</strong></dt><dd><p>Copyright (c) 2020, New York University and Max Planck Gesellschaft </p>
+</dd>
+</dl>
+</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv414mim_estimation">
+<span id="_CPPv314mim_estimation"></span><span id="_CPPv214mim_estimation"></span><span id="mim_estimation"></span><span class="target" id="namespacemim__estimation"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mim_estimation</span></span></span><br /></dt>
+<dd><dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation25EndEffectorForceEstimatorE">
+<span id="_CPPv3N14mim_estimation25EndEffectorForceEstimatorE"></span><span id="_CPPv2N14mim_estimation25EndEffectorForceEstimatorE"></span><span id="mim_estimation::EndEffectorForceEstimator"></span><span class="target" id="classmim__estimation_1_1_end_effector_force_estimator"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">EndEffectorForceEstimator</span></span></span><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;<a class="reference internal" href="../../doxygen_index_one_page.html#end__effector__force__estimator_8hpp"><span class="std std-ref">end_effector_force_estimator.hpp</span></a>&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation25EndEffectorForceEstimator16EndEffectorIdMapE">
+<span id="_CPPv3N14mim_estimation25EndEffectorForceEstimator16EndEffectorIdMapE"></span><span id="_CPPv2N14mim_estimation25EndEffectorForceEstimator16EndEffectorIdMapE"></span><span id="mim_estimation::EndEffectorForceEstimator::EndEffectorIdMap"></span><span class="target" id="classmim__estimation_1_1_end_effector_force_estimator_1acf6a67026a25024439eb77d9ec2a577d"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">pinocchio</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">FrameIndex</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">EndEffectorIdMap</span></span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation25EndEffectorForceEstimator11MatrixX3MapE">
+<span id="_CPPv3N14mim_estimation25EndEffectorForceEstimator11MatrixX3MapE"></span><span id="_CPPv2N14mim_estimation25EndEffectorForceEstimator11MatrixX3MapE"></span><span id="mim_estimation::EndEffectorForceEstimator::MatrixX3Map"></span><span class="target" id="classmim__estimation_1_1_end_effector_force_estimator_1a47c1de621832bc3dbed096a86c7d63c8"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">pinocchio</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">FrameIndex</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">MatrixX3</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">less</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">pinocchio</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">FrameIndex</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">aligned_allocator</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">pinocchio</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">FrameIndex</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">MatrixX3</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MatrixX3Map</span></span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation25EndEffectorForceEstimator11Matrix6xMapE">
+<span id="_CPPv3N14mim_estimation25EndEffectorForceEstimator11Matrix6xMapE"></span><span id="_CPPv2N14mim_estimation25EndEffectorForceEstimator11Matrix6xMapE"></span><span id="mim_estimation::EndEffectorForceEstimator::Matrix6xMap"></span><span class="target" id="classmim__estimation_1_1_end_effector_force_estimator_1a3aae1ff37142f565b509b293d680ca53"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">pinocchio</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">FrameIndex</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">pinocchio</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Data</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix6x</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">less</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">pinocchio</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">FrameIndex</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">aligned_allocator</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">pinocchio</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">FrameIndex</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">pinocchio</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Data</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix6x</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Matrix6xMap</span></span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation25EndEffectorForceEstimator19EndEffectorForceMapE">
+<span id="_CPPv3N14mim_estimation25EndEffectorForceEstimator19EndEffectorForceMapE"></span><span id="_CPPv2N14mim_estimation25EndEffectorForceEstimator19EndEffectorForceMapE"></span><span id="mim_estimation::EndEffectorForceEstimator::EndEffectorForceMap"></span><span class="target" id="classmim__estimation_1_1_end_effector_force_estimator_1aca3666a9d8bdcfc43b9a5c54abf23224"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">pinocchio</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">FrameIndex</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">6</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">less</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">pinocchio</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">FrameIndex</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">aligned_allocator</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">pinocchio</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">FrameIndex</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">6</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">EndEffectorForceMap</span></span></span><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation25EndEffectorForceEstimator25EndEffectorForceEstimatorEv">
+<span id="_CPPv3N14mim_estimation25EndEffectorForceEstimator25EndEffectorForceEstimatorEv"></span><span id="_CPPv2N14mim_estimation25EndEffectorForceEstimator25EndEffectorForceEstimatorEv"></span><span id="mim_estimation::EndEffectorForceEstimator::EndEffectorForceEstimator"></span><span class="target" id="classmim__estimation_1_1_end_effector_force_estimator_1a8fd20edab46658f00e58aacd79840141"></span><span class="sig-name descname"><span class="n"><span class="pre">EndEffectorForceEstimator</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Construct a new <a class="reference internal" href="../../doxygen_index_one_page.html#classmim__estimation_1_1_end_effector_force_estimator"><span class="std std-ref">EndEffectorForceEstimator</span></a> object. </p>
+<p>No memory allocation, <div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../../doxygen_index_one_page.html#classmim__estimation_1_1_end_effector_force_estimator_1a981a53d0c15fc3385e84d2d21b416022"><span class="std std-ref">initialize</span></a>. Use the default constructor for eigen and pinocchio objects. </p>
+</div>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation25EndEffectorForceEstimatorD0Ev">
+<span id="_CPPv3N14mim_estimation25EndEffectorForceEstimatorD0Ev"></span><span id="_CPPv2N14mim_estimation25EndEffectorForceEstimatorD0Ev"></span><span id="mim_estimation::EndEffectorForceEstimator::~EndEffectorForceEstimator"></span><span class="target" id="classmim__estimation_1_1_end_effector_force_estimator_1a45b92f0feaf2b85c80259de6285ffc23"></span><span class="sig-name descname"><span class="n"><span class="pre">~EndEffectorForceEstimator</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Destroy the <a class="reference internal" href="../../doxygen_index_one_page.html#classmim__estimation_1_1_end_effector_force_estimator"><span class="std std-ref">EndEffectorForceEstimator</span></a> object. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation25EndEffectorForceEstimator10initializeERKNSt6stringERKNSt6vectorINSt6stringEEE">
+<span id="_CPPv3N14mim_estimation25EndEffectorForceEstimator10initializeERKNSt6stringERKNSt6vectorINSt6stringEEE"></span><span id="_CPPv2N14mim_estimation25EndEffectorForceEstimator10initializeERKNSt6stringERKNSt6vectorINSt6stringEEE"></span><span id="mim_estimation::EndEffectorForceEstimator::initialize__ssCR.std::vector:ss:CR"></span><span class="target" id="classmim__estimation_1_1_end_effector_force_estimator_1a981a53d0c15fc3385e84d2d21b416022"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">initialize</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">urdf_path</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">frame_name</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation25EndEffectorForceEstimator17add_contact_frameERKNSt6stringE">
+<span id="_CPPv3N14mim_estimation25EndEffectorForceEstimator17add_contact_frameERKNSt6stringE"></span><span id="_CPPv2N14mim_estimation25EndEffectorForceEstimator17add_contact_frameERKNSt6stringE"></span><span id="mim_estimation::EndEffectorForceEstimator::add_contact_frame__ssCR"></span><span class="target" id="classmim__estimation_1_1_end_effector_force_estimator_1adfda2234adab6520b3ccd2b0e446e0fe"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">add_contact_frame</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">frame_name</span></span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation25EndEffectorForceEstimator17add_contact_frameERKNSt6vectorINSt6stringEEE">
+<span id="_CPPv3N14mim_estimation25EndEffectorForceEstimator17add_contact_frameERKNSt6vectorINSt6stringEEE"></span><span id="_CPPv2N14mim_estimation25EndEffectorForceEstimator17add_contact_frameERKNSt6vectorINSt6stringEEE"></span><span id="mim_estimation::EndEffectorForceEstimator::add_contact_frame__std::vector:ss:CR"></span><span class="target" id="classmim__estimation_1_1_end_effector_force_estimator_1a3373087c33713214568bdb3cab2012a0"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">add_contact_frame</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">frame_names</span></span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation25EndEffectorForceEstimator3runERKN5Eigen8VectorXdERKN5Eigen8VectorXdE">
+<span id="_CPPv3N14mim_estimation25EndEffectorForceEstimator3runERKN5Eigen8VectorXdERKN5Eigen8VectorXdE"></span><span id="_CPPv2N14mim_estimation25EndEffectorForceEstimator3runERKN5Eigen8VectorXdERKN5Eigen8VectorXdE"></span><span id="mim_estimation::EndEffectorForceEstimator::run__Eigen::VectorXdCR.Eigen::VectorXdCR"></span><span class="target" id="classmim__estimation_1_1_end_effector_force_estimator_1a2e7f7737fe7fef29b6509914ae13e9d5"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">run</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">joint_positions</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">joint_torques</span></span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation25EndEffectorForceEstimator9get_forceERKNSt6stringE">
+<span id="_CPPv3N14mim_estimation25EndEffectorForceEstimator9get_forceERKNSt6stringE"></span><span id="_CPPv2N14mim_estimation25EndEffectorForceEstimator9get_forceERKNSt6stringE"></span><span id="mim_estimation::EndEffectorForceEstimator::get_force__ssCR"></span><span class="target" id="classmim__estimation_1_1_end_effector_force_estimator_1a8c6c3508bea9db2e92340d1acbd8b3b1"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">6</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">get_force</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">frame_name</span></span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation25EndEffectorForceEstimator9to_stringEv">
+<span id="_CPPv3N14mim_estimation25EndEffectorForceEstimator9to_stringEv"></span><span id="_CPPv2N14mim_estimation25EndEffectorForceEstimator9to_stringEv"></span><span id="mim_estimation::EndEffectorForceEstimator::to_string"></span><span class="target" id="classmim__estimation_1_1_end_effector_force_estimator_1a2a2584b7ad97515145bfa50ee1a9e936"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">to_string</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp">
+<span class="target" id="classmim__estimation_1_1_end_effector_force_estimator_1ab8bc5085f12b80f1eaedde414f2041e5"></span><span class="sig-name descname"><span class="pre">EIGEN_MAKE_ALIGNED_OPERATOR_NEW</span> <span class="pre">typedef</span> <span class="pre">Eigen::Matrix&lt;</span> <span class="pre">double,</span> <span class="pre">Eigen::Dynamic,</span> <span class="pre">3</span> <span class="pre">&gt;</span> <span class="pre">MatrixX3</span></span></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation25EndEffectorForceEstimator18contact_jacobians_E">
+<span id="_CPPv3N14mim_estimation25EndEffectorForceEstimator18contact_jacobians_E"></span><span id="_CPPv2N14mim_estimation25EndEffectorForceEstimator18contact_jacobians_E"></span><span id="mim_estimation::EndEffectorForceEstimator::contact_jacobians___Matrix6xMap"></span><span class="target" id="classmim__estimation_1_1_end_effector_force_estimator_1a82426e4272708cdfe0775df0f725db50"></span><a class="reference internal" href="../class/classmim__estimation_1_1_end_effector_force_estimator.html#_CPPv4N14mim_estimation25EndEffectorForceEstimator11Matrix6xMapE" title="mim_estimation::EndEffectorForceEstimator::Matrix6xMap"><span class="n"><span class="pre">Matrix6xMap</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">contact_jacobians_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation25EndEffectorForceEstimator18contact_jacobians_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Contact Jacobians associated to a robot frame. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation25EndEffectorForceEstimator28contact_jacobians_transpose_E">
+<span id="_CPPv3N14mim_estimation25EndEffectorForceEstimator28contact_jacobians_transpose_E"></span><span id="_CPPv2N14mim_estimation25EndEffectorForceEstimator28contact_jacobians_transpose_E"></span><span id="mim_estimation::EndEffectorForceEstimator::contact_jacobians_transpose___MatrixX3Map"></span><span class="target" id="classmim__estimation_1_1_end_effector_force_estimator_1ac88a35c31c03ad47a6c46528cad7668e"></span><a class="reference internal" href="../class/classmim__estimation_1_1_end_effector_force_estimator.html#_CPPv4N14mim_estimation25EndEffectorForceEstimator11MatrixX3MapE" title="mim_estimation::EndEffectorForceEstimator::MatrixX3Map"><span class="n"><span class="pre">MatrixX3Map</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">contact_jacobians_transpose_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation25EndEffectorForceEstimator28contact_jacobians_transpose_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Transpose of the contact Jacobians associated to a robot frame. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation25EndEffectorForceEstimator20end_effector_forces_E">
+<span id="_CPPv3N14mim_estimation25EndEffectorForceEstimator20end_effector_forces_E"></span><span id="_CPPv2N14mim_estimation25EndEffectorForceEstimator20end_effector_forces_E"></span><span id="mim_estimation::EndEffectorForceEstimator::end_effector_forces___EndEffectorForceMap"></span><span class="target" id="classmim__estimation_1_1_end_effector_force_estimator_1ac1b3305773e1a72be34a17d0bc1733af"></span><a class="reference internal" href="../class/classmim__estimation_1_1_end_effector_force_estimator.html#_CPPv4N14mim_estimation25EndEffectorForceEstimator19EndEffectorForceMapE" title="mim_estimation::EndEffectorForceEstimator::EndEffectorForceMap"><span class="n"><span class="pre">EndEffectorForceMap</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">end_effector_forces_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation25EndEffectorForceEstimator20end_effector_forces_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Forces applied by the environment at the end-effector [N]. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation25EndEffectorForceEstimator20end_effector_id_map_E">
+<span id="_CPPv3N14mim_estimation25EndEffectorForceEstimator20end_effector_id_map_E"></span><span id="_CPPv2N14mim_estimation25EndEffectorForceEstimator20end_effector_id_map_E"></span><span id="mim_estimation::EndEffectorForceEstimator::end_effector_id_map___EndEffectorIdMap"></span><span class="target" id="classmim__estimation_1_1_end_effector_force_estimator_1ab9f011a4f81d5b46bec595fc0bb76fd3"></span><a class="reference internal" href="../class/classmim__estimation_1_1_end_effector_force_estimator.html#_CPPv4N14mim_estimation25EndEffectorForceEstimator16EndEffectorIdMapE" title="mim_estimation::EndEffectorForceEstimator::EndEffectorIdMap"><span class="n"><span class="pre">EndEffectorIdMap</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">end_effector_id_map_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation25EndEffectorForceEstimator20end_effector_id_map_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Map from model frame name to frame id. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation25EndEffectorForceEstimator12robot_model_E">
+<span id="_CPPv3N14mim_estimation25EndEffectorForceEstimator12robot_model_E"></span><span id="_CPPv2N14mim_estimation25EndEffectorForceEstimator12robot_model_E"></span><span id="mim_estimation::EndEffectorForceEstimator::robot_model___pinocchio::Model"></span><span class="target" id="classmim__estimation_1_1_end_effector_force_estimator_1ac371c069e4a0310ff3d2abe575f039bb"></span><span class="n"><span class="pre">pinocchio</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Model</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">robot_model_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation25EndEffectorForceEstimator12robot_model_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Rigid body model of the robot, constructed from a urdf file. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation25EndEffectorForceEstimator11robot_data_E">
+<span id="_CPPv3N14mim_estimation25EndEffectorForceEstimator11robot_data_E"></span><span id="_CPPv2N14mim_estimation25EndEffectorForceEstimator11robot_data_E"></span><span id="mim_estimation::EndEffectorForceEstimator::robot_data___pinocchio::Data"></span><span class="target" id="classmim__estimation_1_1_end_effector_force_estimator_1a47ba431eae0ee9f36d36167de6974b15"></span><span class="n"><span class="pre">pinocchio</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Data</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">robot_data_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation25EndEffectorForceEstimator11robot_data_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Cache of the algorithm performed on the robot model. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation25EndEffectorForceEstimator2q_E">
+<span id="_CPPv3N14mim_estimation25EndEffectorForceEstimator2q_E"></span><span id="_CPPv2N14mim_estimation25EndEffectorForceEstimator2q_E"></span><span id="mim_estimation::EndEffectorForceEstimator::q___Eigen::VectorXd"></span><span class="target" id="classmim__estimation_1_1_end_effector_force_estimator_1af3b047def356b9b9c0c04abffaee96e0"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">q_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation25EndEffectorForceEstimator2q_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Internal robot configuration to perform the rigid body algorithms. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation25EndEffectorForceEstimator7solver_E">
+<span id="_CPPv3N14mim_estimation25EndEffectorForceEstimator7solver_E"></span><span id="_CPPv2N14mim_estimation25EndEffectorForceEstimator7solver_E"></span><span id="mim_estimation::EndEffectorForceEstimator::solver___Eigen::ColPivHouseholderQR:MatrixX3:"></span><span class="target" id="classmim__estimation_1_1_end_effector_force_estimator_1aa41dd94a1d6a692536315f2adfd133cc"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ColPivHouseholderQR</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">MatrixX3</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">solver_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation25EndEffectorForceEstimator7solver_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Linear solver for the equation $f A x = B $f. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation25EndEffectorForceEstimator9nb_joint_E">
+<span id="_CPPv3N14mim_estimation25EndEffectorForceEstimator9nb_joint_E"></span><span id="_CPPv2N14mim_estimation25EndEffectorForceEstimator9nb_joint_E"></span><span id="mim_estimation::EndEffectorForceEstimator::nb_joint___i"></span><span class="target" id="classmim__estimation_1_1_end_effector_force_estimator_1ae5286f1747023c344b8e23b0811ccc5d"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">nb_joint_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation25EndEffectorForceEstimator9nb_joint_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Number of joint Dof. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="end__effector__force__estimator_8cpp.html" class="btn btn-neutral float-left" title="File end_effector_force_estimator.cpp" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="include_2mim__estimation_2robot__state__estimator_8hpp.html" class="btn btn-neutral float-right" title="File robot_state_estimator.hpp" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

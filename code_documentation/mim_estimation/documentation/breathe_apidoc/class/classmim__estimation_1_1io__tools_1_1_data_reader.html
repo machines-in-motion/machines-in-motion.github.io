@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class mim_estimation::io_tools::DataReader &mdash; mim_estimation 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Class mim_estimation::io_tools::NonRtDataCollector" href="classmim__estimation_1_1io__tools_1_1_non_rt_data_collector.html" />
+    <link rel="prev" title="Class mim_estimation::io_tools::DataCollector" href="classmim__estimation_1_1io__tools_1_1_data_collector.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            mim_estimation
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">C++ API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../doxygen_index.html">C++ API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../classlist.html">Class list</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="class_estimator_tests.html">Class EstimatorTests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_simple_e_k_f.html">Class SimpleEKF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_simple_e_k_f_measure.html">Class SimpleEKFMeasure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_simple_e_k_f_state.html">Class SimpleEKFState</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_test_e_k_f.html">Class TestEKF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classmim__estimation_1_1_base_ekf_with_imu_kin.html">Class mim_estimation::BaseEkfWithImuKin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classmim__estimation_1_1_end_effector_force_estimator.html">Class mim_estimation::EndEffectorForceEstimator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classmim__estimation_1_1_robot_state_estimator.html">Class mim_estimation::RobotStateEstimator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classmim__estimation_1_1dynamic__graph_1_1_robot_state_estimator.html">Class mim_estimation::dynamic_graph::RobotStateEstimator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classmim__estimation_1_1io__tools_1_1_data_collector.html">Class mim_estimation::io_tools::DataCollector</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Class mim_estimation::io_tools::DataReader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classmim__estimation_1_1io__tools_1_1_non_rt_data_collector.html">Class mim_estimation::io_tools::NonRtDataCollector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classmim__estimation_1_1standard__filters_1_1_butterworth_filter.html">Class mim_estimation::standard_filters::ButterworthFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classmim__estimation_1_1standard__filters_1_1_butterworth_filter_3_01_eigen_1_1_matrix_3_01___scf3da10ce4e8db60c2e0c0d3cf5044b03.html">Class mim_estimation::standard_filters::ButterworthFilter&lt; Eigen::Matrix&lt; _Scalar, _Rows, 1, Eigen::ColMajor, _Rows, 1 &gt;, _Order &gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classmim__estimation_1_1standard__filters_1_1_e_k_f.html">Class mim_estimation::standard_filters::EKF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classmim__estimation_1_1standard__filters_1_1_u_k_f.html">Class mim_estimation::standard_filters::UKF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test.html">Class mim_estimation::test::EstimatorViconImuTest</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../filelist.html">File list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../doxygen_index_one_page.html">C++ API and example</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">mim_estimation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">mim_estimation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../doxygen_index.html">C++ API</a></li>
+          <li class="breadcrumb-item"><a href="../classlist.html">Class list</a></li>
+      <li class="breadcrumb-item active">Class mim_estimation::io_tools::DataReader</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/breathe_apidoc/class/classmim__estimation_1_1io__tools_1_1_data_reader.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="class-mim-estimation-io-tools-datareader">
+<h1>Class mim_estimation::io_tools::DataReader<a class="headerlink" href="#class-mim-estimation-io-tools-datareader" title="Permalink to this heading">¶</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools10DataReaderE">
+<span id="_CPPv3N14mim_estimation8io_tools10DataReaderE"></span><span id="_CPPv2N14mim_estimation8io_tools10DataReaderE"></span><span id="mim_estimation::io_tools::DataReader"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_data_reader"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DataReader</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation8io_tools10DataReaderE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools10DataReader10DataReaderEv">
+<span id="_CPPv3N14mim_estimation8io_tools10DataReader10DataReaderEv"></span><span id="_CPPv2N14mim_estimation8io_tools10DataReader10DataReaderEv"></span><span id="mim_estimation::io_tools::DataReader::DataReader"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_data_reader_1a3dc38095591bd8e2aba3d82e13b4a5c7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DataReader</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14mim_estimation8io_tools10DataReader10DataReaderEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools10DataReaderD0Ev">
+<span id="_CPPv3N14mim_estimation8io_tools10DataReaderD0Ev"></span><span id="_CPPv2N14mim_estimation8io_tools10DataReaderD0Ev"></span><span id="mim_estimation::io_tools::DataReader::~DataReader"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_data_reader_1a5474a75c5dc9fee22ad6ef417baad0d6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~DataReader</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14mim_estimation8io_tools10DataReaderD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools10DataReader4readERKNSt6stringE">
+<span id="_CPPv3N14mim_estimation8io_tools10DataReader4readERKNSt6stringE"></span><span id="_CPPv2N14mim_estimation8io_tools10DataReader4readERKNSt6stringE"></span><span id="mim_estimation::io_tools::DataReader::read__ssCR"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_data_reader_1a9a8968e91f9b95e8a978bbf21ff88271"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">read</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fname</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14mim_estimation8io_tools10DataReader4readERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>read, reads a clmcplot file and fills the internal data structure. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fname</strong> – name of the d-file to read. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools10DataReader8getIndexERKNSt6stringE">
+<span id="_CPPv3N14mim_estimation8io_tools10DataReader8getIndexERKNSt6stringE"></span><span id="_CPPv2N14mim_estimation8io_tools10DataReader8getIndexERKNSt6stringE"></span><span id="mim_estimation::io_tools::DataReader::getIndex__ssCR"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_data_reader_1a2c9a534e3ba5526b0d20e2df4ca2f4cd"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getIndex</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">stream_name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14mim_estimation8io_tools10DataReader8getIndexERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>findIndex, find the column index corresponding to the field name. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> – name of the field. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the column index corresponding to the field name. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools10DataReader10getIndexesERKNSt6vectorINSt6stringEEERNSt6vectorIiEE">
+<span id="_CPPv3N14mim_estimation8io_tools10DataReader10getIndexesERKNSt6vectorINSt6stringEEERNSt6vectorIiEE"></span><span id="_CPPv2N14mim_estimation8io_tools10DataReader10getIndexesERKNSt6vectorINSt6stringEEERNSt6vectorIiEE"></span><span id="mim_estimation::io_tools::DataReader::getIndexes__std::vector:ss:CR.std::vector:i:R"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_data_reader_1a6e246e39da8f7c6ec7b6dd9a652b804e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getIndexes</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">stream_names</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">indexes</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14mim_estimation8io_tools10DataReader10getIndexesERKNSt6vectorINSt6stringEEERNSt6vectorIiEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>getIndexes:, find stream column indexes corresponding to the names. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>names</strong> – list of the stream name.</p></li>
+<li><p><strong>indexes</strong> – the output list of indexes. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools10DataReader8fillPoseEiRKNSt6vectorIiEERN5Eigen8Vector3dERN5Eigen11QuaterniondE">
+<span id="_CPPv3N14mim_estimation8io_tools10DataReader8fillPoseEiRKNSt6vectorIiEERN5Eigen8Vector3dERN5Eigen11QuaterniondE"></span><span id="_CPPv2N14mim_estimation8io_tools10DataReader8fillPoseEiRKNSt6vectorIiEERN5Eigen8Vector3dERN5Eigen11QuaterniondE"></span><span id="mim_estimation::io_tools::DataReader::fillPose__i.std::vector:i:CR.Eigen::Vector3dR.Eigen::QuaterniondR"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_data_reader_1a1c5fdc141c9dfd38ad60f5c0c2130355"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fillPose</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">row</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">indexes</span></span>, <span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">pose</span></span>, <span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Quaterniond</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">orientation</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14mim_estimation8io_tools10DataReader8fillPoseEiRKNSt6vectorIiEERN5Eigen8Vector3dERN5Eigen11QuaterniondE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>fillPose, fill an existing pose object with the data. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>row</strong> – row index homogenous to time/sampling_period. </p></li>
+<li><p><strong>indexes</strong> – the indexes of the data streams to copy in order: [x, y, z, qw, qx, qy, qz]. </p></li>
+<li><p><strong>pose</strong> – the object to fill. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools10DataReader10fillVectorEiRKNSt6vectorIiEEN5Eigen3RefIN5Eigen8VectorXdEEE">
+<span id="_CPPv3N14mim_estimation8io_tools10DataReader10fillVectorEiRKNSt6vectorIiEEN5Eigen3RefIN5Eigen8VectorXdEEE"></span><span id="_CPPv2N14mim_estimation8io_tools10DataReader10fillVectorEiRKNSt6vectorIiEEN5Eigen3RefIN5Eigen8VectorXdEEE"></span><span id="mim_estimation::io_tools::DataReader::fillVector__i.std::vector:i:CR.Eigen::Ref:Eigen::VectorXd:"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_data_reader_1af9834527001ef0ef5d355d3fd4242076"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fillVector</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">row</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">indexes</span></span>, <span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Ref</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">vec</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14mim_estimation8io_tools10DataReader10fillVectorEiRKNSt6vectorIiEEN5Eigen3RefIN5Eigen8VectorXdEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>fillVector, fill an existing vector from the data </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>row</strong> – row index homogenous to time/sampling_period. </p></li>
+<li><p><strong>indexes</strong> – the indexes of the data streams to copy. </p></li>
+<li><p><strong>vec</strong> – the vector with the correct dimension that is filled </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools10DataReader9getNbRowsEv">
+<span id="_CPPv3N14mim_estimation8io_tools10DataReader9getNbRowsEv"></span><span id="_CPPv2N14mim_estimation8io_tools10DataReader9getNbRowsEv"></span><span id="mim_estimation::io_tools::DataReader::getNbRows"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_data_reader_1ae29884211dc6e5427b54387f210f50d7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNbRows</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14mim_estimation8io_tools10DataReader9getNbRowsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>getNbRows, get the number of rows equivalent to the number of time step saved in the d-file </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the number of time step saved </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools10DataReader8getValueEii">
+<span id="_CPPv3N14mim_estimation8io_tools10DataReader8getValueEii"></span><span id="_CPPv2N14mim_estimation8io_tools10DataReader8getValueEii"></span><span id="mim_estimation::io_tools::DataReader::getValue__i.i"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_data_reader_1ad3966320e526c5f852ee79c308ecbc9d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getValue</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">row</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">index</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14mim_estimation8io_tools10DataReader8getValueEii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>getValue, get the value of a specific stream at a specific time </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>row</strong> – row index homogenous to time/sampling_period. </p></li>
+<li><p><strong>index</strong> – the index of the data streams to copy from. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools10DataReader12getFrequencyEv">
+<span id="_CPPv3N14mim_estimation8io_tools10DataReader12getFrequencyEv"></span><span id="_CPPv2N14mim_estimation8io_tools10DataReader12getFrequencyEv"></span><span id="mim_estimation::io_tools::DataReader::getFrequency"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_data_reader_1afc1a475b0cbdef10144631575d19c257"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getFrequency</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14mim_estimation8io_tools10DataReader12getFrequencyEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>getFrequence, get the getFrequence of the read data </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the frequence </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="classmim__estimation_1_1io__tools_1_1_data_collector.html" class="btn btn-neutral float-left" title="Class mim_estimation::io_tools::DataCollector" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="classmim__estimation_1_1io__tools_1_1_non_rt_data_collector.html" class="btn btn-neutral float-right" title="Class mim_estimation::io_tools::NonRtDataCollector" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

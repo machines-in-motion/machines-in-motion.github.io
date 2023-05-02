@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>File base_ekf_with_imu_kin.hpp &mdash; mim_estimation 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="File butterworth_filter.hpp" href="butterworth__filter_8hpp.html" />
+    <link rel="prev" title="File base_ekf_with_imu_kin.cpp" href="base__ekf__with__imu__kin_8cpp.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            mim_estimation
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">C++ API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../doxygen_index.html">C++ API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../classlist.html">Class list</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../filelist.html">File list</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="base__ekf__with__imu__kin_8cpp.html">File base_ekf_with_imu_kin.cpp</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">File base_ekf_with_imu_kin.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="butterworth__filter_8hpp.html">File butterworth_filter.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="butterworth__filter_8hxx.html">File butterworth_filter.hxx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data__collector_8hpp.html">File data_collector.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data__reader_8hpp.html">File data_reader.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo__ekf__vicon__imu_8cpp.html">File demo_ekf_vicon_imu.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dg__python__module_8cpp.html">File dg_python_module.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ekf_8hpp.html">File ekf.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ekf_8hxx.html">File ekf.hxx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ekf__vicon__imu__simple_8hpp.html">File ekf_vicon_imu_simple.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="end__effector__force__estimator_8cpp.html">File end_effector_force_estimator.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="end__effector__force__estimator_8hpp.html">File end_effector_force_estimator.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="include_2mim__estimation_2robot__state__estimator_8hpp.html">File robot_state_estimator.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mim__estimation_8cpp.html">File mim_estimation.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="non__rt__data__collector_8hpp.html">File non_rt_data_collector.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robot__state__estimation_8cpp.html">File robot_state_estimation.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robot__state__estimation_8hpp.html">File robot_state_estimation.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="signal__utils_8cpp.html">File signal_utils.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="signal__utils_8hpp.html">File signal_utils.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simple__1d__ekf_8hpp.html">File simple_1d_ekf.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="srcdg_2robot__state__estimator_8cpp.html">File robot_state_estimator.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="srcdg_2robot__state__estimator_8hpp.html">File robot_state_estimator.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="srcpy_2robot__state__estimator_8cpp.html">File robot_state_estimator.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="test__ekf__vicon__imu_8cpp.html">File test_ekf_vicon_imu.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="test__extended__kalman__filter_8cpp.html">File test_extended_kalman_filter.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ukf_8hpp.html">File ukf.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ukf_8hxx.html">File ukf.hxx</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../doxygen_index_one_page.html">C++ API and example</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">mim_estimation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">mim_estimation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../doxygen_index.html">C++ API</a></li>
+          <li class="breadcrumb-item"><a href="../filelist.html">File list</a></li>
+      <li class="breadcrumb-item active">File base_ekf_with_imu_kin.hpp</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/breathe_apidoc/file/base__ekf__with__imu__kin_8hpp.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="file-base-ekf-with-imu-kin-hpp">
+<h1>File base_ekf_with_imu_kin.hpp<a class="headerlink" href="#file-base-ekf-with-imu-kin-hpp" title="Permalink to this heading">¶</a></h1>
+<p>Defines a class implementing a base state estimator using the imu and the kinematics information. </p>
+<p><dl>
+<dt class="sig sig-object cpp">
+<a class="reference internal" href="../../doxygen_index_one_page.html#license_1_license000008"><span class="std std-ref"><span class="pre">License:</span></span></a></dt>
+<dd><p>BSD 3-clause </p>
+</dd></dl>
+
+<dl class="simple">
+<dt><strong>Copyright</strong></dt><dd><p>Copyright (c) 2021, New York University and Max Planck Gesellschaft </p>
+</dd>
+</dl>
+</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv414mim_estimation">
+<span id="_CPPv314mim_estimation"></span><span id="_CPPv214mim_estimation"></span><span id="mim_estimation"></span><span class="target" id="namespacemim__estimation"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mim_estimation</span></span></span><br /></dt>
+<dd><dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKinE">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKinE"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKinE"></span><span id="mim_estimation::BaseEkfWithImuKin"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">BaseEkfWithImuKin</span></span></span><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;<a class="reference internal" href="../../doxygen_index_one_page.html#base__ekf__with__imu__kin_8hpp"><span class="std std-ref">base_ekf_with_imu_kin.hpp</span></a>&gt;</em></div>
+<p>Extended Kalman Filter implementation for base state estimation using the imu and the kinematics information. </p>
+<p>Details:</p>
+<p><dl>
+<dt class="sig sig-object cpp">
+<a class="reference internal" href="../../doxygen_index_one_page.html#todo_1_todo000002"><span class="std std-ref"><span class="pre">Todo:</span></span></a></dt>
+<dd><p>explain here the math around the EKF</p>
+</dd></dl>
+
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin17BaseEkfWithImuKinEv">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin17BaseEkfWithImuKinEv"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin17BaseEkfWithImuKinEv"></span><span id="mim_estimation::BaseEkfWithImuKin::BaseEkfWithImuKin"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1a47022ea647a35c651345abec44989e0a"></span><span class="sig-name descname"><span class="n"><span class="pre">BaseEkfWithImuKin</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Construct a new Base Ekf With Imu and Kinematics object. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKinD0Ev">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKinD0Ev"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKinD0Ev"></span><span id="mim_estimation::BaseEkfWithImuKin::~BaseEkfWithImuKin"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1a1ee20ad31d8971fea372ee4c466431ea"></span><span class="sig-name descname"><span class="n"><span class="pre">~BaseEkfWithImuKin</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Destroy the Base Ekf With Imu Kin object. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin10initializeERK25BaseEkfWithImuKinSettings">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin10initializeERK25BaseEkfWithImuKinSettings"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin10initializeERK25BaseEkfWithImuKinSettings"></span><span id="mim_estimation::BaseEkfWithImuKin::initialize__BaseEkfWithImuKinSettingsCR"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1aaa4494a027bd60815b6bf86db5c9886a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">initialize</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N14mim_estimation25BaseEkfWithImuKinSettingsE" title="mim_estimation::BaseEkfWithImuKinSettings"><span class="n"><span class="pre">BaseEkfWithImuKinSettings</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">settings</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Get the EKF settings and initialize the filter from them. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>settings</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin17set_initial_stateEN5Eigen3RefIKN5Eigen8Vector3dEEERKN5Eigen11QuaterniondEN5Eigen3RefIKN5Eigen8Vector3dEEEN5Eigen3RefIKN5Eigen8Vector3dEEE">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin17set_initial_stateEN5Eigen3RefIKN5Eigen8Vector3dEEERKN5Eigen11QuaterniondEN5Eigen3RefIKN5Eigen8Vector3dEEEN5Eigen3RefIKN5Eigen8Vector3dEEE"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin17set_initial_stateEN5Eigen3RefIKN5Eigen8Vector3dEEERKN5Eigen11QuaterniondEN5Eigen3RefIKN5Eigen8Vector3dEEEN5Eigen3RefIKN5Eigen8Vector3dEEE"></span><span id="mim_estimation::BaseEkfWithImuKin::set_initial_state__Eigen::Ref:Eigen::Vector3dC:.Eigen::QuaterniondCR.Eigen::Ref:Eigen::Vector3dC:.Eigen::Ref:Eigen::Vector3dC:"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1a3d13c9a58da4de6314c69c360efc0ff8"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_initial_state</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Ref</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">base_position</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Quaterniond</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">base_attitude</span></span>, <span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Ref</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">base_linear_velocity</span></span>, <span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Ref</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">base_angular_velocity</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set initial state. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>base_position</strong> – Base position with respect to the world frame. </p></li>
+<li><p><strong>base_attitude</strong> – Base orientation with respect to the world frame. </p></li>
+<li><p><strong>base_linear_velocity</strong> – Base linear velocity with respect to the base frame. </p></li>
+<li><p><strong>base_angular_velocity</strong> – Base angular velocity with respect to the base frame. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin17set_initial_stateEN5Eigen3RefIKN5Eigen6MatrixIdXL7EEXL1EEEEEEN5Eigen3RefIKN5Eigen6MatrixIdXL6EEXL1EEEEEE">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin17set_initial_stateEN5Eigen3RefIKN5Eigen6MatrixIdXL7EEXL1EEEEEEN5Eigen3RefIKN5Eigen6MatrixIdXL6EEXL1EEEEEE"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin17set_initial_stateEN5Eigen3RefIKN5Eigen6MatrixIdX7EX1EEEEEN5Eigen3RefIKN5Eigen6MatrixIdX6EX1EEEEE"></span><span id="mim_estimation::BaseEkfWithImuKin::set_initial_state__Eigen::Ref:Eigen::Matrix:double.7.1:C:.Eigen::Ref:Eigen::Matrix:double.6.1:C:"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1a61b6348f4061774ce3c05e5b9ef8dc38"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_initial_state</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Ref</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">7</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">base_se3_position</span></span>, <span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Ref</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">6</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">base_se3_velocity</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set initial state. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>base_se3_position</strong> – [XYZ Quaternion] SE3 representation of the base position with respect to the world frame. </p></li>
+<li><p><strong>base_se3_velocity</strong> – [Linear Angular] base velocity in the base frame. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin13update_filterERKNSt6vectorIbEEN5Eigen3RefIKN5Eigen8Vector3dEEEN5Eigen3RefIKN5Eigen8Vector3dEEEN5Eigen3RefIKN5Eigen8VectorXdEEEN5Eigen3RefIKN5Eigen8VectorXdEEE">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin13update_filterERKNSt6vectorIbEEN5Eigen3RefIKN5Eigen8Vector3dEEEN5Eigen3RefIKN5Eigen8Vector3dEEEN5Eigen3RefIKN5Eigen8VectorXdEEEN5Eigen3RefIKN5Eigen8VectorXdEEE"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin13update_filterERKNSt6vectorIbEEN5Eigen3RefIKN5Eigen8Vector3dEEEN5Eigen3RefIKN5Eigen8Vector3dEEEN5Eigen3RefIKN5Eigen8VectorXdEEEN5Eigen3RefIKN5Eigen8VectorXdEEE"></span><span id="mim_estimation::BaseEkfWithImuKin::update_filter__std::vector:b:CR.Eigen::Ref:Eigen::Vector3dC:.Eigen::Ref:Eigen::Vector3dC:.Eigen::Ref:Eigen::VectorXdC:.Eigen::Ref:Eigen::VectorXdC:"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1acfcc1cfe3201a8e6bc4ef9b7cb2cf5c1"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">update_filter</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">bool</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">contact_schedule</span></span>, <span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Ref</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">imu_accelerometer</span></span>, <span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Ref</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">imu_gyroscope</span></span>, <span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Ref</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">joint_position</span></span>, <span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Ref</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">joint_velocity</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Feed in the sensor raw data from the robot and update the filter output. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>contact_schedule</strong> – vector of boolean, if one boolean is true it means that the corresponding end-effector is in contact. </p></li>
+<li><p><strong>imu_accelerometer</strong> – imu raw accelerometer data. </p></li>
+<li><p><strong>imu_gyroscope</strong> – imu raw gyroscope data. </p></li>
+<li><p><strong>joint_position</strong> – joint position data (in pinocchio ordering). </p></li>
+<li><p><strong>joint_velocity</strong> – joint velocity data (in pinocchio ordering). </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin17get_filter_outputEN5Eigen3RefIN5Eigen8VectorXdEEEN5Eigen3RefIN5Eigen8VectorXdEEE">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin17get_filter_outputEN5Eigen3RefIN5Eigen8VectorXdEEEN5Eigen3RefIN5Eigen8VectorXdEEE"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin17get_filter_outputEN5Eigen3RefIN5Eigen8VectorXdEEEN5Eigen3RefIN5Eigen8VectorXdEEE"></span><span id="mim_estimation::BaseEkfWithImuKin::get_filter_output__Eigen::Ref:Eigen::VectorXd:.Eigen::Ref:Eigen::VectorXd:"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1ae04330d2ee8112d51d1969b0828856e2"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_filter_output</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Ref</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">robot_configuration</span></span>, <span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Ref</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">robot_velocity</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Get the filter output which is the robot state. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>robot_configuration</strong> – </p></li>
+<li><p><strong>robot_velocity</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin15get_measurementEv">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin15get_measurementEv"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin15get_measurementEv"></span><span id="mim_estimation::BaseEkfWithImuKin::get_measurement"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1a5b27ffbda89eee550e5835859b58b791"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">aligned_allocator</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">get_measurement</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Get measurement. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>root_velocities</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin40compute_end_effectors_forward_kinematicsEN5Eigen3RefIKN5Eigen8VectorXdEEEN5Eigen3RefIKN5Eigen8VectorXdEEE">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin40compute_end_effectors_forward_kinematicsEN5Eigen3RefIKN5Eigen8VectorXdEEEN5Eigen3RefIKN5Eigen8VectorXdEEE"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin40compute_end_effectors_forward_kinematicsEN5Eigen3RefIKN5Eigen8VectorXdEEEN5Eigen3RefIKN5Eigen8VectorXdEEE"></span><span id="mim_estimation::BaseEkfWithImuKin::compute_end_effectors_forward_kinematics__Eigen::Ref:Eigen::VectorXdC:.Eigen::Ref:Eigen::VectorXdC:"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1ace4aaa93ecdae33f6405b47bf8fac6ec"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">compute_end_effectors_forward_kinematics</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Ref</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">joint_position</span></span>, <span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Ref</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">joint_velocity</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin40compute_end_effectors_forward_kinematicsEN5Eigen3RefIKN5Eigen8VectorXdEEEN5Eigen3RefIKN5Eigen8VectorXdEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Compute the base/imu velocities. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin23integrate_process_modelEN5Eigen3RefIKN5Eigen8Vector3dEEEN5Eigen3RefIKN5Eigen8Vector3dEEE">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin23integrate_process_modelEN5Eigen3RefIKN5Eigen8Vector3dEEEN5Eigen3RefIKN5Eigen8Vector3dEEE"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin23integrate_process_modelEN5Eigen3RefIKN5Eigen8Vector3dEEEN5Eigen3RefIKN5Eigen8Vector3dEEE"></span><span id="mim_estimation::BaseEkfWithImuKin::integrate_process_model__Eigen::Ref:Eigen::Vector3dC:.Eigen::Ref:Eigen::Vector3dC:"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1a699d1521a105b6e232be9ff8c62d7491"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">integrate_process_model</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Ref</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">imu_accelerometer</span></span>, <span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Ref</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">imu_gyroscope</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin23integrate_process_modelEN5Eigen3RefIKN5Eigen8Vector3dEEEN5Eigen3RefIKN5Eigen8Vector3dEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Integrate the process model using the imu data. </p>
+<p>compute mu_pre. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin36compute_discrete_prediction_jacobianEv">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin36compute_discrete_prediction_jacobianEv"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin36compute_discrete_prediction_jacobianEv"></span><span id="mim_estimation::BaseEkfWithImuKin::compute_discrete_prediction_jacobian"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1a43033dafffea8c4d71d4ea28c759898d"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">compute_discrete_prediction_jacobian</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin36compute_discrete_prediction_jacobianEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Fill in the process jacobians (cont_proc_jac_, disc_proc_jac_). </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin22compute_noise_jacobianEv">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin22compute_noise_jacobianEv"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin22compute_noise_jacobianEv"></span><span id="mim_estimation::BaseEkfWithImuKin::compute_noise_jacobian"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1a9120a9819f41c51ab9857e78367370d6"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">compute_noise_jacobian</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin22compute_noise_jacobianEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Fill in the noise jacobian. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin37construct_continuous_noise_covarianceEv">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin37construct_continuous_noise_covarianceEv"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin37construct_continuous_noise_covarianceEv"></span><span id="mim_estimation::BaseEkfWithImuKin::construct_continuous_noise_covariance"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1a709dbe854d8a1c19445be728a42a5a44"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">construct_continuous_noise_covariance</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin37construct_continuous_noise_covarianceEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Use and additive white noise as continuous noise. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin35construct_discrete_noise_covarianceEv">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin35construct_discrete_noise_covarianceEv"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin35construct_discrete_noise_covarianceEv"></span><span id="mim_estimation::BaseEkfWithImuKin::construct_discrete_noise_covariance"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1a7a6e6b44cf0c804b99c6c6eadad146ec"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">construct_discrete_noise_covariance</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin35construct_discrete_noise_covarianceEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Discretise the noise covariance using zero-order hold and truncating higher-order terms. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin47construct_discrete_measurement_noise_covarianceEv">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin47construct_discrete_measurement_noise_covarianceEv"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin47construct_discrete_measurement_noise_covarianceEv"></span><span id="mim_estimation::BaseEkfWithImuKin::construct_discrete_measurement_noise_covariance"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1a8398eabc0f5ed66b75500fbb0ec3ba76"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">construct_discrete_measurement_noise_covariance</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin47construct_discrete_measurement_noise_covarianceEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Discretise the measurement noise covariance. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin15prediction_stepEv">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin15prediction_stepEv"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin15prediction_stepEv"></span><span id="mim_estimation::BaseEkfWithImuKin::prediction_step"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1abbb48dea1f8cdba4d7ac1f729418473f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">prediction_step</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin15prediction_stepEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Propagate the state covariance (predicted_state_.covariance). </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin17measurement_modelERKNSt6vectorIbEEN5Eigen3RefIKN5Eigen8VectorXdEEEN5Eigen3RefIKN5Eigen8VectorXdEEE">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin17measurement_modelERKNSt6vectorIbEEN5Eigen3RefIKN5Eigen8VectorXdEEEN5Eigen3RefIKN5Eigen8VectorXdEEE"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin17measurement_modelERKNSt6vectorIbEEN5Eigen3RefIKN5Eigen8VectorXdEEEN5Eigen3RefIKN5Eigen8VectorXdEEE"></span><span id="mim_estimation::BaseEkfWithImuKin::measurement_model__std::vector:b:CR.Eigen::Ref:Eigen::VectorXdC:.Eigen::Ref:Eigen::VectorXdC:"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1ae19316e026984e303fd45f844cf23fc5"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">measurement_model</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">bool</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">contact_schedule</span></span>, <span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Ref</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">joint_position</span></span>, <span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Ref</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">joint_velocity</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin17measurement_modelERKNSt6vectorIbEEN5Eigen3RefIKN5Eigen8VectorXdEEEN5Eigen3RefIKN5Eigen8VectorXdEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Use the kinematics to measure the linear velocity of the base. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>contact_schedule</strong> – This indicates which end-effector is currently in contact. </p></li>
+<li><p><strong>joint_position</strong> – joint positions. </p></li>
+<li><p><strong>joint_velocity</strong> – joint velocities. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin11update_stepERKNSt6vectorIbEEN5Eigen3RefIKN5Eigen8VectorXdEEEN5Eigen3RefIKN5Eigen8VectorXdEEE">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin11update_stepERKNSt6vectorIbEEN5Eigen3RefIKN5Eigen8VectorXdEEEN5Eigen3RefIKN5Eigen8VectorXdEEE"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin11update_stepERKNSt6vectorIbEEN5Eigen3RefIKN5Eigen8VectorXdEEEN5Eigen3RefIKN5Eigen8VectorXdEEE"></span><span id="mim_estimation::BaseEkfWithImuKin::update_step__std::vector:b:CR.Eigen::Ref:Eigen::VectorXdC:.Eigen::Ref:Eigen::VectorXdC:"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1a59f13e27dcee3498745579cc2bbd672c"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">update_step</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">bool</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">contact_schedule</span></span>, <span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Ref</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">joint_position</span></span>, <span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Ref</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">joint_velocity</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin11update_stepERKNSt6vectorIbEEN5Eigen3RefIKN5Eigen8VectorXdEEEN5Eigen3RefIKN5Eigen8VectorXdEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Update the current state posterior_state_ in function of the measurements. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>contact_schedule</strong> – This indicates which end-effector is currently in contact. </p></li>
+<li><p><strong>joint_position</strong> – joint positions. </p></li>
+<li><p><strong>joint_velocity</strong> – joint velocities. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin9settings_E">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin9settings_E"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin9settings_E"></span><span id="mim_estimation::BaseEkfWithImuKin::settings___BaseEkfWithImuKinSettings"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1a91cc4e4c0e787fe369b53603cb940ab1"></span><a class="reference internal" href="#_CPPv4N14mim_estimation25BaseEkfWithImuKinSettingsE" title="mim_estimation::BaseEkfWithImuKinSettings"><span class="n"><span class="pre">BaseEkfWithImuKinSettings</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">settings_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin9settings_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin15joint_position_E">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin15joint_position_E"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin15joint_position_E"></span><span id="mim_estimation::BaseEkfWithImuKin::joint_position___Eigen::VectorXd"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1ac947f119d9b003a558f79770345e5734"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">joint_position_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin15joint_position_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Joint positions reading. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin15joint_velocity_E">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin15joint_velocity_E"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin15joint_velocity_E"></span><span id="mim_estimation::BaseEkfWithImuKin::joint_velocity___Eigen::VectorXd"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1aa5e0b35992618037284400a636b3aa09"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">joint_velocity_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin15joint_velocity_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Joint velocities reading. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin18imu_accelerometer_E">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin18imu_accelerometer_E"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin18imu_accelerometer_E"></span><span id="mim_estimation::BaseEkfWithImuKin::imu_accelerometer___Eigen::Vector3d"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1aefb020ccddb6eceee24344d74dcb2d6e"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">imu_accelerometer_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin18imu_accelerometer_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Accelerometer reading. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin14imu_gyroscope_E">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin14imu_gyroscope_E"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin14imu_gyroscope_E"></span><span id="mim_estimation::BaseEkfWithImuKin::imu_gyroscope___Eigen::Vector3d"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1a5a832a94b637c6acd0ecd8f47e666761"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">imu_gyroscope_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin14imu_gyroscope_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Joint velocities. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin16predicted_state_E">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin16predicted_state_E"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin16predicted_state_E"></span><span id="mim_estimation::BaseEkfWithImuKin::predicted_state___SystemState"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1a4282ce28ed0dfaa803b6b42cf4b57931"></span><a class="reference internal" href="#_CPPv4N14mim_estimation11SystemStateE" title="mim_estimation::SystemState"><span class="n"><span class="pre">SystemState</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">predicted_state_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin16predicted_state_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Predicted system state (next state). </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin16posterior_state_E">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin16posterior_state_E"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin16posterior_state_E"></span><span id="mim_estimation::BaseEkfWithImuKin::posterior_state___SystemState"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1a47218d1cec2a3c08a1cc298970a02752"></span><a class="reference internal" href="#_CPPv4N14mim_estimation11SystemStateE" title="mim_estimation::SystemState"><span class="n"><span class="pre">SystemState</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">posterior_state_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin16posterior_state_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Posterior system state (current state). </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin15pinocchio_data_E">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin15pinocchio_data_E"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin15pinocchio_data_E"></span><span id="mim_estimation::BaseEkfWithImuKin::pinocchio_data___pinocchio::Data"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1a2dc775a12c7b589e43f9329761113f12"></span><span class="n"><span class="pre">pinocchio</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Data</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pinocchio_data_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin15pinocchio_data_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Rigid body dynamics data storage class. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin16kin_ee_position_E">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin16kin_ee_position_E"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin16kin_ee_position_E"></span><span id="mim_estimation::BaseEkfWithImuKin::kin_ee_position___std::vector:Eigen::Vector3d.Eigen::aligned_allocator:Eigen::Vector3d::"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1ad75b45664a7fda6dfe8bf6ad7ce136db"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">aligned_allocator</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">kin_ee_position_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin16kin_ee_position_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Measured end-effectors positions expressed in the imu/base frame. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin16kin_ee_velocity_E">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin16kin_ee_velocity_E"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin16kin_ee_velocity_E"></span><span id="mim_estimation::BaseEkfWithImuKin::kin_ee_velocity___std::vector:Eigen::Vector3d.Eigen::aligned_allocator:Eigen::Vector3d::"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1a8b6ab85af582c137cc77b957bf985b3a"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">aligned_allocator</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">kin_ee_velocity_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin16kin_ee_velocity_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Measured end-effectors velocities expressed in the imu/base frame. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin11kin_ee_fid_E">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin11kin_ee_fid_E"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin11kin_ee_fid_E"></span><span id="mim_estimation::BaseEkfWithImuKin::kin_ee_fid___std::vector:pinocchio::FrameIndex:"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1a210f44a4c2202995bb3a0ec51c38afae"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">pinocchio</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">FrameIndex</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">kin_ee_fid_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin11kin_ee_fid_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Pinocchio frame id corresponding to the end-effector potentially in contact. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin6q_kin_E">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin6q_kin_E"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin6q_kin_E"></span><span id="mim_estimation::BaseEkfWithImuKin::q_kin___Eigen::VectorXd"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1a9aa2e17bbd6c88de03a41fd0be7097ce"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">q_kin_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin6q_kin_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Robot configuration with base at the center of the world. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin7dq_kin_E">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin7dq_kin_E"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin7dq_kin_E"></span><span id="mim_estimation::BaseEkfWithImuKin::dq_kin___Eigen::VectorXd"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1a97cb73e4d720fba303294a52e872f8b2"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dq_kin_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin7dq_kin_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Robot velocity with static base frame. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin14attitude_post_E">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin14attitude_post_E"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin14attitude_post_E"></span><span id="mim_estimation::BaseEkfWithImuKin::attitude_post___Eigen::Matrix3d"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1ac3473a618e2b5c61bff7d89ff06109e7"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix3d</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">attitude_post_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin14attitude_post_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Rotation matrix from the posterior state. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin22root_angular_velocity_E">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin22root_angular_velocity_E"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin22root_angular_velocity_E"></span><span id="mim_estimation::BaseEkfWithImuKin::root_angular_velocity___Eigen::Vector3d"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1aebac76c66e7a888e9608020f57a9beaf"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">root_angular_velocity_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin22root_angular_velocity_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Imu/Base angular velocity. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin27root_angular_velocity_prev_E">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin27root_angular_velocity_prev_E"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin27root_angular_velocity_prev_E"></span><span id="mim_estimation::BaseEkfWithImuKin::root_angular_velocity_prev___Eigen::Vector3d"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1acdd7aa062398f8b0b281b7558c1ffaa5"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">root_angular_velocity_prev_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin27root_angular_velocity_prev_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Imu/Base angular velocity previous value. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin26root_angular_acceleration_E">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin26root_angular_acceleration_E"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin26root_angular_acceleration_E"></span><span id="mim_estimation::BaseEkfWithImuKin::root_angular_acceleration___Eigen::Vector3d"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1adeaf7bb779455665469bb2bd724a815f"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">root_angular_acceleration_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin26root_angular_acceleration_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Imu/Base angular acceleration. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin25root_linear_acceleration_E">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin25root_linear_acceleration_E"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin25root_linear_acceleration_E"></span><span id="mim_estimation::BaseEkfWithImuKin::root_linear_acceleration___Eigen::Vector3d"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1ad9f99e3b953a8b7fb68efc6cf035362d"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">root_linear_acceleration_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin25root_linear_acceleration_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Imu/Base angular velocity. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin8gravity_E">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin8gravity_E"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin8gravity_E"></span><span id="mim_estimation::BaseEkfWithImuKin::gravity___Eigen::Vector3d"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1a08f296550622d95a93bdfdfc387534ff"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">gravity_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin8gravity_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gravity vector (default is negative along the z-axis). </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin14cont_proc_jac_E">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin14cont_proc_jac_E"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin14cont_proc_jac_E"></span><span id="mim_estimation::BaseEkfWithImuKin::cont_proc_jac___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1afc28caa2784935275f3af78705e638c4"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cont_proc_jac_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin14cont_proc_jac_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Continuous process jacobian. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin14disc_proc_jac_E">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin14disc_proc_jac_E"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin14disc_proc_jac_E"></span><span id="mim_estimation::BaseEkfWithImuKin::disc_proc_jac___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1a8036453a4ece905e60a2402853200d56"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">disc_proc_jac_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin14disc_proc_jac_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Discrete process jacobian. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin15proc_noise_jac_E">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin15proc_noise_jac_E"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin15proc_noise_jac_E"></span><span id="mim_estimation::BaseEkfWithImuKin::proc_noise_jac___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1a4820576202ba8315890362d99b2723cc"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">proc_noise_jac_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin15proc_noise_jac_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Process noise jacobian. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin20cont_proc_noise_cov_E">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin20cont_proc_noise_cov_E"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin20cont_proc_noise_cov_E"></span><span id="mim_estimation::BaseEkfWithImuKin::cont_proc_noise_cov___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1ae18dbba43b6dced770e7c9caded259ba"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cont_proc_noise_cov_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin20cont_proc_noise_cov_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Continuous process noise covariance. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin20disc_proc_noise_cov_E">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin20disc_proc_noise_cov_E"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin20disc_proc_noise_cov_E"></span><span id="mim_estimation::BaseEkfWithImuKin::disc_proc_noise_cov___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1a0bcaf40b7ba763cc1ee68109a80726e4"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">disc_proc_noise_cov_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin20disc_proc_noise_cov_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Discrete process noise covariance. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin20disc_meas_noise_cov_E">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin20disc_meas_noise_cov_E"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin20disc_meas_noise_cov_E"></span><span id="mim_estimation::BaseEkfWithImuKin::disc_meas_noise_cov___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1ad0e6f441a66e281f608e9f3050287f94"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">disc_meas_noise_cov_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin20disc_meas_noise_cov_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Discrete measurement noise covariance. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin23kin_meas_root_velocity_E">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin23kin_meas_root_velocity_E"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin23kin_meas_root_velocity_E"></span><span id="mim_estimation::BaseEkfWithImuKin::kin_meas_root_velocity___std::vector:Eigen::Vector3d.Eigen::aligned_allocator:Eigen::Vector3d::"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1a341eb3b909f8c81fa68ca414d2e86d32"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">aligned_allocator</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">kin_meas_root_velocity_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin23kin_meas_root_velocity_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Linear velocity of the root (base/imu) measured from the kinematics. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin9meas_jac_E">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin9meas_jac_E"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin9meas_jac_E"></span><span id="mim_estimation::BaseEkfWithImuKin::meas_jac___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1a2bd30b1a6fdcd5362f44286e577d81b4"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">meas_jac_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin9meas_jac_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Measurement jacobian. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin11meas_error_E">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin11meas_error_E"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin11meas_error_E"></span><span id="mim_estimation::BaseEkfWithImuKin::meas_error___Eigen::VectorXd"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1a8da407627c4b99bfe917088dbdc3bb8b"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">meas_error_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin11meas_error_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Predicted base velocity, this is the predicted measurement. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin16meas_covariance_E">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin16meas_covariance_E"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin16meas_covariance_E"></span><span id="mim_estimation::BaseEkfWithImuKin::meas_covariance___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1aff858003fbe397d9dfc4d57c3346460a"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">meas_covariance_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin16meas_covariance_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Measurement covariance. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin12kalman_gain_E">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin12kalman_gain_E"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin12kalman_gain_E"></span><span id="mim_estimation::BaseEkfWithImuKin::kalman_gain___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1ad6a8919aae781b3d36d2108797e7e392"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">kalman_gain_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin12kalman_gain_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Kalman Gain computed during the update_step. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin4ldltE">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin4ldltE"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin4ldltE"></span><span id="mim_estimation::BaseEkfWithImuKin::ldlt__Eigen::LDLT:Eigen::MatrixXd:"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1a4ad5d896622e63095433befcdab9fe23"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">LDLT</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ldlt</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin4ldltE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>LDLT decomposition to invert some matrix. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation17BaseEkfWithImuKin12delta_state_E">
+<span id="_CPPv3N14mim_estimation17BaseEkfWithImuKin12delta_state_E"></span><span id="_CPPv2N14mim_estimation17BaseEkfWithImuKin12delta_state_E"></span><span id="mim_estimation::BaseEkfWithImuKin::delta_state___Eigen::VectorXd"></span><span class="target" id="classmim__estimation_1_1_base_ekf_with_imu_kin_1a9cc72a288534f84d8355e7347e79d37a"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">delta_state_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation17BaseEkfWithImuKin12delta_state_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Update vector which is a delta state. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation25BaseEkfWithImuKinSettingsE">
+<span id="_CPPv3N14mim_estimation25BaseEkfWithImuKinSettingsE"></span><span id="_CPPv2N14mim_estimation25BaseEkfWithImuKinSettingsE"></span><span id="mim_estimation::BaseEkfWithImuKinSettings"></span><span class="target" id="structmim__estimation_1_1_base_ekf_with_imu_kin_settings"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">BaseEkfWithImuKinSettings</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation25BaseEkfWithImuKinSettingsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;<a class="reference internal" href="../../doxygen_index_one_page.html#base__ekf__with__imu__kin_8hpp"><span class="std std-ref">base_ekf_with_imu_kin.hpp</span></a>&gt;</em></div>
+<p>Subclassed by <a class="reference internal" href="../../doxygen_index_one_page.html#structmim__estimation_1_1_robot_state_estimator_settings"><span class="std std-ref">mim_estimation::RobotStateEstimatorSettings</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation25BaseEkfWithImuKinSettings9to_stringEv">
+<span id="_CPPv3N14mim_estimation25BaseEkfWithImuKinSettings9to_stringEv"></span><span id="_CPPv2N14mim_estimation25BaseEkfWithImuKinSettings9to_stringEv"></span><span id="mim_estimation::BaseEkfWithImuKinSettings::to_string"></span><span class="target" id="structmim__estimation_1_1_base_ekf_with_imu_kin_settings_1a7115041dec29a0b34e959e6a7e1d14d9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">to_string</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14mim_estimation25BaseEkfWithImuKinSettings9to_stringEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation25BaseEkfWithImuKinSettings12is_imu_frameE">
+<span id="_CPPv3N14mim_estimation25BaseEkfWithImuKinSettings12is_imu_frameE"></span><span id="_CPPv2N14mim_estimation25BaseEkfWithImuKinSettings12is_imu_frameE"></span><span id="mim_estimation::BaseEkfWithImuKinSettings::is_imu_frame__b"></span><span class="target" id="structmim__estimation_1_1_base_ekf_with_imu_kin_settings_1a3622fd2d4f0f62632337db74c10599e5"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">is_imu_frame</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation25BaseEkfWithImuKinSettings12is_imu_frameE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Is the EKF estimating the imu or the base frame. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation25BaseEkfWithImuKinSettings24end_effector_frame_namesE">
+<span id="_CPPv3N14mim_estimation25BaseEkfWithImuKinSettings24end_effector_frame_namesE"></span><span id="_CPPv2N14mim_estimation25BaseEkfWithImuKinSettings24end_effector_frame_namesE"></span><span id="mim_estimation::BaseEkfWithImuKinSettings::end_effector_frame_names__std::vector:ss:"></span><span class="target" id="structmim__estimation_1_1_base_ekf_with_imu_kin_settings_1a8ba3c9f70842b2cb2b94ffecf630e20c"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">end_effector_frame_names</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation25BaseEkfWithImuKinSettings24end_effector_frame_namesE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Potential contact end effector frame names. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation25BaseEkfWithImuKinSettings15pinocchio_modelE">
+<span id="_CPPv3N14mim_estimation25BaseEkfWithImuKinSettings15pinocchio_modelE"></span><span id="_CPPv2N14mim_estimation25BaseEkfWithImuKinSettings15pinocchio_modelE"></span><span id="mim_estimation::BaseEkfWithImuKinSettings::pinocchio_model__pinocchio::Model"></span><span class="target" id="structmim__estimation_1_1_base_ekf_with_imu_kin_settings_1ac1db0a0ec76e429742f19907f528ccbf"></span><span class="n"><span class="pre">pinocchio</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Model</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pinocchio_model</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation25BaseEkfWithImuKinSettings15pinocchio_modelE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Rigid body dynamic model. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation25BaseEkfWithImuKinSettings11imu_in_baseE">
+<span id="_CPPv3N14mim_estimation25BaseEkfWithImuKinSettings11imu_in_baseE"></span><span id="_CPPv2N14mim_estimation25BaseEkfWithImuKinSettings11imu_in_baseE"></span><span id="mim_estimation::BaseEkfWithImuKinSettings::imu_in_base__pinocchio::SE3"></span><span class="target" id="structmim__estimation_1_1_base_ekf_with_imu_kin_settings_1a81a497c6f206663bae18a3d0e79fd8db"></span><span class="n"><span class="pre">pinocchio</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">SE3</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">imu_in_base</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">pinocchio</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">SE3</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Identity</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation25BaseEkfWithImuKinSettings11imu_in_baseE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Imu position and orientation in the base frame. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation25BaseEkfWithImuKinSettings2dtE">
+<span id="_CPPv3N14mim_estimation25BaseEkfWithImuKinSettings2dtE"></span><span id="_CPPv2N14mim_estimation25BaseEkfWithImuKinSettings2dtE"></span><span id="mim_estimation::BaseEkfWithImuKinSettings::dt__double"></span><span class="target" id="structmim__estimation_1_1_base_ekf_with_imu_kin_settings_1a719e5d77cf150b5c29fc1cd4b26c3507"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dt</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.001</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation25BaseEkfWithImuKinSettings2dtE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>discretization time. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation25BaseEkfWithImuKinSettings19noise_accelerometerE">
+<span id="_CPPv3N14mim_estimation25BaseEkfWithImuKinSettings19noise_accelerometerE"></span><span id="_CPPv2N14mim_estimation25BaseEkfWithImuKinSettings19noise_accelerometerE"></span><span id="mim_estimation::BaseEkfWithImuKinSettings::noise_accelerometer__Eigen::Vector3d"></span><span class="target" id="structmim__estimation_1_1_base_ekf_with_imu_kin_settings_1a7a18475bdff8dc98cc3b70c7c10403ac"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">noise_accelerometer</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.0001962</span></span><span class="w"> </span><span class="o"><span class="pre">*</span></span><span class="w"> </span><span class="m"><span class="pre">0.0001962</span></span><span class="w"> </span><span class="o"><span class="pre">*</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="o"><span class="pre">&lt;&lt;</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N14mim_estimation25BaseEkfWithImuKinSettings2dtE" title="mim_estimation::BaseEkfWithImuKinSettings::dt"><span class="n"><span class="pre">dt</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N14mim_estimation25BaseEkfWithImuKinSettings2dtE" title="mim_estimation::BaseEkfWithImuKinSettings::dt"><span class="n"><span class="pre">dt</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N14mim_estimation25BaseEkfWithImuKinSettings2dtE" title="mim_estimation::BaseEkfWithImuKinSettings::dt"><span class="n"><span class="pre">dt</span></span></a><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">finished</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation25BaseEkfWithImuKinSettings19noise_accelerometerE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Accelerometer noise covariance. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation25BaseEkfWithImuKinSettings15noise_gyroscopeE">
+<span id="_CPPv3N14mim_estimation25BaseEkfWithImuKinSettings15noise_gyroscopeE"></span><span id="_CPPv2N14mim_estimation25BaseEkfWithImuKinSettings15noise_gyroscopeE"></span><span id="mim_estimation::BaseEkfWithImuKinSettings::noise_gyroscope__Eigen::Vector3d"></span><span class="target" id="structmim__estimation_1_1_base_ekf_with_imu_kin_settings_1a7b5b463eb2b280c3339b3f676a50c2eb"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">noise_gyroscope</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.0000873</span></span><span class="w"> </span><span class="o"><span class="pre">*</span></span><span class="w"> </span><span class="m"><span class="pre">0.0000873</span></span><span class="w"> </span><span class="o"><span class="pre">*</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="o"><span class="pre">&lt;&lt;</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N14mim_estimation25BaseEkfWithImuKinSettings2dtE" title="mim_estimation::BaseEkfWithImuKinSettings::dt"><span class="n"><span class="pre">dt</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N14mim_estimation25BaseEkfWithImuKinSettings2dtE" title="mim_estimation::BaseEkfWithImuKinSettings::dt"><span class="n"><span class="pre">dt</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N14mim_estimation25BaseEkfWithImuKinSettings2dtE" title="mim_estimation::BaseEkfWithImuKinSettings::dt"><span class="n"><span class="pre">dt</span></span></a><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">finished</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation25BaseEkfWithImuKinSettings15noise_gyroscopeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gyroscope noise covariance. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation25BaseEkfWithImuKinSettings24noise_bias_accelerometerE">
+<span id="_CPPv3N14mim_estimation25BaseEkfWithImuKinSettings24noise_bias_accelerometerE"></span><span id="_CPPv2N14mim_estimation25BaseEkfWithImuKinSettings24noise_bias_accelerometerE"></span><span id="mim_estimation::BaseEkfWithImuKinSettings::noise_bias_accelerometer__Eigen::Vector3d"></span><span class="target" id="structmim__estimation_1_1_base_ekf_with_imu_kin_settings_1a1cccf9abf14365d69a0f1e292da68920"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">noise_bias_accelerometer</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.0001</span></span><span class="w"> </span><span class="o"><span class="pre">*</span></span><span class="w"> </span><span class="m"><span class="pre">0.0001</span></span><span class="w"> </span><span class="o"><span class="pre">*</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="o"><span class="pre">&lt;&lt;</span></span><span class="w"> </span><span class="m"><span class="pre">1.0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1.0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1.0</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">finished</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation25BaseEkfWithImuKinSettings24noise_bias_accelerometerE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Accelerometer bias noise covariance. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation25BaseEkfWithImuKinSettings20noise_bias_gyroscopeE">
+<span id="_CPPv3N14mim_estimation25BaseEkfWithImuKinSettings20noise_bias_gyroscopeE"></span><span id="_CPPv2N14mim_estimation25BaseEkfWithImuKinSettings20noise_bias_gyroscopeE"></span><span id="mim_estimation::BaseEkfWithImuKinSettings::noise_bias_gyroscope__Eigen::Vector3d"></span><span class="target" id="structmim__estimation_1_1_base_ekf_with_imu_kin_settings_1ae59003a1aeb73029c22cc35946f73ed5"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">noise_bias_gyroscope</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.000309</span></span><span class="w"> </span><span class="o"><span class="pre">*</span></span><span class="w"> </span><span class="m"><span class="pre">0.000309</span></span><span class="w"> </span><span class="o"><span class="pre">*</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="o"><span class="pre">&lt;&lt;</span></span><span class="w"> </span><span class="m"><span class="pre">1.0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1.0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1.0</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">finished</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation25BaseEkfWithImuKinSettings20noise_bias_gyroscopeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gyroscope bias noise covariance. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation25BaseEkfWithImuKinSettings14meas_noise_covE">
+<span id="_CPPv3N14mim_estimation25BaseEkfWithImuKinSettings14meas_noise_covE"></span><span id="_CPPv2N14mim_estimation25BaseEkfWithImuKinSettings14meas_noise_covE"></span><span id="mim_estimation::BaseEkfWithImuKinSettings::meas_noise_cov__Eigen::Vector3d"></span><span class="target" id="structmim__estimation_1_1_base_ekf_with_imu_kin_settings_1afab633a59cc13afdaedd4591be12964b"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">meas_noise_cov</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="o"><span class="pre">&lt;&lt;</span></span><span class="w"> </span><span class="m"><span class="pre">1e-5</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1e-5</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1e-5</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">finished</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation25BaseEkfWithImuKinSettings14meas_noise_covE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Continuous measurement noise covariance. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation11SystemStateE">
+<span id="_CPPv3N14mim_estimation11SystemStateE"></span><span id="_CPPv2N14mim_estimation11SystemStateE"></span><span id="mim_estimation::SystemState"></span><span class="target" id="structmim__estimation_1_1_system_state"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SystemState</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation11SystemStateE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;<a class="reference internal" href="../../doxygen_index_one_page.html#base__ekf__with__imu__kin_8hpp"><span class="std std-ref">base_ekf_with_imu_kin.hpp</span></a>&gt;</em></div>
+<p>System state data. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation11SystemState8positionE">
+<span id="_CPPv3N14mim_estimation11SystemState8positionE"></span><span id="_CPPv2N14mim_estimation11SystemState8positionE"></span><span id="mim_estimation::SystemState::position__Eigen::Vector3d"></span><span class="target" id="structmim__estimation_1_1_system_state_1a1ce2047f73c66a0fdf115073b8d078c9"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">position</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Zero</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation11SystemState8positionE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Base/Imu position. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation11SystemState15linear_velocityE">
+<span id="_CPPv3N14mim_estimation11SystemState15linear_velocityE"></span><span id="_CPPv2N14mim_estimation11SystemState15linear_velocityE"></span><span id="mim_estimation::SystemState::linear_velocity__Eigen::Vector3d"></span><span class="target" id="structmim__estimation_1_1_system_state_1a193f37ee3170a9909afee6fe349448ae"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">linear_velocity</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Zero</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation11SystemState15linear_velocityE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Base/Imu linear velocity. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation11SystemState8attitudeE">
+<span id="_CPPv3N14mim_estimation11SystemState8attitudeE"></span><span id="_CPPv2N14mim_estimation11SystemState8attitudeE"></span><span id="mim_estimation::SystemState::attitude__Eigen::Quaterniond"></span><span class="target" id="structmim__estimation_1_1_system_state_1a9115faf29f46f59ba18a97d9506b2dc2"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Quaterniond</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">attitude</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Quaterniond</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Identity</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation11SystemState8attitudeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Base/Imu linear attitude. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation11SystemState18bias_accelerometerE">
+<span id="_CPPv3N14mim_estimation11SystemState18bias_accelerometerE"></span><span id="_CPPv2N14mim_estimation11SystemState18bias_accelerometerE"></span><span id="mim_estimation::SystemState::bias_accelerometer__Eigen::Vector3d"></span><span class="target" id="structmim__estimation_1_1_system_state_1ac29ffbd4f1bd2b93f5e71e71dae8fbe2"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bias_accelerometer</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Zero</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation11SystemState18bias_accelerometerE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Accelerometer bias. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation11SystemState14bias_gyroscopeE">
+<span id="_CPPv3N14mim_estimation11SystemState14bias_gyroscopeE"></span><span id="_CPPv2N14mim_estimation11SystemState14bias_gyroscopeE"></span><span id="mim_estimation::SystemState::bias_gyroscope__Eigen::Vector3d"></span><span class="target" id="structmim__estimation_1_1_system_state_1ab0485abd3e982da6966b6de5cbd7bd1f"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bias_gyroscope</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3d</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Zero</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation11SystemState14bias_gyroscopeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gyroscope bias. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation11SystemState10covarianceE">
+<span id="_CPPv3N14mim_estimation11SystemState10covarianceE"></span><span id="_CPPv2N14mim_estimation11SystemState10covarianceE"></span><span id="mim_estimation::SystemState::covariance__Eigen::MatrixXd"></span><span class="target" id="structmim__estimation_1_1_system_state_1afd6aac1ee330fddcbfbb0c51f7ab09eb"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">covariance</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Zero</span></span><span class="p"><span class="pre">(</span></span><a class="reference internal" href="#_CPPv4N14mim_estimation11SystemState9state_dimE" title="mim_estimation::SystemState::state_dim"><span class="n"><span class="pre">state_dim</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N14mim_estimation11SystemState9state_dimE" title="mim_estimation::SystemState::state_dim"><span class="n"><span class="pre">state_dim</span></span></a><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation11SystemState10covarianceE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Process covariance. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-attributes">Public Static Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation11SystemState9state_dimE">
+<span id="_CPPv3N14mim_estimation11SystemState9state_dimE"></span><span id="_CPPv2N14mim_estimation11SystemState9state_dimE"></span><span id="mim_estimation::SystemState::state_dim__iC"></span><span class="target" id="structmim__estimation_1_1_system_state_1af2b28431e811c6d0c58bc9742bae47ac"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">state_dim</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">15</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation11SystemState9state_dimE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>State dimension. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation11SystemState9noise_dimE">
+<span id="_CPPv3N14mim_estimation11SystemState9noise_dimE"></span><span id="_CPPv2N14mim_estimation11SystemState9noise_dimE"></span><span id="mim_estimation::SystemState::noise_dim__iC"></span><span class="target" id="structmim__estimation_1_1_system_state_1a9274bbce0a2ac68b36b4c47023770623"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">noise_dim</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">12</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation11SystemState9noise_dimE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Process noise dimension. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="base__ekf__with__imu__kin_8cpp.html" class="btn btn-neutral float-left" title="File base_ekf_with_imu_kin.cpp" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="butterworth__filter_8hpp.html" class="btn btn-neutral float-right" title="File butterworth_filter.hpp" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

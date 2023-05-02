@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class mim_estimation::standard_filters::UKF &mdash; mim_estimation 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Class mim_estimation::test::EstimatorViconImuTest" href="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test.html" />
+    <link rel="prev" title="Class mim_estimation::standard_filters::EKF" href="classmim__estimation_1_1standard__filters_1_1_e_k_f.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            mim_estimation
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">C++ API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../doxygen_index.html">C++ API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../classlist.html">Class list</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="class_estimator_tests.html">Class EstimatorTests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_simple_e_k_f.html">Class SimpleEKF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_simple_e_k_f_measure.html">Class SimpleEKFMeasure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_simple_e_k_f_state.html">Class SimpleEKFState</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_test_e_k_f.html">Class TestEKF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classmim__estimation_1_1_base_ekf_with_imu_kin.html">Class mim_estimation::BaseEkfWithImuKin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classmim__estimation_1_1_end_effector_force_estimator.html">Class mim_estimation::EndEffectorForceEstimator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classmim__estimation_1_1_robot_state_estimator.html">Class mim_estimation::RobotStateEstimator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classmim__estimation_1_1dynamic__graph_1_1_robot_state_estimator.html">Class mim_estimation::dynamic_graph::RobotStateEstimator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classmim__estimation_1_1io__tools_1_1_data_collector.html">Class mim_estimation::io_tools::DataCollector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classmim__estimation_1_1io__tools_1_1_data_reader.html">Class mim_estimation::io_tools::DataReader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classmim__estimation_1_1io__tools_1_1_non_rt_data_collector.html">Class mim_estimation::io_tools::NonRtDataCollector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classmim__estimation_1_1standard__filters_1_1_butterworth_filter.html">Class mim_estimation::standard_filters::ButterworthFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classmim__estimation_1_1standard__filters_1_1_butterworth_filter_3_01_eigen_1_1_matrix_3_01___scf3da10ce4e8db60c2e0c0d3cf5044b03.html">Class mim_estimation::standard_filters::ButterworthFilter&lt; Eigen::Matrix&lt; _Scalar, _Rows, 1, Eigen::ColMajor, _Rows, 1 &gt;, _Order &gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classmim__estimation_1_1standard__filters_1_1_e_k_f.html">Class mim_estimation::standard_filters::EKF</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Class mim_estimation::standard_filters::UKF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test.html">Class mim_estimation::test::EstimatorViconImuTest</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../filelist.html">File list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../doxygen_index_one_page.html">C++ API and example</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">mim_estimation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">mim_estimation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../doxygen_index.html">C++ API</a></li>
+          <li class="breadcrumb-item"><a href="../classlist.html">Class list</a></li>
+      <li class="breadcrumb-item active">Class mim_estimation::standard_filters::UKF</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/breathe_apidoc/class/classmim__estimation_1_1standard__filters_1_1_u_k_f.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="class-mim-estimation-standard-filters-ukf">
+<h1>Class mim_estimation::standard_filters::UKF<a class="headerlink" href="#class-mim-estimation-standard-filters-ukf" title="Permalink to this heading">¶</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I00EN14mim_estimation16standard_filters3UKFE">
+<span id="_CPPv3I00EN14mim_estimation16standard_filters3UKFE"></span><span id="_CPPv2I00EN14mim_estimation16standard_filters3UKFE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">S</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">M</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">UKF</span></span></span><a class="headerlink" href="#_CPPv4I00EN14mim_estimation16standard_filters3UKFE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF3UKFEbbbd">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF3UKFEbbbd"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF3UKFEbbbd"></span><span id="mim_estimation::standard_filters::UKF::UKF__b.b.b.double"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1ae65a4405ff9348f9defb1624b1b9749c"></span><span class="sig-name descname"><span class="n"><span class="pre">UKF</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">numerical_jac</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">is_discrete</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">update_on</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">dt</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF3UKFEbbbd" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKFD0Ev">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKFD0Ev"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKFD0Ev"></span><span id="mim_estimation::standard_filters::UKF::~UKF"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1af3c63545db645b6d28e132a84c0a2065"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~UKF</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKFD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF10initializeEv">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF10initializeEv"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF10initializeEv"></span><span id="mim_estimation::standard_filters::UKF::initialize__void"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a13834805d61ab09f43edc522a9fc5152"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">initialize</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF10initializeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF14updateControlsEv">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF14updateControlsEv"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF14updateControlsEv"></span><span id="mim_estimation::standard_filters::UKF::updateControls__void"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a3d8b60e033b618a42383e413792f06f8"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">updateControls</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF14updateControlsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF6updateEv">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF6updateEv"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF6updateEv"></span><span id="mim_estimation::standard_filters::UKF::update__void"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a5b34b202f1be8ce16f9cd6b338611a59"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">update</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF6updateEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF16get_filter_stateEv">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF16get_filter_stateEv"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF16get_filter_stateEv"></span><span id="mim_estimation::standard_filters::UKF::get_filter_state__void"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1abb2b996bf1a892990fbbb6ebc3659823"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N14mim_estimation16standard_filters3UKF1NE" title="mim_estimation::standard_filters::UKF::N"><span class="n"><span class="pre">N</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_filter_state</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF16get_filter_stateEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF11print_debugEv">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF11print_debugEv"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF11print_debugEv"></span><span id="mim_estimation::standard_filters::UKF::print_debug__void"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1af4f75321d90f8a2774b849b7e025f17f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">print_debug</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF11print_debugEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-attributes">Public Static Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF1NE">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF1NE"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF1NE"></span><span id="mim_estimation::standard_filters::UKF::N__iC"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a0a9e920dd03b5ea8f88ec07866cacab5"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">N</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I00EN14mim_estimation16standard_filters3UKFE" title="mim_estimation::standard_filters::UKF::S"><span class="n"><span class="pre">S</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">state_dim</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF1NE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF1PE">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF1PE"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF1PE"></span><span id="mim_estimation::standard_filters::UKF::P__iC"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a06e24c8c041fd42c5e26297ef807c890"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">P</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I00EN14mim_estimation16standard_filters3UKFE" title="mim_estimation::standard_filters::UKF::S"><span class="n"><span class="pre">S</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">noise_dim</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF1PE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF1KE">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF1KE"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF1KE"></span><span id="mim_estimation::standard_filters::UKF::K__iC"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1aef1ac29c46beb0739f7badd4527a85d4"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">K</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I00EN14mim_estimation16standard_filters3UKFE" title="mim_estimation::standard_filters::UKF::M"><span class="n"><span class="pre">M</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">meas_dim</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF1KE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3UKF1LE">
+<span id="_CPPv3N14mim_estimation16standard_filters3UKF1LE"></span><span id="_CPPv2N14mim_estimation16standard_filters3UKF1LE"></span><span id="mim_estimation::standard_filters::UKF::L__iC"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_u_k_f_1a6efe67f99f5d4ccf348eaa3d4107515c"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">L</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">2</span></span><span class="w"> </span><span class="o"><span class="pre">*</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N14mim_estimation16standard_filters3UKF1NE" title="mim_estimation::standard_filters::UKF::N"><span class="n"><span class="pre">N</span></span></a><span class="w"> </span><span class="o"><span class="pre">+</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3UKF1LE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="classmim__estimation_1_1standard__filters_1_1_e_k_f.html" class="btn btn-neutral float-left" title="Class mim_estimation::standard_filters::EKF" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="classmim__estimation_1_1test_1_1_estimator_vicon_imu_test.html" class="btn btn-neutral float-right" title="Class mim_estimation::test::EstimatorViconImuTest" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

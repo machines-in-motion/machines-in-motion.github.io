@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>File simple_1d_ekf.hpp &mdash; mim_estimation 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="File robot_state_estimator.cpp" href="srcdg_2robot__state__estimator_8cpp.html" />
+    <link rel="prev" title="File signal_utils.hpp" href="signal__utils_8hpp.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            mim_estimation
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">C++ API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../doxygen_index.html">C++ API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../classlist.html">Class list</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../filelist.html">File list</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="base__ekf__with__imu__kin_8cpp.html">File base_ekf_with_imu_kin.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="base__ekf__with__imu__kin_8hpp.html">File base_ekf_with_imu_kin.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="butterworth__filter_8hpp.html">File butterworth_filter.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="butterworth__filter_8hxx.html">File butterworth_filter.hxx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data__collector_8hpp.html">File data_collector.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data__reader_8hpp.html">File data_reader.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo__ekf__vicon__imu_8cpp.html">File demo_ekf_vicon_imu.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dg__python__module_8cpp.html">File dg_python_module.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ekf_8hpp.html">File ekf.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ekf_8hxx.html">File ekf.hxx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ekf__vicon__imu__simple_8hpp.html">File ekf_vicon_imu_simple.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="end__effector__force__estimator_8cpp.html">File end_effector_force_estimator.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="end__effector__force__estimator_8hpp.html">File end_effector_force_estimator.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="include_2mim__estimation_2robot__state__estimator_8hpp.html">File robot_state_estimator.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mim__estimation_8cpp.html">File mim_estimation.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="non__rt__data__collector_8hpp.html">File non_rt_data_collector.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robot__state__estimation_8cpp.html">File robot_state_estimation.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robot__state__estimation_8hpp.html">File robot_state_estimation.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="signal__utils_8cpp.html">File signal_utils.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="signal__utils_8hpp.html">File signal_utils.hpp</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">File simple_1d_ekf.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="srcdg_2robot__state__estimator_8cpp.html">File robot_state_estimator.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="srcdg_2robot__state__estimator_8hpp.html">File robot_state_estimator.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="srcpy_2robot__state__estimator_8cpp.html">File robot_state_estimator.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="test__ekf__vicon__imu_8cpp.html">File test_ekf_vicon_imu.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="test__extended__kalman__filter_8cpp.html">File test_extended_kalman_filter.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ukf_8hpp.html">File ukf.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ukf_8hxx.html">File ukf.hxx</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../doxygen_index_one_page.html">C++ API and example</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">mim_estimation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">mim_estimation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../doxygen_index.html">C++ API</a></li>
+          <li class="breadcrumb-item"><a href="../filelist.html">File list</a></li>
+      <li class="breadcrumb-item active">File simple_1d_ekf.hpp</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/breathe_apidoc/file/simple__1d__ekf_8hpp.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="file-simple-1d-ekf-hpp">
+<h1>File simple_1d_ekf.hpp<a class="headerlink" href="#file-simple-1d-ekf-hpp" title="Permalink to this heading">¶</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv414SimpleEKFState">
+<span id="_CPPv314SimpleEKFState"></span><span id="_CPPv214SimpleEKFState"></span><span id="SimpleEKFState"></span><span class="target" id="class_simple_e_k_f_state"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SimpleEKFState</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">&gt;</span></span><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;<a class="reference internal" href="../../doxygen_index_one_page.html#simple__1d__ekf_8hpp"><span class="std std-ref">simple_1d_ekf.hpp</span></a>&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14SimpleEKFState14SimpleEKFStateEv">
+<span id="_CPPv3N14SimpleEKFState14SimpleEKFStateEv"></span><span id="_CPPv2N14SimpleEKFState14SimpleEKFStateEv"></span><span id="SimpleEKFState::SimpleEKFState__void"></span><span class="target" id="class_simple_e_k_f_state_1a8f5779998248d6b66c9b2e2a384a504a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SimpleEKFState</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN14SimpleEKFState14SimpleEKFStateERKN5Eigen10MatrixBaseI12OtherDerivedEE">
+<span id="_CPPv3I0EN14SimpleEKFState14SimpleEKFStateERKN5Eigen10MatrixBaseI12OtherDerivedEE"></span><span id="_CPPv2I0EN14SimpleEKFState14SimpleEKFStateERKN5Eigen10MatrixBaseI12OtherDerivedEE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OtherDerived</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="class_simple_e_k_f_state_1a626911c0a3db01ad4dd1d8659b53dbf2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SimpleEKFState</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixBase</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../class/class_simple_e_k_f_state.html#_CPPv4I0EN14SimpleEKFState14SimpleEKFStateERKN5Eigen10MatrixBaseI12OtherDerivedEE" title="SimpleEKFState::SimpleEKFState::OtherDerived"><span class="n"><span class="pre">OtherDerived</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN14SimpleEKFStateaSER14SimpleEKFStateRKN5Eigen10MatrixBaseI12OtherDerivedEE">
+<span id="_CPPv3I0EN14SimpleEKFStateaSERKN5Eigen10MatrixBaseI12OtherDerivedEE"></span><span id="_CPPv2I0EN14SimpleEKFStateaSERKN5Eigen10MatrixBaseI12OtherDerivedEE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OtherDerived</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="class_simple_e_k_f_state_1ac324a9006600246fe09624d00892a964"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="../class/class_simple_e_k_f_state.html#_CPPv414SimpleEKFState" title="SimpleEKFState"><span class="n"><span class="pre">SimpleEKFState</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixBase</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../class/class_simple_e_k_f_state.html#_CPPv4I0EN14SimpleEKFStateaSER14SimpleEKFStateRKN5Eigen10MatrixBaseI12OtherDerivedEE" title="SimpleEKFState::operator=::OtherDerived"><span class="n"><span class="pre">OtherDerived</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14SimpleEKFState8getStateEv">
+<span id="_CPPv3N14SimpleEKFState8getStateEv"></span><span id="_CPPv2N14SimpleEKFState8getStateEv"></span><span id="SimpleEKFState::getState"></span><span class="target" id="class_simple_e_k_f_state_1ae52d403d9636a12eebbb87c680c8578e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getState</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14SimpleEKFState4pos_E">
+<span id="_CPPv3N14SimpleEKFState4pos_E"></span><span id="_CPPv2N14SimpleEKFState4pos_E"></span><span id="SimpleEKFState::pos___Eigen::Ref:Eigen::Matrix:double.1.1::"></span><span class="target" id="class_simple_e_k_f_state_1a430113f969f09faa5af6d16cc3a56bef"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Ref</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pos_</span></span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14SimpleEKFState9state_covE">
+<span id="_CPPv3N14SimpleEKFState9state_covE"></span><span id="_CPPv2N14SimpleEKFState9state_covE"></span><span id="SimpleEKFState::state_cov__Eigen::Matrix:double.1.1:"></span><span class="target" id="class_simple_e_k_f_state_1a52e1a3402dac2255557eff271c1a99e9"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">state_cov</span></span></span><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-attributes">Public Static Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14SimpleEKFState9state_dimE">
+<span id="_CPPv3N14SimpleEKFState9state_dimE"></span><span id="_CPPv2N14SimpleEKFState9state_dimE"></span><span id="SimpleEKFState::state_dim__iC"></span><span class="target" id="class_simple_e_k_f_state_1ab4a7267a30c976bdaab33d0d89e35ce6"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">state_dim</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14SimpleEKFState9noise_dimE">
+<span id="_CPPv3N14SimpleEKFState9noise_dimE"></span><span id="_CPPv2N14SimpleEKFState9noise_dimE"></span><span id="SimpleEKFState::noise_dim__iC"></span><span class="target" id="class_simple_e_k_f_state_1ab4efb0d8126dd2809a8faab9708bb097"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">noise_dim</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv416SimpleEKFMeasure">
+<span id="_CPPv316SimpleEKFMeasure"></span><span id="_CPPv216SimpleEKFMeasure"></span><span id="SimpleEKFMeasure"></span><span class="target" id="class_simple_e_k_f_measure"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SimpleEKFMeasure</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">&gt;</span></span><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;<a class="reference internal" href="../../doxygen_index_one_page.html#simple__1d__ekf_8hpp"><span class="std std-ref">simple_1d_ekf.hpp</span></a>&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N16SimpleEKFMeasure16SimpleEKFMeasureEv">
+<span id="_CPPv3N16SimpleEKFMeasure16SimpleEKFMeasureEv"></span><span id="_CPPv2N16SimpleEKFMeasure16SimpleEKFMeasureEv"></span><span id="SimpleEKFMeasure::SimpleEKFMeasure__void"></span><span class="target" id="class_simple_e_k_f_measure_1ad4f2dd1ef4e46199e3d3538762bd48a8"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SimpleEKFMeasure</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN16SimpleEKFMeasure16SimpleEKFMeasureERKN5Eigen10MatrixBaseI12OtherDerivedEE">
+<span id="_CPPv3I0EN16SimpleEKFMeasure16SimpleEKFMeasureERKN5Eigen10MatrixBaseI12OtherDerivedEE"></span><span id="_CPPv2I0EN16SimpleEKFMeasure16SimpleEKFMeasureERKN5Eigen10MatrixBaseI12OtherDerivedEE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OtherDerived</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="class_simple_e_k_f_measure_1a34e81c7518ca3b634259b34643170368"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SimpleEKFMeasure</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixBase</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../class/class_simple_e_k_f_measure.html#_CPPv4I0EN16SimpleEKFMeasure16SimpleEKFMeasureERKN5Eigen10MatrixBaseI12OtherDerivedEE" title="SimpleEKFMeasure::SimpleEKFMeasure::OtherDerived"><span class="n"><span class="pre">OtherDerived</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN16SimpleEKFMeasureaSER16SimpleEKFMeasureRKN5Eigen10MatrixBaseI12OtherDerivedEE">
+<span id="_CPPv3I0EN16SimpleEKFMeasureaSERKN5Eigen10MatrixBaseI12OtherDerivedEE"></span><span id="_CPPv2I0EN16SimpleEKFMeasureaSERKN5Eigen10MatrixBaseI12OtherDerivedEE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OtherDerived</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="class_simple_e_k_f_measure_1a5388aa718f1f3df78d1b28ec04943b67"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="../class/class_simple_e_k_f_measure.html#_CPPv416SimpleEKFMeasure" title="SimpleEKFMeasure"><span class="n"><span class="pre">SimpleEKFMeasure</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixBase</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../class/class_simple_e_k_f_measure.html#_CPPv4I0EN16SimpleEKFMeasureaSER16SimpleEKFMeasureRKN5Eigen10MatrixBaseI12OtherDerivedEE" title="SimpleEKFMeasure::operator=::OtherDerived"><span class="n"><span class="pre">OtherDerived</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N16SimpleEKFMeasure9meas_pos_E">
+<span id="_CPPv3N16SimpleEKFMeasure9meas_pos_E"></span><span id="_CPPv2N16SimpleEKFMeasure9meas_pos_E"></span><span id="SimpleEKFMeasure::meas_pos___Eigen::Ref:Eigen::Matrix:double.1.1::"></span><span class="target" id="class_simple_e_k_f_measure_1ac3cd10f583b059663795b53ab6b5ea96"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Ref</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">meas_pos_</span></span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N16SimpleEKFMeasure8meas_covE">
+<span id="_CPPv3N16SimpleEKFMeasure8meas_covE"></span><span id="_CPPv2N16SimpleEKFMeasure8meas_covE"></span><span id="SimpleEKFMeasure::meas_cov__Eigen::Matrix:double.1.1:"></span><span class="target" id="class_simple_e_k_f_measure_1a6d6a38c72d8d60bc332fbd62045e4741"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">meas_cov</span></span></span><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-attributes">Public Static Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N16SimpleEKFMeasure8meas_dimE">
+<span id="_CPPv3N16SimpleEKFMeasure8meas_dimE"></span><span id="_CPPv2N16SimpleEKFMeasure8meas_dimE"></span><span id="SimpleEKFMeasure::meas_dim__iC"></span><span class="target" id="class_simple_e_k_f_measure_1a0c30524724d5c7499a6f235fcb16d008"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">meas_dim</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv49SimpleEKF">
+<span id="_CPPv39SimpleEKF"></span><span id="_CPPv29SimpleEKF"></span><span id="SimpleEKF"></span><span class="target" id="class_simple_e_k_f"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SimpleEKF</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="base__ekf__with__imu__kin_8cpp.html#_CPPv414mim_estimation" title="mim_estimation"><span class="n"><span class="pre">mim_estimation</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="butterworth__filter_8hpp.html#_CPPv4N14mim_estimation16standard_filtersE" title="mim_estimation::standard_filters"><span class="n"><span class="pre">standard_filters</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="../class/classmim__estimation_1_1standard__filters_1_1_e_k_f.html#_CPPv4I00EN14mim_estimation16standard_filters3EKFE" title="mim_estimation::standard_filters::EKF"><span class="n"><span class="pre">EKF</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../class/class_simple_e_k_f_state.html#_CPPv414SimpleEKFState" title="SimpleEKFState"><span class="n"><span class="pre">SimpleEKFState</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../class/class_simple_e_k_f_measure.html#_CPPv416SimpleEKFMeasure" title="SimpleEKFMeasure"><span class="n"><span class="pre">SimpleEKFMeasure</span></span></a><span class="p"><span class="pre">&gt;</span></span><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;<a class="reference internal" href="../../doxygen_index_one_page.html#simple__1d__ekf_8hpp"><span class="std std-ref">simple_1d_ekf.hpp</span></a>&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9SimpleEKF9SimpleEKFEddb">
+<span id="_CPPv3N9SimpleEKF9SimpleEKFEddb"></span><span id="_CPPv2N9SimpleEKF9SimpleEKFEddb"></span><span id="SimpleEKF::SimpleEKF__double.double.b"></span><span class="target" id="class_simple_e_k_f_1ae76054b42debdfb26cd97dcb3618ecdc"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SimpleEKF</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">init_pos</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">dt</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">is_discrete</span></span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9SimpleEKFD0Ev">
+<span id="_CPPv3N9SimpleEKFD0Ev"></span><span id="_CPPv2N9SimpleEKFD0Ev"></span><span id="SimpleEKF::~SimpleEKF"></span><span class="target" id="class_simple_e_k_f_1aedb837f14c1a5e9aa1e3c03828591bd5"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~SimpleEKF</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9SimpleEKF6updateEN5Eigen6MatrixIdXL1EEXL1EEEEb">
+<span id="_CPPv3N9SimpleEKF6updateEN5Eigen6MatrixIdXL1EEXL1EEEEb"></span><span id="_CPPv2N9SimpleEKF6updateEN5Eigen6MatrixIdX1EX1EEEb"></span><span id="SimpleEKF::update__Eigen::Matrix:double.1.1:.b"></span><span class="target" id="class_simple_e_k_f_1a00a04d44b481b3195d9a6b31b79c9479"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">update</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">new_measured_value</span></span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9SimpleEKF16get_filter_stateEv">
+<span id="_CPPv3N9SimpleEKF16get_filter_stateEv"></span><span id="_CPPv2N9SimpleEKF16get_filter_stateEv"></span><span id="SimpleEKF::get_filter_state__void"></span><span class="target" id="class_simple_e_k_f_1a1fc85f3331589c430d51de4a25248f54"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">N</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_filter_state</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9SimpleEKF27subscribe_to_data_collectorERN14mim_estimation8io_tools13DataCollectorE">
+<span id="_CPPv3N9SimpleEKF27subscribe_to_data_collectorERN14mim_estimation8io_tools13DataCollectorE"></span><span id="_CPPv2N9SimpleEKF27subscribe_to_data_collectorERN14mim_estimation8io_tools13DataCollectorE"></span><span id="SimpleEKF::subscribe_to_data_collector__mim_estimation::io_tools::DataCollectorR"></span><span class="target" id="class_simple_e_k_f_1a29396361b523022e9b1ee5d61b4bea92"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">subscribe_to_data_collector</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="base__ekf__with__imu__kin_8cpp.html#_CPPv414mim_estimation" title="mim_estimation"><span class="n"><span class="pre">mim_estimation</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="data__collector_8hpp.html#_CPPv4N14mim_estimation8io_toolsE" title="mim_estimation::io_tools"><span class="n"><span class="pre">io_tools</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="../class/classmim__estimation_1_1io__tools_1_1_data_collector.html#_CPPv4N14mim_estimation8io_tools13DataCollectorE" title="mim_estimation::io_tools::DataCollector"><span class="n"><span class="pre">DataCollector</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">data_collector</span></span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9SimpleEKF13process_modelER14SimpleEKFState">
+<span id="_CPPv3N9SimpleEKF13process_modelER14SimpleEKFState"></span><span id="_CPPv2N9SimpleEKF13process_modelER14SimpleEKFState"></span><span id="SimpleEKF::process_model__SimpleEKFStateR"></span><span class="target" id="class_simple_e_k_f_1a2b1f6e035fedc5dd081a48796b8df54a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">N</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">process_model</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../class/class_simple_e_k_f_state.html#_CPPv414SimpleEKFState" title="SimpleEKFState"><span class="n"><span class="pre">SimpleEKFState</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9SimpleEKF13process_modelER14SimpleEKFState" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>process_model </p>
+<p><ul class="simple">
+<li><p><div class="math notranslate nohighlight">
+\[\begin{align} \dot{pos} = (meas_vel - meas_vel_bias) \dot{bias} = 0.0 \end{align}\]</div>
+</p></li>
+</ul>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>s</strong> – current state </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>out: the predicted state </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9SimpleEKF21form_process_jacobianEv">
+<span id="_CPPv3N9SimpleEKF21form_process_jacobianEv"></span><span id="_CPPv2N9SimpleEKF21form_process_jacobianEv"></span><span id="SimpleEKF::form_process_jacobian__void"></span><span class="target" id="class_simple_e_k_f_1a5525368136582a98fa3952e49304eba9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">form_process_jacobian</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9SimpleEKF21form_process_jacobianEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>form_process_jacobian </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9SimpleEKF18form_process_noiseEv">
+<span id="_CPPv3N9SimpleEKF18form_process_noiseEv"></span><span id="_CPPv2N9SimpleEKF18form_process_noiseEv"></span><span id="SimpleEKF::form_process_noise__void"></span><span class="target" id="class_simple_e_k_f_1a5d25df9f33faa603bee1a38a46409b1e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">form_process_noise</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9SimpleEKF18form_process_noiseEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9SimpleEKF19form_noise_jacobianEv">
+<span id="_CPPv3N9SimpleEKF19form_noise_jacobianEv"></span><span id="_CPPv2N9SimpleEKF19form_noise_jacobianEv"></span><span id="SimpleEKF::form_noise_jacobian__void"></span><span class="target" id="class_simple_e_k_f_1a5d6035152b3b30f603755550f16ce9e5"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">form_noise_jacobian</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9SimpleEKF19form_noise_jacobianEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9SimpleEKF17measurement_modelER14SimpleEKFState">
+<span id="_CPPv3N9SimpleEKF17measurement_modelER14SimpleEKFState"></span><span id="_CPPv2N9SimpleEKF17measurement_modelER14SimpleEKFState"></span><span id="SimpleEKF::measurement_model__SimpleEKFStateR"></span><span class="target" id="class_simple_e_k_f_1a30dceb4372623f7768381c668eedf098"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">K</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">measurement_model</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../class/class_simple_e_k_f_state.html#_CPPv414SimpleEKFState" title="SimpleEKFState"><span class="n"><span class="pre">SimpleEKFState</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9SimpleEKF17measurement_modelER14SimpleEKFState" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>measurement_model </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>s</strong> – current state </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>out: the predicted measurement </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9SimpleEKF25form_measurement_jacobianEv">
+<span id="_CPPv3N9SimpleEKF25form_measurement_jacobianEv"></span><span id="_CPPv2N9SimpleEKF25form_measurement_jacobianEv"></span><span id="SimpleEKF::form_measurement_jacobian__void"></span><span class="target" id="class_simple_e_k_f_1a0cef61d8d2f6d22c7011ce5979390536"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">form_measurement_jacobian</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9SimpleEKF25form_measurement_jacobianEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9SimpleEKF22form_measurement_noiseEv">
+<span id="_CPPv3N9SimpleEKF22form_measurement_noiseEv"></span><span id="_CPPv2N9SimpleEKF22form_measurement_noiseEv"></span><span id="SimpleEKF::form_measurement_noise__void"></span><span class="target" id="class_simple_e_k_f_1a672178dfbf389c827f42115753d0aa0d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">form_measurement_noise</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9SimpleEKF22form_measurement_noiseEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9SimpleEKF23form_actual_measurementEv">
+<span id="_CPPv3N9SimpleEKF23form_actual_measurementEv"></span><span id="_CPPv2N9SimpleEKF23form_actual_measurementEv"></span><span id="SimpleEKF::form_actual_measurement__void"></span><span class="target" id="class_simple_e_k_f_1afa1a10b8893e43dfc2f7b38d4de7abf6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">form_actual_measurement</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9SimpleEKF23form_actual_measurementEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9SimpleEKF4vel_E">
+<span id="_CPPv3N9SimpleEKF4vel_E"></span><span id="_CPPv2N9SimpleEKF4vel_E"></span><span id="SimpleEKF::vel___Eigen::Matrix:double.1.1:"></span><span class="target" id="class_simple_e_k_f_1adf2f736ce44b6a5278c4251e79c79ba6"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">vel_</span></span></span><a class="headerlink" href="#_CPPv4N9SimpleEKF4vel_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9SimpleEKF9meas_pos_E">
+<span id="_CPPv3N9SimpleEKF9meas_pos_E"></span><span id="_CPPv2N9SimpleEKF9meas_pos_E"></span><span id="SimpleEKF::meas_pos___Eigen::Matrix:double.1.1:"></span><span class="target" id="class_simple_e_k_f_1a8bae32ca920dadde93bc2d9b85b40764"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">meas_pos_</span></span></span><a class="headerlink" href="#_CPPv4N9SimpleEKF9meas_pos_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9SimpleEKF9meas_vel_E">
+<span id="_CPPv3N9SimpleEKF9meas_vel_E"></span><span id="_CPPv2N9SimpleEKF9meas_vel_E"></span><span id="SimpleEKF::meas_vel___Eigen::Matrix:double.1.1:"></span><span class="target" id="class_simple_e_k_f_1a87f381ae14a4d2baa071b8de048c1bcd"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">meas_vel_</span></span></span><a class="headerlink" href="#_CPPv4N9SimpleEKF9meas_vel_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9SimpleEKF13q_proc_noise_E">
+<span id="_CPPv3N9SimpleEKF13q_proc_noise_E"></span><span id="_CPPv2N9SimpleEKF13q_proc_noise_E"></span><span id="SimpleEKF::q_proc_noise___double"></span><span class="target" id="class_simple_e_k_f_1ae14de91b20a5d8d896a1189aec99fd2b"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">q_proc_noise_</span></span></span><a class="headerlink" href="#_CPPv4N9SimpleEKF13q_proc_noise_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9SimpleEKF13q_meas_noise_E">
+<span id="_CPPv3N9SimpleEKF13q_meas_noise_E"></span><span id="_CPPv2N9SimpleEKF13q_meas_noise_E"></span><span id="SimpleEKF::q_meas_noise___double"></span><span class="target" id="class_simple_e_k_f_1ab14de6c4789b8c2140ec591d82774c3f"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">q_meas_noise_</span></span></span><a class="headerlink" href="#_CPPv4N9SimpleEKF13q_meas_noise_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9SimpleEKF9init_var_E">
+<span id="_CPPv3N9SimpleEKF9init_var_E"></span><span id="_CPPv2N9SimpleEKF9init_var_E"></span><span id="SimpleEKF::init_var___double"></span><span class="target" id="class_simple_e_k_f_1a40d31f224a5fc3b4719028a3443c5057"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">init_var_</span></span></span><a class="headerlink" href="#_CPPv4N9SimpleEKF9init_var_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="signal__utils_8hpp.html" class="btn btn-neutral float-left" title="File signal_utils.hpp" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="srcdg_2robot__state__estimator_8cpp.html" class="btn btn-neutral float-right" title="File robot_state_estimator.cpp" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

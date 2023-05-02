@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>File ekf.hpp &mdash; mim_estimation 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="File ekf.hxx" href="ekf_8hxx.html" />
+    <link rel="prev" title="File dg_python_module.cpp" href="dg__python__module_8cpp.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            mim_estimation
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">C++ API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../doxygen_index.html">C++ API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../classlist.html">Class list</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../filelist.html">File list</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="base__ekf__with__imu__kin_8cpp.html">File base_ekf_with_imu_kin.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="base__ekf__with__imu__kin_8hpp.html">File base_ekf_with_imu_kin.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="butterworth__filter_8hpp.html">File butterworth_filter.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="butterworth__filter_8hxx.html">File butterworth_filter.hxx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data__collector_8hpp.html">File data_collector.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data__reader_8hpp.html">File data_reader.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo__ekf__vicon__imu_8cpp.html">File demo_ekf_vicon_imu.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dg__python__module_8cpp.html">File dg_python_module.cpp</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">File ekf.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ekf_8hxx.html">File ekf.hxx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ekf__vicon__imu__simple_8hpp.html">File ekf_vicon_imu_simple.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="end__effector__force__estimator_8cpp.html">File end_effector_force_estimator.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="end__effector__force__estimator_8hpp.html">File end_effector_force_estimator.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="include_2mim__estimation_2robot__state__estimator_8hpp.html">File robot_state_estimator.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mim__estimation_8cpp.html">File mim_estimation.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="non__rt__data__collector_8hpp.html">File non_rt_data_collector.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robot__state__estimation_8cpp.html">File robot_state_estimation.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robot__state__estimation_8hpp.html">File robot_state_estimation.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="signal__utils_8cpp.html">File signal_utils.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="signal__utils_8hpp.html">File signal_utils.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simple__1d__ekf_8hpp.html">File simple_1d_ekf.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="srcdg_2robot__state__estimator_8cpp.html">File robot_state_estimator.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="srcdg_2robot__state__estimator_8hpp.html">File robot_state_estimator.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="srcpy_2robot__state__estimator_8cpp.html">File robot_state_estimator.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="test__ekf__vicon__imu_8cpp.html">File test_ekf_vicon_imu.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="test__extended__kalman__filter_8cpp.html">File test_extended_kalman_filter.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ukf_8hpp.html">File ukf.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ukf_8hxx.html">File ukf.hxx</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../doxygen_index_one_page.html">C++ API and example</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">mim_estimation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">mim_estimation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../doxygen_index.html">C++ API</a></li>
+          <li class="breadcrumb-item"><a href="../filelist.html">File list</a></li>
+      <li class="breadcrumb-item active">File ekf.hpp</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/breathe_apidoc/file/ekf_8hpp.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="file-ekf-hpp">
+<h1>File ekf.hpp<a class="headerlink" href="#file-ekf-hpp" title="Permalink to this heading">¶</a></h1>
+<p>Implementation of the Extended Kalman Filter (EKF). </p>
+<p><dl>
+<dt class="sig sig-object cpp">
+<a class="reference internal" href="../../doxygen_index_one_page.html#license_1_license000002"><span class="std std-ref"><span class="pre">License:</span></span></a></dt>
+<dd><p>BSD 3-clause </p>
+</dd></dl>
+
+<dl class="simple">
+<dt><strong>Copyright</strong></dt><dd><p>Copyright (c) 2020, New York University and Max Planck Gesellschaft </p>
+</dd>
+</dl>
+</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv414mim_estimation">
+<span id="_CPPv314mim_estimation"></span><span id="_CPPv214mim_estimation"></span><span id="mim_estimation"></span><span class="target" id="namespacemim__estimation"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mim_estimation</span></span></span><br /></dt>
+<dd><dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filtersE">
+<span id="_CPPv3N14mim_estimation16standard_filtersE"></span><span id="_CPPv2N14mim_estimation16standard_filtersE"></span><span id="mim_estimation::standard_filters"></span><span class="target" id="namespacemim__estimation_1_1standard__filters"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">standard_filters</span></span></span><br /></dt>
+<dd><dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I00EN14mim_estimation16standard_filters3EKFE">
+<span id="_CPPv3I00EN14mim_estimation16standard_filters3EKFE"></span><span id="_CPPv2I00EN14mim_estimation16standard_filters3EKFE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">S</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">M</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">EKF</span></span></span><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;<a class="reference internal" href="../../doxygen_index_one_page.html#ekf_8hpp"><span class="std std-ref">ekf.hpp</span></a>&gt;</em></div>
+<p>This class implements an extended Kalman Filter (<a class="reference internal" href="../../doxygen_index_one_page.html#classmim__estimation_1_1standard__filters_1_1_e_k_f"><span class="std std-ref">EKF</span></a>). </p>
+<p>This class implements a templated Extended Kalman Filter that receives a State class “S” and a measurement class “M”. Both templated class must have this following operator: -, +, =, &lt;&lt;. This operator must be eigen compatible. To achieve this in a compact way I strongly suggest inheriting directly from the class Eigen::Vector&lt;N&gt; (see Eigen documentation <a class="reference external" href="https://eigen.tuxfamily.org/dox/TopicCustomizing_InheritingMatrix.html">https://eigen.tuxfamily.org/dox/TopicCustomizing_InheritingMatrix.html</a>).</p>
+<p>The main sources of reading comes from<ul class="simple">
+<li><p>[1] “S. Thrun, W. Burgard, and D. Fox, Probabilistic Robotics, 2000” (Chapter 3)</p></li>
+<li><p>[2] “http://wolfweb.unr.edu/~fadali/EE782/NumEvalQphi.pdf”</p></li>
+<li><p>[3] “https://en.wikipedia.org/wiki/Extended_Kalman_filter”</p></li>
+</ul>
+</p>
+<p>The notation used in this documentation is the one from “http://wolfweb.unr.edu/~fadali/EE782/NumEvalQphi.pdf”.</p>
+<p><div class="math notranslate nohighlight">
+\[\begin{split}\begin{align} x_t = g(u_t, x_{t-1}) + \epsilon_t \\ z_t = h(x_t) + \delta_t \end{align}\end{split}\]</div>
+ With <span class="math notranslate nohighlight">\( x_t \)</span> the system state, <span class="math notranslate nohighlight">\( u_t \)</span> the system control, <span class="math notranslate nohighlight">\( g \)</span> the process evolution, <span class="math notranslate nohighlight">\( \epsilon_t \approx N(0, R_t) \)</span> the process Gaussian noise, <span class="math notranslate nohighlight">\( h \)</span> the measurement evolution and <span class="math notranslate nohighlight">\( \delta_t \approx N(0, Q_t) \)</span> the measurement Gaussian noise. The first equation depicts the “process” in the code. The second equation represents the “measurement” in the code.</p>
+<p>Using a taylor expansion of the previous equation we get: <div class="math notranslate nohighlight">
+\[\begin{split}\begin{align} x_t = g(u_t, \mu_{t-1}) + G_t \; * \; (x_{t-1} - \mu_{t-1}) + \epsilon_t \\ z_t = h(\mu_t) + H_t \; * \; (x_{t} - \mu_{t}) + \delta_t \end{align}\end{split}\]</div>
+ With <span class="math notranslate nohighlight">\( \mu_{t} \)</span> the average of the estimated state of covariance <span class="math notranslate nohighlight">\( \Sigma_t \)</span>. The equation of the <a class="reference internal" href="../../doxygen_index_one_page.html#classmim__estimation_1_1standard__filters_1_1_e_k_f"><span class="std std-ref">EKF</span></a> routine are defined with the “update_filter” function.</p>
+<p>The mapping between the variable names and this piece of documentation is done next to each variable. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF3EKFEbbdj">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF3EKFEbbdj"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF3EKFEbbdj"></span><span id="mim_estimation::standard_filters::EKF::EKF__b.b.double.unsigned"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1a2ea20693a42e464a1a8ba2995e239034"></span><span class="sig-name descname"><span class="n"><span class="pre">EKF</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">numerical_jac</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">is_discrete</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">dt</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">lin_order</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">2</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p><a class="reference internal" href="../../doxygen_index_one_page.html#classmim__estimation_1_1standard__filters_1_1_e_k_f"><span class="std std-ref">EKF</span></a>, constructor of the class. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>numerical_jac</strong> – do we compute the Jacobians analytically or not? </p></li>
+<li><p><strong>is_discrete</strong> – is the process discrete? </p></li>
+<li><p><strong>dt</strong> – the sampling period of the <a class="reference internal" href="../../doxygen_index_one_page.html#classmim__estimation_1_1standard__filters_1_1_e_k_f"><span class="std std-ref">EKF</span></a>. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKFD0Ev">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKFD0Ev"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKFD0Ev"></span><span id="mim_estimation::standard_filters::EKF::~EKF"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1a89042b3102a58723c58eea9ae8fc329d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~EKF</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Default destructor. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF12updateFilterEb">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF12updateFilterEb"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF12updateFilterEb"></span><span id="mim_estimation::standard_filters::EKF::updateFilter__b"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1a1c009f510af77f9007a9bb0a3f15d773"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">updateFilter</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">update_on</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>updateFilter: compute a pass of the extended Kalman filter </p>
+<p>
+From here on we only have access to <span class="math notranslate nohighlight">\( \mu_{t-1} \)</span> and <span class="math notranslate nohighlight">\( \Sigma_{t-1} \)</span> the previous estimated state along time. First of all we need to check if the system is a discrete one (see constructor). If the system is continuous we need to build a discrete approximation of it. In order to do so we use the Van Loan’s method (see [2] slide 15).<ul class="simple">
+<li><p>1/ Compute the dynamic matrix of the continuous process <span class="math notranslate nohighlight">\( M \)</span> <div class="math notranslate nohighlight">
+\[\begin{align} M = \left[ \left. \frac{-G_t}{0} \right| \frac{E_t R_t E_t^T}{G_t^T} \right] \end{align}\]</div>
+ With <span class="math notranslate nohighlight">\( E_t \)</span> being the jacobian of the noise. In [2], <span class="math notranslate nohighlight">\( E_t \)</span> is also considered as the control jacobian in a way.</p></li>
+<li><p>2/ Obtain the matrix M exponential <div class="math notranslate nohighlight">
+\[\begin{align} e^{M \Delta t} = \left[ \left. \frac{ e^{-G_t \Delta t} }{0} \right| \frac{ e^{-G_t \Delta t} F_{t, disc} }{ e^{G_t^T \Delta t} } \right] \end{align}\]</div>
+</p></li>
+<li><p>3/ Transpose the lower right corner to compute the discretized process noise covariance. <div class="math notranslate nohighlight">
+\[\begin{align} R_{t, disc} = e^{G_t \Delta t} = (e^{G_t^T \Delta t})^T \end{align}\]</div>
+</p></li>
+<li><p>4/ Compute the discretized process jacobian as follow: <div class="math notranslate nohighlight">
+\[\begin{align} F_{t, disc} = R_{t, disc} \;\;\; e^{M \Delta t}[\text{upper right corner}] \end{align}\]</div>
+ In the following we will discard the <span class="math notranslate nohighlight">\( {disc} \)</span> subscript in the expression of the process Jacobian and noise covariance for sake of clarity. We assume that the system is either discrete or already discretized.</p></li>
+</ul>
+</p>
+<p>When the system has been discretized (or is discrete) we compute the <a class="reference internal" href="../../doxygen_index_one_page.html#classmim__estimation_1_1standard__filters_1_1_e_k_f"><span class="std std-ref">EKF</span></a> with the following procedure. First we need to predict what is supposed to be the current estimated state <span class="math notranslate nohighlight">\( \tilde{\mu}_{t} \)</span> and its Covariance <span class="math notranslate nohighlight">\( \tilde{\Sigma}_{t} \)</span> according to the model and the current control: <div class="math notranslate nohighlight">
+\[\begin{split}\begin{align} \tilde{\mu}_{t} &amp;= g(u_t, \mu_{t-1}) \\ \tilde{\Sigma}_{t} &amp;= G_t \Sigma_{t-1} G_t^T + R_t \end{align}\end{split}\]</div>
+ The second step consist in introducing the actual measurement when one occur. <div class="math notranslate nohighlight">
+\[\begin{split}\begin{align} K_{t} &amp;= \tilde{\Sigma}_{t} H_t^T (H_t \tilde{\Sigma}_t H_t^T + Q_t)^{-1} \\ \mu_{t} &amp;= \tilde{\mu}_{t} + K_t (z_t - h(\tilde{\mu}_t)) \\ \Sigma_{t} &amp;= (I - K_t H_t) \tilde{\Sigma}_{t} \end{align}\end{split}\]</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>update_on</strong> – is the measurement new?</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF14getFilterStateEv">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF14getFilterStateEv"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF14getFilterStateEv"></span><span id="mim_estimation::standard_filters::EKF::getFilterState__void"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1a5bad1ae8697090748307a0fd7c28cf8f"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../class/classmim__estimation_1_1standard__filters_1_1_e_k_f.html#_CPPv4N14mim_estimation16standard_filters3EKF1NE" title="mim_estimation::standard_filters::EKF::N"><span class="n"><span class="pre">N</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getFilterState</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><br /></dt>
+<dd><p>getFilterState </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the current state estimate <span class="math notranslate nohighlight">\( \mu_{t} \)</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF10printDebugEv">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF10printDebugEv"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF10printDebugEv"></span><span id="mim_estimation::standard_filters::EKF::printDebug__void"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1af2a2cd173065ea227ba5b03da70e0e75"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">printDebug</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>printDebug, print all the protected method of the class for debugging purposes </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-attributes">Public Static Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF1NE">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF1NE"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF1NE"></span><span id="mim_estimation::standard_filters::EKF::N__iC"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1a1b4c5caf1eb87c882f92772b63f900b5"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">N</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="../class/classmim__estimation_1_1standard__filters_1_1_e_k_f.html#_CPPv4I00EN14mim_estimation16standard_filters3EKFE" title="mim_estimation::standard_filters::EKF::S"><span class="n"><span class="pre">S</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">state_dim</span></span><br /></dt>
+<dd><p>State dimension </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF1PE">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF1PE"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF1PE"></span><span id="mim_estimation::standard_filters::EKF::P__iC"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1aa7d8c1558834ce690fd98a2b69027428"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">P</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="../class/classmim__estimation_1_1standard__filters_1_1_e_k_f.html#_CPPv4I00EN14mim_estimation16standard_filters3EKFE" title="mim_estimation::standard_filters::EKF::S"><span class="n"><span class="pre">S</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">noise_dim</span></span><br /></dt>
+<dd><p>Noise dimension </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF1KE">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF1KE"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF1KE"></span><span id="mim_estimation::standard_filters::EKF::K__iC"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1aa3f3252a922d3c8eb08d4abadec56a3b"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">K</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="../class/classmim__estimation_1_1standard__filters_1_1_e_k_f.html#_CPPv4I00EN14mim_estimation16standard_filters3EKFE" title="mim_estimation::standard_filters::EKF::M"><span class="n"><span class="pre">M</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">meas_dim</span></span><br /></dt>
+<dd><p>Measurement dimension </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-functions">Protected Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF12processModelER1S">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF12processModelER1S"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF12processModelER1S"></span><span id="mim_estimation::standard_filters::EKF::processModel__SR"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1aca4b42a6aef54f9fc6c3c90f76240901"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../class/classmim__estimation_1_1standard__filters_1_1_e_k_f.html#_CPPv4N14mim_estimation16standard_filters3EKF1NE" title="mim_estimation::standard_filters::EKF::N"><span class="n"><span class="pre">N</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">processModel</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../class/classmim__estimation_1_1standard__filters_1_1_e_k_f.html#_CPPv4I00EN14mim_estimation16standard_filters3EKFE" title="mim_estimation::standard_filters::EKF::S"><span class="n"><span class="pre">S</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3EKF12processModelER1S" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>processModel, a model of the continuous/discrete state dynamics <span class="math notranslate nohighlight">\( g(u_t, x_{t-1}) \)</span></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>s</strong> – <span class="math notranslate nohighlight">\( [x_{t-1}^T \;\; u_t^T]^T \)</span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the predicted state (Max: should not return anything and update state_pre_?) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF19formProcessJacobianEv">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF19formProcessJacobianEv"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF19formProcessJacobianEv"></span><span id="mim_estimation::standard_filters::EKF::formProcessJacobian__void"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1a376b1003714c2f3a6ad58e8184515ba7"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">formProcessJacobian</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3EKF19formProcessJacobianEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>formProcessJacobian, compute the Jacobian of the process <span class="math notranslate nohighlight">\( G_t \)</span></p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF16formProcessNoiseEv">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF16formProcessNoiseEv"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF16formProcessNoiseEv"></span><span id="mim_estimation::standard_filters::EKF::formProcessNoise__void"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1a54853df5c2f7e14df1b0aa34abb7afee"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">formProcessNoise</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3EKF16formProcessNoiseEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>formProcessNoise, compute the covariance of the process noise <span class="math notranslate nohighlight">\( R_t \)</span></p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF17formNoiseJacobianEv">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF17formNoiseJacobianEv"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF17formNoiseJacobianEv"></span><span id="mim_estimation::standard_filters::EKF::formNoiseJacobian__void"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1a35b3196a724f1c04291e23ba7b6e1a29"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">formNoiseJacobian</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3EKF17formNoiseJacobianEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>formNoiseJacobian, compute the Jacobian of the process noise <span class="math notranslate nohighlight">\( E_t \)</span></p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF9measModelER1S">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF9measModelER1S"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF9measModelER1S"></span><span id="mim_estimation::standard_filters::EKF::measModel__SR"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1ac501936783700ca3c3ac465b736f7918"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../class/classmim__estimation_1_1standard__filters_1_1_e_k_f.html#_CPPv4N14mim_estimation16standard_filters3EKF1KE" title="mim_estimation::standard_filters::EKF::K"><span class="n"><span class="pre">K</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">measModel</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../class/classmim__estimation_1_1standard__filters_1_1_e_k_f.html#_CPPv4I00EN14mim_estimation16standard_filters3EKFE" title="mim_estimation::standard_filters::EKF::S"><span class="n"><span class="pre">S</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3EKF9measModelER1S" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>measModel, a model of the measurement dynamics <span class="math notranslate nohighlight">\( h(x_t) \)</span></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>s</strong> – a state <span class="math notranslate nohighlight">\( x_t \)</span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the predicted measurement (Max: should not return anything and update meas_pred_?) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF16formMeasJacobianEv">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF16formMeasJacobianEv"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF16formMeasJacobianEv"></span><span id="mim_estimation::standard_filters::EKF::formMeasJacobian__void"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1a2821f1ff08c924d1e95a2c2c9e3a7bc3"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">formMeasJacobian</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3EKF16formMeasJacobianEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>formMeasJacobian, compute the Jacobian of the measurement <span class="math notranslate nohighlight">\( H_t \)</span></p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF13formMeasNoiseEv">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF13formMeasNoiseEv"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF13formMeasNoiseEv"></span><span id="mim_estimation::standard_filters::EKF::formMeasNoise__void"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1af5373c12c0dc651e5f1ab535555464df"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">formMeasNoise</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3EKF13formMeasNoiseEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>formMeasJacobian, compute the measure covariance <span class="math notranslate nohighlight">\( Q_t \)</span></p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF14formActualMeasEv">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF14formActualMeasEv"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF14formActualMeasEv"></span><span id="mim_estimation::standard_filters::EKF::formActualMeas__void"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1ad1e9a93b02b1dcbb24725898b4a6ceb2"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">formActualMeas</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3EKF14formActualMeasEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>formMeasJacobian, compute the measurement from sensors <span class="math notranslate nohighlight">\( z_t \)</span></p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF16computeJacobiansERN5Eigen8MatrixXdERN5Eigen8MatrixXdEd">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF16computeJacobiansERN5Eigen8MatrixXdERN5Eigen8MatrixXdEd"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF16computeJacobiansERN5Eigen8MatrixXdERN5Eigen8MatrixXdEd"></span><span id="mim_estimation::standard_filters::EKF::computeJacobians__Eigen::MatrixXdR.Eigen::MatrixXdR.double"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1ac2810dcbab1569101de0295c049f252a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">computeJacobians</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">G_t</span></span>, <span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">H_t</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">ds</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3EKF16computeJacobiansERN5Eigen8MatrixXdERN5Eigen8MatrixXdEd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>computeJacobians, compute the finite differentiation </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>G_t</strong> – <strong>[inout]</strong> the process jacobian to compute </p></li>
+<li><p><strong>H_t</strong> – <strong>[inout]</strong> the measurement jacobian </p></li>
+<li><p><strong>ds</strong> – <strong>[inout]</strong> the finite differentiation delta <span class="math notranslate nohighlight">\( \frac{f(x+ds) - f(x-ds)}{2ds} \)</span></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF15check_jacobiansEb">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF15check_jacobiansEb"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF15check_jacobiansEb"></span><span id="mim_estimation::standard_filters::EKF::check_jacobians__b"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1a3d4557c15d026affb9edd29a7a94d752"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">check_jacobians</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">evaluate</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3EKF15check_jacobiansEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>check_the_jacobians, this function computes the jacobian from the discrete model and from the continuous jacobian discretized and compare them </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>evaluate</strong> – <strong>[in]</strong> true, the function is computing the check/false it does nothing </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a boolean that says if everything is alright. for Van Loan discretization, <span class="math notranslate nohighlight">\( M \)</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF10state_pre_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF10state_pre_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF10state_pre_E"></span><span id="mim_estimation::standard_filters::EKF::state_pre___S"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1a7fc275e753df9bd3cf109bc5874af55f"></span><a class="reference internal" href="../class/classmim__estimation_1_1standard__filters_1_1_e_k_f.html#_CPPv4I00EN14mim_estimation16standard_filters3EKFE" title="mim_estimation::standard_filters::EKF::S"><span class="n"><span class="pre">S</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">state_pre_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3EKF10state_pre_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Predicted state ( <span class="math notranslate nohighlight">\( \tilde{\mu} \)</span>, <span class="math notranslate nohighlight">\( \tilde{\Sigma} \)</span>) </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF11state_post_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF11state_post_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF11state_post_E"></span><span id="mim_estimation::standard_filters::EKF::state_post___S"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1a8d4ef6ca4c4c56dc24e3a4cdec9b21ad"></span><a class="reference internal" href="../class/classmim__estimation_1_1standard__filters_1_1_e_k_f.html#_CPPv4I00EN14mim_estimation16standard_filters3EKFE" title="mim_estimation::standard_filters::EKF::S"><span class="n"><span class="pre">S</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">state_post_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3EKF11state_post_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>State of the filter. One variable is used for the previous ( <span class="math notranslate nohighlight">\( \mu_{t-1} \)</span>, <span class="math notranslate nohighlight">\( \Sigma_{t-1} \)</span>) and current state ( <span class="math notranslate nohighlight">\( \mu_{t} \)</span>, <span class="math notranslate nohighlight">\( \Sigma_{t} \)</span>) </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF12meas_actual_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF12meas_actual_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF12meas_actual_E"></span><span id="mim_estimation::standard_filters::EKF::meas_actual___M"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1afc395981c4dd0bd8ef4177d3b0fb963f"></span><a class="reference internal" href="../class/classmim__estimation_1_1standard__filters_1_1_e_k_f.html#_CPPv4I00EN14mim_estimation16standard_filters3EKFE" title="mim_estimation::standard_filters::EKF::M"><span class="n"><span class="pre">M</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">meas_actual_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3EKF12meas_actual_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Current measurement ( <span class="math notranslate nohighlight">\( z_{t} \)</span>) </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF10meas_pred_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF10meas_pred_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF10meas_pred_E"></span><span id="mim_estimation::standard_filters::EKF::meas_pred___M"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1afd5e9f3c2bf0fea23a388edb3b11b522"></span><a class="reference internal" href="../class/classmim__estimation_1_1standard__filters_1_1_e_k_f.html#_CPPv4I00EN14mim_estimation16standard_filters3EKFE" title="mim_estimation::standard_filters::EKF::M"><span class="n"><span class="pre">M</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">meas_pred_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3EKF10meas_pred_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Predicted measurement ( <span class="math notranslate nohighlight">\( h(\tilde{\mu}_t)\)</span> ) </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF7VL_mat_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF7VL_mat_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF7VL_mat_E"></span><span id="mim_estimation::standard_filters::EKF::VL_mat___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1a11e54e0085cf6f3dde7ce7aba0683105"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">VL_mat_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3EKF7VL_mat_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>for Van Loan discretization, <span class="math notranslate nohighlight">\( e^{M dt} \)</span></p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF11exp_VL_mat_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF11exp_VL_mat_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF11exp_VL_mat_E"></span><span id="mim_estimation::standard_filters::EKF::exp_VL_mat___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1aab2580af3eca8db058178ea391ac0bf5"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">exp_VL_mat_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3EKF11exp_VL_mat_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>discretized/discrete process Jacobian, <span class="math notranslate nohighlight">\( G_{t,disc}/G_t \)</span></p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF14proc_jac_disc_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF14proc_jac_disc_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF14proc_jac_disc_E"></span><span id="mim_estimation::standard_filters::EKF::proc_jac_disc___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1a5faf94f6c795ddc20487937ed05bd1f4"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">proc_jac_disc_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3EKF14proc_jac_disc_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>user input process Jacobian, <span class="math notranslate nohighlight">\( G_t \)</span></p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF9proc_jac_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF9proc_jac_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF9proc_jac_E"></span><span id="mim_estimation::standard_filters::EKF::proc_jac___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1a1ee5c18f1420e860d01ce3128568a829"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">proc_jac_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3EKF9proc_jac_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Jacobian of the process noise, <span class="math notranslate nohighlight">\( E_t \)</span></p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF10noise_jac_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF10noise_jac_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF10noise_jac_E"></span><span id="mim_estimation::standard_filters::EKF::noise_jac___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1acf2e14e56c0b4066e900b306b095e860"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">noise_jac_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3EKF10noise_jac_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Jacobian of the measurement, <span class="math notranslate nohighlight">\( H_t \)</span></p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF9meas_jac_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF9meas_jac_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF9meas_jac_E"></span><span id="mim_estimation::standard_filters::EKF::meas_jac___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1a25f2365d9b9c344622aa62295bd51278"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">meas_jac_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3EKF9meas_jac_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>user input covariance of the process noise <span class="math notranslate nohighlight">\( R_t \)</span></p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF11proc_noise_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF11proc_noise_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF11proc_noise_E"></span><span id="mim_estimation::standard_filters::EKF::proc_noise___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1af2dc5ee8a939eb20b25bca6aa35a7f89"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">proc_noise_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3EKF11proc_noise_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>discretized/discrete covariance of the process noise <span class="math notranslate nohighlight">\( R_{t,disc}/R_t \)</span></p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF16proc_noise_disc_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF16proc_noise_disc_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF16proc_noise_disc_E"></span><span id="mim_estimation::standard_filters::EKF::proc_noise_disc___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1ac5b14b9ca150efe901a2f67ecdf1f1fb"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">proc_noise_disc_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3EKF16proc_noise_disc_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>user input covariance of the measure noise <span class="math notranslate nohighlight">\( Q_t \)</span></p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF11meas_noise_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF11meas_noise_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF11meas_noise_E"></span><span id="mim_estimation::standard_filters::EKF::meas_noise___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1a7752391f7f561ae0f1894f2927ea7238"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">meas_noise_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3EKF11meas_noise_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>covariance of the process noise <span class="math notranslate nohighlight">\( Q_t \)</span> assuming a discrete measurement </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF16meas_noise_disc_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF16meas_noise_disc_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF16meas_noise_disc_E"></span><span id="mim_estimation::standard_filters::EKF::meas_noise_disc___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1a139b10b7a4f55a3a74f346dc7dfbb99d"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">meas_noise_disc_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3EKF16meas_noise_disc_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Kalman filter gain matrix <span class="math notranslate nohighlight">\( K_t \)</span></p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF9gain_mat_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF9gain_mat_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF9gain_mat_E"></span><span id="mim_estimation::standard_filters::EKF::gain_mat___Eigen::MatrixXd"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1a2bab8e6580ea12fabb8fe6a4a2062019"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">gain_mat_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3EKF9gain_mat_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>LDLT decomposition to invert some matrix </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF4ldltE">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF4ldltE"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF4ldltE"></span><span id="mim_estimation::standard_filters::EKF::ldlt__Eigen::LDLT:Eigen::MatrixXd:"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1afe6bff4ef84f545c50af12470f01d65e"></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">LDLT</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ldlt</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3EKF4ldltE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Do we compute the Jacobian numerically or analytically? </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF14numerical_jac_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF14numerical_jac_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF14numerical_jac_E"></span><span id="mim_estimation::standard_filters::EKF::numerical_jac___b"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1ae689017f1c6bc7df88302d0770ebbf82"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">numerical_jac_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3EKF14numerical_jac_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Is the process discrete? </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF12is_discrete_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF12is_discrete_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF12is_discrete_E"></span><span id="mim_estimation::standard_filters::EKF::is_discrete___b"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1ae59f68f9e5ce530fcf1850baef15e9bb"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">is_discrete_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3EKF12is_discrete_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>sampling period </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF3dt_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF3dt_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF3dt_E"></span><span id="mim_estimation::standard_filters::EKF::dt___double"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1a504f519b40ae7fd6ea24bb8eb8815cb1"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dt_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3EKF3dt_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>order of the process dynamic linearization </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation16standard_filters3EKF10lin_order_E">
+<span id="_CPPv3N14mim_estimation16standard_filters3EKF10lin_order_E"></span><span id="_CPPv2N14mim_estimation16standard_filters3EKF10lin_order_E"></span><span id="mim_estimation::standard_filters::EKF::lin_order___unsigned"></span><span class="target" id="classmim__estimation_1_1standard__filters_1_1_e_k_f_1a44889412d5625d9149d0cee9361a0a03"></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lin_order_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation16standard_filters3EKF10lin_order_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="dg__python__module_8cpp.html" class="btn btn-neutral float-left" title="File dg_python_module.cpp" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ekf_8hxx.html" class="btn btn-neutral float-right" title="File ekf.hxx" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

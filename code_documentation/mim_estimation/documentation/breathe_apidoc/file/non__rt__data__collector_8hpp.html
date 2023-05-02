@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>File non_rt_data_collector.hpp &mdash; mim_estimation 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="File robot_state_estimation.cpp" href="robot__state__estimation_8cpp.html" />
+    <link rel="prev" title="File mim_estimation.cpp" href="mim__estimation_8cpp.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            mim_estimation
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">C++ API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../doxygen_index.html">C++ API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../classlist.html">Class list</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../filelist.html">File list</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="base__ekf__with__imu__kin_8cpp.html">File base_ekf_with_imu_kin.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="base__ekf__with__imu__kin_8hpp.html">File base_ekf_with_imu_kin.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="butterworth__filter_8hpp.html">File butterworth_filter.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="butterworth__filter_8hxx.html">File butterworth_filter.hxx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data__collector_8hpp.html">File data_collector.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data__reader_8hpp.html">File data_reader.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo__ekf__vicon__imu_8cpp.html">File demo_ekf_vicon_imu.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dg__python__module_8cpp.html">File dg_python_module.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ekf_8hpp.html">File ekf.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ekf_8hxx.html">File ekf.hxx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ekf__vicon__imu__simple_8hpp.html">File ekf_vicon_imu_simple.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="end__effector__force__estimator_8cpp.html">File end_effector_force_estimator.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="end__effector__force__estimator_8hpp.html">File end_effector_force_estimator.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="include_2mim__estimation_2robot__state__estimator_8hpp.html">File robot_state_estimator.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mim__estimation_8cpp.html">File mim_estimation.cpp</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">File non_rt_data_collector.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robot__state__estimation_8cpp.html">File robot_state_estimation.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robot__state__estimation_8hpp.html">File robot_state_estimation.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="signal__utils_8cpp.html">File signal_utils.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="signal__utils_8hpp.html">File signal_utils.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simple__1d__ekf_8hpp.html">File simple_1d_ekf.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="srcdg_2robot__state__estimator_8cpp.html">File robot_state_estimator.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="srcdg_2robot__state__estimator_8hpp.html">File robot_state_estimator.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="srcpy_2robot__state__estimator_8cpp.html">File robot_state_estimator.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="test__ekf__vicon__imu_8cpp.html">File test_ekf_vicon_imu.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="test__extended__kalman__filter_8cpp.html">File test_extended_kalman_filter.cpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ukf_8hpp.html">File ukf.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ukf_8hxx.html">File ukf.hxx</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../doxygen_index_one_page.html">C++ API and example</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">mim_estimation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">mim_estimation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../doxygen_index.html">C++ API</a></li>
+          <li class="breadcrumb-item"><a href="../filelist.html">File list</a></li>
+      <li class="breadcrumb-item active">File non_rt_data_collector.hpp</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/breathe_apidoc/file/non__rt__data__collector_8hpp.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="file-non-rt-data-collector-hpp">
+<h1>File non_rt_data_collector.hpp<a class="headerlink" href="#file-non-rt-data-collector-hpp" title="Permalink to this heading">¶</a></h1>
+<p>Collecting data in a non real-time inside a specific library and dump it in the SL format. </p>
+<p><dl>
+<dt class="sig sig-object cpp">
+<a class="reference internal" href="../../doxygen_index_one_page.html#license_1_license000012"><span class="std std-ref"><span class="pre">License:</span></span></a></dt>
+<dd><p>BSD 3-clause </p>
+</dd></dl>
+
+<dl class="simple">
+<dt><strong>Copyright</strong></dt><dd><p>Copyright (c) 2020, New York University and Max Planck Gesellschaft </p>
+</dd>
+</dl>
+</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv414mim_estimation">
+<span id="_CPPv314mim_estimation"></span><span id="_CPPv214mim_estimation"></span><span id="mim_estimation"></span><span class="target" id="namespacemim__estimation"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mim_estimation</span></span></span><br /></dt>
+<dd><dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_toolsE">
+<span id="_CPPv3N14mim_estimation8io_toolsE"></span><span id="_CPPv2N14mim_estimation8io_toolsE"></span><span id="mim_estimation::io_tools"></span><span class="target" id="namespacemim__estimation_1_1io__tools"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">io_tools</span></span></span><br /></dt>
+<dd><dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools18NonRtDataCollectorE">
+<span id="_CPPv3N14mim_estimation8io_tools18NonRtDataCollectorE"></span><span id="_CPPv2N14mim_estimation8io_tools18NonRtDataCollectorE"></span><span id="mim_estimation::io_tools::NonRtDataCollector"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_non_rt_data_collector"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">NonRtDataCollector</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="base__ekf__with__imu__kin_8cpp.html#_CPPv414mim_estimation" title="mim_estimation"><span class="n"><span class="pre">mim_estimation</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="data__collector_8hpp.html#_CPPv4N14mim_estimation8io_toolsE" title="mim_estimation::io_tools"><span class="n"><span class="pre">io_tools</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="../class/classmim__estimation_1_1io__tools_1_1_data_collector.html#_CPPv4N14mim_estimation8io_tools13DataCollectorE" title="mim_estimation::io_tools::DataCollector"><span class="n"><span class="pre">DataCollector</span></span></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;<a class="reference internal" href="../../doxygen_index_one_page.html#non__rt__data__collector_8hpp"><span class="std std-ref">non_rt_data_collector.hpp</span></a>&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools18NonRtDataCollector18NonRtDataCollectorEv">
+<span id="_CPPv3N14mim_estimation8io_tools18NonRtDataCollector18NonRtDataCollectorEv"></span><span id="_CPPv2N14mim_estimation8io_tools18NonRtDataCollector18NonRtDataCollectorEv"></span><span id="mim_estimation::io_tools::NonRtDataCollector::NonRtDataCollector"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_non_rt_data_collector_1a07a3168354105dd71bfc5548abf0ac22"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">NonRtDataCollector</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools18NonRtDataCollectorD0Ev">
+<span id="_CPPv3N14mim_estimation8io_tools18NonRtDataCollectorD0Ev"></span><span id="_CPPv2N14mim_estimation8io_tools18NonRtDataCollectorD0Ev"></span><span id="mim_estimation::io_tools::NonRtDataCollector::~NonRtDataCollector"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_non_rt_data_collector_1ad35977cddc6310afc1e4a8124faade1d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~NonRtDataCollector</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools18NonRtDataCollector11addVariableEPKdRKNSt6stringERKNSt6stringE">
+<span id="_CPPv3N14mim_estimation8io_tools18NonRtDataCollector11addVariableEPKdRKNSt6stringERKNSt6stringE"></span><span id="_CPPv2N14mim_estimation8io_tools18NonRtDataCollector11addVariableEPKdRKNSt6stringERKNSt6stringE"></span><span id="mim_estimation::io_tools::NonRtDataCollector::addVariable__doubleCP.ssCR.ssCR"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_non_rt_data_collector_1a7266deb9b3b7e6d2b25eb8d4bb75a8bc"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addVariable</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">data</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">units</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>virtual functions to add variables to data collection for different types </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools18NonRtDataCollector11addVariableEPKfRKNSt6stringERKNSt6stringE">
+<span id="_CPPv3N14mim_estimation8io_tools18NonRtDataCollector11addVariableEPKfRKNSt6stringERKNSt6stringE"></span><span id="_CPPv2N14mim_estimation8io_tools18NonRtDataCollector11addVariableEPKfRKNSt6stringERKNSt6stringE"></span><span id="mim_estimation::io_tools::NonRtDataCollector::addVariable__floatCP.ssCR.ssCR"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_non_rt_data_collector_1abb55ed45526f4497e8e4a0310eb6c51e"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addVariable</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">data</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">units</span></span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools18NonRtDataCollector11addVariableEPKiRKNSt6stringERKNSt6stringE">
+<span id="_CPPv3N14mim_estimation8io_tools18NonRtDataCollector11addVariableEPKiRKNSt6stringERKNSt6stringE"></span><span id="_CPPv2N14mim_estimation8io_tools18NonRtDataCollector11addVariableEPKiRKNSt6stringERKNSt6stringE"></span><span id="mim_estimation::io_tools::NonRtDataCollector::addVariable__iCP.ssCR.ssCR"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_non_rt_data_collector_1a3a6e1ce50d354046a42818cc3b37be57"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addVariable</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">data</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">units</span></span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools18NonRtDataCollector11addVariableEPKbRKNSt6stringERKNSt6stringE">
+<span id="_CPPv3N14mim_estimation8io_tools18NonRtDataCollector11addVariableEPKbRKNSt6stringERKNSt6stringE"></span><span id="_CPPv2N14mim_estimation8io_tools18NonRtDataCollector11addVariableEPKbRKNSt6stringERKNSt6stringE"></span><span id="mim_estimation::io_tools::NonRtDataCollector::addVariable__bCP.ssCR.ssCR"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_non_rt_data_collector_1a868237d70224fb6520147e913a182405"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addVariable</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">data</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">units</span></span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools18NonRtDataCollector20updateDataCollectionEv">
+<span id="_CPPv3N14mim_estimation8io_tools18NonRtDataCollector20updateDataCollectionEv"></span><span id="_CPPv2N14mim_estimation8io_tools18NonRtDataCollector20updateDataCollectionEv"></span><span id="mim_estimation::io_tools::NonRtDataCollector::updateDataCollection"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_non_rt_data_collector_1a37fc3f807dac38ea29a6a938d6442681"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">updateDataCollection</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>virtual function to update the collection with the recently added variables </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools18NonRtDataCollector18stopDataCollectionEv">
+<span id="_CPPv3N14mim_estimation8io_tools18NonRtDataCollector18stopDataCollectionEv"></span><span id="_CPPv2N14mim_estimation8io_tools18NonRtDataCollector18stopDataCollectionEv"></span><span id="mim_estimation::io_tools::NonRtDataCollector::stopDataCollection"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_non_rt_data_collector_1a4e60ad41a1c1bf0d8795fbc89e305a77"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stopDataCollection</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools18NonRtDataCollector19startDataCollectionEv">
+<span id="_CPPv3N14mim_estimation8io_tools18NonRtDataCollector19startDataCollectionEv"></span><span id="_CPPv2N14mim_estimation8io_tools18NonRtDataCollector19startDataCollectionEv"></span><span id="mim_estimation::io_tools::NonRtDataCollector::startDataCollection"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_non_rt_data_collector_1a8e8969d9efb347ffa0112020c6c5b930"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">startDataCollection</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools18NonRtDataCollector20isDataCollectionDoneEv">
+<span id="_CPPv3N14mim_estimation8io_tools18NonRtDataCollector20isDataCollectionDoneEv"></span><span id="_CPPv2N14mim_estimation8io_tools18NonRtDataCollector20isDataCollectionDoneEv"></span><span id="mim_estimation::io_tools::NonRtDataCollector::isDataCollectionDone"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_non_rt_data_collector_1adc7183b01e83045bf4cf1baeb2457155"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isDataCollectionDone</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>virtual function to check whether data collection has completed: </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools18NonRtDataCollector12reverseFloatEKf">
+<span id="_CPPv3N14mim_estimation8io_tools18NonRtDataCollector12reverseFloatEKf"></span><span id="_CPPv2N14mim_estimation8io_tools18NonRtDataCollector12reverseFloatEKf"></span><span id="mim_estimation::io_tools::NonRtDataCollector::reverseFloat__floatC"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_non_rt_data_collector_1a66a1c2841a038b01eab299fdf0eb4fe1"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reverseFloat</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">inFloat</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>convertion big endian and little endian </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools18NonRtDataCollector4dumpENSt6stringE">
+<span id="_CPPv3N14mim_estimation8io_tools18NonRtDataCollector4dumpENSt6stringE"></span><span id="_CPPv2N14mim_estimation8io_tools18NonRtDataCollector4dumpENSt6stringE"></span><span id="mim_estimation::io_tools::NonRtDataCollector::dump__ss"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_non_rt_data_collector_1a7e734b882e6991ca7f99a26e1ee65d2d"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dump</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">path</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>dump the data in SL format the </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools18NonRtDataCollector12double_data_E">
+<span id="_CPPv3N14mim_estimation8io_tools18NonRtDataCollector12double_data_E"></span><span id="_CPPv2N14mim_estimation8io_tools18NonRtDataCollector12double_data_E"></span><span id="mim_estimation::io_tools::NonRtDataCollector::double_data___std::deque:std::deque:double::"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_non_rt_data_collector_1a41df81b010d197f8bc28428ff3d9f6bf"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">deque</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">deque</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">double_data_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation8io_tools18NonRtDataCollector12double_data_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools18NonRtDataCollector13double_names_E">
+<span id="_CPPv3N14mim_estimation8io_tools18NonRtDataCollector13double_names_E"></span><span id="_CPPv2N14mim_estimation8io_tools18NonRtDataCollector13double_names_E"></span><span id="mim_estimation::io_tools::NonRtDataCollector::double_names___std::deque:ss:"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_non_rt_data_collector_1a48c6f6fb67de34f5c83c8744a4c94872"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">deque</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">double_names_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation8io_tools18NonRtDataCollector13double_names_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools18NonRtDataCollector13double_units_E">
+<span id="_CPPv3N14mim_estimation8io_tools18NonRtDataCollector13double_units_E"></span><span id="_CPPv2N14mim_estimation8io_tools18NonRtDataCollector13double_units_E"></span><span id="mim_estimation::io_tools::NonRtDataCollector::double_units___std::deque:ss:"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_non_rt_data_collector_1a5386e8fb78fd7dfad69b164dda52a53c"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">deque</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">double_units_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation8io_tools18NonRtDataCollector13double_units_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools18NonRtDataCollector11double_ptr_E">
+<span id="_CPPv3N14mim_estimation8io_tools18NonRtDataCollector11double_ptr_E"></span><span id="_CPPv2N14mim_estimation8io_tools18NonRtDataCollector11double_ptr_E"></span><span id="mim_estimation::io_tools::NonRtDataCollector::double_ptr___std::deque:doubleCP:"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_non_rt_data_collector_1a282073025ccbb96a7df4df5c920f224f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">deque</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">double_ptr_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation8io_tools18NonRtDataCollector11double_ptr_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools18NonRtDataCollector11float_data_E">
+<span id="_CPPv3N14mim_estimation8io_tools18NonRtDataCollector11float_data_E"></span><span id="_CPPv2N14mim_estimation8io_tools18NonRtDataCollector11float_data_E"></span><span id="mim_estimation::io_tools::NonRtDataCollector::float_data___std::deque:std::deque:float::"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_non_rt_data_collector_1aca0d516042880339b71221208c1ea1d1"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">deque</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">deque</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">float</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">float_data_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation8io_tools18NonRtDataCollector11float_data_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools18NonRtDataCollector12float_names_E">
+<span id="_CPPv3N14mim_estimation8io_tools18NonRtDataCollector12float_names_E"></span><span id="_CPPv2N14mim_estimation8io_tools18NonRtDataCollector12float_names_E"></span><span id="mim_estimation::io_tools::NonRtDataCollector::float_names___std::deque:ss:"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_non_rt_data_collector_1add4a2c0807c0e4766123cad6ab4cab15"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">deque</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">float_names_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation8io_tools18NonRtDataCollector12float_names_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools18NonRtDataCollector12float_units_E">
+<span id="_CPPv3N14mim_estimation8io_tools18NonRtDataCollector12float_units_E"></span><span id="_CPPv2N14mim_estimation8io_tools18NonRtDataCollector12float_units_E"></span><span id="mim_estimation::io_tools::NonRtDataCollector::float_units___std::deque:ss:"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_non_rt_data_collector_1a8f4056f15d78d7271c72808d1664a665"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">deque</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">float_units_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation8io_tools18NonRtDataCollector12float_units_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools18NonRtDataCollector10float_ptr_E">
+<span id="_CPPv3N14mim_estimation8io_tools18NonRtDataCollector10float_ptr_E"></span><span id="_CPPv2N14mim_estimation8io_tools18NonRtDataCollector10float_ptr_E"></span><span id="mim_estimation::io_tools::NonRtDataCollector::float_ptr___std::deque:floatCP:"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_non_rt_data_collector_1a859c9f6f724982aeaa59b3b8a080b14b"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">deque</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">float_ptr_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation8io_tools18NonRtDataCollector10float_ptr_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools18NonRtDataCollector9int_data_E">
+<span id="_CPPv3N14mim_estimation8io_tools18NonRtDataCollector9int_data_E"></span><span id="_CPPv2N14mim_estimation8io_tools18NonRtDataCollector9int_data_E"></span><span id="mim_estimation::io_tools::NonRtDataCollector::int_data___std::deque:std::deque:i::"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_non_rt_data_collector_1ad6574cc60d7ee76ed8487bc59530b99d"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">deque</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">deque</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">int_data_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation8io_tools18NonRtDataCollector9int_data_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools18NonRtDataCollector10int_names_E">
+<span id="_CPPv3N14mim_estimation8io_tools18NonRtDataCollector10int_names_E"></span><span id="_CPPv2N14mim_estimation8io_tools18NonRtDataCollector10int_names_E"></span><span id="mim_estimation::io_tools::NonRtDataCollector::int_names___std::deque:ss:"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_non_rt_data_collector_1a31b6b05985a2dab9027f40b605179bc4"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">deque</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">int_names_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation8io_tools18NonRtDataCollector10int_names_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools18NonRtDataCollector10int_units_E">
+<span id="_CPPv3N14mim_estimation8io_tools18NonRtDataCollector10int_units_E"></span><span id="_CPPv2N14mim_estimation8io_tools18NonRtDataCollector10int_units_E"></span><span id="mim_estimation::io_tools::NonRtDataCollector::int_units___std::deque:ss:"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_non_rt_data_collector_1a1bbf5eec35e5cd75e396fb84688336ce"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">deque</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">int_units_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation8io_tools18NonRtDataCollector10int_units_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools18NonRtDataCollector8int_ptr_E">
+<span id="_CPPv3N14mim_estimation8io_tools18NonRtDataCollector8int_ptr_E"></span><span id="_CPPv2N14mim_estimation8io_tools18NonRtDataCollector8int_ptr_E"></span><span id="mim_estimation::io_tools::NonRtDataCollector::int_ptr___std::deque:iCP:"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_non_rt_data_collector_1ad1f10b6ee69ddfd7d7ada5bf1e235b2e"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">deque</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">int_ptr_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation8io_tools18NonRtDataCollector8int_ptr_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools18NonRtDataCollector10bool_data_E">
+<span id="_CPPv3N14mim_estimation8io_tools18NonRtDataCollector10bool_data_E"></span><span id="_CPPv2N14mim_estimation8io_tools18NonRtDataCollector10bool_data_E"></span><span id="mim_estimation::io_tools::NonRtDataCollector::bool_data___std::deque:std::deque:b::"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_non_rt_data_collector_1a6f9664c0cc4a495a12dfcc8bfcfd64c6"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">deque</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">deque</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">bool</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bool_data_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation8io_tools18NonRtDataCollector10bool_data_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools18NonRtDataCollector11bool_names_E">
+<span id="_CPPv3N14mim_estimation8io_tools18NonRtDataCollector11bool_names_E"></span><span id="_CPPv2N14mim_estimation8io_tools18NonRtDataCollector11bool_names_E"></span><span id="mim_estimation::io_tools::NonRtDataCollector::bool_names___std::deque:ss:"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_non_rt_data_collector_1a5e905a5314920c22cf71f933544a0260"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">deque</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bool_names_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation8io_tools18NonRtDataCollector11bool_names_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools18NonRtDataCollector11bool_units_E">
+<span id="_CPPv3N14mim_estimation8io_tools18NonRtDataCollector11bool_units_E"></span><span id="_CPPv2N14mim_estimation8io_tools18NonRtDataCollector11bool_units_E"></span><span id="mim_estimation::io_tools::NonRtDataCollector::bool_units___std::deque:ss:"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_non_rt_data_collector_1a6202145e933f09f316504dcdf93b939d"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">deque</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bool_units_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation8io_tools18NonRtDataCollector11bool_units_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools18NonRtDataCollector9bool_ptr_E">
+<span id="_CPPv3N14mim_estimation8io_tools18NonRtDataCollector9bool_ptr_E"></span><span id="_CPPv2N14mim_estimation8io_tools18NonRtDataCollector9bool_ptr_E"></span><span id="mim_estimation::io_tools::NonRtDataCollector::bool_ptr___std::deque:bCP:"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_non_rt_data_collector_1af4569258c5ff715ec0f08012a4950e0b"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">deque</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bool_ptr_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation8io_tools18NonRtDataCollector9bool_ptr_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14mim_estimation8io_tools18NonRtDataCollector8running_E">
+<span id="_CPPv3N14mim_estimation8io_tools18NonRtDataCollector8running_E"></span><span id="_CPPv2N14mim_estimation8io_tools18NonRtDataCollector8running_E"></span><span id="mim_estimation::io_tools::NonRtDataCollector::running___b"></span><span class="target" id="classmim__estimation_1_1io__tools_1_1_non_rt_data_collector_1a1d383534ab7a995bdcf1268c924de040"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">running_</span></span></span><a class="headerlink" href="#_CPPv4N14mim_estimation8io_tools18NonRtDataCollector8running_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="mim__estimation_8cpp.html" class="btn btn-neutral float-left" title="File mim_estimation.cpp" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="robot__state__estimation_8cpp.html" class="btn btn-neutral float-right" title="File robot_state_estimation.cpp" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
